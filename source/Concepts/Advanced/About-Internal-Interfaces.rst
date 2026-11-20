@@ -69,6 +69,8 @@ Python 用户则可以使用：
 
 此外，``.msg`` 文件还会用于为每种类型生成类型支持代码。这里的类型支持是指与特定类型相关的元数据或函数，系统利用这些信息执行该类型所需的特定任务。某种消息的类型支持可能包含消息中每个字段的名称和类型列表，也可能包含执行特定任务（例如发布消息）的代码引用。
 
+.. _internal-interfaces_static-type-support:
+
 静态类型支持
 ^^^^^^^^^^^^
 
@@ -126,7 +128,7 @@ ROS 客户端库接口（``rcl`` API）可供客户端库使用，例如 ``rclc`
 
 通常，``rcl`` 接口提供的函数既不依赖特定语言模式，也不依赖特定消息类型。
 
-``rcl`` API 位于 GitHub 的 `ros2/rcl <https://github.com/ros2/rcl>`__ 仓库中，接口以 C 头文件形式提供。同一仓库中的 ``rcl`` 功能包提供 ``rcl`` 的 C 语言实现。该实现不会直接访问中间件，而是使用 ``rmw`` 和 ``rosidl`` API。
+``rcl`` API 位于 GitHub 的 `ros2/rcl <https://github.com/ros2/rcl>``__ 仓库中，接口以 C 头文件形式提供。同一仓库中的 ``rcl`` 功能包提供 ``rcl`` 的 C 语言实现。该实现不会直接访问中间件，而是使用 ``rmw`` 和 ``rosidl`` API。
 
 完整的 ``rcl`` API 定义请参阅 `rcl 文档 <http://docs.ros.org/en/{DISTRO}/p/rcl/>`__。
 
@@ -135,7 +137,7 @@ rmw 仓库
 
 ROS 中间件接口（``rmw`` API）是构建 ROS 中间件所需的最小原始能力集合。不同中间件实现的提供者必须实现该接口，才能支持其上的完整 ROS 软件栈。目前，大多数中间件实现针对不同 DDS 供应商。
 
-``rmw`` API 位于 GitHub 的 `ros2/rmw <https://github.com/ros2/rmw>`__ 仓库中。``rmw`` 功能包包含定义接口的 C 头文件，具体实现则由面向不同 DDS 供应商的 RMW 实现功能包提供。
+``rmw`` API 位于 GitHub 的 `ros2/rmw <https://github.com/ros2/rmw>``__ 仓库中。``rmw`` 功能包包含定义接口的 C 头文件，具体实现则由面向不同 DDS 供应商的 RMW 实现功能包提供。
 
 完整的 ``rmw`` API 定义请参阅 `rmw 文档 <http://docs.ros.org/en/{DISTRO}/p/rmw/>`__。
 
@@ -150,7 +152,7 @@ rosidl 仓库
 
 有多个代码仓库参与 ``rosidl`` API 和实现。
 
-GitHub 上的 `ros2/rosidl <https://github.com/ros2/rosidl>`__ 仓库定义消息 IDL 语法，即 ``.msg``、``.srv`` 等文件的语法，并包含用于解析这些文件、提供 CMake 代码生成基础设施、生成与具体实现无关的代码（头文件和源文件），以及建立默认生成器集合的功能包。
+GitHub 上的 `ros2/rosidl <https://github.com/ros2/rosidl>``__ 仓库定义消息 IDL 语法，即 ``.msg``、``.srv`` 等文件的语法，并包含用于解析这些文件、提供 CMake 代码生成基础设施、生成与具体实现无关的代码（头文件和源文件），以及建立默认生成器集合的功能包。
 
 该仓库包含以下功能包：
 
