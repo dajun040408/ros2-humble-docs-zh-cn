@@ -25,7 +25,7 @@ ROS 2 文档
 
 自 2007 年 ROS 项目启动以来，机器人技术和 ROS 社区发生了许多变化。ROS 2 项目的目标是适应这些变化，在继承 ROS 1 优点的同时改进其不足之处。
 
-**你是否正在查找特定 ROS 功能包（例如 MoveIt、image_proc 或 octomap）的文档？** 请访问 `ROS Index <https://index.ros.org/?search_packages=true#{DISTRO}>`__ ，或查看 ``按功能包分类的文档索引 <https://docs.ros.org/en/{DISTRO}/p/>`__。
+**你是否正在查找特定 ROS 功能包（例如 MoveIt、image_proc 或 octomap）的文档？** 请访问 `ROS Index <https://index.ros.org/?search_packages=true#{DISTRO}>`__ ，或查看 `按功能包分类的文档索引 <https://docs.ros.org/en/{DISTRO}/p/>`__。
 
 本站包含 ROS 2 文档。如果你需要查阅 ROS 1 文档，请访问 `ROS Wiki <https://wiki.ros.org>`__。
 
