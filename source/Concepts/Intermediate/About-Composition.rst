@@ -54,7 +54,7 @@ ROS 1 中使用不同 API 是其最大的缺点之一，而 ROS 2 避免了这�
 
   * 为每个组件使用独立执行器的容器。执行器可以是 ``SingleThreadedExecutor``（默认）或 ``MultiThreadedExecutor``。
 
-有关执行器类型的更多信息，请参阅 :ref:`执行器类型 <TypesOfExecutors>``。有关每种组件容器的选项，请参阅组件组合教程中的 :ref:``ComponentContainerTypes`。
+有关执行器类型的更多信息，请参阅 :ref:`执行器类型 <TypesOfExecutors>`。有关每种组件容器的选项，请参阅组件组合教程中的 :ref:`ComponentContainerTypes`。
 
 编写组件
 --------
