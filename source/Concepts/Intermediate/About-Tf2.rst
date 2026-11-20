@@ -113,19 +113,19 @@ TF 库会根据你沿坐标变换树遍历的方向，自动为这些元素执�
 教程
 ------
 
-我们提供了一组 :doc:`tf2 教程 <../../Tutorials/Intermediate/Tf2/Tf2-Main>``，通过循序渐进的方式介绍 tf2 的使用方法。你可以从 :doc:`tf2 简介 <../../Tutorials/Intermediate/Tf2/Introduction-To-Tf2>`` 开始学习。完整的 tf2 及相关教程列表请参阅 :doc:`教程页面 <../../Tutorials/Intermediate/Tf2/Tf2-Main>`。
+我们提供了一组 :doc:`tf2 教程 <../../Tutorials/Intermediate/Tf2/Tf2-Main>`，通过循序渐进的方式介绍 tf2 的使用方法。你可以从 :doc:`tf2 简介 <../../Tutorials/Intermediate/Tf2/Introduction-To-Tf2>`` 开始学习。完整的 tf2 及相关教程列表请参阅 :doc:`教程页面 <../../Tutorials/Intermediate/Tf2/Tf2-Main>`。
 
 用户使用 tf2 主要有两项任务：监听坐标变换和广播坐标变换。
 
-如果希望使用 tf2 在坐标系之间进行变换，节点需要监听坐标变换。节点会接收并缓存系统中广播的所有坐标系信息，然后查询指定坐标系之间的变换。有关详细信息，请参阅“编写监听器”教程：:doc:`（Python） <../../Tutorials/Intermediate/Tf2/Writing-A-Tf2-Listener-Py>`` :doc:`（C++） <../../Tutorials/Intermediate/Tf2/Writing-A-Tf2-Listener-Cpp>`。
+如果希望使用 tf2 在坐标系之间进行变换，节点需要监听坐标变换。节点会接收并缓存系统中广播的所有坐标系信息，然后查询指定坐标系之间的变换。有关详细信息，请参阅“编写监听器”教程：:doc:`（Python） <../../Tutorials/Intermediate/Tf2/Writing-A-Tf2-Listener-Py>` :doc:`（C++） <../../Tutorials/Intermediate/Tf2/Writing-A-Tf2-Listener-Cpp>`。
 
-如果希望扩展机器人的能力，就需要开始广播坐标变换。广播坐标变换意味着向系统中的其他部分发送坐标系之间的相对位姿。一个系统可以包含多个广播器，每个广播器负责提供机器人不同部分的信息。有关详细信息，请参阅“编写广播器”教程：:doc:`（Python） <../../Tutorials/Intermediate/Tf2/Writing-A-Tf2-Broadcaster-Py>`` :doc:`（C++） <../../Tutorials/Intermediate/Tf2/Writing-A-Tf2-Broadcaster-Cpp>`。
+如果希望扩展机器人的能力，就需要开始广播坐标变换。广播坐标变换意味着向系统中的其他部分发送坐标系之间的相对位姿。一个系统可以包含多个广播器，每个广播器负责提供机器人不同部分的信息。有关详细信息，请参阅“编写广播器”教程：:doc:`（Python） <../../Tutorials/Intermediate/Tf2/Writing-A-Tf2-Broadcaster-Py>` :doc:`（C++） <../../Tutorials/Intermediate/Tf2/Writing-A-Tf2-Broadcaster-Cpp>`。
 
-此外，tf2 还可以广播不会随时间变化的静态坐标变换。这主要用于节省存储空间和查询时间，同时也能减少发布开销。请注意，静态变换只发布一次，并假设之后不会发生变化，因此不会保存历史记录。如果要在 tf2 坐标树中定义静态变换，请参阅“编写静态广播器”教程：:doc:`（Python） <../../Tutorials/Intermediate/Tf2/Writing-A-Tf2-Static-Broadcaster-Py>`` :doc:`（C++） <../../Tutorials/Intermediate/Tf2/Writing-A-Tf2-Static-Broadcaster-Cpp>`。
+此外，tf2 还可以广播不会随时间变化的静态坐标变换。这主要用于节省存储空间和查询时间，同时也能减少发布开销。请注意，静态变换只发布一次，并假设之后不会发生变化，因此不会保存历史记录。如果要在 tf2 坐标树中定义静态变换，请参阅“编写静态广播器”教程：:doc:`（Python） <../../Tutorials/Intermediate/Tf2/Writing-A-Tf2-Static-Broadcaster-Py>` :doc:`（C++） <../../Tutorials/Intermediate/Tf2/Writing-A-Tf2-Static-Broadcaster-Cpp>`。
 
-你还可以通过“添加坐标系”教程，学习如何向 tf2 坐标树中添加固定坐标系和动态坐标系：:doc:`（Python） <../../Tutorials/Intermediate/Tf2/Adding-A-Frame-Py>`` :doc:`（C++） <../../Tutorials/Intermediate/Tf2/Adding-A-Frame-Cpp>`。
+你还可以通过“添加坐标系”教程，学习如何向 tf2 坐标树中添加固定坐标系和动态坐标系：:doc:`（Python） <../../Tutorials/Intermediate/Tf2/Adding-A-Frame-Py>` :doc:`（C++） <../../Tutorials/Intermediate/Tf2/Adding-A-Frame-Cpp>`。
 
-完成基础教程后，可以继续学习 tf2 与时间的关系。:doc:`tf2 与时间教程（C++） <../../Tutorials/Intermediate/Tf2/Learning-About-Tf2-And-Time-Cpp>`` 介绍 tf2 和时间的基本原理；:doc:`tf2 时间旅行进阶教程（C++） <../../Tutorials/Intermediate/Tf2/Time-Travel-With-Tf2-Cpp>` 则介绍如何使用 tf2 进行时间回溯。
+完成基础教程后，可以继续学习 tf2 与时间的关系。:doc:`tf2 与时间教程（C++） <../../Tutorials/Intermediate/Tf2/Learning-About-Tf2-And-Time-Cpp>` 介绍 tf2 和时间的基本原理；:doc:`tf2 时间旅行进阶教程（C++） <../../Tutorials/Intermediate/Tf2/Time-Travel-With-Tf2-Cpp>` 则介绍如何使用 tf2 进行时间回溯。
 
 论文
 ------
