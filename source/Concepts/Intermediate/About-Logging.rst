@@ -34,7 +34,7 @@ Logger 只会处理严重级别大于或等于其指定级别的日志消息。
 Logger 名称具有层级结构。如果名为 ``abc.def`` 的 Logger 未设置级别，它会继承父级 Logger ``abc`` 的级别；如果父级也未设置级别，则使用默认 Logger 级别。当 ``abc`` 的级别发生变化时，其所有后代 Logger（例如 ``abc.def``、``abc.ghi.jkl``）的级别也会受到影响，除非这些后代已显式设置自己的级别。
 
 API
----
+-----
 
 ROS 2 日志基础设施的最终用户应使用以下 API，按客户端库分别列出。
 
@@ -123,7 +123,7 @@ ROS 2 日志基础设施的最终用户应使用以下 API，按客户端库分�
    :align: center
 
 rcutils
-^^^^^^^
+^^^^^^^^^
 
 ``rcutils`` 提供日志实现，可以按照指定格式（参见上文“配置”部分）格式化日志消息，并将其输出到控制台。
 
@@ -132,12 +132,12 @@ rcutils
 请注意，这是一个*进程级*日志实现，因此在这一层配置的任何内容都会影响整个进程，而不仅仅是单个节点。
 
 rcl_logging_spdlog
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 ``rcl_logging_spdlog`` 实现了 ``rcl_logging_interface`` API，因此可以向 ``rcl`` 层提供外部日志服务。具体来说，``rcl_logging_spdlog`` 会接收格式化后的日志消息，并使用 ``spdlog`` 库将其写入磁盘上的日志文件，通常位于 ``~/.ros/log``（该路径可以配置，参见上文“配置”部分）。
 
 rcl
-^^^
+^^^^^
 
 ``rcl`` 中的日志子系统使用 ``rcutils`` 和 ``rcl_logging_spdlog`` 提供 ROS 2 日志服务的主要功能。
 
@@ -148,7 +148,7 @@ rcl
 * 通过 RMW 层发布到 ROS 2 网络中的 ``/rosout`` 话题。
 
 rclcpp
-^^^^^^
+^^^^^^^^
 
 这是构建在 ``rcl`` API 之上的 ROS 2 C++ 主要 API。
 
@@ -157,7 +157,7 @@ rclcpp
 请注意，``rclcpp`` 在日志调用时使用全局互斥锁，因此同一进程中的所有日志调用最终都会以单线程方式执行。
 
 rclpy
-^^^^^
+^^^^^^^
 
 这是构建在 ``rcl`` API 之上的 ROS 2 Python 主要 API。
 
@@ -172,9 +172,9 @@ rclpy
 
     * 查看 `rclcpp 日志演示 <https://github.com/ros2/demos/tree/{REPOS_FILE_BRANCH}/logging_demo>`_，了解一些简单示例。
     * 查看 :doc:`日志演示教程 <../../Tutorials/Demos/Logging-and-logger-configuration>`，了解具体用法。
-    * 查看 `rclcpp 文档 <https://docs.ros2.org/latest/api/rclcpp/logging_8hpp.html>`__，了解完整功能列表。
+    * 查看 `rclcpp 文档 <https://docs.ros2.org/latest/api/rclcpp/logging_8hpp.html>`__ ，了解完整功能列表。
 
   .. group-tab:: Python
 
-    * 查看 `rclpy 示例 <https://github.com/ros2/examples/blob/{REPOS_FILE_BRANCH}/rclpy/services/minimal_client/examples_rclpy_minimal_client/client.py>`__，了解如何使用节点的 Logger。
-    * 查看 `rclpy 测试 <https://github.com/ros2/rclpy/blob/{REPOS_FILE_BRANCH}/rclpy/test/test_logging.py>``__，了解关键字参数（例如 ``skip_first``、``once`）的使用方法。
+    * 查看 `rclpy 示例 <https://github.com/ros2/examples/blob/{REPOS_FILE_BRANCH}/rclpy/services/minimal_client/examples_rclpy_minimal_client/client.py>`__ ，了解如何使用节点的 Logger。
+    * 查看 `rclpy 测试 <https://github.com/ros2/rclpy/blob/{REPOS_FILE_BRANCH}/rclpy/test/test_logging.py>``__ ，了解关键字参数（例如 ``skip_first``、``once`）的使用方法。
