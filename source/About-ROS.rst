@@ -87,7 +87,7 @@ ROS 社区是由全球开发者、研究人员、企业和贡献者组成的网�
 ROS 可以与 Open Robotics 的其他平台协同工作，使开发和部署更加容易。
 
 * `Gazebo <https://gazebosim.org/home>`__：提供基于物理引擎的仿真，使开发者能够在使用真实硬件之前先在虚拟环境中测试机器人。
-* `Open-RMF <https://www.open-rmf.org/>`__（Robotics Middleware Framework，机器人中间件框架）：帮助不同机器人协同工作，并与电梯、门等建筑设施交互。
+* `Open-RMF <https://www.open-rmf.org/>`__ （Robotics Middleware Framework，机器人中间件框架）：帮助不同机器人协同工作，并与电梯、门等建筑设施交互。
 * `ros-controls <https://control.ros.org/rolling/index.html>`__：支持使用 ROS 对机器人进行实时控制。
 
 这些集成使团队能够根据预算和规模，在复杂环境中更轻松地设计、测试和管理机器人。
