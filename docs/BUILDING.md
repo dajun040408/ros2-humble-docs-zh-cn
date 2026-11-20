@@ -36,12 +36,12 @@ python scripts/prepare_build.py --upstream upstream
 ## 4. 构建 HTML
 
 ~~~bash
-make -C upstream html JOBS=2
+make -C upstream html JOBS=2\npython scripts/build_search_index.py --html-dir upstream/build/html
 ~~~
 
 生成目录为 upstream/build/html/。
 
-## 5. 本地预览
+## 5. 中文搜索\n\n构建完成后，运行搜索索引脚本：\n\n~~~bash\npython scripts/build_search_index.py --html-dir upstream/build/html\n~~~\n\n该脚本从构建后的 HTML 页面生成 search-index.json。中文搜索页面为 search-zh.html，侧边栏搜索表单会跳转到该页面。\n\n## 6. 本地预览
 
 ~~~bash
 python3 -m http.server 8000 --directory upstream/build/html
@@ -49,7 +49,7 @@ python3 -m http.server 8000 --directory upstream/build/html
 
 浏览器访问 http://localhost:8000。
 
-## 6. GitHub Pages 自动部署
+## 7. GitHub Pages 自动部署
 
 仓库中的 .github/workflows/deploy-docs.yml 会在 main 分支有提交时自动执行：
 
@@ -61,6 +61,6 @@ python3 -m http.server 8000 --directory upstream/build/html
 
 首次使用时，需要在 GitHub 仓库 Settings -> Pages 中将 Build and deployment 来源设置为 GitHub Actions。
 
-## 7. 检查
+## 8. 检查
 
 构建时应重点检查 Sphinx warnings、缺失文件、未解析引用、toctree 项目和图片路径。发布前还需对生成的 HTML 执行内部链接与锚点检查。
