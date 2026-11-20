@@ -79,7 +79,7 @@ ROS 2 使用分布式发现过程，使节点能够彼此连接。由于该过�
 
 首次使用 ``ros2 node list``、``ros2 topic list`` 或其他系统检查命令行工具时，ROS 2 守护进程会自动启动。如果当前没有守护进程运行，这些工具会先在后台创建一个新的守护进程，然后再执行请求的命令。
 
-守护进程通过 localhost 网络接口（127.0.0.1）进行通信，并使用 :doc:`ROS_DOMAIN_ID <../Intermediate/About-Domain-ID>`` 环境变量作为端口号偏移量。这意味着，如果你希望控制某个特定的守护进程实例（例如使用 ``ros2 daemon stop``），必须确保当前 :doc:``ROS_DOMAIN_ID <../Intermediate/About-Domain-ID>`` 与该守护进程使用的域 ID 一致。不同的 :doc:``ROS_DOMAIN_ID <../Intermediate/About-Domain-ID>` 值会使系统在不同端口上运行独立的守护进程实例。
+守护进程通过 localhost 网络接口（127.0.0.1）进行通信，并使用 :doc:`ROS_DOMAIN_ID <../Intermediate/About-Domain-ID>`` 环境变量作为端口号偏移量。这意味着，如果你希望控制某个特定的守护进程实例（例如使用 ``ros2 daemon stop``），必须确保当前 :doc:`ROS_DOMAIN_ID <../Intermediate/About-Domain-ID>`` 与该守护进程使用的域 ID 一致。不同的 :doc:``ROS_DOMAIN_ID <../Intermediate/About-Domain-ID>` 值会使系统在不同端口上运行独立的守护进程实例。
 
 运行 ``ros2 daemon --help`` 可以查看与守护进程交互的更多选项，包括启动、停止或检查守护进程状态的命令。
 
