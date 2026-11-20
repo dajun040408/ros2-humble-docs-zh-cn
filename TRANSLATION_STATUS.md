@@ -2,49 +2,61 @@
 
 最后更新：2026-11-20
 
-## 当前基线与首批交付
+## 上游基线
 
-| 项目 | 当前结果 | 说明 |
-|---|---:|---|
-| 上游仓库 | ros2/ros2_documentation | ROS 2 官方文档源码 |
-| 上游分支 | humble | 固定 Humble 技术基线 |
-| 上游文档树条目 | 790 | 递归 Git tree 盘点 |
-| 上游 .rst 文件 | 311 | 包含索引、专题及内部辅助文件 |
-| 已写入中文文档 | 3 | 首页、核心概念入口、节点概念页 |
-| 完成翻译并提交 | 3 | 已保留原始 toctree 和主要交叉引用 |
-| 上游完整源码导入 | 0% | 尚未导入完整图片、模板、配置和全部页面 |
-| Sphinx 构建 | 未执行 | 缺少完整上游构建环境及源码 |
-| 全站链接检查 | 未执行 | 目前只有首批页面 |
+- 上游仓库：ros2/ros2_documentation
+- 上游分支：humble
+- 已上传并核对源码归档：ros2_documentation_humble.tar.gz
+- 上游 Git tree：790 个条目，其中 684 个文件。
+- .rst 文件总数：311。
+- 根据上游 Sphinx exclude_patterns 初步排除 13 个辅助文件，得到 298 个构建候选文档源文件。最终 HTML 页面数以 Sphinx 构建输出为准。
 
-> 311 是上游文档树中 .rst 文件的初步数量，不等同于最终 HTML 页面数。首页导航当前引用的其他页面尚未导入，因此本仓库还不是可完整构建的网站。
+## 当前已提交翻译页面
 
-## 已提交内容
+| 文件 | 状态 |
+|---|---|
+| source/index.rst | 已翻译初稿 |
+| source/About-ROS.rst | 已翻译初稿 |
+| source/Installation.rst | 已翻译初稿 |
+| source/Tutorials.rst | 已翻译初稿 |
+| source/First-Steps.rst | 已翻译初稿 |
+| source/How-To-Guides.rst | 已翻译初稿 |
+| source/Concepts.rst | 已翻译初稿 |
+| source/Concepts/Basic.rst | 已翻译初稿 |
+| source/Concepts/Basic/About-Nodes.rst | 已翻译初稿 |
+| source/Concepts/Basic/About-Topics.rst | 已翻译初稿 |
+| source/Concepts/Basic/About-Services.rst | 已翻译初稿 |
+| source/Concepts/Basic/About-Actions.rst | 已翻译初稿 |
+| source/Concepts/Basic/About-Parameters.rst | 已翻译初稿 |
+| source/Concepts/Basic/About-Discovery.rst | 已翻译初稿 |
+| source/Concepts/Basic/About-Launch.rst | 已翻译初稿 |
+| source/Concepts/Basic/About-Client-Libraries.rst | 已翻译初稿 |
+| source/Concepts/Intermediate.rst | 已翻译初稿 |
+| source/Glossary.rst | 已翻译初稿 |
 
-- `source/index.rst`：中文首页，保留上游主导航 toctree 和关键链接。
-- `source/Concepts.rst`：核心概念入口页。
-- `source/Concepts/Basic/About-Nodes.rst`：节点概念页，保留客户端库、话题、服务、动作、参数、发现机制及从属节点引用。
+当前已提交 18 个翻译初稿，约占 298 个构建候选源文件的 6.0%。这不是全站完成率；这些页面仍需 Sphinx 构建、引用和技术术语复核。
 
-## 工作阶段
+## 构建与部署
 
-- [x] 确认上游仓库及 Humble 分支
-- [x] 完成上游文档树初步盘点
-- [x] 初始化 GitHub 仓库（main）
-- [x] 建立术语表和翻译规范
-- [x] 提交首批 3 个中文页面
-- [ ] 导入上游 Humble 完整源码、图片、模板、配置及许可证
-- [ ] 检查 Robook 现有中文译文，建立可复用译文映射
-- [ ] 完成安装指南翻译
-- [ ] 完成全部教程及应用指南翻译
-- [ ] 完成全部核心概念和开发者专题翻译
-- [ ] 完成迁移、发布、项目管理和术语等专题翻译
-- [ ] 完成导航、搜索和交叉引用检查
-- [ ] 完成 Sphinx HTML 构建
-- [ ] 发布翻译覆盖率及质量检查报告
+- 已加入上游源码 overlay 构建脚本：scripts/prepare_build.py。
+- 已加入 GitHub Actions 工作流：.github/workflows/deploy-docs.yml。
+- 工作流会在构建时检出上游 Humble 源码，将本仓库的中文页面覆盖到对应路径，再构建并部署 GitHub Pages。
+- 首次构建曾因 Python 3.10 与上游锁定的 Sphinx 8.2.3 版本不兼容而失败；工作流已改用 Python 3.12，后续运行结果待核验。
+- 当前尚未获得成功的 Sphinx HTML 构建和 GitHub Pages 部署结果。
 
-## 进度统计规则
+## 待完成工作
 
-- 已导入：对应上游文件已进入本仓库。
-- 已翻译：正文完成中文翻译，并通过技术语义复核。
-- 已验证：Sphinx 解析成功，关键引用与链接通过检查。
-- 不以文件存在、标题翻译或机器批量替换作为翻译完成依据。
-- 暂时无法翻译的页面需标记原因和上游路径，不得从统计范围中静默删除。
+- [ ] 翻译其余所有页面源文件（包括安装细节、教程、应用指南、概念、迁移、开发者指南、发行版等）。
+- [ ] 补齐所有一级/二级导航标题的中文化。
+- [ ] 完成中文搜索分词与英文术语检索。
+- [ ] 完成页面内锚点、跨页引用、上一页/下一页和外部链接检查。
+- [ ] 完成 Sphinx 构建并处理全部警告。
+- [ ] 验证 GitHub Pages 实际访问效果。
+- [ ] 发布最终页面覆盖率和质量检查报告。
+
+## 统计规则
+
+- “已翻译初稿”不等于“已审核”或“已验证”。
+- 代码、命令、API、类型名、参数名、话题名、路径及配置键保持原样。
+- 不把英文原文仍然存在的页面标记为已翻译。
+- 不以文件数量代替页面覆盖率；最终统计以 Sphinx 实际构建文档清单为准。
