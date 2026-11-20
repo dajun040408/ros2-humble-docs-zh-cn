@@ -25,6 +25,8 @@ DDS 中间件功能包的通用组件
 
 对于包含消息的功能包中定义的每个 ``rosidl`` 文件，``rosidl_generator_dds_idl`` 都会生成对应的 DDS ``.idl`` 文件。目前，基于 DDS 的 ROS 中间件实现会使用这些输出文件，生成特定于 DDS 供应商的预编译类型支持代码。
 
+.. _about-middleware-impls_struct_dds:
+
 ROS 中间件实现的结构
 -------------------
 
