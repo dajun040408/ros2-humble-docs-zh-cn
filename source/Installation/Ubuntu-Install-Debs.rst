@@ -17,7 +17,7 @@ ROS 2 {DISTRO_TITLE_FULL} 的 deb 软件包目前可用于 Ubuntu Jammy（22.04�
 
 * 状态页面：
 
-  * ROS 2 {DISTRO_TITLE}（Ubuntu Jammy）：`amd64 <http://repo.ros2.org/status_page/ros_{DISTRO}_default.html>`__、`arm64 <http://repo.ros2.org/status_page/ros_{DISTRO}_ujv8.html>`__
+  * ROS 2 {DISTRO_TITLE}（Ubuntu Jammy）：`amd64 <http://repo.ros2.org/status_page/ros_{DISTRO}_default.html>``__、``arm64 <http://repo.ros2.org/status_page/ros_{DISTRO}_ujv8.html>`__
 * `Jenkins 实例 <http://build.ros2.org/>`__
 * `软件仓库 <http://repo.ros2.org>`__
 
@@ -50,7 +50,7 @@ ROS 2 {DISTRO_TITLE_FULL} 的 deb 软件包目前可用于 Ubuntu Jammy（22.04�
 
    由于 Ubuntu 22.04 早期更新中的相关问题，在安装 ROS 2 之前，务必先更新与 ``systemd`` 和 ``udev`` 相关的软件包。如果在全新安装的系统上未先执行系统升级就安装 ROS 2 依赖项，可能会触发**关键系统软件包被移除**的问题。
 
-   更多信息请参阅 `ros2/ros2#1272 <https://github.com/ros2/ros2/issues/1272>`__ 和 `Launchpad #1974196 <https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1974196>`__。
+   更多信息请参阅 `ros2/ros2#1272 <https://github.com/ros2/ros2/issues/1272>``__ 和 ``Launchpad #1974196 <https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1974196>`__。
 
 桌面版安装（推荐）：包含 ROS、RViz、演示程序和教程。
 
