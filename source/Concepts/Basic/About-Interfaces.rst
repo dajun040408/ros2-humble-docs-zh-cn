@@ -12,7 +12,7 @@
 背景
 ------
 
-ROS 应用通常通过三种接口之一进行通信：:doc:`话题 <About-Topics>``、:doc:`服务 <About-Services>`` 或 :doc:`动作 <About-Actions>`。
+ROS 应用通常通过三种接口之一进行通信：:doc:`话题 <About-Topics>`、:doc:`服务 <About-Services>` 或 :doc:`动作 <About-Actions>`。
 
 ROS 2 使用一种简化的描述语言——接口定义语言（Interface Definition Language，IDL）来描述这些接口。这种描述方式使 ROS 工具能够自动为多种目标编程语言生成相应接口类型的源代码。
 
@@ -276,7 +276,7 @@ ROS 2 使用一种简化的描述语言——接口定义语言（Interface Defi
 
 请求字段、响应字段和反馈字段的数量都可以任意，包括零个。
 
-`<request_type>``、``<response_type>`` 和 ``<feedback_type>`` 遵循与消息 ``<type>`` 相同的规则。``<request_fieldname>``、``<response_fieldname>`` 和 ``<feedback_fieldname>`` 遵循与消息 ``<fieldname>`` 相同的规则。
+``<request_type>``、``<response_type>`` 和 ``<feedback_type>`` 遵循与消息 ``<type>`` 相同的规则。``<request_fieldname>``、``<response_fieldname>`` 和 ``<feedback_fieldname>`` 遵循与消息 ``<fieldname>`` 相同的规则。
 
 例如，``Fibonacci`` 动作定义如下：
 
