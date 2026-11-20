@@ -3,7 +3,7 @@
    Concepts/About-Middleware-Implementations
 
 ROS 2 中间件实现
-================
+==================
 
 .. contents:: 目录
    :local:
@@ -15,7 +15,7 @@ ROS 中间件实现是一组功能包，用于实现 ROS 内部接口的一部�
 有关 ROS 2 如何集成不同中间件实现的实践性深入介绍，请参阅 :doc:`中间件实现教程 <../../Tutorials/Advanced/Creating-An-RMW-Implementation>`。
 
 DDS 中间件功能包的通用组件
--------------------------
+----------------------------
 
 当前所有 ROS 中间件实现都基于完整或部分 DDS 实现。例如，有一种中间件实现使用 RTI Connext DDS，另一种实现使用 eProsima Fast DDS。因此，大多数基于 DDS 的中间件实现会共享一些功能包。
 
@@ -28,7 +28,7 @@ DDS 中间件功能包的通用组件
 .. _about-middleware-impls_struct_dds:
 
 ROS 中间件实现的结构
--------------------
+----------------------
 
 ROS 中间件实现通常由同一个代码仓库中的几个功能包组成：
 
