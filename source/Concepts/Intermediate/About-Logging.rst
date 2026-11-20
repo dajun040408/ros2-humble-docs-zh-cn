@@ -4,13 +4,13 @@
     Concepts/About-Logging
 
 日志记录与 Logger 配置
-======================
+========================
 
 .. contents:: 目录
    :local:
 
 概述
-----
+------
 
 ROS 2 日志子系统旨在将日志消息发送到多种目标位置，包括：
 
@@ -23,7 +23,7 @@ ROS 2 日志子系统旨在将日志消息发送到多种目标位置，包括�
 本文其余部分将介绍日志子系统背后的一些设计概念。
 
 严重级别
---------
+----------
 
 日志消息带有严重级别（severity level），按级别从低到高依次为：``DEBUG``、``INFO``、``WARN``、``ERROR`` 和 ``FATAL``。
 
@@ -74,12 +74,12 @@ ROS 2 日志基础设施的最终用户应使用以下 API，按客户端库分�
     * ``rclpy.logging.get_logger_effective_level``：根据 Logger 名称返回其实际生效的日志级别（该级别可能尚未设置）。
 
 配置
-----
+------
 
 由于 ``rclcpp`` 和 ``rclpy`` 使用相同的底层日志基础设施，因此它们的配置选项相同。
 
 环境变量
-^^^^^^^^
+^^^^^^^^^^
 
 以下环境变量可以控制 ROS 2 Logger 的部分行为。请注意，这些环境设置都是进程级设置，因此会作用于该进程中的所有节点。
 
@@ -102,7 +102,7 @@ ROS 2 日志基础设施的最终用户应使用以下 API，按客户端库分�
   如果未指定格式，则使用默认格式 ``[{severity}] [{time}] [{name}]: {message}``。
 
 节点创建
-^^^^^^^^
+^^^^^^^^^^
 
 初始化 ROS 2 节点时，可以通过节点选项控制部分行为。由于这些选项是按节点设置的，即使多个节点组合在同一个进程中，也可以为不同节点设置不同选项。
 
@@ -113,7 +113,7 @@ ROS 2 日志基础设施的最终用户应使用以下 API，按客户端库分�
 * ``log_ext_lib_disabled``：是否完全禁用外部 Logger。某些情况下这样可以提高速度，但日志将不会写入磁盘。示例：``ros2 run demo_nodes_cpp talker --ros-args --disable-external-lib-logs``。
 
 日志子系统设计
---------------
+----------------
 
 下图展示了日志子系统的五个主要组成部分，以及它们之间的交互关系。
 
@@ -164,7 +164,7 @@ rclpy
 在日志记录方面，``rclpy`` 提供 ``logger.debug`` 风格的函数；完整列表请参阅上文“API”部分。执行 ``logger.debug`` 等函数时，会将节点当前的严重级别与函数指定的严重级别进行比较。如果函数的严重级别大于或等于节点的严重级别，就会格式化消息，并输出到当前已配置的所有目标位置。
 
 日志使用示例
-------------
+--------------
 
 .. tabs::
 
@@ -177,4 +177,4 @@ rclpy
   .. group-tab:: Python
 
     * 查看 `rclpy 示例 <https://github.com/ros2/examples/blob/{REPOS_FILE_BRANCH}/rclpy/services/minimal_client/examples_rclpy_minimal_client/client.py>`___ ，了解如何使用节点的 Logger。
-    * 查看 `rclpy 测试 <https://github.com/ros2/rclpy/blob/{REPOS_FILE_BRANCH}/rclpy/test/test_logging.py>``__ ，了解关键字参数（例如 ``skip_first``、``once`）的使用方法。
+    * 查看 `rclpy 测试 <https://github.com/ros2/rclpy/blob/{REPOS_FILE_BRANCH}/rclpy/test/test_logging.py>`__ ，了解关键字参数（例如 ``skip_first``、``once`）的使用方法。
