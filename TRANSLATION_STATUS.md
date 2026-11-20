@@ -16,7 +16,7 @@
 | 模块 | 已翻译初稿 |
 |---|---|
 | 首页与项目入口 | index、About ROS、Installation、Ubuntu deb 安装、Releases、Contact、The ROS 2 Project、Package Docs、Related Projects、Citations |
-| 入门与教程导航 | First Steps、Tutorials、Beginner CLI Tools、Beginner Client Libraries、Intermediate、Advanced、Demos、Miscellaneous |
+| 入门与教程 | First Steps、Tutorials 导航、Beginner CLI Tools 导航、Beginner Client Libraries 导航、节点教程、环境配置教程、Intermediate、Advanced、Demos、Miscellaneous |
 | 核心概念 | Concepts、Basic、Nodes、Topics、Services、Actions、Parameters、Discovery、Launch、Interfaces、Command Line Tools、Client Libraries |
 | 进阶概念 | Intermediate、Composition、Executors、Logging、QoS、TF2、Domain ID、RQt、话题统计、交叉编译、不同中间件供应商、安全机制 |
 | 高级概念 | Advanced、构建系统、内部接口、中间件实现 |\n| 应用指南 | How-To Guides、ROS 1 迁移入口、ros2 param、功能包开发 |\n| 其他 | Glossary、Ubuntu 区域语言和 apt 软件源配置片段 |
