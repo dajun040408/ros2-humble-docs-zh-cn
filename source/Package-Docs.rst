@@ -31,4 +31,4 @@ API 文档
 将你的功能包添加到 docs.ros.org
 ---------------------------------
 
-所有已发布的 ROS 2 功能包都会自动添加到 docs.ros.org 和 `ROS Index <https://index.ros.org/>``__。如果你希望启用或配置自己的功能包，请参阅 :doc:`功能包文档编写指南 <./How-To-Guides/Documenting-a-ROS-2-Package>`。
+所有已发布的 ROS 2 功能包都会自动添加到 docs.ros.org 和 `ROS Index <https://index.ros.org/>`__。如果你希望启用或配置自己的功能包，请参阅 :doc:`功能包文档编写指南 <./How-To-Guides/Documenting-a-ROS-2-Package>`。
