@@ -15,11 +15,11 @@ ROS 2 支持保护 ROS 2 计算图中各节点之间的通信。
 
 与发现机制类似，安全功能通过底层 ROS 2 中间件实现（前提是该中间件支持相应的安全插件）。启用安全功能不需要额外安装软件，但中间件要求为 ROS 计算图中的每个参与者提供配置文件。这些文件用于启用加密和身份验证，并定义针对单个节点以及整个 ROS 计算图的策略。ROS 2 还提供一个总开关，用于控制安全行为是否启用。
 
-ROS 工具可以为 ROS 应用创建权威的 `信任锚 <https://en.wikipedia.org/wiki/Trust_anchor>`___ ，也可以使用外部证书颁发机构（CA）。
+ROS 工具可以为 ROS 应用创建权威的 `信任锚 <https://en.wikipedia.org/wiki/Trust_anchor>`__ ，也可以使用外部证书颁发机构（CA）。
 
 ROS 2 内置安全功能能够控制整个 ROS 计算图中的通信。这不仅允许对 ROS 域参与者之间传输的数据进行加密，还能够验证数据发送者的身份、确保数据完整性，并启用整个域范围的访问控制。
 
-ROS 2 安全服务由节点间通信所使用的底层 `数据分发服务（DDS）<https://www.omg.org/spec/DDS/>`__ 提供。DDS 供应商提供可与 ROS 配合使用的开源和商业 DDS 实现。为了符合 DDS 规范，所有供应商都必须包含 ``DDS 安全规范 <https://www.omg.org/spec/DDS-SECURITY/About-DDS-SECURITY/>`___ 中规定的安全插件。ROS 安全功能利用这些 DDS 安全插件提供基于策略的加密、身份验证和访问控制。DDS 和 ROS 安全功能通过预定义配置文件及环境变量启用。
+ROS 2 安全服务由节点间通信所使用的底层 `数据分发服务（DDS）<https://www.omg.org/spec/DDS/>`__ 提供。DDS 供应商提供可与 ROS 配合使用的开源和商业 DDS 实现。为了符合 DDS 规范，所有供应商都必须包含 ``DDS 安全规范 <https://www.omg.org/spec/DDS-SECURITY/About-DDS-SECURITY/>`__ 中规定的安全插件。ROS 安全功能利用这些 DDS 安全插件提供基于策略的加密、身份验证和访问控制。DDS 和 ROS 安全功能通过预定义配置文件及环境变量启用。
 
 安全隔离区（Security Enclave）
 ------------------------------
@@ -28,7 +28,7 @@ ROS 2 安全服务由节点间通信所使用的底层 `数据分发服务（DDS
 
 在部署时，可以灵活地将安全隔离区映射到进程、用户或设备。对于优化通信和复杂系统而言，调整默认行为尤其重要。
 
-更多细节请参阅 ROS 2 安全隔离区 `设计文档 <https://design.ros2.org/articles/ros2_security_enclaves.html>`___。
+更多细节请参阅 ROS 2 安全隔离区 `设计文档 <https://design.ros2.org/articles/ros2_security_enclaves.html>`__。
 
 安全文件
 ----------
@@ -69,7 +69,7 @@ ROS 2 安全服务由节点间通信所使用的底层 `数据分发服务（DDS
 
 若要强制严格遵守安全设置，并阻止不符合要求的隔离区启动，请将该环境变量设置为 ``Enforce`` （区分大小写）。
 
-其他与安全相关的环境变量可在 `ROS 2 DDS-Security 集成设计文档 <https://design.ros2.org/articles/ros2_dds_security.html>`___ 中查看。这些变量通常用于帮助 ROS 管理隔离区并定位安全文件。
+其他与安全相关的环境变量可在 `ROS 2 DDS-Security 集成设计文档 <https://design.ros2.org/articles/ros2_dds_security.html>`__ 中查看。这些变量通常用于帮助 ROS 管理隔离区并定位安全文件。
 
 进一步学习
 ------------
