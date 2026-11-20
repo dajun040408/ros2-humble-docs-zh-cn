@@ -65,7 +65,7 @@ RQt 框架的优势
 * 提供标准化的 GUI 通用流程（启动/关闭钩子、恢复上次状态）。
 * 多个控件可以停靠在同一个窗口中。
 * 可以轻松地将现有 Qt 控件转换为 RQt 插件。
-* 可以在 `Robotics Stack Exchange <https://robotics.stackexchange.com/>`__（ROS 社区问答网站）上获取支持。
+* 可以在 `Robotics Stack Exchange <https://robotics.stackexchange.com/>`__ （ROS 社区问答网站）上获取支持。
 
 从系统架构角度看：
 
