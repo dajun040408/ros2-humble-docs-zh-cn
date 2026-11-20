@@ -70,7 +70,7 @@ ament_cmake 仓库
 
 该仓库位于 GitHub：`ament/ament_cmake <https://github.com/ament/ament_cmake>`__，包含许多 ament CMake 功能包和纯 CMake 功能包，提供创建 ament CMake 功能包所需的 CMake 基础设施。
 
-这里所说的 ament CMake 功能包，是指使用 CMake 构建的 ament 功能包。因此，该仓库中的功能包提供必要的 CMake 函数、宏和 CMake 模块，以便创建更多 ament CMake（或 ``ament_cmake```）功能包。这类功能包通过 ``package.xml``` 文件的 ``<export>``` 标签中的 ``<build_type>ament_cmake</build_type>``` 标记进行识别。
+这里所说的 ament CMake 功能包，是指使用 CMake 构建的 ament 功能包。因此，该仓库中的功能包提供必要的 CMake 函数、宏和 CMake 模块，以便创建更多 ament CMake（或 ``ament_cmake```）功能包。这类功能包通过 ``package.xml``` 文件的 ``<export>`` 标签中的 ``<build_type>ament_cmake</build_type>`` 标记进行识别。
 
 该仓库中的功能包具有高度模块化的特点，但其中有一个汇总入口功能包 ``ament_cmake```。任何功能包都可以依赖 ``ament_cmake```，以获得该仓库中所有功能包提供的聚合功能。
 
