@@ -1,5 +1,5 @@
 ROS 2 文档
-==========
+============
 
 .. toctree::
    :titlesonly:
@@ -25,14 +25,14 @@ ROS 2 文档
 
 自 2007 年 ROS 项目启动以来，机器人技术和 ROS 社区发生了许多变化。ROS 2 项目的目标是适应这些变化，在继承 ROS 1 优点的同时改进其不足之处。
 
-**你是否正在查找特定 ROS 功能包（例如 MoveIt、image_proc 或 octomap）的文档？** 请访问 `ROS Index <https://index.ros.org/?search_packages=true#{DISTRO}>``__ ，或查看 ``按功能包分类的文档索引 <https://docs.ros.org/en/{DISTRO}/p/>`___。
+**你是否正在查找特定 ROS 功能包（例如 MoveIt、image_proc 或 octomap）的文档？** 请访问 `ROS Index <https://index.ros.org/?search_packages=true#{DISTRO}>`__ ，或查看 ``按功能包分类的文档索引 <https://docs.ros.org/en/{DISTRO}/p/>`___。
 
 本站包含 ROS 2 文档。如果你需要查阅 ROS 1 文档，请访问 `ROS Wiki <https://wiki.ros.org>`___。
 
 如果你在工作中使用 ROS 2，请参阅 :doc:`ROS 2 引用说明 <Citations>`，了解如何引用 ROS 2。
 
 开始使用
---------
+----------
 
 * :doc:`安装指南 <Installation>`
 
@@ -56,7 +56,7 @@ ROS 2 文档
   - 获取问题解答或发起技术讨论。
 
 ROS 2 项目
-----------
+------------
 
 如果你关注 ROS 2 项目的发展：
 
@@ -71,7 +71,7 @@ ROS 2 项目
 * :doc:`采用 ROS 的组织与项目 <The-ROS2-Project/Adopters>`：了解正在使用 ROS 的组织和项目。
 
 ROS 社区资源
-------------
+--------------
 
 * `ROS 官方 Zulip 讨论与支持频道 <https://openrobotics.zulipchat.com/>`___ （ROS 1、ROS 2）
 * `Robotics Stack Exchange <https://robotics.stackexchange.com/>`___ ：社区问答网站。
@@ -81,7 +81,7 @@ ROS 社区资源
 * `ROS 基础设施项目页面 <https://infrastructure.openrobotics.org/>`___ ：了解 ROS Build Farm、Bloom 和 Colcon 等基础设施与工具。
 
 ROS 项目通用资源
-----------------
+------------------
 
 * `机器人技术增强提案（REP）<https://reps.openrobotics.org/>`___ ：提出新设计和约定。
 * `ROS Robots <https://robots.ros.org/>`___ ：展示社区机器人项目。
@@ -89,7 +89,7 @@ ROS 项目通用资源
 * `ROS.org <https://www.ros.org/>`___ ：ROS 项目入口网站。
 
 活动
-----
+------
 
 * `ROS 官方 Vimeo 频道 <https://vimeo.com/osrfoundation>`___ ：ROSCon 演讲、社区会议及项目演示视频。
 * `ROSCon 网站 <https://roscon.ros.org/>`___ ：ROS 年度开发者大会及地区性活动信息。
@@ -97,15 +97,15 @@ ROS 项目通用资源
 * `OSRF 社区活动日历 <https://calendar.google.com/calendar/embed?src=c_3fc5c4d6ece9d80d49f136c1dcd54d7f44e1acefdbe87228c92ff268e85e2ea0%40group.calendar.google.com&ctz=America%2FLos_Angeles>`___。
 
 其他资源
---------
+----------
 
 * `购买 ROS 官方周边产品 <https://spring.ros.org/>`___。
-* ROS 社交媒体：`@OpenRoboticsOrg <https://twitter.com/OpenRoboticsOrg>``__、``@ROSOrg <https://twitter.com/ROSOrg>``__ 及 ``Open Robotics LinkedIn <https://www.linkedin.com/company/open-source-robotics-foundation>`___。
+* ROS 社交媒体：`@OpenRoboticsOrg <https://twitter.com/OpenRoboticsOrg>`__、``@ROSOrg <https://twitter.com/ROSOrg>`__ 及 ``Open Robotics LinkedIn <https://www.linkedin.com/company/open-source-robotics-foundation>`___。
 * `Open Source Robotics Foundation 网站 <https://www.openrobotics.org/>`___。
 
 已弃用资源
-----------
+------------
 
 * `ROS Answers <https://answers.ros.org/questions/>`___ ：该问答网站于 2023 年 8 月停止活跃，目前仅提供只读访问。
 * `ROS 2 Docs <https://docs.ros2.org>`___ ：提供截至 Galactic（含 Galactic）发行版的 API 文档。
-* `ROS 2 Design <http://design.ros2.org/>``__ ：记录 ROS 2 开发早期的设计决策。新的设计提案应通过 ``REP <https://reps.openrobotics.org/>`___ 提交。
+* `ROS 2 Design <http://design.ros2.org/>`__ ：记录 ROS 2 开发早期的设计决策。新的设计提案应通过 ``REP <https://reps.openrobotics.org/>`___ 提交。
