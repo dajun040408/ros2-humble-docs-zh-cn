@@ -36,7 +36,8 @@ def main() -> int:
         relative = item.relative_to(source_overlay)
         target = upstream_source / relative
         target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(item, target)
+        if item.resolve() != target.resolve():
+            shutil.copy2(item, target)
         copied += 1
 
     conf = conf_path.read_text(encoding="utf-8")
