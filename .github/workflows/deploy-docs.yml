@@ -1,6 +1,8 @@
 name: Build and deploy ROS 2 Humble Chinese docs
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
