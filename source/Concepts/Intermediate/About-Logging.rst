@@ -170,11 +170,11 @@ rclpy
 
   .. group-tab:: C++
 
-    * 查看 `rclcpp 日志演示 <https://github.com/ros2/demos/tree/{REPOS_FILE_BRANCH}/logging_demo>`_，了解一些简单示例。
+    * 查看 `rclcpp 日志演示 <https://github.com/ros2/demos/tree/{REPOS_FILE_BRANCH}/logging_demo>`__，了解一些简单示例。
     * 查看 :doc:`日志演示教程 <../../Tutorials/Demos/Logging-and-logger-configuration>`，了解具体用法。
-    * 查看 `rclcpp 文档 <https://docs.ros2.org/latest/api/rclcpp/logging_8hpp.html>`__ ，了解完整功能列表。
+    * 查看 `rclcpp 文档 <https://docs.ros2.org/latest/api/rclcpp/logging_8hpp.html>`___ ，了解完整功能列表。
 
   .. group-tab:: Python
 
-    * 查看 `rclpy 示例 <https://github.com/ros2/examples/blob/{REPOS_FILE_BRANCH}/rclpy/services/minimal_client/examples_rclpy_minimal_client/client.py>`__ ，了解如何使用节点的 Logger。
+    * 查看 `rclpy 示例 <https://github.com/ros2/examples/blob/{REPOS_FILE_BRANCH}/rclpy/services/minimal_client/examples_rclpy_minimal_client/client.py>`___ ，了解如何使用节点的 Logger。
     * 查看 `rclpy 测试 <https://github.com/ros2/rclpy/blob/{REPOS_FILE_BRANCH}/rclpy/test/test_logging.py>``__ ，了解关键字参数（例如 ``skip_first``、``once`）的使用方法。
