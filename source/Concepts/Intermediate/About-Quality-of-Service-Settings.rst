@@ -36,7 +36,7 @@ QoS 策略
 
 * 深度（Depth）
 
-  * *队列大小（Queue size）*：只有在历史记录策略设置为 `keep last` 时才生效。
+  * *队列大小（Queue size）*：只有在历史记录策略设置为 ``keep last`` 时才生效。
 
 * 可靠性（Reliability）
 
@@ -74,7 +74,7 @@ QoS 策略
 
 ROS 2 中的“历史记录（history）”和“深度（depth）”策略组合起来，提供了与 ROS 1 队列大小（queue size）类似的功能。
 
-ROS 2 的“可靠性（reliability）”策略与 ROS 1 中的 UDPROS（仅在 `roscpp` 中支持，对应尽力而为）或 TCPROS（ROS 1 默认方式，对应可靠传输）类似。不过需要注意，即使 ROS 2 选择可靠策略，底层仍然使用 UDP 实现，因此在适当情况下可以支持多播。
+ROS 2 的“可靠性（reliability）”策略与 ROS 1 中的 UDPROS（仅在 ``roscpp`` 中支持，对应尽力而为）或 TCPROS（ROS 1 默认方式，对应可靠传输）类似。不过需要注意，即使 ROS 2 选择可靠策略，底层仍然使用 UDP 实现，因此在适当情况下可以支持多播。
 
 ROS 2 的“持久性（durability）”策略中的“transient local”，结合任意深度设置，可以提供类似“锁存（latching）”发布者的功能。
 
@@ -89,7 +89,7 @@ QoS 配置使开发者能够专注于应用本身，而不必逐一考虑所有�
 
 * 发布者和订阅者的默认 QoS 设置
 
-  为了让从 ROS 1 迁移到 ROS 2 更加容易，默认情况下希望采用相似的网络行为。因此，ROS 2 中发布者和订阅者默认使用以下设置：历史记录为 `keep last`，队列大小为 10；可靠性为 `reliable`；持久性为 `volatile`；活跃性为 `system default`。截止时间、生命周期和租约时长也都设置为 `default`。
+  为了让从 ROS 1 迁移到 ROS 2 更加容易，默认情况下希望采用相似的网络行为。因此，ROS 2 中发布者和订阅者默认使用以下设置：历史记录为 ``keep last``，队列大小为 10；可靠性为 ``reliable``；持久性为 ``volatile``；活跃性为 ``system default``。截止时间、生命周期和租约时长也都设置为 ``default``。
 
 * 服务（Services）
 
@@ -171,7 +171,7 @@ QoS 配置兼容性采用“请求与提供（Request vs Offered）”模型判�
      - 是
      - 接收新消息和历史消息
 
-如果希望实现类似“锁存”的话题，使后加入的订阅者也能看到之前发布的消息，则发布者和订阅者都必须使用 `Transient Local`。
+如果希望实现类似“锁存”的话题，使后加入的订阅者也能看到之前发布的消息，则发布者和订阅者都必须使用 ``Transient Local``。
 
 *截止时间 QoS 策略的兼容性：*
 
