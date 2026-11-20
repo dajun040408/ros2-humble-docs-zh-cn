@@ -31,12 +31,12 @@ ROS 2 {DISTRO_TITLE_FULL} 提供以下安装方式：
 
 * Ubuntu Linux（amd64 / aarch64）—— Jammy Jellyfish（22.04）
 
-  * :doc:`deb 软件包 <Installation/Ubuntu-Install-Debs>`（推荐）
+  * :doc:`deb 软件包 <Installation/Ubuntu-Install-Debs>` （推荐）
   * :doc:`二进制归档包 <Installation/Alternatives/Ubuntu-Install-Binary>`
 
 * Red Hat Enterprise Linux 8（amd64）
 
-  * :doc:`RPM 软件包 <Installation/RHEL-Install-RPMs>`（推荐）
+  * :doc:`RPM 软件包 <Installation/RHEL-Install-RPMs>` （推荐）
   * :doc:`二进制归档包 <Installation/Alternatives/RHEL-Install-Binary>`
 
 * Windows 10（amd64）
@@ -60,7 +60,7 @@ ROS 2 {DISTRO_TITLE_FULL} 提供以下安装方式：
 
 无论通过二进制软件包安装，还是从源码构建，最终都可以得到功能完整、可正常使用的 ROS 2 环境。两种方式的区别主要取决于你计划如何使用 ROS 2。
 
-**二进制软件包**面向一般用户，提供已经构建好的 ROS 2 安装内容。对于希望立即开始使用 ROS 2、暂时不需要修改底层实现的用户，这是很合适的选择。
+**二进制软件包** 面向一般用户，提供已经构建好的 ROS 2 安装内容。对于希望立即开始使用 ROS 2、暂时不需要修改底层实现的用户，这是很合适的选择。
 
 Linux 用户有两种二进制安装方式：
 
@@ -71,7 +71,7 @@ Linux 用户有两种二进制安装方式：
 
 Windows 用户使用二进制方式安装时，只能选择二进制归档包（deb 软件包仅适用于 Ubuntu/Debian）。
 
-**从源码构建**面向希望修改 ROS 2 基础组件，或明确排除部分组件的开发者。对于不提供二进制软件包的平台，也建议采用源码构建。此外，从源码构建还可以选择安装 ROS 2 的最新版本。
+**从源码构建** 面向希望修改 ROS 2 基础组件，或明确排除部分组件的开发者。对于不提供二进制软件包的平台，也建议采用源码构建。此外，从源码构建还可以选择安装 ROS 2 的最新版本。
 
 直接参与 ROS 2 核心开发？
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
