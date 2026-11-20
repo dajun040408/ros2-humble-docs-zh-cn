@@ -77,6 +77,7 @@ def main() -> int:
         raise RuntimeError("Failed to set Humble build macros")
 
     conf += "\nhtml_js_files = ['zh-search.js']\nhtml_css_files = ['zh-search.css']\nhtml_extra_path = ['search-zh.html']\n"
+    conf += "\nhtml_js_files = ['zh-search.js']\nhtml_css_files = ['zh-search.css']\nhtml_extra_path = ['search-zh.html']\n"
     conf_path.write_text(conf, encoding="utf-8")
     print(f"Overlay files copied: {copied}")
     print("Sphinx configuration patched for zh_CN and ROS 2 Humble.")
