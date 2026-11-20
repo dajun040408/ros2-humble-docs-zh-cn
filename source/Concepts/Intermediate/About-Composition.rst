@@ -11,7 +11,7 @@
 ROS 1：节点与 Nodelet
 ----------------------
 
-在 ROS 1 中，你可以将代码编写为 `ROS 节点 <https://wiki.ros.org/Nodes>`__ 或 ``ROS nodelet <https://wiki.ros.org/nodelet>`__。
+在 ROS 1 中，你可以将代码编写为 `ROS 节点 <https://wiki.ros.org/Nodes>`__ 或 `ROS nodelet <https://wiki.ros.org/nodelet>`__。
 
 ROS 1 节点会被编译为可执行文件。ROS 1 nodelet 则会被编译为共享库，然后在运行时由一个容器进程加载。
 
@@ -54,7 +54,7 @@ ROS 1 中使用不同 API 是其最大的缺点之一，而 ROS 2 避免了这�
 
   * 为每个组件使用独立执行器的容器。执行器可以是 ``SingleThreadedExecutor``（默认）或 ``MultiThreadedExecutor``。
 
-有关执行器类型的更多信息，请参阅 :ref:`执行器类型 <TypesOfExecutors>``。有关每种组件容器的选项，请参阅组件组合教程中的 :ref:`ComponentContainerTypes`。
+有关执行器类型的更多信息，请参阅 :ref:`执行器类型 <TypesOfExecutors>`。有关每种组件容器的选项，请参阅组件组合教程中的 :ref:`ComponentContainerTypes`。
 
 编写组件
 ----------
@@ -110,7 +110,7 @@ ROS 2 提供两个用于注册组件的 CMake 宏，它们的用途不同。
 
 `composition <https://github.com/ros2/demos/tree/{REPOS_FILE_BRANCH}/composition>`__ 软件包包含几种不同的组件使用方式。最常见的三种方式如下：
 
-#. 启动一个 `通用容器进程 <https://github.com/ros2/rclcpp/blob/{REPOS_FILE_BRANCH}/rclcpp_components/src/component_container.cpp>`__ ，然后调用容器提供的 ROS 服务 ``load_node <https://github.com/ros2/rcl_interfaces/blob/{REPOS_FILE_BRANCH}/composition_interfaces/srv/LoadNode.srv>`__。该 ROS 服务会根据传入的功能包名称和库名称加载指定组件，并在正在运行的进程中启动它。除了通过程序调用 ROS 服务外，也可以使用 ``命令行工具 <https://github.com/ros2/ros2cli/tree/{REPOS_FILE_BRANCH}/ros2component>`__ ，通过命令行参数调用该服务。
+#. 启动一个 `通用容器进程 <https://github.com/ros2/rclcpp/blob/{REPOS_FILE_BRANCH}/rclcpp_components/src/component_container.cpp>`__ ，然后调用容器提供的 ROS 服务 `load_node <https://github.com/ros2/rcl_interfaces/blob/{REPOS_FILE_BRANCH}/composition_interfaces/srv/LoadNode.srv>`__。该 ROS 服务会根据传入的功能包名称和库名称加载指定组件，并在正在运行的进程中启动它。除了通过程序调用 ROS 服务外，也可以使用 `命令行工具 <https://github.com/ros2/ros2cli/tree/{REPOS_FILE_BRANCH}/ros2component>`__ ，通过命令行参数调用该服务。
 #. 创建一个 `自定义可执行文件 <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/manual_composition.cpp>`__ ，其中包含多个在编译时就已确定的节点。与第一种方式不同，这种方式要求每个组件都提供头文件（第一种方式并非严格要求头文件）。
 #. 创建启动文件，并使用 ``ros2 launch`` 启动一个容器进程，同时加载多个组件。
 
