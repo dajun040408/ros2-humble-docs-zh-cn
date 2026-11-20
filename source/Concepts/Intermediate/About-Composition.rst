@@ -11,14 +11,14 @@
 ROS 1：节点与 Nodelet
 ---------------------
 
-在 ROS 1 中，你可以将代码编写为 `ROS 节点 <https://wiki.ros.org/Nodes>``__ 或 ``ROS nodelet <https://wiki.ros.org/nodelet>`__。
+在 ROS 1 中，你可以将代码编写为 `ROS 节点 <https://wiki.ros.org/Nodes>``__ 或 ``ROS nodelet <https://wiki.ros.org/nodelet>`___。
 
 ROS 1 节点会被编译为可执行文件。ROS 1 nodelet 则会被编译为共享库，然后在运行时由一个容器进程加载。
 
 ROS 2：统一 API
 ---------------
 
-在 ROS 2 中，推荐的代码编写方式与 nodelet 类似，我们将其称为 ``Component``（组件）。这种方式便于向现有代码添加生命周期等通用概念（参见 `节点生命周期设计 <https://design.ros2.org/articles/node_lifecycle.html>`__）。
+在 ROS 2 中，推荐的代码编写方式与 nodelet 类似，我们将其称为 ``Component``（组件）。这种方式便于向现有代码添加生命周期等通用概念（参见 `节点生命周期设计 <https://design.ros2.org/articles/node_lifecycle.html>`___）。
 
 ROS 1 中使用不同 API 是其最大的缺点之一，而 ROS 2 避免了这一问题，因为两种运行方式都使用相同的 API。
 
@@ -42,15 +42,15 @@ ROS 1 中使用不同 API 是其最大的缺点之一，而 ROS 2 避免了这�
 
 目前提供以下通用组件容器类型：
 
-* `component_container <https://github.com/ros2/rclcpp/blob/{REPOS_FILE_BRANCH}/rclcpp_components/src/component_container.cpp>`__
+* `component_container <https://github.com/ros2/rclcpp/blob/{REPOS_FILE_BRANCH}/rclcpp_components/src/component_container.cpp>`___
 
   * 最通用的组件容器，使用单个 ``SingleThreadedExecutor`` 执行所有组件。
 
-* `component_container_mt <https://github.com/ros2/rclcpp/blob/{REPOS_FILE_BRANCH}/rclcpp_components/src/component_container_mt.cpp>`__
+* `component_container_mt <https://github.com/ros2/rclcpp/blob/{REPOS_FILE_BRANCH}/rclcpp_components/src/component_container_mt.cpp>`___
 
   * 使用单个 ``MultiThreadedExecutor`` 执行组件的容器。
 
-* `component_container_isolated <https://github.com/ros2/rclcpp/blob/{REPOS_FILE_BRANCH}/rclcpp_components/src/component_container_isolated.cpp>`__
+* `component_container_isolated <https://github.com/ros2/rclcpp/blob/{REPOS_FILE_BRANCH}/rclcpp_components/src/component_container_isolated.cpp>`___
 
   * 为每个组件使用独立执行器的容器。执行器可以是 ``SingleThreadedExecutor``（默认）或 ``MultiThreadedExecutor``。
 
@@ -59,7 +59,7 @@ ROS 1 中使用不同 API 是其最大的缺点之一，而 ROS 2 避免了这�
 编写组件
 --------
 
-组件只会被构建为共享库，因此它没有 ``main`` 函数（参见 `Talker 源代码 <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/talker_component.cpp>`__）。
+组件只会被构建为共享库，因此它没有 ``main`` 函数（参见 `Talker 源代码 <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/talker_component.cpp>`___）。
 
 组件通常是 ``rclcpp::Node`` 的子类。由于组件本身不控制线程，因此不应在构造函数中执行耗时较长或阻塞的任务。相反，可以使用定时器定期触发处理逻辑。此外，组件还可以创建发布者、订阅者、服务端和客户端。
 
@@ -108,10 +108,10 @@ ROS 2 提供两个用于注册组件的 CMake 宏，它们的用途不同。
 使用组件
 --------
 
-`composition <https://github.com/ros2/demos/tree/{REPOS_FILE_BRANCH}/composition>`__ 软件包包含几种不同的组件使用方式。最常见的三种方式如下：
+`composition <https://github.com/ros2/demos/tree/{REPOS_FILE_BRANCH}/composition>`___ 软件包包含几种不同的组件使用方式。最常见的三种方式如下：
 
-#. 启动一个 `通用容器进程 <https://github.com/ros2/rclcpp/blob/{REPOS_FILE_BRANCH}/rclcpp_components/src/component_container.cpp>``__ ，然后调用容器提供的 ROS 服务 ``load_node <https://github.com/ros2/rcl_interfaces/blob/{REPOS_FILE_BRANCH}/composition_interfaces/srv/LoadNode.srv>``__。该 ROS 服务会根据传入的功能包名称和库名称加载指定组件，并在正在运行的进程中启动它。除了通过程序调用 ROS 服务外，也可以使用 ``命令行工具 <https://github.com/ros2/ros2cli/tree/{REPOS_FILE_BRANCH}/ros2component>`__ ，通过命令行参数调用该服务。
-#. 创建一个 `自定义可执行文件 <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/manual_composition.cpp>`__ ，其中包含多个在编译时就已确定的节点。与第一种方式不同，这种方式要求每个组件都提供头文件（第一种方式并非严格要求头文件）。
+#. 启动一个 `通用容器进程 <https://github.com/ros2/rclcpp/blob/{REPOS_FILE_BRANCH}/rclcpp_components/src/component_container.cpp>``__ ，然后调用容器提供的 ROS 服务 ``load_node <https://github.com/ros2/rcl_interfaces/blob/{REPOS_FILE_BRANCH}/composition_interfaces/srv/LoadNode.srv>``__。该 ROS 服务会根据传入的功能包名称和库名称加载指定组件，并在正在运行的进程中启动它。除了通过程序调用 ROS 服务外，也可以使用 ``命令行工具 <https://github.com/ros2/ros2cli/tree/{REPOS_FILE_BRANCH}/ros2component>`___ ，通过命令行参数调用该服务。
+#. 创建一个 `自定义可执行文件 <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/manual_composition.cpp>`___ ，其中包含多个在编译时就已确定的节点。与第一种方式不同，这种方式要求每个组件都提供头文件（第一种方式并非严格要求头文件）。
 #. 创建启动文件，并使用 ``ros2 launch`` 启动一个容器进程，同时加载多个组件。
 
 实际应用
