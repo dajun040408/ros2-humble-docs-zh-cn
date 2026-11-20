@@ -86,7 +86,7 @@ CMake 注册宏
 ROS 2 提供两个用于注册组件的 CMake 宏，它们的用途不同。
 
 ``rclcpp_components_register_node``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 该宏注册一个组件，并生成一个独立可执行文件。如果你既希望组件能够被组合加载，也希望节点可以作为独立进程运行，请使用此宏。
 
 .. code-block:: cmake
@@ -97,7 +97,7 @@ ROS 2 提供两个用于注册组件的 CMake 宏，它们的用途不同。
      EXECUTABLE talker)
 
 ``rclcpp_components_register_nodes``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 该宏注册一个或多个组件，供运行时进行组件组合，**但不会创建独立可执行文件**。如果你希望构建纯组件库，并在运行时将其加载到组件容器中，请使用此宏。
 
 .. code-block:: cmake
@@ -110,8 +110,8 @@ ROS 2 提供两个用于注册组件的 CMake 宏，它们的用途不同。
 
 `composition <https://github.com/ros2/demos/tree/{REPOS_FILE_BRANCH}/composition>`__ 软件包包含几种不同的组件使用方式。最常见的三种方式如下：
 
-#. 启动一个 `通用容器进程 <https://github.com/ros2/rclcpp/blob/{REPOS_FILE_BRANCH}/rclcpp_components/src/component_container.cpp>``__，然后调用容器提供的 ROS 服务 ``load_node <https://github.com/ros2/rcl_interfaces/blob/{REPOS_FILE_BRANCH}/composition_interfaces/srv/LoadNode.srv>``__。该 ROS 服务会根据传入的功能包名称和库名称加载指定组件，并在正在运行的进程中启动它。除了通过程序调用 ROS 服务外，也可以使用 ``命令行工具 <https://github.com/ros2/ros2cli/tree/{REPOS_FILE_BRANCH}/ros2component>`__，通过命令行参数调用该服务。
-#. 创建一个 `自定义可执行文件 <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/manual_composition.cpp>`__，其中包含多个在编译时就已确定的节点。与第一种方式不同，这种方式要求每个组件都提供头文件（第一种方式并非严格要求头文件）。
+#. 启动一个 `通用容器进程 <https://github.com/ros2/rclcpp/blob/{REPOS_FILE_BRANCH}/rclcpp_components/src/component_container.cpp>``__ ，然后调用容器提供的 ROS 服务 ``load_node <https://github.com/ros2/rcl_interfaces/blob/{REPOS_FILE_BRANCH}/composition_interfaces/srv/LoadNode.srv>``__。该 ROS 服务会根据传入的功能包名称和库名称加载指定组件，并在正在运行的进程中启动它。除了通过程序调用 ROS 服务外，也可以使用 ``命令行工具 <https://github.com/ros2/ros2cli/tree/{REPOS_FILE_BRANCH}/ros2component>`__ ，通过命令行参数调用该服务。
+#. 创建一个 `自定义可执行文件 <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/manual_composition.cpp>`__ ，其中包含多个在编译时就已确定的节点。与第一种方式不同，这种方式要求每个组件都提供头文件（第一种方式并非严格要求头文件）。
 #. 创建启动文件，并使用 ``ros2 launch`` 启动一个容器进程，同时加载多个组件。
 
 实际应用
