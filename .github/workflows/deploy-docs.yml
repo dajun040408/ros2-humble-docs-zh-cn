@@ -54,8 +54,6 @@ jobs:
       - name: Build Chinese search index
         run: python scripts/build_search_index.py --html-dir upstream/build/html
 
-      - name: Build Chinese search index
-        run: python scripts/build_search_index.py --html-dir upstream/build/html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
