@@ -46,7 +46,7 @@ tf2 可以在分布式系统中运行。这意味着机器人各坐标系的全�
 
    _{B}T^{data}_{A} = (_{B}T^{frame}_{A})^{-1}
 
-TF 库会根据你沿坐标变换树遍历的方向，自动为这些元素执行求逆操作。在本文档后续部分，我们统一使用 :math:`T^{data}`` 表示变换，并省略上标中的 ``data``。
+TF 库会根据你沿坐标变换树遍历的方向，自动为这些元素执行求逆操作。在本文档后续部分，我们统一使用 :math:`T^{data}` 表示变换，并省略上标中的 ``data``。
 
 位置
 ^^^^^^
@@ -65,7 +65,7 @@ TF 库会根据你沿坐标变换树遍历的方向，自动为这些元素执�
 
 这正是 ``lookupTransform`` 提供的功能，其中 ``A`` 是*源坐标系* ``frame_id``，``B`` 是*目标坐标系* ``frame_id``。
 
-如果条件允许，建议优先使用 `transform<T>(target_frame, ...)`` 方法，因为该方法会从数据类型中读取*源坐标系* ``frame_id``，并将*目标坐标系* ``frame_id`` 写入转换后的数据类型，具体数学运算由内部自动完成。
+如果条件允许，建议优先使用 ``transform<T>(target_frame, ...)`` 方法，因为该方法会从数据类型中读取*源坐标系* ``frame_id``，并将*目标坐标系* ``frame_id`` 写入转换后的数据类型，具体数学运算由内部自动完成。
 
 如果 ``P`` 是一个 ``Stamped`` 数据类型，那么 ``A`` 表示它的 ``frame_id``。
 
@@ -113,7 +113,7 @@ TF 库会根据你沿坐标变换树遍历的方向，自动为这些元素执�
 教程
 ------
 
-我们提供了一组 :doc:`tf2 教程 <../../Tutorials/Intermediate/Tf2/Tf2-Main>`，通过循序渐进的方式介绍 tf2 的使用方法。你可以从 :doc:`tf2 简介 <../../Tutorials/Intermediate/Tf2/Introduction-To-Tf2>`` 开始学习。完整的 tf2 及相关教程列表请参阅 :doc:`教程页面 <../../Tutorials/Intermediate/Tf2/Tf2-Main>`。
+我们提供了一组 :doc:`tf2 教程 <../../Tutorials/Intermediate/Tf2/Tf2-Main>`，通过循序渐进的方式介绍 tf2 的使用方法。你可以从 :doc:`tf2 简介 <../../Tutorials/Intermediate/Tf2/Introduction-To-Tf2>` 开始学习。完整的 tf2 及相关教程列表请参阅 :doc:`教程页面 <../../Tutorials/Intermediate/Tf2/Tf2-Main>`。
 
 用户使用 tf2 主要有两项任务：监听坐标变换和广播坐标变换。
 
