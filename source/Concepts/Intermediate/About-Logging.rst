@@ -57,7 +57,7 @@ ROS 2 日志基础设施的最终用户应使用以下 API，按客户端库分�
     * ``RCLCPP_{DEBUG,INFO,WARN,ERROR,FATAL}_STREAM_THROTTLE``：按照给定的整数毫秒间隔限制 C++ stream 风格消息的输出频率。
     * ``RCLCPP_{DEBUG,INFO,WARN,ERROR,FATAL}_STREAM_SKIPFIRST_THROTTLE``：按照给定的整数毫秒间隔限制输出频率，并跳过第一次输出。
 
-    上述每个 API 都将 ``rclcpp::Logger`` 对象作为第一个参数。可以通过节点 API 调用 `node->get_logger()`` 获取（推荐方式），也可以单独构造 ``rclcpp::Logger` 对象。
+    上述每个 API 都将 ``rclcpp::Logger`` 对象作为第一个参数。可以通过节点 API 调用 `node->get_logger()`` 获取（推荐方式），也可以单独构造 ``rclcpp::Logger`` 对象。
 
     * ``rcutils_logging_set_logger_level``：将指定名称 Logger 的日志级别设置为给定的严重级别。
     * ``rcutils_logging_get_logger_effective_level``：根据 Logger 名称返回其实际生效的日志级别（该级别可能尚未设置）。
@@ -172,9 +172,9 @@ rclpy
 
     * 查看 `rclcpp 日志演示 <https://github.com/ros2/demos/tree/{REPOS_FILE_BRANCH}/logging_demo>`__，了解一些简单示例。
     * 查看 :doc:`日志演示教程 <../../Tutorials/Demos/Logging-and-logger-configuration>`，了解具体用法。
-    * 查看 `rclcpp 文档 <https://docs.ros2.org/latest/api/rclcpp/logging_8hpp.html>`___ ，了解完整功能列表。
+    * 查看 `rclcpp 文档 <https://docs.ros2.org/latest/api/rclcpp/logging_8hpp.html>`__ ，了解完整功能列表。
 
   .. group-tab:: Python
 
-    * 查看 `rclpy 示例 <https://github.com/ros2/examples/blob/{REPOS_FILE_BRANCH}/rclpy/services/minimal_client/examples_rclpy_minimal_client/client.py>`___ ，了解如何使用节点的 Logger。
-    * 查看 `rclpy 测试 <https://github.com/ros2/rclpy/blob/{REPOS_FILE_BRANCH}/rclpy/test/test_logging.py>`__ ，了解关键字参数（例如 ``skip_first``、``once`）的使用方法。
+    * 查看 `rclpy 示例 <https://github.com/ros2/examples/blob/{REPOS_FILE_BRANCH}/rclpy/services/minimal_client/examples_rclpy_minimal_client/client.py>`__ ，了解如何使用节点的 Logger。
+    * 查看 `rclpy 测试 <https://github.com/ros2/rclpy/blob/{REPOS_FILE_BRANCH}/rclpy/test/test_logging.py>`__ ，了解关键字参数（例如 ``skip_first``、``once``）的使用方法。
