@@ -13,41 +13,30 @@
 
 ## 当前已提交翻译页面
 
-| 文件 | 状态 |
+| 模块 | 已翻译初稿 |
 |---|---|
-| source/index.rst | 已翻译初稿 |
-| source/About-ROS.rst | 已翻译初稿 |
-| source/Installation.rst | 已翻译初稿 |
-| source/Tutorials.rst | 已翻译初稿 |
-| source/First-Steps.rst | 已翻译初稿 |
-| source/How-To-Guides.rst | 已翻译初稿 |
-| source/Concepts.rst | 已翻译初稿 |
-| source/Concepts/Basic.rst | 已翻译初稿 |
-| source/Concepts/Basic/About-Nodes.rst | 已翻译初稿 |
-| source/Concepts/Basic/About-Topics.rst | 已翻译初稿 |
-| source/Concepts/Basic/About-Services.rst | 已翻译初稿 |
-| source/Concepts/Basic/About-Actions.rst | 已翻译初稿 |
-| source/Concepts/Basic/About-Parameters.rst | 已翻译初稿 |
-| source/Concepts/Basic/About-Discovery.rst | 已翻译初稿 |
-| source/Concepts/Basic/About-Launch.rst | 已翻译初稿 |
-| source/Concepts/Basic/About-Client-Libraries.rst | 已翻译初稿 |
-| source/Concepts/Intermediate.rst | 已翻译初稿 |
-| source/Glossary.rst | 已翻译初稿 |
+| 首页与项目入口 | index、About ROS、Installation、Releases、Contact、The ROS 2 Project、Package Docs、Related Projects、Citations |
+| 入门与教程导航 | First Steps、Tutorials、Beginner CLI Tools、Beginner Client Libraries、Intermediate、Advanced、Demos、Miscellaneous |
+| 核心概念 | Concepts、Basic、Nodes、Topics、Services、Actions、Parameters、Discovery、Launch、Interfaces、Command Line Tools、Client Libraries |
+| 进阶概念 | Intermediate、Composition、Executors、Logging、QoS、TF2 |
+| 其他 | How-To Guides、Glossary |
 
-当前已提交 18 个翻译初稿，约占 298 个构建候选源文件的 6.0%。这不是全站完成率；这些页面仍需 Sphinx 构建、引用和技术术语复核。
+当前已提交 **37 个 .rst 翻译初稿**，约占 298 个构建候选源文件的 **12.4%**。这不是全站完成率；这些页面仍需 Sphinx 构建、引用和技术术语复核。
 
 ## 构建与部署
 
 - 已加入上游源码 overlay 构建脚本：scripts/prepare_build.py。
 - 已加入 GitHub Actions 工作流：.github/workflows/deploy-docs.yml。
 - 工作流会在构建时检出上游 Humble 源码，将本仓库的中文页面覆盖到对应路径，再构建并部署 GitHub Pages。
-- 首次构建曾因 Python 3.10 与上游锁定的 Sphinx 8.2.3 版本不兼容而失败；工作流已改用 Python 3.12，后续运行结果待核验。
-- 当前尚未获得成功的 Sphinx HTML 构建和 GitHub Pages 部署结果。
+- 首次构建曾因 Python 3.10 与上游锁定的 Sphinx 8.2.3 版本不兼容而失败；工作流已改用 Python 3.12。
+- 构建日志发现本地缺少 Graphviz，工作流已增加 graphviz 系统依赖安装步骤。
+- 首轮 Sphinx 检查还发现若干 reStructuredText 行内标记问题，已修正相关页面。
+- 目前尚未获得修正后的完整 Sphinx HTML 构建和 GitHub Pages 部署结果。
 
 ## 待完成工作
 
-- [ ] 翻译其余所有页面源文件（包括安装细节、教程、应用指南、概念、迁移、开发者指南、发行版等）。
-- [ ] 补齐所有一级/二级导航标题的中文化。
+- [ ] 翻译其余所有页面源文件（包括安装细节、教程正文、应用指南正文、迁移、开发者指南、发行版专题等）。
+- [ ] 补齐所有二级、三级导航标题的中文化。
 - [ ] 完成中文搜索分词与英文术语检索。
 - [ ] 完成页面内锚点、跨页引用、上一页/下一页和外部链接检查。
 - [ ] 完成 Sphinx 构建并处理全部警告。
