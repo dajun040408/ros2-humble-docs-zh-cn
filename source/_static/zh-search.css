@@ -1,0 +1,32 @@
+.zh-search-page {
+  margin: 0;
+  color: #263238;
+  background: #f5f7fa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+}
+.zh-search-main {
+  box-sizing: border-box;
+  width: min(900px, calc(100% - 32px));
+  margin: 48px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
+}
+.zh-search-main h1 { margin-top: 24px; }
+.zh-search-home { color: #2980b9; text-decoration: none; }
+#zh-search-form { display: flex; gap: 10px; margin: 24px 0; }
+#zh-search-query { flex: 1; min-width: 0; padding: 12px 14px; border: 1px solid #b8c2cc; border-radius: 4px; font-size: 16px; }
+#zh-search-form button { padding: 0 24px; border: 0; border-radius: 4px; color: #fff; background: #2980b9; font-size: 16px; cursor: pointer; }
+#zh-search-meta { color: #607d8b; }
+#zh-search-results { padding-left: 24px; }
+#zh-search-results li { margin: 0 0 22px; }
+#zh-search-results a { color: #1769aa; font-size: 18px; text-decoration: none; }
+#zh-search-results a:hover { text-decoration: underline; }
+.zh-search-snippet { margin-top: 6px; color: #455a64; line-height: 1.7; }
+.zh-search-empty { color: #607d8b; }
+@media (max-width: 600px) {
+  .zh-search-main { margin: 16px auto; padding: 20px; }
+  #zh-search-form { flex-direction: column; }
+  #zh-search-form button { min-height: 44px; }
+}
