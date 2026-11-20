@@ -13,7 +13,7 @@
 
 ROS 2 中的执行管理由执行器（Executor）负责。执行器使用底层操作系统的一个或多个线程，在收到消息或事件时调用订阅、定时器、服务端、动作服务端等实体的回调函数。
 
-显式的 Executor 类（在 rclcpp 的 `executor.hpp <https://github.com/ros2/rclcpp/blob/{REPOS_FILE_BRANCH}/rclcpp/include/rclcpp/executor.hpp>`_、rclpy 的 ``executors.py <https://github.com/ros2/rclpy/blob/{REPOS_FILE_BRANCH}/rclpy/rclpy/executors.py>`_，或 rclc 的 ``executor.h <https://github.com/ros2/rclc/blob/master/rclc/include/rclc/executor.h>`_ 中）相比 ROS 1 的 spin 机制提供了更精细的执行管理控制，尽管两者的基础 API 非常相似。
+显式的 Executor 类（在 rclcpp 的 `executor.hpp <https://github.com/ros2/rclcpp/blob/{REPOS_FILE_BRANCH}/rclcpp/include/rclcpp/executor.hpp>`_、rclpy 的 `executors.py <https://github.com/ros2/rclpy/blob/{REPOS_FILE_BRANCH}/rclpy/rclpy/executors.py>`_，或 rclc 的 `executor.h <https://github.com/ros2/rclc/blob/master/rclc/include/rclc/executor.h>`_ 中）相比 ROS 1 的 spin 机制提供了更精细的执行管理控制，尽管两者的基础 API 非常相似。
 
 下面主要介绍 C++ 客户端库 ``rclcpp``。
 
@@ -172,7 +172,7 @@ rclcpp 的三种执行器能够满足大多数应用的需求，但仍存在一�
 
 以下开发在一定程度上解决了这些问题：
 
-* `rclcpp WaitSet <https://github.com/ros2/rclcpp/blob/{REPOS_FILE_BRANCH}/rclcpp/include/rclcpp/wait_set.hpp>`_：rclcpp 的 ``WaitSet`` 类允许直接等待订阅、定时器、服务端、动作服务端等实体，而不必使用执行器。它可以用于实现确定性的、由用户定义的处理顺序，也可以将来自不同订阅的多条消息组合起来处理。``examples_rclcpp_wait_set 软件包 <https://github.com/ros2/examples/tree/{REPOS_FILE_BRANCH}/rclcpp/wait_set>`_ 提供了多个用户级等待集机制的示例。
+* `rclcpp WaitSet <https://github.com/ros2/rclcpp/blob/{REPOS_FILE_BRANCH}/rclcpp/include/rclcpp/wait_set.hpp>`_：rclcpp 的 ``WaitSet`` 类允许直接等待订阅、定时器、服务端、动作服务端等实体，而不必使用执行器。它可以用于实现确定性的、由用户定义的处理顺序，也可以将来自不同订阅的多条消息组合起来处理。`examples_rclcpp_wait_set 软件包 <https://github.com/ros2/examples/tree/{REPOS_FILE_BRANCH}/rclcpp/wait_set>`_ 提供了多个用户级等待集机制的示例。
 * `rclc Executor <https://github.com/ros2/rclc/blob/master/rclc/include/rclc/executor.h>`_：该执行器来自 C 客户端库 *rclc*，最初为 micro-ROS 开发。它允许用户精细控制回调执行顺序，并支持自定义触发条件来激活回调。此外，它还实现了逻辑执行时间（Logical Execution Time，LET）语义的相关思想。
 
 更多信息
