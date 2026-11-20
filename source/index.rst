@@ -100,7 +100,7 @@ ROS 项目通用资源
 ----------
 
 * `购买 ROS 官方周边产品 <https://spring.ros.org/>`__。
-* ROS 社交媒体：`@OpenRoboticsOrg <https://twitter.com/OpenRoboticsOrg>`__、``@ROSOrg <https://twitter.com/ROSOrg>`__ 及 ``Open Robotics LinkedIn <https://www.linkedin.com/company/open-source-robotics-foundation>`__。
+* ROS 社交媒体：`@OpenRoboticsOrg <https://twitter.com/OpenRoboticsOrg>`__、`@ROSOrg <https://twitter.com/ROSOrg>`__ 及 `Open Robotics LinkedIn <https://www.linkedin.com/company/open-source-robotics-foundation>`__。
 * `Open Source Robotics Foundation 网站 <https://www.openrobotics.org/>`__。
 
 已弃用资源
@@ -108,4 +108,4 @@ ROS 项目通用资源
 
 * `ROS Answers <https://answers.ros.org/questions/>`__ ：该问答网站于 2023 年 8 月停止活跃，目前仅提供只读访问。
 * `ROS 2 Docs <https://docs.ros2.org>`__ ：提供截至 Galactic（含 Galactic）发行版的 API 文档。
-* `ROS 2 Design <http://design.ros2.org/>`__ ：记录 ROS 2 开发早期的设计决策。新的设计提案应通过 ``REP <https://reps.openrobotics.org/>`__ 提交。
+* `ROS 2 Design <http://design.ros2.org/>`__ ：记录 ROS 2 开发早期的设计决策。新的设计提案应通过 `REP <https://reps.openrobotics.org/>`__ 提交。
