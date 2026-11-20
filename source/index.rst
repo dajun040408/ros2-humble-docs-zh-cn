@@ -73,7 +73,7 @@ ROS 2 项目
 ROS 社区资源
 ------------
 
-* `ROS 官方 Zulip 讨论与支持频道 <https://openrobotics.zulipchat.com/>`__（ROS 1、ROS 2）
+* `ROS 官方 Zulip 讨论与支持频道 <https://openrobotics.zulipchat.com/>`__ （ROS 1、ROS 2）
 * `Robotics Stack Exchange <https://robotics.stackexchange.com/>`__：社区问答网站。
 * `Open Robotics Discourse <https://discourse.openrobotics.org/>`__：ROS 社区讨论和公告论坛。
 * `ROS Index <https://index.ros.org/>`__：ROS 功能包索引，可查询发行版支持情况、代码仓库、API 文档、许可证及依赖关系。
