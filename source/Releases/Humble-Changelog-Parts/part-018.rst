@@ -51,7 +51,7 @@
 * 修复类型大小对齐问题（`#550 <https://github.com/ros2/rmw_fastrtps/issues/550>`__）
 * 将链接从 index.ros.org 更改为 docs.ros.org（`#539 <https://github.com/ros2/rmw_fastrtps/issues/539>`__）
 * 新增 rmw_publisher_wait_for_all_acked 支持（`#519 <https://github.com/ros2/rmw_fastrtps/issues/519>`__）
-* 实现 loaned message（`#523 <https://github.com/ros2/rmw_fastrtps/issues/523>`__）：为基础 TypeSupport 添加 is_plain_ 属性；新增基础 TypeSupport 方法；实现 rmw_borrow_loaned_message 和 rmw_return_loaned_message_from_publisher；为 plain 类型的 publisher 和 subscription 启用 loaned message；实现 loaned message 获取功能。
+* 实现 loaned message（`#523 <https://github.com/ros2/rmw_fastrtps/issues/523>`__）：为基础 TypeSupport 添加 ``is_plain_`` 属性；新增基础 TypeSupport 方法；实现 rmw_borrow_loaned_message 和 rmw_return_loaned_message_from_publisher；为 plain 类型的 publisher 和 subscription 启用 loaned message；实现 loaned message 获取功能。
 * 贡献者：Barry Xu、Chen Lihui、Chris Lalancette、Christophe Bedard、Ivan Santiago Paunovic、Miguel Company、Shane Loretz、WideAwakeTN、iRobot ROS、mauropasse
 
 
@@ -67,7 +67,7 @@
 * 正确重新计算有界序列的序列化大小（`#540 <https://github.com/ros2/rmw_fastrtps/issues/540>`__）
 * 修复类型大小对齐问题（`#550 <https://github.com/ros2/rmw_fastrtps/issues/550>`__）
 * 新增 rmw_publisher_wait_for_all_acked 支持（`#519 <https://github.com/ros2/rmw_fastrtps/issues/519>`__）
-* 实现 loaned message（`#523 <https://github.com/ros2/rmw_fastrtps/issues/523>`__）：为基础 TypeSupport 添加 is_plain_ 属性；新增基础 TypeSupport 方法；实现 rmw_borrow_loaned_message 和 rmw_return_loaned_message_from_publisher；为 plain 类型的 publisher 和 subscription 启用 loaned message；实现 loaned message 获取功能。
+* 实现 loaned message（`#523 <https://github.com/ros2/rmw_fastrtps/issues/523>`__）：为基础 TypeSupport 添加 ``is_plain_`` 属性；新增基础 TypeSupport 方法；实现 rmw_borrow_loaned_message 和 rmw_return_loaned_message_from_publisher；为 plain 类型的 publisher 和 subscription 启用 loaned message；实现 loaned message 获取功能。
 * 贡献者：Barry Xu、Chen Lihui、Ivan Santiago Paunovic、Miguel Company、Shane Loretz、iRobot ROS、mauropasse
 
 
@@ -94,7 +94,7 @@
 * 支持 SubscriptionOptions::ignore_local_publications（`#536 <https://github.com/ros2/rmw_fastrtps/issues/536>`__）
 * 将链接从 index.ros.org 更改为 docs.ros.org（`#539 <https://github.com/ros2/rmw_fastrtps/issues/539>`__）
 * 新增 rmw_publisher_wait_for_all_acked 支持（`#519 <https://github.com/ros2/rmw_fastrtps/issues/519>`__）
-* 实现 loaned message（`#523 <https://github.com/ros2/rmw_fastrtps/issues/523>`__）：为基础 TypeSupport 添加 is_plain_ 属性；新增基础 TypeSupport 方法；实现 rmw_borrow_loaned_message 和 rmw_return_loaned_message_from_publisher；为 plain 类型的 publisher 和 subscription 启用 loaned message；实现 loaned message 获取功能。
+* 实现 loaned message（`#523 <https://github.com/ros2/rmw_fastrtps/issues/523>`__）：为基础 TypeSupport 添加 ``is_plain_`` 属性；新增基础 TypeSupport 方法；实现 rmw_borrow_loaned_message 和 rmw_return_loaned_message_from_publisher；为 plain 类型的 publisher 和 subscription 启用 loaned message；实现 loaned message 获取功能。
 * 将 rmw_dds_common 导出为 rmw_fastrtps_shared_cpp 的依赖（`#530 <https://github.com/ros2/rmw_fastrtps/issues/530>`__）
 * 在 rcutils/get_env.h 弃用后更新头文件包含（`#529 <https://github.com/ros2/rmw_fastrtps/issues/529>`__）
 * 贡献者：Audrow Nash、Barry Xu、Chen Lihui、Chris Lalancette、Christophe Bedard、Ivan Santiago Paunovic、Jacob Perron、Jose Antonio Moral、Michel Hidalgo、Miguel Company、Shane Loretz、Tomoya Fujita、iRobot ROS、mauropasse
