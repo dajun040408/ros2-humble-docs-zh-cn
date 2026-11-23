@@ -11,7 +11,10 @@
 - 已修正父页面 `Migrating-from-ROS1.rst` 的 toctree，为 10 个子页面逐一设置显式中文标题，并确认父页面标题为“从 ROS 1 迁移到 ROS 2”。
 - 涉及 C++ 示例与迁移参考、Python 示例与迁移参考、接口、launch 文件、package.xml、功能包、参数及脚本迁移。
 - 本轮正文提交：`186fa38`、`dfa6188`、`1b289c5`；导航显式中文标题修正：`c771c1b`。
-- GitHub Actions #427（提交 `c771c1b`）正在构建；尚未取得成功构建及部署结果，因此尚不能确认用户浏览器中的侧边栏已经更新。
+- GitHub Actions #430（提交 `377ac21`）已成功生成 HTML、中文搜索索引并上传 Pages Artifact；Sphinx 仍有约 1504 条警告，本轮为避免警告阻断发布，已暂时不启用 `-W`，警告仍保留在日志中。
+- #430 的 Deploy to GitHub Pages 步骤失败，GitHub 返回 `404` 并提示尚未启用仓库 Pages。当前仓库没有 `CNAME`，工作流生成的 sitemap 指向 `https://dajun040408.github.io/ros2-humble-docs-zh-cn/`，不是用户访问的 `https://ros2docs.robook.org/humble/`。
+- 已直接核对用户提供的 robook.org 页面：仍返回旧版英文内容，说明该站点尚未接入本仓库的构建产物。即使仓库 Pages 启用，仍需配置自定义域名/DNS 或将生成产物部署到 robook.org 当前的托管服务，才能更新用户正在访问的地址。
+- 当前10篇 Humble 迁移指南的源文件已完成中文主体和标题修订；但实际 robook.org 页面尚未更新，不能标记网页验收完成。
 - 后续该目录如有更新，仍只以 Humble 分支为翻译依据；其他 ROS 2 发行版暂不处理。
 
 ## 上游统计基线
@@ -87,7 +90,9 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - [ ] 检查全部 toctree 导航层级、页面标题和左侧目录。
 - [ ] 检查内部链接、锚点、图片引用、literalinclude 和跨页引用。
 - [ ] 确认搜索索引正常生成。
-- [ ] 确认 GitHub Pages 部署成功并抽查实际页面跳转。
+- [ ] 在 GitHub 仓库 Settings → Pages 启用 GitHub Actions 发布源，或明确 robook.org 当前的部署目标/凭据。
+- [ ] 配置 `ros2docs.robook.org` 自定义域名和 DNS，或将构建产物部署到 robook.org 现有托管服务。
+- [ ] 确认 GitHub Pages/robook.org 部署成功，并逐一抽查用户提供的10个实际页面。
 - [ ] 形成最终逐页质量验收报告。
 
 ## 统计与验收规则
