@@ -5,10 +5,10 @@
    :depth: 2
    :local:
 
-ROS 2 要求 package.xml 文件至少使用格式 2。
-本指南介绍如何将 package.xml 从格式 1 迁移到格式 2。格式 2 规范参见 REP-0140：https://reps.openrobotics.org/rep-0140/。
+ROS 2 要求 package.xml 文件至少使用格式 2。格式 2 规范请参阅 REP-0140：https://reps.openrobotics.org/rep-0140/。
+本指南介绍如何将 package.xml 从格式 1 迁移到格式 2。
 
-如果 package.xml 开头的 <package> 标签看起来像下面任意一种形式，则表示它使用格式 1，必须进行迁移。
+如果 package.xml 开头的 <package> 标签看起来像下面任意一种形式，则表示它使用的是格式 1，必须进行迁移。
 
 .. code-block:: xml
 
@@ -42,7 +42,8 @@ ROS 2 要求 package.xml 文件至少使用格式 2。
 替换 <run_depend>
 ~~~~~~~~~~~~~~~~~
 
-<run_depend> 标签已不再允许使用。如果依赖项采用如下声明方式：
+<run_depend> 标签已不再允许使用。
+如果你的依赖项采用如下声明方式：
 
 .. code:: xml
 
@@ -91,13 +92,13 @@ ROS 2 要求 package.xml 文件至少使用格式 2。
 ~~~~~~~~~~~~~~~~~~~~~~
 
 使用新的 <doc_depend> 标签声明构建功能包文档所需的依赖项。
-例如，C++ 功能包可能需要：
+例如，C++ 功能包可能需要声明：
 
 .. code:: xml
 
   <doc_depend>doxygen</doc_depend>
 
-而 Python 功能包可能需要：
+而 Python 功能包可能需要声明：
 
 .. code:: xml
 
@@ -109,7 +110,7 @@ ROS 2 要求 package.xml 文件至少使用格式 2。
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 <depend> 是一个新标签，可以让 package.xml 文件更加简洁。
-如果 package.xml 中针对同一个依赖项使用了以下三个标签：
+如果你的 package.xml 中针对同一个依赖项使用了以下三个标签：
 
 .. code::
 

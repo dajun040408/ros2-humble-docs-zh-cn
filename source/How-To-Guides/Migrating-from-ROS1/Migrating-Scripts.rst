@@ -5,15 +5,18 @@ ROS CLI
 -------
 
 在 ROS 1 中，执行不同操作通常有各自独立的命令，例如 rosrun、rosparam 等。
-在 ROS 2 中，所有操作统一使用顶层命令 ros2，具体操作作为其子命令，例如 ros2 run、ros2 param 等。
+
+在 ROS 2 中，所有操作统一使用一个顶层命令 ros2，具体操作作为其子命令，例如 ros2 run、ros2 param 等。
 
 ROS CLI 参数
 ------------
 
 在 ROS 1 中，传递给节点的参数直接写在命令行中。
+
 在 ROS 2 中，ROS 参数应放在 --ros-args 后面，并以 -- 结尾（如果后面没有其他参数，则末尾的双短横线可以省略）。
 
-名称重映射与 ROS 1 类似，格式仍为 from:=to，但前面必须添加 --remap（或 -r）标志。例如：
+名称重映射与 ROS 1 类似，格式仍为 from:=to，但前面必须添加 --remap（或 -r）标志。
+例如：
 
 .. code-block:: console
 
@@ -26,13 +29,15 @@ ROS CLI 参数
    $ ros2 run some_package some_ros_executable --ros-args -p my_param:=value
 
 注意，这与 ROS 1 中在参数前添加下划线的方式不同。
-要更改节点名称，请使用 __node（ROS 1 中对应 __name）：
+
+要更改节点名称，请使用 __node（ROS 1 中对应的是 __name）：
 
 .. code-block:: console
 
    $ ros2 run some_package some_ros_executable --ros-args -r __node:=new_node_name
 
-注意这里使用了 -r 标志。更改命名空间 __ns 时同样需要使用重映射标志：
+注意这里使用了 -r 标志。
+更改命名空间 __ns 时同样需要使用重映射标志：
 
 .. code-block:: console
 
@@ -40,7 +45,7 @@ ROS CLI 参数
 
 ROS 2 中没有与以下 ROS 1 键对应的功能：
 
-- __log（但可使用 --log-config-file 提供日志记录器配置文件）
+- __log（但可以使用 --log-config-file 提供日志记录器配置文件）
 - __ip
 - __hostname
 - __master

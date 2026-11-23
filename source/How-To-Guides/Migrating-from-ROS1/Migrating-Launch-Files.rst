@@ -179,8 +179,8 @@ include（包含）
 
    * ROS 1 中可用, included content was scoped.
      In ROS 2, it's not.
-     This means the values of ``arg`` tags are propagated into included launch files as if ``pass_all_args="true"`` were used in ROS 1.
-     However, this propagation only works for args that have a default value (in the inner/included launch file).
+     这意味着 ``arg`` 标签的值会传播到被包含的 launch 文件中，效果类似于 ROS 1 中设置 ``pass_all_args="true"``。
+     但这种传播只适用于被包含的 launch 文件中具有默认值的参数。
      必需参数必须显式传递。
      若要限制作用域，请将 include 嵌套在 ``group`` 标签中（另请参阅 ``group`` 的 ``scoped`` 和 ``forwarding`` 属性）。
    * 不支持 ``ns`` 属性。解决方法请参阅 ``push_ros_namespace`` 标签示例。
@@ -282,7 +282,7 @@ group
 ~~~~~~~
 
 ``launch-prefix`` configuration affects both ``executable`` and ``node`` tags' actions.
-This example will use ``time`` as a prefix if ``use_time_prefix_in_talker`` argument is ``1``, only for the talker.
+在此示例中，如果参数 ``use_time_prefix_in_talker`` 的值为 ``1``，则只会为 talker 节点添加 ``time`` 前缀。
 
 .. code-block:: xml
 
@@ -390,7 +390,7 @@ executable（可执行程序）
 -------------
 
 Documentation about ROS 1's substitutions can be found in `roslaunch XML wiki <https://wiki.ros.org/roslaunch/XML>`__.
-替换表达式 syntax hasn't changed, i.e. it still follows the ``$(substitution-name arg1 arg2 ...)`` pattern.
+替换表达式的语法没有变化，仍采用 ``$(substitution-name arg1 arg2 ...)`` 的形式。
 There are, however, some changes w.r.t. ROS 1:
 
 * ``env`` 和 ``optenv`` 已统一由 ``env`` 替代。如果环境变量不存在，``$(env <NAME>)`` 会失败。``$(env <NAME> '')`` 的行为与 ROS 1 的 ``$(optenv <NAME>)`` 相同。``$(env <NAME> <DEFAULT>)`` 的行为与 ROS 1 的 ``$(env <NAME> <DEFAULT>)`` 或 ``$(optenv <NAME> <DEFAULT>)`` 相同。
@@ -405,7 +405,7 @@ There are, however, some changes w.r.t. ROS 1:
 类型推断规则
 --------------------
 
-The rules that were shown in ``类型推断规则`` subsection of ``param`` tag applies to any attribute.
+``param`` 标签“类型推断规则”小节中介绍的规则适用于任何属性。
 例如：
 
 .. code-block:: xml

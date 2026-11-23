@@ -7,7 +7,7 @@
 C++ 功能包迁移参考
 ================================
 
-.. contents:: Table of Contents
+.. contents:: 目录
    :depth: 2
    :local:
 
