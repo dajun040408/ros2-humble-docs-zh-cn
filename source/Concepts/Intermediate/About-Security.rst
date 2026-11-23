@@ -19,7 +19,7 @@ ROS 工具可以为 ROS 应用创建权威的 `信任锚 <https://en.wikipedia.o
 
 ROS 2 内置安全功能能够控制整个 ROS 计算图中的通信。这不仅允许对 ROS 域参与者之间传输的数据进行加密，还能够验证数据发送者的身份、确保数据完整性，并启用整个域范围的访问控制。
 
-ROS 2 安全服务由节点间通信所使用的底层 `数据分发服务（DDS）<https://www.omg.org/spec/DDS/>`__ 提供。DDS 供应商提供可与 ROS 配合使用的开源和商业 DDS 实现。为了符合 DDS 规范，所有供应商都必须包含 `DDS 安全规范 <https://www.omg.org/spec/DDS-SECURITY/About-DDS-SECURITY/>`__ 中规定的安全插件。ROS 安全功能利用这些 DDS 安全插件提供基于策略的加密、身份验证和访问控制。DDS 和 ROS 安全功能通过预定义配置文件及环境变量启用。
+ROS 2 安全服务由节点间通信所使用的底层 `数据分发服务（DDS）<https://www.omg.org/spec/DDS/>`_ 提供。DDS 供应商提供可与 ROS 配合使用的开源和商业 DDS 实现。为了符合 DDS 规范，所有供应商都必须包含 `DDS 安全规范 <https://www.omg.org/spec/DDS-SECURITY/About-DDS-SECURITY/>`_ 中规定的安全插件。ROS 安全功能利用这些 DDS 安全插件提供基于策略的加密、身份验证和访问控制。DDS 和 ROS 安全功能通过预定义配置文件及环境变量启用。
 
 安全隔离区（Security Enclave）
 ------------------------------
