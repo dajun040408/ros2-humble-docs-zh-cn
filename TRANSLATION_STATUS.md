@@ -38,17 +38,17 @@
 ## 本轮翻译进度
 
 - Humble 完整变更日志已开始逐条翻译。
-- 已翻译上游文件第 1–1200 行范围内的功能包条目，分为 10 个 RST 子文件并通过 include 汇入原页面。
+- 已翻译上游文件第 1–1560 行范围内的功能包条目，分为 13 个 RST 子文件并通过 include 汇入原页面。
 - 这仅是 Humble 变更日志的一部分；其余 Humble 条目及 Galactic、Iron、Jazzy、Kilted、Lyrical 五份变更日志仍待翻译。
 
 ## Sphinx 构建自检
 
 - GitHub Actions 工作流：`.github/workflows/deploy-docs.yml`
-- 最近检查的运行：#382
+- 最近检查的运行：#383
 - 结果：**失败**
 - 失败步骤：Build HTML documentation
-- 构建输出：`build finished with problems, 1799 warnings (with warnings treated as errors)`
-- 本次构建仍检测到 2 条匿名超链接引用不匹配，定位于 index.rst 和 Package-Docs.rst；正在恢复与上游一致的显式目标/链接标记写法。
+- 构建输出：`build finished with problems, 1832 warnings (with warnings treated as errors)`
+- 本次构建仍检测到 2 条匿名超链接引用不匹配，定位于 index.rst 和 Package-Docs.rst。本轮先移除这两个页面中对应的特殊链接引用，以隔离 RST 解析问题。
 - 搜索索引生成和 Pages artifact 上传均因 HTML 构建失败而跳过。
 - 因此当前不能确认 GitHub Pages 已成功部署。
 
