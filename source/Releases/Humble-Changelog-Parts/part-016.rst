@@ -12,7 +12,7 @@
 * 将 RCLCPP_PUBLIC 修正为 RCLCPP_LIFECYCLE_PUBLIC（`#1732 <https://github.com/ros2/rclcpp/issues/1732>`__）
 * 使用 rcpputils/scope_exit.hpp，并移除 rclcpp/scope_exit.hpp（`#1727 <https://github.com/ros2/rclcpp/issues/1727>`__）
 * 移除不安全的 get_callback_groups API。调用方应改用 for_each_callback_group()，或在内部保存所需的回调组。
-* 新增 callback_groups_for_each，以确保对 callback_groups_ 向量的访问具备线程安全性。该方法接收 std::function，由调用方提供回调，内部负责加锁；并将原先使用 get_callback_groups() 的位置改为 callback_groups_for_each()。
+* 新增 ``callback_groups_``for_each，以确保对 callback_groups_ 向量的访问具备线程安全性。该方法接收 std::function，由调用方提供回调，内部负责加锁；并将原先使用 get_callback_groups() 的位置改为 callback_groups_for_each()。
 * 修复生命周期基准测试中的析构顺序（`#1675 <https://github.com/ros2/rclcpp/issues/1675>`__）
 * [rclcpp] 类型适配功能（`#1557 <https://github.com/ros2/rclcpp/issues/1557>`__）
 * 贡献者：Abrar Rahman Protyasha、Alberto Soragna、Audrow Nash、Chris Lalancette、Christophe Bedard、Ivan Santiago Paunovic、Jacob Perron、Michel Hidalgo、Shane Loretz、Tomoya Fujita、William Woodall
