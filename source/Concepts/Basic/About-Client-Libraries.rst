@@ -97,7 +97,7 @@ C++ 和 Python 客户端库由 ROS 2 核心团队维护，ROS 2 社区成员还�
 演示
 ----
 
-如果希望了解使用 ``rclpy`` 的发布者与使用 ``rclcpp`` 的订阅者之间如何交换消息，建议观看 `这场 ROSCon 演讲 <https://vimeo.com/187696091>`__，从 17:25 开始；也可以 ``查看演讲幻灯片 <https://roscon.ros.org/2016/presentations/ROSCon%202016%20-%20ROS%202%20Update.pdf>`__。
+如果希望了解使用 ``rclpy`` 的发布者与使用 ``rclcpp`` 的订阅者之间如何交换消息，建议观看 `这场 ROSCon 演讲 <https://vimeo.com/187696091>`__，从 17:25 开始；也可以 `查看演讲幻灯片 <https://roscon.ros.org/2016/presentations/ROSCon%202016%20-%20ROS%202%20Update.pdf>`_。
 
 与 ROS 1 的比较
 ---------------
