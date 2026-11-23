@@ -26,7 +26,7 @@
 
 以下发行版完整变更日志的逐条翻译状态如下：
 
-- Galactic：`source/Releases/Galactic-Geochelone-Complete-Changelog.rst` —— 已翻译前约 480 行，分为 4 个子文件，仍在继续。
+- Galactic：`source/Releases/Galactic-Geochelone-Complete-Changelog.rst` —— 已翻译前约 600 行，分为 5 个子文件，仍在继续。
 - Humble：`source/Releases/Humble-Hawksbill-Complete-Changelog.rst` —— 已补齐上游全部逐包条目，现进入格式与内容核验阶段。
 - Iron：`source/Releases/Iron-Irwini-Complete-Changelog.rst`
 - Jazzy：`source/Releases/Jazzy-Jalisco-Complete-Changelog.rst`
@@ -39,7 +39,7 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 
 - Humble 完整变更日志：上游逐包条目约 3960 行已全部翻译，拆分为 33 个 RST 子文件并通过 include 汇入原页面。
 - Humble 翻译覆盖：ros2run、ros2service、ros2test、ros2topic、ros2trace、rosbag2 及其多个子功能包、rosgraph_msgs、rosidl_adapter、rosidl_cli、rosidl_generator_c/cpp/dds_idl/py、rosidl_parser、rosidl_runtime_c/cpp/py、多种 rosidl_typesupport、rpyutils、rqt_gui 系列、rti_connext_dds_cmake_module、rttest、rviz2 及多个 RViz 子功能包、sensor_msgs 系列、sros2、statistics_msgs、std_msgs、std_srvs、stereo_msgs、test_cli、test_communication、test_interface_files、test_launch_ros、test_launch_testing、test_msgs、test_quality_of_service、test_rclcpp、test_rmw_implementation、test_security、test_tf2、test_tracetools、test_tracetools_launch、tf2 系列、tlsf、tracetools、trajectory_msgs、turtlesim、urdf、urdf_parser_plugin、visualization_msgs、yaml_cpp_vendor 和 zstd_vendor。
-- Galactic 翻译覆盖：已翻译 action_msgs、action_tutorials_*、actionlib_msgs，以及 ament_lint 和 ament_cmake 部分功能包；当前约前 480 行，4 个子文件。
+- Galactic 翻译覆盖：已翻译 action_msgs、action_tutorials_*、actionlib_msgs，以及 ament_lint 和 ament_cmake 部分功能包；当前约前 600 行，5 个子文件。
 - Humble 逐包翻译已完成，仍需核验翻译完整性、RST 格式和构建结果；Galactic、Iron、Jazzy、Kilted、Lyrical 五份完整变更日志尚未完成。
 
 ## Sphinx 构建自检
@@ -48,7 +48,7 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 最近一次完成的 Sphinx 构建：#413，结果失败。
 - 本次已无 Sphinx/docutils ERROR（0 条），此前阻断构建的链接目标和两个悬空标题分隔线问题已修复。
 - 构建仍报告约 1902 条警告，因配置将警告视为错误而退出；日志显示中文搜索索引和 sitemap 已生成，但 Pages artifact 上传及部署步骤未执行。
-- 最新提交已触发 #414，正在重新构建；尚无成功构建和部署证据。
+- 最新提交已触发 #416；#415 仍在运行，尚无覆盖最新提交的构建结果。
 
 此前已定位并修复的主要错误文件包括：
 
