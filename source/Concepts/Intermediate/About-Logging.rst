@@ -134,7 +134,7 @@ rcutils
 rcl_logging_spdlog
 ^^^^^^^^^^^^^^^^^^^^
 
-``rcl_logging_spdlog`` 实现了 ``rcl_logging_interface`` API，因此可以向 ``rcl`` 层提供外部日志服务。具体来说，``rcl_logging_spdlog`` 会接收格式化后的日志消息，并使用 ``spdlog`` 库将其写入磁盘上的日志文件，通常位于 ``~/.ros/log`` （该路径可以配置，参见上文“配置”部分）。
+``rcl_logging_spdlog`` 实现了 ``rcl_logging_interface`` API，因此可以向 ``rcl`` 层提供外部日志服务。具体来说，``rcl_logging_spdlog`` 会接收格式化后的日志消息，并使用 ``spdlog`` 库将其写入磁盘上的日志文件，通常位于 :code:`~/.ros/log`（该路径可以配置，参见上文“配置”部分）。
 
 rcl
 ^^^^^
