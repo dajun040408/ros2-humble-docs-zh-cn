@@ -46,12 +46,12 @@ CMakeLists.txt
 
     if(BUILD_TESTING)
       find_package(ament_cmake_gtest REQUIRED)
-      ament_add_gtest(my_package_tutorial_test test/tutorial_test.cpp)
-      target_include_directories(my_package_tutorial_test PUBLIC
-        $<BUILD_INTERFACE:CURRENT_SOURCE_DIR/include>
+      ament_add_gtest(${PROJECT_NAME}_tutorial_test test/tutorial_test.cpp)
+      target_include_directories(${PROJECT_NAME}_tutorial_test PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>
       )
-      # target_link_libraries(my_package_tutorial_test name_of_local_library)
+      # target_link_libraries(${PROJECT_NAME}_tutorial_test name_of_local_library)
     endif()
 
 测试代码被放在 `if/endif` 块中，以便在可能的情况下避免构建测试。`ament_add_gtest` 的工作方式与 `add_executable` 类似，因此你需要像平时一样调用 `target_include_directories` 和 `target_link_libraries`。
