@@ -24,10 +24,10 @@
 
 ## 已确认未完成的翻译
 
-以下六个页面均未完成逐条变更记录翻译：
+以下发行版完整变更日志的逐条翻译状态如下：
 
 - Galactic：`source/Releases/Galactic-Geochelone-Complete-Changelog.rst`
-- Humble：`source/Releases/Humble-Hawksbill-Complete-Changelog.rst`
+- Humble：`source/Releases/Humble-Hawksbill-Complete-Changelog.rst` —— 已补齐上游全部逐包条目，现进入格式与内容核验阶段。
 - Iron：`source/Releases/Iron-Irwini-Complete-Changelog.rst`
 - Jazzy：`source/Releases/Jazzy-Jalisco-Complete-Changelog.rst`
 - Kilted：`source/Releases/Kilted-Kaiju-Complete-Changelog.rst`
@@ -38,15 +38,15 @@
 ## 本轮翻译进度
 
 - Humble 完整变更日志已逐条翻译至上游文件约第 2640 行，分为 22 个 RST 子文件并通过 include 汇入原页面。
-- 本轮新增翻译 ros2run、ros2service、ros2test、ros2topic、ros2trace、rosbag2 及其多个子功能包、rosgraph_msgs、rosidl_adapter、rosidl_cli、rosidl_generator_c/cpp/dds_idl/py、rosidl_parser、rosidl_runtime_c/cpp/py、多种 rosidl_typesupport、rpyutils、rqt_gui 系列、rti_connext_dds_cmake_module、rttest、rviz2 及多个 RViz 子功能包、sensor_msgs 系列、sros2、statistics_msgs、std_msgs、std_srvs、stereo_msgs、test_cli、test_communication、test_interface_files、test_launch_ros、test_launch_testing、test_msgs、test_quality_of_service、test_rclcpp、test_rmw_implementation、test_security、test_tf2、test_tracetools、test_tracetools_launch 和 tf2 系列的变更记录。
-- Humble 后续条目仍待翻译；Galactic、Iron、Jazzy、Kilted、Lyrical 五份完整变更日志尚未完成。
+- 本轮新增翻译 ros2run、ros2service、ros2test、ros2topic、ros2trace、rosbag2 及其多个子功能包、rosgraph_msgs、rosidl_adapter、rosidl_cli、rosidl_generator_c/cpp/dds_idl/py、rosidl_parser、rosidl_runtime_c/cpp/py、多种 rosidl_typesupport、rpyutils、rqt_gui 系列、rti_connext_dds_cmake_module、rttest、rviz2 及多个 RViz 子功能包、sensor_msgs 系列、sros2、statistics_msgs、std_msgs、std_srvs、stereo_msgs、test_cli、test_communication、test_interface_files、test_launch_ros、test_launch_testing、test_msgs、test_quality_of_service、test_rclcpp、test_rmw_implementation、test_security、test_tf2、test_tracetools、test_tracetools_launch、tf2 系列、tlsf、tracetools、trajectory_msgs、turtlesim、urdf、urdf_parser_plugin、visualization_msgs、yaml_cpp_vendor 和 zstd_vendor 的变更记录。
+- Humble 逐包翻译已完成，仍需核验翻译完整性、RST 格式和构建结果；Galactic、Iron、Jazzy、Kilted、Lyrical 五份完整变更日志尚未完成。
 
 ## Sphinx 构建自检
 
 - GitHub Actions 工作流：`.github/workflows/deploy-docs.yml`
 - 最近一次完整日志：#386（失败，12 条 RST 错误）；#388 因后续提交而取消。
 - 已修复 #386 暴露的匿名链接和变更日志行内标记错误，并继续提交翻译批次。
-- 最近运行 #405（提交 `664a986`）正在执行 HTML 构建；最新翻译提交 #406 已进入待运行队列。
+- 最近一次运行 #406（提交 `84e170d`）已触发构建；本次 Humble 最后一批翻译提交 `e8e0f80` 也已触发新的构建。
 - 多次提交会取消前一轮工作流，因此尚未获得覆盖当前最新提交的完整构建结果。
 - 本记录更新时尚无成功构建及部署证据。
 - 在 Sphinx 构建成功前，搜索索引和 Pages artifact/部署不能视为通过。
