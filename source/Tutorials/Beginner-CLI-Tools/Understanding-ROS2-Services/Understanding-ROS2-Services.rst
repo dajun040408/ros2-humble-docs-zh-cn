@@ -29,7 +29,7 @@
 前置条件
 --------
 
-本系列前面的教程已经介绍了本教程涉及的一些概念，例如 :doc:`节点 <../Understanding-ROS2-Nodes/Understanding-ROS2-Nodes>` 和 :doc:`话题 <../Understanding-ROS2-Topics/Understanding-ROS2-Topics>`。
+本系列前面的教程已经介绍了本教程涉及的一些概念，例如 :doc:`节点 <../Understanding-ROS2-Nodes/Understanding-ROS2-Nodes>`` 和 :doc:``话题 <../Understanding-ROS2-Topics/Understanding-ROS2-Topics>`。
 
 你需要安装 :doc:`turtlesim 功能包 <../Introducing-Turtlesim/Introducing-Turtlesim>`。
 
@@ -41,7 +41,7 @@
 1 启动环境
 ^^^^^^^^^^
 
-启动两个 turtlesim 节点：`/turtlesim` 和 `/teleop_turtle`。
+启动两个 turtlesim 节点：``/turtlesim`` 和 ``/teleop_turtle``。
 
 打开一个新终端并运行：
 
@@ -58,7 +58,7 @@
 2 ros2 service list
 ^^^^^^^^^^^^^^^^^^^
 
-在新终端中运行 `ros2 service list` 命令，会返回系统中当前所有活跃服务的列表：
+在新终端中运行 ``ros2 service list`` 命令，会返回系统中当前所有活跃服务的列表：
 
 .. code-block:: console
 
@@ -83,9 +83,9 @@
   /turtlesim/set_parameters
   /turtlesim/set_parameters_atomically
 
-你会发现，两个节点都具有相同的六个名称中包含 `parameters` 的服务。ROS 2 中几乎每个节点都有这些基础设施服务，参数功能正是基于这些服务实现的。下一篇教程会进一步介绍参数。在本教程中，我们暂时不讨论这些参数服务。
+你会发现，两个节点都具有相同的六个名称中包含 ``parameters`` 的服务。ROS 2 中几乎每个节点都有这些基础设施服务，参数功能正是基于这些服务实现的。下一篇教程会进一步介绍参数。在本教程中，我们暂时不讨论这些参数服务。
 
-现在重点关注 turtlesim 专用的服务：`/clear`、`/kill`、`/reset`、`/spawn`、`/turtle1/set_pen`、`/turtle1/teleport_absolute` 和 `/turtle1/teleport_relative`。你可能还记得，在 :doc:`使用 turtlesim、ros2 和 rqt <../Introducing-Turtlesim/Introducing-Turtlesim>` 教程中，已经通过 rqt 调用过其中一些服务。
+现在重点关注 turtlesim 专用的服务：``/clear``、``/kill``、``/reset``、``/spawn``、``/turtle1/set_pen``、``/turtle1/teleport_absolute`` 和 ``/turtle1/teleport_relative``。你可能还记得，在 :doc:`使用 turtlesim、ros2 和 rqt <../Introducing-Turtlesim/Introducing-Turtlesim>` 教程中，已经通过 rqt 调用过其中一些服务。
 
 3 ros2 service type
 ^^^^^^^^^^^^^^^^^^^
@@ -98,19 +98,19 @@
 
   $ ros2 service type <service_name>
 
-下面查看 turtlesim 的 `/clear` 服务。在新终端中输入：
+下面查看 turtlesim 的 ``/clear`` 服务。在新终端中输入：
 
 .. code-block:: console
 
   $ ros2 service type /clear
   std_srvs/srv/Empty
 
-`Empty` 类型表示调用该服务时，请求不发送任何数据，接收响应时也不会收到任何数据。
+``Empty`` 类型表示调用该服务时，请求不发送任何数据，接收响应时也不会收到任何数据。
 
 3.1 ros2 service list -t
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-如果希望一次查看所有活跃服务的类型，可以在 `list` 命令后添加 `--show-types` 选项，简写为 `-t`：
+如果希望一次查看所有活跃服务的类型，可以在 ``list`` 命令后添加 ``--show-types`` 选项，简写为 ``-t``：
 
 .. code-block:: console
 
@@ -134,7 +134,7 @@
 
   $ ros2 service find <type_name>
 
-例如，可以这样查找所有 `Empty` 类型的服务：
+例如，可以这样查找所有 ``Empty`` 类型的服务：
 
 .. code-block:: console
 
@@ -151,18 +151,18 @@
 
   $ ros2 interface show <type_name>
 
-尝试查看 `/clear` 服务的类型 `Empty`：
+尝试查看 ``/clear`` 服务的类型 ``Empty``：
 
 .. code-block:: console
 
   $ ros2 interface show std_srvs/srv/Empty
   ---
 
-`---` 用于分隔请求结构（上方）和响应结构（下方）。但正如前面所学，`Empty` 类型既不发送也不接收任何数据，因此它的结构自然是空的。
+``---`` 用于分隔请求结构（上方）和响应结构（下方）。但正如前面所学，``Empty`` 类型既不发送也不接收任何数据，因此它的结构自然是空的。
 
-接下来检查一个能够发送和接收数据的服务类型，例如 `/spawn`。从 `ros2 service list -t` 的结果可知，`/spawn` 的类型是 `turtlesim/srv/Spawn`。
+接下来检查一个能够发送和接收数据的服务类型，例如 ``/spawn``。从 ``ros2 service list -t`` 的结果可知，``/spawn`` 的类型是 ``turtlesim/srv/Spawn``。
 
-要查看 `/spawn` 服务请求和响应的参数，请运行：
+要查看 ``/spawn`` 服务请求和响应的参数，请运行：
 
 .. code-block:: console
 
@@ -174,7 +174,7 @@
   ---
   string name
 
-`---` 上方的信息告诉我们调用 `/spawn` 所需的参数。`x`、`y` 和 `theta` 决定新生成海龟的二维位姿，而 `name` 显然是可选参数。
+``---`` 上方的信息告诉我们调用 ``/spawn`` 所需的参数。``x``、``y`` 和 ``theta`` 决定新生成海龟的二维位姿，而 ``name`` 显然是可选参数。
 
 分隔线下方的信息在本例中不是调用服务时需要关注的内容，但它有助于理解服务调用返回的响应数据类型。
 
@@ -187,7 +187,7 @@
 
   $ ros2 service call <service_name> <service_type> <arguments>
 
-其中 `<arguments>` 部分是可选的。例如，你已经知道 `Empty` 类型的服务不需要任何参数：
+其中 ``<arguments>`` 部分是可选的。例如，你已经知道 ``Empty`` 类型的服务不需要任何参数：
 
 .. code-block:: console
 
@@ -197,7 +197,7 @@
 
 .. image:: images/clear.png
 
-现在，通过调用 `/spawn` 服务并设置参数来生成一只新海龟。从命令行调用服务时，`<arguments>` 必须使用 YAML 语法。
+现在，通过调用 ``/spawn`` 服务并设置参数来生成一只新海龟。从命令行调用服务时，``<arguments>`` 必须使用 YAML 语法。
 
 输入以下命令：
 
