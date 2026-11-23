@@ -16,12 +16,12 @@
 | 模块 | 已翻译初稿 |
 |---|---|
 | 首页与项目入口 | index、About ROS、Installation、Ubuntu deb 安装、Releases、Contact、The ROS 2 Project、Package Docs、Related Projects、Citations |
-| 入门与教程 | First Steps、Tutorials 导航、Beginner CLI Tools 导航、Beginner Client Libraries 导航、节点教程、话题教程入口、服务教程正文、环境配置教程、Intermediate、Advanced、Demos、Miscellaneous |
+| 入门与教程 | First Steps、Tutorials 导航、Beginner CLI Tools 导航、Beginner Client Libraries 导航、节点教程、话题教程入口、服务教程正文、动作教程正文、环境配置教程、Intermediate、Advanced、Demos、Miscellaneous |
 | 核心概念 | Concepts、Basic、Nodes、Topics、Services、Actions、Parameters、Discovery、Launch、Interfaces、Command Line Tools、Client Libraries |
 | 进阶概念 | Intermediate、Composition、Executors、Logging、QoS、TF2、Domain ID、RQt、话题统计、交叉编译、不同中间件供应商、安全机制 |
 | 高级概念 | Advanced、构建系统、内部接口、中间件实现 |\n| 应用指南 | How-To Guides、ROS 1 迁移入口、ros2 param、功能包开发、节点命令行参数 |\n| 其他 | Glossary、Ubuntu 区域语言和 apt 软件源配置片段 |
 
-当前仓库已跟踪 **59 个 .rst 中文化源文件**，约占 298 个构建候选源文件的 **19.8%**。其中包含导航页、正文页和构建辅助片段；文件数量不等于完整页面翻译完成率，仍需逐页核验。这不是全站完成率；这些页面仍需 Sphinx 构建、引用和技术术语复核。
+当前仓库已跟踪 **60 个 .rst 中文化源文件**，约占 298 个构建候选源文件的 **20.1%**。其中包含导航页、正文页和构建辅助片段；文件数量不等于完整页面翻译完成率，仍需逐页核验。这不是全站完成率；这些页面仍需 Sphinx 构建、引用和技术术语复核。
 
 ## 构建与部署
 
