@@ -9,19 +9,19 @@
 - 已上传并核对源码归档：ros2_documentation_humble.tar.gz
 - 上游 Git tree：790 个条目，其中 684 个文件。
 - .rst 文件总数：311。
-- 根据上游 Sphinx exclude_patterns 初步排除 13 个辅助文件，得到 298 个构建候选文档源文件。最终 HTML 页面数以 Sphinx 构建输出为准。
+- 根据上游 Sphinx exclude_patterns 初步排除 14 个辅助/内部文件，得到 297 个构建候选文档源文件。最终 HTML 页面数以 Sphinx 构建输出为准。
 
 ## 当前已提交翻译页面
 
 | 模块 | 已翻译初稿 |
 |---|---|
 | 首页与项目入口 | index、About ROS、Installation、Ubuntu deb 安装、Releases、Contact、The ROS 2 Project、Package Docs、Related Projects、Citations |
-| 入门与教程 | First Steps、Tutorials 导航、Beginner CLI Tools 导航、Beginner Client Libraries 导航、节点教程、话题教程入口、服务教程正文、动作教程正文、参数教程正文、环境配置教程、Intermediate、Advanced、Demos、Miscellaneous |
+| 本轮新增（60 个候选文档） | 代码贡献导航、开发中发行版、Gazebo/Webots/MVSim 仿真导航、Phantom Bridge、交叉编译、RViz、EOL 发行版、Makoa 发行信息、RMW/DDS/Zenoh、Fedora 源码环境、软件包发布、Rolling、Launch、测试、Docker、自定义 deb、ROS 市场、平台支持等级、Lyrical 路线图与发行时间表、ROS 1 脚本/接口/功能包迁移、树莓派、生命周期节点、Build Farm、跟踪插桩、Intel ROS、跨机器安全、tf2、URDF、Eclipse、虚拟机器人、启动格式、软件包变体等 |\n| 入门与教程 | First Steps、Tutorials 导航、Beginner CLI Tools 导航、Beginner Client Libraries 导航、节点教程、话题教程入口、服务教程正文、动作教程正文、参数教程正文、环境配置教程、Intermediate、Advanced、Demos、Miscellaneous |
 | 核心概念 | Concepts、Basic、Nodes、Topics、Services、Actions、Parameters、Discovery、Launch、Interfaces、Command Line Tools、Client Libraries |
 | 进阶概念 | Intermediate、Composition、Executors、Logging、QoS、TF2、Domain ID、RQt、话题统计、交叉编译、不同中间件供应商、安全机制 |
 | 高级概念 | Advanced、构建系统、内部接口、中间件实现 |\n| 应用指南 | How-To Guides、ROS 1 迁移入口、ros2 param、功能包开发、节点命令行参数 |\n| 其他 | Glossary、Ubuntu 区域语言和 apt 软件源配置片段 |
 
-当前仓库已跟踪 **61 个 .rst 中文化源文件**，约占 298 个构建候选源文件的 **20.5%**。其中包含导航页、正文页和构建辅助片段；文件数量不等于完整页面翻译完成率，仍需逐页核验。这不是全站完成率；这些页面仍需 Sphinx 构建、引用和技术术语复核。
+当前仓库已跟踪 **121 个 .rst 中文化源文件**，其中 **118 个属于 297 个正式候选文档**，候选文档覆盖率约为 **39.7%**。本轮新增完成 60 个候选文档中文化，尚余 **179 个候选文档**。其余 3 个已跟踪文件属于上游排除的辅助/内部文件，不计入候选文档覆盖率。所有页面仍需 Sphinx 构建、引用和技术术语复核。
 
 ## 构建与部署
 
@@ -31,7 +31,7 @@
 - 首次构建曾因 Python 3.10 与上游锁定的 Sphinx 8.2.3 版本不兼容而失败；工作流已改用 Python 3.12。
 - 构建日志发现本地缺少 Graphviz，工作流已增加 graphviz 系统依赖安装步骤。
 - 首轮 Sphinx 检查还发现若干 reStructuredText 行内标记问题，已修正相关页面。
-- 已完成本地构建准备脚本的配置注入测试，以及搜索索引脚本的独立测试。\n- 最近一次构建仍失败，已定位到若干外部链接及新翻译教程的行内标记问题，正在逐项修复；尚未获得成功的完整 Sphinx HTML 构建和 GitHub Pages 部署结果。
+- 已完成本地构建准备脚本的配置注入测试，以及搜索索引脚本的独立测试。\n- 最近一次已完成构建仍失败，曾发现外部链接、行内标记及教程代码引用问题。本批次的完整 Sphinx 构建正在重新验证；尚未获得成功的完整 HTML 构建和 GitHub Pages 部署结果。
 
 ## 待完成工作
 
