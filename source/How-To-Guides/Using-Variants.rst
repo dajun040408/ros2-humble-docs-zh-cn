@@ -1,7 +1,7 @@
 使用 ROS 2 软件包变体
 ======================
 
-元功能包（metapackage）本身不直接提供软件，而是依赖一组相关软件包，从而为整组软件包提供方便的安装方式。`注 1` `注 2`
+元功能包（metapackage）本身不直接提供软件，而是依赖一组相关软件包，从而为整组软件包提供方便的安装方式。``注 1`` ``注 2``
 
 变体（variant）是 ROS 官方提供的元功能包列表，用于定义常见且实用的软件包组合。
 
@@ -15,7 +15,7 @@ ROS 2 中的不同变体由 `REP-2001 <https://reps.openrobotics.org/rep-2001/>`
 添加变体
 --------
 
-可以通过向 `REP-2001` 提交 Pull Request，提出对该规范的更新，以增加对 ROS 社区普遍有用的变体。新变体的提案应描述其中包含的软件包。
+可以通过向 ``REP-2001`` 提交 Pull Request，提出对该规范的更新，以增加对 ROS 社区普遍有用的变体。新变体的提案应描述其中包含的软件包。
 
 机构和机器人专用变体可以由相应维护者直接发布，无需更新 REP-2001。
 
@@ -24,7 +24,7 @@ ROS 2 中的不同变体由 `REP-2001 <https://reps.openrobotics.org/rep-2001/>`
 
 如果你正在为自己的私有项目创建 ROS 软件包，可以参考官方变体，为项目创建专用变体。只需要创建两个文件：
 
-#. 创建一个最小化变体功能包：使用 `ament_cmake` 构建类型，将 `ament_cmake` 声明为 `buildtool_depend`，并为希望纳入变体的每个软件包添加 `exec_depend` 条目。
+#. 创建一个最小化变体功能包：使用 ``ament_cmake`` 构建类型，将 ``ament_cmake`` 声明为 ``buildtool_depend``，并为希望纳入变体的每个软件包添加 ``exec_depend`` 条目。
 
    .. code-block:: xml
 
@@ -46,7 +46,7 @@ ROS 2 中的不同变体由 `REP-2001 <https://reps.openrobotics.org/rep-2001/>`
       </export>
     </package>
 
-#. 创建一个最小化的 ament_cmake 功能包，其中包含 `CMakeLists.txt`，用于将 `package.xml` 注册为 ROS 2 可用的 ament 功能包。
+#. 创建一个最小化的 ament_cmake 功能包，其中包含 ``CMakeLists.txt``，用于将 ``package.xml`` 注册为 ROS 2 可用的 ament 功能包。
 
    .. code-block:: cmake
 
@@ -65,4 +65,4 @@ ROS 2 中的不同变体由 `REP-2001 <https://reps.openrobotics.org/rep-2001/>`
 
 这种方式不支持 ROS 软件包工具，并且依赖于具体平台，但如果你要组合的是现有软件包，而不是混合使用公共和私有 ROS 软件包，那么所需基础设施会少得多。
 
-例如，在 Debian 或 Ubuntu 系统上，可以使用 `equivs` 工具。Debian 管理员手册中有一节介绍 `元软件包 <https://www.debian.org/doc/manuals/debian-handbook/sect.building-first-package.en.html#id-1.18.5.2>`_。
+例如，在 Debian 或 Ubuntu 系统上，可以使用 ``equivs`` 工具。Debian 管理员手册中有一节介绍 `元软件包 <https://www.debian.org/doc/manuals/debian-handbook/sect.building-first-package.en.html#id-1.18.5.2>`_。
