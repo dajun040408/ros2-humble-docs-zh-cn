@@ -88,3 +88,5 @@ ROS 2 的完整变更日志按功能包组织。每个功能包条目包含版�
 .. include:: Humble-Changelog-Parts/part-026.rst
 
 .. include:: Humble-Changelog-Parts/part-027.rst
+
+.. include:: Humble-Changelog-Parts/part-028.rst
