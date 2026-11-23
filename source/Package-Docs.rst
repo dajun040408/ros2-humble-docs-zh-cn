@@ -6,7 +6,7 @@
 ROS 功能包文档，也就是通过 apt 或其他工具安装的特定功能包的文档，可以在多个位置找到。下面简要列出查找 ROS 功能包文档的途径。
 
 * 大多数 ROS 2 功能包的功能包级文档都包含在 `此索引页面 <https://docs.ros.org/en/{DISTRO}/p/>`__ 中。
-* 所有 ROS 2 功能包的文档都会与其相关信息一起托管在 `ROS Index <https://index.ros.org/>`_ 上。在 ROS Index 中搜索功能包，可以查看其发布到哪些发行版、README.md 文件、URL 以及其他重要元数据。
+* 所有 ROS 2 功能包的文档都会与其相关信息一起托管在 ROS Index 上。在 ROS Index 中搜索功能包，可以查看其发布到哪些发行版、README.md 文件、URL 以及其他重要元数据。
 
 大型功能包
 ------------
@@ -31,4 +31,7 @@ API 文档
 将你的功能包添加到 docs.ros.org
 ---------------------------------
 
-所有已发布的 ROS 2 功能包都会自动添加到 docs.ros.org 和 `ROS Index <https://index.ros.org/>`_。如果你希望启用或配置自己的功能包，请参阅 :doc:`功能包文档编写指南 <./How-To-Guides/Documenting-a-ROS-2-Package>`。
+所有已发布的 ROS 2 功能包都会自动添加到 docs.ros.org 和 `ROS Index <ros-index_>`_。如果你希望启用或配置自己的功能包，请参阅 :doc:`功能包文档编写指南 <./How-To-Guides/Documenting-a-ROS-2-Package>`。
+
+
+.. _ros-index: https://index.ros.org/
