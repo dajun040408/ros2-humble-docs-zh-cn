@@ -108,6 +108,9 @@ ROS 项目通用资源
 
 * `ROS Answers <https://answers.ros.org/questions/>`__ ：该问答网站于 2023 年 8 月停止活跃，目前仅提供只读访问。
 * `ROS 2 Docs <https://docs.ros2.org>`__ ：提供截至 Galactic（含 Galactic）发行版的 API 文档。
-* `ROS 2 Design <http://design.ros2.org/>`__：记录 ROS 2 开发早期的设计决策。新的设计提案应通过 `REP <https://reps.openrobotics.org/>`__ 提交。
+* `ROS 2 Design <ros2-design_>`_：记录 ROS 2 开发早期的设计决策。新的设计提案应通过 `REP <rep-index_>`_ 提交。
 
 
+
+.. _ros2-design: http://design.ros2.org/
+.. _rep-index: https://reps.openrobotics.org/
