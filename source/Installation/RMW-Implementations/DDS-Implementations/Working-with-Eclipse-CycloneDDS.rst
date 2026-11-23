@@ -40,7 +40,7 @@ Eclipse Cyclone DDS 是一款性能出色且稳健的开源 DDS 实现。Cyclone
 
    $ cd ros2_ws/src
    $ git clone https://github.com/ros2/rmw_cyclonedds ros2/rmw_cyclonedds -b {DISTRO}
-   $ git clone https://github.com/eclipse-cyclonedds/cyclonedds eclipse-cyclonedds/cyclonedds -b `CYCLONEDDS_BRANCH`
+   $ git clone https://github.com/eclipse-cyclonedds/cyclonedds eclipse-cyclonedds/cyclonedds -b ``CYCLONEDDS_BRANCH``
 
 接下来，为 Cyclone DDS 安装必要的软件包：
 
@@ -69,7 +69,7 @@ Eclipse Cyclone DDS 是一款性能出色且稳健的开源 DDS 实现。Cyclone
 运行 talker 和 listener
 -----------------------
 
-现在运行 `talker` 和 `listener`，测试 Cyclone DDS：
+现在运行 ``talker`` 和 ``listener``，测试 Cyclone DDS：
 
 .. code-block:: console
 
