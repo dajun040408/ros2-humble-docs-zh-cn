@@ -5,50 +5,51 @@
    The-ROS2-Project/Contributing/Migration-Guide
 
 C++ 功能包迁移参考
-==================
+================================
 
-.. contents:: 目录
+.. contents:: Table of Contents
    :depth: 2
    :local:
 
-本页面介绍如何将 C++ 功能包中的部分内容从 ROS 1 迁移到 ROS 2。如果这是你第一次迁移 C++ 功能包，请先阅读 :doc:`C++ 功能包迁移示例 <Migrating-CPP-Package-Example>`，然后在迁移自己的功能包时将本页作为参考。
+本页面介绍如何将 C++ 功能包的各个部分从 ROS 1 迁移到 ROS 2。如果这是你第一次迁移 C++ 功能包，请先阅读 :doc:`C++ 迁移示例 <Migrating-CPP-Package-Example>`。之后可在迁移自己的功能包时将本页作为参考。
 
 构建工具
---------
+----------
 
-ROS 2 使用命令行工具 `colcon` 构建和安装一组功能包，而不是使用 `catkin_make`、`catkin_make_isolated` 或 `catkin build`。入门请参阅 :doc:`colcon 初学者教程 <../../Tutorials/Beginner-Client-Libraries/Colcon-Tutorial>`。
+ROS 2 不再使用 ``catkin_make``、``catkin_make_isolated`` 或 ``catkin build``，而是使用命令行工具 `colcon <https://design.ros2.org/articles/build_tool.html>`__ 来构建和安装一组功能包。请参阅 :doc:`入门教程 <../../Tutorials/Beginner-Client-Libraries/Colcon-Tutorial>`，了解如何开始使用 ``colcon``。
 
-更新 CMakeLists.txt，使用 ament_cmake
-------------------------------------
+更新 ``CMakeLists.txt`` 以使用 *ament_cmake*
+---------------------------------------------------
 
-ROS 2 C++ 功能包使用 `CMake`，并通过 `ament_cmake` 提供便捷函数。按照以下步骤，将 `catkin` 替换为 `ament_cmake`。
+ROS 2 C++ 功能包使用 `CMake <https://cmake.org/>`__，并使用 `ament_cmake <https://index.ros.org/p/ament_cmake/>`__ 提供的便捷函数。请进行以下修改，以使用 ``ament_cmake`` 替代 ``catkin``。
+
 
 要求使用较新版本的 CMake
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ROS 2 依赖的 CMake 版本比 ROS 1 更新。请在 `REP 2000 <https://reps.openrobotics.org/rep-2000/>`_ 中查找目标 ROS 发行版要求的最低版本，并在 `CMakeLists.txt` 顶部设置。例如，ROS Humble 建议的最低版本为 3.14.4：
+ROS 2 使用的 CMake 版本高于 ROS 1。请在 `REP 2000 <https://reps.openrobotics.org/rep-2000/>`__ 中查找目标 ROS 发行版要求的 CMake 最低版本，并在 ``CMakeLists.txt`` 顶部指定该版本。例如，`ROS Humble 推荐支持的最低版本为 3.14.4 <https://reps.openrobotics.org/rep-2000/#humble-hawksbill-may-2022-may-2027>`__。
 
-.. code-block:: cmake
+.. code-block::
 
    cmake_minimum_required(VERSION 3.14.4)
 
 将构建类型设置为 ament_cmake
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-从 `package.xml` 中删除对 `catkin` 的依赖：
+从 ``package.xml`` 中移除对 ``catkin`` 的所有依赖
 
-.. code-block:: xml
+.. code-block::
 
-   <!-- 删除 -->
+   # Remove this!
    <buildtool_depend>catkin</buildtool_depend>
 
-添加 `ament_cmake_ros` 依赖，参见`示例 <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/package.xml#L25>`_：
+添加对 ``ament_cmake_ros`` 的新依赖 (`example <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/package.xml#L25>`__):
 
 .. code-block:: xml
 
    <buildtool_depend>ament_cmake_ros</buildtool_depend>
 
-如果 `package.xml` 中还没有 `<export>` 部分，则添加该部分，并将 `<build_type>` 设置为 `ament_cmake`，参见`示例 <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/package.xml#L43-L45>`_：
+如果 ``package.xml`` 中尚无 ``<export>`` 节，请添加该节，并将 ``<build_type>`` 设置为 ``ament_cmake``。 (`example <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/package.xml#L43-L45>`__)
 
 .. code-block:: xml
 
@@ -56,28 +57,29 @@ ROS 2 依赖的 CMake 版本比 ROS 1 更新。请在 `REP 2000 <https://reps.op
       <build_type>ament_cmake</build_type>
    </export>
 
-添加 ament_package() 调用
-^^^^^^^^^^^^^^^^^^^^^^^^^
+添加 ``ament_package()`` 调用
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-在 `CMakeLists.txt` 文件末尾添加 `ament_package()`，参见`示例 <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/CMakeLists.txt#L127>`_：
+在 ``CMakeLists.txt`` 文件末尾插入 ``ament_package()`` 调用。 (`example <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/CMakeLists.txt#L127>`__)
 
 .. code-block:: cmake
 
+   # Add this to the bottom of your CMakeLists.txt
    ament_package()
 
-更新 find_package() 调用
-^^^^^^^^^^^^^^^^^^^^^^^^
+更新 ``find_package()`` 调用
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-将 `find_package(catkin COMPONENTS ...)` 替换为针对每个依赖项单独调用 `find_package()`，参见`示例 <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/CMakeLists.txt#L14-L18>`_。
+将 ``find_package(catkin COMPONENTS ...)`` 调用替换为独立的 ``find_package()`` 调用。 (`example <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/CMakeLists.txt#L14-L18>`_):
 
-例如，将：
+For example, change this:
 
-.. code-block:: cmake
+.. code-block::
 
    find_package(catkin REQUIRED COMPONENTS foo bar std_msgs)
    find_package(baz REQUIRED)
 
-改为：
+To this:
 
 .. code-block:: cmake
 
@@ -87,19 +89,20 @@ ROS 2 依赖的 CMake 版本比 ROS 1 更新。请在 `REP 2000 <https://reps.op
    find_package(std_msgs REQUIRED)
    find_package(baz REQUIRED)
 
-使用现代 CMake target
-^^^^^^^^^^^^^^^^^^^^^
 
-优先使用针对单个 target 的 CMake 函数，以便功能包能够导出现代 CMake target。
+使用现代 CMake targets
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-如果 `CMakeLists.txt` 中使用了 `include_directories()`，请删除这些调用：
+建议使用面向单个 target 的 CMake 函数，以便功能包能够导出现代 CMake targets。
 
-.. code-block:: cmake
+如果 ``CMakeLists.txt`` 使用了 ``include_directories()``，请删除这些调用。
 
-   # 删除类似这样的调用
+.. code-block::
+
+   # Delete calls to include_directories like this one!
    include_directories(include ${catkin_INCLUDE_DIRS})
 
-为功能包中的每个库添加 `target_include_directories()` 调用，参见`示例 <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/CMakeLists.txt#L24-L26>`_：
+为功能包中的每个库添加 ``target_include_directories()`` 调用。 (`example <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/CMakeLists.txt#L24-L26>`__).
 
 .. code-block:: cmake
 
@@ -107,31 +110,30 @@ ROS 2 依赖的 CMake 版本比 ROS 1 更新。请在 `REP 2000 <https://reps.op
       "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
       "$<INSTALL_INTERFACE:include/${PROJECT_NAME}>")
 
-将所有 `target_link_libraries()` 调用改为使用现代 CMake target。
+将所有 ``target_link_libraries()`` 调用修改为使用现代 CMake targets。
+例如，如果 ROS 1 功能包使用如下旧式标准 CMake 变量：
 
-例如，ROS 1 功能包可能使用旧式标准 CMake 变量：
-
-.. code-block:: cmake
+.. code-block::
 
    target_link_libraries(my_library ${catkin_LIBRARIES} ${baz_LIBRARIES})
 
-应改为使用具体的现代 CMake target。对于 `std_msgs` 这样的消息功能包，请使用 `${package_name_TARGETS}`：
+则应改为使用具体的现代 CMake targets。如果依赖的是 ``std_msgs`` 这样的消息功能包，请使用 ``${package_name_TARGETS}``。
 
 .. code-block:: cmake
 
    target_link_libraries(my_library PUBLIC foo::foo bar::bar ${std_msgs_TARGETS} baz::baz)
 
-根据依赖项的使用方式选择 `PUBLIC` 或 `PRIVATE`：
+根据库对依赖项的使用方式选择 ``PUBLIC`` 或 ``PRIVATE``。 (`example <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/CMakeLists.txt#L27-L31>`__).
 
-* 如果下游使用者需要该依赖项，例如库的公共 API 使用了它，则使用 `PUBLIC`。
-* 如果该依赖项只在库内部使用，则使用 `PRIVATE`。
+* 如果下游用户也需要该依赖项，例如你的库的公共 API 使用了它，则使用 ``PUBLIC``。
+* 如果该依赖项仅在库内部使用，则使用 ``PRIVATE``。
 
-使用多个 ament_cmake 调用替换 catkin_package()
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+使用多个 ament_cmake 调用替换 ``catkin_package()``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-假设 `CMakeLists.txt` 中有如下 `catkin_package` 调用：
+假设你的 ``CMakeLists.txt`` 中有如下 ``catkin_package`` 调用：
 
-.. code-block:: cmake
+.. code-block::
 
    catkin_package(
        INCLUDE_DIRS include
@@ -146,17 +148,18 @@ ROS 2 依赖的 CMake 版本比 ROS 1 更新。请在 `REP 2000 <https://reps.op
       RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
    )
 
-替换 catkin_package(INCLUDE_DIRS ...)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-如果已经使用现代 CMake target 和 `target_include_directories()`，则无需进一步操作。下游使用者依赖这些现代 CMake target 时，就会获得相应的 include 目录。
+替换 ``catkin_package(INCLUDE_DIRS ...)``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-替换 catkin_package(LIBRARIES ...)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+如果已经使用现代 CMake targets 和 ``target_include_directories()``，则无需进一步操作。下游用户依赖你的现代 CMake targets 时，会自动获得相应的头文件目录。
 
-使用 `ament_export_targets()` 和 `install(TARGETS ... EXPORT ...)` 替换 `LIBRARIES` 参数。
+替换 ``catkin_package(LIBRARIES ...)``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-安装 `my_library` target 时使用 `EXPORT` 关键字，参见`示例 <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/CMakeLists.txt#L37-L41>`_：
+使用 ``ament_export_targets()`` 和 ``install(TARGETS ... EXPORT ...)`` 替换 ``LIBRARIES`` 参数。
+
+安装 ``my_library`` target 时使用 ``EXPORT`` 关键字。 (`example <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/CMakeLists.txt#L37-L41>`__).
 
 .. code-block:: cmake
 
@@ -166,13 +169,13 @@ ROS 2 依赖的 CMake 版本比 ROS 1 更新。请在 `REP 2000 <https://reps.op
       RUNTIME DESTINATION bin
    )
 
-对于库 target，这是一个合适的默认配置。如果功能包使用了不同的 `CATKIN_*_DESTINATION` 变量，请按以下方式转换：
+以上是库 targets 的推荐默认配置。如果功能包使用了其他 ``CATKIN_*_DESTINATION`` 变量，请按下表转换：
 
 .. list-table::
    :header-rows: 1
 
-   * - catkin
-     - ament_cmake
+   * - **catkin**
+     - **ament_cmake**
    * - CATKIN_GLOBAL_BIN_DESTINATION
      - bin
    * - CATKIN_GLOBAL_INCLUDE_DESTINATION
@@ -192,16 +195,17 @@ ROS 2 依赖的 CMake 版本比 ROS 1 更新。请在 `REP 2000 <https://reps.op
    * - CATKIN_PACKAGE_SHARE_DESTINATION
      - share/${PROJECT_NAME}
 
-添加 `ament_export_targets()` 调用，并使用与 `EXPORT` 关键字相同的名称，参见`示例 <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/CMakeLists.txt#L124-L125>`_：
+添加 ``ament_export_targets()`` 调用，其参数名称应与 ``EXPORT`` 关键字指定的名称相同。 (`example <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/CMakeLists.txt#L124-L125>`__).
 
 .. code-block:: cmake
 
    ament_export_targets(export_my_package)
 
-替换 catkin_package(CATKIN_DEPENDS ... DEPENDS ...)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-功能包的使用者必须对功能包公共 API 使用的依赖项调用 `find_package()`。ROS 1 中通过 `CATKIN_DEPENDS` 和 `DEPENDS` 参数为下游使用者完成此操作。ROS 2 中使用 `ament_export_dependencies`，参见`实现 <https://github.com/ament/ament_cmake/blob/{REPOS_FILE_BRANCH}/ament_cmake_export_dependencies/cmake/ament_export_dependencies.cmake>`_：
+替换 ``catkin_package(CATKIN_DEPENDS .. DEPENDS ..)``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+使用你的功能包公共 API 的依赖项，必须由功能包的使用者通过 ``find_package()`` 查找。在 ROS 1 中，这通过 ``CATKIN_DEPENDS`` 和 ``DEPENDS`` 参数为下游用户完成。在 ROS 2 中，请使用 `ament_export_dependencies <https://github.com/ament/ament_cmake/blob/{REPOS_FILE_BRANCH}/ament_cmake_export_dependencies/cmake/ament_export_dependencies.cmake>`__ 实现。
 
 .. code-block:: cmake
 
@@ -213,107 +217,111 @@ ROS 2 依赖的 CMake 版本比 ROS 1 更新。请在 `REP 2000 <https://reps.op
    )
 
 生成消息
-^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
-如果功能包同时包含 C++ 代码和 ROS 消息、服务或动作定义，可以考虑拆分为两个功能包：
+如果功能包同时包含 C++ 代码和 ROS 消息、服务或动作定义，请考虑将其拆分为两个功能包：
 
-* 只包含 ROS 消息、服务和/或动作定义的功能包。
-* 包含 C++ 代码的功能包。
+* 一个只包含 ROS 消息、服务和/或动作定义的功能包。
+* 一个包含 C++ 代码的功能包。
 
-在包含 ROS 消息的功能包 `package.xml` 中添加以下依赖项：
+在包含 ROS 消息的功能包的 ``package.xml`` 中添加以下依赖项：
 
-1. 添加对 `rosidl_default_generators` 的 `<buildtool_depend>`，参见`示例 <https://github.com/ros2/common_interfaces/blob/d685509e9cb9f80bd320a347f2db954a73397ae7/std_msgs/package.xml#L19>`_：
+1. Add a ``<buildtool_depend>`` on ``rosidl_default_generators`` (`example <https://github.com/ros2/common_interfaces/blob/d685509e9cb9f80bd320a347f2db954a73397ae7/std_msgs/package.xml#L19>`__)
 
    .. code-block:: xml
 
       <buildtool_depend>rosidl_default_generators</buildtool_depend>
 
-2. 添加对 `rosidl_default_runtime` 的 `<exec_depend>`，参见`示例 <https://github.com/ros2/common_interfaces/blob/d685509e9cb9f80bd320a347f2db954a73397ae7/std_msgs/package.xml#L22>`_：
+2. Add an ``<exec_depend>`` on ``rosidl_default_runtime`` (`example <https://github.com/ros2/common_interfaces/blob/d685509e9cb9f80bd320a347f2db954a73397ae7/std_msgs/package.xml#L22>`__)
 
    .. code-block:: xml
 
       <exec_depend>rosidl_default_runtime</exec_depend>
 
-3. 添加 `<member_of_group>` 标签，组名为 `rosidl_interface_packages`，参见`示例 <https://github.com/ros2/common_interfaces/blob/d685509e9cb9f80bd320a347f2db954a73397ae7/std_msgs/package.xml#L26>`_：
+3. Add a ``<member_of_group>`` tag with the group name ``rosidl_interface_packages`` (`example <https://github.com/ros2/common_interfaces/blob/d685509e9cb9f80bd320a347f2db954a73397ae7/std_msgs/package.xml#L26>`__)
 
    .. code-block:: xml
 
       <member_of_group>rosidl_interface_packages</member_of_group>
 
-在 `CMakeLists.txt` 中，将 `add_message_files`、`add_service_files` 和 `generate_messages` 替换为 `rosidl_generate_interfaces`。第一个参数必须是 `${PROJECT_NAME}`，原因参见`相关问题 <https://github.com/ros2/rosidl_typesupport/issues/120>`_。
+在 ``CMakeLists.txt`` 中，将 ``add_message_files``、``add_service_files`` 和 ``generate_messages`` 调用替换为 `rosidl_generate_interfaces <https://github.com/ros2/rosidl/blob/{REPOS_FILE_BRANCH}/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake>`__。由于 `该问题 <https://github.com/ros2/rosidl_typesupport/issues/120>`__，第一个参数必须是 ``${PROJECT_NAME}``。
 
-例如，ROS 1 功能包可能如下：
+例如，ROS 1 功能包中的代码如下：
 
-.. code-block:: cmake
+.. code-block::
 
    add_message_files(DIRECTORY msg FILES FooBar.msg Baz.msg)
    add_service_files(DIRECTORY srv FILES Ping.srv)
+
    add_action_files(DIRECTORY action FILES DoPong.action)
    generate_messages(
       DEPENDENCIES actionlib_msgs std_msgs geometry_msgs
    )
 
-改为：
+则修改为： (`example <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2_msgs/CMakeLists.txt#L18-L25>`__)
 
 .. code-block:: cmake
 
-   rosidl_generate_interfaces(${PROJECT_NAME}
-     "msg/FooBar.msg"
-     "msg/Baz.msg"
-     "srv/Ping.srv"
-     "action/DoPong.action"
-     DEPENDENCIES actionlib_msgs std_msgs geometry_msgs
-   )
+       rosidl_generate_interfaces(${PROJECT_NAME}
+         "msg/FooBar.msg"
+         "msg/Baz.msg"
+         "srv/Ping.srv"
+         "action/DoPong.action"
+         DEPENDENCIES actionlib_msgs std_msgs geometry_msgs
+       )
 
-删除对 devel space 的引用
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+移除对 devel space 的引用
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-删除所有对 *devel space* 的引用，例如 `CATKIN_DEVEL_PREFIX`。ROS 2 中没有与 *devel space* 对应的概念。
+删除所有对 *devel space* 的引用，例如 ``CATKIN_DEVEL_PREFIX``。ROS 2 中没有与 *devel space* 对应的概念。
+
 
 单元测试
-^^^^^^^^
+^^^^^^^^^^
 
-如果功能包使用 `gtest`，则：
+如果功能包使用 `gtest <https://github.com/google/googletest>`__，则：
 
-* 将 `CATKIN_ENABLE_TESTING` 替换为 `BUILD_TESTING`。
-* 将 `catkin_add_gtest` 替换为 `ament_add_gtest`。
-* 使用 `ament_cmake_gtest` 的 `find_package()`，而不是 `GTest`。
+* 将 ``CATKIN_ENABLE_TESTING`` 替换为 ``BUILD_TESTING``。
+* 将 ``catkin_add_gtest`` 替换为 ``ament_add_gtest``。
+* 添加 ``ament_cmake_gtest`` 的 ``find_package()`` 调用，替代 ``GTest``。
 
-例如，ROS 1 功能包可能这样添加测试：
+例如，ROS 1 功能包通过以下方式添加测试：
 
-.. code-block:: cmake
+.. code-block::
 
-   if (CATKIN_ENABLE_TESTING)
-     find_package(GTest REQUIRED)
-     include_directories(${GTEST_INCLUDE_DIRS})
-     catkin_add_gtest(my_test src/test/some_test.cpp)
-     target_link_libraries(my_test ${GTEST_LIBRARIES})
-   endif()
+      if (CATKIN_ENABLE_TESTING)
+        find_package(GTest REQUIRED)
+        include_directories(${GTEST_INCLUDE_DIRS})
+        catkin_add_gtest(my_test src/test/some_test.cpp)
+        target_link_libraries(my_test
+          # ...
+          ${GTEST_LIBRARIES})
+      endif()
 
-改为：
+则修改为：:
 
-.. code-block:: cmake
+.. code-block:: CMake
 
-   if (BUILD_TESTING)
-     find_package(ament_cmake_gtest REQUIRED)
-     ament_add_gtest(my_test src/test/test_something.cpp)
-     target_link_libraries(my_test
-       # ...
-     )
-   endif()
+      if (BUILD_TESTING)
+        find_package(ament_cmake_gtest REQUIRED)
+        ament_add_gtest(my_test src/test/test_something.cpp)
+        target_link_libraries(my_test
+          #...
+         )
+      endif()
 
-在 `package.xml` 中添加 `<test_depend>ament_cmake_gtest</test_depend>`，参见`示例 <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/package.xml#L35>`_：
+Add ``<test_depend>ament_cmake_gtest</test_depend>`` to your ``package.xml`` (`example <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/package.xml#L35>`__).
 
 .. code-block:: xml
 
    <test_depend>ament_cmake_gtest</test_depend>
 
-代码检查工具
-^^^^^^^^^^^^
+Linters
+^^^^^^^
 
-ROS 2 的代码 :doc:`风格指南 <../../The-ROS2-Project/Contributing/Developer-Guide>` 与 ROS 1 不同。
+The ROS 2 code :doc:`style guide <../../The-ROS2-Project/Contributing/Developer-Guide>` differs from ROS 1.
 
-如果选择遵循 ROS 2 风格指南，可以在 `if(BUILD_TESTING)` 块中添加以下内容，启用自动 linter 测试：
+If you choose to follow the ROS 2 style guide, then turn on automatic linter tests by adding these lines in a ``if(BUILD_TESTING)`` block:
 
 .. code-block:: cmake
 
@@ -323,126 +331,134 @@ ROS 2 的代码 :doc:`风格指南 <../../The-ROS2-Project/Contributing/Develope
       # ...
    endif()
 
-在 `package.xml` 中添加以下依赖项：
+Add the following dependencies to your ``package.xml``:
 
 .. code-block:: xml
 
    <test_depend>ament_lint_auto</test_depend>
    <test_depend>ament_lint_common</test_depend>
 
-更新源代码
-----------
+Update source code
+------------------
 
-消息、服务和动作
-^^^^^^^^^^^^^^^^
+Messages, services, and actions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ROS 2 消息、服务和动作的命名空间会在功能包名称后增加子命名空间，分别为 `msg`、`srv` 或 `action`。
+The namespace of ROS 2 messages, services, and actions use a subnamespace (``msg``, ``srv``, or ``action``, respectively) after the package name.
+Therefore an include looks like: ``#include <my_interfaces/msg/my_message.hpp>``.
+The C++ type is then named: ``my_interfaces::msg::MyMessage``.
 
-因此，头文件包含方式如下：
+Shared pointer types are provided as typedefs within the message structs: ``my_interfaces::msg::MyMessage::SharedPtr`` as well as ``my_interfaces::msg::MyMessage::ConstSharedPtr``.
 
-`#include <my_interfaces/msg/my_message.hpp>`
+For more details please see the article about the `generated C++ interfaces <https://design.ros2.org/articles/generated_interfaces_cpp.html>`__.
 
-对应的 C++ 类型为 `my_interfaces::msg::MyMessage`。
+The migration requires includes to change by:
 
-消息结构体中提供了共享指针类型别名，例如 `my_interfaces::msg::MyMessage::SharedPtr` 和 `my_interfaces::msg::MyMessage::ConstSharedPtr`。
 
-更多详情请参阅`生成的 C++ 接口设计文章 <https://design.ros2.org/articles/generated_interfaces_cpp.html>`_。
-
-迁移时，头文件需要：
-
-* 在功能包名称和消息类型之间插入 `msg` 子目录。
-* 将包含文件名从 CamelCase 改为下划线分隔。
-* 将 `*.h` 改为 `*.hpp`。
+* inserting the subfolder ``msg`` between the package name and message datatype
+* changing the included filename from CamelCase to underscore separation
+* changing from ``*.h`` to ``*.hpp``
 
 .. code-block:: cpp
 
-   // ROS 1
-   // #include <geometry_msgs/PointStamped.h>
-   // ROS 2
+   // ROS 1 style is in comments, ROS 2 follows, uncommented.
+   // # include <geometry_msgs/PointStamped.h>
    #include <geometry_msgs/msg/point_stamped.hpp>
 
    // geometry_msgs::PointStamped point_stamped;
    geometry_msgs::msg::PointStamped point_stamped;
 
-所有使用消息类型的代码都需要插入 `msg` 命名空间。
+The migration requires code to insert the ``msg`` namespace into all instances.
 
-使用服务对象
-^^^^^^^^^^^^
+Use of service objects
+^^^^^^^^^^^^^^^^^^^^^^
 
-ROS 2 服务回调没有布尔返回值。发生失败时，不再返回 `false`，而是建议抛出异常。
+Service callbacks in ROS 2 do not have boolean return values.
+Instead of returning false on failures, throwing exceptions is recommended.
 
 .. code-block:: cpp
 
-   // ROS 1
+   // ROS 1 style is in comments, ROS 2 follows, uncommented.
    // #include "nav_msgs/GetMap.h"
+   #include "nav_msgs/srv/get_map.hpp"
+
    // bool service_callback(
    //   nav_msgs::GetMap::Request & request,
    //   nav_msgs::GetMap::Response & response)
-
-   // ROS 2
-   #include "nav_msgs/srv/get_map.hpp"
-
    void service_callback(
      const std::shared_ptr<nav_msgs::srv::GetMap::Request> request,
      std::shared_ptr<nav_msgs::srv::GetMap::Response> response)
    {
      // ...
+     // return true;  // or false for failure
    }
 
-使用 ros::Time
-^^^^^^^^^^^^^^
+Usages of ros::Time
+^^^^^^^^^^^^^^^^^^^
 
-对于 `ros::Time`：
+For usages of ``ros::Time``:
 
-* 将所有 `ros::Time` 替换为 `rclcpp::Time`。
-* 如果消息或代码使用 `std_msgs::Time`：
-  * 将所有 `std_msgs::Time` 替换为 `builtin_interfaces::msg::Time`。
-  * 将 `#include "std_msgs/time.h"` 替换为 `#include "builtin_interfaces/msg/time.hpp"`。
-  * 将 `std_msgs::Time` 字段 `nsec` 替换为 `builtin_interfaces::msg::Time` 字段 `nanosec`。
+* Replace all instances of ``ros::Time`` with ``rclcpp::Time``
 
-使用 ros::Rate
-^^^^^^^^^^^^^^
+* If your messages or code makes use of std_msgs::Time:
 
-ROS 2 提供了等效的 `rclcpp::Rate` 对象，基本可以直接替换 `ros::Rate`。
+  * Convert all instances of std_msgs::Time to builtin_interfaces::msg::Time
+
+  * Convert all ``#include "std_msgs/time.h`` to ``#include "builtin_interfaces/msg/time.hpp"``
+
+  * Convert all instances using the std_msgs::Time field ``nsec`` to the builtin_interfaces::msg::Time field ``nanosec``
+
+Usages of ros::Rate
+^^^^^^^^^^^^^^^^^^^
+
+There is an equivalent type ``rclcpp::Rate`` object which is basically a drop in replacement for ``ros::Rate``.
+
 
 Boost
 ^^^^^
 
-Boost 之前提供的许多功能已经集成到 C++ 标准库中。因此，建议利用新的标准库功能，并尽可能避免依赖 Boost。
+Much of the functionality previously provided by Boost has been integrated into the C++ standard library.
+As such we would like to take advantage of the new core features and avoid the dependency on boost where possible.
 
-共享指针
-~~~~~~~~
+Shared Pointers
+~~~~~~~~~~~~~~~
 
-将共享指针从 Boost 切换到标准 C++，需要替换：
+To switch shared pointers from boost to standard C++ replace instances of:
 
-* `#include <boost/shared_ptr.hpp>` → `#include <memory>`
-* `boost::shared_ptr` → `std::shared_ptr`
 
-也可能存在 `weak_ptr` 等变体，也需要相应转换。
+* ``#include <boost/shared_ptr.hpp>`` with ``#include <memory>``
+* ``boost::shared_ptr`` with ``std::shared_ptr``
 
-此外，建议使用 `using` 而不是 `typedef`。`using` 在模板逻辑中具有更好的适用性。详情请参阅`相关讨论 <https://stackoverflow.com/questions/10747810/what-is-the-difference-between-typedef-and-using-in-c11>`_。
+There may also be variants such as ``weak_ptr`` which you want to convert as well.
 
-线程与互斥锁
-~~~~~~~~~~~~
+Also it is recommended practice to use ``using`` instead of ``typedef``.
+``using`` has the ability to work better in templated logic.
+For details `see here <https://stackoverflow.com/questions/10747810/what-is-the-difference-between-typedef-and-using-in-c11>`__
 
-ROS 代码中另一个常见的 Boost 用法是 `boost::thread` 中的互斥锁。
+Thread/Mutexes
+~~~~~~~~~~~~~~
 
-* 将 `boost::mutex::scoped_lock` 替换为 `std::unique_lock<std::mutex>`。
-* 将 `boost::mutex` 替换为 `std::mutex`。
-* 将 `#include <boost/thread/mutex.hpp>` 替换为 `#include <mutex>`。
+Another common part of boost used in ROS codebases are mutexes in ``boost::thread``.
 
-无序映射
-~~~~~~~~
 
-替换：
+* Replace ``boost::mutex::scoped_lock`` with ``std::unique_lock<std::mutex>``
+* Replace ``boost::mutex`` with ``std::mutex``
+* Replace ``#include <boost/thread/mutex.hpp>`` with ``#include <mutex>``
 
-* `#include <boost/unordered_map.hpp>` → `#include <unordered_map>`
-* `boost::unordered_map` → `std::unordered_map`
+Unordered Map
+~~~~~~~~~~~~~
+
+Replace:
+
+
+* ``#include <boost/unordered_map.hpp>`` with ``#include <unordered_map>``
+* ``boost::unordered_map`` with ``std::unordered_map``
 
 function
 ~~~~~~~~
 
-替换：
+Replace:
 
-* `#include <boost/function.hpp>` → `#include <functional>`
-* `boost::function` → `std::function`
+
+* ``#include <boost/function.hpp>``  with ``#include <functional>``
+* ``boost::function`` with ``std::function``

@@ -1,23 +1,24 @@
-ROS 1 C++ 功能包迁移示例
-==========================
+C++ 功能包迁移示例
+===============================
 
 .. contents:: 目录
    :depth: 2
    :local:
 
-本示例展示如何将一个示例 C++ 功能包从 ROS 1 迁移到 ROS 2。
+本示例演示如何将一个示例 C++ 功能包从 ROS 1 迁移到 ROS 2。
 
 前置条件
---------
+-------------
 
-需要一个可正常工作的 ROS 2 安装环境，例如 :doc:`ROS {DISTRO} <../../Installation>`。
+你需要一个可正常工作的 ROS 2 安装环境，例如 :doc:`ROS {DISTRO} <../../Installation>`。
 
 ROS 1 代码
-----------
+--------------
 
-假设有一个名为 `talker` 的 ROS 1 功能包，其中一个名为 `talker` 的节点使用 `roscpp`。该功能包位于 `~/ros1_talker` 的 catkin 工作空间中。
+假设你有一个名为 ``talker`` 的 ROS 1 功能包，其中包含一个使用 ``roscpp`` 的节点，该节点也名为 ``talker``。
+该功能包位于 ``~/ros1_talker`` 目录下的 catkin 工作空间中。
 
-ROS 1 工作空间目录结构如下：
+ROS 1 工作空间的目录结构如下：
 
 .. code-block:: console
 
@@ -30,9 +31,9 @@ ROS 1 工作空间目录结构如下：
    ./src/talker/CMakeLists.txt
    ./src/talker/talker.cpp
 
-文件内容如下。
+这些文件的内容如下：
 
-`src/talker/package.xml`：
+``src/talker/package.xml``:
 
 .. code-block:: xml
 
@@ -49,7 +50,7 @@ ROS 1 工作空间目录结构如下：
      <depend>std_msgs</depend>
    </package>
 
-`src/talker/CMakeLists.txt`：
+``src/talker/CMakeLists.txt``:
 
 .. code-block:: cmake
 
@@ -63,7 +64,7 @@ ROS 1 工作空间目录结构如下：
    install(TARGETS talker
      RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
-`src/talker/talker.cpp`：
+``src/talker/talker.cpp``:
 
 .. code-block:: cpp
 
@@ -92,177 +93,194 @@ ROS 1 工作空间目录结构如下：
    }
 
 迁移到 ROS 2
-------------
+------------------
 
-首先创建一个新的工作空间：
+首先，创建一个新的工作空间：
 
 .. code-block:: console
 
    $ mkdir ~/ros2_talker
    $ cd ~/ros2_talker
 
-将 ROS 1 功能包的源代码树复制到新工作空间，以便进行修改：
+将 ROS 1 功能包的源代码目录复制到新工作空间中，以便进行修改：
 
 .. code-block:: console
 
    $ mkdir src
    $ cp -a ~/ros1_talker/src/talker src
 
-现在修改节点中的 C++ 代码。ROS 2 C++ 库 `rclcpp` 提供的 API 与 `roscpp` 不同。不过，这两个库的概念非常相似，因此修改相对直接。
+现在修改节点中的 C++ 代码。
+ROS 2 的 C++ 库名为 ``rclcpp``，它提供的 API 与 ``roscpp`` 不同。
+这两个库的概念非常相似，因此迁移时所需的修改相对直接。
 
 包含头文件
-~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
-原先使用 `ros/ros.h` 访问 `roscpp` API，现在需要包含 `rclcpp/rclcpp.hpp` 以访问 `rclcpp` API：
+原先通过 ``ros/ros.h`` 访问 ``roscpp`` 库 API；现在需要包含 ``rclcpp/rclcpp.hpp``，以访问 ``rclcpp`` 库 API：
 
 .. code-block:: cpp
 
-   // #include "ros/ros.h"
+   //#include "ros/ros.h"
    #include "rclcpp/rclcpp.hpp"
 
-获取 `std_msgs/String` 消息定义时，原先包含 `std_msgs/String.h`，现在需要包含 `std_msgs/msg/string.hpp`：
+要使用 ``std_msgs/String`` 消息定义，原先包含 ``std_msgs/String.h``；现在需要包含 ``std_msgs/msg/string.hpp``：
 
 .. code-block:: cpp
 
-   // #include "std_msgs/String.h"
+   //#include "std_msgs/String.h"
    #include "std_msgs/msg/string.hpp"
 
 修改 C++ 库调用
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ROS 1 在库初始化时传入节点名称；ROS 2 则先初始化，再在创建节点对象时传入节点名称：
-
-.. code-block:: cpp
-
-   // ros::init(argc, argv, "talker");
-   // ros::NodeHandle n;
-   rclcpp::init(argc, argv);
-   auto node = rclcpp::Node::make_shared("talker");
-
-创建发布者和 Rate 对象的方式非常相似，只是命名空间和方法名称有所变化：
+ROS 2 不再将节点名称传递给库初始化函数，而是先完成初始化，再在创建节点对象时传入节点名称：
 
 .. code-block:: cpp
 
-   // ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
-   // ros::Rate loop_rate(10);
-   auto chatter_pub = node->create_publisher<std_msgs::msg::String>("chatter", 1000);
-   rclcpp::Rate loop_rate(10);
+   //  ros::init(argc, argv, "talker");
+   //  ros::NodeHandle n;
+       rclcpp::init(argc, argv);
+       auto node = rclcpp::Node::make_shared("talker");
 
-为了进一步控制消息传递方式，可以传入服务质量（QoS）配置文件。默认配置文件为 `rmw_qos_profile_default`。详情请参阅`设计文档 <https://design.ros2.org/articles/qos.html>`_ 和 :doc:`QoS 概念概述 <../../Concepts/Intermediate/About-Quality-of-Service-Settings>`。
-
-创建待发布消息时，命名空间也有所不同：
+发布者和频率对象的创建方式非常相似，只是命名空间和方法名称有所变化。
 
 .. code-block:: cpp
 
-   // std_msgs::String msg;
-   std_msgs::msg::String msg;
+   //  ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
+   //  ros::Rate loop_rate(10);
+     auto chatter_pub = node->create_publisher<std_msgs::msg::String>("chatter",
+       1000);
+     rclcpp::Rate loop_rate(10);
 
-将 `ros::ok()` 替换为 `rclcpp::ok()`：
+为了进一步控制消息传递方式，可以传入服务质量（``QoS``）配置文件。默认配置文件为 ``rmw_qos_profile_default``。更多详情请参阅 `设计文档 <https://design.ros2.org/articles/qos.html>`__ 和 :doc:`概念概述 <../../Concepts/Intermediate/About-Quality-of-Service-Settings>`。
 
-.. code-block:: cpp
-
-   // while (ros::ok())
-   while (rclcpp::ok())
-
-在发布循环中，访问 `data` 字段的方式保持不变：
+创建待发布消息时，消息类型的命名空间也有所不同：
 
 .. code-block:: cpp
 
-   msg.data = ss.str();
+   //  std_msgs::String msg;
+     std_msgs::msg::String msg;
 
-输出控制台日志时，不再使用 `ROS_INFO()`，而是使用 `RCLCPP_INFO()` 及其相关宏。主要区别在于 `RCLCPP_INFO()` 的第一个参数是 Logger 对象：
-
-.. code-block:: cpp
-
-   // ROS_INFO("%s", msg.data.c_str());
-   RCLCPP_INFO(node->get_logger(), "%s\n", msg.data.c_str());
-
-将发布调用中的 `.` 运算符改为 `->`：
+原先调用 ``ros::ok()`` 的位置，现在改为调用 ``rclcpp::ok()``：
 
 .. code-block:: cpp
 
-   // chatter_pub.publish(msg);
-   chatter_pub->publish(msg);
+   //  while (ros::ok())
+     while (rclcpp::ok())
 
-`spin`（即让通信系统处理所有待处理的收发消息，直到没有更多工作可执行）也有所不同：现在调用时需要传入节点和超时时间：
+在发布循环中，仍然像以前一样访问 ``data`` 字段：
 
 .. code-block:: cpp
 
-   // ros::spinOnce();
-   rclcpp::spin_all(node, 0s);
+       msg.data = ss.str();
 
-使用 Rate 对象休眠的方式保持不变。
+输出控制台日志时，不再使用 ``ROS_INFO()``，而是使用 ``RCLCPP_INFO()`` 及其相关宏。关键区别在于，``RCLCPP_INFO()`` 的第一个参数是 Logger 对象。
 
-综合以上修改，新的 `talker.cpp` 如下：
+.. code-block:: cpp
+
+   //    ROS_INFO("%s", msg.data.c_str());
+       RCLCPP_INFO(node->get_logger(), "%s\n", msg.data.c_str());
+
+将发布调用中的 ``.`` 运算符改为 ``->`` 运算符。
+
+.. code-block:: cpp
+
+   //    chatter_pub.publish(msg);
+       chatter_pub->publish(msg);
+
+Spin 操作（即让通信系统处理所有待处理的收发消息，直到没有更多工作）也有所不同：现在调用时需要传入节点和超时时间作为参数：
+
+.. code-block:: cpp
+
+   //    ros::spinOnce();
+       rclcpp::spin_all(node, 0s);
+
+使用 rate 对象休眠的方式保持不变。
+
+综合以上修改，新的 ``talker.cpp`` 如下所示：
 
 .. code-block:: cpp
 
    #include <chrono>
    #include <sstream>
+   // #include "ros/ros.h"
    #include "rclcpp/rclcpp.hpp"
+   // #include "std_msgs/String.h"
    #include "std_msgs/msg/string.hpp"
 
    using namespace std::chrono_literals;
 
    int main(int argc, char **argv)
    {
+   //  ros::init(argc, argv, "talker");
+   //  ros::NodeHandle n;
      rclcpp::init(argc, argv);
      auto node = rclcpp::Node::make_shared("talker");
+   //  ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
+   //  ros::Rate loop_rate(10);
      auto chatter_pub = node->create_publisher<std_msgs::msg::String>("chatter", 1000);
      rclcpp::Rate loop_rate(10);
      int count = 0;
+   //  std_msgs::String msg;
      std_msgs::msg::String msg;
+   //  while (ros::ok())
      while (rclcpp::ok())
      {
        std::stringstream ss;
        ss << "hello world " << count++;
        msg.data = ss.str();
+   //    ROS_INFO("%s", msg.data.c_str());
        RCLCPP_INFO(node->get_logger(), "%s\n", msg.data.c_str());
+   //    chatter_pub.publish(msg);
        chatter_pub->publish(msg);
+   //    ros::spinOnce();
        rclcpp::spin_all(node, 0s);
        loop_rate.sleep();
      }
      return 0;
    }
 
-修改 package.xml
-~~~~~~~~~~~~~~~~
+修改 ``package.xml``
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ROS 2 功能包使用 `ament_cmake_ros` 中的 CMake 函数和宏，而不是 `catkin`。删除对 `catkin` 的依赖：
+ROS 2 功能包使用 ``ament_cmake_ros`` 提供的 CMake 函数和宏，而不是 ``catkin``。删除对 ``catkin`` 的依赖：
 
-.. code-block:: xml
+.. code-block::
 
-   <!-- 删除 -->
-   <buildtool_depend>catkin</buildtool_depend>
+   <!-- delete this -->
+   <buildtool_depend>catkin</buildtool_depend>`
 
-添加对 `ament_cmake_ros` 的依赖：
-
-.. code-block:: xml
-
-   <buildtool_depend>ament_cmake_ros</buildtool_depend>
-
-ROS 2 C++ 库使用 `rclcpp`，而不是 `roscpp`。删除 `roscpp` 依赖：
+添加对 ``ament_cmake_ros`` 的新依赖：
 
 .. code-block:: xml
 
-   <!-- 删除 -->
+     <buildtool_depend>ament_cmake_ros</buildtool_depend>
+
+ROS 2 C++ 库使用 `rclcpp <https://index.ros.org/p/rclcpp/#{DISTRO}>`__，而不是 `roscpp <https://index.ros.org/p/roscpp/#noetic>`__。
+
+删除对 ``roscpp`` 的依赖：
+
+.. code-block::
+
+   <!-- delete this -->
    <depend>roscpp</depend>
 
-添加 `rclcpp` 依赖：
+添加对 ``rclcpp`` 的依赖：
 
 .. code-block:: xml
 
-   <depend>rclcpp</depend>
+     <depend>rclcpp</depend>
 
-添加 `<export>` 部分，告诉 colcon 该功能包是 `ament_cmake` 功能包，而不是 `catkin` 功能包：
+
+添加 ``<export>`` 节，告知 colcon 该功能包是 ``ament_cmake`` 类型，而不是 ``catkin`` 类型。
 
 .. code-block:: xml
 
-   <export>
-     <build_type>ament_cmake</build_type>
-   </export>
+     <export>
+       <build_type>ament_cmake</build_type>
+     </export>
 
-此时，`package.xml` 内容如下：
+修改后的 ``package.xml`` 如下所示：
 
 .. code-block:: xml
 
@@ -282,16 +300,17 @@ ROS 2 C++ 库使用 `rclcpp`，而不是 `roscpp`。删除 `roscpp` 依赖：
      </export>
    </package>
 
-修改 CMake 代码
-~~~~~~~~~~~~~~~
 
-要求使用较新版本的 CMake，以确保 `ament_cmake` 函数正常工作：
+修改 CMake 代码
+~~~~~~~~~~~~~~~~~~~~~~~
+
+要求使用较新版本的 CMake，以确保 ``ament_cmake`` 函数正常工作。
 
 .. code-block:: cmake
 
    cmake_minimum_required(VERSION 3.14.4)
 
-使用与目标 ROS 发行版匹配的较新 C++ 标准，具体版本请参阅 `REP 2000 <https://reps.openrobotics.org/rep-2000/>`_。如果使用 C++17，请在 `project(talker)` 调用之后添加：
+使用与你目标 ROS 发行版匹配的较新 C++ 标准，具体版本可参阅 `REP 2000 <https://reps.openrobotics.org/rep-2000/>`__。如果使用 C++17，请在 ``project(talker)`` 调用之后添加以下代码设置标准。同时建议增加编译器检查。
 
 .. code-block:: cmake
 
@@ -302,7 +321,7 @@ ROS 2 C++ 库使用 `rclcpp`，而不是 `roscpp`。删除 `roscpp` 依赖：
      add_compile_options(-Wall -Wextra -Wpedantic)
    endif()
 
-将 `find_package(catkin ...)` 替换为针对每个依赖项单独调用：
+将 ``find_package(catkin ...)`` 调用替换为针对每个依赖项的独立调用。
 
 .. code-block:: cmake
 
@@ -310,13 +329,13 @@ ROS 2 C++ 库使用 `rclcpp`，而不是 `roscpp`。删除 `roscpp` 依赖：
    find_package(rclcpp REQUIRED)
    find_package(std_msgs REQUIRED)
 
-删除 `catkin_package()` 调用，并在 `CMakeLists.txt` 末尾添加 `ament_package()`：
+删除 ``catkin_package()`` 调用，并在 ``CMakeLists.txt`` 文件末尾添加 ``ament_package()`` 调用。
 
 .. code-block:: cmake
 
    ament_package()
 
-将 `target_link_libraries` 调用改为使用 `rclcpp` 和 `std_msgs` 提供的现代 CMake target：
+让 ``target_link_libraries`` 使用 ``rclcpp`` 和 ``std_msgs`` 提供的现代 CMake targets。
 
 .. code-block:: cmake
 
@@ -324,7 +343,7 @@ ROS 2 C++ 库使用 `rclcpp`，而不是 `roscpp`。删除 `roscpp` 依赖：
      rclcpp::rclcpp
      ${std_msgs_TARGETS})
 
-删除 `include_directories()` 调用。在 `add_executable(talker talker.cpp)` 之后添加 `target_include_directories()`。不要将 `rclcpp_INCLUDE_DIRS` 等变量传入 `target_include_directories()`，因为通过现代 CMake target 调用 `target_link_libraries()` 已经处理了 include 目录：
+删除 ``include_directories()`` 调用，并在 ``add_executable(talker talker.cpp)`` 之后添加 ``target_include_directories()`` 调用。不要将 ``rclcpp_INCLUDE_DIRS`` 之类的变量传入 ``target_include_directories()``；使用现代 CMake targets 调用 ``target_link_libraries()`` 时，头文件目录已经得到处理。
 
 .. code-block:: cmake
 
@@ -332,14 +351,14 @@ ROS 2 C++ 库使用 `rclcpp`，而不是 `roscpp`。删除 `roscpp` 依赖：
       "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
       "$<INSTALL_INTERFACE:include/${PROJECT_NAME}>")
 
-修改 `install()` 调用，将 `talker` 可执行程序安装到功能包专用目录：
+修改 ``install()`` 调用，将 ``talker`` 可执行文件安装到项目专属目录中。
 
 .. code-block:: cmake
 
    install(TARGETS talker
      DESTINATION lib/${PROJECT_NAME})
 
-新的 `CMakeLists.txt` 如下：
+新的 ``CMakeLists.txt`` 如下所示：
 
 .. code-block:: cmake
 
@@ -366,9 +385,9 @@ ROS 2 C++ 库使用 `rclcpp`，而不是 `roscpp`。删除 `roscpp` 依赖：
    ament_package()
 
 构建 ROS 2 代码
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
-source 环境设置文件（本例中使用 ROS 2 安装教程生成的文件，该教程在 `~/ros2_ws` 中构建），然后使用 `colcon build` 构建功能包：
+首先 source 环境配置文件（这里使用按照 ROS 2 安装教程生成的配置文件，该教程在 ``~/ros2_ws`` 中构建），然后使用 ``colcon build`` 构建功能包：
 
 .. code-block:: console
 
@@ -377,9 +396,9 @@ source 环境设置文件（本例中使用 ROS 2 安装教程生成的文件，
    $ colcon build
 
 运行 ROS 2 节点
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
-由于已经将 `talker` 可执行程序安装到正确目录，source install 目录中的设置文件后，可以运行：
+由于 ``talker`` 可执行文件已安装到正确目录，source 环境配置文件后，就可以从安装空间通过以下命令运行它：
 
 .. code-block:: console
 
@@ -387,6 +406,6 @@ source 环境设置文件（本例中使用 ROS 2 安装教程生成的文件，
    $ ros2 run talker talker
 
 总结
-----
+----------
 
-你已经学习了如何将一个示例 ROS 1 C++ 功能包迁移到 ROS 2。迁移自己的 C++ 功能包时，请参考 :doc:`C++ 功能包迁移参考 <./Migrating-CPP-Packages>`。
+现在，你已经了解如何将一个示例 C++ ROS 1 功能包迁移到 ROS 2。迁移自己的 C++ 功能包时，请参考 :doc:`C++ 功能包迁移参考 <./Migrating-CPP-Packages>`。
