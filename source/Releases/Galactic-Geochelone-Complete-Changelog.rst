@@ -14,7 +14,7 @@ ROS 2 的完整变更日志按功能包组织。每个功能包条目包含版�
 上游完整变更日志
 ----------------
 
-以下内容按上游 Galactic 完整变更日志逐包翻译，分批持续补充。当前已完成前 600 行左右的功能包条目，其余条目仍在翻译中。
+以下内容按上游 Galactic 完整变更日志逐包翻译，分批持续补充。当前已完成前 720 行左右的功能包条目，其余条目仍在翻译中。
 
 .. include:: Galactic-Changelog-Parts/part-001.rst
 
@@ -25,6 +25,8 @@ ROS 2 的完整变更日志按功能包组织。每个功能包条目包含版�
 .. include:: Galactic-Changelog-Parts/part-004.rst
 
 .. include:: Galactic-Changelog-Parts/part-005.rst
+
+.. include:: Galactic-Changelog-Parts/part-006.rst
 
 如何阅读
 --------
