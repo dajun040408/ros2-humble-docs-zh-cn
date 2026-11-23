@@ -38,17 +38,17 @@
 ## 本轮翻译进度
 
 - Humble 完整变更日志已开始逐条翻译。
-- 已翻译上游文件第 1–2160 行范围内的功能包条目，分为 18 个 RST 子文件并通过 include 汇入原页面。
+- 已翻译上游文件第 1–2400 行范围内的功能包条目，分为 20 个 RST 子文件并通过 include 汇入原页面。
 - 这仅是 Humble 变更日志的一部分；其余 Humble 条目及 Galactic、Iron、Jazzy、Kilted、Lyrical 五份变更日志仍待翻译。
 
 ## Sphinx 构建自检
 
 - GitHub Actions 工作流：`.github/workflows/deploy-docs.yml`
-- 最近检查的运行：#385
+- 最近检查的运行：#386
 - 结果：**失败**
 - 失败步骤：Build HTML documentation
-- 构建输出：`build finished with problems, 1857 warnings (with warnings treated as errors)`
-- 本次构建修复了匿名链接计数问题，但暴露出 8 条新的 RST 标记错误：REP/microROS 外链标记，以及变更日志中带下划线的变量名被误解析为链接；本轮正在修复。
+- 构建输出：`build finished with problems, 1869 warnings (with warnings treated as errors)`
+- 本次构建中出现 12 条 RST 错误：REP/microROS 外链需要显式命名目标，callback_groups_ 和 is_plain_ 等带下划线标识符需要作为行内代码处理。本轮正在修复。
 - 搜索索引生成和 Pages artifact 上传均因 HTML 构建失败而跳过。
 - 因此当前不能确认 GitHub Pages 已成功部署。
 

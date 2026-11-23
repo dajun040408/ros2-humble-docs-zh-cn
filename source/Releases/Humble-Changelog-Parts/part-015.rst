@@ -41,7 +41,7 @@
 * 新增等待订阅消息的自由函数（`#1705 <https://github.com/ros2/rclcpp/issues/1705>`__）
 * 使用 rcpputils/scope_exit.hpp，并移除 rclcpp/scope_exit.hpp（`#1727 <https://github.com/ros2/rclcpp/issues/1727>`__）
 * 移除不安全的 get_callback_groups API。调用方应改用 for_each_callback_group()，或在内部保存所需的回调组。
-* 新增 ``callback_groups_for_each``。该方法主要用于确保对 callback_groups_ 向量的访问具备线程安全性。通过接收 std::function，调用方可以传入所需回调，由该方法负责加锁；同时将所有使用 get_callback_groups() 的位置改为 callback_groups_for_each()。
+* 新增 ``callback_groups_for_each()``。该方法主要用于确保对 ``callback_groups_`` 向量的访问具备线程安全性。通过接收 std::function，调用方可以传入所需回调，由该方法负责加锁；同时将所有使用 get_callback_groups() 的位置改为 callback_groups_for_each()。
 * 使用另一种机制，避免 MultiThreadedExecutor 多次调度定时器（`#1692 <https://github.com/ros2/rclcpp/issues/1692>`__）
 * 修复 Windows CI（`#1726 <https://github.com/ros2/rclcpp/issues/1726>`__）：修复 `#1709` 引入的 AnyServiceCallback 缺陷。
 * 支持在服务中延迟发送响应（`#1709 <https://github.com/ros2/rclcpp/issues/1709>`__）。Signed-off-by: Ivan Santiago Paunovic <ivanpauno@ekumenlabs.com>
