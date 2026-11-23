@@ -13,7 +13,7 @@
 源代码
 ^^^^^^
 
-首先，在名为 `test/tutorial_test.cpp` 的文件中编写测试代码：
+首先，在名为 ``test/tutorial_test.cpp`` 的文件中编写测试代码：
 
 .. code-block:: c++
 
@@ -33,7 +33,7 @@
 package.xml
 ^^^^^^^^^^^
 
-在 `package.xml` 中添加以下一行：
+在 ``package.xml`` 中添加以下一行：
 
 .. code-block:: xml
 
@@ -54,9 +54,9 @@ CMakeLists.txt
       # target_link_libraries(${PROJECT_NAME}_tutorial_test name_of_local_library)
     endif()
 
-测试代码被放在 `if/endif` 块中，以便在可能的情况下避免构建测试。`ament_add_gtest` 的工作方式与 `add_executable` 类似，因此你需要像平时一样调用 `target_include_directories` 和 `target_link_libraries`。
+测试代码被放在 ``if/endif`` 块中，以便在可能的情况下避免构建测试。``ament_add_gtest`` 的工作方式与 ``add_executable`` 类似，因此你需要像平时一样调用 ``target_include_directories`` 和 ``target_link_libraries``。
 
-示例中的 `target_link_libraries` 调用被注释掉了，因为 `name_of_local_library` 只是占位符。只有当测试依赖于本功能包中构建的库时，才需要取消注释，并将占位符替换为 `add_library()` 调用中实际定义的目标名称。
+示例中的 ``target_link_libraries`` 调用被注释掉了，因为 ``name_of_local_library`` 只是占位符。只有当测试依赖于本功能包中构建的库时，才需要取消注释，并将占位符替换为 ``add_library()`` 调用中实际定义的目标名称。
 
 运行测试
 --------
