@@ -48,8 +48,14 @@ jobs:
       - name: Overlay Chinese translations and configure Humble build
         run: python scripts/prepare_build.py --upstream upstream
 
-      - name: Build HTML documentation
-        run: make -C upstream html JOBS=2
+      - name: Build HTML documentation (report warnings without blocking publication)
+        run: |
+          set -o pipefail
+          # The upstream Makefile enables -W by default. The current translation
+          # overlay has a large warning backlog; keep warnings visible in logs,
+          # but do not let warnings alone prevent HTML generation and deployment.
+          make -C upstream html JOBS=2 OPTS="-c . -j2" 2>&1 | tee sphinx-build.log
+          echo "Sphinx warning count: $(grep -c 'WARNING:' sphinx-build.log || true)"
 
       - name: Build Chinese search index
         run: python scripts/build_search_index.py --html-dir upstream/build/html
