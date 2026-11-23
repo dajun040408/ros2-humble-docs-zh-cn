@@ -35,14 +35,20 @@
 
 其中 Humble 变更日志是本项目发行版对应的重点未完成项。六个上游文件体量约为 272 KB 至 445 KB，不能以简短中文导航说明替代逐条翻译。
 
+## 本轮翻译进度
+
+- Humble 完整变更日志已开始逐条翻译。
+- 已翻译上游文件第 1–840 行范围内的功能包条目，分为 7 个 RST 子文件并通过 include 汇入原页面。
+- 这仅是 Humble 变更日志的一部分；其余 Humble 条目及 Galactic、Iron、Jazzy、Kilted、Lyrical 五份变更日志仍待翻译。
+
 ## Sphinx 构建自检
 
 - GitHub Actions 工作流：`.github/workflows/deploy-docs.yml`
-- 最近检查的运行：#372
+- 最近检查的运行：#381
 - 结果：**失败**
 - 失败步骤：Build HTML documentation
-- 构建输出：`build finished with problems, 1680 warnings (with warnings treated as errors)`
-- 其中检测到 24 条 Sphinx/docutils ERROR；错误涉及匿名链接数量不匹配、未知链接目标、中文链接标签语法等。
+- 构建输出：`build finished with problems, 1710 warnings (with warnings treated as errors)`
+- 本次构建检测到 2 条 Sphinx/docutils ERROR，均为 index.rst 和 Package-Docs.rst 中直接 URL 链接使用了单下划线，正在改为双下划线。
 - 搜索索引生成和 Pages artifact 上传均因 HTML 构建失败而跳过。
 - 因此当前不能确认 GitHub Pages 已成功部署。
 
@@ -65,7 +71,7 @@
 
 - [ ] 六个 Complete Changelog 逐包条目完整翻译。
 - [ ] 297 篇候选文档逐页检查翻译完整性、遗漏英文段落及术语一致性。
-- [ ] 修复 Sphinx 构建中的 24 条 ERROR。
+- [ ] 修复 Sphinx 构建中的 2 条 ERROR。
 - [ ] 分类处理 1680 条构建警告，并重新运行完整构建。
 - [ ] 检查全部 toctree 导航层级、页面标题和左侧目录。
 - [ ] 检查内部链接、锚点、图片引用、literalinclude 和跨页引用。

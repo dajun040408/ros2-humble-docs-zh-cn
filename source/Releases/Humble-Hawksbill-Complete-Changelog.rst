@@ -16,8 +16,8 @@ ROS 2 的完整变更日志按功能包组织。每个功能包条目包含版�
 
 以下内容按上游官方变更日志逐包翻译。功能包名称、版本号、Issue/PR 编号、链接和贡献者姓名保留原样；技术变更说明翻译为简体中文。
 
-* `ROS 2 Humble 官方完整变更日志 <https://github.com/ros2/ros2_documentation/blob/humble/source/Releases/Humble-Hawksbill-Complete-Changelog.rst>`_
-* `ROS 2 Humble Hawksbill 发行说明 <https://docs.ros.org/en/humble/Releases/Release-Humble-Hawksbill.html>`_
+* `ROS 2 Humble 官方完整变更日志 <https://github.com/ros2/ros2_documentation/blob/humble/source/Releases/Humble-Hawksbill-Complete-Changelog.rst>`__
+* `ROS 2 Humble Hawksbill 发行说明 <https://docs.ros.org/en/humble/Releases/Release-Humble-Hawksbill.html>`__
 
 如何阅读
 --------
@@ -42,3 +42,9 @@ ROS 2 的完整变更日志按功能包组织。每个功能包条目包含版�
 .. include:: Humble-Changelog-Parts/part-003.rst
 
 .. include:: Humble-Changelog-Parts/part-004.rst
+
+.. include:: Humble-Changelog-Parts/part-005.rst
+
+.. include:: Humble-Changelog-Parts/part-006.rst
+
+.. include:: Humble-Changelog-Parts/part-007.rst
