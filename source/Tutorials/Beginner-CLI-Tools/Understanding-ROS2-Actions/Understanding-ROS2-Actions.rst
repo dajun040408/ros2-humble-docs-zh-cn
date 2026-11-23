@@ -252,4 +252,4 @@ turtlesim 提供了一个动作服务端，动作客户端可以向它发送海�
 相关内容
 --------
 
-你可以在 ``ROS 2 动作设计文档 <https://design.ros2.org/articles/actions.html>``_ 中阅读更多关于动作设计决策的信息。
+你可以在 `ROS 2 动作设计文档 <https://design.ros2.org/articles/actions.html>`_ 中阅读更多关于动作设计决策的信息。
