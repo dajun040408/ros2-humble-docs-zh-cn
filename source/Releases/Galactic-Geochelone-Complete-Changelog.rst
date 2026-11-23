@@ -14,10 +14,15 @@ ROS 2 的完整变更日志按功能包组织。每个功能包条目包含版�
 上游完整变更日志
 ----------------
 
-以下链接指向 ROS 2 官方文档仓库中本发行版的完整变更记录。上游逐包条目目前仍以英文发布；本中文页面提供发行版说明和导航入口，逐条变更内容应以对应上游记录为准。
+以下内容按上游 Galactic 完整变更日志逐包翻译，分批持续补充。当前已完成前 360 行左右的功能包条目，其余条目仍在翻译中。
 
-* §ros2/ros2_documentation galactic 分支 <https://github.com/ros2/ros2_documentation/blob/galactic/source/Releases/Galactic-Geochelone-Complete-Changelog.rst>§_
-* §ROS 2 Galactic Geochelone 发行说明 <https://docs.ros.org/en/galactic/Releases/Release-Galactic-Geochelone.html>§_
+.. include:: Galactic-Changelog-Parts/part-001.rst
+
+.. include:: Galactic-Changelog-Parts/part-002.rst
+
+.. include:: Galactic-Changelog-Parts/part-003.rst
+
+.. include:: Galactic-Changelog-Parts/part-004.rst
 
 如何阅读
 --------
@@ -29,4 +34,4 @@ ROS 2 的完整变更日志按功能包组织。每个功能包条目包含版�
 
 .. note::
 
-   本页面当前是中文导航与说明页，并非逐条变更记录的完整中文译本。逐包变更条目仍需从上游完整记录查看。后续翻译质量审查应将这些发行版完整变更日志单独列为未完成项目。
+   本页面正在分批完成逐条中文翻译；尚未纳入的上游条目仍以官方记录为准，待全部翻译后再进行完整质量验收。
