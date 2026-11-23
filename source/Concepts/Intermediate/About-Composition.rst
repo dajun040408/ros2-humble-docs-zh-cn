@@ -18,7 +18,7 @@ ROS 1 节点会被编译为可执行文件。ROS 1 nodelet 则会被编译为共
 ROS 2：统一 API
 ----------------
 
-在 ROS 2 中，推荐的代码编写方式与 nodelet 类似，我们将其称为 ``Component``（组件）。这种方式便于向现有代码添加生命周期等通用概念（参见 `节点生命周期设计 <https://design.ros2.org/articles/node_lifecycle.html>`__）。
+在 ROS 2 中，推荐的代码编写方式与 nodelet 类似，我们将其称为 Component（组件）。这种方式便于向现有代码添加生命周期等通用概念（参见 `节点生命周期设计 <https://design.ros2.org/articles/node_lifecycle.html>`__）。
 
 ROS 1 中使用不同 API 是其最大的缺点之一，而 ROS 2 避免了这一问题，因为两种运行方式都使用相同的 API。
 
