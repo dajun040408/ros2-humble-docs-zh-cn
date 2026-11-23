@@ -6,16 +6,16 @@
 .. toctree::
    :maxdepth: 1
 
-   Migrating-from-ROS1/Migrating-Packages
-   Migrating-from-ROS1/Migrating-Package-XML
-   Migrating-from-ROS1/Migrating-Interfaces
-   Migrating-from-ROS1/Migrating-CPP-Package-Example
-   Migrating-from-ROS1/Migrating-CPP-Packages
-   Migrating-from-ROS1/Migrating-Python-Package-Example
-   Migrating-from-ROS1/Migrating-Python-Packages
-   Migrating-from-ROS1/Migrating-Launch-Files
-   Migrating-from-ROS1/Migrating-Parameters
-   Migrating-from-ROS1/Migrating-Scripts
+   功能包迁移 <Migrating-from-ROS1/Migrating-Packages>
+   将 package.xml 迁移到格式 2 <Migrating-from-ROS1/Migrating-Package-XML>
+   接口迁移 <Migrating-from-ROS1/Migrating-Interfaces>
+   C++ 功能包迁移示例 <Migrating-from-ROS1/Migrating-CPP-Package-Example>
+   C++ 功能包迁移参考 <Migrating-from-ROS1/Migrating-CPP-Packages>
+   Python 功能包迁移示例 <Migrating-from-ROS1/Migrating-Python-Package-Example>
+   Python 功能包迁移参考 <Migrating-from-ROS1/Migrating-Python-Packages>
+   Launch 文件迁移 <Migrating-from-ROS1/Migrating-Launch-Files>
+   参数迁移 <Migrating-from-ROS1/Migrating-Parameters>
+   脚本迁移 <Migrating-from-ROS1/Migrating-Scripts>
 
 自动化工具
 ----------
