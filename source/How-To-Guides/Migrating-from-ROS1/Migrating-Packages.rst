@@ -34,7 +34,7 @@ rosdep 文档请参阅：https://docs.ros.org/en/humble/Tutorials/Intermediate/R
 
 ROS 2 没有专门的元功能包类型。
 元功能包仍然可以作为普通功能包存在，只包含运行时依赖项。
-从 ROS 1 迁移元功能包时，只需从功能包清单中删除 <metapackage /> 标签。
+从 ROS 1 迁移元功能包时，只需从功能包清单中删除 ``<metapackage />`` 标签。
 有关元功能包/变体的更多信息，请参阅“使用变体”指南。
 
 许可证

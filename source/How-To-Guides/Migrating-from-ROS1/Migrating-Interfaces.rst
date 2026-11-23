@@ -32,10 +32,10 @@ ROS 2 中接口的构建方式与 ROS 1 有较大差异。
 
 在 package.xml 中：
 
-* 添加 <buildtool_depend>rosidl_default_generators</buildtool_depend>。
-* 添加 <exec_depend>rosidl_default_runtime</exec_depend>。
-* 添加 <member_of_group>rosidl_interface_packages</member_of_group>。
-* 对每个依赖的消息功能包，添加 <depend>message_package</depend>。
+* 添加 ``<buildtool_depend>``rosidl_default_generators``</buildtool_depend>``。
+* 添加 ``<exec_depend>``rosidl_default_runtime``</exec_depend>``。
+* 添加 ``<member_of_group>``rosidl_interface_packages``</member_of_group>``。
+* 对每个依赖的消息功能包，添加 ``<depend>``message_package``</depend>``。
 
 在 CMakeLists.txt 中：
 
