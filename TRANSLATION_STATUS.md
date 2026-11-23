@@ -1,6 +1,6 @@
 # ROS 2 Humble 中文化进度与自检记录
 
-最后更新：2026-11-23
+最后更新：2026-11-23（持续更新）
 
 ## 上游统计基线
 
@@ -37,20 +37,18 @@
 
 ## 本轮翻译进度
 
-- Humble 完整变更日志已开始逐条翻译。
-- 已翻译上游文件第 1–2400 行范围内的功能包条目，分为 20 个 RST 子文件并通过 include 汇入原页面。
-- 这仅是 Humble 变更日志的一部分；其余 Humble 条目及 Galactic、Iron、Jazzy、Kilted、Lyrical 五份变更日志仍待翻译。
+- Humble 完整变更日志已逐条翻译至上游文件约第 2640 行，分为 22 个 RST 子文件并通过 include 汇入原页面。
+- 本轮新增翻译 ros2run、ros2service、ros2test、ros2topic、ros2trace、rosbag2 及其多个子功能包的变更记录。
+- Humble 后续条目仍待翻译；Galactic、Iron、Jazzy、Kilted、Lyrical 五份完整变更日志尚未完成。
 
 ## Sphinx 构建自检
 
 - GitHub Actions 工作流：`.github/workflows/deploy-docs.yml`
-- 最近检查的运行：#386
-- 结果：**失败**
-- 失败步骤：Build HTML documentation
-- 构建输出：`build finished with problems, 1869 warnings (with warnings treated as errors)`
-- 本次构建中出现 12 条 RST 错误：REP/microROS 外链需要显式命名目标，callback_groups_ 和 is_plain_ 等带下划线标识符需要作为行内代码处理。本轮正在修复。
-- 搜索索引生成和 Pages artifact 上传均因 HTML 构建失败而跳过。
-- 因此当前不能确认 GitHub Pages 已成功部署。
+- 最近一次完整日志：#386（失败，12 条 RST 错误）；#388 因后续提交而取消。
+- 已修复 #386 暴露的匿名链接和变更日志行内标记错误，并继续提交翻译批次。
+- 最新运行 #389（提交 `99cb7b3`）曾进入 HTML 构建阶段；随后新提交 #390（包含本轮新增翻译）已触发新的构建。
+- #390 当前状态需以 GitHub Actions 页面为准；本记录更新时尚无成功构建及部署证据。
+- 在 Sphinx 构建成功前，搜索索引和 Pages artifact/部署不能视为通过。
 
 已定位的错误文件包括：
 
@@ -71,8 +69,8 @@
 
 - [ ] 六个 Complete Changelog 逐包条目完整翻译。
 - [ ] 297 篇候选文档逐页检查翻译完整性、遗漏英文段落及术语一致性。
-- [ ] 修复 Sphinx 构建中的 2 条 ERROR。
-- [ ] 分类处理 1680 条构建警告，并重新运行完整构建。
+- [ ] 根据最新 Actions 日志继续修复 Sphinx/docutils ERROR。
+- [ ] 分类处理构建警告，并重新运行完整构建。
 - [ ] 检查全部 toctree 导航层级、页面标题和左侧目录。
 - [ ] 检查内部链接、锚点、图片引用、literalinclude 和跨页引用。
 - [ ] 确认搜索索引正常生成。
