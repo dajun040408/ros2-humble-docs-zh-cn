@@ -22,15 +22,15 @@
 * `Blender URDF Exporter <https://github.com/dfki-ric/phobos>`_
 * `CREO Parametric URDF Exporter <https://github.com/icub-tech-iit/creo2urdf>`_
 * `FreeCAD ROS Workbench <https://github.com/galou/freecad.cross>`_
-* `RobotCAD（FreeCAD OVERCROSS）<https://github.com/drfenixion/freecad.overcross>`_
+* `RobotCAD <https://github.com/drfenixion/freecad.overcross>`_
 * `FreeCAD to Gazebo Exporter <https://github.com/Dave-Elec/freecad_to_gazebo>`_
 * `Fusion 360 URDF Exporter <https://github.com/dheena2k2/fusion2urdf-ros2>`_
-* `fusion2URDF（Fusion 360、ros2_control、闭环）<https://github.com/Adriaeik/fusion2URDF>`_
+* `fusion2URDF <https://github.com/Adriaeik/fusion2URDF>`_
 * `FusionSDF：Fusion 360 到 SDF 导出工具 <https://github.com/andreasBihlmaier/FusionSDF>`_
 * `OnShape URDF Exporter <https://github.com/Rhoban/onshape-to-robot>`_
 * `SolidWorks URDF Exporter <https://github.com/ros/solidworks_urdf_exporter>`_
-* `sw2robot（基于 SolidWorks mate 的导出工具和跨平台 URDF 编辑器）<https://github.com/jsk-ros-pkg/solidworks_urdf_exporter2>`_
-* `ExportURDF Library（Fusion360、OnShape、Solidworks）<https://github.com/daviddorf2023/ExportURDF>`_
+* `sw2robot <https://github.com/jsk-ros-pkg/solidworks_urdf_exporter2>`_
+* `ExportURDF Library <https://github.com/daviddorf2023/ExportURDF>`_
 
 **其他 URDF 导出和转换工具**
 
@@ -40,7 +40,7 @@
 * `Blender Robotics Tools <https://github.com/robotology/blender-robotics-utils/>`_ 仓库包含多种实用工具，其中包括 `从 Blender 导出 URDF 文件 <https://github.com/robotology/blender-robotics-utils/tree/master?tab=readme-ov-file#urdftoblender>`_。
 * `CoppeliaSim URDF Exporter <https://manual.coppeliarobotics.com/en/importExport.htm#urdf>`_
 * `Isaac Sim URDF Exporter <https://docs.omniverse.nvidia.com/isaacsim/latest/advanced_tutorials/tutorial_advanced_export_urdf.html>`_
-* `ProtoJoint（基于浏览器的 CAD，可导出 URDF、MJCF 和 ROS 2 软件包）<https://protojoint.ai/cad-to-urdf/>`_
+* `ProtoJoint <https://protojoint.ai/cad-to-urdf/>`_
 
 **URDF 和 SDF 文件查看工具**
 

@@ -19,7 +19,7 @@
 
 .. warning::
 
-   目前 rosdep 仅支持 Linux 和 macOS，不支持 Windows。长期计划是为 rosdep 添加 Windows 支持，参见 `https://github.com/ros-infrastructure/rosdep`_。
+   目前 rosdep 仅支持 Linux 和 macOS，不支持 Windows。长期计划是为 rosdep 添加 Windows 支持，参见 `rosdep GitHub 仓库 <https://github.com/ros-infrastructure/rosdep>`_。
 
 什么是 rosdep？
 ---------------
@@ -88,7 +88,7 @@ rosdep 如何工作？
 
 如果要依赖的软件包属于 ROS 生态系统，并且已经发布到 ROS 生态系统中 [1]_，例如 `nav2_bt_navigator`，可以直接使用该软件包名称。
 
-可以在 `https://github.com/ros/rosdistro` 对应 ROS 发行版的 `<distro>/distribution.yaml` 文件中查看所有已发布 ROS 软件包，例如 Humble 对应 `humble/distribution.yaml`。
+可以在 `rosdistro GitHub 仓库 <https://github.com/ros/rosdistro>` 对应 ROS 发行版的 `<distro>/distribution.yaml` 文件中查看所有已发布 ROS 软件包，例如 Humble 对应 `humble/distribution.yaml`。
 
 如果要依赖非 ROS 软件包，也就是通常所说的“系统依赖项”，则需要查找特定库对应的 key。通常需要关注两个文件：
 

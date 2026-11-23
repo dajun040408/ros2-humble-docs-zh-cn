@@ -15,7 +15,7 @@
 
 建议开发者在编辑器中集成工具，自动检查是否遵循这些规范。例如，每个人都应在编辑器中启用 PEP8 检查器，以减少代码审查中与风格相关的反复修改。
 
-在条件允许的情况下，功能包也应在单元测试中检查代码风格，以便自动发现问题。参见§ament_lint_auto <https://github.com/ament/ament_lint/blob/{REPOS_FILE_BRANCH}/ament_lint_auto/doc/index.rst>§_。
+在条件允许的情况下，功能包也应在单元测试中检查代码风格，以便自动发现问题。参见`ament_lint_auto <https://github.com/ament/ament_lint/blob/{REPOS_FILE_BRANCH}/ament_lint_auto/doc/index.rst>`_。
 
 C
 -
@@ -28,7 +28,7 @@ C
 风格
 ^^^^
 
-采用§Python PEP7 <https://www.python.org/dev/peps/pep-0007/>§_ 作为 C 语言风格指南，并做如下调整：
+采用`Python PEP7 <https://www.python.org/dev/peps/pep-0007/>`_ 作为 C 语言风格指南，并做如下调整：
 
 * 目标为 C99，不需要像 PEP7 建议的那样兼容 C89。
   * 这样可以同时使用 // 和 /* */ 注释。
@@ -43,7 +43,7 @@ C
 * 不要将 Py_ 作为所有符号的统一前缀，应使用功能包名称的 CamelCase 形式或其他合适前缀。
 * 文档字符串相关要求不适用。
 
-可以使用§pep7 <https://github.com/mike-perdide/pep7>§_ Python 模块检查风格。
+可以使用`pep7 <https://github.com/mike-perdide/pep7>`_ Python 模块检查风格。
 
 C++
 ---
@@ -56,7 +56,7 @@ C++
 风格
 ^^^^
 
-采用§Google C++ Style Guide <https://google.github.io/styleguide/cppguide.html>§_，并做以下调整。
+采用`Google C++ Style Guide <https://google.github.io/styleguide/cppguide.html>`_，并做以下调整。
 
 行长度
 ~~~~~~
@@ -82,12 +82,12 @@ Python
 标准
 ^^^^
 
-Python 代码使用当前 ROS 发行版支持的 Python 3 版本。版本要求请参阅§REP 2000 <https://reps.openrobotics.org/rep-2000/>§_。
+Python 代码使用当前 ROS 发行版支持的 Python 3 版本。版本要求请参阅`REP 2000 <https://reps.openrobotics.org/rep-2000/>`_。
 
 风格
 ^^^^
 
-采用§PEP 8 <https://peps.python.org/pep-0008/>§_ 作为 Python 代码风格指南，并使用 PEP 257 文档字符串规范。
+采用`PEP 8 <https://peps.python.org/pep-0008/>`_ 作为 Python 代码风格指南，并使用 PEP 257 文档字符串规范。
 
 建议在编辑器中集成 flake8 或其他兼容工具，并在测试阶段运行 ament_python_lint 或 ament_lint_auto。
 
@@ -99,6 +99,6 @@ XML 文件应保持一致的缩进和清晰的层级结构。package.xml、启�
 版本和兼容性
 ------------
 
-ROS 2 核心软件包应使用目标发行版规定的语言标准和工具链版本。具体版本请参阅§REP 2000 <https://reps.openrobotics.org/rep-2000/>§_。
+ROS 2 核心软件包应使用目标发行版规定的语言标准和工具链版本。具体版本请参阅`REP 2000 <https://reps.openrobotics.org/rep-2000/>`_。
 
 如果修改涉及 API 或 ABI 兼容性，应在代码审查中明确说明，并遵循 ROS 发行版的兼容性策略。

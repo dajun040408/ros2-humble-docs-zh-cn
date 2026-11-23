@@ -12,7 +12,7 @@ Pull Request 用于向 ROS 项目贡献代码和文档变更。本文介绍如�
 概述
 ----
 
-`Pull Request（PR）<https://docs.github.com/en/pull-requests>`_ 是将变更合并到 ROS 仓库的提案。通过创建 PR，你可以与其他 ROS 贡献者协作，在 ROS 维护者合并代码之前讨论并审查代码变更。
+`Pull Request <https://docs.github.com/en/pull-requests>`_ 是将变更合并到 ROS 仓库的提案。通过创建 PR，你可以与其他 ROS 贡献者协作，在 ROS 维护者合并代码之前讨论并审查代码变更。
 
 欢迎向任何`ROS 仓库 <https://github.com/ros2>`_ 提交 Pull Request。有关贡献行为规范，请参阅 :doc:`参与贡献 </The-ROS2-Project/Contributing>`。
 

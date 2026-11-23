@@ -51,7 +51,7 @@
 
     $ sudo apt install python3-serial
 
-如果软件包位于 `Python Package Index（PyPI）<https://pypi.org/>`_，并且希望全局安装到系统中：
+如果软件包位于 `PyPI <https://pypi.org/>`_，并且希望全局安装到系统中：
 
 .. code-block:: console
 

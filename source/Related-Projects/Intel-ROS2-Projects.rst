@@ -23,7 +23,7 @@ Intel® Robotics Open Source Project（Intel® ROS Project）利用 Intel 的多
 * `ROS2 Moving Object <https://github.com/intel/ros2_moving_object>`_：基于 ROS 2 Object Analytics 提供的信息，输出物体运动信息（例如物体在 x、y、z 轴上的速度）的 ROS 2 软件包。
 * `ROS2 Grasp Library <https://github.com/intel/ros2_grasp_library>`_：用于抓取位置分析的 ROS 2 软件包，并兼容 `MoveIt <https://github.com/ros-planning/moveit2.git>`_ 抓取接口。
 * `ROS2 Navigation <https://github.com/ros-planning/navigation2>`_：用于机器人导航的 ROS 2 软件包，已集成到 ROS 2 Crystal 发行版中。
-* `Intel Robot DevKit（SDK）<https://github.com/intel/robot_devkit>`_：一个开源项目，使开发者能够轻松、高效地为基于 ROS 2 框架的自主移动机器人（AMR）平台创建、定制、优化和部署机器人软件栈。
+* `Intel Robot DevKit <https://github.com/intel/robot_devkit>`_：一个开源项目，使开发者能够轻松、高效地为基于 ROS 2 框架的自主移动机器人（AMR）平台创建、定制、优化和部署机器人软件栈。
 
 参考资料
 --------
