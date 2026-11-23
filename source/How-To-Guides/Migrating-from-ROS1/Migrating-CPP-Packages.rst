@@ -72,7 +72,7 @@ ROS 2 使用的 CMake 版本高于 ROS 1。请在 `REP 2000 <https://reps.openro
 
 将 ``find_package(catkin COMPONENTS ...)`` 调用替换为独立的 ``find_package()`` 调用。 (`example <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/CMakeLists.txt#L14-L18>`_):
 
-For example, change this:
+例如，将以下内容：
 
 .. code-block::
 
@@ -316,12 +316,12 @@ Add ``<test_depend>ament_cmake_gtest</test_depend>`` to your ``package.xml`` (`e
 
    <test_depend>ament_cmake_gtest</test_depend>
 
-Linters
+代码检查工具（Linters）
 ^^^^^^^
 
-The ROS 2 code :doc:`style guide <../../The-ROS2-Project/Contributing/Developer-Guide>` differs from ROS 1.
+ROS 2 的 :doc:`代码风格指南 <../../The-ROS2-Project/Contributing/Developer-Guide>` 与 ROS 1 不同。
 
-If you choose to follow the ROS 2 style guide, then turn on automatic linter tests by adding these lines in a ``if(BUILD_TESTING)`` block:
+如果选择遵循 ROS 2 代码风格指南，请在 ``if(BUILD_TESTING)`` 代码块中添加以下内容，以启用自动代码检查测试：
 
 .. code-block:: cmake
 
@@ -331,33 +331,31 @@ If you choose to follow the ROS 2 style guide, then turn on automatic linter tes
       # ...
    endif()
 
-Add the following dependencies to your ``package.xml``:
+在 ``package.xml`` 中添加以下依赖项：
 
 .. code-block:: xml
 
    <test_depend>ament_lint_auto</test_depend>
    <test_depend>ament_lint_common</test_depend>
 
-Update source code
+更新源代码
 ------------------
 
-Messages, services, and actions
+消息、服务和动作
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The namespace of ROS 2 messages, services, and actions use a subnamespace (``msg``, ``srv``, or ``action``, respectively) after the package name.
-Therefore an include looks like: ``#include <my_interfaces/msg/my_message.hpp>``.
-The C++ type is then named: ``my_interfaces::msg::MyMessage``.
+ROS 2 的消息、服务和动作类型在功能包名称后增加子命名空间，分别为 ``msg``、``srv`` 或 ``action``。因此，头文件包含形式如下：``#include <my_interfaces/msg/my_message.hpp>``。对应的 C++ 类型名称为：``my_interfaces::msg::MyMessage``。
 
-Shared pointer types are provided as typedefs within the message structs: ``my_interfaces::msg::MyMessage::SharedPtr`` as well as ``my_interfaces::msg::MyMessage::ConstSharedPtr``.
+共享指针类型通过消息结构体中的 typedef 提供，例如 ``my_interfaces::msg::MyMessage::SharedPtr`` 和 ``my_interfaces::msg::MyMessage::ConstSharedPtr``。
 
-For more details please see the article about the `generated C++ interfaces <https://design.ros2.org/articles/generated_interfaces_cpp.html>`__.
+更多详情请参阅 `生成的 C++ 接口 <https://design.ros2.org/articles/generated_interfaces_cpp.html>`__ 一文。
 
-The migration requires includes to change by:
+迁移时需要按以下方式修改头文件包含：
 
 
-* inserting the subfolder ``msg`` between the package name and message datatype
-* changing the included filename from CamelCase to underscore separation
-* changing from ``*.h`` to ``*.hpp``
+* 在功能包名称和消息类型名称之间插入 ``msg`` 子目录。
+* 将头文件名从 CamelCase（驼峰命名）改为下划线分隔形式。
+* 将扩展名从 ``*.h`` 改为 ``*.hpp``。
 
 .. code-block:: cpp
 
@@ -368,13 +366,12 @@ The migration requires includes to change by:
    // geometry_msgs::PointStamped point_stamped;
    geometry_msgs::msg::PointStamped point_stamped;
 
-The migration requires code to insert the ``msg`` namespace into all instances.
+迁移时还需要在代码中所有相关类型名称前添加 ``msg`` 命名空间。
 
-Use of service objects
+服务对象的使用
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Service callbacks in ROS 2 do not have boolean return values.
-Instead of returning false on failures, throwing exceptions is recommended.
+ROS 2 的服务回调没有布尔返回值。发生错误时，建议通过抛出异常处理，而不是返回 false。
 
 .. code-block:: cpp
 
@@ -393,72 +390,67 @@ Instead of returning false on failures, throwing exceptions is recommended.
      // return true;  // or false for failure
    }
 
-Usages of ros::Time
+ros::Time 的使用
 ^^^^^^^^^^^^^^^^^^^
 
-For usages of ``ros::Time``:
+对于 ``ros::Time`` 的使用：
 
-* Replace all instances of ``ros::Time`` with ``rclcpp::Time``
+* 将所有 ``ros::Time`` 替换为 ``rclcpp::Time``。
 
-* If your messages or code makes use of std_msgs::Time:
+* 如果消息或代码使用了 std_msgs::Time：
 
-  * Convert all instances of std_msgs::Time to builtin_interfaces::msg::Time
+  * 将所有 std_msgs::Time 替换为 builtin_interfaces::msg::Time。
+  * 将所有 ``#include "std_msgs/time.h`` 替换为 ``#include "builtin_interfaces/msg/time.hpp"``。
+  * 将 std_msgs::Time 的字段 ``nsec`` 替换为 builtin_interfaces::msg::Time 的字段 ``nanosec``。
 
-  * Convert all ``#include "std_msgs/time.h`` to ``#include "builtin_interfaces/msg/time.hpp"``
-
-  * Convert all instances using the std_msgs::Time field ``nsec`` to the builtin_interfaces::msg::Time field ``nanosec``
-
-Usages of ros::Rate
+ros::Rate 的使用
 ^^^^^^^^^^^^^^^^^^^
 
-There is an equivalent type ``rclcpp::Rate`` object which is basically a drop in replacement for ``ros::Rate``.
+ROS 2 提供了对应的 ``rclcpp::Rate`` 对象，基本上可以直接替代 ``ros::Rate``。
 
 
 Boost
 ^^^^^
 
-Much of the functionality previously provided by Boost has been integrated into the C++ standard library.
-As such we would like to take advantage of the new core features and avoid the dependency on boost where possible.
+Boost 之前提供的许多功能已经整合进 C++ 标准库。因此，我们希望尽可能利用标准库的新特性，并避免对 Boost 的依赖。
 
-Shared Pointers
+共享指针
 ~~~~~~~~~~~~~~~
 
-To switch shared pointers from boost to standard C++ replace instances of:
+要将共享指针从 Boost 切换为 C++ 标准库，请替换以下内容：
 
 
-* ``#include <boost/shared_ptr.hpp>`` with ``#include <memory>``
-* ``boost::shared_ptr`` with ``std::shared_ptr``
+* 将 ``#include <boost/shared_ptr.hpp>`` 替换为 ``#include <memory>``。
+* 将 ``boost::shared_ptr`` 替换为 ``std::shared_ptr``。
 
-There may also be variants such as ``weak_ptr`` which you want to convert as well.
+你可能还需要转换 ``weak_ptr`` 等其他指针类型。
 
-Also it is recommended practice to use ``using`` instead of ``typedef``.
-``using`` has the ability to work better in templated logic.
-For details `see here <https://stackoverflow.com/questions/10747810/what-is-the-difference-between-typedef-and-using-in-c11>`__
+此外，建议使用 ``using`` 替代 ``typedef``。在模板逻辑中，``using`` 通常具有更好的适用性。详情请参阅 `此处 <https://stackoverflow.com/questions/10747810/what-is-the-difference-between-typedef-and-using-in-c11>`__。
 
-Thread/Mutexes
+线程/互斥锁
 ~~~~~~~~~~~~~~
 
-Another common part of boost used in ROS codebases are mutexes in ``boost::thread``.
+ROS 代码库中另一个常见的 Boost 用法是使用 ``boost::thread`` 中的互斥锁。
 
 
-* Replace ``boost::mutex::scoped_lock`` with ``std::unique_lock<std::mutex>``
-* Replace ``boost::mutex`` with ``std::mutex``
-* Replace ``#include <boost/thread/mutex.hpp>`` with ``#include <mutex>``
+* 将 ``boost::mutex::scoped_lock`` 替换为 ``std::unique_lock<std::mutex>``。
+* 将 ``boost::mutex`` 替换为 ``std::mutex``。
+* 将 ``#include <boost/thread/mutex.hpp>`` 替换为 ``#include <mutex>``。
 
-Unordered Map
+无序映射（Unordered Map）
 ~~~~~~~~~~~~~
 
-Replace:
+替换为：
 
 
-* ``#include <boost/unordered_map.hpp>`` with ``#include <unordered_map>``
-* ``boost::unordered_map`` with ``std::unordered_map``
+* 将 ``#include <boost/unordered_map.hpp>`` 替换为 ``#include <unordered_map>``。
+* 将 ``boost::unordered_map`` 替换为 ``std::unordered_map``。
 
-function
+函数对象（function）
 ~~~~~~~~
 
-Replace:
+替换为：
 
 
-* ``#include <boost/function.hpp>``  with ``#include <functional>``
-* ``boost::function`` with ``std::function``
+* ``#include <boost/函数对象（function）.hpp>``  with ``#include <函数对象（function）al>``
+* ``boost::函数对象（function）`` with ``std::函数对象（function）``

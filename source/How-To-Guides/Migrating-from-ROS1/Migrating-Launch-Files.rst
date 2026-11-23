@@ -149,8 +149,8 @@ rosparam
       <param from="/path/to/file"/>
    </node>
 
-remap
-^^^^^
+remap（重映射）
+^^^^^^^^^^^^^^^
 
 * `ROS 1 中可用 <https://wiki.ros.org/roslaunch/XML/remap>`__.
 * 用于向节点传递重映射规则。
@@ -170,8 +170,8 @@ remap
       </node>
    </launch>
 
-include
-^^^^^^^
+include（包含）
+^^^^^^^^^^^^^^
 
 * `ROS 1 中可用 <https://wiki.ros.org/roslaunch/XML/include>`__.
 * 用于包含另一个 launch 文件。
@@ -181,8 +181,8 @@ include
      In ROS 2, it's not.
      This means the values of ``arg`` tags are propagated into included launch files as if ``pass_all_args="true"`` were used in ROS 1.
      However, this propagation only works for args that have a default value (in the inner/included launch file).
-     Required args have to be passed explicitly.
-     Nest includes in ``group`` tags to scope them (see also ``group`` attributes ``scoped`` and ``forwarding`` ).
+     必需参数必须显式传递。
+     若要限制作用域，请将 include 嵌套在 ``group`` 标签中（另请参阅 ``group`` 的 ``scoped`` 和 ``forwarding`` 属性）。
    * 不支持 ``ns`` 属性。解决方法请参阅 ``push_ros_namespace`` 标签示例。
    * 嵌套在 ``include`` 标签中的 ``arg`` 标签现在应使用 ``let``。不过，目前仍然支持 ``arg``。
    * 嵌套在 ``include`` 标签中的 ``let`` 标签不支持条件属性（``if``、``unless``）或 ``description`` 属性。
@@ -232,7 +232,7 @@ arg
 
    $ ros2 launch mylaunch.xml topic_name:=custom_topic_name
 
-有关传递命令行参数的更多信息，请参阅 :doc:`使用替换 <../../../Tutorials/Intermediate/Launch/Using-替换表达式>`。
+有关传递命令行参数的更多信息，请参阅 :doc:`使用替换 <../../../Tutorials/Intermediate/Launch/Using-Substitutions>`。
 
 env
 ^^^
@@ -308,13 +308,13 @@ test
 ROS 2 中新增的标签
 -----------------
 
-set_env and unset_env
+set_env 和 unset_env
 ^^^^^^^^^^^^^^^^^^^^^
 
 请参阅 ``env`` 标签的说明。
 
-push_ros_namespace
-^^^^^^^^^^^^^^^^^^
+push_ros_namespace（推送 ROS 命名空间）
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``include`` 和 ``group`` 标签均不接受 ``ns`` 属性。可以使用以下 action 作为替代方案：
 
@@ -350,8 +350,8 @@ let
 * ``let`` 用于设置 launch 配置值。
 * ``arg`` 用于声明 launch 参数/配置，并可选择提供默认值。该值也可以通过 CLI 或包含该 launch 文件时单独设置。如果没有设置参数值，则使用提供的默认值；如果没有默认值，则会报告错误。
 
-executable
-^^^^^^^^^^
+executable（可执行程序）
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 用于运行任意可执行程序。
 
@@ -406,7 +406,7 @@ There are, however, some changes w.r.t. ROS 1:
 --------------------
 
 The rules that were shown in ``类型推断规则`` subsection of ``param`` tag applies to any attribute.
-For example:
+例如：
 
 .. code-block:: xml
 
