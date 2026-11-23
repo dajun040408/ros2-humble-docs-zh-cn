@@ -115,6 +115,3 @@
 * 更新功能包维护者（`#899 <https://github.com/ros2/rosbag2/issues/899>`__）
 * 添加 seek 接口（`#836 <https://github.com/ros2/rosbag2/issues/836>`__）
 * 贡献者：Chris Lalancette、Emerson Knapp、Michel Hidalgo、Shane Loretz、William Woodall、sonia
-
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

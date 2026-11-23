@@ -114,6 +114,3 @@
 * 在 pkg create API 中将 package exports 传递给模板（`#619 <https://github.com/ros2/ros2cli/issues/619>`__、`#628 <https://github.com/ros2/ros2cli/issues/628>`__）
 * 新增变更日志（`#635 <https://github.com/ros2/ros2cli/issues/635>`__）
 * 贡献者：Abrar Rahman Protyasha、Aditya Pande、Amro Al-Baali、Audrow Nash、Chris Lalancette、Ivan Santiago Paunovic、Shane Loretz、rob-clarke、tim-fan
-
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
