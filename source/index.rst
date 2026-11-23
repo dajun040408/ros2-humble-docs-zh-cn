@@ -25,7 +25,7 @@ ROS 2 文档
 
 自 2007 年 ROS 项目启动以来，机器人技术和 ROS 社区发生了许多变化。ROS 2 项目的目标是适应这些变化，在继承 ROS 1 优点的同时改进其不足之处。
 
-**你是否正在查找特定 ROS 功能包（例如 MoveIt、image_proc 或 octomap）的文档？** 请访问 `ROS Index <https://index.ros.org/?search_packages=true#{DISTRO}>`__ ，或查看 `按功能包分类的文档索引 <https://docs.ros.org/en/{DISTRO}/p/>`__。
+**你是否正在查找特定 ROS 功能包（例如 MoveIt、image_proc 或 octomap）的文档？** 请访问 `ROS Index <https://index.ros.org/?search_packages=true#{DISTRO}>`_ ，或查看 `按功能包分类的文档索引 <https://docs.ros.org/en/{DISTRO}/p/>`_。
 
 本站包含 ROS 2 文档。如果你需要查阅 ROS 1 文档，请访问 `ROS Wiki <https://wiki.ros.org>`__。
 
@@ -108,4 +108,4 @@ ROS 项目通用资源
 
 * `ROS Answers <https://answers.ros.org/questions/>`__ ：该问答网站于 2023 年 8 月停止活跃，目前仅提供只读访问。
 * `ROS 2 Docs <https://docs.ros2.org>`__ ：提供截至 Galactic（含 Galactic）发行版的 API 文档。
-* `ROS 2 Design <http://design.ros2.org/>`__ ：记录 ROS 2 开发早期的设计决策。新的设计提案应通过 `REP <https://reps.openrobotics.org/>`__ 提交。
+* `ROS 2 Design <http://design.ros2.org/>`_ ：记录 ROS 2 开发早期的设计决策。新的设计提案应通过 `REP <https://reps.openrobotics.org/>`_ 提交。
