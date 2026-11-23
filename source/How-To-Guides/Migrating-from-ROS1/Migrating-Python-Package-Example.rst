@@ -555,7 +555,7 @@ ROS 1 和 ROS 2 都使用 `回调函数 <https://en.wikipedia.org/wiki/Callback_
 
 
 创建 rate 对象
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 在 ROS 1 中，用户直接创建 ``Rate`` 实例；在 ROS 2 中，用户通过节点的 ``create_rate()`` API 创建。
 
@@ -572,7 +572,7 @@ ROS 1 和 ROS 2 都使用 `回调函数 <https://en.wikipedia.org/wiki/Callback_
     rate = node.create_rate(10)  # 10hz
 
 使用 ``rclpy.ok()`` 作为循环条件
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 在 ROS 1 中，``rospy.is_shutdown()`` API 用于判断进程是否收到关闭请求。在 ROS 2 中，对应功能由 ``rclpy.ok()`` API 提供。
 

@@ -171,7 +171,7 @@ remap（重映射）
    </launch>
 
 include（包含）
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 * `ROS 1 中可用 <https://wiki.ros.org/roslaunch/XML/include>`__.
 * 用于包含另一个 launch 文件。
@@ -306,7 +306,7 @@ test
 目前尚不支持。
 
 ROS 2 中新增的标签
------------------
+------------------
 
 set_env 和 unset_env
 ^^^^^^^^^^^^^^^^^^^^^

@@ -317,7 +317,7 @@ Add ``<test_depend>ament_cmake_gtest</test_depend>`` to your ``package.xml`` (`e
    <test_depend>ament_cmake_gtest</test_depend>
 
 代码检查工具（Linters）
-^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 ROS 2 的 :doc:`代码风格指南 <../../The-ROS2-Project/Contributing/Developer-Guide>` 与 ROS 1 不同。
 
@@ -438,7 +438,7 @@ ROS 代码库中另一个常见的 Boost 用法是使用 ``boost::thread`` 中�
 * 将 ``#include <boost/thread/mutex.hpp>`` 替换为 ``#include <mutex>``。
 
 无序映射（Unordered Map）
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 替换为：
 
@@ -447,7 +447,7 @@ ROS 代码库中另一个常见的 Boost 用法是使用 ``boost::thread`` 中�
 * 将 ``boost::unordered_map`` 替换为 ``std::unordered_map``。
 
 函数对象（function）
-~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 替换为：
 
