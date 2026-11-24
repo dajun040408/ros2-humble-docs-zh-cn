@@ -321,3 +321,5 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 
 - 已补充 `Getting-Started-With-Ros2doctor.rst` 中 `--report` 用于提交 ROS 2 支持请求的说明，明确可将报告相关部分附入支持请求，以便他人了解环境。提交：`7652b21b2761979b7a8d8a477bcbcd008a6faa3f`。
 - Beginner Client Libraries 目录中尚未做实质性补译的两篇为 `Colcon-Tutorial.rst` 与 `Getting-Started-With-Ros2doctor.rst`；前者章节和主要示例已与上游对应，本轮对后者做了补充说明。仍需最后一次全目录逐段抽查。
+
+- 继续抽查 `Colcon-Tutorial.rst`，发现 colcon_cd 部分只列出 Linux 命令，缺少官方 Humble 中的 macOS 配置、Windows 不支持说明及撤销配置的方法。已补齐三平台说明和撤销步骤。提交：`f70c8b34539d6f608fbf282277ced2310706f7c9`。
