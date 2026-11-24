@@ -20,8 +20,8 @@ ROS 2 将 Windows 10 作为 Tier 1 支持平台，这意味着所有进入 ROS 2
 
 这会对 ROS 2 产生两个实际影响：
 
-* ROS 2 内部的一些路径名称比较长。因此，始终建议为 ROS 2 目录根路径选择较短的名称，例如 ``C:\dev``。
-* 从源码构建 ROS 2 时，colcon 默认的 isolated 构建模式可能生成很长的路径。为避免路径过长，在 Windows 上构建时请使用 ``--merge-install``。
+* ROS 2 内部的一些路径名称比较长。因此，始终建议为 ROS 2 目录根路径选择较短的名称，例如 ``C:\dev`` 。
+* 从源码构建 ROS 2 时，colcon 默认的 isolated 构建模式可能生成很长的路径。为避免路径过长，在 Windows 上构建时请使用 ``--merge-install`` 。
 
 **注意：** 可以修改 Windows 配置，以支持更长的最大路径。更多信息请参阅`此处 <https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=cmd#enable-long-paths-in-windows-10-version-1607-and-later>`_。
 
@@ -58,7 +58,7 @@ Microsoft 建议 ROS 开发者使用 Visibility Control Headers 控制二进制�
 Visibility Control Headers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Visibility Control Headers 的作用是为每个共享库定义一个宏，正确声明符号应使用 ``dllimport`` 还是 ``dllexport``。具体取决于当前库是被其他代码使用，还是正在被自身构建。
+Visibility Control Headers 的作用是为每个共享库定义一个宏，正确声明符号应使用 ``dllimport`` 还是 ``dllexport`` 。具体取决于当前库是被其他代码使用，还是正在被自身构建。
 
 宏中的逻辑还会考虑编译器类型，并选择合适的语法。`GCC visibility 文档 <https://gcc.gnu.org/wiki/Visibility>`_ 提供了逐步说明，帮助为库添加显式符号可见性。
 
@@ -93,7 +93,7 @@ Visibility Control Headers 的作用是为每个共享库定义一个宏，正�
 
 完整示例请参阅 `rviz_rendering <https://github.com/ros2/rviz/blob/ros2/rviz_rendering/include/rviz_rendering/visibility_control.hpp>`_。
 
-使用该宏时，在需要对外可见的符号前添加 ``MY_LIB_PUBLIC``。例如：
+使用该宏时，在需要对外可见的符号前添加 ``MY_LIB_PUBLIC`` 。例如：
 
 .. code-block:: c++
 
@@ -119,7 +119,7 @@ CMake 在 Windows 上实现了 ``WINDOWS_EXPORT_ALL_SYMBOLS`` 属性，可以自
 
    set_target_properties(${LIB_NAME} PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
 
-如果一个 CMakeLists 文件中包含多个库，需要分别对每个库调用 ``set_target_properties``。
+如果一个 CMakeLists 文件中包含多个库，需要分别对每个库调用 ``set_target_properties`` 。
 
 注意，Windows 二进制最多只能导出 65,536 个符号。如果导出的符号超过这一数量，就会出现错误，此时应使用 visibility_control 头文件。
 
@@ -132,7 +132,7 @@ CMake 在 Windows 上实现了 ``WINDOWS_EXPORT_ALL_SYMBOLS`` 属性，可以自
    public:
    static const int Global_data_num;
 
-对于这类情况，必须显式应用 ``dllimport`` / ``dllexport``。可以使用 ``generate_export_header`` 实现，具体请参阅 `相关说明 <https://blog.kitware.com/create-dlls-on-windows-without-declspec-using-new-cmake-export-all-feature/>`__。
+对于这类情况，必须显式应用 ``dllimport`` / ``dllexport`` 。可以使用 ``generate_export_header`` 实现，具体请参阅 `相关说明 <https://blog.kitware.com/create-dlls-on-windows-without-declspec-using-new-cmake-export-all-feature/>`__。
 
 最后，导出符号的头文件必须至少被软件包中的一个 ``.cpp`` 文件包含，这样宏才会展开并写入最终二进制文件。否则，符号仍然无法被调用。
 
@@ -141,7 +141,7 @@ Debug 构建
 
 在 Windows 上使用 Debug 模式构建时，有几项重要变化。
 
-首先，所有 DLL 名称都会自动添加 ``_d`` 后缀。例如，库名为 ``libfoo.dll`` 时，Debug 模式下会变为 ``libfoo_d.dll``。Windows 动态链接器也会查找这种形式的库，因此不会找到没有 ``_d`` 后缀的库。
+首先，所有 DLL 名称都会自动添加 ``_d`` 后缀。例如，库名为 ``libfoo.dll`` 时，Debug 模式下会变为 ``libfoo_d.dll`` 。Windows 动态链接器也会查找这种形式的库，因此不会找到没有 ``_d`` 后缀的库。
 
 此外，Windows 会在 Debug 模式下启用一系列编译时和运行时检查，其严格程度远高于 Release 构建。
 
@@ -150,7 +150,7 @@ Debug 构建
 正斜杠与反斜杠
 --------------
 
-Windows 默认使用反斜杠（``\``）作为路径分隔符，这与 Linux 和 macOS 使用的正斜杠（``/``）不同。
+Windows 默认使用反斜杠（``\`` ）作为路径分隔符，这与 Linux 和 macOS 使用的正斜杠（``/`` ）不同。
 
 大多数 Windows API 都能将两者作为路径分隔符处理，但并非所有 API 都支持。例如，``cmd.exe`` Shell 只有在使用反斜杠时才能进行 Tab 补全，不能使用正斜杠。
 
@@ -163,9 +163,9 @@ Windows 默认使用反斜杠（``\``）作为路径分隔符，这与 Linux 和
 
 常见方法是修改 ``ExternalProject_add`` 调用，添加 ``PATCH`` 命令并使用 ``patch`` 可执行程序。
 
-遗憾的是，Chocolatey 提供的 ``patch`` 可执行程序需要管理员权限才能运行。解决方法是在应用外部项目补丁时使用 ``git apply``。
+遗憾的是，Chocolatey 提供的 ``patch`` 可执行程序需要管理员权限才能运行。解决方法是在应用外部项目补丁时使用 ``git apply`` 。
 
-``git apply`` 也有自己的限制：它只有在 Git 仓库中才能正常工作。因此，外部项目应始终使用 ``GIT`` 方法获取源码，然后通过 ``PATCH_COMMAND`` 调用 ``git apply``。
+``git apply`` 也有自己的限制：它只有在 Git 仓库中才能正常工作。因此，外部项目应始终使用 ``GIT`` 方法获取源码，然后通过 ``PATCH_COMMAND`` 调用 ``git apply`` 。
 
 下面是上述方法的使用示例：
 
