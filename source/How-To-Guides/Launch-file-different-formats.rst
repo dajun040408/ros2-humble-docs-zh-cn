@@ -3,7 +3,7 @@
   Guides/Launch-file-different-formats
 
 使用 XML、YAML 和 Python 编写 ROS 2 启动文件
-===========================================
+============================================
 
 .. contents:: 目录
    :depth: 2
