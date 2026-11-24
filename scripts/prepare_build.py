@@ -53,7 +53,7 @@ def main() -> int:
     conf = replace_once(conf, "'github_version': 'rolling/source/'",
                         "'github_version': 'main/source/'", "GitHub source link")
     conf = replace_once(conf, "html_baseurl = 'https://docs.ros.org/en'",
-                        "html_baseurl = 'https://dajun040408.github.io/ros2-humble-docs-zh-cn/'",
+                        "html_baseurl = 'https://ros2docs.robook.org/humble/'",
                         "HTML base URL")
     conf = replace_once(conf, "ogp_site_url = 'https://docs.ros.org/en/humble/'",
                         "ogp_site_url = 'https://dajun040408.github.io/ros2-humble-docs-zh-cn/'",
