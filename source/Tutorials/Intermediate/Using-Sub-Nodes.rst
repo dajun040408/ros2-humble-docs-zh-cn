@@ -76,7 +76,7 @@ ROS 2 子节点（C++）
    * - 计算图身份
      - 共享。子节点共享父节点的 ``rclcpp::node_interfaces::NodeBaseInterface``，不会作为独立节点出现在 ``ros2 node list`` 中。
    * - 节点名称
-     - 共享。`sub_node->get_name()` 返回父节点名称。
+     - 共享。``sub_node->get_name()`` 返回父节点名称。
    * - 执行器与回调
      - 共享。子节点实体的回调由父节点的执行器调度。应 spin 父节点，而不是子节点。
    * - 参数
