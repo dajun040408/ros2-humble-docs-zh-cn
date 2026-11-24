@@ -21,13 +21,13 @@ GitHub 组织
 ^^^^^^^^^^^
 
 #. 打开 `https://github.com/orgs/%YOUR_ORG%/people <https://github.com/orgs/%YOUR_ORG%/people>`_，并将 ``%YOUR_ORG%`` 替换为相应组织名称。
-#. 点击 ``Invite Member``，输入 ``ros-pull-request-builder``。
+#. 点击 ``Invite Member`` ，输入 ``ros-pull-request-builder`` 。
 
 GitHub 代码仓库
 ^^^^^^^^^^^^^^^
 
-#. 打开 ``https://github.com/%YOUR_ORG%/%YOUR_REPO%/settings/access``，并将组织和仓库占位符替换为实际值。
-#. 点击 ``Add people``，输入 ``ros-pull-request-builder``。
+#. 打开 ``https://github.com/%YOUR_ORG%/%YOUR_REPO%/settings/access`` ，并将组织和仓库占位符替换为实际值。
+#. 点击 ``Add people`` ，输入 ``ros-pull-request-builder`` 。
 #. 为其选择 ``Admin`` 或 ``Write`` 角色（参见下一节）。
 
 WebHook
@@ -37,7 +37,7 @@ WebHook
 
 也可以只授予**写入（Write）**权限，从而避免授予完整管理员权限，并手动配置 WebHook：
 
-#. 打开 ``https://github.com/%YOUR_ORG%/%YOUR_REPO%/settings/hooks/new``。
+#. 打开 ``https://github.com/%YOUR_ORG%/%YOUR_REPO%/settings/hooks/new`` 。
 #. 将 ``https://build.ros2.org/ghprbhook/`` 设置为 Payload URL。
 #. 勾选以下选项：
     * Let me select individual events.
