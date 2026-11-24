@@ -23,12 +23,12 @@ ROS 2 并不依赖某个特定开发环境，其主要开发流程仍以命令�
 
    $ colcon build
 
-Python 代码会被复制到 `build`/`install` 目录中。因此，如果从 IDE 内部调试 `ros2 run` 命令，实际运行的代码（来自 `build`/`install`）与 IDE 项目中打开的源文件并不是同一份文件。
+Python 代码会被复制到 ``build``/``install`` 目录中。因此，如果从 IDE 内部调试 ``ros2 run`` 命令，实际运行的代码（来自 ``build``/``install``）与 IDE 项目中打开的源文件并不是同一份文件。
 
 有两种处理方式：
 
-* 打开 `build`/`install` 目录中的源文件，并在这些文件中设置断点。
-* 使用 colcon 的 `--symlink-install` 标志构建工作空间，使 `build`/`install` 目录中的文件通过符号链接指向源文件。更多信息请参阅 `colcon 文档 <https://colcon.readthedocs.io/en/released/reference/verb/build.html#command-line-arguments>`__。
+* 打开 ``build``/``install`` 目录中的源文件，并在这些文件中设置断点。
+* 使用 colcon 的 ``--symlink-install`` 标志构建工作空间，使 ``build``/``install`` 目录中的文件通过符号链接指向源文件。更多信息请参阅 `colcon 文档 <https://colcon.readthedocs.io/en/released/reference/verb/build.html#command-line-arguments>`__。
 
 Visual Studio Code
 ------------------
@@ -90,7 +90,7 @@ VSCode 以及在 VSCode 内部创建的任何终端都会正确继承父进程�
 Python
 ^^^^^^
 
-在工作空间中，确认使用了正确的 Python 解释器。source 环境后，命令行中的 `python` 通常就是正确的解释器，但 VSCode 倾向于使用 Python 的绝对路径。
+在工作空间中，确认使用了正确的 Python 解释器。source 环境后，命令行中的 ``python`` 通常就是正确的解释器，但 VSCode 倾向于使用 Python 的绝对路径。
 
 点击右下角的“Selected Python Interpreter”可以更改解释器。
 
@@ -98,7 +98,7 @@ Python
 
 可以在当前工作空间中打开“Settings” > “Extensions” > “Python” > “Activate Environment”，并取消启用该选项。
 
-现在可以直接运行文件，或在 `launch.json` 中创建配置。调试节点时，创建类似 `python ...` 的配置通常比使用 `ros2 run/launch ...` 更简单。`launch.json` 示例：
+现在可以直接运行文件，或在 ``launch.json`` 中创建配置。调试节点时，创建类似 ``python ...`` 的配置通常比使用 ``ros2 run/launch ...`` 更简单。``launch.json`` 示例：
 
 .. code-block:: json
 
@@ -123,7 +123,7 @@ PyCharm
 
 `PyCharm <https://www.jetbrains.com/pycharm/>`_ 是一款专门面向 Python 的 IDE，因此只适合用于 Python 节点。
 
-使用 PyCharm 时，可以附加到已有进程（例如通过 `ros2 run ...` 或 `ros2 launch ...` 启动的进程），也可以直接从 Python 运行节点（相当于 `python [file.py]`）。
+使用 PyCharm 时，可以附加到已有进程（例如通过 ``ros2 run ...`` 或 ``ros2 launch ...`` 启动的进程），也可以直接从 Python 运行节点（相当于 ``python [file.py]``）。
 
 集成代码检查
 ^^^^^^^^^^^^
@@ -154,16 +154,16 @@ Windows
 
 #. 按照平时的方式创建 ROS 工作空间。
 #. 正常启动 PyCharm。
-#. 打开一个项目。项目根目录应为正在开发的 ROS 节点目录，例如 `C:\dev_ws\src\my_node`。
-#. 点击“Add new interpreter” > “Add local interpreter...”。选择系统解释器（或正在使用的虚拟环境），并选择 ROS Python 版本对应的可执行文件（通常为 `C:\Python38\python.exe`）。
+#. 打开一个项目。项目根目录应为正在开发的 ROS 节点目录，例如 ``C:\dev_ws\src\my_node``。
+#. 点击“Add new interpreter” > “Add local interpreter...”。选择系统解释器（或正在使用的虚拟环境），并选择 ROS Python 版本对应的可执行文件（通常为 ``C:\Python38\python.exe``）。
 
    * 此时打开代码文件，可能会看到缺少导入模块的警告。尝试运行文件也会确认这些问题。
 
 #. 在“Python Interpreters”窗口中找到并选择 ROS 解释器，为其设置一个容易识别的名称。然后点击“Show Interpreter Paths”。
 #. 在新窗口中可以看到该解释器已有的路径。点击“+”添加两个路径（根据你的 ROS 安装位置调整）：
 
-   * `C:\dev\ros2_humble\bin`
-   * `C:\dev\ros2_humble\Lib\site-packages`
+   * ``C:\dev\ros2_humble\bin``
+   * ``C:\dev\ros2_humble\Lib\site-packages``
 
 PyCharm 会重新建立索引。完成后，它应该能够正确识别项目中的 ROS 2 系统软件包，并支持代码导航、补全和文档提示。
 
@@ -171,7 +171,7 @@ PyCharm 会重新建立索引。完成后，它应该能够正确识别项目中
 
 可以通过以下方式解决：
 
-* 确保运行/调试配置中的 `PATH` 覆盖值同时包含 ROS 2 安装目录和工作空间，例如：
+* 确保运行/调试配置中的 ``PATH`` 覆盖值同时包含 ROS 2 安装目录和工作空间，例如：
 
   .. code-block:: console
 
@@ -179,15 +179,15 @@ PyCharm 会重新建立索引。完成后，它应该能够正确识别项目中
      $ C:\dev_ws\install\local_setup.ps1
      $ echo $ENV:Path
 
-* 将 `install/` 目录中相关文件夹添加到项目源目录。
+* 将 ``install/`` 目录中相关文件夹添加到项目源目录。
 
-  打开“Settings...” > “Project: ” > “Project Structure”，点击“Add content root”，添加 `install/Lib/*` 下所有相关 `site-packages` 文件夹。
+  打开“Settings...” > “Project: ” > “Project Structure”，点击“Add content root”，添加 ``install/Lib/*`` 下所有相关 ``site-packages`` 文件夹。
 
   最后，确保运行/调试配置启用了“include content roots in PYTHONPATH”选项。
 
 .. tip::
 
-   使用 colcon build 的 `--merge-install` 选项可以减少依赖目录的数量，从而更容易配置 PyCharm。更多信息请参阅 `colcon 文档 <https://colcon.readthedocs.io/en/released/user/isolated-vs-merged-workspaces.html>`__。
+   使用 colcon build 的 ``--merge-install`` 选项可以减少依赖目录的数量，从而更容易配置 PyCharm。更多信息请参阅 `colcon 文档 <https://colcon.readthedocs.io/en/released/user/isolated-vs-merged-workspaces.html>`__。
 
 附加到进程
 ^^^^^^^^^^
@@ -215,14 +215,14 @@ PyCharm 会重新建立索引。完成后，它应该能够正确识别项目中
 
 首先按照前面的步骤完成集成。
 
-从 PyCharm 运行 Python 文件时，可能会出现导入错误。这是因为 PyCharm 会扩展 `PYTHONPATH` 环境变量，但不会修改 `PATH`，导致无法找到 `ros/bin` 中的必要库文件。
+从 PyCharm 运行 Python 文件时，可能会出现导入错误。这是因为 PyCharm 会扩展 ``PYTHONPATH`` 环境变量，但不会修改 ``PATH``，导致无法找到 ``ros/bin`` 中的必要库文件。
 
-编辑该文件的运行/调试配置，在“Environment Variables”中添加一个新变量。当前不支持扩展已有 `PATH`，因此需要覆盖它。
+编辑该文件的运行/调试配置，在“Environment Variables”中添加一个新变量。当前不支持扩展已有 ``PATH``，因此需要覆盖它。
 
-在已经 source ROS 环境的终端中运行 `echo $Env:PATH`，导出 `PATH` 的内容并复制结果。
+在已经 source ROS 环境的终端中运行 ``echo $Env:PATH``，导出 ``PATH`` 的内容并复制结果。
 
-回到 PyCharm，将复制的内容粘贴为 `PATH`，应用修改后运行或调试节点。此后应当能够像普通 Python 项目一样工作，并方便地添加断点或使用其他调试方法。
+回到 PyCharm，将复制的内容粘贴为 ``PATH``，应用修改后运行或调试节点。此后应当能够像普通 Python 项目一样工作，并方便地添加断点或使用其他调试方法。
 
 .. note::
 
-   在 Windows 上，“Environment Variables”中的 `PATH` 变量似乎必须全部使用小写形式 `path` 才能正常工作。
+   在 Windows 上，“Environment Variables”中的 ``PATH`` 变量似乎必须全部使用小写形式 ``path`` 才能正常工作。
