@@ -1,4 +1,3 @@
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * 通过明确不同工具的用途来改进文档（`#357 <https://github.com/ament/ament_lint/issues/357>`__）
 * 更新变更日志中的后续版本信息
 * 将维护者更新为 Michael Jeronimo 和 Michel Hidalgo（`#340 <https://github.com/ament/ament_lint/issues/340>`__）
