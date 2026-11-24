@@ -240,3 +240,5 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 
 - 构建 #742（提交 `0993305`）build/deploy 均成功；日志确认 `part-004.rst` 的 CRITICAL 已消失，Sphinx ERROR 为 0，但 `part-032.rst:107` 仍有一条行内 literal 警告（日志重复显示上游路径和覆盖路径），另有 1 条外部网站超时和 2 条 Lyrical 上游页面未纳入 Humble toctree 的警告。
 - 为彻底排除该行内 literal 警告，已将该 changelog 条目中的 `qreal orient_` 改为普通文本，仅保留 ``double`` 的代码标记。提交：`f3d0041f34843601080f240ce2c6a87febb4dac2`。需由下一轮构建验证警告是否消失。
+
+- 构建 #744（提交 `7730361`）build/deploy 成功，但日志进一步表明：移除行内 literal 的反引号后，未转义的 `orient_` 被 docutils 当作引用目标，产生 Unknown target name 错误。因此已将该术语保留为普通文本并对下划线使用 RST 转义（`qreal orient\\_`），只将 `double` 保留为行内 literal。修复提交：`e64214f55b638f4d99df64171ec798ad1315e4b3`。最终需由下一次构建确认该行不再产生 warning/error。
