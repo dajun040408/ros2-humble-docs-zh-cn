@@ -27,27 +27,27 @@ ROSCon 演讲
    * - 演讲主题
      - 视频
    * - ros2-perf-multihost：用于分布式系统客观架构评估的自动协调框架
-     - `视频 <https://vimeo.com/1235679618>`_
+     - `视频 <https://vimeo.com/1235679618>`__
    * - ROS Middleware Survival Guide：空间、时间和状态导航
-     - `视频 <https://vimeo.com/1235678204>`_
+     - `视频 <https://vimeo.com/1235678204>`__
    * - Proton：面向机器人轻量级、可移植的点对点内部通信协议
-     - `视频 <https://vimeo.com/1235677099>`_
+     - `视频 <https://vimeo.com/1235677099>`__
    * - 使用 REP-0157 突破零拷贝瓶颈
-     - `视频 <https://vimeo.com/1235676412>`_
+     - `视频 <https://vimeo.com/1235676412>`__
    * - Beyond Datasheets：可复现的 ROS LiDAR 评估基准
-     - `视频 <https://vimeo.com/1235675803>`_
+     - `视频 <https://vimeo.com/1235675803>`__
    * - Nav2 中的 Dynamic Window Pure Pursuit
-     - `视频 <https://vimeo.com/1235288719>`_
+     - `视频 <https://vimeo.com/1235288719>`__
    * - ROS 中的铰接式车辆
-     - `视频 <https://vimeo.com/1235288662>`_
+     - `视频 <https://vimeo.com/1235288662>`__
    * - Tour de Hardware：ros2_control 硬件接口生命周期讲解与真实案例
-     - `视频 <https://vimeo.com/1233910905>`_
+     - `视频 <https://vimeo.com/1233910905>`__
    * - 使用 Bazel 加速 ROS 开发
-     - `视频 <https://vimeo.com/1233910907>`_
+     - `视频 <https://vimeo.com/1233910907>`__
    * - 在 Gazebo 中使用 Python：连接仿真到现实、强化学习和自定义物理
-     - `视频 <https://vimeo.com/1233910906>`_
+     - `视频 <https://vimeo.com/1233910906>`__
    * - 使用 MoveIt 2 和 ros2_control 实现全身移动操作
-     - `视频 <https://vimeo.com/1233910908>`_
+     - `视频 <https://vimeo.com/1233910908>`__
 
 其他年份
 --------
@@ -57,8 +57,8 @@ ROSCon 演讲
 相关资源
 --------
 
-* `ROSCon 官方网站 <https://roscon.ros.org>`_
-* `ROS 2 文档 <https://docs.ros.org/en/{DISTRO}/>`_
+* `ROSCon 官方网站 <https://roscon.ros.org>`__
+* `ROS 2 文档 <https://docs.ros.org/en/{DISTRO}/>`__
 
 总结
 ----
