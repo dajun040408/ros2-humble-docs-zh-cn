@@ -25,7 +25,7 @@
 前置条件
 --------
 
-需要安装 :doc:`ROS 2 <../../Installation>` 和 ``colcon`。
+需要安装 :doc:`ROS 2 <../../Installation>` 和 ``colcon``。
 
 创建一个 :doc:`工作空间 <../Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>`，并创建名为 ``action_tutorials_interfaces`` 的功能包。首先要 :doc:`source ROS 2 安装环境 <../Beginner-CLI-Tools/Configuring-ROS2-Environment>`。
 
