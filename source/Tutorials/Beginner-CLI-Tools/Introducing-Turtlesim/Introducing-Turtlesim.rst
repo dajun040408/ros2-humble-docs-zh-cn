@@ -31,7 +31,7 @@ rqt 是 ROS 2 的图形用户界面（GUI）工具。所有在 rqt 中完成的�
 前置条件
 --------
 
-上一篇 :doc:§环境配置教程 <../Configuring-ROS2-Environment>§ 介绍了如何配置环境。
+上一篇 :doc:`环境配置教程 <../Configuring-ROS2-Environment>` 介绍了如何配置环境。
 
 任务
 ----
@@ -39,7 +39,7 @@ rqt 是 ROS 2 的图形用户界面（GUI）工具。所有在 rqt 中完成的�
 1. 安装 turtlesim
 ^^^^^^^^^^^^^^^^^
 
-与往常一样，先在新终端中 source 设置文件，具体方法参阅 :doc:§上一篇教程 <../Configuring-ROS2-Environment>§。
+与往常一样，先在新终端中 source 设置文件，具体方法参阅 :doc:`上一篇教程 <../Configuring-ROS2-Environment>`。
 
 为当前 ROS 2 发行版安装 turtlesim 软件包：
 

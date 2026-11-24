@@ -19,18 +19,18 @@
 背景
 ----
 
-在 :doc:§此前的教程 <./Custom-ROS2-Interfaces>§ 中，你已经学习了如何创建自定义 msg 和 srv 接口。
+在 :doc:`此前的教程 <./Custom-ROS2-Interfaces>` 中，你已经学习了如何创建自定义 msg 和 srv 接口。
 
 最佳实践是将接口定义放在独立接口功能包中，但有时也可以在同一个功能包中声明、创建和使用接口。
 
-目前接口只能在 CMake 功能包中定义。不过，CMake 功能包也可以通过 §ament_cmake_python§ 包含 Python 库和节点。因此，可以在一个功能包中同时定义接口和 Python 节点。本教程为简化说明，使用 CMake 功能包和 C++ 节点。
+目前接口只能在 CMake 功能包中定义。不过，CMake 功能包也可以通过 ``ament_cmake_python`` 包含 Python 库和节点。因此，可以在一个功能包中同时定义接口和 Python 节点。本教程为简化说明，使用 CMake 功能包和 C++ 节点。
 
 本教程重点介绍 msg 接口，但相同步骤也适用于其他接口类型。
 
 前置条件
 --------
 
-建议先阅读 :doc:§自定义 ROS 2 接口基础教程 <./Custom-ROS2-Interfaces>§。还需要安装 ROS 2、创建工作空间，并了解如何创建功能包。
+建议先阅读 :doc:`自定义 ROS 2 接口基础教程 <./Custom-ROS2-Interfaces>`。还需要安装 ROS 2、创建工作空间，并了解如何创建功能包。
 
 任务
 ----
@@ -38,7 +38,7 @@
 1. 创建功能包
 ^^^^^^^^^^^^^
 
-在工作空间的 §src§ 目录中创建 §more_interfaces§ 功能包，并创建消息目录：
+在工作空间的 ``src`` 目录中创建 ``more_interfaces`` 功能包，并创建消息目录：
 
 .. code-block:: console
 
@@ -48,7 +48,7 @@
 2. 创建 msg 文件
 ^^^^^^^^^^^^^^^^
 
-在 §more_interfaces/msg§ 中创建 §AddressBook.msg§：
+在 ``more_interfaces/msg`` 中创建 ``AddressBook.msg``：
 
 .. code-block:: text
 
@@ -63,17 +63,17 @@
 
 该消息包含以下字段：
 
-* §first_name§：string 类型。
-* §last_name§：string 类型。
-* §phone_number§：string 类型。
-* §phone_type§：uint8 类型，并定义了多个命名常量。
+* ``first_name``：string 类型。
+* ``last_name``：string 类型。
+* ``phone_number``：string 类型。
+* ``phone_type``：uint8 类型，并定义了多个命名常量。
 
-消息定义中的字段也可以设置默认值。更多接口定制方式请参阅 :doc:§接口概念 <../../Concepts/Basic/About-Interfaces>§。
+消息定义中的字段也可以设置默认值。更多接口定制方式请参阅 :doc:`接口概念 <../../Concepts/Basic/About-Interfaces>`。
 
 2.1 构建 msg 文件
 ~~~~~~~~~~~~~~~~~
 
-在 §package.xml§ 中添加：
+在 ``package.xml`` 中添加：
 
 .. code-block:: xml
 
@@ -81,15 +81,15 @@
    <exec_depend>rosidl_default_runtime</exec_depend>
    <member_of_group>rosidl_interface_packages</member_of_group>
 
-构建阶段需要 §rosidl_default_generators§，运行阶段需要 §rosidl_default_runtime§。
+构建阶段需要 ``rosidl_default_generators``，运行阶段需要 ``rosidl_default_runtime``。
 
-在 §CMakeLists.txt§ 中查找消息代码生成包：
+在 ``CMakeLists.txt`` 中查找消息代码生成包：
 
 .. code-block:: cmake
 
    find_package(rosidl_default_generators REQUIRED)
 
-然后使用 §rosidl_generate_interfaces()§ 注册消息文件：
+然后使用 ``rosidl_generate_interfaces()`` 注册消息文件：
 
 .. code-block:: cmake
 
@@ -100,9 +100,9 @@
 2.2 在同一功能包中使用接口
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-接口生成后，可以在同一功能包的 C++ 节点中包含生成的头文件，并使用对应命名空间访问消息类型。生成的 C++ 类型命名空间由功能包名称和 §msg§ 组成，例如 §more_interfaces::msg::AddressBook§。
+接口生成后，可以在同一功能包的 C++ 节点中包含生成的头文件，并使用对应命名空间访问消息类型。生成的 C++ 类型命名空间由功能包名称和 ``msg`` 组成，例如 ``more_interfaces::msg::AddressBook``。
 
-在 §CMakeLists.txt§ 中，使用 §rosidl_get_typesupport_target§ 获取类型支持 target，并将其链接到使用接口的可执行程序。确保生成接口的配置位于 §ament_package()§ 之前。
+在 ``CMakeLists.txt`` 中，使用 ``rosidl_get_typesupport_target`` 获取类型支持 target，并将其链接到使用接口的可执行程序。确保生成接口的配置位于 ``ament_package()`` 之前。
 
 3. 构建和运行
 ^^^^^^^^^^^^^

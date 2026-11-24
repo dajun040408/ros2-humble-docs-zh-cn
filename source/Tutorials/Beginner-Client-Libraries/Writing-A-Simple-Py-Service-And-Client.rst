@@ -20,14 +20,14 @@
 背景
 ----
 
-当 :doc:§节点 <../Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes>§ 使用 :doc:§服务 <../Beginner-CLI-Tools/Understanding-ROS2-Services/Understanding-ROS2-Services>§ 通信时，发送数据请求的节点称为客户端节点，响应请求的节点称为服务端节点。请求和响应的数据结构由 .srv 文件定义。
+当 :doc:`节点 <../Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes>` 使用 :doc:`服务 <../Beginner-CLI-Tools/Understanding-ROS2-Services/Understanding-ROS2-Services>` 通信时，发送数据请求的节点称为客户端节点，响应请求的节点称为服务端节点。请求和响应的数据结构由 .srv 文件定义。
 
 本示例是一个简单的整数加法系统：一个节点请求两个整数的和，另一个节点返回计算结果。
 
 前置条件
 --------
 
-此前的教程已经介绍了如何 :doc:§创建工作空间 <./Creating-A-Workspace/Creating-A-Workspace>§ 和 :doc:§创建功能包 <./Creating-Your-First-ROS2-Package>§。
+此前的教程已经介绍了如何 :doc:`创建工作空间 <./Creating-A-Workspace/Creating-A-Workspace>` 和 :doc:`创建功能包 <./Creating-Your-First-ROS2-Package>`。
 
 任务
 ----
@@ -35,7 +35,7 @@
 1. 创建功能包
 ^^^^^^^^^^^^^
 
-打开新终端并 :doc:§source ROS 2 安装环境 <../Beginner-CLI-Tools/Configuring-ROS2-Environment>§。
+打开新终端并 :doc:`source ROS 2 安装环境 <../Beginner-CLI-Tools/Configuring-ROS2-Environment>`。
 
 进入 ros2_ws/src 并创建功能包：
 

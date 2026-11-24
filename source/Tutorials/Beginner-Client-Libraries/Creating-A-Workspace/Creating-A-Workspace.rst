@@ -29,11 +29,11 @@
 前置条件
 --------
 
-* :doc:§ROS 2 安装 <../../../Installation>§
-* :doc:§colcon 安装 <../Colcon-Tutorial>§
-* §git 安装 <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>§_
-* :doc:§turtlesim 安装 <../../Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim>§
-* :doc:§安装 rosdep <../../Intermediate/Rosdep>§
+* :doc:`ROS 2 安装 <../../../Installation>`
+* :doc:`colcon 安装 <../Colcon-Tutorial>`
+* `git 安装 <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
+* :doc:`turtlesim 安装 <../../Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim>`
+* :doc:`安装 rosdep <../../Intermediate/Rosdep>`
 * 了解基本终端命令。
 * 选择一个文本编辑器。
 
@@ -69,7 +69,7 @@
 
         $ call C:\dev\ros2\local_setup.bat
 
-如果命令无法运行，请参考你所使用的 :doc:§安装指南 <../../../Installation>§。
+如果命令无法运行，请参考你所使用的 :doc:`安装指南 <../../../Installation>`。
 
 2. 创建新目录
 ^^^^^^^^^^^^^
@@ -311,4 +311,4 @@ source overlay 之前，非常重要的一点是：请打开一个新终端，�
 下一步
 ------
 
-现在已经了解如何创建、构建和 source 自己的工作空间，接下来可以学习 :doc:§创建自己的功能包 <../Creating-Your-First-ROS2-Package>§。
+现在已经了解如何创建、构建和 source 自己的工作空间，接下来可以学习 :doc:`创建自己的功能包 <../Creating-Your-First-ROS2-Package>`。

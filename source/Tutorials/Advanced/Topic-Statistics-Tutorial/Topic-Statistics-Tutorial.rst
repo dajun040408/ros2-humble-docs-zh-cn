@@ -18,20 +18,20 @@
 背景
 ----
 
-本教程简要介绍如何在 ROS 2 中启用话题统计，并使用命令行工具查看发布的统计输出。相关工具请参阅 :doc:§ros2 topic <../../Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics>§。
+本教程简要介绍如何在 ROS 2 中启用话题统计，并使用命令行工具查看发布的统计输出。相关工具请参阅 :doc:`ros2 topic <../../Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics>`。
 
 ROS 2 提供对订阅者接收消息统计信息的集成测量功能，称为 Topic Statistics（话题统计）。
 
 启用订阅者的话题统计后，可以分析系统性能，或使用统计数据帮助诊断当前存在的问题。
 
-更多详情请参阅 :doc:§话题统计概念页面 <../../../Concepts/Intermediate/About-Topic-Statistics>§。
+更多详情请参阅 :doc:`话题统计概念页面 <../../../Concepts/Intermediate/About-Topic-Statistics>`。
 
 前置条件
 --------
 
 需要安装 ROS 2（二进制或源码均可）。
 
-此前的教程已经介绍了如何 :doc:§创建工作空间 <../../Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>§、:doc:§创建功能包 <../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>§，以及创建 :doc:§C++ 发布者和订阅者 <../../Beginner-Client-Libraries/Writing-A-Simple-Cpp-Publisher-And-Subscriber>§。
+此前的教程已经介绍了如何 :doc:`创建工作空间 <../../Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>`、:doc:`创建功能包 <../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>`，以及创建 :doc:`C++ 发布者和订阅者 <../../Beginner-Client-Libraries/Writing-A-Simple-Cpp-Publisher-And-Subscriber>`。
 
 本教程假设仍然保留此前创建的 cpp_pubsub 功能包。
 

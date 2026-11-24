@@ -14,12 +14,12 @@
 背景
 ----
 
-本教程将在第一部分 :doc:§基础 Webots 仿真 <./Setting-Up-Simulation-Webots-Basic>§ 创建的功能包基础上继续扩展。目标是实现一个 ROS 2 节点，使用机器人的距离传感器检测障碍物并进行避障。本教程重点介绍如何通过 webots_ros2_driver 接口使用机器人设备。
+本教程将在第一部分 :doc:`基础 Webots 仿真 <./Setting-Up-Simulation-Webots-Basic>` 创建的功能包基础上继续扩展。目标是实现一个 ROS 2 节点，使用机器人的距离传感器检测障碍物并进行避障。本教程重点介绍如何通过 webots_ros2_driver 接口使用机器人设备。
 
 前置条件
 --------
 
-本教程是基础仿真教程的延续，必须先完成 :doc:§基础 Webots 仿真 <./Setting-Up-Simulation-Webots-Basic>§，创建自定义功能包和必要文件。
+本教程是基础仿真教程的延续，必须先完成 :doc:`基础 Webots 仿真 <./Setting-Up-Simulation-Webots-Basic>`，创建自定义功能包和必要文件。
 
 本教程兼容 webots_ros2 2023.1.0 和 Webots R2023b，以及后续版本。
 
@@ -31,7 +31,7 @@
 
 如基础教程所述，webots_ros2_driver 包含多个插件，可以直接将大多数 Webots 设备接入 ROS 2。这些插件可以通过机器人 URDF 文件中的 device 标签加载。reference 属性应与 Webots 设备的 name 参数一致。
 
-现有接口及其对应参数列表请参阅§设备参考页面 <https://github.com/cyberbotics/webots_ros2/wiki/References-Devices>§_。
+现有接口及其对应参数列表请参阅`设备参考页面 <https://github.com/cyberbotics/webots_ros2/wiki/References-Devices>`_。
 
 对于未在 URDF 文件中配置的设备，接口会自动创建，并使用 ROS 参数默认值，例如 update rate、topic name 和 frame name。
 

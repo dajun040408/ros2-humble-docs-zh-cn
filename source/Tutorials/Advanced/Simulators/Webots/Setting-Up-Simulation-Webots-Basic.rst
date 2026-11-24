@@ -16,26 +16,26 @@
 
 本教程将使用 Webots 机器人模拟器，搭建并运行一个简单的 ROS 2 仿真场景。
 
-webots_ros2 软件包提供 ROS 2 与 Webots 之间的接口。本教程使用 webots_ros2_driver 子软件包，通过 Python 或 C++ 插件控制仿真机器人。其他子软件包包含不同机器人示例，例如 TurtleBot3。更多示例请参阅§Webots ROS 2 示例 <https://github.com/cyberbotics/webots_ros2/wiki/Examples>§_。
+webots_ros2 软件包提供 ROS 2 与 Webots 之间的接口。本教程使用 webots_ros2_driver 子软件包，通过 Python 或 C++ 插件控制仿真机器人。其他子软件包包含不同机器人示例，例如 TurtleBot3。更多示例请参阅`Webots ROS 2 示例 <https://github.com/cyberbotics/webots_ros2/wiki/Examples>`_。
 
 前置条件
 --------
 
-建议先了解 :doc:§初级教程 <../../../../Tutorials>§ 中介绍的 ROS 基本概念，特别是 turtlesim、话题、工作空间、功能包和 Launch 文件教程。
+建议先了解 :doc:`初级教程 <../../../../Tutorials>` 中介绍的 ROS 基本概念，特别是 turtlesim、话题、工作空间、功能包和 Launch 文件教程。
 
 .. tabs::
 
     .. group-tab:: Linux
 
-        本教程中的 Linux 和 ROS 命令可以在标准 Linux 终端中运行。请先阅读 :doc:§Ubuntu 安装说明 <./Installation-Ubuntu>§，安装 webots_ros2。
+        本教程中的 Linux 和 ROS 命令可以在标准 Linux 终端中运行。请先阅读 :doc:`Ubuntu 安装说明 <./Installation-Ubuntu>`，安装 webots_ros2。
 
     .. group-tab:: Windows
 
-        本教程中的 Linux 和 ROS 命令必须在 WSL（Windows Subsystem for Linux）环境中运行。请先阅读 :doc:§Windows 安装说明 <./Installation-Windows>§。
+        本教程中的 Linux 和 ROS 命令必须在 WSL（Windows Subsystem for Linux）环境中运行。请先阅读 :doc:`Windows 安装说明 <./Installation-Windows>`。
 
     .. group-tab:: macOS
 
-        本教程中的 Linux 和 ROS 命令必须在预先配置的 Linux 虚拟机（VM）中运行。请先阅读 :doc:§macOS 安装说明 <./Installation-MacOS>§。
+        本教程中的 Linux 和 ROS 命令必须在预先配置的 Linux 虚拟机（VM）中运行。请先阅读 :doc:`macOS 安装说明 <./Installation-MacOS>`。
 
 本教程兼容 webots_ros2 2023.1.0 和 Webots R2023b，以及后续版本。
 
