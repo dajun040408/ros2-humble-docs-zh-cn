@@ -264,3 +264,6 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 已修正 C++ 发布者/订阅者教程的三个章节下划线长度，并将 ros2/examples 参考链接改为标准 RST 外部链接。提交：`d2ad69f40e895465bd4416e0e5e1ea46a564e278`。
 - 已修复 C++ 服务/客户端教程中 `.srv` 示例的分隔线缩进，确保 `---` 保留在代码块中。提交：`a9675f897e92205f1a3ccb6f1dc42e4b08e0b1da`。
 - 这些修复尚待后续 Sphinx 构建确认；#758 的成功仅表示构建流程未被 warning/error 阻断，不代表无诊断问题。
+
+- 构建 #761（提交 `653df98`）build/deploy 成功。Sphinx 日志确认本轮 Beginner Client Libraries 新增的 C++ 发布者/订阅者、C++ 服务/客户端文档没有标题下划线、RST ERROR 或 CRITICAL；全站剩余 2 条 Lyrical 上游页面未纳入 Humble toctree 的警告，另有一条构建脚本统计输出，不是 Sphinx 文档错误。
+- 本轮两篇 C++ 教程的补译和 RST 修复已进入 GitHub Pages 发布产物。后续仍需继续审校目录中其余 11 篇文档，特别是自定义接口、单包接口定义、Python 发布订阅及参数类教程。
