@@ -247,3 +247,11 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 
 - 构建 #748（提交 `05890b2`）build 与 deploy 均成功。Sphinx 日志确认本轮 `part-032.rst:107` 的 inline literal 警告及 Unknown target 错误均已消失；`part-004.rst` 的标题 CRITICAL 也未再出现。当前日志剩余 2 条 `toc.not_included` 警告，均指向上游 Lyrical 发行版页面（`release-timeline.rst`、`supported-platforms.rst`），不属于 Humble 中文页面；Sphinx ERROR=0、CRITICAL=0。
 - GitHub Pages 已成功部署本轮 Beginner CLI Tools 补译和 RST 修复。工作流 #748 的 build/deploy 均为 success。由于外部网页抓取工具无法直接读取 GitHub Pages 页面，本轮以 Actions 构建、Artifact 和部署成功作为部署证据；浏览器端页面逐页视觉验收仍需后续抽查。
+
+## 2026-11-24 Beginner Client Libraries 首轮补译
+
+- 开始逐篇对照 ROS 2 官方 Humble 的 Beginner Client Libraries 目录。该目录包含 13 篇子教程，目录标题和导航已中文化，但多篇正文明显短于上游，存在整节解释、配置步骤和代码示例遗漏。
+- 首轮抽查发现：`Custom-ROS2-Interfaces.rst`（本地 220 行，上游 818 行）、`Single-Package-Define-And-Use-Interface.rst`（128/474 行）、C++/Python 参数教程（约 200/420 行）和 C++/Python 发布订阅、服务客户端教程（约 160-200/395-545 行）需要重点补译。行数仅作为风险信号，不作为翻译率。
+- 已扩充 `Writing-A-Simple-Cpp-Publisher-And-Subscriber.rst`：补充完整发布者和订阅者 C++ 文件（包括头文件、main）、代码逐段说明、package.xml 依赖、CMakeLists 配置说明、订阅者目标配置、下一步和相关内容。提交：`2cd0b2cc7b6650e7411394676aad80e5f5e786e7`。
+- 已扩充 `Writing-A-Simple-Cpp-Service-And-Client.rst`：补充 package.xml 更新说明、服务端代码解析、服务端可执行程序配置、客户端代码解析、客户端可执行程序配置、完整 CMakeLists 示例、下一步及相关内容；并补入客户端使用 `std::chrono::seconds` 所需的 `<chrono>` 头文件。提交：`fa669feb03118be0c4b06df380dd1ea57875bf9d`、`60ae3b298843a8f1a5582fed7900ad40bc572d99`。
+- 本轮两篇 C++ 教程的改动尚待完整 Sphinx 构建、部署及页面验收。其他 Beginner Client Libraries 页面仍待逐篇补译，不能据目录标题中文化标记完成。
