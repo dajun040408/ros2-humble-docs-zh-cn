@@ -50,19 +50,19 @@
 <depend>
 ^^^^^^^^
 
-该标签声明功能包在构建时和运行时都需要的依赖项。对于 C++ 功能包，如果不确定应该使用哪种依赖标签，通常可以使用该标签。纯 Python 功能包一般没有构建阶段，因此通常不应使用它，而应使用 `<exec_depend>`。
+该标签声明功能包在构建时和运行时都需要的依赖项。对于 C++ 功能包，如果不确定应该使用哪种依赖标签，通常可以使用该标签。纯 Python 功能包一般没有构建阶段，因此通常不应使用它，而应使用 ``<exec_depend>``。
 
 <build_depend>
 ^^^^^^^^^^^^^^
 
-如果某个依赖项只在构建功能包时使用，而运行时不需要，可以使用 `<build_depend>`。这种依赖关系意味着安装后的二进制功能包不需要安装该依赖项。
+如果某个依赖项只在构建功能包时使用，而运行时不需要，可以使用 ``<build_depend>``。这种依赖关系意味着安装后的二进制功能包不需要安装该依赖项。
 
-不过，如果功能包导出的头文件包含了该依赖项中的头文件，就会产生问题。此时还需要添加 `<build_export_depend>`。
+不过，如果功能包导出的头文件包含了该依赖项中的头文件，就会产生问题。此时还需要添加 ``<build_export_depend>``。
 
 <build_export_depend>
 ^^^^^^^^^^^^^^^^^^^^^
 
-如果功能包导出的头文件包含某个依赖项中的头文件，那么依赖当前功能包的其他功能包在构建时也需要该依赖项。这种情况主要适用于头文件和 CMake 配置文件。被导出库引用的库通常应声明为 `<depend>`，因为它们在运行时也需要。
+如果功能包导出的头文件包含某个依赖项中的头文件，那么依赖当前功能包的其他功能包在构建时也需要该依赖项。这种情况主要适用于头文件和 CMake 配置文件。被导出库引用的库通常应声明为 ``<depend>``，因为它们在运行时也需要。
 
 <exec_depend>
 ^^^^^^^^^^^^^
@@ -90,7 +90,7 @@ rosdep 如何工作？
 
 如果要依赖的软件包属于 ROS 生态系统，并且已经发布到 ROS 生态系统中 [1]_，例如 ``nav2_bt_navigator`` ，可以直接使用该软件包名称。
 
-可以在 `rosdistro GitHub 仓库 <https://github.com/ros/rosdistro>`_ 对应 ROS 发行版的 ``<distro>/distribution.yaml`` 文件中查看所有已发布 ROS 软件包，例如 Humble 对应 ``humble/distribution.yaml`` 。
+可以在 `rosdistro GitHub 仓库 <https://github.com/ros/rosdistro>`_ 对应 ROS 发行版的 ```<distro>/distribution.yaml`` 文件中查看所有已发布 ROS 软件包，例如 Humble 对应 ``humble/distribution.yaml`` 。
 
 如果要依赖非 ROS 软件包，也就是通常所说的“系统依赖项”，则需要查找特定库对应的 key。通常需要关注两个文件：
 
@@ -188,4 +188,4 @@ rosdep 如何工作？
 
 还有其他参数和选项。运行 ``rosdep -h`` 查看帮助，或阅读更完整的 `rosdep 文档 <http://docs.ros.org/en/independent/api/rosdep/html/>`_。
 
-.. [1] “发布到 ROS 生态系统”是指该软件包列在 ``rosdistro`` 数据库中的一个或多个 `<distro>/distribution.yaml`` 文件中，参见 ``rosdistro 数据库 <https://github.com/ros/rosdistro>`_。
+.. [1] “发布到 ROS 生态系统”是指该软件包列在 ``rosdistro`` 数据库中的一个或多个 `<distro>/distribution.yaml`` 文件中，参见 `rosdistro 数据库 <https://github.com/ros/rosdistro>`__。
