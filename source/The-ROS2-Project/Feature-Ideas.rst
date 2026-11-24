@@ -33,16 +33,16 @@
 
 * 构建
 
-  * 整合 `https://build.ros2.org` 和 `https://ci.ros2.org`。
+  * 整合 <https://build.ros2.org>_ 和 <https://ci.ros2.org>_。
   * 提供 macOS 构建资源。
   * 提供 Windows 和 macOS 软件包。
   * 支持 `colcon` 配置文件。
 
 * 文档
 
-  * 弃用 `https://design.ros2.org`。相关内容应迁移到 REP、`https://github.com/ros2/ros2_documentation`，或删除。
+  * 弃用 <https://design.ros2.org>_。相关内容应迁移到 REP、<https://github.com/ros2/ros2_documentation>_，或删除。
   * 修复单软件包文档构建器，使其能够记录构建产物，例如消息、服务和动作。
-  * 让 `https://docs.ros.org/en/ros2_documentation` 能够在 `https://github.com/ros2/ros2_documentation` 发生变更时自动重新构建。
+  * 让 <https://docs.ros.org/en/ros2_documentation>_ 能够在 <https://github.com/ros2/ros2_documentation>_ 发生变更时自动重新构建。
   * 完善 `ament` 文档。
   * 添加 ROS 2 与 Jupyter Notebook 配合使用的文档示例。
   * 添加实现新 RMW 的文档。
@@ -60,7 +60,7 @@
 * 日志改进 ``[* / **]``
 
   * 通过文件指定配置。
-  * 支持按 Logger 单独配置（例如启用 `rqt_logger_level`）。
+  * 支持按 Logger 单独配置（例如启用 ``rqt_logger_level``）。
 
 * 时间相关
 
@@ -69,7 +69,7 @@
 * 计算图 API 扩展 ``[** / ***]``
 
   * 查询所有话题（尤其是远程话题）的 QoS 设置。
-  * 类似 ROS 1 Master API：`https://wiki.ros.org/ROS/Master_API`。
+  * 类似 ROS 1 Master API：<https://wiki.ros.org/ROS/Master_API>_。
   * 基于事件的通知。
   * 需要了解并扩展 RMW 接口。
 
@@ -106,18 +106,18 @@
 
   * 通过 Service 接口实现动态重映射和别名。
 
-* 类型伪装 [***]
+* 类型伪装 ``[***]``
 
-  * 类似 ROS 1 的消息 traits：`https://wiki.ros.org/roscpp/Overview/MessagesSerializationAndAdaptingTypes`。
+  * 类似 ROS 1 的消息 traits：<https://wiki.ros.org/roscpp/Overview/MessagesSerializationAndAdaptingTypes>_。
   * 需要了解 typesupport 系统。
 
-* 扩展实时安全能力 [***]
+* 扩展实时安全能力 ``[***]``
 
   * 覆盖服务、客户端和参数。
   * 暴露更多与实时性能相关的 QoS 参数。
   * 实时安全的进程内消息传递。
 
-* 多机器人支持功能和演示 [***]
+* 多机器人支持功能和演示 ``[***]``
 
   * 不希望所有机器人上的节点都共享同一个 Domain 并相互发现。
   * 设计系统分区机制。
@@ -128,17 +128,17 @@
 
 * 安全性改进：
 
-  * 提供更细粒度的安全配置（例如仅启用身份验证，或同时启用身份验证和加密等）[*]。
-  * 集成 DDS-Security 日志插件，以统一方式聚合安全事件，并通过 ROS 接口报告给用户 [**]。
-  * 密钥存储安全性改进（目前密钥直接存储在文件系统中）[**]。
-  * 提供更易用的配置界面，简化安全配置。可以考虑 Qt GUI，也可以通过 GUI 辅助密钥分发 [***]。
-  * 提供一种机制，让用户可以对正在运行的系统执行“启用安全保护”操作，并自动为当前运行的所有节点生成密钥和策略 [***]。
+  * 提供更细粒度的安全配置（例如仅启用身份验证，或同时启用身份验证和加密等）``[*]``。
+  * 集成 DDS-Security 日志插件，以统一方式聚合安全事件，并通过 ROS 接口报告给用户 ``[**]``。
+  * 密钥存储安全性改进（目前密钥直接存储在文件系统中）``[**]``。
+  * 提供更易用的配置界面，简化安全配置。可以考虑 Qt GUI，也可以通过 GUI 辅助密钥分发 ``[***]``。
+  * 提供一种机制，让用户可以对正在运行的系统执行“启用安全保护”操作，并自动为当前运行的所有节点生成密钥和策略 ``[***]``。
   * 如果存在用于保护密钥或加速消息加密/签名的硬件专用功能，也可以考虑将其集成到尚未支持这些功能的 DDS/RTPS 实现中。
 
 减少技术债务
 ------------
 
-* 修复 `https://ci.ros2.org/view/nightly` 中不稳定的测试。
+* 修复 <https://ci.ros2.org/view/nightly>_ 中不稳定的测试。
 * 支持使用 Valgrind、clang-tidy、Clang 静态分析（scan-build）、ASAN、TSAN、UBSAN 等工具运行（全部）单元测试。
 * 审查 API，特别是 `rclcpp` 和 `rclpy` 中面向用户的 API。
 * 将 `rclcpp` API 重构为多个职责单一的软件包，同时继续由 `rclcpp` 提供组合后的用户 API。
