@@ -22,7 +22,7 @@
 创建新的发布仓库
 ----------------
 
-发布软件包需要一个 :ref:`发布仓库 <what-is-a-release-repository>`。请按照 :ref:`创建新的发布仓库 <create-a-new-release-repository>` 操作。
+发布软件包需要一个 :doc:`发布仓库说明 <Release-Track>`。请按照 :ref:`创建新的发布仓库 <create-a-new-release-repository>` 操作。
 
 安装依赖项
 ----------
