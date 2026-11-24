@@ -20,7 +20,7 @@
 
 负责生成 ROS 2 功能包文档的工具是 `rosdoc2 <https://github.com/ros-infrastructure/rosdoc2>`_。
 
-``rosdoc2`` 是常用文档框架 `Sphinx <https://www.sphinx-doc.org/>`_ 的便捷封装。Sphinx 既支持自由格式的文本文档，也支持根据代码注释生成 Python API 文档。`breathe <https://breathe.readthedocs.io/en/latest/>`_ 和 `exhale <https://exhale.readthedocs.io/en/latest/>`_ 软件包可以将 Doxygen 集成进来，从而加入自动生成的 C++ API 文档。
+``rosdoc2`` 是常用文档框架 `Sphinx <https://www.sphinx-doc.org/>``_ 的便捷封装。Sphinx 既支持自由格式的文本文档，也支持根据代码注释生成 Python API 文档。``breathe <https://breathe.readthedocs.io/en/latest/>``_ 和 ``exhale <https://exhale.readthedocs.io/en/latest/>`_ 软件包可以将 Doxygen 集成进来，从而加入自动生成的 C++ API 文档。
 
 如果功能包没有任何文档或配置，``rosdoc2`` 会创建默认配置，并应用统一主题及与其他功能包集成所需的选项。
 
@@ -51,7 +51,7 @@ rosdoc2.yaml
 
    $ rosdoc2 default_config --package-path <package-path>
 
-然后在 `package.xml` 的 export 部分添加 `<rosdoc2>rosdoc2.yaml</rosdoc2>`：
+然后在 ``package.xml`` 的 export 部分添加 `<rosdoc2>rosdoc2.yaml</rosdoc2>`：
 
 .. code-block:: xml
 
@@ -91,7 +91,7 @@ Doxygen 是一种根据代码注释自动生成 C++ API 文档的工具。虽然
 
 如果希望在自动生成的 API 文档之外添加独立文档页面，就需要创建自定义 Sphinx 项目。该项目应放在功能包目录下名为 ``doc`` 的子目录中。
 
-可以在 ``doc`` 目录中运行 ``sphinx-quickstart`` 创建新的 Sphinx 项目，并在“Separate source and build directories”问题中选择 ``no``。向导要求输入项目名称、作者和版本，但之后可以删除这些信息，因为 ``rosdoc2`` 会根据功能包的 `package.xml` 将其提供给 Sphinx。
+可以在 ``doc`` 目录中运行 ``sphinx-quickstart`` 创建新的 Sphinx 项目，并在“Separate source and build directories”问题中选择 ``no``。向导要求输入项目名称、作者和版本，但之后可以删除这些信息，因为 ``rosdoc2`` 会根据功能包的 ``package.xml`` 将其提供给 Sphinx。
 
 更多信息请参阅 `Sphinx quickstart <https://www.sphinx-doc.org/en/master/usage/quickstart.html>`_。
 
@@ -111,9 +111,9 @@ Doxygen 是一种根据代码注释自动生成 C++ API 文档的工具。虽然
 
     sys.path.insert(0, os.path.abspath('.'))
 
-这是因为 ``rosdoc2`` 会使用脚本中的其他配置包装自定义 ``conf.py``。在这种情况下，由于 rosdoc2 与 conf.py 的交互，`os.path.abspath` 中的 `.` 指向功能包根目录，而不是功能包的 ``doc`` 目录。
+这是因为 ``rosdoc2`` 会使用脚本中的其他配置包装自定义 ``conf.py``。在这种情况下，由于 rosdoc2 与 conf.py 的交互，``os.path.abspath`` 中的 ``.`` 指向功能包根目录，而不是功能包的 ``doc`` 目录。
 
-默认情况下，功能包 API 文档已经可以通过首页上的“Module Index”链接访问。如果还希望 API 文档显示在目录中，只需在 ``index.rst`` 中添加指向 `modules` 页面 的链接：
+默认情况下，功能包 API 文档已经可以通过首页上的“Module Index”链接访问。如果还希望 API 文档显示在目录中，只需在 ``index.rst`` 中添加指向 ``modules`` 页面 的链接：
 
 .. code-block:: rst
 
@@ -198,7 +198,7 @@ CI 与 docs.ros.org
 
 ROS 构建农场使用 ``rosdoc2`` 构建功能包文档，并托管在 ``docs.ros.org/en/<distro>/p/<package>/``。
 
-要启用此功能，必须在 `rosdistro/{DISTRO}/distribution.yaml` 中配置包含文档的代码仓库。通常这就是功能包的源码仓库：
+要启用此功能，必须在 ``rosdistro/{DISTRO}/distribution.yaml`` 中配置包含文档的代码仓库。通常这就是功能包的源码仓库：
 
 .. code-block:: yaml
 
