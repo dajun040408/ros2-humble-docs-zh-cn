@@ -10,7 +10,7 @@ ROS 2 软件源镜像
 ROS 文档镜像可在`主站 <http://docs.ros.org>`_ 无法访问时作为备用站点，也可能为地理位置更接近镜像站点的用户提供更快的访问速度。
 
 Debian/Ubuntu（APT）软件源镜像
------------------------------
+------------------------------
 
 要使用这些镜像，请在 APT 配置中用下表列出的地址替换官方 ROS 软件源 URL。
 
@@ -117,6 +117,6 @@ ROS 基础设施使用 `rsync` 分发软件包。要创建 ROS 2 软件源的本
 验证通过后，请针对本页面提交 Pull Request，或在 `Mirrors Discourse <https://discourse.openrobotics.org/c/infrastructure-project/infra-mirrors/>`_ 中发帖。
 
 镜像 docs.ros.org
-----------------
+-----------------
 
 镜像文档网站需要进行特定配置，以避免搜索引擎索引分散。如果你有兴趣托管区域性文档镜像，请在开始之前通过 Discourse **联系基础设施团队**。
