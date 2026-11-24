@@ -164,7 +164,7 @@
 §library§ 指定包含插件的库路径；ROS 2 中只需填写库名称。§class§ 声明需要导出的插件，其中 §type§ 是插件完整类型，§base_class_type§ 是基类完整类型，§description§ 是说明，§name§ 是可选的查找名称。
 
 2.3 在 CMake 中导出插件
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 ROS 2 与 ROS 1 不同，插件导出在 §CMakeLists.txt§ 中完成，而不是 §package.xml§。在 §find_package(pluginlib REQUIRED)§ 之后添加：
 
