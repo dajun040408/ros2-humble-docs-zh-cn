@@ -6,13 +6,18 @@
 
 > 本项目是社区翻译项目，不是 ROS 官方发布或背书的中文版本。上游版权、许可证和第三方资源声明均应保留。
 
-## 上游来源
+## 上游来源与参考站点
 
-- 上游仓库：[ros2/ros2_documentation](https://github.com/ros2/ros2_documentation)
-- 上游分支：[humble](https://github.com/ros2/ros2_documentation/tree/humble)
-- 官方文档：[ROS 2 Humble](https://docs.ros.org/en/humble/)
-- 当前在线中文站点：[GitHub Pages — ROS 2 Humble 中文文档](https://dajun040408.github.io/ros2-humble-docs-zh-cn/humble/)
-- 旧参考地址：[Robook ROS 2 文档](https://ros2docs.robook.org/humble/index.html)（仅作为历史参考，不作为本项目当前部署地址）
+- ROS 2 官方文档源码仓库：[ros2/ros2_documentation](https://github.com/ros2/ros2_documentation)
+- 使用的上游分支：[humble](https://github.com/ros2/ros2_documentation/tree/humble)
+- ROS 2 Humble 官方文档：[docs.ros.org](https://docs.ros.org/en/humble/)
+- 参考中文站点：[Robook ROS 2 文档](https://ros2docs.robook.org/humble/index.html)
+
+## 本项目部署
+
+- 当前在线中文站点：[ROS 2 Humble 中文文档（GitHub Pages）](https://dajun040408.github.io/ros2-humble-docs-zh-cn/humble/)
+- 托管平台：GitHub Pages（免费静态网站托管）
+- 自动构建与部署：GitHub Actions
 
 ## 构建架构
 
