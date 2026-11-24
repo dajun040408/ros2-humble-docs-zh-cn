@@ -76,9 +76,9 @@
 * 贡献者：Abrar Rahman Protyasha、Audrow Nash、Christophe Bedard、Jacob Perron
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 `rcl_yaml_param_parser <https://github.com/ros2/rcl/tree/humble/rcl_yaml_param_parser/CHANGELOG.rst>`__
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * 将头文件安装到 include/${PROJECT_NAME}（`#959 <https://github.com/ros2/rcl/issues/959>`__）
 * 将维护者更新为 Ivan Paunovic 和 William Woodall（`#952 <https://github.com/ros2/rcl/issues/952>`__）
