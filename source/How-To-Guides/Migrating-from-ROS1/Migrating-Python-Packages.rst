@@ -16,7 +16,7 @@ ROS 1 Python 功能包迁移参考
 构建工具
 --------
 
-ROS 2 不再使用 ``catkin_make``、``catkin_make``_isolated 或 ``catkin build``，而是使用命令行工具 ``colcon`` 构建和安装一组功能包。
+ROS 2 不再使用 ``catkin_make``、``catkin_make_isolated`` 或 ``catkin build``，而是使用命令行工具 ``colcon`` 构建和安装一组功能包。
 入门教程请参阅 :doc:`Colcon 入门教程 <../../Tutorials/Beginner-Client-Libraries/Colcon-Tutorial>`。
 
 构建系统
@@ -34,7 +34,7 @@ ROS 2 不再使用 ``catkin_make``、``catkin_make``_isolated 或 ``catkin build
   .. code-block:: xml
 
      <export>
-       <build_type>``ament_python``</build_type>
+       <build_type>ament_python</build_type>
      </export>
 
 * 删除 ``CMakeLists.txt`` 文件。
@@ -53,16 +53,16 @@ ROS 1：
 
 .. code-block:: python
 
-   ``rospy``.init_node('asdf')
+   rospy.init_node('asdf')
 
-   ``rospy``.loginfo('Created node')
+   rospy.loginfo('Created node')
 
 ROS 2：
 
 .. code-block:: python
 
-   ``rclpy``.init(args=sys.argv)
-   node = ``rclpy``.create_node('asdf')
+   rclpy.init(args=sys.argv)
+   node = rclpy.create_node('asdf')
 
    node.get_logger().info('Created node')
 
@@ -73,13 +73,13 @@ ROS 1：
 
 .. code-block:: python
 
-   port = ``rospy``.get_param('port', '/dev/ttyUSB0')
+   port = rospy.get_param('port', '/dev/ttyUSB0')
    assert isinstance(port, str), 'port parameter must be a str'
 
-   baudrate = ``rospy``.get_param('baudrate', 115200)
+   baudrate = rospy.get_param('baudrate', 115200)
    assert isinstance(baudrate, int), 'baudrate parameter must be an integer'
 
-   ``rospy``.logwarn('port: ' + port)
+   rospy.logwarn('port: ' + port)
 
 ROS 2：
 
@@ -100,17 +100,17 @@ ROS 1：
 
 .. code-block:: python
 
-   pub = ``rospy``.Publisher('chatter', ``String``)
+   pub = rospy.Publisher('chatter', String)
    # or
-   pub = ``rospy``.Publisher('chatter', ``String``, queue_size=10)
+   pub = rospy.Publisher('chatter', String, queue_size=10)
 
 ROS 2：
 
 .. code-block:: python
 
-   pub = node.create_publisher(``String``, 'chatter', ``rclpy``.qos.QoSProfile())
+   pub = node.create_publisher(String, 'chatter', rclpy.qos.QoSProfile())
    # or
-   pub = node.create_publisher(``String``, 'chatter', 10)
+   pub = node.create_publisher(String, 'chatter', 10)
 
 创建订阅者
 ^^^^^^^^^^
@@ -119,17 +119,17 @@ ROS 1：
 
 .. code-block:: python
 
-   sub = ``rospy``.Subscriber('chatter', ``String``, callback)
+   sub = rospy.Subscriber('chatter', String, callback)
    # or
-   sub = ``rospy``.Subscriber('chatter', ``String``, callback, queue_size=10)
+   sub = rospy.Subscriber('chatter', String, callback, queue_size=10)
 
 ROS 2：
 
 .. code-block:: python
 
-   sub = node.create_subscription(``String``, 'chatter', callback, ``rclpy``.qos.QoSProfile())
+   sub = node.create_subscription(String, 'chatter', callback, rclpy.qos.QoSProfile())
    # or
-   sub = node.create_subscription(``String``, 'chatter', callback, 10)
+   sub = node.create_subscription(String, 'chatter', callback, 10)
 
 创建服务端
 ^^^^^^^^^^
@@ -138,13 +138,13 @@ ROS 1：
 
 .. code-block:: python
 
-   srv = ``rospy``.Service('add_two_ints', ``AddTwoInts``, add_two_ints_callback)
+   srv = rospy.Service('add_two_ints', AddTwoInts, add_two_ints_callback)
 
 ROS 2：
 
 .. code-block:: python
 
-   srv = node.create_service(``AddTwoInts``, 'add_two_ints', add_two_ints_callback)
+   srv = node.create_service(AddTwoInts, 'add_two_ints', add_two_ints_callback)
 
 创建服务客户端
 ^^^^^^^^^^^^^^
@@ -153,19 +153,19 @@ ROS 1：
 
 .. code-block:: python
 
-   ``rospy``.wait_for_service('add_two_ints')
-   add_two_ints = ``rospy``.ServiceProxy('add_two_ints', ``AddTwoInts``)
+   rospy.wait_for_service('add_two_ints')
+   add_two_ints = rospy.ServiceProxy('add_two_ints', AddTwoInts)
    resp = add_two_ints(req)
 
 ROS 2：
 
 .. code-block:: python
 
-   add_two_ints = node.create_client(``AddTwoInts``, 'add_two_ints')
+   add_two_ints = node.create_client(AddTwoInts, 'add_two_ints')
    while not add_two_ints.wait_for_service(timeout_sec=1.0):
        node.get_logger().info('service not available, waiting again...')
    resp = add_two_ints.call_async(req)
-   ``rclpy``.spin_until_future_complete(node, resp)
+   rclpy.spin_until_future_complete(node, resp)
 
 .. warning::
 
