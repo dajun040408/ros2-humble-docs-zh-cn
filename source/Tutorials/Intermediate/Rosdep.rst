@@ -28,7 +28,7 @@
 
 ``rosdep`` 是一种依赖管理工具，可用于处理功能包和外部库。它是一个命令行工具，用于识别并安装构建或安装某个功能包所需的依赖项。
 
-``rosdep`` 本身并不是包管理器，而是一个元包管理器。它根据自身掌握的系统和依赖项信息，为特定平台查找合适的软件包。实际安装由系统包管理器完成，例如 Debian/Ubuntu 上的 ``apt``、Fedora/RHEL 上的 ``dnf`` 等。
+``rosdep`` 本身并不是包管理器，而是一个元包管理器。它根据自身掌握的系统和依赖项信息，为特定平台查找合适的软件包。实际安装由系统包管理器完成，例如 Debian/Ubuntu 上的 ``apt`` 、Fedora/RHEL 上的 ``dnf`` 等。
 
 它最常在构建工作空间之前调用，用于安装工作空间中各个功能包的依赖项。它既可以处理单个功能包，也可以处理包含多个功能包的目录，例如工作空间。
 
@@ -72,7 +72,7 @@
 <test_depend>
 ^^^^^^^^^^^^^
 
-该标签声明仅测试时需要的依赖项。这里的依赖项不应与 ``<build_depend>``、``<exec_depend>`` 或 ``<depend>`` 中声明的 key 重复。
+该标签声明仅测试时需要的依赖项。这里的依赖项不应与 ``<build_depend>`` 、``<exec_depend>`` 或 ``<depend>`` 中声明的 key 重复。
 
 rosdep 如何工作？
 -----------------
@@ -81,16 +81,16 @@ rosdep 如何工作？
 
 随后，这些 key 会与中央索引交叉查询，以确定不同包管理器中对应的 ROS 软件包或软件库。找到软件包后，就可以安装使用。
 
-``rosdep`` 会将中央索引下载到本地计算机，避免每次运行时都访问网络。在 Debian/Ubuntu 上，其配置通常保存在 ``/etc/ros/rosdep/sources.list.d/20-default.list``。
+``rosdep`` 会将中央索引下载到本地计算机，避免每次运行时都访问网络。在 Debian/Ubuntu 上，其配置通常保存在 ``/etc/ros/rosdep/sources.list.d/20-default.list`` 。
 
-中央索引称为 ``rosdistro``，可以在 `此处 <https://github.com/ros/rosdistro>`__ 查看。
+中央索引称为 ``rosdistro`` ，可以在 `此处 <https://github.com/ros/rosdistro>`__ 查看。
 
 如何确定 package.xml 中应填写哪些 key？
 ---------------------------------------
 
-如果要依赖的软件包属于 ROS 生态系统，并且已经发布到 ROS 生态系统中 [1]_，例如 ``nav2_bt_navigator``，可以直接使用该软件包名称。
+如果要依赖的软件包属于 ROS 生态系统，并且已经发布到 ROS 生态系统中 [1]_，例如 ``nav2_bt_navigator`` ，可以直接使用该软件包名称。
 
-可以在 `rosdistro GitHub 仓库 <https://github.com/ros/rosdistro>`_ 对应 ROS 发行版的 ``<distro>/distribution.yaml`` 文件中查看所有已发布 ROS 软件包，例如 Humble 对应 ``humble/distribution.yaml``。
+可以在 `rosdistro GitHub 仓库 <https://github.com/ros/rosdistro>`_ 对应 ROS 发行版的 ``<distro>/distribution.yaml`` 文件中查看所有已发布 ROS 软件包，例如 Humble 对应 ``humble/distribution.yaml`` 。
 
 如果要依赖非 ROS 软件包，也就是通常所说的“系统依赖项”，则需要查找特定库对应的 key。通常需要关注两个文件：
 
@@ -99,7 +99,7 @@ rosdep 如何工作？
 
 在这些文件中搜索所需库，找到对应名称。该名称就是应写入 ``package.xml`` 的 key。
 
-例如，假设某个功能包依赖 ``doxygen``。在 ``rosdep/base.yaml`` 中搜索 ``doxygen``，可以找到如下配置：
+例如，假设某个功能包依赖 ``doxygen`` 。在 ``rosdep/base.yaml`` 中搜索 ``doxygen`` ，可以找到如下配置：
 
 .. code-block:: yaml
 
@@ -116,7 +116,7 @@ rosdep 如何工作？
     rhel: [doxygen]
     ubuntu: [doxygen]
 
-这意味着 rosdep key 为 ``doxygen``，在不同操作系统上会解析为对应包管理器中的软件包名称。
+这意味着 rosdep key 为 ``doxygen`` ，在不同操作系统上会解析为对应包管理器中的软件包名称。
 
 如果库不在 rosdistro 中怎么办？
 -------------------------------
@@ -136,7 +136,7 @@ rosdep 如何工作？
 安装 rosdep
 ^^^^^^^^^^^
 
-如果在 ROS 环境中使用 ``rosdep``，它通常随 ROS 发行版一起提供。这是推荐的安装方式。
+如果在 ROS 环境中使用 ``rosdep`` ，它通常随 ROS 发行版一起提供。这是推荐的安装方式。
 
 .. tabs::
 
@@ -154,9 +154,9 @@ rosdep 如何工作？
 
 .. note::
 
-    Debian 和 Ubuntu 中还有一个名称相似的软件包 ``python3-rosdep2``。如果已安装该软件包，请先将其卸载，再安装 ``python3-rosdep``。
+    Debian 和 Ubuntu 中还有一个名称相似的软件包 ``python3-rosdep2`` 。如果已安装该软件包，请先将其卸载，再安装 ``python3-rosdep`` 。
 
-如果在 ROS 之外使用 ``rosdep``，系统包管理器可能没有提供相应软件包。这种情况下，可以直接从 PyPI 安装：
+如果在 ROS 之外使用 ``rosdep`` ，系统包管理器可能没有提供相应软件包。这种情况下，可以直接从 PyPI 安装：
 
 .. code-block:: console
 
@@ -172,7 +172,7 @@ rosdep 如何工作？
     $ sudo rosdep init
     $ rosdep update
 
-这会初始化 rosdep，并通过 ``update`` 更新本地缓存的 rosdistro 索引。建议定期运行 ``rosdep update``，以获取最新索引。
+这会初始化 rosdep，并通过 ``update`` 更新本地缓存的 rosdistro 索引。建议定期运行 ``rosdep update`` ，以获取最新索引。
 
 最后，运行 ``rosdep install`` 安装依赖项。通常会在包含多个功能包的工作空间中一次性运行该命令。如果当前位于工作空间根目录，且源代码位于 ``src`` 目录中，可以执行：
 
@@ -182,9 +182,9 @@ rosdep 如何工作？
 
 参数说明：
 
-* ``--from-paths src``：指定需要检查 ``package.xml`` 文件并解析依赖 key 的路径。
-* ``-y``：对包管理器的所有安装提示默认回答 yes，无需交互。
-* ``--ignore-src``：如果某个 rosdep key 对应的功能包已经存在于当前工作空间中，则忽略该依赖，不再安装。
+* ``--from-paths src`` ：指定需要检查 ``package.xml`` 文件并解析依赖 key 的路径。
+* ``-y`` ：对包管理器的所有安装提示默认回答 yes，无需交互。
+* ``--ignore-src`` ：如果某个 rosdep key 对应的功能包已经存在于当前工作空间中，则忽略该依赖，不再安装。
 
 还有其他参数和选项。运行 ``rosdep -h`` 查看帮助，或阅读更完整的 `rosdep 文档 <http://docs.ros.org/en/independent/api/rosdep/html/>`_。
 
