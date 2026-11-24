@@ -89,7 +89,7 @@ Tier 3：
 Foxy 开发期间的高层任务和功能进度可参阅`Foxy meta-ticket <https://github.com/ros2/ros2/issues/830>`_。
 
 补丁版本 8（2022-09-28）
------------------------
+------------------------
 
 Launch GroupAction 环境变量作用域
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -106,7 +106,7 @@ SetEnvironmentVariable 操作现在会限制在其所属的 GroupAction 作用�
 * `launch#630 <https://github.com/ros2/launch/pull/630>`_
 
 补丁版本 7（2022-02-08）
------------------------
+------------------------
 
 Launch set_env 前端行为变更
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
