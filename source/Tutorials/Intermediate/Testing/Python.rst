@@ -45,7 +45,7 @@ setup.py
 测试内容
 --------
 
-现在，你可以根据需要编写测试。`pytest <https://docs.pytest.org>``_ 提供了大量资源。简单来说，你可以编写以 ``test_` 为前缀的函数，并在其中加入所需的 assert 断言。
+现在，你可以根据需要编写测试。`pytest <https://docs.pytest.org>`_ 提供了大量资源。简单来说，你可以编写以 ``test_` 为前缀的函数，并在其中加入所需的 assert 断言。
 
 .. code-block:: python
 

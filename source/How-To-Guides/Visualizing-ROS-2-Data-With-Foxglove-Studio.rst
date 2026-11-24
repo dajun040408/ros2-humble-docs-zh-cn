@@ -25,14 +25,14 @@
 
 .. note::
 
-  如果需要`加载 ROS 2 文件中的自定义消息定义 <https://github.com/ros2/rosbag2/issues/782>``_，可以尝试将其转换为 ``MCAP 文件格式 <https://mcap.dev>`_。
+  如果需要`加载 ROS 2 文件中的自定义消息定义 <https://github.com/ros2/rosbag2/issues/782>`_，可以尝试将其转换为 ``MCAP 文件格式 <https://mcap.dev>`_。
 
 更详细的操作说明请参阅 `Foxglove Studio 文档 <https://foxglove.dev/docs/studio/connection/native>`_。
 
 使用面板构建布局
 ----------------
 
-`面板 <https://foxglove.dev/docs/studio/panels/introduction>``_ 是模块化可视化界面，可以进行配置和排列，组成 Studio ``布局 <https://foxglove.dev/docs/studio/layouts>`_。你也可以保存布局，以便个人日后参考，或与机器人团队共享。
+`面板 <https://foxglove.dev/docs/studio/panels/introduction>`_ 是模块化可视化界面，可以进行配置和排列，组成 Studio ``布局 <https://foxglove.dev/docs/studio/layouts>`_。你也可以保存布局，以便个人日后参考，或与机器人团队共享。
 
 可以在侧边栏的“Add panel”选项卡中查看所有可用面板。
 
@@ -49,7 +49,7 @@
   :width: 500 px
   :alt: Foxglove Studio 的 3D 面板
 
-完整支持消息类型列表和常用交互方式请参阅 `3D 面板文档 <https://foxglove.dev/docs/studio/panels/3d>``_、``支持的消息 <https://foxglove.dev/docs/studio/panels/3d#supported-messages>``_ 和 ``用户交互 <https://foxglove.dev/docs/studio/panels/3d#user-interactions>`_。
+完整支持消息类型列表和常用交互方式请参阅 `3D 面板文档 <https://foxglove.dev/docs/studio/panels/3d>`_、``支持的消息 <https://foxglove.dev/docs/studio/panels/3d#supported-messages>`_ 和 ``用户交互 <https://foxglove.dev/docs/studio/panels/3d#user-interactions>`_。
 
 2. Diagnostics：筛选和排序诊断消息
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -144,17 +144,17 @@
 1. 查看 ROS 计算图
 ^^^^^^^^^^^^^^^^^^
 
-使用`桌面应用 <https://foxglove.dev/download>``_ ``连接 <https://foxglove.dev/docs/studio/connection/native>``_到正在运行的 ROS 系统。然后将 ``Topic Graph` 面板添加到布局中。如果已正确连接，就可以在该面板中看到 ROS 节点、话题和服务组成的计算图。使用面板右侧的控件选择要显示的话题，或切换服务显示状态。
+使用`桌面应用 <https://foxglove.dev/download>`_ ``连接 <https://foxglove.dev/docs/studio/connection/native>`_到正在运行的 ROS 系统。然后将 ``Topic Graph` 面板添加到布局中。如果已正确连接，就可以在该面板中看到 ROS 节点、话题和服务组成的计算图。使用面板右侧的控件选择要显示的话题，或切换服务显示状态。
 
 2. 查看和编辑 ROS 参数
 ^^^^^^^^^^^^^^^^^^^^^^
 
-使用`桌面应用 <https://foxglove.dev/download>``_ ``连接 <https://foxglove.dev/docs/studio/connection/native>``_到正在运行的 ROS 系统。然后将 ``Parameters` 面板添加到布局中。如果已正确连接，就可以实时查看当前 ROS 参数。可以编辑参数值，并将参数更新发布回 ROS 系统。
+使用`桌面应用 <https://foxglove.dev/download>`_ ``连接 <https://foxglove.dev/docs/studio/connection/native>`_到正在运行的 ROS 系统。然后将 ``Parameters` 面板添加到布局中。如果已正确连接，就可以实时查看当前 ROS 参数。可以编辑参数值，并将参数更新发布回 ROS 系统。
 
 3. 向正在运行的 ROS 系统发布消息
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-使用`桌面应用 <https://foxglove.dev/download>``_ ``连接 <https://foxglove.dev/docs/studio/connection/native>``_到正在运行的 ROS 系统。然后将 ``Publish` 面板添加到布局中。
+使用`桌面应用 <https://foxglove.dev/download>`_ ``连接 <https://foxglove.dev/docs/studio/connection/native>`_到正在运行的 ROS 系统。然后将 ``Publish` 面板添加到布局中。
 
 指定要发布的话题，面板会推断其数据类型，并在文本框中填入 JSON 消息模板。
 

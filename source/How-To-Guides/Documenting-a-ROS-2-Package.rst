@@ -20,7 +20,7 @@
 
 负责生成 ROS 2 功能包文档的工具是 `rosdoc2 <https://github.com/ros-infrastructure/rosdoc2>`_。
 
-``rosdoc2`` 是常用文档框架 `Sphinx <https://www.sphinx-doc.org/>``_ 的便捷封装。Sphinx 既支持自由格式的文本文档，也支持根据代码注释生成 Python API 文档。``breathe <https://breathe.readthedocs.io/en/latest/>``_ 和 ``exhale <https://exhale.readthedocs.io/en/latest/>`_ 软件包可以将 Doxygen 集成进来，从而加入自动生成的 C++ API 文档。
+``rosdoc2`` 是常用文档框架 `Sphinx <https://www.sphinx-doc.org/>`_ 的便捷封装。Sphinx 既支持自由格式的文本文档，也支持根据代码注释生成 Python API 文档。``breathe <https://breathe.readthedocs.io/en/latest/>`_ 和 ``exhale <https://exhale.readthedocs.io/en/latest/>`_ 软件包可以将 Doxygen 集成进来，从而加入自动生成的 C++ API 文档。
 
 如果功能包没有任何文档或配置，``rosdoc2`` 会创建默认配置，并应用统一主题及与其他功能包集成所需的选项。
 

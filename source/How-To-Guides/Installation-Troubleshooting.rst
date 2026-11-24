@@ -22,7 +22,7 @@
 
 要通过 DDS 成功通信，所使用的网络接口必须启用组播。根据以往经验，在 Ubuntu 或 macOS 上使用回环网络适配器时，组播功能不一定默认启用。
 
-相关讨论请参阅 `原始 Issue <https://github.com/ros2/ros2/issues/552>``_ 或 ``ros-answers 讨论 <https://answers.ros.org/question/300370/ros2-talker-cannot-communicate-with-listener/>`_。
+相关讨论请参阅 `原始 Issue <https://github.com/ros2/ros2/issues/552>`_ 或 ``ros-answers 讨论 <https://answers.ros.org/question/300370/ros2-talker-cannot-communicate-with-listener/>`_。
 
 可以使用 ROS 2 工具验证当前配置是否允许组播。
 
@@ -209,7 +209,7 @@ Windows
 
 如果通过二进制包安装，依赖项版本必须与构建二进制包时使用的版本相同。
 
-如果问题仍然存在，可以使用 `Dependencies <https://github.com/lucasg/Dependencies>``_ 工具检查 ``.pyd` 文件，确定系统中缺少哪些 DLL。执行工具前，请确保已经 source 当前工作空间，否则可能会出现 ROS DLL 文件无法解析的情况。
+如果问题仍然存在，可以使用 `Dependencies <https://github.com/lucasg/Dependencies>`_ 工具检查 ``.pyd` 文件，确定系统中缺少哪些 DLL。执行工具前，请确保已经 source 当前工作空间，否则可能会出现 ROS DLL 文件无法解析的情况。
 
 CMake 设置文件修改时间失败
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

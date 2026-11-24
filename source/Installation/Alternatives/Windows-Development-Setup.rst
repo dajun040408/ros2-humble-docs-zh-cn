@@ -53,7 +53,7 @@ Windows（源码安装）
 
 接下来安装 ``xmllint``：
 
-* 从 `libxml 项目网站 <https://www.zlatkovic.com/projects/libxml/>``_ 下载 ``libxml2`` 的 64 位二进制归档，以及其依赖 ``iconv`` 和 ``zlib`。
+* 从 `libxml 项目网站 <https://www.zlatkovic.com/projects/libxml/>`_ 下载 ``libxml2`` 的 64 位二进制归档，以及其依赖 ``iconv`` 和 ``zlib`。
 * 将所有归档解压到某个目录，例如 ``C:\xmllint``。
 * 将 ``C:\xmllint\bin`` 添加到 ``PATH``。
 

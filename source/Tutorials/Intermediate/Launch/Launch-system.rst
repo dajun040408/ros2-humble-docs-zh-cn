@@ -211,6 +211,6 @@
 文档
 ----
 
-`Launch 文档 <https://github.com/ros2/launch/blob/{REPOS_FILE_BRANCH}/launch/doc/source/architecture.rst>``_ 提供了更多细节，介绍 ``launch_ros` 中使用的相关概念。
+`Launch 文档 <https://github.com/ros2/launch/blob/{REPOS_FILE_BRANCH}/launch/doc/source/architecture.rst>`_ 提供了更多细节，介绍 ``launch_ros` 中使用的相关概念。
 
 后续还会提供更多关于 Launch 功能的文档和示例。在此之前，可以参考源代码：``https://github.com/ros2/launch`` 和 ``https://github.com/ros2/launch_ros``。
