@@ -47,12 +47,12 @@
    $ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
    $ sudo apt install code
 
-在终端输入 `code` 即可启动 VS Code。
+在终端输入 ``code`` 即可启动 VS Code。
 
 安装 Remote Development 扩展
 ----------------------------
 
-在 VS Code 中打开 Extensions（`Ctrl+Shift+X`），搜索并安装 `Remote Development` 扩展。
+在 VS Code 中打开 Extensions（``Ctrl+Shift+X``），搜索并安装 ``Remote Development`` 扩展。
 
 配置 Docker 和 VS Code 工作空间
 -------------------------------
@@ -64,7 +64,7 @@
    $ cd ~/
    $ mkdir -p ws/src
 
-在工作空间根目录创建 `.devcontainer` 文件夹，并在其中创建 `devcontainer.json` 和 `Dockerfile`。目录结构如下：
+在工作空间根目录创建 ``.devcontainer`` 文件夹，并在其中创建 ``devcontainer.json`` 和 ``Dockerfile``。目录结构如下：
 
 .. code-block:: text
 
@@ -76,7 +76,7 @@
        ├── package1
        └── package2
 
-使用 VS Code 的 File → Open Folder 打开 `ws` 工作空间。
+使用 VS Code 的 File → Open Folder 打开 ``ws`` 工作空间。
 
 配置 devcontainer.json
 ----------------------
@@ -110,7 +110,7 @@ Dev Container 应使用正确的主机用户名和权限。配置示例：
      ]
    }
 
-将 `YOUR_USERNAME` 替换为 Linux 用户名。可以在终端运行 `echo $USER` 查看当前用户名。
+将 ``YOUR_USERNAME`` 替换为 Linux 用户名。可以在终端运行 ``echo $USER`` 查看当前用户名。
 
 配置 Dockerfile
 ---------------
@@ -124,12 +124,12 @@ Dockerfile 用于选择 ROS 2 基础镜像并创建与主机用户匹配的容�
    ARG USER_UID=1000
    ARG USER_GID=$USER_UID
 
-将 `ROS_DISTRO` 替换为所需 ROS 2 发行版名称，并按照开发环境要求创建用户、安装工具和依赖。
+将 ``ROS_DISTRO`` 替换为所需 ROS 2 发行版名称，并按照开发环境要求创建用户、安装工具和依赖。
 
 启动开发容器
 ------------
 
-在 VS Code 中打开命令面板，选择 `Dev Containers: Reopen in Container`。VS Code 会根据 `devcontainer.json` 和 Dockerfile 构建容器，并将工作空间挂载到容器中。
+在 VS Code 中打开命令面板，选择 ``Dev Containers: Reopen in Container``。VS Code 会根据 ``devcontainer.json`` 和 Dockerfile 构建容器，并将工作空间挂载到容器中。
 
 容器创建后，可以在 VS Code 集成终端中 source ROS 2 环境、使用 colcon 构建功能包，并使用 ROS 扩展进行代码开发和调试。
 
