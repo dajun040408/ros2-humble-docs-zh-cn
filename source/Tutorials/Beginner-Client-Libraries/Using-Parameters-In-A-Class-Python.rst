@@ -84,7 +84,7 @@ source ROS 2 环境，并在 ros2_ws/src 目录中创建新功能包：
         main()
 
 2.1 理解代码
-~~~~~~~~~~~
+~~~~~~~~~~~~
 
 构造函数中的 declare_parameter() 创建名为 my_parameter、默认值为 world 的参数。参数类型根据默认值推断，因此这里是字符串类型。
 
