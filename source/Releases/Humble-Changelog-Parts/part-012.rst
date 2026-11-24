@@ -88,9 +88,9 @@
 * 贡献者：Audrow Nash、Ivan Santiago Paunovic
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 `logging_demo <https://github.com/ros2/demos/tree/humble/logging_demo/CHANGELOG.rst>`__
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * 将维护者更新为 Audrow Nash 和 Michael Jeronimo（`#543 <https://github.com/ros2/demos/issues/543>`__）
 * 修复 demos 文档中的其他问题（`#538 <https://github.com/ros2/demos/issues/538>`__）
@@ -98,9 +98,9 @@
 * 贡献者：Audrow Nash、Chris Lalancette、Shane Loretz
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 `message_filters <https://github.com/ros2/message_filters/tree/humble/CHANGELOG.rst>`__
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * 对 message_traits::TimeStamp 使用 RCL_ROS_TIME（`#72 <https://github.com/ros2/message_filters/issues/72>`__）
 * 将头文件安装到 include/${PROJECT_NAME}（`#71 <https://github.com/ros2/message_filters/issues/71>`__）
