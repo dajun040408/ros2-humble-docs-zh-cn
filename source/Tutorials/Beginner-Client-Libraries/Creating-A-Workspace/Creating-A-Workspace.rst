@@ -170,18 +170,30 @@
     .. code-block:: console
 
       $ colcon build
+      Starting >>> turtlesim
+      Finished <<< turtlesim [5.49s]
+
+      Summary: 1 package finished [5.58s]
 
   .. group-tab:: macOS
 
     .. code-block:: console
 
       $ colcon build
+      Starting >>> turtlesim
+      Finished <<< turtlesim [5.49s]
+
+      Summary: 1 package finished [5.58s]
 
   .. group-tab:: Windows
 
     .. code-block:: console
 
       $ colcon build --merge-install
+      Starting >>> turtlesim
+      Finished <<< turtlesim [5.49s]
+
+      Summary: 1 package finished [5.58s]
 
     Windows 不允许过长路径，因此 merge-install 会将所有路径合并到 install 目录中。
 
@@ -196,10 +208,28 @@
 
 构建完成后，工作空间根目录中会出现以下目录：
 
-.. code-block:: console
+.. tabs::
 
-  $ ls
-  build  install  log  src
+   .. group-tab:: Linux
+
+      .. code-block:: console
+
+         $ ls
+         build  install  log  src
+
+   .. group-tab:: macOS
+
+      .. code-block:: console
+
+         $ ls
+         build  install  log  src
+
+   .. group-tab:: Windows
+
+      .. code-block:: console
+
+         $ dir
+         build  install  log  src
 
 install 目录中包含工作空间的环境设置文件，可用于 source overlay。
 
