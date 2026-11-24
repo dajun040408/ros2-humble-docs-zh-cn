@@ -4,7 +4,7 @@
     Tutorials/Eclipse-Oxygen-with-ROS-2-and-rviz2
 
 在 Eclipse Oxygen 中使用 rviz2（社区贡献）
-=========================================
+==========================================
 
 .. contents:: 目录
    :depth: 1
@@ -78,7 +78,7 @@ Project Explorer 右上角可以将 Project Presentation 切换为 Hierarchical�
 完成后，代码补全、EGit 注释和 Eclipse C/C++ 工具应能够正常工作。
 
 配置 Eclipse Indexer
--------------------
+--------------------
 
 打开 rviz2 的 §main.cpp§ 时，可能会出现大量 unresolved inclusion 警告。可以在 Project → Properties → C/C++ General → Paths and Symbols 中进行配置。
 
