@@ -183,7 +183,7 @@ Windows 命令行可以使用 curl：
    }
 
 2.2 添加依赖项
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 返回上一级目录 ``ros2_ws/src/cpp_pubsub``。这里已经为你创建了 ``CMakeLists.txt`` 和 ``package.xml`` 文件。
 
@@ -205,7 +205,7 @@ Windows 命令行可以使用 curl：
 这表示该功能包在构建和运行代码时都需要 ``rclcpp`` 和 ``std_msgs``。保存文件。
 
 2.3 配置 CMakeLists.txt
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 打开 ``CMakeLists.txt``。在已有的 ``find_package(ament_cmake REQUIRED)`` 依赖项下面添加：
 
@@ -307,7 +307,7 @@ Windows 命令行可以使用 curl：
 由于该节点与发布者节点具有相同的依赖项，因此无需在 ``package.xml`` 中添加新的依赖。
 
 3.2 更新 CMakeLists.txt
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 重新打开 ``CMakeLists.txt``，在发布者节点对应的配置下面添加订阅者节点的可执行程序和目标：
 
@@ -375,4 +375,4 @@ Windows 命令行可以使用 curl：
 相关内容
 --------
 
-C++ 发布者和订阅者有多种实现方式。可以查看 ros2/examples 仓库中的 ``minimal_publisher`` 和 ``minimal_subscriber`` 功能包：`https://github.com/ros2/examples/tree/{REPOS_FILE_BRANCH}/rclcpp/topics`_。
+C++ 发布者和订阅者有多种实现方式。可以查看 `ros2/examples 仓库 <https://github.com/ros2/examples/tree/{REPOS_FILE_BRANCH}/rclcpp/topics>`_ 中的 ``minimal_publisher`` 和 ``minimal_subscriber`` 功能包。
