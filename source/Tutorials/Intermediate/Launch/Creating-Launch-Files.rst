@@ -17,17 +17,17 @@
 前置条件
 --------
 
-需要安装 ROS 2，并熟悉 :doc:§创建功能包 <../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>§ 和 :doc:§运行节点 <../../Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes>§。
+需要安装 ROS 2，并熟悉 :doc:`创建功能包 <../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>` 和 :doc:`运行节点 <../../Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes>`。
 
 创建启动文件
 ------------
 
-启动文件可以直接放在目录中运行，也可以安装到 ROS 2 功能包中。常见做法是在功能包中创建 §launch§ 目录，并将启动文件放入其中。
+启动文件可以直接放在目录中运行，也可以安装到 ROS 2 功能包中。常见做法是在功能包中创建 ``launch`` 目录，并将启动文件放入其中。
 
 Python 启动文件
 ^^^^^^^^^^^^^^^
 
-Python 启动文件需要定义 §generate_launch_description()§，返回 §LaunchDescription§：
+Python 启动文件需要定义 ``generate_launch_description()``，返回 ``LaunchDescription``：
 
 .. code-block:: python
 
@@ -46,7 +46,7 @@ Python 启动文件需要定义 §generate_launch_description()§，返回 §Lau
 XML 启动文件
 ^^^^^^^^^^^^
 
-XML 启动文件使用 §<launch>§ 作为根元素，并通过 §<node>§ 描述节点：
+XML 启动文件使用 ``<launch>`` 作为根元素，并通过 ``<node>`` 描述节点：
 
 .. code-block:: xml
 
@@ -57,7 +57,7 @@ XML 启动文件使用 §<launch>§ 作为根元素，并通过 §<node>§ 描�
 YAML 启动文件
 ^^^^^^^^^^^^^
 
-YAML 启动文件通过 §launch:§ 根键描述动作：
+YAML 启动文件通过 ``launch:`` 根键描述动作：
 
 .. code-block:: yaml
 
@@ -70,7 +70,7 @@ YAML 启动文件通过 §launch:§ 根键描述动作：
 运行启动文件
 ------------
 
-进入启动文件所在目录，使用 §ros2 launch§ 运行：
+进入启动文件所在目录，使用 ``ros2 launch`` 运行：
 
 .. code-block:: console
 
@@ -85,7 +85,7 @@ YAML 启动文件通过 §launch:§ 根键描述动作：
 将启动文件安装到功能包
 ----------------------
 
-Python 功能包应在 §setup.py§ 的 §data_files§ 中安装启动文件：
+Python 功能包应在 ``setup.py`` 的 ``data_files`` 中安装启动文件：
 
 .. code-block:: python
 
@@ -96,14 +96,14 @@ Python 功能包应在 §setup.py§ 的 §data_files§ 中安装启动文件：
        (os.path.join('share', package_name, 'launch'), glob('launch/*')),
    ]
 
-C++ 功能包应在 §ament_package()§ 之前添加：
+C++ 功能包应在 ``ament_package()`` 之前添加：
 
 .. code-block:: cmake
 
    install(DIRECTORY launch
      DESTINATION share/${PROJECT_NAME}/)
 
-并在 §package.xml§ 中声明 §ros2launch§ 运行依赖：
+并在 ``package.xml`` 中声明 ``ros2launch`` 运行依赖：
 
 .. code-block:: xml
 
@@ -112,4 +112,4 @@ C++ 功能包应在 §ament_package()§ 之前添加：
 总结
 ----
 
-启动文件可以用 Python、XML 或 YAML 描述多个节点及其启动配置，并通过 §ros2 launch§ 命令统一运行。
+启动文件可以用 Python、XML 或 YAML 描述多个节点及其启动配置，并通过 ``ros2 launch`` 命令统一运行。

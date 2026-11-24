@@ -23,9 +23,9 @@
 背景
 ----
 
-colcon 是对 ROS 构建工具 catkin_make、catkin_make_isolated、catkin_tools 和 ament_tools 的迭代改进。有关 colcon 的设计，请参阅§构建工具设计文档 <https://design.ros2.org/articles/build_tool.html>§_。
+colcon 是对 ROS 构建工具 catkin_make、catkin_make_isolated、catkin_tools 和 ament_tools 的迭代改进。有关 colcon 的设计，请参阅`构建工具设计文档 <https://design.ros2.org/articles/build_tool.html>`_。
 
-源码位于§colcon GitHub 组织 <https://github.com/colcon>§_。
+源码位于`colcon GitHub 组织 <https://github.com/colcon>`_。
 
 前置条件
 --------
@@ -62,11 +62,11 @@ colcon 是对 ROS 构建工具 catkin_make、catkin_make_isolated、catkin_tools
 安装 ROS 2
 ^^^^^^^^^^
 
-构建示例需要安装 ROS 2，请按照 :doc:§安装说明 <../../Installation>§ 操作。
+构建示例需要安装 ROS 2，请按照 :doc:`安装说明 <../../Installation>` 操作。
 
 .. attention::
 
-   如果通过 deb 软件包安装，本教程要求安装 :ref:§桌面版 <linux-install-debs-install-ros-2-packages>§。
+   如果通过 deb 软件包安装，本教程要求安装 :ref:`桌面版 <linux-install-debs-install-ros-2-packages>`。
 
 基础知识
 --------
@@ -158,7 +158,7 @@ source underlay
 
 .. attention::
 
-   在 Windows 上构建功能包时，需要处于 Visual Studio 环境中。更多详情请参阅 :ref:§构建 ROS 2 代码 <windows-dev-build-ros2>§。
+   在 Windows 上构建功能包时，需要处于 Visual Studio 环境中。更多详情请参阅 :ref:`构建 ROS 2 代码 <windows-dev-build-ros2>`。
 
 在工作空间根目录运行 colcon build。由于 ament_cmake 等构建类型不支持 devel space，并要求安装功能包，colcon 提供了 --symlink-install 选项。使用该选项后，可以通过修改 source 目录中的文件（例如 Python 文件或其他非编译资源）来更新安装文件，从而加快迭代速度。
 
@@ -186,7 +186,7 @@ source underlay
 
 .. tip::
 
-   在 CPU、内存和 I/O 资源受限的系统（例如 Raspberry Pi）上运行 colcon build 可能导致屏幕和鼠标卡顿。可以使用 --executor sequential 参数逐个构建功能包，而不是并行构建。更多参数请参阅§colcon 执行器文档 <https://colcon.readthedocs.io/en/released/reference/executor-arguments.html>§_。
+   在 CPU、内存和 I/O 资源受限的系统（例如 Raspberry Pi）上运行 colcon build 可能导致屏幕和鼠标卡顿。可以使用 --executor sequential 参数逐个构建功能包，而不是并行构建。更多参数请参阅`colcon 执行器文档 <https://colcon.readthedocs.io/en/released/reference/executor-arguments.html>`_。
 
 构建完成后，应该看到 build、install 和 log 目录：
 
@@ -288,11 +288,11 @@ colcon 使用 REP 149 定义的 package.xml 规范（也支持格式 2）。
 
 colcon 支持多种构建类型。推荐的构建类型是 ament_cmake 和 ament_python，也支持纯 CMake 功能包。
 
-ament_python 构建示例可参考§ament_index_python <https://github.com/ament/ament_index/tree/{REPOS_FILE_BRANCH}/ament_index_python>§_，其中 setup.py 是构建入口。
+ament_python 构建示例可参考`ament_index_python <https://github.com/ament/ament_index/tree/{REPOS_FILE_BRANCH}/ament_index_python>`_，其中 setup.py 是构建入口。
 
 demo_nodes_cpp 等功能包使用 ament_cmake 构建类型，并使用 CMake 作为构建工具。
 
-可以使用 ros2 pkg create 工具，根据模板创建新功能包。有关创建功能包和使用 ros2 pkg create 的完整说明，请参阅 :doc:§创建功能包 <./Creating-Your-First-ROS2-Package>§。
+可以使用 ros2 pkg create 工具，根据模板创建新功能包。有关创建功能包和使用 ros2 pkg create 的完整说明，请参阅 :doc:`创建功能包 <./Creating-Your-First-ROS2-Package>`。
 
 .. note::
 
@@ -310,12 +310,12 @@ colcon_cd 命令可以快速将 Shell 当前工作目录切换到某个功能包
     $ echo "source /usr/share/colcon_cd/function/colcon_cd.sh" >> ~/.bashrc
     $ echo "export _colcon_cd_root=/opt/ros/{DISTRO}/" >> ~/.bashrc
 
-macOS 的路径可能不同，Windows 暂不可用。具体请参阅§colcon_cd 文档 <https://colcon.readthedocs.io/en/released/user/installation.html#quick-directory-changes>§_。
+macOS 的路径可能不同，Windows 暂不可用。具体请参阅`colcon_cd 文档 <https://colcon.readthedocs.io/en/released/user/installation.html#quick-directory-changes>`_。
 
 配置 colcon 命令补全
 --------------------
 
-colcon 命令支持 bash 及类似 Shell 的命令补全。需要安装 colcon-argcomplete 软件包，并可能需要执行§额外配置 <https://colcon.readthedocs.io/en/released/user/installation.html#enable-completion>§_。
+colcon 命令支持 bash 及类似 Shell 的命令补全。需要安装 colcon-argcomplete 软件包，并可能需要执行`额外配置 <https://colcon.readthedocs.io/en/released/user/installation.html#enable-completion>`_。
 
 技巧
 ----
@@ -352,4 +352,4 @@ colcon mixin 仓库提供了常用命令行选项的快捷方式。
 
     $ colcon build --mixin debug
 
-更多详情请参阅§colcon mixin 仓库 <https://github.com/colcon/colcon-mixin-repository>§_。
+更多详情请参阅`colcon mixin 仓库 <https://github.com/colcon/colcon-mixin-repository>`_。

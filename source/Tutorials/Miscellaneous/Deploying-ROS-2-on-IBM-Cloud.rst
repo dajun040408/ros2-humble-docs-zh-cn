@@ -17,8 +17,8 @@
 
 原始项目和文章：
 
-* §ros2_ibmcloud 示例仓库 <https://github.com/mm-nasr/ros2_ibmcloud>§_
-* §IBM Cloud 上运行 ROS 2 的文章 <https://medium.com/@mahmoud-nasr/running-ros2-on-ibm-cloud-1b1284cbd487>§_
+* `ros2_ibmcloud 示例仓库 <https://github.com/mm-nasr/ros2_ibmcloud>`_
+* `IBM Cloud 上运行 ROS 2 的文章 <https://medium.com/@mahmoud-nasr/running-ros2-on-ibm-cloud-1b1284cbd487>`_
 
 ROS 2 与 IBM Cloud
 ------------------

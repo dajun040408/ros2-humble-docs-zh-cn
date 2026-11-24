@@ -39,24 +39,24 @@ Fast DDS Discovery Server v2 增加了过滤功能，可以进一步减少发现
 .. image:: figures/ds1vs2.svg
     :align: center
 
-这种架构能够显著减少服务器与客户端之间的消息数量。有关 Discovery Server v2 的性能数据，请参阅§官方文档 <https://fast-dds.docs.eprosima.com/en/v2.1.0/fastdds/discovery/discovery_server.html#discovery-server>§_。
+这种架构能够显著减少服务器与客户端之间的消息数量。有关 Discovery Server v2 的性能数据，请参阅`官方文档 <https://fast-dds.docs.eprosima.com/en/v2.1.0/fastdds/discovery/discovery_server.html#discovery-server>`_。
 
 配置发现服务器
 --------------
 
-可以通过 Participant XML 配置发现服务器，也可以使用 §fastdds§ 命令行工具和环境变量。本教程采用环境变量方式。详细配置请参阅§Fast DDS Discovery Server 文档 <https://fast-dds.docs.eprosima.com/en/v2.1.0/fastdds/discovery/discovery_server.html#discovery-server>§_。
+可以通过 Participant XML 配置发现服务器，也可以使用 ``fastdds`` 命令行工具和环境变量。本教程采用环境变量方式。详细配置请参阅`Fast DDS Discovery Server 文档 <https://fast-dds.docs.eprosima.com/en/v2.1.0/fastdds/discovery/discovery_server.html#discovery-server>`_。
 
 前置条件
 --------
 
-本教程要求 ROS 2 Foxy 或更新版本。低于 Foxy 的版本可能没有 §fastdds§ 命令行工具。此时可以升级 Fast DDS 版本，或使用 Fast DDS XML QoS 配置来设置 Discovery Server。
+本教程要求 ROS 2 Foxy 或更新版本。低于 Foxy 的版本可能没有 ``fastdds`` 命令行工具。此时可以升级 Fast DDS 版本，或使用 Fast DDS XML QoS 配置来设置 Discovery Server。
 
 运行教程
 --------
 
-§talker-listener§ ROS 2 示例会创建一个 §talker§ 节点，每秒发布一条 “hello world” 消息，以及一个订阅这些消息的 §listener§ 节点。
+``talker-listener`` ROS 2 示例会创建一个 ``talker`` 节点，每秒发布一条 “hello world” 消息，以及一个订阅这些消息的 ``listener`` 节点。
 
-source ROS 2 环境后，可以使用 §fastdds§ 命令行工具配置发现服务器。配置客户端和服务器后，分别启动 talker 和 listener，即可验证通过 Discovery Server 完成节点发现和消息通信。
+source ROS 2 环境后，可以使用 ``fastdds`` 命令行工具配置发现服务器。配置客户端和服务器后，分别启动 talker 和 listener，即可验证通过 Discovery Server 完成节点发现和消息通信。
 
 总结
 ----

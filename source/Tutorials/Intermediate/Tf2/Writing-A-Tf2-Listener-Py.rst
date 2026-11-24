@@ -16,7 +16,7 @@
 背景
 ----
 
-本教程继续使用 :doc:§tf2 入门 <./Introduction-To-Tf2>§、:doc:§Python 静态广播器 <./Writing-A-Tf2-Static-Broadcaster-Py>§ 和 :doc:§Python 广播器 <./Writing-A-Tf2-Broadcaster-Py>§ 中创建的 §learning_tf2_py§ 功能包。
+本教程继续使用 :doc:`tf2 入门 <./Introduction-To-Tf2>`、:doc:`Python 静态广播器 <./Writing-A-Tf2-Static-Broadcaster-Py>` 和 :doc:`Python 广播器 <./Writing-A-Tf2-Broadcaster-Py>` 中创建的 ``learning_tf2_py`` 功能包。
 
 任务
 ----
@@ -24,7 +24,7 @@
 1. 编写监听器节点
 ^^^^^^^^^^^^^^^^^
 
-在 §src/learning_tf2_py/learning_tf2_py§ 目录创建 §turtle_tf2_listener.py§。监听器使用 §tf2_ros§ 的 §Buffer§ 保存变换，并使用 §TransformListener§ 接收广播器发布的数据。
+在 ``src/learning_tf2_py/learning_tf2_py`` 目录创建 ``turtle_tf2_listener.py``。监听器使用 ``tf2_ros`` 的 ``Buffer`` 保存变换，并使用 ``TransformListener`` 接收广播器发布的数据。
 
 .. code-block:: python
 
@@ -53,12 +53,12 @@
                    f'Could not transform {to_frame_rel} to {from_frame_rel}: {ex}')
                return
 
-监听器周期性查询 §world§ 与 §turtle1§ 之间的变换。§lookup_transform()§ 使用目标坐标系、源坐标系和查询时间；§rclpy.time.Time()§ 表示查询最新可用变换。若变换尚不可用，§TransformException§ 会被捕获并记录日志。
+监听器周期性查询 ``world`` 与 ``turtle1`` 之间的变换。``lookup_transform()`` 使用目标坐标系、源坐标系和查询时间；``rclpy.time.Time()`` 表示查询最新可用变换。若变换尚不可用，``TransformException`` 会被捕获并记录日志。
 
 2. 添加入口点
 ^^^^^^^^^^^^^
 
-在 §setup.py§ 的 §console_scripts§ 中添加监听器入口点：
+在 ``setup.py`` 的 ``console_scripts`` 中添加监听器入口点：
 
 .. code-block:: python
 
@@ -73,7 +73,7 @@
 
    $ colcon build --packages-select learning_tf2_py
 
-Windows 使用 §--merge-install§。source 工作空间后运行启动文件：
+Windows 使用 ``--merge-install``。source 工作空间后运行启动文件：
 
 .. code-block:: console
 
@@ -84,4 +84,4 @@ Windows 使用 §--merge-install§。source 工作空间后运行启动文件：
 总结
 ----
 
-本教程介绍了如何在 Python 中使用 §Buffer§ 和 §TransformListener§ 接收变换，并通过 §lookup_transform()§ 查询最新可用的坐标变换。
+本教程介绍了如何在 Python 中使用 ``Buffer`` 和 ``TransformListener`` 接收变换，并通过 ``lookup_transform()`` 查询最新可用的坐标变换。

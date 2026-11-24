@@ -8,13 +8,13 @@
 概述与动机
 ----------
 
-如 :doc:§rosdep 教程 <../Intermediate/Rosdep>§ 所述，rosdep 会在 package.xml 文件中查找 rosdep key，并将其映射到当前 ROS 发行版和操作系统需要安装的软件包。
+如 :doc:`rosdep 教程 <../Intermediate/Rosdep>` 所述，rosdep 会在 package.xml 文件中查找 rosdep key，并将其映射到当前 ROS 发行版和操作系统需要安装的软件包。
 
-任何人都可以通过§向 rosdistro 贡献规则 <https://github.com/ros/rosdistro/blob/master/CONTRIBUTING.md#rosdep-rules-contributions>§_，请求添加新的 rosdep key。如果依赖项是希望通过 rosdep 安装的 apt 或 pip 软件包，这是首选方式。
+任何人都可以通过`向 rosdistro 贡献规则 <https://github.com/ros/rosdistro/blob/master/CONTRIBUTING.md#rosdep-rules-contributions>`_，请求添加新的 rosdep key。如果依赖项是希望通过 rosdep 安装的 apt 或 pip 软件包，这是首选方式。
 
 但在许多情况下，直接贡献 key 可能比较困难。例如，依赖项不在目标发行版默认的 APT 或 pip 软件源中、属于专有库、只对特定组织有用，或者是自行构建和打包但不希望公开的 ROS 软件包。
 
-也可以 :doc:§fork 整个 rosdistro <../../How-To-Guides/Using-Custom-Rosdistro>§，但如果只是希望在官方 ROS 发行版基础上额外定义几个 rosdep key，这种方式可能过于复杂。本教程介绍如何实现这一目标。
+也可以 :doc:`fork 整个 rosdistro <../../How-To-Guides/Using-Custom-Rosdistro>`，但如果只是希望在官方 ROS 发行版基础上额外定义几个 rosdep key，这种方式可能过于复杂。本教程介绍如何实现这一目标。
 
 .. warning::
 
