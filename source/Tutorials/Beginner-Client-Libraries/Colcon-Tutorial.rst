@@ -158,7 +158,7 @@ source underlay
 
 .. attention::
 
-   在 Windows 上构建功能包时，需要处于 Visual Studio 环境中。更多详情请参阅 :ref:`构建 ROS 2 代码 <windows-dev-build-ros2>`。
+   在 Windows 上构建功能包时，需要处于 Visual Studio 环境中。更多详情请参阅 :doc:`Windows 开发环境构建说明 <../../Installation/Alternatives/Windows-Development-Setup>`。
 
 在工作空间根目录运行 colcon build。由于 ament_cmake 等构建类型不支持 devel space，并要求安装功能包，colcon 提供了 --symlink-install 选项。使用该选项后，可以通过修改 source 目录中的文件（例如 Python 文件或其他非编译资源）来更新安装文件，从而加快迭代速度。
 
