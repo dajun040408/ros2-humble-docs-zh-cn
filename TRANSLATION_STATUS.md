@@ -299,3 +299,10 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 
 - 已扩充 `Custom-ROS2-Interfaces.rst` 第 7 节，补齐 `Num.msg` 的 C++/Python 发布者和订阅者示例、CMakeLists/package.xml 依赖、Linux/macOS/Windows 构建运行命令；补齐 `AddThreeInts.srv` 的 C++/Python 服务端和客户端示例、依赖配置、构建和运行验证步骤。原版本只有数段文字概述，没有这些完整测试代码。
 - 修改提交：`2d0eefdb91671641174cc48b7bb4d1b16222181c`。待 Sphinx 构建、部署和 RST 日志验收。
+
+## 2026-11-24 Beginner Client Libraries：参数类教程补译
+
+- 对照官方 Humble，发现 C++/Python 参数类教程均缺少 package.xml 独立说明、主要函数逐段解析、完整启动文件源码引用、启动文件安装配置，以及“下一步”导航。
+- 已补充 C++ 教程的 package.xml 维护信息、declare/get/set parameter 代码解释、ParameterDescriptor 上下文保留、CMake launch 安装规则、launch literalinclude 及 ros2doctor 下一步。提交：`a4f85b0254ed7b61b5f895f7563d3d95572bf2b4`。
+- 已补充 Python 教程的 package.xml 维护信息、declare/get/set parameter 代码解释、ParameterDescriptor 相关说明、setup.py 的 data_files launch 安装配置、launch literalinclude 及 ros2doctor 下一步。提交：`4dd2a8be02f2622ad7050291241bc72ed2ea993f`。
+- 参数类教程修改尚待 Sphinx 构建、RST 诊断和部署验收。
