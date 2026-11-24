@@ -286,3 +286,6 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 
 - 构建 #770（提交 `e7c45da`）确认 Python 服务/客户端教程无 Sphinx ERROR/CRITICAL，标题警告已在提交 `fb8272d` 中处理，待新构建复核。
 - 另对 C++ 发布者/订阅者教程做了结构清理：移除在 2.3/3.2 已分别说明发布者与订阅者目标后重复出现的整段 CMakeLists 配置，将构建运行章节顺延为第 4 节。提交：`21e43279e05a89fc871896c6b82142b0ed9db1ce`。
+
+- 构建 #773（提交 `c305eca`）build/deploy 成功。Sphinx ERROR=0、CRITICAL=0；本轮 Beginner Client Libraries 新增与整理的 C++/Python 发布者订阅者、服务客户端页面均无页面级 RST 诊断。剩余 2 条警告仍是上游 Lyrical 页面未纳入 Humble toctree。
+- C++ 发布者/订阅者章节去重已部署；Python 服务/客户端的去重和标题修复已由构建 #770 验证，随后部署工作流被新提交取消并由 #773 重新发布，最终部署成功。
