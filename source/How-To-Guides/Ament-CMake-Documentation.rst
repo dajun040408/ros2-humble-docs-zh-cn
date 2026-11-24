@@ -15,9 +15,9 @@ ament_cmake 用户文档
 基础知识
 --------
 
-可以通过命令行 `ros2 pkg create <package_name>` 生成基本 CMake 项目。构建信息主要保存在同一目录中的 `package.xml` 和 ``CMakeLists.txt`` 两个文件中。
+可以通过命令行 `ros2 pkg create <package_name>`` 生成基本 CMake 项目。构建信息主要保存在同一目录中的 ``package.xml` 和 ``CMakeLists.txt`` 两个文件中。
 
-`package.xml` 必须包含所有依赖项和必要元数据，使 colcon 能够确定功能包构建顺序、在 CI 中安装依赖项，并为 Bloom 发布提供信息。``CMakeLists.txt`` 则包含构建和打包可执行程序及库的命令。
+``package.xml`` 必须包含所有依赖项和必要元数据，使 colcon 能够确定功能包构建顺序、在 CI 中安装依赖项，并为 Bloom 发布提供信息。``CMakeLists.txt`` 则包含构建和打包可执行程序及库的命令。
 
 基本项目结构
 ^^^^^^^^^^^^
@@ -31,9 +31,9 @@ ament 功能包的 ``CMakeLists.txt`` 基本结构如下：
 
    ament_package()
 
-``project`` 的参数是功能包名称，必须与 `package.xml` 中的名称完全一致。
+``project`` 的参数是功能包名称，必须与 ``package.xml`` 中的名称完全一致。
 
-每个功能包必须且只能调用一次 ``ament_package()``。该调用会安装 `package.xml`，在 ament 索引中注册功能包，并安装供其他功能包通过 ``find_package`` 查找的配置文件和 target 文件。
+每个功能包必须且只能调用一次 ``ament_package()``。该调用会安装 ``package.xml``，在 ament 索引中注册功能包，并安装供其他功能包通过 ``find_package`` 查找的配置文件和 target 文件。
 
 由于 ``ament_package()`` 会收集 ``CMakeLists.txt`` 中的大量信息，因此它应当是文件中的最后一个调用。
 
@@ -76,13 +76,13 @@ ROS 2 面向符合 C++17 和 C99 标准的编译器。未来可能采用更新�
 查找依赖项
 ^^^^^^^^^^
 
-大多数 ament_cmake 项目依赖其他功能包。在 CMake 中通过 ``find_package`` 查找依赖。例如，依赖 `rclcpp` 时：
+大多数 ament_cmake 项目依赖其他功能包。在 CMake 中通过 ``find_package`` 查找依赖。例如，依赖 ``rclcpp`` 时：
 
 .. code-block:: cmake
 
    find_package(rclcpp REQUIRED)
 
-应确保 `package.xml` 中也声明对应依赖，以便构建工具和 rosdep 能够正确解析。
+应确保 ``package.xml`` 中也声明对应依赖，以便构建工具和 rosdep 能够正确解析。
 
 目标、安装和导出
 ----------------
@@ -103,7 +103,7 @@ ROS 2 面向符合 C++17 和 C99 标准的编译器。未来可能采用更新�
      ament_lint_auto_find_test_dependencies()
    endif()
 
-在 `package.xml` 中声明对应 ``test_depend``。
+在 ``package.xml`` 中声明对应 ``test_depend``。
 
 总结
 ----
