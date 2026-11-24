@@ -43,13 +43,13 @@ ROS 2 在设计和原型开发阶段就考虑了实时性能约束。ROS 1 早�
 
 **运行前请确保至少有 8 GB 可用内存。启用内存锁定后，swap 将无法继续使用。**
 
-source ROS 2 的 `setup.bash`：
+source ROS 2 的 ``setup.bash``：
 
 .. code-block:: console
 
    $ source ./install/setup.bash
 
-运行演示程序。若遇到权限错误，可以尝试使用 `sudo`：
+运行演示程序。若遇到权限错误，可以尝试使用 ``sudo``：
 
 .. code-block:: console
 
@@ -74,7 +74,7 @@ source ROS 2 的 `setup.bash`：
    Couldn't lock all cached virtual memory.
    Pagefaults from reading pages not yet mapped into RAM will be recorded.
 
-演示程序初始化完成后，会尝试使用 `mlockall` 将所有缓存内存锁定到 RAM 中，并阻止后续动态内存分配，以避免加载大量新内存时发生缺页。更多信息请参阅`实时设计文章中的内存管理部分 <https://design.ros2.org/articles/realtime_background.html#memory-management>`_。
+演示程序初始化完成后，会尝试使用 ``mlockall`` 将所有缓存内存锁定到 RAM 中，并阻止后续动态内存分配，以避免加载大量新内存时发生缺页。更多信息请参阅`实时设计文章中的内存管理部分 <https://design.ros2.org/articles/realtime_background.html#memory-management>`_。
 
 出现上述情况时，演示程序仍会继续运行。你也可能看到以下输出，它表示执行期间发生的缺页次数：
 
@@ -89,24 +89,24 @@ source ROS 2 的 `setup.bash`：
 调整内存锁定权限
 ^^^^^^^^^^^^^^^^
 
-使用 sudo 编辑 `/etc/security/limits.conf`，添加以下内容：
+使用 sudo 编辑 ``/etc/security/limits.conf``，添加以下内容：
 
 .. code-block:: text
 
    <your username>    -   memlock   <limit in kB>
 
-将限制设置为 `-1` 表示不受限制。选择该值时，可能还需要在编辑文件后执行 `ulimit -l unlimited`。
+将限制设置为 ``-1`` 表示不受限制。选择该值时，可能还需要在编辑文件后执行 ``ulimit -l unlimited``。
 
-保存文件后，注销并重新登录，再次运行 `pendulum_demo`。
+保存文件后，注销并重新登录，再次运行 ``pendulum_demo``。
 
-输出文件中应该不再出现缺页；否则可能会看到捕获到 `bad_alloc` 异常的错误。这表示可用于锁定进程内存的空闲 RAM 不足。若希望实现零缺页，需要为计算机增加内存。
+输出文件中应该不再出现缺页；否则可能会看到捕获到 ``bad_alloc`` 异常的错误。这表示可用于锁定进程内存的空闲 RAM 不足。若希望实现零缺页，需要为计算机增加内存。
 
 查看输出
 ^^^^^^^^
 
-要查看更多输出，需要运行 `pendulum_logger` 节点。
+要查看更多输出，需要运行 ``pendulum_logger`` 节点。
 
-在一个已经 source `install/setup.bash` 的 Shell 中运行：
+在一个已经 source ``install/setup.bash`` 的 Shell 中运行：
 
 .. code-block:: console
 
@@ -118,7 +118,7 @@ source ROS 2 的 `setup.bash`：
 
    Logger node initialized.
 
-在另一个已经 source `setup.bash` 的 Shell 中，再次运行 `pendulum_demo`。
+在另一个已经 source ``setup.bash`` 的 Shell 中，再次运行 ``pendulum_demo``。
 
 程序启动后，另一个 Shell 会持续输出：
 
@@ -136,12 +136,12 @@ source ROS 2 的 `setup.bash`：
 
 logger 节点会定期输出摆杆状态，以及演示程序执行阶段的运行性能统计信息。
 
-`pendulum_demo` 结束后，需要按 `Ctrl-C` 退出 logger 节点。
+``pendulum_demo`` 结束后，需要按 ``Ctrl-C`` 退出 logger 节点。
 
 延迟
 ^^^^
 
-`pendulum_demo` 执行结束时，会输出最终统计信息：
+``pendulum_demo`` 执行结束时，会输出最终统计信息：
 
 .. code-block:: text
 
@@ -167,12 +167,12 @@ logger 节点会定期输出摆杆状态，以及演示程序执行阶段的运�
 
 更多信息请参阅`实时设计文章中的多线程编程与同步部分 <https://design.ros2.org/articles/realtime_background.html#multithreaded-programming-and-synchronization>`_。
 
-演示程序会尝试设置适合实时性能的调度器和线程优先级。如果操作失败，会看到错误信息 `Couldn't set scheduling priority and policy: Operation not permitted`。按照下一节说明调整权限，可以获得略好的性能。
+演示程序会尝试设置适合实时性能的调度器和线程优先级。如果操作失败，会看到错误信息 ``Couldn't set scheduling priority and policy: Operation not permitted``。按照下一节说明调整权限，可以获得略好的性能。
 
 设置调度器权限
 ^^^^^^^^^^^^^^
 
-使用 sudo 编辑 `/etc/security/limits.conf`，添加：
+使用 sudo 编辑 ``/etc/security/limits.conf``，添加：
 
 .. code-block:: text
 
@@ -196,13 +196,13 @@ logger 节点会定期输出摆杆状态，以及演示程序执行阶段的运�
    * - 参数
      - 说明
      - 默认值
-   * - `-i`
+   * - ``-i``
      - 指定实时循环运行的迭代次数。
      - 1000
-   * - `-u`
-     - 指定更新周期，默认单位为微秒。可使用 `s`、`ms`、`us` 和 `ns` 后缀分别表示秒、毫秒、微秒和纳秒。
+   * - ``-u``
+     - 指定更新周期，默认单位为微秒。可使用 ``s``、``ms``、``us`` 和 ``ns`` 后缀分别表示秒、毫秒、微秒和纳秒。
      - 1ms
-   * - `-f`
+   * - ``-f``
      - 指定保存收集数据的文件名。
      -
 
@@ -212,7 +212,7 @@ logger 节点会定期输出摆杆状态，以及演示程序执行阶段的运�
 
    $ ros2 run pendulum_control pendulum_demo -f pendulum_demo_results
 
-然后对结果文件运行 `rttest_plot` 脚本：
+然后对结果文件运行 ``rttest_plot`` 脚本：
 
 .. code-block:: console
 
