@@ -55,7 +55,7 @@ ROS 2 集成测试的一个关键要求是：不同测试中的节点不应相�
 1.1 导入模块
 ~~~~~~~~~~~~
 
-首先导入需要使用的 Python 模块。只有两个模块专门用于测试：通用测试框架 ``unittest`` 和 ``launch_testing``。
+首先导入需要使用的 Python 模块。只有两个模块专门用于测试：通用测试框架 ``unittest`` 和 ``launch_testing`` 。
 
 .. code-block:: python
 
@@ -73,7 +73,7 @@ ROS 2 集成测试的一个关键要求是：不同测试中的节点不应相�
 1.2 生成测试描述
 ~~~~~~~~~~~~~~~~
 
-``generate_test_description`` 函数描述需要启动的内容，类似于 ROS 2 Python 启动文件中的 ``generate_launch_description``。
+``generate_test_description`` 函数描述需要启动的内容，类似于 ROS 2 Python 启动文件中的 ``generate_launch_description`` 。
 
 下面的示例会启动 turtlesim 节点，并在半秒后启动测试。
 
@@ -106,9 +106,9 @@ ROS 2 集成测试的一个关键要求是：不同测试中的节点不应相�
 
 活动测试定义为继承自 ``unittest.TestCase`` 的类的方法。这里的子类 ``TestTurtleSim`` 包含以下方法：
 
-* ``test_*``：测试方法，每个方法都会与被测节点进行 ROS 通信，和/或监听进程输出（通过 ``proc_output`` 传入）。这些方法按顺序执行。
-* ``setUp``、``tearDown``：分别在每个测试方法执行之前和之后运行，用于准备和清理测试夹具。通过在 ``setUp`` 中创建节点，每个测试都会使用不同的节点实例，从而降低测试之间相互通信的风险。
-* ``setUpClass``、``tearDownClass``：分别在所有测试方法执行之前和之后运行一次的类方法。
+* ``test_*`` ：测试方法，每个方法都会与被测节点进行 ROS 通信，和/或监听进程输出（通过 ``proc_output`` 传入）。这些方法按顺序执行。
+* ``setUp`` 、``tearDown`` ：分别在每个测试方法执行之前和之后运行，用于准备和清理测试夹具。通过在 ``setUp`` 中创建节点，每个测试都会使用不同的节点实例，从而降低测试之间相互通信的风险。
+* ``setUpClass`` 、``tearDownClass`` ：分别在所有测试方法执行之前和之后运行一次的类方法。
 
 强烈建议阅读 ``launch_testing`` 关于该主题的`详细文档 <https://docs.ros.org/en/{DISTRO}/p/launch_testing/index.html>`_。
 
@@ -155,9 +155,9 @@ ROS 2 集成测试的一个关键要求是：不同测试中的节点不应相�
 
 注意，``test_publishes_pose`` 中监听 ``turtle1/pose`` 话题的方式与 :doc:`通常使用的方法 <../../Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber>` 不同。
 
-这里没有调用阻塞式 ``rclpy.spin``，而是触发 ``spin_once`` 方法。该方法会执行第一个可用回调（如果 1 秒内收到消息，就是订阅回调），直到收集到最近 10 秒内发布的所有消息。
+这里没有调用阻塞式 ``rclpy.spin`` ，而是触发 ``spin_once`` 方法。该方法会执行第一个可用回调（如果 1 秒内收到消息，就是订阅回调），直到收集到最近 10 秒内发布的所有消息。
 
-``launch_testing_ros`` 软件包提供了一些便捷函数来实现类似行为，例如 ``WaitForTopics``。详情请参阅`launch_testing_ros 文档 <https://docs.ros.org/en/{DISTRO}/p/launch_testing_ros/index.html>`_。
+``launch_testing_ros`` 软件包提供了一些便捷函数来实现类似行为，例如 ``WaitForTopics`` 。详情请参阅`launch_testing_ros 文档 <https://docs.ros.org/en/{DISTRO}/p/launch_testing_ros/index.html>`_。
 
 如果希望进一步扩展，可以添加第三个测试：发布 Twist 消息让海龟移动，然后检查位姿消息是否发生变化。这相当于自动化执行部分 :doc:`Turtlesim 入门教程 <../../Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim>`。
 
