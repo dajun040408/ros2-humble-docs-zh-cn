@@ -277,3 +277,6 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 构建 #766（提交 `1a50efe`）build/deploy 成功，Python 发布/订阅教程新增章节已进入 GitHub Pages。Sphinx ERROR=0、CRITICAL=0；剩余 2 条 Lyrical 上游 toctree 警告。
 - 已扩充 `Writing-A-Simple-Py-Service-And-Client.rst`：补充 package.xml/setup.py 字段说明、服务端代码解析、服务入口点、客户端异步请求与 future 处理说明、避免在回调中使用 `spin_until_future_complete` 的警告、客户端入口点、Linux/macOS/Windows 构建和 source 步骤、下一步及相关内容。提交：`d4eb4b6e176e84dd7f7a362190c81c681d85e8de`。
 - Python 服务/客户端补译尚待构建、部署验收。
+
+- 构建 #768（提交 `8a32595`）build/deploy 成功，Python 服务/客户端教程没有 Sphinx ERROR 或 CRITICAL，但发现 3 处标题下划线长度警告。复核时发现补译时保留了原有简化构建步骤，造成“构建并运行”章节重复。
+- 已删除重复的旧构建段落，并调整 1.2、2.2、3.2 小节标题下划线长度。提交：`fb8272dbdb68fc6893833d75af7cf571bf16f9dd`。待新一轮构建确认。
