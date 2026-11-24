@@ -15,8 +15,8 @@ ROS 构建农场是支持 ROS 生态系统的重要基础设施，由 `Open Robo
 
 目前有两个面向开源软件包的托管实例：
 
-#. `https://build.ros.org/`：用于 ROS 1 软件包。
-#. `https://build.ros2.org/`：用于 ROS 2 软件包。
+#. ``https://build.ros.org/``：用于 ROS 1 软件包。
+#. ``https://build.ros2.org/``：用于 ROS 2 软件包。
 
 如果你计划使用这些基础设施，建议注册 `构建农场讨论论坛 <https://discourse.openrobotics.org/c/infrastructure-project/infra-buildfarm/20>`_，以便接收通知，例如即将发生的变更。
 
@@ -43,29 +43,29 @@ Bloom 成功完成，并且软件包通过向 `rosdistro`_ 提交 Pull Request �
 
 * 发布任务：
 
-  * `{distro}src_{platf}__{package}__{platform}__source`：构建发行版的源码软件包。
-  * `{distro}bin_{platf}__{package}__{platform}__binary`：构建发行版的二进制软件包。
+  * ``{distro}src_{platf}__{package}__{platform}__source``：构建发行版的源码软件包。
+  * ``{distro}bin_{platf}__{package}__{platform}__binary``：构建发行版的二进制软件包。
 
-  例如，ROS 2 Iron 中 `rclcpp` 在 Ubuntu Jammy amd64 上的二进制打包任务名为 `Ibin_uJ64__rclcpp__ubuntu_jammy_amd64__binary`。
+  例如，ROS 2 Iron 中 ``rclcpp`` 在 Ubuntu Jammy amd64 上的二进制打包任务名为 ``Ibin_uJ64__rclcpp__ubuntu_jammy_amd64__binary``。
 
 * 开发任务：
 
-  * `{distro}dev__{package}__{platform}`：针对发布分支执行 CI 构建。
+  * ``{distro}dev__{package}__{platform}``：针对发布分支执行 CI 构建。
 
 * Pull Request 任务：
 
-  * `{distro}pr__{package}__{platform}`：针对 Pull Request 执行 CI 构建。
+  * ``{distro}pr__{package}__{platform}``：针对 Pull Request 执行 CI 构建。
 
-  例如，ROS 2 Iron 中 `rclcpp` 在 Ubuntu Jammy amd64 上的 PR 任务名为 `Ipr__rclcpp__ubuntu_jammy_amd64`。
+  例如，ROS 2 Iron 中 ``rclcpp`` 在 Ubuntu Jammy amd64 上的 PR 任务名为 ``Ipr__rclcpp__ubuntu_jammy_amd64``。
 
 执行方式
 ^^^^^^^^
 
 任务的执行方式取决于任务类型：
 
-* `devel jobs`：根据配置的轮询频率，每当相应分支出现新提交时触发。
-* `pull_request jobs`：由上游仓库 [2]_ 对应 Pull Request 的 Webhook 触发。
-* `release jobs`：每当软件包发布新版本时触发，也就是该软件包对应的 rosdistro Pull Request 被接受时触发。源码任务由 rosdistro distribution 文件中的版本变化触发，二进制任务则由对应源码任务触发。
+* ``devel jobs``：根据配置的轮询频率，每当相应分支出现新提交时触发。
+* ``pull_request jobs``：由上游仓库 [2]_ 对应 Pull Request 的 Webhook 触发。
+* ``release jobs``：每当软件包发布新版本时触发，也就是该软件包对应的 rosdistro Pull Request 被接受时触发。源码任务由 rosdistro distribution 文件中的版本变化触发，二进制任务则由对应源码任务触发。
 
 常见问题与故障排查
 ------------------
@@ -78,7 +78,7 @@ Bloom 成功完成，并且软件包通过向 `rosdistro`_ 提交 Pull Request �
 
    邮件底部可能包含类似以下内容：
 
-   `'apt-src build [...]' failed. This is usually because of an error building the package.`
+   ``'apt-src build [...]' failed. This is usually because of an error building the package.``
 
    这通常意味着构建软件包时发生错误，可能缺少依赖项，参见问题 2。
 
@@ -86,7 +86,7 @@ Bloom 成功完成，并且软件包通过向 `rosdistro`_ 提交 Pull Request �
 
    基本有两种方法。方法 A 更简单，但可能需要多次尝试；方法 B 更全面，也支持本地调试。
 
-   A）检查触发问题的发布任务，定位 CMake 依赖问题。对于 Ubuntu/Debian 构建任务，可以通过左侧菜单进入 *build binarydeb* 部分，再查看 CMake 部分。`CMake Error` 通常会提示 CMake 配置需要某个依赖，而该依赖未在`软件包清单`_中声明。
+   A）检查触发问题的发布任务，定位 CMake 依赖问题。对于 Ubuntu/Debian 构建任务，可以通过左侧菜单进入 *build binarydeb* 部分，再查看 CMake 部分。``CMake Error`` 通常会提示 CMake 配置需要某个依赖，而该依赖未在`软件包清单`_中声明。
 
    在清单中修复依赖后，重新发布软件包，并等待构建农场反馈。
 
@@ -98,7 +98,7 @@ Bloom 成功完成，并且软件包通过向 `rosdistro`_ 提交 Pull Request �
 
    首先，发布任务使用最小化 ROS 安装环境进行构建，以检查所有依赖项是否正确声明在`软件包清单`_中。而开发任务、GitHub Actions 或本地构建环境中可能已经安装了这些依赖项，因此无法发现依赖声明问题。
 
-   其次，它们构建的源码版本可能不同。开发任务、GitHub Actions 和本地构建通常构建`上游`_[2]_ 仓库中的最新代码，而`发布任务`_构建的是最新发布版本的源码，也就是``发布`` 仓库 [3]_ 中对应的上游分支代码。
+   其次，它们构建的源码版本可能不同。开发任务、GitHub Actions 和本地构建通常构建`上游``_[2]_ 仓库中的最新代码，而``发布任务`_构建的是最新发布版本的源码，也就是``发布`` 仓库 [3]_ 中对应的上游分支代码。
 
 延伸阅读
 --------
@@ -110,7 +110,7 @@ Bloom 成功完成，并且软件包通过向 `rosdistro`_ 提交 Pull Request �
 
 .. [1] ``{distro}`` 是 ROS 发行版名称的首字母；``{platform}``（``{platf}``）表示软件包构建目标平台及其缩写；``{package}`` 表示正在构建的 ROS 软件包名称。
 .. [2] ``上游`` 仓库是存放对应 ROS 1/ROS 2 软件包原始源码的仓库。
-.. [3] ``发布`` 仓库是 ROS 2 基础设施用于发布软件包的仓库，参见 `https://github.com/ros2-gbp/`。
+.. [3] ``发布`` 仓库是 ROS 2 基础设施用于发布软件包的仓库，参见 ``https://github.com/ros2-gbp/``。
 
 .. _release jobs:
    https://github.com/ros-infrastructure/ros_buildfarm/blob/master/doc/jobs/release_jobs.rst
