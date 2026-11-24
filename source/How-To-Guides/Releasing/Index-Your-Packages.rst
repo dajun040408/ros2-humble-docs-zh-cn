@@ -13,7 +13,7 @@ ROS 软件包索引
 * `Bitbucket <https://support.atlassian.com/bitbucket-cloud/docs/create-a-git-repository/>`_
 
 为软件包指定 OSI 认可的许可证
-----------------------------
+-----------------------------
 
 选择一个 `OSI 认可的许可证 <https://opensource.org/licenses>`_，并将其用于 ROS 软件包。如果难以决定，可以考虑使用大多数 ROS 2 核心软件包采用的 `Apache-2.0 许可证 <https://opensource.org/license/apache-2-0>`_。
 
@@ -73,7 +73,7 @@ Fork 并克隆 ros/rosdistro
 * `YOUR-STATUS`：从 `REP 141 <https://reps.openrobotics.org/rep-0141/#distribution-file>`_ 的状态列表中选择。通常使用 `maintained` 或 `developed`。
 
 向 ros/rosdistro 提交 Pull Request
----------------------------------
+----------------------------------
 
 针对你修改的分支，向 `ros/rosdistro <https://github.com/ros/rosdistro/>`_ 提交 `Pull Request <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request>`_。等待几天，直到有人完成审查。
 
