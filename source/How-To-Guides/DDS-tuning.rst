@@ -93,7 +93,7 @@ Cyclone DDS 调优
 
 **问题：** 即使使用 Reliable 设置并通过有线网络传输，Cyclone DDS 仍无法可靠传递大型消息。
 
-该问题预计会在 `后续版本中解决 <https://github.com/eclipse-cyclonedds/cyclonedds/issues/484>`_。在此之前，我们通过 `测试程序 <https://github.com/jacobperron/pc_pipe>`_ 调试并提出以下解决方案。
+该问题预计会在 `后续版本中解决 <https://github.com/eclipse-cyclonedds/cyclonedds/issues/484>``_。在此之前，我们通过 ``测试程序 <https://github.com/jacobperron/pc_pipe>`_ 调试并提出以下解决方案。
 
 **解决方案：** 增大 Linux 内核最大接收缓冲区大小，以及 Cyclone 请求的最小套接字接收缓冲区大小。
 
