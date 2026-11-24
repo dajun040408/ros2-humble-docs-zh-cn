@@ -78,9 +78,9 @@
 * 贡献者：Andrea Sorbini、Barry Xu、Chen Lihui、Chris Lalancette、Christophe Bedard、Ivan Santiago Paunovic、Jacob Perron、Michel Hidalgo、Miguel Company、iRobot ROS、mauropasse
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 `rmw_connextddsmicro <https://github.com/ros2/rmw_connextdds/tree/humble/rmw_connextddsmicro/CHANGELOG.rst>`__
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * 构建 rmw_connextddsmicro 时排除缺失的 sample info 字段（`#79 <https://github.com/ros2/rmw_connextdds/issues/79>`__）
 * 支持用户指定的内容过滤器（`#68 <https://github.com/ros2/rmw_connextdds/issues/68>`__）
@@ -92,9 +92,9 @@
 * 贡献者：Andrea Sorbini、Barry Xu、Chen Lihui、Ivan Santiago Paunovic、iRobot ROS、mauropasse
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 `rmw_cyclonedds_cpp <https://github.com/ros2/rmw_cyclonedds/tree/humble/rmw_cyclonedds_cpp/CHANGELOG.rst>`__
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * 修复 get_topic_name 和长服务名称的处理
 * 为 SDK_DATA 添加序列化支持
