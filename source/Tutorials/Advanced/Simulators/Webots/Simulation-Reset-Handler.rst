@@ -25,9 +25,9 @@ Webots 重置按钮会将世界恢复到初始状态，并重新启动控制器�
 
 开始本教程前，请确保：
 
-* 了解 :doc:§初级教程 <../../../../Tutorials>§ 中介绍的 ROS 2 节点和话题。
+* 了解 :doc:`初级教程 <../../../../Tutorials>` 中介绍的 ROS 2 节点和话题。
 * 了解 Webots、ROS 2 及其接口软件包。
-* 熟悉 :doc:§基础 Webots 仿真 <./Setting-Up-Simulation-Webots-Basic>§。
+* 熟悉 :doc:`基础 Webots 仿真 <./Setting-Up-Simulation-Webots-Basic>`。
 
 简单场景的重置处理器（仅控制器）
 --------------------------------

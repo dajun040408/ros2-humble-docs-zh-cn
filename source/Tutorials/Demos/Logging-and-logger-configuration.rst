@@ -10,7 +10,7 @@
    :depth: 2
    :local:
 
-有关可用功能的详细信息，请参阅 :doc:§日志记录页面 <../../Concepts/Intermediate/About-Logging>§。
+有关可用功能的详细信息，请参阅 :doc:`日志记录页面 <../../Concepts/Intermediate/About-Logging>`。
 
 在代码中使用日志语句
 --------------------
@@ -207,7 +207,7 @@ Logger 级别配置：程序内
 
 运行 10 次迭代后，演示会将 Logger 级别设置为 DEBUG，因此会输出更多消息。
 
-部分调试消息会触发额外函数或表达式的计算，而这些计算在 DEBUG 日志调用未启用时会被跳过。有关演示中日志调用的详细说明，请参阅§源码 <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/logging_demo/src/logger_usage_component.cpp>§_，完整的日志调用列表请参阅 rclcpp 日志文档。
+部分调试消息会触发额外函数或表达式的计算，而这些计算在 DEBUG 日志调用未启用时会被跳过。有关演示中日志调用的详细说明，请参阅`源码 <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/logging_demo/src/logger_usage_component.cpp>`_，完整的日志调用列表请参阅 rclcpp 日志文档。
 
 Logger 级别配置：外部配置
 -------------------------

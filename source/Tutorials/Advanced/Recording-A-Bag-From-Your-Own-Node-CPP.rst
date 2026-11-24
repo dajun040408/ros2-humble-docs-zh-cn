@@ -31,7 +31,7 @@ rosbag2 不仅提供 ros2 bag 命令行工具，还提供 C++ API，可以在自
 
   $ sudo apt install ros-{DISTRO}-rosbag2
 
-请先完成 :doc:§ROS 2 bag 基础教程 <../Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data>§。
+请先完成 :doc:`ROS 2 bag 基础教程 <../Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data>`。
 
 任务
 ----
@@ -39,7 +39,7 @@ rosbag2 不仅提供 ros2 bag 命令行工具，还提供 C++ API，可以在自
 1. 创建功能包
 ^^^^^^^^^^^^^
 
-打开新终端并 :doc:§source ROS 2 安装环境 <../Beginner-CLI-Tools/Configuring-ROS2-Environment>§。
+打开新终端并 :doc:`source ROS 2 安装环境 <../Beginner-CLI-Tools/Configuring-ROS2-Environment>`。
 
 进入此前创建的 ros2_ws/src 目录，创建新功能包：
 

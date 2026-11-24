@@ -32,7 +32,7 @@
 
 .. image:: images/eclipse-oxygen-04.png
 
-在项目中创建 §src§ 目录。
+在项目中创建 ``src`` 目录。
 
 导入 Git 仓库
 -------------
@@ -57,7 +57,7 @@
 
 Project Explorer 中会同时显示 Git 项目和新建项目。相同文件可能出现多次，但只有一个项目与 EGit 关联。
 
-对 §pluginlib§ 和 §tinyxml2_vendor§ 仓库重复上述导入步骤。最终 Project Explorer 中应包含主项目和相关依赖项目。
+对 ``pluginlib`` 和 ``tinyxml2_vendor`` 仓库重复上述导入步骤。最终 Project Explorer 中应包含主项目和相关依赖项目。
 
 项目视图
 --------
@@ -67,11 +67,11 @@ Project Explorer 右上角可以将 Project Presentation 切换为 Hierarchical�
 配置构建命令
 ------------
 
-打开项目属性中的 C/C++ Build 部分，将 Build command 设置为 §ament§。
+打开项目属性中的 C/C++ Build 部分，将 Build command 设置为 ``ament``。
 
-在 Behavior 选项卡中取消选择 §clean§，并将 Build 文本框设置为 §build§。
+在 Behavior 选项卡中取消选择 ``clean``，并将 Build 文本框设置为 ``build``。
 
-在执行 Build project 之前，需要关闭 Eclipse。打开 Shell，source ROS 2 的 §setup.bash§，进入 Eclipse 项目目录，然后从该目录启动 Eclipse。
+在执行 Build project 之前，需要关闭 Eclipse。打开 Shell，source ROS 2 的 ``setup.bash``，进入 Eclipse 项目目录，然后从该目录启动 Eclipse。
 
 .. image:: images/eclipse-oxygen-23.png
 
@@ -80,15 +80,15 @@ Project Explorer 右上角可以将 Project Presentation 切换为 Hierarchical�
 配置 Eclipse Indexer
 --------------------
 
-打开 rviz2 的 §main.cpp§ 时，可能会出现大量 unresolved inclusion 警告。可以在 Project → Properties → C/C++ General → Paths and Symbols 中进行配置。
+打开 rviz2 的 ``main.cpp`` 时，可能会出现大量 unresolved inclusion 警告。可以在 Project → Properties → C/C++ General → Paths and Symbols 中进行配置。
 
-在 References 选项卡中选择 §ros2_ws§。随后进入 Source locations 选项卡，使用 Link folder 添加 Qt5 include 目录。
+在 References 选项卡中选择 ``ros2_ws``。随后进入 Source locations 选项卡，使用 Link folder 添加 Qt5 include 目录。
 
 .. image:: images/eclipse-oxygen-27.png
 
 建议在 Source locations 中添加排除目录，避免对 Build 和 Install 等目录建立索引。
 
-在 C/C++ General → Preprocessor includes 中选择 §CDT GCC Built in compiler settings [Shared]§，并在编译器规格命令中加入：
+在 C/C++ General → Preprocessor includes 中选择 ``CDT GCC Built in compiler settings [Shared]``，并在编译器规格命令中加入：
 
 .. code-block:: bash
 

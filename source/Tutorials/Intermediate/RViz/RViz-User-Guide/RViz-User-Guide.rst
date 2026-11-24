@@ -17,7 +17,7 @@ RViz 是 ROS 框架中的三维可视化工具。
 安装或构建 RViz
 ---------------
 
-按照操作系统对应的 :doc:§安装说明 <../../../../Installation>§ 安装 RViz。
+按照操作系统对应的 :doc:`安装说明 <../../../../Installation>` 安装 RViz。
 
 启动
 ----
@@ -58,7 +58,7 @@ Display 是在三维场景中绘制数据的插件，并通常在 Displays 列�
 
 顶部列表用于选择 Display 类型，类型决定该插件可以可视化哪种数据。中间文本框显示所选类型的描述。最后，需要为 Display 指定唯一名称。
 
-例如，机器人上有两个激光雷达时，可以添加两个 §Laser Scan§ 显示，并分别命名为 §Laser Base§ 和 §Laser Head§。
+例如，机器人上有两个激光雷达时，可以添加两个 ``Laser Scan`` 显示，并分别命名为 ``Laser Base`` 和 ``Laser Head``。
 
 Display 属性
 ^^^^^^^^^^^^
@@ -72,17 +72,17 @@ Display 状态
 
 每个 Display 都有状态信息，用于提示运行是否正常。状态包括：
 
-* §OK§：正常。
-* §Warning§：警告。
-* §Error§：错误。
-* §Disabled§：已禁用。
+* ``OK``：正常。
+* ``Warning``：警告。
+* ``Error``：错误。
+* ``Disabled``：已禁用。
 
 状态会显示在 Display 标题的背景颜色中，也会显示在 Status 属性分类下。
 
 全局选项
 --------
 
-Global Options 用于配置整个 RViz 场景的公共属性，例如 Fixed Frame、背景颜色和帧率。§Fixed Frame§ 是 RViz 用于显示数据的参考坐标系，必须选择 TF 树中实际存在的坐标系。
+Global Options 用于配置整个 RViz 场景的公共属性，例如 Fixed Frame、背景颜色和帧率。``Fixed Frame`` 是 RViz 用于显示数据的参考坐标系，必须选择 TF 树中实际存在的坐标系。
 
 视角控制
 --------
