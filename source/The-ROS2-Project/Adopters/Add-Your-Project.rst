@@ -3,7 +3,7 @@
 
 使用本页面中的表单，可以为你的组织或项目生成 YAML 条目。生成后，将 YAML 片段复制到 ROS 2 文档仓库 rolling 分支中的 adopters.yaml 文件，并提交 Pull Request：
 
-§https://github.com/ros2/ros2_documentation/blob/rolling/source/The-ROS2-Project/Adopters/adopters.yaml§
+<https://github.com/ros2/ros2_documentation/blob/rolling/source/The-ROS2-Project/Adopters/adopters.yaml>_
 
 政策
 ----
