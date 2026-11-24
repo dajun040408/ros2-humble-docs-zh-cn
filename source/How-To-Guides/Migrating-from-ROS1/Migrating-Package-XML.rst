@@ -31,7 +31,7 @@ ROS 2 要求 package.xml 文件至少使用格式 2。格式 2 规范请参阅 R
 有关差异摘要，请阅读 REP-0140 中的兼容性章节：https://reps.openrobotics.org/rep-0140/#compatibility。
 
 为 ``<package>`` 添加 format 属性
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 添加或设置 format 属性为 2，以表明 package.xml 使用格式 2。
 
@@ -40,7 +40,7 @@ ROS 2 要求 package.xml 文件至少使用格式 2。格式 2 规范请参阅 R
   <package format="2">
 
 替换 ``<run_depend>``
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 ``<run_depend>`` 标签已不再允许使用。
 如果你的依赖项采用如下声明方式：
