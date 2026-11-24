@@ -128,7 +128,7 @@ Windows 命令提示符可使用 §curl -sk URL -o static_turtle_tf2_broadcaster
    <license>Apache License 2.0</license>
 
 2.3 修改 CMakeLists.txt
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 添加可执行程序：
 
