@@ -38,7 +38,7 @@ ament_cmake_python 用户文档
 使用 ament_cmake_python
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-功能包必须在 `package.xml` 中声明对 ``ament_cmake_python`` 的构建依赖：
+功能包必须在 ``package.xml`` 中声明对 ``ament_cmake_python`` 的构建依赖：
 
 .. code-block:: xml
 
@@ -69,7 +69,7 @@ ament_cmake_python 用户文档
 使用 ament_cmake_pytest
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-``ament_cmake_pytest`` 软件包用于让 CMake 能够发现测试。功能包必须在 `package.xml` 中声明对 ``ament_cmake_pytest`` 的测试依赖：
+``ament_cmake_pytest`` 软件包用于让 CMake 能够发现测试。功能包必须在 ``package.xml`` 中声明对 ``ament_cmake_pytest`` 的测试依赖：
 
 .. code-block:: xml
 
