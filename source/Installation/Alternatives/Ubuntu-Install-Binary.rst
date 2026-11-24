@@ -128,7 +128,7 @@ source 环境设置脚本
 ROS 1 bridge 可以连接 ROS 1 到 ROS 2 的话题，反之亦然。有关如何构建和使用 ROS 1 bridge，请参阅`专门的文档 <https://github.com/ros2/ros1_bridge/blob/master/README.md>`_。
 
 其他 RMW 实现（可选）
---------------------
+---------------------
 
 ROS 2 默认使用的中间件是 `Fast DDS`，但可以在运行时替换中间件（RMW）。有关如何使用多个 RMW 的说明，请参阅 :doc:`多 RMW 使用指南 <../../How-To-Guides/Working-with-multiple-RMW-implementations>`。
 
