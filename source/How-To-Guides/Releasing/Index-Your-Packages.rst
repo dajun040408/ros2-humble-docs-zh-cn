@@ -15,7 +15,7 @@ ROS 软件包索引
 为软件包指定 OSI 认可的许可证
 -----------------------------
 
-选择一个 `OSI 认可的许可证 <https://opensource.org/licenses>`_，并将其用于 ROS 软件包。如果难以决定，可以考虑使用大多数 ROS 2 核心软件包采用的 ``Apache-2.0 许可证 <https://opensource.org/license/apache-2-0>`_。
+选择一个 `OSI 认可的许可证 <https://opensource.org/licenses>`_，并将其用于 ROS 软件包。如果难以决定，可以考虑使用大多数 ROS 2 核心软件包采用的 `Apache-2.0 许可证 <https://opensource.org/license/apache-2-0>`_。
 
 对于仓库中的每个 ``package.xml``，都应在 ``<license>`` 标签中填写许可证的 SPDX 简短标识符。
 
@@ -43,7 +43,7 @@ ROS 软件包索引
 Fork 并克隆 ros/rosdistro
 -------------------------
 
-`Fork <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo>`_ ``ros/rosdistro <https://github.com/ros/rosdistro/>`_ 仓库。每个 GitHub 账户只需执行一次此步骤。之后每次发布时都会使用这个 fork。
+`Fork <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo>`_ `ros/rosdistro <https://github.com/ros/rosdistro/>`_ 仓库。每个 GitHub 账户只需执行一次此步骤。之后每次发布时都会使用这个 fork。
 
 修改你的 fork
 -------------
