@@ -55,7 +55,7 @@ Action 是 ROS 2 中的一种异步通信方式。Action 客户端向 Action 服
 创建 Action 服务端需要四个参数：
 
 1. 要添加 Action 服务端的 ROS 2 节点：``self``。
-2. Action 类型：``Fibonacci``（在第 5 行导入）。
+2. Action 类型：Fibonacci（在第 5 行导入）。
 3. Action 名称：``fibonacci``。
 4. 用于执行已接受目标的回调函数：``self.execute_callback``。该回调函数必须返回对应 Action 类型的结果消息。
 
@@ -97,7 +97,7 @@ Action 是 ROS 2 中的一种异步通信方式。Action 客户端向 Action 服
 
 在运行 Action 服务端的终端中，应该能看到 ``Executing goal...`` 日志，随后出现一条警告，提示目标状态尚未设置。
 
-默认情况下，如果执行回调没有设置目标句柄状态，系统会将目标视为 ``aborted``（已中止）。
+默认情况下，如果执行回调没有设置目标句柄状态，系统会将目标视为 aborted（已中止）。
 
 可以在目标句柄上调用 ``succeed()`` 方法，明确表示目标执行成功：
 
