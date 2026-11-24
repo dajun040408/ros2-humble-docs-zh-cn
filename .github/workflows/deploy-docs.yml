@@ -60,12 +60,6 @@ jobs:
       - name: Build Chinese search index
         run: python scripts/build_search_index.py --html-dir upstream/build/html
 
-      - name: Configure GitHub Pages custom domain
-        uses: actions/configure-pages@v5
-        with:
-          static_site_generator: none
-          cname: ros2docs.robook.org
-
 
 
       - name: Stage site under /humble and configure custom domain
