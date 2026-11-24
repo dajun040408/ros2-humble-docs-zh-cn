@@ -5,7 +5,7 @@
 .. _ActionsCpp:
 
 编写 Action 服务端和客户端（C++）
-==================================
+==================================================================
 
 **目标：** 使用 C++ 实现 Action 服务端和客户端。
 
@@ -16,20 +16,20 @@
    :local:
 
 背景
-----
+------
 
 Action 是 ROS 2 中的一种异步通信方式。Action 客户端向 Action 服务端发送目标请求；Action 服务端向客户端发送目标执行反馈和最终结果。
 
 前置条件
---------
+------------
 
 需要先完成 :doc:`创建 Action 接口 <../Creating-an-Action>` 教程，并准备 ``action_tutorials_interfaces`` 功能包及其中定义的 ``Fibonacci.action``。
 
 任务
-----
+------
 
 1. 创建 action_tutorials_cpp 功能包
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 进入上一个教程创建的工作空间（记得先 source 工作空间），创建 C++ Action 功能包：
 
@@ -46,7 +46,7 @@ Windows 示例：
    $ ros2 pkg create --dependencies action_tutorials_interfaces rclcpp rclcpp_action rclcpp_components -- action_tutorials_cpp
 
 1.1 添加符号可见性控制
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 为了使功能包能够在 Windows 上编译和运行，需要添加符号可见性控制。详细说明请参阅 :ref:`Windows 符号可见性 <Windows_Symbol_Visibility>`。
 
@@ -97,12 +97,12 @@ Windows 示例：
    #endif  // ACTION_TUTORIALS_CPP__VISIBILITY_CONTROL_H_
 
 2. 编写 Action 服务端
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 本节实现一个使用前面创建的 Fibonacci Action 接口计算斐波那契数列的服务端。
 
 2.1 编写服务端代码
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 打开 ``action_tutorials_cpp/src/fibonacci_action_server.cpp``，写入以下代码：
 
@@ -176,7 +176,7 @@ Windows 示例：
 至此，Action 服务端代码已经完成。接下来配置构建并运行。
 
 2.2 编译 Action 服务端
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 将服务端代码加入项目后，还需要配置 ``CMakeLists.txt``，使其参与编译。
 
@@ -215,7 +215,7 @@ Windows 示例：
 该命令会构建整个工作空间，其中包括 ``action_tutorials_cpp`` 功能包中的 ``fibonacci_action_server``。
 
 2.3 运行 Action 服务端
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 服务端构建完成后，source 刚刚构建的 ``ros2_ws`` 工作空间，并运行：
 
@@ -224,10 +224,10 @@ Windows 示例：
    $ ros2 run action_tutorials_cpp fibonacci_action_server
 
 3. 编写 Action 客户端
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3.1 编写客户端代码
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 打开 ``action_tutorials_cpp/src/fibonacci_action_client.cpp``，写入以下代码：
 
@@ -299,7 +299,7 @@ Windows 示例：
 至此，Action 客户端代码已经完成。接下来配置构建并运行。
 
 3.2 编译 Action 客户端
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 打开 ``action_tutorials_cpp/CMakeLists.txt``，在各个 ``find_package`` 调用之后添加：
 
@@ -336,7 +336,7 @@ Windows 示例：
 该命令会构建整个工作空间，其中包括 ``action_tutorials_cpp`` 功能包中的 ``fibonacci_action_client``。
 
 3.3 运行 Action 客户端
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 确保另一个终端中已经运行 Action 服务端。然后 source 刚刚构建的 ``ros2_ws`` 工作空间，并运行客户端：
 
@@ -347,13 +347,13 @@ Windows 示例：
 你应该能看到目标被接受、反馈不断输出，以及最终结果返回的日志。
 
 总结
-----
+------
 
 本教程逐步实现了一个 C++ Action 服务端和客户端，并配置它们交换目标请求、反馈和最终结果。
 
 相关内容
---------
+------------
 
-C++ Action 服务端和客户端还有其他实现方式。可以查看 ``ros2/examples`` 仓库中的 ``minimal_action_server`` 和 ``minimal_action_client`` 功能包：`https://github.com/ros2/examples/tree/{REPOS_FILE_BRANCH}/rclcpp`_。
+C++ Action 服务端和客户端还有其他实现方式。可以查看 ``ros2/examples`` 仓库中的 ``minimal_action_server`` 和 ``minimal_action_client`` 功能包：`ros2/examples 仓库 <https://github.com/ros2/examples/tree/{REPOS_FILE_BRANCH}/rclcpp>`_。
 
 有关 ROS 2 Actions 的更多详细信息，请参阅 `ROS 2 Actions 设计文章 <http://design.ros2.org/articles/actions.html>`_。
