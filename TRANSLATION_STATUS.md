@@ -326,3 +326,11 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 
 - 构建 #793（提交 `172e9f3`）build/deploy 均成功。Sphinx ERROR=0、CRITICAL=0；当前仅剩 2 条上游 Lyrical 页面未纳入 Humble toctree 的警告。此次构建包含单包接口、自定义接口、C++/Python 参数类、功能包创建、工作空间、pluginlib、colcon_cd 和 ros2doctor 的全部本轮修改。
 - GitHub Actions 部署成功，说明更新已发布到 Pages Artifact。外部网页读取工具无法直接打开 GitHub Pages 页面，因此本轮未声称完成浏览器端逐页视觉验收。
+
+## 2026-11-24 Intermediate Tutorials 首轮严重缺失补译
+
+- 对照官方 Humble，发现 `Writing-an-Action-Server-Client/Cpp.rst` 本地仅 109 行、上游 401 行；`Py.rst` 本地 117 行、上游 365 行；`Composition.rst` 本地 94 行、上游 399 行。三篇均缺少多节代码示例、运行方式或高级主题。
+- 已扩充 C++ Action 教程：补齐 Windows 符号可见性控制、服务端目标/取消/接受回调与工作线程执行、CMake 共享库和组件注册、服务端运行、客户端目标发送与响应/反馈/结果回调、客户端构建运行及相关内容。代码示例使用上游仓库随工作流检出的 literalinclude 源文件。提交：`7b89d2531d485850aa1eef558812bcb6841f2c08`。
+- 已扩充 Python Action 教程：补齐服务端从基础执行、成功状态、斐波那契结果到反馈发布的分步演进；补齐客户端目标发送、目标响应、获取结果、反馈回调，以及 Linux/macOS/Windows 运行方式。代码示例使用上游仓库的 literalinclude 脚本。提交：`9f2db575c1018bc580b9a63cbc4a356238e80596`。
+- 已扩充节点组合教程：补齐组件发现、发布订阅与服务客户端运行时组合、编译时组合、dlopen 组合、launch 组合、容器类型、组件卸载、容器/组件名称与命名空间重映射、参数和额外参数传递、共享库导出及非 Node 派生组件等官方章节。提交：`b631ec3bce80ca0f0bf38ad9efd2e26eafc8fa8b`。
+- 上述三篇中级教程补译尚待完整 Sphinx 构建、RST 日志及 Pages 部署验收。
