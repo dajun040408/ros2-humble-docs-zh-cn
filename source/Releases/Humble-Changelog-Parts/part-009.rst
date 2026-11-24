@@ -45,9 +45,9 @@
 * 贡献者：Audrow Nash
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 `examples_tf2_py <https://github.com/ros2/geometry2/tree/humble/examples_tf2_py/CHANGELOG.rst>`__
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * 将维护者更新为 Alejandro Hernandez Cordero 和 Chris Lalancette（`#481 <https://github.com/ros2/geometry2/issues/481>`__）
 * 在 setup.cfg 中使用下划线替代连字符（`#403 <https://github.com/ros2/geometry2/issues/403>`__）
@@ -62,18 +62,18 @@
 * 贡献者：Audrow Nash
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 `geometry_msgs <https://github.com/ros2/common_interfaces/tree/humble/geometry_msgs/CHANGELOG.rst>`__
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * 接口功能包应对其依赖的接口功能包完整声明 ``<depend>`` 依赖（`#173 <https://github.com/ros2/common_interfaces/issues/173>`__）
 * 将维护者更新为 Geoffrey Biggs 和 Tully Foote（`#163 <https://github.com/ros2/common_interfaces/issues/163>`__）
 * 贡献者：Audrow Nash、Grey
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 `google_benchmark_vendor <https://github.com/ament/google_benchmark_vendor/tree/humble/CHANGELOG.rst>`__
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * 添加 git 构建工具依赖。
 * 使用 git 哈希版本构建 google_benchmark_vendor（`#20 <https://github.com/ament/google_benchmark_vendor/issues/20>`__）
