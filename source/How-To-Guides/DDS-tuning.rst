@@ -31,7 +31,7 @@ Best Effort 设置可以减少网络流量，因为 DDS 实现不需要承担可
 
 **解决方案：** 减小 ``ipfrag_time`` 参数。
 
-``net.ipv4.ipfrag_time`（路径：``/proc/sys/net/ipv4/ipfrag_time`，默认值：30 秒）表示 IP 分片在内存中保留的时间。
+``net.ipv4.ipfrag_time``（路径：``/proc/sys/net/ipv4/ipfrag_time``，默认值：30 秒）表示 IP 分片在内存中保留的时间。
 
 例如，将其减小到 3 秒：
 
@@ -43,7 +43,7 @@ Best Effort 设置可以减少网络流量，因为 DDS 实现不需要承担可
 
 **解决方案：** 增大 ``ipfrag_high_thresh`` 参数。
 
-``net.ipv4.ipfrag_high_thresh`（路径：``/proc/sys/net/ipv4/ipfrag_high_thresh`，默认值：262144 字节）表示用于重组 IP 分片的最大内存量。
+``net.ipv4.ipfrag_high_thresh``（路径：``/proc/sys/net/ipv4/ipfrag_high_thresh``，默认值：262144 字节）表示用于重组 IP 分片的最大内存量。
 
 例如，将其增加到 128 MB：
 
@@ -93,7 +93,7 @@ Cyclone DDS 调优
 
 **问题：** 即使使用 Reliable 设置并通过有线网络传输，Cyclone DDS 仍无法可靠传递大型消息。
 
-该问题预计会在 `后续版本中解决 <https://github.com/eclipse-cyclonedds/cyclonedds/issues/484>`_。在此之前，我们通过 ``测试程序 <https://github.com/jacobperron/pc_pipe>`_ 调试并提出以下解决方案。
+该问题预计会在 `后续版本中解决 <https://github.com/eclipse-cyclonedds/cyclonedds/issues/484>`_。在此之前，我们通过 `测试程序 <https://github.com/jacobperron/pc_pipe>`_ 调试并提出以下解决方案。
 
 **解决方案：** 增大 Linux 内核最大接收缓冲区大小，以及 Cyclone 请求的最小套接字接收缓冲区大小。
 
