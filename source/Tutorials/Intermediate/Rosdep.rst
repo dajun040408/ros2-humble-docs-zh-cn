@@ -2,6 +2,8 @@
 
     Tutorials/Rosdep
 
+.. _rosdep documentation:
+
 使用 rosdep 管理依赖项
 ======================
 

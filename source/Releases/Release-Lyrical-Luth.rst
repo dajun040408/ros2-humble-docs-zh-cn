@@ -1,5 +1,7 @@
 .. _lyrical-release:
 
+.. _latest-release:
+
 Lyrical Luth（lyrical）
 =======================
 

@@ -229,6 +229,8 @@ source underlay
 
     这里同样需要指定 --merge-install，因为上面构建时使用了该选项。
 
+.. _colcon-tutorial-source-the-environment:
+
 source 环境
 ^^^^^^^^^^^
 

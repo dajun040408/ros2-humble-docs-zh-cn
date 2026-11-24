@@ -1,3 +1,5 @@
+.. _rosdep key contribution guide:
+
 补充自定义 rosdep key
 =====================
 

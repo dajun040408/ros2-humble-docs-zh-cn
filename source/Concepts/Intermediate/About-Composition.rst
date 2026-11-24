@@ -35,6 +35,8 @@ ROS 1 中使用不同 API 是其最大的缺点之一，而 ROS 2 避免了这�
 
 .. _ComponentContainer:
 
+.. _ComponentContainerTypes:
+
 组件容器
 ----------
 
