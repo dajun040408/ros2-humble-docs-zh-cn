@@ -10,7 +10,7 @@ GurumNetworks GurumDDS
 前置条件
 --------
 
-本指南假设你已经完成 ROS 2 环境配置，可以通过 :doc:`Deb 软件包安装 ROS 2 <../../Ubuntu-Install-Debs>`，或 :doc:`在 Ubuntu 上从源码构建 ROS 2 <../../Alternatives/Ubuntu-Development-Setup>`。
+本指南假设你已经完成 ROS 2 环境配置，可以通过 :doc:`Deb 软件包安装 ROS 2 </Installation/Ubuntu-Install-Debs>`，或 :doc:`在 Ubuntu 上从源码构建 ROS 2 </Installation/Alternatives/Ubuntu-Development-Setup>`。
 
 版本要求（`README 详情 <https://github.com/ros2/rmw_gurumdds>`_）：
 
@@ -74,7 +74,7 @@ Ubuntu 上的 ROS 2 apt 软件源提供 GurumDDS 的 deb 软件包。Windows 二
 
    $ export RMW_IMPLEMENTATION=rmw_gurumdds_cpp
 
-有关使用多个 RMW 实现的更多信息，请参阅 :doc:`使用多个 RMW 实现 <../../../How-To-Guides/Working-with-multiple-RMW-implementations>`。
+有关使用多个 RMW 实现的更多信息，请参阅 :doc:`使用多个 RMW 实现 </How-To-Guides/Working-with-multiple-RMW-implementations>`。
 
 测试安装
 --------
