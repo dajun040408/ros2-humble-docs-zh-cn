@@ -63,7 +63,7 @@
 
 第二行对应一个动作。第一行对应 ``cmd_vel`` 话题，前面已经在 :doc:`话题教程 <../Understanding-ROS2-Topics/Understanding-ROS2-Topics>` 中介绍过。
 
-在美式 QWERTY 键盘上，字母键 ``G|B|V|C|D|E|R|T`` 围绕 ``F`` 键形成一个方框。每个按键相对于 ``F`` 的位置，对应 turtlesim 中的一个方向。例如，按下 ``E`` 会使海龟转向左上角。
+在美式 QWERTY 键盘上，字母键 ``G|B|V|C|D|E|R|T`` 围绕 ``F`` 键形成一个方框。如果你使用的不是 QWERTY 键盘，可以参考 `美国键盘布局图 <https://upload.wikimedia.org/wikipedia/commons/d/da/KB_United_States.svg>`__，以便跟随本教程操作。每个按键相对于 ``F`` 的位置，对应 turtlesim 中的一个方向。例如，按下 ``E`` 会使海龟转向左上角。
 
 观察运行 ``/turtlesim`` 节点的终端。每次按下这些按键之一，都会向该节点中的动作服务端发送一个目标，要求海龟旋转到指定方向。完成旋转后，终端会显示：
 
@@ -100,11 +100,38 @@
 
 .. code-block:: text
 
+  /turtlesim
+    Subscribers:
+      /parameter_events: rcl_interfaces/msg/ParameterEvent
+      /turtle1/cmd_vel: geometry_msgs/msg/Twist
+    Publishers:
+      /parameter_events: rcl_interfaces/msg/ParameterEvent
+      /rosout: rcl_interfaces/msg/Log
+      /turtle1/color_sensor: turtlesim/msg/Color
+      /turtle1/pose: turtlesim/msg/Pose
+    Service Servers:
+      /clear: std_srvs/srv/Empty
+      /kill: turtlesim/srv/Kill
+      /reset: std_srvs/srv/Empty
+      /spawn: turtlesim/srv/Spawn
+      /turtle1/set_pen: turtlesim/srv/SetPen
+      /turtle1/teleport_absolute: turtlesim/srv/TeleportAbsolute
+      /turtle1/teleport_relative: turtlesim/srv/TeleportRelative
+      /turtlesim/describe_parameters: rcl_interfaces/srv/DescribeParameters
+      /turtlesim/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
+      /turtlesim/get_parameters: rcl_interfaces/srv/GetParameters
+      /turtlesim/list_parameters: rcl_interfaces/srv/ListParameters
+      /turtlesim/set_parameters: rcl_interfaces/srv/SetParameters
+      /turtlesim/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+    Service Clients:
+
     Action Servers:
       /turtle1/rotate_absolute: turtlesim/action/RotateAbsolute
     Action Clients:
 
-``/turtle1/rotate_absolute`` 位于 ``Action Servers`` 下，说明 ``/turtlesim`` 节点会响应该动作并提供反馈。
+该命令会列出 ``/turtlesim`` 节点的订阅者、发布者、服务、动作服务端和动作客户端。
+
+注意，``/turtle1/rotate_absolute`` 动作位于 ``Action Servers`` 项下。这说明 ``/turtlesim`` 节点会响应该动作，并为其提供反馈。
 
 ``/teleop_turtle`` 节点则是该动作的客户端。运行以下命令查看：
 
@@ -116,10 +143,28 @@
 
 .. code-block:: text
 
+  /teleop_turtle
+    Subscribers:
+      /parameter_events: rcl_interfaces/msg/ParameterEvent
+    Publishers:
+      /parameter_events: rcl_interfaces/msg/ParameterEvent
+      /rosout: rcl_interfaces/msg/Log
+      /turtle1/cmd_vel: geometry_msgs/msg/Twist
+    Service Servers:
+      /teleop_turtle/describe_parameters: rcl_interfaces/srv/DescribeParameters
+      /teleop_turtle/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
+      /teleop_turtle/get_parameters: rcl_interfaces/srv/GetParameters
+      /teleop_turtle/list_parameters: rcl_interfaces/srv/ListParameters
+      /teleop_turtle/set_parameters: rcl_interfaces/srv/SetParameters
+      /teleop_turtle/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+    Service Clients:
+
     Action Servers:
 
     Action Clients:
       /turtle1/rotate_absolute: turtlesim/action/RotateAbsolute
+
+``/teleop_turtle`` 节点的 ``Action Clients`` 项下列出了 ``/turtle1/rotate_absolute``，这表示它会向该动作名称发送目标。
 
 4 ros2 action list
 ^^^^^^^^^^^^^^^^^^
