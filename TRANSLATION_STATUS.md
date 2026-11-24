@@ -101,3 +101,13 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 页面含有中文标题或说明，不代表全文翻译完成。
 - 代码、命令、API、类型名、参数名、话题名、路径及配置键应保持原样。
 - 只有逐页内容审查、导航与链接检查、完整 Sphinx 构建和部署验证全部通过，才能标记项目完成。
+
+
+## 2026-11-24 线上站点来源核验（关键结论）
+
+- 已从用户提供的 robook.org 页面点击 “Edit on GitHub”，链接明确指向 `ros2/ros2_documentation` 仓库的 `humble` 分支（例如 `source/How-To-Guides/Migrating-from-ROS1/Migrating-Launch-Files.rst`）。因此 robook.org 当前 Humble 页面由 ROS 官方上游仓库内容生成，而不是由本项目 `dajun040408/ros2-humble-docs-zh-cn` 生成。
+- 已现场抽查用户提供的10个 robook.org 页面，页面标题、目录或正文仍含英文；例如 Migrating Packages 正文仍显示 “There are two different kinds of package migrations”，Migrating Interfaces 正文仍显示 “Messages, services, and actions are collectively called interfaces in ROS 2”。
+- 本项目 GitHub Actions #432 的 build job 成功：Sphinx HTML、搜索索引和 Pages Artifact 均成功；deploy job 仍因本项目 GitHub Pages 未启用而 404。
+- 当前 GitHub 连接对上游 `ros2/ros2_documentation` 只有 pull 权限，没有 push 权限；本项目是独立仓库（`fork=false`），不是上游 fork，因此无法直接把本项目提交推送到上游 Humble 分支。
+- 要让用户给出的 `https://ros2docs.robook.org/humble/` 网址更新，必须选择并落实实际发布目标：将本项目的构建产物部署到 robook.org 当前托管环境，或将该域名迁移/绑定到本项目启用后的 GitHub Pages。仅在本项目提交中文 RST 不会改变当前 robook.org 页面。
+- 目前尚未获得 robook.org 主机/部署凭据，也未确认该域名 DNS 可由用户修改；因此未擅自改写 CNAME 或 DNS。
