@@ -188,3 +188,14 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 对迁移目录全部 10 篇页面再次执行代码区域扫描：未再发现 `code-block` / `code` 区域内残留双反引号行内标记。
 - 该扫描是源文件静态检查，不等同于 Sphinx 构建成功；最新提交的 Actions build/deploy 结果仍须从 GitHub Actions 运行页确认。GitHub 连接当前可用的 commit status 检查没有返回状态项，不能据此宣称构建通过。
 - 本轮仅处理迁移指南，不代表其余 287 篇候选文档已完成全文审校。297 篇路径覆盖仍不能作为全文翻译完成证明。
+
+
+## 2026-11-24 第七轮 Humble 范围核验与构建文档修复
+
+- 重新读取 Humble 完整变更日志入口：`source/Releases/Humble-Hawksbill-Complete-Changelog.rst`，确认包含 33 条 `.. include:: Humble-Changelog-Parts/part-001.rst` 至 `part-033.rst` 的拆分引用。
+- 已逐个从 GitHub main 读取 33 个 Humble 子文件，33/33 均存在且有内容；入口文件的 33 个 include 与拆分目录命名对应。该项证明拆分文件存在，不等同于逐条翻译质量、上游条目完整性和 Sphinx include 构建验收。
+- 本项目目标发行版为 Humble。Iron、Jazzy、Kilted、Lyrical 的完整变更日志当前只是中文导航说明页，未逐条翻译；Galactic 仅有部分拆分翻译。这些其他发行版不属于本项目当前 Humble 交付范围，不应列为 Humble 项目的阻断项，也不应宣称已翻译。
+- 修复 `docs/BUILDING.md` 中构建命令和“中文搜索”章节被错误保存为字面量 `\\n` 的 Markdown 格式问题，恢复正常换行和代码围栏。提交：`11e9e0c80222a8a1354a58795a4059fc4ed962bf`。
+- 此前迁移指南代码块审校提交：`575d712`、`4ed8dc0`、`30d7375`、`f0c0e5d`；全部 10 篇迁移指南的代码块扫描已无双反引号行内标记残留。
+- 仍未取得 GitHub Actions 最近一次 run 的完整 jobs/logs 读取能力；当前连接返回的 commit status 列表为空，不能作为构建成功证据。完整 Sphinx 构建、警告分类、生成 HTML 的链接检查、最新 Pages 部署及 `ros2docs.robook.org` 实际域名验收仍未完成。
+- 全站 297 篇候选页面的逐页全文质量审校仍未完成。297/297 仅代表路径覆盖；不得据此标记全部翻译完成。
