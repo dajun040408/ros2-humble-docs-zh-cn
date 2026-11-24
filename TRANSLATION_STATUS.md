@@ -128,3 +128,11 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 最新构建 #439（提交 `3d2d56f`）已排队，待验证 build、artifact 和 deploy。
 - 自定义域名仍需在仓库 Settings → Pages → Custom domain 中配置 `ros2docs.robook.org`，并由域名 DNS 管理端将 `ros2docs` CNAME 指向 `dajun040408.github.io`；当前没有 DNS 管理凭据，不能代替用户修改 DNS。
 - `https://ros2docs.robook.org/humble/` 尚未通过新版本实站验收。
+
+## 2026-11-24 GitHub Pages 部署成功后的实站复核
+
+- 工作流 #440（run ID 45310556482，提交 45ed7361fb6436824dbcf0ddf1ce74d525072104）最终完成，build 与 deploy 两个 job 均为 success。
+- Pages Artifact github-pages 已成功生成，大小 38,409,683 bytes；Deploy to GitHub Pages 步骤成功。
+- 但通过公开网页抓取重新检查 https://ros2docs.robook.org/humble/...，抓取到的内容仍是旧英文版本。例如 Migrating Packages 正文仍包含 “There are two different kinds of package migrations”；Migrating Interfaces 仍显示英文标题和英文正文；Migrating Parameters、C++ 示例、C++ 参考、Python 参考、Launch Files、Scripts 页面也仍有英文标题/正文。搜索引擎抓取时间较旧，不能单凭缓存判定 DNS 当前状态，但可以确认尚无可靠证据证明原域名已切换到新部署。
+- 因此：GitHub Pages 项目部署已成功；自定义域名 ros2docs.robook.org 的 Pages Custom domain 绑定、DNS CNAME 指向 dajun040408.github.io、HTTPS 证书及原域名实时内容切换仍未验收。/humble/ 路径在构建产物中已按要求生成。
+- 下一步必须在仓库 Settings → Pages → Custom domain 中填写 ros2docs.robook.org 并保存，同时在域名 DNS 控制台确认 ros2docs CNAME 指向 dajun040408.github.io。目前连接没有 DNS 控制台权限，不能代替域名所有者修改 DNS。
