@@ -219,3 +219,13 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 修订提交：`cd79729ba25650174c61e37dbe3b941ba3ab0f23`、`aa4e9d8f3498caf804a808a59903d784b04ed49a`。
 - 其余 8 篇子教程的章节标题结构与 Humble 上游基本对应；本轮未发现整章缺失的证据，但仍需逐段翻译完整性和技术内容校对。
 - 最新 GitHub Actions #735（提交 `aa4e9d8`）正在构建；须等待构建和部署成功后再进行网页验收。
+
+## 2026-11-24 Beginner CLI Tools 第二轮逐项核验
+
+- 上一轮整合提交对应 GitHub Actions #736（提交 `592e572`）build 与 deploy 均成功。
+- 继续逐段对照 ROS 2 官方 Humble 上游，复核 Beginner CLI Tools 目录的 10 篇子教程。章节标题、图片、代码块、literalinclude、注释块及页面结尾均进行结构核对。
+- 在 `Understanding-ROS2-Actions.rst` 中发现原中文版本省略了 QWERTY 键盘布局参考链接，并将两处 `ros2 node info` 输出简化为仅显示动作部分。已补充键盘布局链接、完整节点订阅者/发布者/服务/动作输出及相应中文解释。提交：`d7d998c1421cd90886ae996472f7e4c0b859c953`。
+- 在 `Understanding-ROS2-Topics.rst` 中发现缺少上游的 `images/unhide.png` 配图。已恢复图片，并调整相邻说明文字。提交：`8128039248c4148c68c89d587fcfea044c76508a`。
+- `Introducing-Turtlesim.rst` 已补齐 set_pen、重映射、关闭仿真、总结、下一步及相关内容；`Understanding-ROS2-Topics.rst` 已补齐 interface show、topic pub/hz/bw/find、清理环境和总结等章节。
+- 其余配置环境、启动多个节点、录制回放、理解节点、理解参数、理解服务及 rqt_console 页面，本轮章节结构和主要图片/代码示例数量与上游 Humble 对应；未发现整章缺失。但结构计数不等于逐句语义审校，后续仍需抽查译文准确性、链接和网页呈现。
+- 本轮最新修改尚待 GitHub Actions 完整构建、部署及线上 HTML 验收；不得将前一轮 #736 成功视为本轮修改已部署。
