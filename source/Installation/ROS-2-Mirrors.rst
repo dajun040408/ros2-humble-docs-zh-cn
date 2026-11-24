@@ -22,19 +22,19 @@ Debian/Ubuntu（APT）软件源镜像
 
    * - 清华大学（TUNA）
      - 中国
-     - `镜像地址 <https://mirrors.tuna.tsinghua.edu.cn/ros2/ubuntu/>`_
+     - `镜像地址 <https://mirrors.tuna.tsinghua.edu.cn/ros2/ubuntu/>`__
    * - 中国科学技术大学（USTC）
      - 中国
-     - `镜像地址 <https://mirrors.ustc.edu.cn/ros2/ubuntu/>`_
+     - `镜像地址 <https://mirrors.ustc.edu.cn/ros2/ubuntu/>`__
    * - 阿里云（Aliyun）
      - 中国
-     - `镜像地址 <https://mirrors.aliyun.com/ros2/ubuntu/>`_
+     - `镜像地址 <https://mirrors.aliyun.com/ros2/ubuntu/>`__
    * - 齐鲁工业大学（QLU）
      - 中国
-     - `镜像地址 <https://mirrors.qlu.edu.cn/ros2/ubuntu/>`_
+     - `镜像地址 <https://mirrors.qlu.edu.cn/ros2/ubuntu/>`__
    * - 重庆大学（CQU）
      - 中国
-     - `镜像地址 <https://mirrors.cqu.edu.cn/ros2/ubuntu/>`_
+     - `镜像地址 <https://mirrors.cqu.edu.cn/ros2/ubuntu/>`__
 
 欧洲
 ^^^^
@@ -44,7 +44,7 @@ Debian/Ubuntu（APT）软件源镜像
 
    * - 代尔夫特理工大学
      - 荷兰
-     - `镜像地址 <http://ftp.tudelft.nl/ros2/ubuntu/>`_
+     - `镜像地址 <http://ftp.tudelft.nl/ros2/ubuntu/>`__
 
 北美洲
 ^^^^^^
@@ -54,10 +54,10 @@ Debian/Ubuntu（APT）软件源镜像
 
    * - 马里兰大学（UMD）
      - 美国
-     - `镜像地址 <http://mirror.umd.edu/packages.ros.org/ros2/ubuntu/>`_
+     - `镜像地址 <http://mirror.umd.edu/packages.ros.org/ros2/ubuntu/>`__
    * - nulled LLC
      - 美国
-     - `镜像地址 <http://mirror.nulled.llc/ros2/ubuntu/>`_
+     - `镜像地址 <http://mirror.nulled.llc/ros2/ubuntu/>`__
 
 大洋洲
 ^^^^^^
@@ -67,7 +67,7 @@ Debian/Ubuntu（APT）软件源镜像
 
    * - AARNet
      - 澳大利亚
-     - `镜像地址 <https://mirror.aarnet.edu.au/pub/ros2-packages/ubuntu/>`_
+     - `镜像地址 <https://mirror.aarnet.edu.au/pub/ros2-packages/ubuntu/>`__
 
 南美洲和非洲
 ^^^^^^^^^^^^
@@ -77,7 +77,7 @@ Debian/Ubuntu（APT）软件源镜像
 创建镜像
 --------
 
-如果你正在维护镜像，请加入 discourse.openrobotics.org 上的 Mirrors 分类：`镜像地址 <https://discourse.openrobotics.org/c/infrastructure-project/infra-mirrors/>`_，以便获取反馈和及时更新。
+如果你正在维护镜像，请加入 discourse.openrobotics.org 上的 Mirrors 分类：`镜像地址 <https://discourse.openrobotics.org/c/infrastructure-project/infra-mirrors/>`__，以便获取反馈和及时更新。
 
 使用镜像
 ^^^^^^^^

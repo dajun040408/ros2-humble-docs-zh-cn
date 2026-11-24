@@ -47,7 +47,7 @@ CI 构建（https://ci.ros2.org）
 * CI 构建在所有平台上均通过。
 * 至少一名维护者完成审查并批准该 PR。
 
-有关 PR 审查流程的更多信息，请参阅 :doc:`审查 Pull Request < /The-ROS2-Project/Contributing/Contributing-to-code/Reviewing-a-PR>`。
+有关 PR 审查流程的更多信息，请参阅 :doc:`审查 Pull Request <../The-ROS2-Project/Contributing/Contributing-to-code/Reviewing-a-PR>`。
 
 PR 合并后，会自动在下一轮 `nightly 构建 <https://ci.ros2.org/view/nightly>`_ 中构建。强烈建议在合并后检查 nightly 构建，以确保没有引入回归问题。
 

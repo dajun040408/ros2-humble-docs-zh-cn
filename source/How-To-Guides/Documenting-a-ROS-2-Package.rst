@@ -63,7 +63,7 @@ rosdoc2.yaml
         </export>
     </package>
 
-不过，对于大多数功能包，`rosdoc2` 的默认设置已经足够，无需自定义配置。更多信息请参阅 `rosdoc2 README <https://github.com/ros-infrastructure/rosdoc2#using-a-rosdoc2yaml-file-to-control-how-your-package-is-documented>`_。
+不过，对于大多数功能包，`rosdoc2` 的默认设置已经足够，无需自定义配置。更多信息请参阅 `rosdoc2 README <https://github.com/ros-infrastructure/rosdoc2#using-a-rosdoc2yaml-file-to-control-how-your-package-is-documented>`__。
 
 conf.py、rosdoc2_settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -217,6 +217,6 @@ ROS 构建农场使用 `rosdoc2` 构建功能包文档，并托管在 `docs.ros.
 延伸阅读
 --------
 
-* `rosdoc2 README <https://github.com/ros-infrastructure/rosdoc2/blob/main/README.md>`_
+* `rosdoc2 README <https://github.com/ros-infrastructure/rosdoc2/blob/main/README.md>`__
 * `ROS 2 功能包文档设计文档 <https://design.ros2.org/articles/per_package_documentation.html>`_
 * `ROS 2 Cookbook <https://github.com/mikeferguson/ros2_cookbook/blob/main/pages/rosdoc2.md>`_

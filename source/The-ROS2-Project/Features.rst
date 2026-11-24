@@ -18,7 +18,7 @@
      - 链接
      - 补充说明
    * - 基于 DDS 的发现、传输和序列化
-     - `设计文章 <https://design.ros2.org/articles/ros_on_dds.html>`_
+     - `设计文章 <https://design.ros2.org/articles/ros_on_dds.html>`__
      -
    * - 支持多种 DDS 实现，并可在运行时选择
      - :doc:`概念 <../Concepts/Intermediate/About-Different-Middleware-Vendors>`、:doc:`使用指南 <../How-To-Guides/Working-with-multiple-RMW-implementations>`
@@ -27,16 +27,16 @@
      - :doc:`详细说明 <../Concepts/Basic/About-Client-Libraries>`
      -
    * - 通过话题进行发布/订阅
-     - `示例代码 <https://github.com/ros2/examples>`_、`设计文章 <https://design.ros2.org/articles/topic_and_service_names.html>`_
+     - `示例代码 <https://github.com/ros2/examples>`__、`设计文章 <https://design.ros2.org/articles/topic_and_service_names.html>`__
      -
    * - 客户端和服务
-     - `示例代码 <https://github.com/ros2/examples>`_
+     - `示例代码 <https://github.com/ros2/examples>`__
      -
    * - 设置/获取参数
-     - `示例代码 <https://github.com/ros2/demos/tree/0.5.1/demo_nodes_cpp/src/parameters>`_
+     - `示例代码 <https://github.com/ros2/demos/tree/0.5.1/demo_nodes_cpp/src/parameters>`__
      -
    * - ROS 1 与 ROS 2 通信桥接
-     - `教程 <https://github.com/ros2/ros1_bridge/blob/master/README.md>`_
+     - `教程 <https://github.com/ros2/ros1_bridge/blob/master/README.md>`__
      - 支持话题和服务，暂不支持动作。
    * - 用于处理非理想网络的服务质量（QoS）设置
      - :doc:`演示 <../Tutorials/Demos/Quality-of-Service>`
@@ -48,13 +48,13 @@
      - :doc:`演示 <../Tutorials/Intermediate/Composition>`
      - 目前仅支持 C++。
    * - 同一节点中支持多个执行器（回调组级别）
-     - `演示 <https://github.com/ros2/examples/tree/{DISTRO}/rclcpp/executors/cbg_executor>`_
+     - `演示 <https://github.com/ros2/examples/tree/{DISTRO}/rclcpp/executors/cbg_executor>`__
      - 仅支持 C++。
    * - 支持具有受管理生命周期的节点
      - :doc:`演示 <../Tutorials/Demos/Managed-Nodes>`
      - 目前仅支持 C++。
    * - DDS-Security 支持
-     - `演示 <https://github.com/ros2/sros2>`_
+     - `演示 <https://github.com/ros2/sros2>`__
      -
    * - 基于可扩展框架的命令行内省工具
      - :doc:`概念 <../Concepts/Basic/About-Command-Line-Tools>`
@@ -63,19 +63,19 @@
      - :doc:`教程 <../Tutorials/Intermediate/Launch/Launch-system>`
      -
    * - 节点和话题的命名空间支持
-     - `设计文章 <https://design.ros2.org/articles/topic_and_service_names.html>`_
+     - `设计文章 <https://design.ros2.org/articles/topic_and_service_names.html>`__
      -
    * - ROS 名称的静态重映射
      - :doc:`使用指南 <../How-To-Guides/Node-arguments>`
      -
    * - 完整 ROS 2 移动机器人的演示
-     - `演示 <https://github.com/ros2/turtlebot2_demo>`_
+     - `演示 <https://github.com/ros2/turtlebot2_demo>`__
      -
    * - 初步支持实时程序
      - :doc:`演示 <../Tutorials/Demos/Real-Time-Programming>`、:doc:`演示 <../Tutorials/Advanced/Allocator-Template-Tutorial>`
      - 仅支持 Linux，不支持 Fast RTPS。
    * - 初步支持裸机微控制器
-     - `Wiki <https://github.com/ros2/freertps/wiki>`_
+     - `Wiki <https://github.com/ros2/freertps/wiki>`__
      -
    * - 内容过滤订阅
      - :doc:`演示 <../Tutorials/Demos/Content-Filtering-Subscription>`
@@ -83,9 +83,9 @@
 
 除了平台核心功能外，ROS 的主要影响力还来自其丰富的软件包。以下是最新发行版中一些重要的软件包：
 
-* `gazebo_ros_pkgs <https://index.ros.org/r/gazebo_ros_pkgs/>`_
-* `image_transport <https://index.ros.org/r/image_common>`_
-* `navigation2 <https://index.ros.org/r/navigation2/>`_
-* `rosbag2 <https://index.ros.org/r/rosbag2/>`_
-* `RQt <https://index.ros.org/r/rqt/>`_
-* `RViz2 <https://index.ros.org/r/rviz/>`_
+* `gazebo_ros_pkgs <https://index.ros.org/r/gazebo_ros_pkgs/>`__
+* `image_transport <https://index.ros.org/r/image_common>`__
+* `navigation2 <https://index.ros.org/r/navigation2/>`__
+* `rosbag2 <https://index.ros.org/r/rosbag2/>`__
+* `RQt <https://index.ros.org/r/rqt/>`__
+* `RViz2 <https://index.ros.org/r/rviz/>`__

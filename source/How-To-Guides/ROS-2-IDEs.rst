@@ -26,7 +26,7 @@ Python 代码会被复制到 `build`/`install` 目录中。因此，如果从 ID
 有两种处理方式：
 
 * 打开 `build`/`install` 目录中的源文件，并在这些文件中设置断点。
-* 使用 colcon 的 `--symlink-install` 标志构建工作空间，使 `build`/`install` 目录中的文件通过符号链接指向源文件。更多信息请参阅 `colcon 文档 <https://colcon.readthedocs.io/en/released/reference/verb/build.html#command-line-arguments>`_。
+* 使用 colcon 的 `--symlink-install` 标志构建工作空间，使 `build`/`install` 目录中的文件通过符号链接指向源文件。更多信息请参阅 `colcon 文档 <https://colcon.readthedocs.io/en/released/reference/verb/build.html#command-line-arguments>`__。
 
 Visual Studio Code
 ------------------
@@ -185,7 +185,7 @@ PyCharm 会重新建立索引。完成后，它应该能够正确识别项目中
 
 .. tip::
 
-   使用 colcon build 的 `--merge-install` 选项可以减少依赖目录的数量，从而更容易配置 PyCharm。更多信息请参阅 `colcon 文档 <https://colcon.readthedocs.io/en/released/user/isolated-vs-merged-workspaces.html>`_。
+   使用 colcon build 的 `--merge-install` 选项可以减少依赖目录的数量，从而更容易配置 PyCharm。更多信息请参阅 `colcon 文档 <https://colcon.readthedocs.io/en/released/user/isolated-vs-merged-workspaces.html>`__。
 
 附加到进程
 ^^^^^^^^^^
