@@ -255,3 +255,7 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 已扩充 `Writing-A-Simple-Cpp-Publisher-And-Subscriber.rst`：补充完整发布者和订阅者 C++ 文件（包括头文件、main）、代码逐段说明、package.xml 依赖、CMakeLists 配置说明、订阅者目标配置、下一步和相关内容。提交：`2cd0b2cc7b6650e7411394676aad80e5f5e786e7`。
 - 已扩充 `Writing-A-Simple-Cpp-Service-And-Client.rst`：补充 package.xml 更新说明、服务端代码解析、服务端可执行程序配置、客户端代码解析、客户端可执行程序配置、完整 CMakeLists 示例、下一步及相关内容；并补入客户端使用 `std::chrono::seconds` 所需的 `<chrono>` 头文件。提交：`fa669feb03118be0c4b06df380dd1ea57875bf9d`、`60ae3b298843a8f1a5582fed7900ad40bc572d99`。
 - 本轮两篇 C++ 教程的改动尚待完整 Sphinx 构建、部署及页面验收。其他 Beginner Client Libraries 页面仍待逐篇补译，不能据目录标题中文化标记完成。
+
+- 构建 #753（提交 `45202b1`）build/deploy 成功，但日志发现新补译的 C++ 发布者/订阅者教程存在 3 处标题下划线长度警告，以及两个 C++ 教程的相关内容链接写法错误，产生 2 条 Unknown target 错误。
+- 已将两个相关内容链接改为正确的 RST 外部链接格式；同时对 C++ 服务/客户端教程中的服务定义分隔符做了恢复，避免自动标题检查误改代码块中的 `---`。修订提交：`8af1a70b84620d80a0c8d2e963517fc4a0030a79`、`8a0c909729bc0496c57f6b14380ffc0fc535b074`、`02dce3d261e89f0ac178e0ab8e0988a45c82f0fd`、`34098d736dfd17f363b5bd4d52b6763862a12d2e`。
+- 新增的 C++ 发布者/订阅者与服务/客户端章节及代码仍需新一轮 Sphinx 构建复核；构建成功不代表译文已经完成逐句审校。
