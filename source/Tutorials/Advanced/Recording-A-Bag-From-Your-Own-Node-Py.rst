@@ -43,7 +43,7 @@ rosbag2 不仅提供 ros2 bag 命令行工具，还提供 Python API，可以在
 
 打开新终端并 :doc:`source ROS 2 安装环境 <../Beginner-CLI-Tools/Configuring-ROS2-Environment>`。
 
-按照 :ref:`创建工作空间说明 <new-directory>` 创建名为 ros2_ws 的工作空间。在 ros2_ws/src 目录中创建新功能包：
+按照 :doc:`创建工作空间教程 <../Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>` 创建名为 ros2_ws 的工作空间。在 ros2_ws/src 目录中创建新功能包：
 
 .. code-block:: console
 
