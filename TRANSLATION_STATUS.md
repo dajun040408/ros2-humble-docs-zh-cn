@@ -145,3 +145,14 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 修订提交：`54d9d1c5ec1be4a55540f58066eecfd2fbee8506`。该提交将触发新一轮 GitHub Actions 构建。
 - 最新已知成功部署仍是 #441；本次修订尚未构建和部署，原域名尚未验收。
 - GitHub Pages 自定义域名设置不能由当前 GitHub 连接工具修改；GitHub 官方说明，自定义 Actions 发布时 CNAME 文件会被忽略，域名必须在 Settings → Pages → Custom domain 配置。DNS CNAME 记录还必须指向 `dajun040408.github.io`。
+
+
+## 2026-11-24 迁移指南第三轮 RST 与术语审校
+
+- 重新检查 `Migrating-Package-XML.rst`，修正 XML 示例中不应出现在代码块内的双反引号、补齐章节标题下划线长度、补充 ROS 2 功能包文档指南链接，并规范 CMake/构建命令字面量。
+- 重新检查 `Migrating-Parameters.rst`，规范 ROS 参数、节点名、通配符、参数 API 的行内代码标记，并恢复 CLI 与参数黑板的 Sphinx 内部文档链接。
+- 重新检查 `Migrating-Scripts.rst`，规范命令行参数、重映射规则和 ROS 1 私有参数名称的行内代码标记。
+- 重新检查 `Migrating-Python-Packages.rst`，补充 Colcon 教程及同步/异步调用说明的内部文档链接，规范 Python/ROS API 标记。
+- 本轮提交：`e87ff998f3f05f4ca2eb97dff691dcd60dee08f8`。
+- 新构建 #445（run ID `45320986274`）已触发，当前 queued；上一轮 #444 对此前两篇修订的构建成功，但不包含本轮最新4篇修改。
+- 仍需在 #445 成功后抽查 HTML、链接和导航；原域名 `ros2docs.robook.org` 的 DNS/Pages 自定义域名仍未确认，故线上原网址验收未完成。
