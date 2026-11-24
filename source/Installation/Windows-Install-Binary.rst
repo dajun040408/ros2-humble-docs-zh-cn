@@ -47,7 +47,7 @@ Windows（二进制安装）
       $ colcon build --cmake-args -DCMAKE_BUILD_TYPE=Debug
 
 安装其他 DDS 实现（可选）
-------------------------
+-------------------------
 
 如果希望使用默认 Fast DDS 以外的 DDS 或 RTPS 供应商实现，请参阅 :doc:`此处的说明 <RMW-Implementations>`。
 
@@ -85,7 +85,7 @@ Windows（二进制安装）
 继续阅读 :doc:`教程和演示 <../../Tutorials>`，配置环境、创建自己的工作空间和功能包，并学习 ROS 2 核心概念。
 
 其他 RMW 实现（可选）
---------------------
+---------------------
 
 ROS 2 默认使用的中间件是 `Fast DDS`，但可以在运行时替换中间件（RMW）。有关如何使用多个 RMW 的说明，请参阅 :doc:`多 RMW 使用指南 <../How-To-Guides/Working-with-multiple-RMW-implementations>`。
 
