@@ -132,7 +132,7 @@ CMake 在 Windows 上实现了 `WINDOWS_EXPORT_ALL_SYMBOLS` 属性，可以自�
    public:
    static const int Global_data_num;
 
-对于这类情况，必须显式应用 `dllimport``/``dllexport`。可以使用 `generate_export_header` 实现，具体请参阅`相关说明 <https://blog.kitware.com/create-dlls-on-windows-without-declspec-using-new-cmake-export-all-feature/>`_。
+对于这类情况，必须显式应用 ``dllimport`` / ``dllexport``。可以使用 `generate_export_header` 实现，具体请参阅 `相关说明 <https://blog.kitware.com/create-dlls-on-windows-without-declspec-using-new-cmake-export-all-feature/>`__。
 
 最后，导出符号的头文件必须至少被软件包中的一个 `.cpp` 文件包含，这样宏才会展开并写入最终二进制文件。否则，符号仍然无法被调用。
 
