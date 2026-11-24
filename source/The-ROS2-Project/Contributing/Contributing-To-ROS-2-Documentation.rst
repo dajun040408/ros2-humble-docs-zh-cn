@@ -11,12 +11,12 @@
 
 欢迎为 ROS 2 文档网站贡献内容。本页面介绍如何参与 ROS 2 文档开发。提交贡献前，请仔细阅读以下说明。
 
-文档网站使用§Sphinx <https://www.sphinx-doc.org/en/master/>§_ 构建，并使用§Sphinx multiversion <https://sphinx-contrib.github.io/multiversion/main/index.html>§_ 管理多个发行版。
+文档网站使用`Sphinx <https://www.sphinx-doc.org/en/master/>`_ 构建，并使用`Sphinx multiversion <https://sphinx-contrib.github.io/multiversion/main/index.html>`_ 管理多个发行版。
 
 分支结构
 --------
 
-文档源代码位于§ROS 2 Documentation GitHub 仓库 <https://github.com/ros2/ros2_documentation>§_。仓库为每个 ROS 2 发行版维护一个分支，以处理不同发行版之间的差异。
+文档源代码位于`ROS 2 Documentation GitHub 仓库 <https://github.com/ros2/ros2_documentation>`_。仓库为每个 ROS 2 发行版维护一个分支，以处理不同发行版之间的差异。
 
 如果变更适用于所有 ROS 2 发行版，应提交到 rolling 分支，之后会根据需要回移植到其他分支。如果变更只适用于某个特定发行版，则应提交到对应发行版分支。
 
@@ -76,7 +76,7 @@
 
   .. group-tab:: Windows
 
-    从§Graphviz 下载页面 <https://graphviz.gitlab.io/_pages/Download/Download_windows.html>§_ 下载并安装程序。安装时确保允许安装器将其添加到 Windows PATH，否则 Sphinx 将无法找到它。
+    从`Graphviz 下载页面 <https://graphviz.gitlab.io/_pages/Download/Download_windows.html>`_ 下载并安装程序。安装时确保允许安装器将其添加到 Windows PATH，否则 Sphinx 将无法找到它。
 
 构建单个分支的网站
 ^^^^^^^^^^^^^^^^^^
@@ -117,4 +117,4 @@ ROS 2 文档仓库的 Pull Request 需要 Developer Certificate of Origin（DCO�
 
    $ git commit --signoff
 
-更多信息请参阅§DCO <https://developercertificate.org/>§_。
+更多信息请参阅`DCO <https://developercertificate.org/>`_。

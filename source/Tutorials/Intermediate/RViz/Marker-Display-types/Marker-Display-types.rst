@@ -12,11 +12,11 @@ Marker：显示类型
 背景
 ----
 
-Markers 显示插件允许通过发布 §visualization_msgs/msg/Marker§ 或 §visualization_msgs/msg/MarkerArray§ 消息，以编程方式向三维视图添加各种基本形状。
+Markers 显示插件允许通过发布 ``visualization_msgs/msg/Marker`` 或 ``visualization_msgs/msg/MarkerArray`` 消息，以编程方式向三维视图添加各种基本形状。
 
 .. image:: images/marker_overview.png
 
-建议先完成 :doc:§Marker：发送基本形状 <../Marker-Sending-Basic-Shapes/Marker-Sending-Basic-Shapes>§，了解 Marker 消息的最小发布示例。
+建议先完成 :doc:`Marker：发送基本形状 <../Marker-Sending-Basic-Shapes/Marker-Sending-Basic-Shapes>`，了解 Marker 消息的最小发布示例。
 
 Marker 消息
 -----------
@@ -24,7 +24,7 @@ Marker 消息
 C++ 示例
 ^^^^^^^^
 
-创建一个发布 §Marker§ 消息的节点，并将消息发布到 §visualization_marker§ 话题：
+创建一个发布 ``Marker`` 消息的节点，并将消息发布到 ``visualization_marker`` 话题：
 
 .. code-block:: cpp
 
@@ -32,7 +32,7 @@ C++ 示例
      node->create_publisher<visualization_msgs::msg::Marker>(
        "visualization_marker", 1);
 
-填充 §visualization_msgs/msg/Marker§ 消息并发布：
+填充 ``visualization_msgs/msg/Marker`` 消息并发布：
 
 .. code-block:: cpp
 
@@ -59,21 +59,21 @@ C++ 示例
 关键字段
 --------
 
-* §header§：定义标记所使用的坐标系和时间戳。
-* §ns§：标记命名空间。
-* §id§：同一命名空间中的标记 ID。
-* §type§：标记类型，例如箭头、立方体、球体、圆柱体、线条、点、文本或网格资源。
-* §action§：对标记执行的操作，例如 §ADD§、§DELETE§ 或 §DELETEALL§。
-* §pose§：标记的位置和方向。
-* §scale§：标记尺寸或线宽。
-* §color§：RGBA 颜色。alpha 值为 0 表示完全透明。
-* §lifetime§：标记的生命周期，超过时间后可自动删除。
-* §frame_locked§：是否在每次更新时重新应用坐标变换。
+* ``header``：定义标记所使用的坐标系和时间戳。
+* ``ns``：标记命名空间。
+* ``id``：同一命名空间中的标记 ID。
+* ``type``：标记类型，例如箭头、立方体、球体、圆柱体、线条、点、文本或网格资源。
+* ``action``：对标记执行的操作，例如 ``ADD``、``DELETE`` 或 ``DELETEALL``。
+* ``pose``：标记的位置和方向。
+* ``scale``：标记尺寸或线宽。
+* ``color``：RGBA 颜色。alpha 值为 0 表示完全透明。
+* ``lifetime``：标记的生命周期，超过时间后可自动删除。
+* ``frame_locked``：是否在每次更新时重新应用坐标变换。
 
 使用 MarkerArray
 ----------------
 
-当需要一次发布多个标记时，可以使用 §visualization_msgs/msg/MarkerArray§，将多个 Marker 放入同一个数组消息中，再发布到对应话题。
+当需要一次发布多个标记时，可以使用 ``visualization_msgs/msg/MarkerArray``，将多个 Marker 放入同一个数组消息中，再发布到对应话题。
 
 总结
 ----

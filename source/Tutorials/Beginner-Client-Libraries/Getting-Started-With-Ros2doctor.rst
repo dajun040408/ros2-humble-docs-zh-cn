@@ -29,7 +29,7 @@ ros2doctor 会检查 ROS 2 的各个方面，包括平台、版本、网络、�
 
 ros2doctor 属于 ros2cli 软件包。只要安装了 ros2cli（常规安装通常都会包含），就可以使用 ros2doctor。
 
-本教程使用 :doc:§turtlesim <../Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim>§ 展示部分示例。
+本教程使用 :doc:`turtlesim <../Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim>` 展示部分示例。
 
 任务
 ----
@@ -172,7 +172,7 @@ ros2doctor 可以报告 ROS 2 环境和正在运行的系统中的问题。使�
 相关内容
 --------
 
-§ros2doctor README <https://github.com/ros2/ros2cli/tree/{REPOS_FILE_BRANCH}/ros2doctor>§_ 介绍了更多参数。也可以浏览 ros2doctor 仓库，该仓库对初学者较友好，也是参与贡献的好起点。
+`ros2doctor README <https://github.com/ros2/ros2cli/tree/{REPOS_FILE_BRANCH}/ros2doctor>`_ 介绍了更多参数。也可以浏览 ros2doctor 仓库，该仓库对初学者较友好，也是参与贡献的好起点。
 
 下一步
 ------

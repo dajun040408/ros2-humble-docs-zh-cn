@@ -6,17 +6,17 @@
 
 RViz 已经支持多种数据类型的可视化。但如果某种消息类型尚无对应显示插件，可以选择：
 
-1. 将消息转换为其他类型，例如 §visualization_msgs/Marker§。
+1. 将消息转换为其他类型，例如 ``visualization_msgs/Marker``。
 2. 编写自定义 RViz Display。
 
 第一种方式实现简单且灵活，但会增加网络流量，并限制数据表达能力。第二种方式需要更多开发工作，但能够提供更丰富的可视化效果。
 
-本教程代码位于 §rviz_plugin_tutorial§ 仓库中。仓库提供 §step2§、§step3§ 等分支，便于逐步查看插件实现过程。
+本教程代码位于 ``rviz_plugin_tutorial`` 仓库中。仓库提供 ``step2``、``step3`` 等分支，便于逐步查看插件实现过程。
 
 Point2D 消息
 ------------
 
-本教程使用 §rviz_plugin_tutorial_msgs§ 功能包中的示例消息 §Point2D.msg§：
+本教程使用 ``rviz_plugin_tutorial_msgs`` 功能包中的示例消息 ``Point2D.msg``：
 
 .. code-block:: text
 
@@ -27,7 +27,7 @@ Point2D 消息
 基础插件框架
 ------------
 
-首先创建插件头文件 §point_display.hpp§：
+首先创建插件头文件 ``point_display.hpp``：
 
 .. code-block:: cpp
 
@@ -52,12 +52,12 @@ Point2D 消息
    }
    #endif
 
-该类继承自 §rviz_common::MessageFilterDisplay§，适用于包含 §std_msgs/Header§ 的消息。RViz 会负责订阅消息并处理坐标变换，插件只需实现 §processMessage()§，将消息内容转换为可视化对象。
+该类继承自 ``rviz_common::MessageFilterDisplay``，适用于包含 ``std_msgs/Header`` 的消息。RViz 会负责订阅消息并处理坐标变换，插件只需实现 ``processMessage()``，将消息内容转换为可视化对象。
 
 实现显示逻辑
 ------------
 
-在 §processMessage()§ 中读取消息的 x、y 值，并使用 RViz 的渲染接口创建或更新可视化对象。插件需要正确处理消息坐标系和时间戳，以确保显示位置与 TF 变换一致。
+在 ``processMessage()`` 中读取消息的 x、y 值，并使用 RViz 的渲染接口创建或更新可视化对象。插件需要正确处理消息坐标系和时间戳，以确保显示位置与 TF 变换一致。
 
 插件导出
 --------
@@ -67,4 +67,4 @@ Point2D 消息
 总结
 ----
 
-当 RViz 没有现成的消息显示插件时，可以通过继承 §MessageFilterDisplay§ 创建自定义 Display。插件处理消息内容并创建渲染对象，从而扩展 RViz 的可视化能力。
+当 RViz 没有现成的消息显示插件时，可以通过继承 ``MessageFilterDisplay`` 创建自定义 Display。插件处理消息内容并创建渲染对象，从而扩展 RViz 的可视化能力。

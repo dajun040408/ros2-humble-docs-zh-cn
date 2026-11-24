@@ -20,12 +20,12 @@
 背景
 ----
 
-创建自己的 :doc:§节点 <../Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes>§ 时，有时需要添加可以从启动文件设置的参数。本教程介绍如何在 C++ 类中创建参数，以及如何在启动文件中设置参数。
+创建自己的 :doc:`节点 <../Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes>` 时，有时需要添加可以从启动文件设置的参数。本教程介绍如何在 C++ 类中创建参数，以及如何在启动文件中设置参数。
 
 前置条件
 --------
 
-此前的教程已经介绍了如何 :doc:§创建工作空间 <./Creating-A-Workspace/Creating-A-Workspace>§、:doc:§创建功能包 <./Creating-Your-First-ROS2-Package>§，以及 :doc:§参数 <../Beginner-CLI-Tools/Understanding-ROS2-Parameters/Understanding-ROS2-Parameters>§ 的作用。
+此前的教程已经介绍了如何 :doc:`创建工作空间 <./Creating-A-Workspace/Creating-A-Workspace>`、:doc:`创建功能包 <./Creating-Your-First-ROS2-Package>`，以及 :doc:`参数 <../Beginner-CLI-Tools/Understanding-ROS2-Parameters/Understanding-ROS2-Parameters>` 的作用。
 
 任务
 ----

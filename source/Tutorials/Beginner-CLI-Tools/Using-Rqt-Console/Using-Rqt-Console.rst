@@ -27,7 +27,7 @@ rqt_console 是一个用于检查 ROS 2 日志消息的 GUI 工具。通常，�
 前置条件
 --------
 
-需要安装 :doc:§rqt_console 和 turtlesim <../Introducing-Turtlesim/Introducing-Turtlesim>§。每次打开新终端时，都不要忘记 source ROS 2 环境。
+需要安装 :doc:`rqt_console 和 turtlesim <../Introducing-Turtlesim/Introducing-Turtlesim>`。每次打开新终端时，都不要忘记 source ROS 2 环境。
 
 任务
 ----
@@ -60,7 +60,7 @@ rqt_console 窗口将打开：
 2. 在 rqt_console 中查看消息
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-要生成供 rqt_console 显示的日志消息，可以让乌龟撞到墙上。在新终端中输入以下 ros2 topic pub 命令（详见 :doc:§话题教程 <../Understanding-ROS2-Topics/Understanding-ROS2-Topics>§）：
+要生成供 rqt_console 显示的日志消息，可以让乌龟撞到墙上。在新终端中输入以下 ros2 topic pub 命令（详见 :doc:`话题教程 <../Understanding-ROS2-Topics/Understanding-ROS2-Topics>`）：
 
 .. code-block:: console
 
@@ -114,4 +114,4 @@ ROS 2 日志级别按照严重程度排序如下：
 下一步
 ------
 
-下一篇教程将介绍如何使用 :doc:§ROS 2 Launch <../Launching-Multiple-Nodes/Launching-Multiple-Nodes>§ 一次启动多个节点。
+下一篇教程将介绍如何使用 :doc:`ROS 2 Launch <../Launching-Multiple-Nodes/Launching-Multiple-Nodes>` 一次启动多个节点。

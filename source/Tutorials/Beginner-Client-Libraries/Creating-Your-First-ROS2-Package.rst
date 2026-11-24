@@ -84,7 +84,7 @@ ROS 2 Python 和 CMake 功能包各自具有最低内容要求：
 前置条件
 --------
 
-按照 :doc:§上一篇教程 <./Creating-A-Workspace/Creating-A-Workspace>§ 的说明，准备好 ROS 2 工作空间。本教程将在该工作空间中创建功能包。
+按照 :doc:`上一篇教程 <./Creating-A-Workspace/Creating-A-Workspace>` 的说明，准备好 ROS 2 工作空间。本教程将在该工作空间中创建功能包。
 
 任务
 ----
@@ -92,7 +92,7 @@ ROS 2 Python 和 CMake 功能包各自具有最低内容要求：
 1. 创建功能包
 ^^^^^^^^^^^^^
 
-首先 :doc:§source ROS 2 安装环境 <../Beginner-CLI-Tools/Configuring-ROS2-Environment>§。
+首先 :doc:`source ROS 2 安装环境 <../Beginner-CLI-Tools/Configuring-ROS2-Environment>`。
 
 本教程使用上一篇教程创建的 ros2_ws 工作空间。运行创建命令前，确保当前目录为 src。
 
@@ -286,7 +286,7 @@ Windows 不允许过长路径，因此 merge-install 会将所有路径合并到
   <description>Beginner client libraries tutorials practice package</description>
   <license>Apache License 2.0</license>
 
-开源许可证列表请参阅§OSI 许可证列表 <https://opensource.org/licenses/alphabetical>§_。本教程仅用于练习，可以选择任意许可证，这里使用 Apache License 2.0。
+开源许可证列表请参阅`OSI 许可证列表 <https://opensource.org/licenses/alphabetical>`_。本教程仅用于练习，可以选择任意许可证，这里使用 Apache License 2.0。
 
 license 标签下方以 _depend 结尾的标签用于声明功能包依赖，供 colcon 查找。my_package 很简单，没有依赖项，但后续教程会使用这些标签。
 
@@ -312,4 +312,4 @@ license 标签下方以 _depend 结尾的标签用于声明功能包依赖，供
 下一步
 ------
 
-接下来为功能包添加实际功能。可以选择使用 :doc:§C++ <./Writing-A-Simple-Cpp-Publisher-And-Subscriber>§ 或 :doc:§Python <./Writing-A-Simple-Py-Publisher-And-Subscriber>§ 编写简单的发布者/订阅者系统。
+接下来为功能包添加实际功能。可以选择使用 :doc:`C++ <./Writing-A-Simple-Cpp-Publisher-And-Subscriber>` 或 :doc:`Python <./Writing-A-Simple-Py-Publisher-And-Subscriber>` 编写简单的发布者/订阅者系统。

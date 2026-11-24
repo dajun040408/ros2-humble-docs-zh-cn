@@ -6,9 +6,9 @@
 构建实时 Linux 内核（社区贡献）
 ===============================
 
-本教程以 Intel x86_64 平台上的 Ubuntu 20.04.1 全新安装为基础。原始示例使用内核 §5.4.0-54-generic§，并安装稳定版 RT_PREEMPT 内核。构建内核至少需要 30 GB 可用磁盘空间。
+本教程以 Intel x86_64 平台上的 Ubuntu 20.04.1 全新安装为基础。原始示例使用内核 ``5.4.0-54-generic``，并安装稳定版 RT_PREEMPT 内核。构建内核至少需要 30 GB 可用磁盘空间。
 
-请查看§Linux Foundation 实时 Linux 页面 <https://wiki.linuxfoundation.org/realtime/start>§_ 获取最新稳定版本。原始教程使用 §5.4-rt§ 系列，对应补丁为 §patch-5.4.78-rt44.patch.gz§。
+请查看`Linux Foundation 实时 Linux 页面 <https://wiki.linuxfoundation.org/realtime/start>`_ 获取最新稳定版本。原始教程使用 ``5.4-rt`` 系列，对应补丁为 ``patch-5.4.78-rt44.patch.gz``。
 
 准备源码
 --------
