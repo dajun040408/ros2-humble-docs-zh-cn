@@ -67,7 +67,7 @@
 * 新增用于暂停/恢复切换和播放下一条消息的键盘控制（`#847 <https://github.com/ros2/rosbag2/issues/847>`__）
 * 为 record 命令添加 --snapshot-mode 参数（`#851 <https://github.com/ros2/rosbag2/issues/851>`__）
 * 重构插件查询机制，并统一 trait 管理（`#833 <https://github.com/ros2/rosbag2/issues/833>`__）
-* 将 ``PlayOptions::delay`` 更新为 ``rclcpp::Duration``，以获得纳秒级分辨率（`#843 <https://github.com/ros2/rosbag2/issues/843>`__）
+* 将 ``PlayOptions::delay`` 更新为 ``rclcpp::Duration`` ，以获得纳秒级分辨率（`#843 <https://github.com/ros2/rosbag2/issues/843>`__）
 * 通过插件查询加载压缩和序列化选项（`#827 <https://github.com/ros2/rosbag2/issues/827>`__）
 * 新增 delay 选项（`#789 <https://github.com/ros2/rosbag2/issues/789>`__）
 * 避免将 KeyboardInterrupt 异常传递到上层（`#788 <https://github.com/ros2/rosbag2/issues/788>`__）
