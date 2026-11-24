@@ -128,7 +128,7 @@
   :width: 300 px
   :alt: Foxglove Studio 的 URDF Viewer 面板
 
-选择一个发布 ``JointState`` 消息的话题，即可根据发布的关节状态更新可视化结果（默认话题为 ``/joint_states``）。
+选择一个发布 ``JointState`` 消息的话题，即可根据发布的关节状态更新可视化结果（默认话题为 ``/joint_states`` ）。
 
 切换到“Manual joint control”，即可通过提供的控件设置关节位置。
 
