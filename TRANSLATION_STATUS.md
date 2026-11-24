@@ -120,3 +120,11 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 用户已确认在仓库 Settings → Pages 将 Source 设置为 GitHub Actions。
 - 本次通过更新状态记录触发新的 `push` 工作流，以验证 Pages 初始化后的发布权限。
 - 目标域名仍为 `ros2docs.robook.org`；工作流发布前必须写入 CNAME 并在部署后核验域名解析与 HTTPS。
+
+## 2026-11-24 GitHub Pages 工作流修复
+
+- 检查 #438 日志后发现 `actions/configure-pages@v5` 不接受 `cname` 输入参数，导致该步骤失败；此前将该步骤错误地作为域名配置手段。
+- 已移除不受支持的 `cname` 输入，保留发布目录中的 `site/CNAME` 文件，并提交修复 `3d2d56f`。
+- 最新构建 #439（提交 `3d2d56f`）已排队，待验证 build、artifact 和 deploy。
+- 自定义域名仍需在仓库 Settings → Pages → Custom domain 中配置 `ros2docs.robook.org`，并由域名 DNS 管理端将 `ros2docs` CNAME 指向 `dajun040408.github.io`；当前没有 DNS 管理凭据，不能代替用户修改 DNS。
+- `https://ros2docs.robook.org/humble/` 尚未通过新版本实站验收。
