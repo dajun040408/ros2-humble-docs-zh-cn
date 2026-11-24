@@ -51,7 +51,7 @@ rosdoc2.yaml
 
    $ rosdoc2 default_config --package-path <package-path>
 
-然后在 ``package.xml`` 的 export 部分添加 ``<rosdoc2>rosdoc2.yaml</rosdoc2>``：
+然后在 ``package.xml`` 的 export 部分添加 ``<rosdoc2>rosdoc2.yaml</rosdoc2>`` ：
 
 .. code-block:: xml
 
@@ -212,7 +212,7 @@ ROS 构建农场使用 ``rosdoc2`` 构建功能包文档，并托管在 ``docs.r
 
 构建农场会为每个发行版分别托管文档，并定期从指定分支的最新提交重新构建。更新托管文档不需要创建新的软件包发行版。
 
-要查看功能包文档构建状态，可以在 ``https://build.ros2.org`` 中搜索 ``doc__<package_name>``。每个已发布该功能包的发行版都会创建一个任务。在任务页面中，可以查看最近一次构建触发时间、构建状态和日志。
+要查看功能包文档构建状态，可以在 ``https://build.ros2.org`` 中搜索 ``doc__<package_name>`` 。每个已发布该功能包的发行版都会创建一个任务。在任务页面中，可以查看最近一次构建触发时间、构建状态和日志。
 
 延伸阅读
 --------
