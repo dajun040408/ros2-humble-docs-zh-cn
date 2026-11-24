@@ -296,3 +296,6 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 已补充完整 `AddressBookPublisher` C++ 发布者示例及代码解析；补充 `package.xml` / `CMakeLists.txt` 的 `rosidl_default_generators`、`rosidl_generate_interfaces`、`ament_export_dependencies` 配置；补充发布者 target、`rosidl_get_typesupport_target` 与 `target_link_libraries` 链接步骤。
 - 已补充 Linux/macOS/Windows 构建和运行方式、`ros2 topic echo /address_book` 验证步骤，以及在接口定义中复用 `rosidl_tutorials_msgs/Contact` 的数组字段示例、依赖配置和 C++ 使用代码。
 - 修改提交：`e4e94dc1509e2ed950c9cfedbc7a1650bfe3c033`。尚待 Sphinx 构建、部署及页面验收。
+
+- 已扩充 `Custom-ROS2-Interfaces.rst` 第 7 节，补齐 `Num.msg` 的 C++/Python 发布者和订阅者示例、CMakeLists/package.xml 依赖、Linux/macOS/Windows 构建运行命令；补齐 `AddThreeInts.srv` 的 C++/Python 服务端和客户端示例、依赖配置、构建和运行验证步骤。原版本只有数段文字概述，没有这些完整测试代码。
+- 修改提交：`2d0eefdb91671641174cc48b7bb4d1b16222181c`。待 Sphinx 构建、部署和 RST 日志验收。
