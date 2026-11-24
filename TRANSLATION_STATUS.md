@@ -199,3 +199,14 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 此前迁移指南代码块审校提交：`575d712`、`4ed8dc0`、`30d7375`、`f0c0e5d`；全部 10 篇迁移指南的代码块扫描已无双反引号行内标记残留。
 - 仍未取得 GitHub Actions 最近一次 run 的完整 jobs/logs 读取能力；当前连接返回的 commit status 列表为空，不能作为构建成功证据。完整 Sphinx 构建、警告分类、生成 HTML 的链接检查、最新 Pages 部署及 `ros2docs.robook.org` 实际域名验收仍未完成。
 - 全站 297 篇候选页面的逐页全文质量审校仍未完成。297/297 仅代表路径覆盖；不得据此标记全部翻译完成。
+
+
+## 2026-11-24 第八轮全站构建警告清理（构建 #650）
+
+- 构建 #650（run ID `45335700833`，提交 `a4c70fa754958f8e702e5c1e4bccdcea069f7d90`）的 build 与 deploy jobs 均成功；Sphinx HTML、中文搜索索引、Pages Artifact 和 GitHub Pages 部署步骤全部成功。Artifact ID：`14893487692`，大小约 38.37 MB。
+- 本轮 Sphinx 构建成功，但仍有 118 条 warning 行（其中包括 1 条外部 Adopters URL 超时警告）；没有 Sphinx ERROR 行。与构建 #456 的 1511 条警告相比，下降约 92%。
+- 主要剩余警告类别：RST 行内 literal/role 格式、少量未解析文档引用和标签、少量标题下划线长度。需继续区分源文件格式问题与网络超时、上游引用等非翻译问题。
+- 本轮修复了 ROS CLI 表格、多个文档中的错误行内引用、外部链接、ROS 参数/命令 literal、Foxglove 链接、GurumDDS 版本表、ROS 1 迁移示例等。
+- 后续提交已继续修复：ROS 1 迁移/文档发布/教程中的错链和缺失标签，包括 MVSim、Tracing、GurumDDS、Snapshot Repository、Creating an Action、Launch、Event Handlers、tf2、Python Testing 等交叉引用；这些提交在本记录写入时尚未取得新的完整构建结果。
+- 当前最新待验构建 #684（run ID `45337963252`，提交 `807ee5aea5e405e870ef4e103567121c9c39f188`）尚未启动 jobs，状态 Pending；不能将 #650 的成功结果视为 #684 后续修订已部署。
+- 原域名 `ros2docs.robook.org` 的 Settings → Pages 自定义域名、DNS CNAME、HTTPS 和实时内容切换仍未得到新证据；此前已确认仅将构建产物部署到 GitHub Pages 不会自动更新原 robook.org 托管站点。
