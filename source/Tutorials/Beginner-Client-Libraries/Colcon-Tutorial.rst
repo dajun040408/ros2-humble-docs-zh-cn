@@ -305,14 +305,31 @@ demo_nodes_cpp 等功能包使用 ament_cmake 构建类型，并使用 CMake 作
 
 colcon_cd 命令可以快速将 Shell 当前工作目录切换到某个功能包目录。例如，执行 colcon_cd some_ros_package，就可以快速进入 ~/ros2_ws/src/some_ros_package。
 
-在 Linux 中，可以运行以下命令修改 Shell 启动脚本：
+根据 colcon_cd 的安装位置和工作空间路径，修改 Shell 启动脚本的命令可能有所不同。以下是常见配置：
 
-.. code-block:: console
+.. tabs::
 
-    $ echo "source /usr/share/colcon_cd/function/colcon_cd.sh" >> ~/.bashrc
-    $ echo "export _colcon_cd_root=/opt/ros/{DISTRO}/" >> ~/.bashrc
+   .. group-tab:: Linux
 
-macOS 的路径可能不同，Windows 暂不可用。具体请参阅`colcon_cd 文档 <https://colcon.readthedocs.io/en/released/user/installation.html#quick-directory-changes>`_。
+      .. code-block:: console
+
+         $ echo "source /usr/share/colcon_cd/function/colcon_cd.sh" >> ~/.bashrc
+         $ echo "export _colcon_cd_root=/opt/ros/{DISTRO}/" >> ~/.bashrc
+
+   .. group-tab:: macOS
+
+      .. code-block:: console
+
+         $ echo "source /usr/local/share/colcon_cd/function/colcon_cd.sh" >> ~/.bashrc
+         $ echo "export _colcon_cd_root=~/ros2_install" >> ~/.bashrc
+
+   .. group-tab:: Windows
+
+      Windows 暂不支持该功能。
+
+具体配置请参阅 `colcon_cd 文档 <https://colcon.readthedocs.io/en/released/user/installation.html#quick-directory-changes>`_。
+
+如果想撤销 Linux 或 macOS 中的配置，请找到系统使用的 Shell 启动脚本，删除刚才追加的 source 和 export 命令。
 
 配置 colcon 命令补全
 --------------------
