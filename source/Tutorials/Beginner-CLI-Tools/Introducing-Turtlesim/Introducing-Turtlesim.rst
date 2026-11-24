@@ -168,3 +168,71 @@ rqt 是 ROS 2 的图形用户界面（GUI）工具。所有在 rqt 中完成的�
 接下来输入有效的生成坐标，例如 x = 1.0、y = 1.0。
 
 .. image:: images/spawn.png
+
+.. note::
+
+  如果尝试使用已有乌龟的名称（例如默认名称 ``turtle1``）生成新乌龟，运行 ``turtlesim_node`` 的终端中会显示错误消息：
+
+  .. code-block:: console
+
+    [ERROR] [turtlesim]: A turtle named [turtle1] already exists
+
+要生成 ``turtle2``，请点击 rqt 窗口右上角的 **Call** 按钮来调用服务。
+
+如果服务调用成功，你应该会看到一只新乌龟（同样具有随机外观）出现在你为 **x** 和 **y** 输入的坐标处。
+
+刷新 rqt 中的服务列表后，还会看到与新乌龟相关的服务（``/turtle2/...``），以及原有的 ``/turtle1/...`` 服务。
+
+5.2 尝试 set_pen 服务
+~~~~~~~~~~~~~~~~~~~~~
+
+现在使用 ``/set_pen`` 服务，为 ``turtle1`` 设置一支独特的画笔：
+
+.. image:: images/set_pen.png
+
+**r**、**g** 和 **b** 的取值范围为 0 到 255，用于设置 ``turtle1`` 绘制线条的颜色；**width** 用于设置线条宽度。
+
+如果希望 ``turtle1`` 绘制一条明显的红色线条，请将 **r** 的值改为 255，并将 **width** 的值改为 5。修改数值后，不要忘记调用服务。
+
+返回运行 ``turtle_teleop_key`` 的终端并按下方向键，就会看到 ``turtle1`` 的画笔已经改变。
+
+.. image:: images/new_pen.png
+
+你可能也注意到了，目前还无法移动 ``turtle2``。这是因为尚未为 ``turtle2`` 启动对应的键盘遥操作节点。
+
+6. 重映射
+^^^^^^^^^
+
+要控制 ``turtle2``，需要再启动一个键盘遥操作节点。但是，如果尝试运行之前相同的命令，会发现它仍然控制的是 ``turtle1``。
+
+解决方法是对 ``cmd_vel`` 话题和 ``rotate_absolute`` 动作进行重映射。
+
+在一个新终端中加载 ROS 2 环境，然后运行：
+
+.. code-block:: console
+
+  $ ros2 run turtlesim turtle_teleop_key --ros-args --remap turtle1/cmd_vel:=turtle2/cmd_vel --remap turtle1/rotate_absolute:=turtle2/rotate_absolute
+
+现在，当运行这个命令的终端处于活动状态时，可以移动 ``turtle2``；当另一个运行 ``turtle_teleop_key`` 的终端处于活动状态时，则可以移动 ``turtle1``。
+
+.. image:: images/remap.png
+
+7. 关闭 turtlesim
+^^^^^^^^^^^^^^^^^
+
+要停止仿真，可以在运行 ``turtlesim_node`` 的终端中按 ``Ctrl + C``，并在运行 ``turtle_teleop_key`` 的终端中按 ``q``。
+
+总结
+----
+
+使用 turtlesim 和 rqt 是学习 ROS 2 核心概念的好方法。
+
+下一步
+------
+
+现在，你已经成功运行 turtlesim 和 rqt，并初步了解了它们的工作方式。接下来通过 :doc:`../Understanding-ROS2-Nodes/Understanding-ROS2-Nodes` 教程，开始学习第一个 ROS 2 核心概念。
+
+相关内容
+--------
+
+turtlesim 功能包位于 `ros_tutorials <https://github.com/ros/ros_tutorials/tree/{REPOS_FILE_BRANCH}/turtlesim>`_ 仓库中。
