@@ -237,3 +237,6 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 已定位 `part-004.rst` 的孤立分隔线属于切分文件时遗留的多余行；前一文件已经包含 `ament_cmake_pep257` 标题，故删除孤立分隔线，保留其后条目作为该节正文。提交：`df624d9c7cbb62ac3255b7a916d7563fe3ffae81`。
 - 已将 `part-032.rst` 中 ``qreal orient\\_`` 改为 ``qreal orient_``，避免 docutils 将行内 literal 解析为未闭合。提交：`b46c9577c3e58de936f5252eb37beabe59d0f19b`。
 - 上述两项修复尚待新的完整 Sphinx 构建日志确认；此前 #739 虽然部署成功，但工作流没有启用 warnings-as-errors，不能仅凭 success 认定没有 RST 错误。
+
+- 构建 #742（提交 `0993305`）build/deploy 均成功；日志确认 `part-004.rst` 的 CRITICAL 已消失，Sphinx ERROR 为 0，但 `part-032.rst:107` 仍有一条行内 literal 警告（日志重复显示上游路径和覆盖路径），另有 1 条外部网站超时和 2 条 Lyrical 上游页面未纳入 Humble toctree 的警告。
+- 为彻底排除该行内 literal 警告，已将该 changelog 条目中的 `qreal orient_` 改为普通文本，仅保留 ``double`` 的代码标记。提交：`f3d0041f34843601080f240ce2c6a87febb4dac2`。需由下一轮构建验证警告是否消失。
