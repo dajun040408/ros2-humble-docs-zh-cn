@@ -1,4 +1,4 @@
-Rolling Ridley（``rolling``）
+Rolling Ridley（rolling）
 ========================================
 
 .. contents:: 目录
