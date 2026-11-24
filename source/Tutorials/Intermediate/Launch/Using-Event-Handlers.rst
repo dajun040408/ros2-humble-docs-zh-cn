@@ -28,7 +28,7 @@ ROS 2 Launch 是一个用于执行和管理用户定义进程的系统。它负�
 前置条件
 --------
 
-本教程使用 :doc:`turtlesim </Tutorials/Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim>` 软件包，并假设你已经创建了一个构建类型为 ``ament_python``、名称为 ``launch_tutorial`` 的新功能包，参见 :doc:`创建 ROS 2 功能包 </Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>`。
+本教程使用 :doc:`turtlesim </Tutorials/Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim>` 软件包，并假设你已经创建了一个构建类型为 ``ament_python`` 、名称为 ``launch_tutorial`` 的新功能包，参见 :doc:`创建 ROS 2 功能包 </Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>`。
 
 本教程基于 :doc:`在启动文件中使用替换 </Tutorials/Intermediate/Launch/Using-Substitutions>` 教程中的代码继续展开。
 
@@ -43,7 +43,7 @@ ROS 2 Launch 是一个用于执行和管理用户定义进程的系统。它负�
 .. literalinclude:: launch/example_event_handlers_launch.py
     :language: python
 
-启动描述中定义了多个 ``RegisterEventHandler`` 操作，分别处理 ``OnProcessStart``、``OnProcessIO``、``OnExecutionComplete``、``OnProcessExit`` 和 ``OnShutdown`` 事件。
+启动描述中定义了多个 ``RegisterEventHandler`` 操作，分别处理 ``OnProcessStart`` 、``OnProcessIO`` 、``OnExecutionComplete`` 、``OnProcessExit`` 和 ``OnShutdown`` 事件。
 
 ``OnProcessStart`` 事件处理器用于注册一个回调函数，在 turtlesim 节点启动时执行。它会向控制台输出日志，并在 turtlesim 节点启动时执行 ``spawn_turtle`` 操作。
 
@@ -89,7 +89,7 @@ ROS 2 Launch 是一个用于执行和管理用户定义进程的系统。它负�
 启动示例
 --------
 
-现在可以使用 ``ros2 launch`` 命令运行 ``example_event_handlers.launch.py``：
+现在可以使用 ``ros2 launch`` 命令运行 ``example_event_handlers.launch.py`` ：
 
 .. code-block:: console
 
@@ -100,7 +100,7 @@ ROS 2 Launch 是一个用于执行和管理用户定义进程的系统。它负�
 #. 启动一个蓝色背景的 turtlesim 节点。
 #. 生成第二只海龟。
 #. 将背景颜色改为紫色。
-#. 如果 ``background_r`` 参数为 ``200`` 且 ``use_provided_red`` 参数为 ``True``，则在两秒后将背景颜色改为粉色。
+#. 如果 ``background_r`` 参数为 ``200`` 且 ``use_provided_red`` 参数为 ``True`` ，则在两秒后将背景颜色改为粉色。
 #. 关闭 turtlesim 窗口时，关闭启动文件。
 
 此外，在以下事件发生时，控制台会输出日志：
