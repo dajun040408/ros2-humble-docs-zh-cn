@@ -96,6 +96,6 @@ XML、YAML 还是 Python：应该使用哪一种？
 Python 启动文件更加灵活，主要有两个原因：
 
 * Python 是一种脚本语言，因此可以在启动文件中使用该语言及其库。
-* `ros2/launch <https://github.com/ros2/launch>`__（通用启动功能）和 `ros2/launch_ros <https://github.com/ros2/launch_ros>`__（ROS 2 专用启动功能）都是使用 Python 编写的，因此你可以更直接地访问 XML 和 YAML 未暴露的底层启动功能。
+* `ros2/launch <https://github.com/ros2/launch>`__ （通用启动功能）和 `ros2/launch_ros <https://github.com/ros2/launch_ros>`__ （ROS 2 专用启动功能）都是使用 Python 编写的，因此你可以更直接地访问 XML 和 YAML 未暴露的底层启动功能。
 
 不过，与 XML 或 YAML 相比，使用 Python 编写的启动文件可能更加复杂，代码也更加冗长。
