@@ -81,6 +81,31 @@ ROS 2 Python 和 CMake 功能包各自具有最低内容要求：
 
 最佳实践是在工作空间中创建 src 目录，并将功能包放在其中，使工作空间顶层目录保持整洁。
 
+一个简单的工作空间可能具有如下结构：
+
+.. code-block:: text
+
+   workspace_folder/
+       src/
+         cpp_package_1/
+             CMakeLists.txt
+             include/cpp_package_1/
+             package.xml
+             src/
+         py_package_1/
+             package.xml
+             resource/py_package_1
+             setup.cfg
+             setup.py
+             py_package_1/
+         ...
+         cpp_package_n/
+             CMakeLists.txt
+             include/cpp_package_n/
+             package.xml
+             src/
+
+
 前置条件
 --------
 
@@ -150,7 +175,63 @@ ROS 2 中创建功能包的命令格式如下：
 
         $ ros2 pkg create --build-type ament_python --license Apache-2.0 --node-name my_node my_package
 
-现在，工作空间 src 目录中会出现名为 my_package 的新目录。终端会输出新功能包的名称、目标目录、package format、版本、描述、维护者、许可证、构建类型和生成的文件列表。
+现在，工作空间 ``src`` 目录中会出现名为 ``my_package`` 的新目录。终端会输出新功能包的名称、目标目录、package format、版本、描述、维护者、许可证、构建类型和生成的文件列表。
+
+例如，CMake 功能包的输出类似：
+
+.. code-block:: console
+
+   going to create a new package
+   package name: my_package
+   destination directory: /home/user/ros2_ws/src
+   package format: 3
+   version: 0.0.0
+   description: TODO: Package description
+   maintainer: ['<name> <email>']
+   licenses: ['TODO: License declaration']
+   build type: ament_cmake
+   dependencies: []
+   node_name: my_node
+   creating folder ./my_package
+   creating ./my_package/package.xml
+   creating source and include folder
+   creating folder ./my_package/src
+   creating folder ./my_package/include/my_package
+   creating ./my_package/CMakeLists.txt
+   creating ./my_package/src/my_node.cpp
+
+Python 功能包的输出类似：
+
+.. code-block:: console
+
+   going to create a new package
+   package name: my_package
+   destination directory: /home/user/ros2_ws/src
+   package format: 3
+   version: 0.0.0
+   description: TODO: Package description
+   maintainer: ['<name> <email>']
+   licenses: ['TODO: License declaration']
+   build type: ament_python
+   dependencies: []
+   node_name: my_node
+   creating folder ./my_package
+   creating ./my_package/package.xml
+   creating source folder
+   creating folder ./my_package/my_package
+   creating ./my_package/setup.py
+   creating ./my_package/setup.cfg
+   creating folder ./my_package/resource
+   creating folder ./my_package/resource/my_package
+   creating folder ./my_package/my_package
+   creating ./my_package/my_package/__init__.py
+   creating folder ./my_package/test
+   creating ./my_package/test/test_copyright.py
+   creating ./my_package/test/test_flake8.py
+   creating ./my_package/test/test_pep257.py
+   creating ./my_package/my_package/my_node.py
+
+可以看到，ROS 2 已经自动生成了新功能包所需的文件。
 
 2. 构建功能包
 ^^^^^^^^^^^^^
@@ -279,12 +360,53 @@ Windows 不允许过长路径，因此 merge-install 会将所有路径合并到
 
 使用文本编辑器打开 ros2_ws/src/my_package/package.xml。请填写维护者姓名和邮箱，将 description 修改为功能包用途，并填写许可证。
 
-例如：
+例如，CMake 和 Python 功能包的 ``package.xml`` 都包含包名、版本、描述、维护者、许可证和构建类型等元信息。CMake 功能包还会声明 ``ament_cmake`` 构建工具依赖，Python 功能包则会声明相应的测试依赖。
+
+CMake 功能包中的相关配置示例：
 
 .. code-block:: xml
 
-  <description>Beginner client libraries tutorials practice package</description>
-  <license>Apache License 2.0</license>
+   <package format="3">
+     <name>my_package</name>
+     <version>0.0.0</version>
+     <description>Beginner client libraries tutorials practice package</description>
+     <maintainer email="you@email.com">Your Name</maintainer>
+     <license>Apache License 2.0</license>
+
+     <buildtool_depend>ament_cmake</buildtool_depend>
+
+     <test_depend>ament_lint_auto</test_depend>
+     <test_depend>ament_lint_common</test_depend>
+
+     <export>
+       <build_type>ament_cmake</build_type>
+     </export>
+   </package>
+
+Python 功能包中的相关配置示例：
+
+.. code-block:: xml
+
+   <package format="3">
+     <name>my_package</name>
+     <version>0.0.0</version>
+     <description>Beginner client libraries tutorials practice package</description>
+     <maintainer email="you@email.com">Your Name</maintainer>
+     <license>Apache License 2.0</license>
+
+     <test_depend>ament_copyright</test_depend>
+     <test_depend>ament_flake8</test_depend>
+     <test_depend>ament_pep257</test_depend>
+     <test_depend>python3-pytest</test_depend>
+
+     <export>
+       <build_type>ament_python</build_type>
+     </export>
+   </package>
+
+开源许可证列表请参阅 `OSI 许可证列表 <https://opensource.org/licenses/alphabetical>`_。本教程仅用于练习，可以选择任意许可证，这里使用 ``Apache License 2.0``。
+
+license 标签下方以 ``_depend`` 结尾的标签用于声明功能包依赖，供 colcon 查找。``my_package`` 很简单，没有依赖项，但后续教程会使用这些标签。
 
 开源许可证列表请参阅`OSI 许可证列表 <https://opensource.org/licenses/alphabetical>`_。本教程仅用于练习，可以选择任意许可证，这里使用 Apache License 2.0。
 
@@ -300,7 +422,38 @@ license 标签下方以 _depend 结尾的标签用于声明功能包依赖，供
 
       setup.py 文件也包含与 package.xml 相同的 description、maintainer 和 license 字段，因此也需要同步填写。两个文件中的这些字段必须完全一致，version 和 name（package_name）也必须一致。
 
-      打开 setup.py，修改 maintainer、maintainer_email 和 description，使其与 package.xml 相同，并填写许可证。
+      打开 ``setup.py``，修改 ``maintainer``、``maintainer_email`` 和 ``description``，使其与 ``package.xml`` 相同，并填写许可证。
+
+      .. code-block:: python
+
+         from setuptools import setup
+
+         package_name = 'my_package'
+
+         setup(
+           name=package_name,
+           version='0.0.0',
+           packages=[package_name],
+           data_files=[
+             ('share/ament_index/resource_index/packages',
+               ['resource/' + package_name]),
+             ('share/' + package_name, ['package.xml']),
+           ],
+           install_requires=['setuptools'],
+           zip_safe=True,
+           maintainer='Your Name',
+           maintainer_email='you@email.com',
+           description='Beginner client libraries tutorials practice package',
+           license='Apache License 2.0',
+           tests_require=['pytest'],
+           entry_points={
+             'console_scripts': [
+               'my_node = my_package.my_node:main'
+             ],
+           },
+         )
+
+      保存文件。
 
 总结
 ----
