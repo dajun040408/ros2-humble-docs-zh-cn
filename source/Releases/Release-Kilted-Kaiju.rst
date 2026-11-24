@@ -1,7 +1,7 @@
 .. _kilted-release:
 
 Kilted Kaiju（kilted）
-=====================
+======================
 
 .. toctree::
    :hidden:
