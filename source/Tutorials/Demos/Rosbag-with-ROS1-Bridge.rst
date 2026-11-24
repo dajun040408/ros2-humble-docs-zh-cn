@@ -9,7 +9,7 @@
 本教程是 :doc:§ROS 1 与 ROS 2 之间的桥接通信 <../../How-To-Guides/Using-ros1_bridge-Jammy-upstream>§ 演示的后续内容。假设你已经完成桥接教程，并已构建 §ros1_bridge§。
 
 使用 rosbag 和 ROS 1 Bridge 录制话题数据
----------------------------------------
+----------------------------------------
 
 本示例使用 ROS 2 自带的 §cam2image§ 演示程序，以及一个 Python 脚本模拟类似 TurtleBot 的传感器数据。数据通过 ROS 1 Bridge 转发到 ROS 1，再使用 ROS 1 rosbag 录制。
 
@@ -32,7 +32,7 @@
 如果从源码安装 bridge，请根据实际工作空间调整 setup 文件路径。
 
 启动 ROS 2 模拟程序
-------------------
+-------------------
 
 现在启动 ROS 2 程序模拟 TurtleBot 传感器数据。首先运行 §cam2image§，使用 §-b§ 参数避免依赖真实摄像头：
 
