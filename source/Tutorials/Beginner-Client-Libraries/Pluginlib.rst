@@ -41,6 +41,9 @@
 
 .. code-block:: cpp
 
+   #ifndef POLYGON_BASE_REGULAR_POLYGON_HPP
+   #define POLYGON_BASE_REGULAR_POLYGON_HPP
+
    namespace polygon_base
    {
      class RegularPolygon
@@ -49,14 +52,19 @@
        virtual void initialize(double side_length) = 0;
        virtual double area() = 0;
        virtual ~RegularPolygon() {}
+
      protected:
        RegularPolygon() {}
      };
-   }
+   }  // namespace polygon_base
+
+   #endif  // POLYGON_BASE_REGULAR_POLYGON_HPP
 
 ``initialize`` 用于传递初始化参数，因为 pluginlib 要求插件类提供无参数构造函数。
 
-在 ``CMakeLists.txt`` 中将基类头文件导出为接口库，并安装头文件及导出 target：
+在 ``CMakeLists.txt`` 中上面的代码创建了名为 ``RegularPolygon`` 的抽象类。需要注意 ``initialize`` 方法：``pluginlib`` 要求插件类具有无参数构造函数，因此如果初始化时需要传入参数，就通过该方法将参数传递给对象。
+
+将基类头文件导出为接口库，并安装头文件及导出 target：
 
 .. code-block:: cmake
 
@@ -143,6 +151,13 @@
 
 ``PLUGINLIB_EXPORT_CLASS`` 宏注册插件类，参数分别是插件类的完整类型和基类的完整类型。
 
+``Square`` 和 ``Triangle`` 类的实现比较直接：保存边长，并使用边长计算面积。与 pluginlib 相关的关键部分是文件末尾的 ``PLUGINLIB_EXPORT_CLASS`` 宏，它会将类注册为插件。
+
+该宏接收两个参数：
+
+1. 插件类的完整类型，例如 ``polygon_plugins::Square``。
+2. 基类的完整类型，例如 ``polygon_base::RegularPolygon``。
+
 2.2 插件声明 XML
 ~~~~~~~~~~~~~~~~
 
@@ -173,6 +188,58 @@ ROS 2 与 ROS 1 不同，插件导出在 ``CMakeLists.txt`` 中完成，而不�
    pluginlib_export_plugin_description_file(polygon_base plugins.xml)
 
 两个参数分别是基类所在功能包和插件声明 XML 的相对路径。
+
+3. 使用插件
+^^^^^^^^^^^
+
+现在可以使用插件。插件可以在任何功能包中加载，本教程选择在基类功能包中使用它们。
+
+编辑 ``ros2_ws/src/polygon_base/src/area_node.cpp``，内容如下：
+
+.. code-block:: c++
+
+   #include <pluginlib/class_loader.hpp>
+   #include <polygon_base/regular_polygon.hpp>
+
+   int main(int argc, char ** argv)
+   {
+     // 避免未使用参数警告
+     (void) argc;
+     (void) argv;
+
+     pluginlib::ClassLoader<polygon_base::RegularPolygon> poly_loader(
+       "polygon_base", "polygon_base::RegularPolygon");
+
+     try
+     {
+       std::shared_ptr<polygon_base::RegularPolygon> triangle =
+         poly_loader.createSharedInstance("awesome_triangle");
+       triangle->initialize(10.0);
+
+       std::shared_ptr<polygon_base::RegularPolygon> square =
+         poly_loader.createSharedInstance("polygon_plugins::Square");
+       square->initialize(10.0);
+
+       printf("Triangle area: %.2f\\n", triangle->area());
+       printf("Square area: %.2f\\n", square->area());
+     }
+     catch (pluginlib::PluginlibException & ex)
+     {
+       printf("The plugin failed to load for some reason. Error: %s\\n", ex.what());
+     }
+
+     return 0;
+   }
+
+``ClassLoader`` 是理解 pluginlib 的关键类：
+
+* 模板参数是基类类型，即 ``polygon_base::RegularPolygon``。
+* 第一个构造参数是基类所在的功能包名称，即 ``polygon_base``。
+* 第二个构造参数是插件基类的完整类型，即 ``polygon_base::RegularPolygon``。
+
+本例使用共享指针创建插件实例。调用 ``createSharedInstance()`` 时，可以传入插件类的完整类型（XML 中的 ``type`` 属性，例如 ``polygon_plugins::Square``），也可以传入 XML 中可选的 ``name`` 查找名称，例如 ``awesome_triangle``。
+
+注意：定义该节点的 ``polygon_base`` 功能包并不依赖 ``polygon_plugins``。插件会在运行时动态加载，因此无需声明对插件功能包的直接依赖。本例将插件名称写死在代码中，实际应用中也可以通过参数等方式动态选择插件。
 
 3. 使用插件
 ^^^^^^^^^^^
@@ -213,6 +280,13 @@ source 工作空间环境。若未安装 ``ros2 plugin`` 命令，可安装：
    $ sudo apt install ros-{DISTRO}-ros2plugin
 
 列出已注册插件：
+
+.. code-block:: console
+
+   $ ros2 plugin list
+   polygon_plugins:
+      Plugin(name='polygon_plugins::Square', type='polygon_plugins::Square', base='polygon_base::RegularPolygon')
+      Plugin(name='polygon_plugins::Triangle', type='polygon_plugins::Triangle', base='polygon_base::RegularPolygon')
 
 .. code-block:: console
 
