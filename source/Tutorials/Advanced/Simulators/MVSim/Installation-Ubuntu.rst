@@ -1,7 +1,7 @@
 在 Ubuntu 上安装 MVSim
 ======================
 
-**目标：** 在 Ubuntu 上安装 `mvsim` 软件包，并验证其是否正常工作。
+**目标：** 在 Ubuntu 上安装 ``mvsim`` 软件包，并验证其是否正常工作。
 
 **教程级别：** 高级
 
@@ -21,14 +21,14 @@ MVSim 使用 BSD 3-Clause 许可证。
 前置条件
 --------
 
-建议先了解初学者 :doc:`教程 <../../../../Tutorials>` 中介绍的 ROS 基础概念。特别建议先完成 :doc:`创建工作空间 <../../../Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>`。
+建议先了解初学者 :doc:`教程 <../../../../Tutorials>`` 中介绍的 ROS 基础概念。特别建议先完成 :doc:``创建工作空间 <../../../Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>`。
 
 你需要有一个可正常工作的 ROS 2 安装环境。如有需要，请按照 :doc:`ROS 2 安装说明 <../../../../Installation>` 操作。
 
 任务
 ----
 
-1 安装 `mvsim`
+1 安装 ``mvsim``
 ^^^^^^^^^^^^^^
 
 你可以安装已发布的二进制软件包，也可以从源码构建。
@@ -64,7 +64,7 @@ MVSim 使用 BSD 3-Clause 许可证。
             $ cd ~/ros2_ws/src
             $ git clone https://github.com/MRPT/mvsim.git --recursive
 
-        使用 `rosdep` 安装依赖项：
+        使用 ``rosdep`` 安装依赖项：
 
         .. code-block:: console
 
@@ -86,7 +86,7 @@ MVSim 使用 BSD 3-Clause 许可证。
 2 验证安装
 ^^^^^^^^^^
 
-检查 `mvsim` 命令行工具是否可用：
+检查 ``mvsim`` 命令行工具是否可用：
 
 .. code-block:: console
 
@@ -96,10 +96,10 @@ MVSim 使用 BSD 3-Clause 许可证。
 
 .. warning::
 
-   `mvsim` 软件包提供两个可执行程序：
+   ``mvsim`` 软件包提供两个可执行程序：
 
-   - `mvsim`：独立运行仿真器的主要命令行工具。
-   - `mvsim_node`：ROS 2 节点封装，用于运行仿真器并将其连接到其他 ROS 2 节点。
+   - ``mvsim``：独立运行仿真器的主要命令行工具。
+   - ``mvsim_node``：ROS 2 节点封装，用于运行仿真器并将其连接到其他 ROS 2 节点。
 
 3 启动演示
 ^^^^^^^^^^
