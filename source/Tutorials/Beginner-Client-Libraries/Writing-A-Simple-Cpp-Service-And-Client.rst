@@ -62,6 +62,19 @@
   <maintainer email="you@email.com">Your Name</maintainer>
   <license>Apache License 2.0</license>
 
+1.1 更新 package.xml
+~~~~~~~~~~~~~~~~~~~~~~
+
+由于创建功能包时已经使用了 ``--dependencies`` 选项，因此无需再手动向 ``package.xml`` 或 ``CMakeLists.txt`` 添加依赖项。
+
+不过，仍需按照惯例在 ``package.xml`` 中填写功能包描述、维护者邮箱和姓名，以及许可证信息：
+
+.. code-block:: xml
+
+  <description>C++ client server tutorial</description>
+  <maintainer email="you@email.com">Your Name</maintainer>
+  <license>Apache License 2.0</license>
+
 2. 编写服务端节点
 ^^^^^^^^^^^^^^^^^
 
@@ -95,6 +108,79 @@
       rclcpp::shutdown();
       return 0;
     }
+
+2.1 理解代码
+~~~~~~~~~~~~~
+
+最开始的两个 ``#include`` 语句引入了该功能包的依赖项。
+
+``add`` 函数从请求中读取两个整数并计算它们的和，将结果写入响应，同时通过日志向控制台输出处理状态：
+
+.. code-block:: cpp
+
+   void add(
+     const std::shared_ptr<example_interfaces::srv::AddTwoInts::Request> request,
+     std::shared_ptr<example_interfaces::srv::AddTwoInts::Response> response)
+   {
+     response->sum = request->a + request->b;
+     RCLCPP_INFO(rclcpp::get_logger("rclcpp"),
+       "Incoming request: a=%ld b=%ld", request->a, request->b);
+     RCLCPP_INFO(rclcpp::get_logger("rclcpp"),
+       "Sending back response: [%ld]", response->sum);
+   }
+
+``main`` 函数依次完成以下工作：
+
+* 初始化 ROS 2 C++ 客户端库：
+
+  .. code-block:: cpp
+
+     rclcpp::init(argc, argv);
+
+* 创建名为 ``minimal_service`` 的节点：
+
+  .. code-block:: cpp
+
+     auto node = rclcpp::Node::make_shared("minimal_service");
+
+* 为该节点创建名为 ``add_two_ints`` 的服务，并将 ``add`` 函数注册为请求处理回调：
+
+  .. code-block:: cpp
+
+     auto service = node->create_service<example_interfaces::srv::AddTwoInts>(
+       "add_two_ints", &add);
+
+* 输出服务已经准备就绪的日志：
+
+  .. code-block:: cpp
+
+     RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Ready to add two ints.");
+
+* 通过 spin 让节点持续运行，使服务保持可用：
+
+  .. code-block:: cpp
+
+     rclcpp::spin(node);
+
+2.2 添加可执行程序
+~~~~~~~~~~~~~~~~~~
+
+``add_executable`` 宏会生成一个可通过 ``ros2 run`` 运行的可执行程序。在 ``CMakeLists.txt`` 的依赖项配置之后添加以下内容，创建名为 ``server`` 的可执行程序：
+
+.. code-block:: cmake
+
+   add_executable(server src/add_two_ints_server.cpp)
+   ament_target_dependencies(server rclcpp example_interfaces)
+
+为了让 ``ros2 run`` 能够找到该可执行程序，在文件末尾的 ``ament_package()`` 之前添加：
+
+.. code-block:: cmake
+
+   install(TARGETS
+     server
+     DESTINATION lib/${PROJECT_NAME})
+
+现在可以构建功能包、加载本地环境并运行服务端。不过，为了观察完整的服务/客户端系统，先继续创建客户端节点。
 
 3. 编写客户端节点
 ^^^^^^^^^^^^^^^^^
@@ -150,6 +236,68 @@
       return 0;
     }
 
+3.1 理解代码
+~~~~~~~~~~~~~
+
+与服务端节点类似，下面的代码先创建节点，再为该节点创建客户端：
+
+.. code-block:: cpp
+
+   auto node = rclcpp::Node::make_shared("minimal_client");
+   auto client = node->create_client<example_interfaces::srv::AddTwoInts>(
+     "add_two_ints");
+
+接下来创建请求对象。请求的数据结构由前面介绍的 ``.srv`` 文件定义：
+
+.. code-block:: cpp
+
+   auto request = std::make_shared<example_interfaces::srv::AddTwoInts::Request>();
+   request->a = std::atoll(argv[1]);
+   request->b = std::atoll(argv[2]);
+
+``while`` 循环每次等待 1 秒，尝试在网络中查找提供该服务的节点。如果没有找到，就继续等待。
+
+.. code-block:: cpp
+
+   RCLCPP_INFO(rclcpp::get_logger("rclcpp"),
+     "Service not available, waiting again...");
+
+如果客户端被取消（例如，你在终端中按下 ``Ctrl+C``），程序会输出错误日志，说明等待服务的过程被中断。
+
+.. code-block:: cpp
+
+   RCLCPP_ERROR(rclcpp::get_logger("rclcpp"),
+     "Interrupted while waiting for the service. Exiting.");
+
+找到服务后，客户端发送请求，并让节点持续运行，直到收到响应或调用失败。
+
+3.2 添加可执行程序
+~~~~~~~~~~~~~~~~~~
+
+返回 ``CMakeLists.txt``，为新的客户端节点添加可执行程序和构建目标。删除自动生成文件中不必要的模板内容后，``CMakeLists.txt`` 可以整理为：
+
+.. code-block:: cmake
+
+   cmake_minimum_required(VERSION 3.5)
+   project(cpp_srvcli)
+
+   find_package(ament_cmake REQUIRED)
+   find_package(rclcpp REQUIRED)
+   find_package(example_interfaces REQUIRED)
+
+   add_executable(server src/add_two_ints_server.cpp)
+   ament_target_dependencies(server rclcpp example_interfaces)
+
+   add_executable(client src/add_two_ints_client.cpp)
+   ament_target_dependencies(client rclcpp example_interfaces)
+
+   install(TARGETS
+     server
+     client
+     DESTINATION lib/${PROJECT_NAME})
+
+   ament_package()
+
 4. 配置并构建
 ^^^^^^^^^^^^^
 
@@ -194,4 +342,14 @@
 总结
 ----
 
-你已经创建并运行了一个 C++ 服务端和客户端。客户端发送两个整数，服务端计算并返回它们的和。
+你已经创建了两个节点，通过服务请求和响应数据。你还在功能包配置文件中添加了它们的依赖项和可执行程序，最终构建并运行了一个完整的服务/客户端系统。
+
+下一步
+------
+
+在前面的几个教程中，你已经使用接口在话题和服务之间传递数据。接下来将学习如何 :doc:`创建自定义接口 <./Custom-ROS2-Interfaces>`。
+
+相关内容
+--------
+
+C++ 服务端和客户端有多种实现方式。可以查看 ``ros2/examples`` 仓库中的 ``minimal_service`` 和 ``minimal_client`` 功能包：`https://github.com/ros2/examples/tree/{REPOS_FILE_BRANCH}/rclcpp/services`_。
