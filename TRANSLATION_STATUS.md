@@ -136,3 +136,12 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 但通过公开网页抓取重新检查 https://ros2docs.robook.org/humble/...，抓取到的内容仍是旧英文版本。例如 Migrating Packages 正文仍包含 “There are two different kinds of package migrations”；Migrating Interfaces 仍显示英文标题和英文正文；Migrating Parameters、C++ 示例、C++ 参考、Python 参考、Launch Files、Scripts 页面也仍有英文标题/正文。搜索引擎抓取时间较旧，不能单凭缓存判定 DNS 当前状态，但可以确认尚无可靠证据证明原域名已切换到新部署。
 - 因此：GitHub Pages 项目部署已成功；自定义域名 ros2docs.robook.org 的 Pages Custom domain 绑定、DNS CNAME 指向 dajun040408.github.io、HTTPS 证书及原域名实时内容切换仍未验收。/humble/ 路径在构建产物中已按要求生成。
 - 下一步必须在仓库 Settings → Pages → Custom domain 中填写 ros2docs.robook.org 并保存，同时在域名 DNS 控制台确认 ros2docs CNAME 指向 dajun040408.github.io。目前连接没有 DNS 控制台权限，不能代替域名所有者修改 DNS。
+
+
+## 2026-11-24 迁移指南二次内容审校
+
+- 复核10篇 Humble 迁移指南后，发现此前翻译文件仍有少量英文说明残留，以及 package.xml 示例中反引号嵌套错误、接口依赖 XML 标签反引号位置错误、C++ function 头文件被误翻译等问题。
+- 已修订 `Migrating-Interfaces.rst`、`Migrating-Package-XML.rst`、`Migrating-CPP-Packages.rst`、`Migrating-Launch-Files.rst`，修正说明文字与 RST 代码标记，保留示例代码/API 标识符。
+- 修订提交：`54d9d1c5ec1be4a55540f58066eecfd2fbee8506`。该提交将触发新一轮 GitHub Actions 构建。
+- 最新已知成功部署仍是 #441；本次修订尚未构建和部署，原域名尚未验收。
+- GitHub Pages 自定义域名设置不能由当前 GitHub 连接工具修改；GitHub 官方说明，自定义 Actions 发布时 CNAME 文件会被忽略，域名必须在 Settings → Pages → Custom domain 配置。DNS CNAME 记录还必须指向 `dajun040408.github.io`。
