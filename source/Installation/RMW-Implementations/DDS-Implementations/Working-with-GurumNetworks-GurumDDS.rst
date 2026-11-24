@@ -28,7 +28,7 @@ Ubuntu 上的 ROS 2 apt 软件源提供 GurumDDS 的 deb 软件包。Windows 二
 
 你可以从 `GurumDDS 免费试用页面 <https://gurum.cc/free_trial_eng.html>`_ 获取免费试用许可证。
 
-获取许可证后，将其放置在以下目录：``/etc/gurumnet``。
+获取许可证后，将其放置在以下目录：``/etc/gurumnet`` 。
 
 安装
 ----
@@ -40,7 +40,7 @@ Ubuntu 上的 ROS 2 apt 软件源提供 GurumDDS 的 deb 软件包。Windows 二
 
    $ sudo apt install ros-{DISTRO}-rmw-gurumdds-cpp
 
-该命令会同时安装 ``rmw_gurumdds_cpp`` 和 ``gurumdds``。
+该命令会同时安装 ``rmw_gurumdds_cpp`` 和 ``gurumdds`` 。
 
 方式二：从源码构建
 ^^^^^^^^^^^^^^^^^^
