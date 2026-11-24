@@ -47,6 +47,19 @@ source ROS 2 环境，并在 ros2_ws/src 目录中创建新功能包：
   <maintainer email="you@email.com">Your Name</maintainer>
   <license>Apache License 2.0</license>
 
+1.1 更新 package.xml
+~~~~~~~~~~~~~~~~~~~~~~
+
+由于创建功能包时使用了 ``--dependencies`` 选项，因此无需手动向 ``package.xml`` 或 ``CMakeLists.txt`` 添加依赖项。
+
+不过，仍需在 ``package.xml`` 中填写功能包描述、维护者邮箱和姓名，以及许可证信息：
+
+.. code-block:: xml
+
+   <description>C++ parameter tutorial</description>
+   <maintainer email="you@email.com">Your Name</maintainer>
+   <license>Apache License 2.0</license>
+
 2. 编写 C++ 节点
 ^^^^^^^^^^^^^^^^
 
@@ -97,6 +110,61 @@ source ROS 2 环境，并在 ros2_ws/src 目录中创建新功能包：
 
 2.1 理解代码
 ~~~~~~~~~~~~
+
+文件开头的 ``#include`` 语句是该功能包的依赖项。
+
+接下来创建 ``MinimalParam`` 类和构造函数。构造函数中的第一行声明名为 ``my_parameter``、默认值为 ``world`` 的参数。参数类型根据默认值推断，因此这里的参数类型为字符串。
+
+随后将 ``timer_`` 初始化为 1000 毫秒的周期定时器，使 ``timer_callback`` 每秒执行一次。
+
+.. code-block:: cpp
+
+   class MinimalParam : public rclcpp::Node
+   {
+   public:
+     MinimalParam()
+     : Node("minimal_param_node")
+     {
+       this->declare_parameter("my_parameter", "world");
+
+       timer_ = this->create_wall_timer(
+         1000ms, std::bind(&MinimalParam::timer_callback, this));
+     }
+
+``timer_callback`` 的第一行从节点中读取 ``my_parameter``，并将其保存到 ``my_param``。接下来使用 ``RCLCPP_INFO`` 输出日志。最后，``set_parameters`` 将 ``my_parameter`` 恢复为默认字符串 ``world``。如果用户从外部修改了该参数，节点会在下一次定时器回调时将其恢复。
+
+.. code-block:: cpp
+
+   void timer_callback()
+   {
+     std::string my_param = this->get_parameter("my_parameter").as_string();
+
+     RCLCPP_INFO(this->get_logger(), "Hello %s!", my_param.c_str());
+
+     std::vector<rclcpp::Parameter> all_new_parameters{
+       rclcpp::Parameter("my_parameter", "world")};
+     this->set_parameters(all_new_parameters);
+   }
+
+最后声明定时器成员变量：
+
+.. code-block:: cpp
+
+   private:
+     rclcpp::TimerBase::SharedPtr timer_;
+
+``MinimalParam`` 类之后是 ``main`` 函数。在这里初始化 ROS 2，构造 ``MinimalParam`` 类的实例，并通过 ``rclcpp::spin`` 开始处理节点数据。
+
+.. code-block:: cpp
+
+   int main(int argc, char ** argv)
+   {
+     rclcpp::init(argc, argv);
+     rclcpp::spin(std::make_shared<MinimalParam>());
+     rclcpp::shutdown();
+     return 0;
+   }
+
 
 构造函数中的 declare_parameter() 创建名为 my_parameter、默认值为 world 的参数。参数类型会根据默认值推断，因此这里是字符串类型。
 
@@ -177,9 +245,23 @@ source 工作空间并运行：
 3.2 通过启动文件修改参数
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-在 ros2_ws/src/cpp_parameters/ 中创建 launch 目录，并在其中创建 cpp_parameters_launch.py。启动文件可以在启动 minimal_param_node 时将 my_parameter 设置为 earth。
+在 ``ros2_ws/src/cpp_parameters/`` 目录中创建 ``launch`` 目录，并在其中创建 ``cpp_parameters_launch.py``：
 
-在 CMakeLists.txt 中添加安装 launch 目录的规则：
+.. literalinclude:: launch/cpp_parameters_launch.py
+   :language: python
+
+启动文件会在启动 ``minimal_param_node`` 时，将参数 ``my_parameter`` 设置为 ``earth``，并通过 ``output="screen"`` 和 ``emulate_tty=True`` 确保节点输出显示在当前终端。
+
+打开 ``CMakeLists.txt``，在之前添加的配置下面加入 launch 目录的安装规则：
+
+.. code-block:: cmake
+
+   install(
+     DIRECTORY launch
+     DESTINATION share/${PROJECT_NAME}
+   )
+
+
 
 .. code-block:: cmake
 
@@ -199,4 +281,9 @@ source 工作空间并运行：
 总结
 ----
 
-你创建了一个包含自定义参数的节点，并学习了如何通过启动文件或命令行设置参数。
+你创建了一个包含自定义参数的节点，并学习了如何通过启动文件或命令行设置参数。你还为功能包添加了依赖项、可执行程序和启动文件配置，以便构建并运行该节点。
+
+下一步
+------
+
+现在你已经创建了一些自己的功能包和 ROS 2 系统。接下来的 :doc:`使用 ros2doctor 检查系统问题 <./Getting-Started-With-Ros2doctor>` 教程将介绍如何在遇到问题时检查环境和系统。
