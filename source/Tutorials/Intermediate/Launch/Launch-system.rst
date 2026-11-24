@@ -20,7 +20,7 @@
 前置条件
 --------
 
-你应当已经完成 :doc:`创建 ROS 2 功能包 <../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>` 教程。每次打开新终端时，都不要忘记 source ROS 2 环境，参见 :doc:`配置 ROS 2 环境 <../../Beginner-CLI-Tools/Configuring-ROS2-Environment>`。
+你应当已经完成 :doc:`创建 ROS 2 功能包 <../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>`` 教程。每次打开新终端时，都不要忘记 source ROS 2 环境，参见 :doc:``配置 ROS 2 环境 <../../Beginner-CLI-Tools/Configuring-ROS2-Environment>`。
 
 背景
 ----
@@ -75,7 +75,7 @@
 2. 创建存放启动文件的目录结构
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-按照约定，功能包的所有启动文件都存放在该功能包内部的 `launch` 目录中。请在刚才创建的功能包顶层目录下创建 `launch` 目录。
+按照约定，功能包的所有启动文件都存放在该功能包内部的 ``launch`` 目录中。请在刚才创建的功能包顶层目录下创建 ``launch`` 目录。
 
 .. tabs::
 
@@ -95,7 +95,7 @@
           setup.py
           test/
 
-    为了让 colcon 能够找到并使用启动文件，需要在 Python setup 工具中声明这些文件。打开 `setup.py`，在顶部添加必要的 import 语句，并将启动文件加入 `setup()` 的 `data_files` 参数：
+    为了让 colcon 能够找到并使用启动文件，需要在 Python setup 工具中声明这些文件。打开 ``setup.py``，在顶部添加必要的 import 语句，并将启动文件加入 ``setup()`` 的 ``data_files`` 参数：
 
     .. code-block:: python
 
@@ -112,7 +112,7 @@
 
   .. group-tab:: C++ 功能包
 
-    对于 C++ 功能包，只需修改 `CMakeLists.txt`，添加以下内容：
+    对于 C++ 功能包，只需修改 ``CMakeLists.txt``，添加以下内容：
 
     .. code-block:: cmake
 
@@ -121,7 +121,7 @@
         DESTINATION share/${PROJECT_NAME}/
       )
 
-    将其放在文件末尾，但必须位于 `ament_package()` 之前。
+    将其放在文件末尾，但必须位于 ``ament_package()`` 之前。
 
 3. 编写启动文件
 ^^^^^^^^^^^^^^^
@@ -130,23 +130,23 @@
 
   .. group-tab:: XML 启动文件
 
-    在 `launch` 目录中创建名为 `my_script_launch.xml` 的启动文件。建议但不强制使用 `_launch.xml` 作为 XML 启动文件的后缀。
+    在 ``launch`` 目录中创建名为 ``my_script_launch.xml`` 的启动文件。建议但不强制使用 ``_launch.xml`` 作为 XML 启动文件的后缀。
 
     .. literalinclude:: launch/my_script_launch.xml
       :language: xml
 
   .. group-tab:: YAML 启动文件
 
-    在 `launch` 目录中创建名为 `my_script_launch.yaml` 的启动文件。建议但不强制使用 `_launch.yaml` 作为 YAML 启动文件的后缀。
+    在 ``launch`` 目录中创建名为 ``my_script_launch.yaml`` 的启动文件。建议但不强制使用 ``_launch.yaml`` 作为 YAML 启动文件的后缀。
 
     .. literalinclude:: launch/my_script_launch.yaml
       :language: yaml
 
   .. group-tab:: Python 启动文件
 
-    在 `launch` 目录中创建名为 `my_script_launch.py` 的启动文件。建议但不强制使用 `_launch.py` 作为 Python 启动文件的后缀。不过，为了让 `ros2 launch` 识别并自动补全该文件名，启动文件名称必须以 `launch.py` 结尾。
+    在 ``launch`` 目录中创建名为 ``my_script_launch.py`` 的启动文件。建议但不强制使用 ``_launch.py`` 作为 Python 启动文件的后缀。不过，为了让 ``ros2 launch`` 识别并自动补全该文件名，启动文件名称必须以 ``launch.py`` 结尾。
 
-    启动文件应定义 `generate_launch_description()` 函数，并返回供 `ros2 launch` 命令使用的 `launch.LaunchDescription()`。
+    启动文件应定义 ``generate_launch_description()`` 函数，并返回供 ``ros2 launch`` 命令使用的 ``launch.LaunchDescription()``。
 
     .. literalinclude:: launch/my_script_launch.py
       :language: python
@@ -160,7 +160,7 @@
 
   $ colcon build
 
-`colcon build` 成功且已 source 工作空间后，就可以运行启动文件。
+``colcon build`` 成功且已 source 工作空间后，就可以运行启动文件。
 
 .. tabs::
 
@@ -211,6 +211,6 @@
 文档
 ----
 
-`Launch 文档 <https://github.com/ros2/launch/blob/{REPOS_FILE_BRANCH}/launch/doc/source/architecture.rst>`_ 提供了更多细节，介绍 `launch_ros` 中使用的相关概念。
+`Launch 文档 <https://github.com/ros2/launch/blob/{REPOS_FILE_BRANCH}/launch/doc/source/architecture.rst>``_ 提供了更多细节，介绍 ``launch_ros` 中使用的相关概念。
 
-后续还会提供更多关于 Launch 功能的文档和示例。在此之前，可以参考源代码：`https://github.com/ros2/launch` 和 `https://github.com/ros2/launch_ros`。
+后续还会提供更多关于 Launch 功能的文档和示例。在此之前，可以参考源代码：``https://github.com/ros2/launch`` 和 ``https://github.com/ros2/launch_ros``。
