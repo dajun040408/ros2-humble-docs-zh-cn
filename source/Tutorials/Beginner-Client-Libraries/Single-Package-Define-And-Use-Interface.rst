@@ -235,7 +235,7 @@
    timer_ = this->create_wall_timer(1s, publish_msg);
 
 3.2 构建发布者
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 需要在 ``CMakeLists.txt`` 中为该节点创建新的构建目标：
 
