@@ -35,14 +35,14 @@ RMW 支持情况
    * - rmw_cyclonedds
      - 支持
 
-要使用等待确认功能，发布者的 :doc:`QoS 可靠性策略 <../../Concepts/Intermediate/About-Quality-of-Service-Settings>` 必须设置为 ``RELIABLE``，否则发布者不会等待确认。
+要使用等待确认功能，发布者的 :doc:`QoS 可靠性策略 <../../Concepts/Intermediate/About-Quality-of-Service-Settings>` 必须设置为 ``RELIABLE`` ，否则发布者不会等待确认。
 
 安装演示程序
 ------------
 
 ROS 2 安装详情请参阅 :doc:`安装说明 <../../Installation>`。
 
-如果通过软件包安装 ROS 2，请确保已安装 ``ros-{DISTRO}-examples-rclcpp-minimal-publisher`` 和 ``ros-{DISTRO}-examples-rclcpp-minimal-subscriber``。如果下载了归档包或从源码构建 ROS 2，这些示例已经包含在安装内容中。
+如果通过软件包安装 ROS 2，请确保已安装 ``ros-{DISTRO}-examples-rclcpp-minimal-publisher`` 和 ``ros-{DISTRO}-examples-rclcpp-minimal-subscriber`` 。如果下载了归档包或从源码构建 ROS 2，这些示例已经包含在安装内容中。
 
 运行演示
 --------
@@ -77,7 +77,7 @@ ROS 2 安装详情请参阅 :doc:`安装说明 <../../Installation>`。
     ^C[INFO] [1743121570.344981639] [rclcpp]: signal_handler(signum=2)
     [INFO] [1743121570.345398788] [minimal_publisher_with_wait_for_all_acked]: All subscribers acknowledge messages
 
-当发布者终止时（例如按下 ``Ctrl-C``），它会等待关闭前发送的所有消息获得确认。如果所有订阅者都确认了消息，发布者就会输出所有订阅者均已确认的提示；否则，会输出未能在指定超时时间内获得全部确认的提示。
+当发布者终止时（例如按下 ``Ctrl-C`` ），它会等待关闭前发送的所有消息获得确认。如果所有订阅者都确认了消息，发布者就会输出所有订阅者均已确认的提示；否则，会输出未能在指定超时时间内获得全部确认的提示。
 
 相关内容
 --------
