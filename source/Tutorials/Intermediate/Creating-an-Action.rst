@@ -25,7 +25,7 @@
 前置条件
 --------
 
-需要安装 :doc:`ROS 2 </Installation>` 和 ``colcon``。
+需要安装 :doc:`ROS 2 </Installation>` 和 ``colcon`` 。
 
 创建一个 :doc:`工作空间 </Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>`，并创建名为 ``action_tutorials_interfaces`` 的功能包。首先要 :doc:`source ROS 2 安装环境 <../Beginner-CLI-Tools/Configuring-ROS2-Environment>`。
 
@@ -59,7 +59,7 @@
 
 .. note::
 
-  良好的实践是将 ``.msg``、``.srv`` 和 ``.action`` 文件放在与使用它们的节点不同的功能包中。这样可以更方便地在多个功能包之间复用接口定义。
+  良好的实践是将 ``.msg`` 、``.srv`` 和 ``.action`` 文件放在与使用它们的节点不同的功能包中。这样可以更方便地在多个功能包之间复用接口定义。
 
 任务
 ----
@@ -122,7 +122,7 @@ Action 的一次执行通常称为一个目标（Goal）。
   ---
   int32[] partial_sequence
 
-目标请求是需要计算的斐波那契数列阶数 ``order``；结果是最终数列 ``sequence``；反馈是目前已经计算出的部分数列 ``partial_sequence``。
+目标请求是需要计算的斐波那契数列阶数 ``order`` ；结果是最终数列 ``sequence`` ；反馈是目前已经计算出的部分数列 ``partial_sequence`` 。
 
 2. 构建 Action
 ^^^^^^^^^^^^^^
@@ -147,7 +147,7 @@ Action 的一次执行通常称为一个目标（Goal）。
     <depend>action_msgs</depend>
     <member_of_group>rosidl_interface_packages</member_of_group>
 
-这里需要依赖 ``action_msgs``，因为 Action 定义包含额外的元数据，例如目标 ID。
+这里需要依赖 ``action_msgs`` ，因为 Action 定义包含额外的元数据，例如目标 ID。
 
 现在可以构建包含 ``Fibonacci`` Action 定义的功能包：
 
@@ -156,7 +156,7 @@ Action 的一次执行通常称为一个目标（Goal）。
     $ cd ~/ros2_ws
     $ colcon build
 
-按照约定，Action 类型名称由功能包名称和 ``action`` 组成。因此，新 Action 的完整名称为 ``action_tutorials_interfaces/action/Fibonacci``。
+按照约定，Action 类型名称由功能包名称和 ``action`` 组成。因此，新 Action 的完整名称为 ``action_tutorials_interfaces/action/Fibonacci`` 。
 
 可以使用命令行工具检查 Action 是否构建成功：
 
