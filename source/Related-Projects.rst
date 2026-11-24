@@ -29,6 +29,6 @@ Gazebo
 .. toctree::
    :maxdepth: 1
 
-   Related-Projects/Intel-ROS2-Projects
-   Related-Projects/Nvidia-ROS2-Projects
-   Related-Projects/Visualizing-Data-And-Teleoperating-With-Phantom-Bridge
+   Intel ROS 2 项目 <Related-Projects/Intel-ROS2-Projects>
+   NVIDIA ROS 2 项目 <Related-Projects/Nvidia-ROS2-Projects>
+   使用 Phantom Bridge 可视化数据与远程操控 <Related-Projects/Visualizing-Data-And-Teleoperating-With-Phantom-Bridge>
