@@ -5,7 +5,7 @@
 
 本教程假设你已经创建了一个基础的 :ref:`ament_python 功能包 <CreatePkg>`，现在希望为它添加一些测试。
 
-如果你使用的是 ament_cmake_python，请参阅 :doc:`ament_cmake_python 文档 <../../../How-To-Guides/Ament-CMake-Python-Documentation>`，了解如何让测试能够被发现。测试内容以及通过 ``colcon` 调用测试的方式保持不变。
+如果你使用的是 ament_cmake_python，请参阅 :doc:`ament_cmake_python 文档 </How-To-Guides/Ament-CMake-Python-Documentation>`，了解如何让测试能够被发现。测试内容以及通过 ``colcon` 调用测试的方式保持不变。
 
 功能包配置
 ----------
@@ -55,7 +55,7 @@ setup.py
 运行测试
 --------
 
-有关如何运行测试以及检查测试结果的更多信息，请参阅 :doc:`通过命令行运行测试的教程 <CLI>`。
+有关如何运行测试以及检查测试结果的更多信息，请参阅 :doc:`通过命令行运行测试的教程 </Tutorials/Intermediate/Testing/CLI>`。
 
 特殊命令
 --------
