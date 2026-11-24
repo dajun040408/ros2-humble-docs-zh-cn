@@ -336,7 +336,7 @@ Windows 示例：
 该命令会构建整个工作空间，其中包括 ``action_tutorials_cpp`` 功能包中的 ``fibonacci_action_client``。
 
 3.3 运行 Action 客户端
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 确保另一个终端中已经运行 Action 服务端。然后 source 刚刚构建的 ``ros2_ws`` 工作空间，并运行客户端：
 
