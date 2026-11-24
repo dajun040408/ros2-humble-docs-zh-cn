@@ -283,3 +283,6 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 
 - 构建 #770（提交 `e7c45da`）build/deploy 成功。Python 服务/客户端教程新增章节通过 Sphinx 构建，相关页面无标题下划线、RST ERROR 或 CRITICAL；剩余 2 条 Lyrical 上游页面 toctree 警告。
 - Python 发布者/订阅者教程的去重与标题修复已由构建 #766 验证成功；Python 服务/客户端教程的去重与标题修复已由 #770 验证成功。两篇 Python 教程已进入 GitHub Pages 部署产物。
+
+- 构建 #770（提交 `e7c45da`）确认 Python 服务/客户端教程无 Sphinx ERROR/CRITICAL，标题警告已在提交 `fb8272d` 中处理，待新构建复核。
+- 另对 C++ 发布者/订阅者教程做了结构清理：移除在 2.3/3.2 已分别说明发布者与订阅者目标后重复出现的整段 CMakeLists 配置，将构建运行章节顺延为第 4 节。提交：`21e43279e05a89fc871896c6b82142b0ed9db1ce`。
