@@ -258,7 +258,7 @@ Fast RTPS 需要 `msvcr20.dll`，该文件属于 Visual C++ Redistributable Pack
 创建进程失败
 ^^^^^^^^^^^^
 
-如果运行 ROS 二进制程序时出现 `failed to create process` 错误，可能是找不到 Python 解释器。请确保 Python 位于预期路径下，默认路径为 `C:\Python38\`。
+如果运行 ROS 二进制程序时出现 ``failed to create process`` 错误，可能是找不到 Python 解释器。请确保 Python 位于预期路径下，默认路径为 ``C:\Python38\``。
 
 二进制安装特有问题
 ^^^^^^^^^^^^^^^^^^

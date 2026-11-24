@@ -21,7 +21,7 @@ ROS 2 引入了受管理节点（Managed Nodes），也称为生命周期节点�
 
 一种常见使用场景是硬件控制节点：摄像头、激光雷达、电机驱动器以及其他传感器和执行器等设备，都必须按照受控顺序启动、配置和关闭。
 
-使用生命周期节点有助于确保硬件只在准备就绪后才进行初始化，并在关闭或错误恢复期间安全释放资源。以下软件包支持实现受管理节点：`rclcpp_lifecycle <https://index.ros.org/p/rclcpp_lifecycle/>`_（实现库）和 `lifecycle_msgs <https://index.ros.org/p/lifecycle_msgs/>`_（接口定义）。
+使用生命周期节点有助于确保硬件只在准备就绪后才进行初始化，并在关闭或错误恢复期间安全释放资源。以下软件包支持实现受管理节点：`rclcpp_lifecycle <https://index.ros.org/p/rclcpp_lifecycle/>`__（实现库）和 `lifecycle_msgs <https://index.ros.org/p/lifecycle_msgs/>`__（接口定义）。
 
 前置条件
 --------
@@ -34,18 +34,18 @@ ROS 2 引入了受管理节点（Managed Nodes），也称为生命周期节点�
 获取示例
 ^^^^^^^^
 
-有关如何运行示例的信息，请参阅 `lifecycle_demo_launch.py <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/lifecycle_py/launch/lifecycle_demo_launch.py>`_。
+有关如何运行示例的信息，请参阅 `lifecycle_demo_launch.py <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/lifecycle_py/launch/lifecycle_demo_launch.py>`__。
 
 说明
 ^^^^
 
-有关运行方式及其工作过程的更多信息，请参阅 `lifecycle README <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/lifecycle/README.rst>`_。
+有关运行方式及其工作过程的更多信息，请参阅 `lifecycle README <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/lifecycle/README.rst>`__。
 
 相关内容
 --------
 
 软件包/参考资料：
 
-* `rclcpp_lifecycle <https://index.ros.org/p/rclcpp_lifecycle/>`_（实现库）：包含生命周期实现原型的软件包。
-* `lifecycle_msgs <https://index.ros.org/p/lifecycle_msgs/>`_（接口定义）：包含生命周期相关消息和服务定义的软件包。
-* `lifecycle <https://docs.ros.org/en/{DISTRO}/p/lifecycle/>`_：包含生命周期实现演示的软件包。
+* `rclcpp_lifecycle <https://index.ros.org/p/rclcpp_lifecycle/>`__（实现库）：包含生命周期实现原型的软件包。
+* `lifecycle_msgs <https://index.ros.org/p/lifecycle_msgs/>`__（接口定义）：包含生命周期相关消息和服务定义的软件包。
+* `lifecycle <https://docs.ros.org/en/{DISTRO}/p/lifecycle/>`__：包含生命周期实现演示的软件包。

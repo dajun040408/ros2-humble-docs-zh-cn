@@ -8,9 +8,9 @@ ROS 软件包索引
 
 如果尚未完成，请将 ROS 软件包源代码放入公共 Git 仓库。所有发布到 ROS 的软件包都必须是开源的。代码可以托管在任何地方，但推荐使用 GitHub，因为它支持启用 Pull Request 构建任务。可选平台包括：
 
-* `GitHub <https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository>`_（**推荐**）
-* `GitLab <https://docs.gitlab.com/ee/user/project/repository/>`_
-* `Bitbucket <https://support.atlassian.com/bitbucket-cloud/docs/create-a-git-repository/>`_
+* `GitHub <https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository>`__（**推荐**）
+* `GitLab <https://docs.gitlab.com/ee/user/project/repository/>`__
+* `Bitbucket <https://support.atlassian.com/bitbucket-cloud/docs/create-a-git-repository/>`__
 
 为软件包指定 OSI 认可的许可证
 -----------------------------

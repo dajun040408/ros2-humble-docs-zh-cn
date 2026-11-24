@@ -132,7 +132,7 @@ CMake 在 Windows 上实现了 `WINDOWS_EXPORT_ALL_SYMBOLS` 属性，可以自�
    public:
    static const int Global_data_num;
 
-对于这类情况，必须显式应用 `dllimport`/`dllexport`。可以使用 `generate_export_header` 实现，具体请参阅`相关说明 <https://blog.kitware.com/create-dlls-on-windows-without-declspec-using-new-cmake-export-all-feature/>`_。
+对于这类情况，必须显式应用 `dllimport``/``dllexport`。可以使用 `generate_export_header` 实现，具体请参阅`相关说明 <https://blog.kitware.com/create-dlls-on-windows-without-declspec-using-new-cmake-export-all-feature/>`_。
 
 最后，导出符号的头文件必须至少被软件包中的一个 `.cpp` 文件包含，这样宏才会展开并写入最终二进制文件。否则，符号仍然无法被调用。
 
@@ -150,7 +150,7 @@ Debug 构建
 正斜杠与反斜杠
 --------------
 
-Windows 默认使用反斜杠（`\`）作为路径分隔符，这与 Linux 和 macOS 使用的正斜杠（`/`）不同。
+Windows 默认使用反斜杠（``\``）作为路径分隔符，这与 Linux 和 macOS 使用的正斜杠（``/``）不同。
 
 大多数 Windows API 都能将两者作为路径分隔符处理，但并非所有 API 都支持。例如，`cmd.exe` Shell 只有在使用反斜杠时才能进行 Tab 补全，不能使用正斜杠。
 

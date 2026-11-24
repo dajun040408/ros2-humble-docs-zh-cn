@@ -16,7 +16,7 @@ MoveIt、Nav2 和 micro-ROS 等大型功能包在 ros.org 上拥有自己的域�
 * `MoveIt <https://moveit.ai/>`__
 * `Navigation2 <https://nav2.org/>`__
 * `Control <https://control.ros.org/master/index.html>`__
-* `microROS（嵌入式系统）<micro-ros_>`___
+* `micro-ROS（嵌入式系统） <https://micro.ros.org/>`__
 
 API 文档
 ----------

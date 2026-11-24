@@ -14,7 +14,7 @@
 背景知识
 --------
 
-`MVSim <https://mvsimulator.readthedocs.io/>`_（MultiVehicle Simulator，多车辆仿真器）是一款轻量级开源移动机器人仿真器。它提供基于物理的二维仿真和三维可视化，支持差速驱动与阿克曼转向车辆、多种传感器类型（激光雷达、摄像头、IMU、GPS），并通过标准消息类型原生集成 ROS 2。
+`MVSim <https://mvsimulator.readthedocs.io/>`__（MultiVehicle Simulator，多车辆仿真器）是一款轻量级开源移动机器人仿真器。它提供基于物理的二维仿真和三维可视化，支持差速驱动与阿克曼转向车辆、多种传感器类型（激光雷达、摄像头、IMU、GPS），并通过标准消息类型原生集成 ROS 2。
 
 MVSim 使用 BSD 3-Clause 许可证。
 

@@ -98,19 +98,19 @@ Bloom 成功完成，并且软件包通过向 `rosdistro`_ 提交 Pull Request �
 
    首先，发布任务使用最小化 ROS 安装环境进行构建，以检查所有依赖项是否正确声明在`软件包清单`_中。而开发任务、GitHub Actions 或本地构建环境中可能已经安装了这些依赖项，因此无法发现依赖声明问题。
 
-   其次，它们构建的源码版本可能不同。开发任务、GitHub Actions 和本地构建通常构建`上游`_[2]_ 仓库中的最新代码，而`发布任务`_构建的是最新发布版本的源码，也就是`发布`仓库 [3]_ 中对应的上游分支代码。
+   其次，它们构建的源码版本可能不同。开发任务、GitHub Actions 和本地构建通常构建`上游`_[2]_ 仓库中的最新代码，而`发布任务`_构建的是最新发布版本的源码，也就是``发布`` 仓库 [3]_ 中对应的上游分支代码。
 
 延伸阅读
 --------
 
 * `ros_buildfarm 通用文档 <https://github.com/ros-infrastructure/ros_buildfarm/blob/master/doc/index.rst>`_
-* `回归测试 <http://wiki.ros.org/regression_tests#Setting_up_Your_Computer_for_Prerelease>`_
+* `回归测试 <http://wiki.ros.org/regression_tests#Setting_up_Your_Computer_for_Prerelease>`__
 * `ROS 1 构建农场 Wiki <http://wiki.ros.org/buildfarm>`_（部分内容已过时）
 * `cookbook-ros-buildfarm <https://github.com/ros-infrastructure/cookbook-ros-buildfarm>`_
 
-.. [1] `{distro}` 是 ROS 发行版名称的首字母；`{platform}`（`{platf}`）表示软件包构建目标平台及其缩写；`{package}` 表示正在构建的 ROS 软件包名称。
-.. [2] `上游`仓库是存放对应 ROS 1/ROS 2 软件包原始源码的仓库。
-.. [3] `发布`仓库是 ROS 2 基础设施用于发布软件包的仓库，参见 `https://github.com/ros2-gbp/`。
+.. [1] ``{distro}`` 是 ROS 发行版名称的首字母；``{platform}``（``{platf}``）表示软件包构建目标平台及其缩写；``{package}`` 表示正在构建的 ROS 软件包名称。
+.. [2] ``上游`` 仓库是存放对应 ROS 1/ROS 2 软件包原始源码的仓库。
+.. [3] ``发布`` 仓库是 ROS 2 基础设施用于发布软件包的仓库，参见 `https://github.com/ros2-gbp/`。
 
 .. _release jobs:
    https://github.com/ros-infrastructure/ros_buildfarm/blob/master/doc/jobs/release_jobs.rst
