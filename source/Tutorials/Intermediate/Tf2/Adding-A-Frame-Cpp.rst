@@ -95,7 +95,7 @@ tf2 使用树结构组织坐标系，因此不允许坐标系结构中出现闭�
    t.transform.translation.z = 0.0;
 
 1.2 修改 CMakeLists.txt
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 返回 §learning_tf2_cpp§ 目录，打开 §CMakeLists.txt§，添加可执行程序：
 
@@ -238,7 +238,7 @@ Windows 命令提示符使用 §call install\setup.bat§；PowerShell 使用 §.
 这里不再使用固定的 x、y 偏移，而是根据当前时间计算 §sin()§ 和 §cos()§，因此 §carrot1§ 相对于 §turtle1§ 的偏移会持续变化。
 
 2.1 修改 CMakeLists.txt
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 添加动态广播器可执行程序：
 
