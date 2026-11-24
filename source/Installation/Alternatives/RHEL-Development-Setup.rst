@@ -5,7 +5,7 @@
 .. _rhel-latest:
 
 RHEL（源码安装）
-===============
+================
 
 .. contents:: 目录
    :depth: 2
@@ -79,7 +79,7 @@ rosdep 数据库包含来自 EPEL 和 PowerTools 软件源的软件包，而这�
 .. _rhel-dev-get-ros2-code:
 
 获取 ROS 2 源码
---------------
+---------------
 
 创建工作空间并克隆所有仓库：
 
@@ -103,7 +103,7 @@ rosdep 数据库包含来自 EPEL 和 PowerTools 软件源的软件包，而这�
    $ rosdep install --from-paths src --ignore-src -y --skip-keys "asio cyclonedds fastcdr fastrtps ignition-cmake2 ignition-math6 python3-babeltrace python3-mypy rti-connext-dds-6.0.1 urdfdom_headers"
 
 安装其他 DDS 实现（可选）
-------------------------
+-------------------------
 
 如果希望使用默认实现以外的 DDS 或 RTPS 供应商，请参阅 :doc:`相关说明 <../RMW-Implementations>`。
 
@@ -166,7 +166,7 @@ source 环境设置脚本
 继续阅读 :doc:`教程和演示 <../../Tutorials>`，配置环境、创建自己的工作空间和功能包，并学习 ROS 2 核心概念。
 
 其他 RMW 实现（可选）
---------------------
+---------------------
 
 ROS 2 默认使用的中间件是 `Fast DDS`，但可以在运行时替换中间件（RMW）。有关如何使用多个 RMW 的说明，请参阅 :doc:`多 RMW 使用指南 <../../How-To-Guides/Working-with-multiple-RMW-implementations>`。
 
