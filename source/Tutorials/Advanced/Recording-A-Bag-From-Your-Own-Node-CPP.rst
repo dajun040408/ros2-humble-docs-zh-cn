@@ -105,7 +105,7 @@ rosbag2 不仅提供 ros2 bag 命令行工具，还提供 C++ API，可以在自
 .. include:: ../../_internal/Rclcpp-Convenience-Header-Note.rst
 
 2.1 理解代码
-~~~~~~~~~~~
+~~~~~~~~~~~~
 
 文件顶部的 include 语句对应功能包依赖项。这里包含 rosbag2_cpp 中用于处理 bag 文件的头文件。
 
