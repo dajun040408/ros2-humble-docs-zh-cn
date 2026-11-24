@@ -20,12 +20,12 @@
 前置条件
 --------
 
-你应当已经完成 :doc:`创建 ROS 2 功能包 <../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>` 教程。每次打开新终端时，都不要忘记 source ROS 2 环境，参见 :doc:`配置 ROS 2 环境 <../../Beginner-CLI-Tools/Configuring-ROS2-Environment>`。
+你应当已经完成 :doc:`创建 ROS 2 功能包 </Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>` 教程。每次打开新终端时，都不要忘记 source ROS 2 环境，参见 :doc:`配置 ROS 2 环境 </Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment>`。
 
 背景
 ----
 
-在 :doc:`上一个教程 <Creating-Launch-Files>` 中，我们学习了如何编写独立启动文件。本教程将介绍如何将启动文件添加到现有功能包，以及通常采用的目录约定。
+在 :doc:`上一个教程 </Tutorials/Intermediate/Launch/Creating-Launch-Files>` 中，我们学习了如何编写独立启动文件。本教程将介绍如何将启动文件添加到现有功能包，以及通常采用的目录约定。
 
 任务
 ----
