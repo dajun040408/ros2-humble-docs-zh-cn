@@ -11,7 +11,7 @@
 启动演示
 --------
 
-本示例假设你的 ROS 2 安装目录为 `~/ros2_ws`。请根据实际平台修改目录。
+本示例假设你的 ROS 2 安装目录为 ``~/ros2_ws``。请根据实际平台修改目录。
 
 要启动演示，请运行演示系统的 bringup 启动文件。下一节将进一步解释该启动文件。终端中应看到类似以下输出：
 
@@ -52,7 +52,7 @@
    $ source <ROS2_INSTALL_FOLDER>/setup.bash
    $ rviz2
 
-这会打开 RViz2。假设 dummy_robot_bringup 仍在运行，你可以添加 TF 显示插件，并将全局坐标系设置为 `world`。完成后，应该能看到类似下图的效果：
+这会打开 RViz2。假设 dummy_robot_bringup 仍在运行，你可以添加 TF 显示插件，并将全局坐标系设置为 ``world``。完成后，应该能看到类似下图的效果：
 
 .. image:: images/rviz-dummy-robot.png
 
@@ -66,8 +66,8 @@
 * dummy_joint_states
 * robot_state_publisher
 
-前两个功能包相对简单。`dummy_map_server` 会持续发布空地图，并定期更新。`dummy_laser` 的工作方式类似，会发布模拟的虚假激光扫描数据。
+前两个功能包相对简单。``dummy_map_server`` 会持续发布空地图，并定期更新。``dummy_laser`` 的工作方式类似，会发布模拟的虚假激光扫描数据。
 
-`dummy_joint_states` 节点发布模拟关节状态数据。由于我们发布的是只有两个关节的简单 RRbot，因此该节点会发布这两个关节的状态值。
+``dummy_joint_states`` 节点发布模拟关节状态数据。由于我们发布的是只有两个关节的简单 RRbot，因此该节点会发布这两个关节的状态值。
 
-`robot_state_publisher` 执行了真正重要的工作。它解析给定的 URDF 文件，提取机器人模型并监听接收到的关节状态。利用这些信息，它会发布机器人的 TF 数据，供 RViz 可视化。
+``robot_state_publisher`` 执行了真正重要的工作。它解析给定的 URDF 文件，提取机器人模型并监听接收到的关节状态。利用这些信息，它会发布机器人的 TF 数据，供 RViz 可视化。

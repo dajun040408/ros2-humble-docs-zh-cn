@@ -40,4 +40,4 @@ Lyrical 路线图
 3. 有关 ROS 2 设计的更多信息，请参阅 `design.ros2.org <https://design.ros2.org>`_。
 4. ROS 2 核心代码位于 `ros2 GitHub 组织 <https://github.com/ros2>`_。
 5. ROS 2 设计讨论论坛位于 `Open Robotics Discourse 的 ROS 分类 <https://discourse.openrobotics.org/c/ros/111>`_。
-6. 问题应发布到 `Robotics Stack Exchange <https://robotics.stackexchange.com/>`_，并至少添加 `ros2` 标签以及正在使用的 rosdistro 版本，例如 `{DISTRO}`。
+6. 问题应发布到 `Robotics Stack Exchange <https://robotics.stackexchange.com/>`_，并至少添加 ``ros2`` 标签以及正在使用的 rosdistro 版本，例如 ``{DISTRO}``。

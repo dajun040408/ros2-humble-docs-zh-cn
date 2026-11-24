@@ -21,7 +21,7 @@
 * IDL 格式
 
   * 利用新特性，例如将常量分组到枚举中。
-  * 扩展 `.idl` 文件的使用场景，使其只包含常量，和/或支持声明具有取值范围的参数。
+  * 扩展 ``.idl`` 文件的使用场景，使其只包含常量，和/或支持声明具有取值范围的参数。
   * 重新审视 IDL 接口命名约束，参见 `ros2/design#220 <https://github.com/ros2/design/pull/220>`_。
 
 * 制定 ROS 1 到 ROS 2 的迁移计划。
@@ -43,7 +43,7 @@
   * 弃用 <https://design.ros2.org>_。相关内容应迁移到 REP、<https://github.com/ros2/ros2_documentation>_，或删除。
   * 修复单软件包文档构建器，使其能够记录构建产物，例如消息、服务和动作。
   * 让 <https://docs.ros.org/en/ros2_documentation>_ 能够在 <https://github.com/ros2/ros2_documentation>_ 发生变更时自动重新构建。
-  * 完善 `ament` 文档。
+  * 完善 ``ament`` 文档。
   * 添加 ROS 2 与 Jupyter Notebook 配合使用的文档示例。
   * 添加实现新 RMW 的文档。
   * 提供三种不同类型的内容：
@@ -140,10 +140,10 @@
 
 * 修复 <https://ci.ros2.org/view/nightly>_ 中不稳定的测试。
 * 支持使用 Valgrind、clang-tidy、Clang 静态分析（scan-build）、ASAN、TSAN、UBSAN 等工具运行（全部）单元测试。
-* 审查 API，特别是 `rclcpp` 和 `rclpy` 中面向用户的 API。
+* 审查 API，特别是 `rclcpp` 和 ``rclpy`` 中面向用户的 API。
 * 将 `rclcpp` API 重构为多个职责单一的软件包，同时继续由 `rclcpp` 提供组合后的用户 API。
 * 重新审视消息分配器，考虑使用 `std::pmr::polymorphic_allocator` 解决相关问题。
-* 同步并协调 `设计文档 <https://design.ros2.org>` 与实际实现。
+* 同步并协调 `设计文档 <https://design.ros2.org>`__ 与实际实现。
 * 处理并分类尚未解决的 Issue。
 * 处理代码和文档中的 TODO。
 * 移除对 tinyxml 的依赖。
