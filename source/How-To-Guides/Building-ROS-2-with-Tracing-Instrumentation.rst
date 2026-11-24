@@ -48,7 +48,7 @@
 二进制安装
 ^^^^^^^^^^
 
-如果你使用 ROS 2 二进制软件包（:doc:`deb 软件包 <../Installation/Ubuntu-Install-Debs>` 或 :doc:`“fat” 归档包 <../Installation/Alternatives/Ubuntu-Install-Binary>`），则需要将 ``ros2_tracing`` 仓库克隆到工作空间，并至少构建到 ``tracetools`` 软件包：
+如果你使用 ROS 2 二进制软件包（:doc:`deb 软件包 <../Installation/Ubuntu-Install-Debs>`` 或 :doc:``“fat” 归档包 <../Installation/Alternatives/Ubuntu-Install-Binary>`），则需要将 ``ros2_tracing`` 仓库克隆到工作空间，并至少构建到 ``tracetools`` 软件包：
 
 .. code-block:: bash
 
