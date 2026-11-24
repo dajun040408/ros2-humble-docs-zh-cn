@@ -6,7 +6,7 @@ ROS 2 同时支持 32 位（arm32）和 64 位（arm64）ARM 处理器。不过�
 使用 ROS 2 最快、最简单的方式是选择 Tier 1 支持的配置。这意味着可以在 Raspberry Pi 上安装 64 位 Ubuntu，或者使用 64 位 Raspberry Pi OS 并在 Docker 中运行 ROS 2。
 
 在 Raspberry Pi 上使用 Ubuntu Linux 安装 ROS 2 二进制包
-------------------------------------------------------
+-------------------------------------------------------
 
 可以从 `Ubuntu for Raspberry Pi <https://ubuntu.com/download/raspberry-pi>`_ 下载 Ubuntu。请按照 `REP-2000 <https://reps.openrobotics.org/rep-2000/>`_ 中的说明，确认选择了正确的版本。
 
