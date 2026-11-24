@@ -222,7 +222,6 @@ Python 功能包的输出类似：
    creating ./my_package/setup.py
    creating ./my_package/setup.cfg
    creating folder ./my_package/resource
-   creating folder ./my_package/resource/my_package
    creating folder ./my_package/my_package
    creating ./my_package/my_package/__init__.py
    creating folder ./my_package/test
