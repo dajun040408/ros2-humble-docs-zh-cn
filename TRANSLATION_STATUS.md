@@ -334,3 +334,9 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 已扩充 Python Action 教程：补齐服务端从基础执行、成功状态、斐波那契结果到反馈发布的分步演进；补齐客户端目标发送、目标响应、获取结果、反馈回调，以及 Linux/macOS/Windows 运行方式。代码示例使用上游仓库的 literalinclude 脚本。提交：`9f2db575c1018bc580b9a63cbc4a356238e80596`。
 - 已扩充节点组合教程：补齐组件发现、发布订阅与服务客户端运行时组合、编译时组合、dlopen 组合、launch 组合、容器类型、组件卸载、容器/组件名称与命名空间重映射、参数和额外参数传递、共享库导出及非 Node 派生组件等官方章节。提交：`b631ec3bce80ca0f0bf38ad9efd2e26eafc8fa8b`。
 - 上述三篇中级教程补译尚待完整 Sphinx 构建、RST 日志及 Pages 部署验收。
+
+- 构建 #798（提交 `a91e9b3`）build/deploy 成功，但日志发现新补译的三篇中级教程存在 RST 诊断：C++ Action 标题下划线过短和外链格式错误；Python Action 两处行内 literal 警告及外链格式错误；Composition 多处外链格式错误和一个标题下划线过短。
+- 已修复 C++ Action 章节下划线和 ros2/examples 外链；Python Action 将两处导致 docutils 误判的 inline literal 改为普通文本，并修复 ros2/examples 外链；Composition 的 10 处外链全部改为正确的 RST 外部链接格式，并加长共享库章节标题下划线。提交：`72e7103cdfee05ab7215e820e9d26091b18f4fb9`、`06e6f5c95ca751055522403a0c80847b37dcd772`、`53128937603489d750c118c2da6dd12728d239ed`。
+- 已补齐 `Using-Node-Interfaces-Template-Class.rst` 的三个官方章节：SharedPtr 方式、显式传递 node_interfaces、推荐的 `rclcpp::NodeInterfaces<>` 方式，并补充普通节点与 LifecycleNode 的完整示例和代码解释。提交：`9ceb910e8922b949506a36719d294a061924cec3`。
+- 已扩充 `Monitoring-For-Parameter-Changes-CPP.rst`：补齐完整单参数回调代码、package.xml/CMake 配置、构建运行、监控远程节点参数、统一事件回调监控所有节点参数、回调句柄生命周期注意事项及相关内容。提交：`09a43516a8176c6b6e31a3d4c66b6ce831531ed5`。
+- 上述 RST 修复及两篇新增教程仍待新一轮 Sphinx 构建和部署验收。
