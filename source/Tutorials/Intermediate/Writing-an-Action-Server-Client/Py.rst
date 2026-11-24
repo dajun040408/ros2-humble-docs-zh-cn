@@ -5,7 +5,7 @@
 .. _ActionsPy:
 
 编写 Action 服务端和客户端（Python）
-====================================
+===========================================================================
 
 **目标：** 使用 Python 实现 Action 服务端和客户端。
 
@@ -16,20 +16,20 @@
    :local:
 
 背景
-----
+------
 
 Action 是 ROS 2 中的一种异步通信方式。Action 客户端向 Action 服务端发送目标请求；Action 服务端向客户端发送目标执行反馈和最终结果。
 
 前置条件
---------
+------------
 
 需要先完成 :doc:`创建 Action 接口 <../Creating-an-Action>` 教程，并准备 ``action_tutorials_interfaces`` 功能包及其中定义的 ``Fibonacci.action``。
 
 任务
-----
+------
 
 1. 编写 Action 服务端
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 本节实现一个使用前面创建的 Fibonacci Action 接口计算斐波那契数列的服务端。
 
@@ -120,7 +120,7 @@ Action 是 ROS 2 中的一种异步通信方式。Action 客户端向 Action 服
 再次重启 Action 服务端并发送目标，应该能看到目标以正确的数列结果完成。
 
 1.2 发布反馈
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Action 的一个重要优势是：在目标执行过程中，可以向 Action 客户端持续提供反馈。
 
@@ -139,7 +139,7 @@ Action 服务端可以调用目标句柄的 ``publish_feedback()`` 方法向客�
    $ ros2 action send_goal --feedback fibonacci action_tutorials_interfaces/action/Fibonacci "{order: 5}"
 
 2. 编写 Action 客户端
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 本教程同样将 Action 客户端写在单个 Python 文件中。
 
@@ -238,7 +238,7 @@ Action 客户端只能与 Action 名称和类型相同的服务端通信。
 Action 客户端启动后会很快结束。此时客户端已经能够发送目标，但还没有显示结果，也没有获取反馈。接下来完善这两部分功能。
 
 2.1 获取结果
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 客户端发送目标后，如何知道目标何时执行完成？
 
@@ -302,7 +302,7 @@ Action 客户端启动后会很快结束。此时客户端已经能够发送目�
 现在应该能看到目标被接受以及最终结果的日志。
 
 2.2 获取反馈
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Action 客户端已经可以发送目标了。接下来，还需要获取 Action 服务端在目标执行期间发布的反馈。
 
@@ -328,13 +328,13 @@ Action 客户端已经可以发送目标了。接下来，还需要获取 Action
 完成后运行 Action 客户端，就可以看到反馈消息持续输出。
 
 总结
-----
+------
 
 本教程逐步实现了一个 Python Action 服务端和客户端，并配置它们交换目标请求、反馈和最终结果。
 
 相关内容
---------
+------------
 
-Python Action 服务端和客户端还有其他实现方式。可以查看 ``ros2/examples`` 仓库中的 ``minimal_action_server`` 和 ``minimal_action_client`` 功能包：`https://github.com/ros2/examples/tree/{REPOS_FILE_BRANCH}/rclpy/actions`_。
+Python Action 服务端和客户端还有其他实现方式。可以查看 ``ros2/examples`` 仓库中的 ``minimal_action_server`` 和 ``minimal_action_client`` 功能包：`ros2/examples 仓库 <https://github.com/ros2/examples/tree/{REPOS_FILE_BRANCH}/rclpy/actions>`_。
 
 有关 ROS 2 Actions 的更多详细信息，请参阅 `ROS 2 Actions 设计文章 <http://design.ros2.org/articles/actions.html>`_。
