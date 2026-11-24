@@ -50,7 +50,7 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * 更新变更日志中的后续版本信息
-* [ament_uncrustify] 修复文件排除行为（`#334 <https://github.com/ament/ament_lint/issues/334>`__）：排除列表会在遍历搜索路径时与文件和目录进行匹配。该实现尽量与 `#327` 的行为保持一致；同时新增文件排除测试，并移除错误的 pytest 标记。
+* [ament_uncrustify] 修复文件排除行为（`#334 <https://github.com/ament/ament_lint/issues/334>`__）：排除列表会在遍历搜索路径时与文件和目录进行匹配。该实现尽量与 ``#327`` 的行为保持一致；同时新增文件排除测试，并移除错误的 pytest 标记。
 * 将维护者更新为 Michael Jeronimo 和 Michel Hidalgo（`#340 <https://github.com/ament/ament_lint/issues/340>`__）
 * [ament_uncrustify] 新增 ament_lint 测试（`#338 <https://github.com/ament/ament_lint/issues/338>`__）：为 ament_uncrustify 添加 ament_lint 测试，并修复其中的代码检查警告。
 * 贡献者：Abrar Rahman Protyasha、Audrow Nash

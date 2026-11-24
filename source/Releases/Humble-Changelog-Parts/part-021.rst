@@ -59,9 +59,9 @@
 `ros2trace <https://gitlab.com/ros-tracing/ros2_tracing/-/blob/humble/ros2trace/CHANGELOG.rst>`__
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* 修复 `ros2 trace` 的 fini() 错误
+* 修复 ``ros2 trace`` 的 fini() 错误
 * 不再要求必须安装内核跟踪器，并在未安装时进行检测
-* 弃用 `context_names` 参数，改用 `context_fields`
+* 弃用 ``context_names`` 参数，改用 ``context_fields``
 * 贡献者：Christophe Bedard
 
 

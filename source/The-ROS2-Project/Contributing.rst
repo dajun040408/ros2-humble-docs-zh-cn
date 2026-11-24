@@ -73,7 +73,7 @@
 
 如果发现自己感兴趣的任务，请在对应条目下留言，告知其他人你正在关注该任务。
 
-我们还使用 `good first issue` 标签标记适合首次参与贡献者的任务。你可以`搜索这些 Issue <https://github.com/search?q=user%3Aament+user%3Aros2+is%3Aopen+label%3A%22good+first+issue%22&type=Issues>`_。
+我们还使用 ``good first issue`` 标签标记适合首次参与贡献者的任务。你可以`搜索这些 Issue <https://github.com/search?q=user%3Aament+user%3Aros2+is%3Aopen+label%3A%22good+first+issue%22&type=Issues>`_。
 
 如果你有兴趣参与 ROS 2 项目，建议先查看这些任务。也欢迎你参与任何开放 Issue，或提出新的任务，特别是已经设置里程碑、计划纳入下一 ROS 2 发行版的任务。
 
@@ -91,7 +91,7 @@ ROS 2 维护者负责确保项目持续取得进展。维护者的职责包括�
 * 合并符合质量和 CI 标准的 Pull Request。
 * 处理用户提交的 Issue。
 
-`ros2` 和 `ament` 两个 GitHub 组织中的每个仓库都有各自的维护者团队。
+``ros2`` 和 ``ament`` 两个 GitHub 组织中的每个仓库都有各自的维护者团队。
 
 成为其中一个或多个仓库的维护者需要获得邀请，通常需要满足以下条件：
 

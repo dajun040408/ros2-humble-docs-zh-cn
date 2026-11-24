@@ -18,8 +18,8 @@ Lyrical Luth 发行时间表
 
 **2026 年 4 月 21 日，星期二** - 分支阶段（延期；原计划为 4 月 20 日）
     * 从 Rolling Ridley 创建分支。
-    * 重新开放 `rosdistro`，接受针对 ROS Base 软件包的 Rolling Pull Request。
-    * Lyrical 开发从 `ros-rolling-*` 软件包转向 `ros-lyrical-*` 软件包。
+    * 重新开放 ``rosdistro``，接受针对 ROS Base 软件包的 Rolling Pull Request。
+    * Lyrical 开发从 ``ros-rolling-*`` 软件包转向 ``ros-lyrical-*`` 软件包。
 
 **2026 年 4 月 27 日，星期一** - Beta 阶段
     * 提供更新后的 ROS Desktop 软件包。
@@ -33,11 +33,11 @@ Lyrical Luth 发行时间表
 
 **2026 年 5 月 18 日，星期一** - 发行版冻结
     * 冻结所有 ROS Desktop 软件包中的 Lyrical 分支。
-    * 不再合并任何针对 Lyrical 分支，或针对 `rosdistro` 仓库中 `lyrical/distribution.yaml` 的 Pull Request。
+    * 不再合并任何针对 Lyrical 分支，或针对 ``rosdistro`` 仓库中 ``lyrical/distribution.yaml`` 的 Pull Request。
 
 **2026 年 5 月 22 日，星期五** - 正式发布
     * 发布公告。
-    * 解除 ROS Desktop 软件包源码冻结，并重新开放 `rosdistro`，接受 Lyrical Pull Request。
+    * 解除 ROS Desktop 软件包源码冻结，并重新开放 ``rosdistro``，接受 Lyrical Pull Request。
 
 **2031 年 5 月** - 生命周期结束
     * ROS Lyrical 将停止接收更新，包括安全更新。

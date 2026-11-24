@@ -2,7 +2,7 @@
 
   Beta3-Overview
 
-Beta 3（`r2b3`）
+Beta 3（``r2b3``）
 ================
 
 .. contents:: 目录
@@ -34,7 +34,7 @@ ROS 2 Beta 3 支持三个平台：Ubuntu 16.04（Xenial）、macOS 10.12（Sierr
 * `HSR 演示 <https://github.com/ruffsl/hsr_demo>`_：
 
   * 使用 ROS 2 手柄控制器远程控制 HSR 机器人。
-  * 由于该机器人运行在 Ubuntu Trusty 上的 ROS 1，因此在 HSR 的 Docker 容器中运行 `ros1_bridge`。
+  * 由于该机器人运行在 Ubuntu Trusty 上的 ROS 1，因此在 HSR 的 Docker 容器中运行 ``ros1_bridge``。
   * 运行 ROS 2 开发版本的 `rviz <https://github.com/ros2/rviz>`_，可视化机器人的传感器数据等。参见`视频 <https://vimeo.com/237016358>`_。
 
 此前 Alpha/Beta 版本中的部分功能
@@ -65,7 +65,7 @@ ROS 2 Beta 3 支持三个平台：Ubuntu 16.04（Xenial）、macOS 10.12（Sierr
 * C++ 和 Python 执行器线程模型。
 * 在编译、链接或运行时组合节点的组件模型。
 * 使用标准生命周期管理组件。
-* 扩展 `.msg` 格式，增加以下功能：
+* 扩展 ``.msg`` 格式，增加以下功能：
 
   * 有界数组。
   * 默认值。
@@ -73,6 +73,6 @@ ROS 2 Beta 3 支持三个平台：Ubuntu 16.04（Xenial）、macOS 10.12（Sierr
 已知问题
 --------
 
-* 在 Windows 上，尝试使用 `Ctrl-C` 终止 Python 启动文件时，启动进程可能会挂起。参见`相关 Issue <https://github.com/ros2/launch/issues/64>`_。如果命令挂起并阻塞 Shell，可以使用进程监视器结束挂起的 Python 进程，以便继续使用该 Shell。
-* macOS 目前不支持 OpenSplice。此外，`native handles` 访问功能尚未实现，参见`相关 Issue <https://github.com/ros2/rmw_opensplice/issues/182>`_。
+* 在 Windows 上，尝试使用 ``Ctrl-C`` 终止 Python 启动文件时，启动进程可能会挂起。参见`相关 Issue <https://github.com/ros2/launch/issues/64>`_。如果命令挂起并阻塞 Shell，可以使用进程监视器结束挂起的 Python 进程，以便继续使用该 Shell。
+* macOS 目前不支持 OpenSplice。此外，``native handles`` 访问功能尚未实现，参见`相关 Issue <https://github.com/ros2/rmw_opensplice/issues/182>`_。
 * 使用 Connext 时，两个基础名称相同但命名空间不同的话题，目前不能使用不同的数据类型。参见`相关 Issue <https://github.com/ros2/rmw_connext/issues/234>`_。

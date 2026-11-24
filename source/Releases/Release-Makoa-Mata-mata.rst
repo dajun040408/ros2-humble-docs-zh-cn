@@ -2,7 +2,7 @@
 
 .. _makoa-release:
 
-Makoa Mata-mata（代号 `makoa`；2027 年 5 月）
+Makoa Mata-mata（代号 ``makoa``；2027 年 5 月）
 =============================================
 
 .. toctree::
@@ -28,4 +28,4 @@ Makoa 新功能
 移除 Fast DDS 动态类型支持的 RMW 实现
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-`rmw_fastrtps_dynamic_cpp` 软件包已被移除。这意味着用户将无法再选择 `RMW_IMPLEMENTATION=rmw_fastrtps_dynamic_cpp`。建议用户改用 `RMW_IMPLEMENTATION=rmw_fastrtps_cpp`。
+``rmw_fastrtps_dynamic_cpp`` 软件包已被移除。这意味着用户将无法再选择 ``RMW_IMPLEMENTATION=rmw_fastrtps_dynamic_cpp``。建议用户改用 ``RMW_IMPLEMENTATION=rmw_fastrtps_cpp``。

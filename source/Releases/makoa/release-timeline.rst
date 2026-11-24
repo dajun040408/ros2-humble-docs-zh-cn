@@ -5,7 +5,7 @@ Makoa Mata-mata 发行时间表
 
 **2027 年 5 月 21 日，星期五** - 正式发布（General Availability）
     * 发布公告。
-    * 解除 ROS 桌面软件包源码冻结，并重新开放 `rosdistro`，接受 Makoa 相关 Pull Request。
+    * 解除 ROS 桌面软件包源码冻结，并重新开放 ``rosdistro``，接受 Makoa 相关 Pull Request。
 
 **2028 年 12 月** - 生命周期结束（End-of-Life）
     * ROS Makoa 将停止接收更新，包括安全更新。
