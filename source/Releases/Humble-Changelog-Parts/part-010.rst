@@ -23,9 +23,9 @@
 * 贡献者：Abrar Rahman Protyasha、Chris Lalancette、Ivan Santiago Paunovic、Jacob Perron、Shane Loretz
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 `intra_process_demo <https://github.com/ros2/demos/tree/humble/intra_process_demo/CHANGELOG.rst>`__
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * 为 cv::putText 添加 opencv_imgproc 依赖（`#554 <https://github.com/ros2/demos/issues/554>`__）
 * 将头文件安装到 include/${PROJECT_NAME}（`#548 <https://github.com/ros2/demos/issues/548>`__）
@@ -48,9 +48,9 @@
 * 贡献者：Chris Lalancette、Jacob Perron、Shane Loretz
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 `laser_geometry <https://github.com/ros-perception/laser_geometry/tree/humble/CHANGELOG.rst>`__
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * 将头文件安装到 include/${PROJECT_NAME}（`#86 <https://github.com/ros-perception/laser_geometry/issues/86>`__）
 * 显式转换为 double，以避免精度损失
