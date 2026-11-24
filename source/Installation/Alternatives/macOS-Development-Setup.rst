@@ -36,7 +36,7 @@ macOS（源码安装）
 
          $ sudo xcodebuild -license
 
-2. ``brew``（用于安装其他依赖项；通常已经安装）
+2. ``brew`` （用于安装其他依赖项；通常已经安装）
 
    * 按照 `Homebrew 安装说明 <http://brew.sh/>`_ 操作。
    * 可选：运行以下命令，检查 brew 的系统配置是否正常：
