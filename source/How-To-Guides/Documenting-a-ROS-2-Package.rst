@@ -5,7 +5,7 @@
    :depth: 2
    :local:
 
-本指南介绍为 ROS 2 功能包创建文档的标准方法。对于已发布二进制软件包的功能包，生成的文档也会托管在 ``docs.ros.org/en/<distro>/p/<package>/``。有关如何为 docs.ros.org 上的文档做出贡献，请参阅 :doc:`为 ROS 2 文档做贡献 <../The-ROS2-Project/Contributing/Contributing-To-ROS-2-Documentation>`。
+本指南介绍为 ROS 2 功能包创建文档的标准方法。对于已发布二进制软件包的功能包，生成的文档也会托管在 ``docs.ros.org/en/<distro>/p/<package>/`` 。有关如何为 docs.ros.org 上的文档做出贡献，请参阅 :doc:`为 ROS 2 文档做贡献 <../The-ROS2-Project/Contributing/Contributing-To-ROS-2-Documentation>`。
 
 前置条件
 --------
@@ -33,12 +33,12 @@
 
    $ rosdoc2 build --package-path <package-path>
 
-生成的文档写入 ``docs_output/<package-name>/index.html``，可以使用浏览器查看。
+生成的文档写入 ``docs_output/<package-name>/index.html`` ，可以使用浏览器查看。
 
 配置
 ----
 
-ROS 功能包文档有三个配置位置：用于通用设置的 ``rosdoc2.yaml``、用于 Sphinx 设置的 ``conf.py``，以及用于 Doxygen 设置的 ``Doxyfile``。如果这些文件不存在，都会采用或生成默认配置，因此它们都不是严格必需的。不过，如果需要使用自定义文本页面等功能，可能需要创建并修改这些文件。
+ROS 功能包文档有三个配置位置：用于通用设置的 ``rosdoc2.yaml`` 、用于 Sphinx 设置的 ``conf.py`` ，以及用于 Doxygen 设置的 ``Doxyfile`` 。如果这些文件不存在，都会采用或生成默认配置，因此它们都不是严格必需的。不过，如果需要使用自定义文本页面等功能，可能需要创建并修改这些文件。
 
 rosdoc2.yaml
 ^^^^^^^^^^^^
@@ -70,7 +70,7 @@ conf.py、rosdoc2_settings
 
 功能包文档的最终输出几乎总是由 Sphinx 构建。每个 Sphinx 项目都通过 ``doc`` 目录中的 ``conf.py`` 文件配置。
 
-如果不存在配置文件，构建文档时会创建并使用默认 Sphinx 项目。如果功能包的 ``doc`` 子目录中存在 ``conf.py``，则会使用该配置。
+如果不存在配置文件，构建文档时会创建并使用默认 Sphinx 项目。如果功能包的 ``doc`` 子目录中存在 ``conf.py`` ，则会使用该配置。
 
 如果希望包含独立的 reStructuredText 文档页面，则必须创建自定义 Sphinx 项目。独立文档页面可以列出多个教程和指南；如果希望在功能包文档中实现这一点，就需要创建自定义 Sphinx 项目。
 
@@ -91,7 +91,7 @@ Doxygen 是一种根据代码注释自动生成 C++ API 文档的工具。虽然
 
 如果希望在自动生成的 API 文档之外添加独立文档页面，就需要创建自定义 Sphinx 项目。该项目应放在功能包目录下名为 ``doc`` 的子目录中。
 
-可以在 ``doc`` 目录中运行 ``sphinx-quickstart`` 创建新的 Sphinx 项目，并在“Separate source and build directories”问题中选择 ``no``。向导要求输入项目名称、作者和版本，但之后可以删除这些信息，因为 ``rosdoc2`` 会根据功能包的 ``package.xml`` 将其提供给 Sphinx。
+可以在 ``doc`` 目录中运行 ``sphinx-quickstart`` 创建新的 Sphinx 项目，并在“Separate source and build directories”问题中选择 ``no`` 。向导要求输入项目名称、作者和版本，但之后可以删除这些信息，因为 ``rosdoc2`` 会根据功能包的 ``package.xml`` 将其提供给 Sphinx。
 
 更多信息请参阅 `Sphinx quickstart <https://www.sphinx-doc.org/en/master/usage/quickstart.html>`_。
 
@@ -111,7 +111,7 @@ Doxygen 是一种根据代码注释自动生成 C++ API 文档的工具。虽然
 
     sys.path.insert(0, os.path.abspath('.'))
 
-这是因为 ``rosdoc2`` 会使用脚本中的其他配置包装自定义 ``conf.py``。在这种情况下，由于 rosdoc2 与 conf.py 的交互，``os.path.abspath`` 中的 ``.`` 指向功能包根目录，而不是功能包的 ``doc`` 目录。
+这是因为 ``rosdoc2`` 会使用脚本中的其他配置包装自定义 ``conf.py`` 。在这种情况下，由于 rosdoc2 与 conf.py 的交互，``os.path.abspath`` 中的 ``.`` 指向功能包根目录，而不是功能包的 ``doc`` 目录。
 
 默认情况下，功能包 API 文档已经可以通过首页上的“Module Index”链接访问。如果还希望 API 文档显示在目录中，只需在 ``index.rst`` 中添加指向 ``modules`` 页面 的链接：
 
@@ -126,7 +126,7 @@ Doxygen 是一种根据代码注释自动生成 C++ API 文档的工具。虽然
 添加 C++ API 文档
 ^^^^^^^^^^^^^^^^^
 
-如果希望将自动生成的 API 文档添加到自定义首页，请在希望显示 API 文档的位置添加 ``generated/index``：
+如果希望将自动生成的 API 文档添加到自定义首页，请在希望显示 API 文档的位置添加 ``generated/index`` ：
 
 .. code-block:: rst
 
@@ -137,7 +137,7 @@ Doxygen 是一种根据代码注释自动生成 C++ API 文档的工具。虽然
 
 这会在侧边栏目录中添加“Class Hierarchy”“File Hierarchy”和“Reference”等条目。
 
-如果希望将它们归到一个“C++ API Docs”标题下，避免侧边栏过于杂乱，可以创建一个单独的文件，例如 ``cpp_api_docs.rst``，并链接到生成的文档：
+如果希望将它们归到一个“C++ API Docs”标题下，避免侧边栏过于杂乱，可以创建一个单独的文件，例如 ``cpp_api_docs.rst`` ，并链接到生成的文档：
 
 .. code-block:: rst
     :caption: cpp_api_docs.rst
@@ -167,9 +167,9 @@ Doxygen 是一种根据代码注释自动生成 C++ API 文档的工具。虽然
 包含已有 README.md
 ------------------
 
-如果 Git 仓库中已经有 ``README.md``，可以直接将其用作文档首页，而无需重复维护内容。为了在 Sphinx 中正确包含 Markdown 文件，并保留相对链接和图片路径，需要额外处理。
+如果 Git 仓库中已经有 ``README.md`` ，可以直接将其用作文档首页，而无需重复维护内容。为了在 Sphinx 中正确包含 Markdown 文件，并保留相对链接和图片路径，需要额外处理。
 
-首先，在 ``index.rst`` 旁边创建代理文件 ``readme_include.md``。该 Markdown 文件只负责包含原始 README.md，同时保留相对图片路径，避免下一步中图片路径失效：
+首先，在 ``index.rst`` 旁边创建代理文件 ``readme_include.md`` 。该 Markdown 文件只负责包含原始 README.md，同时保留相对图片路径，避免下一步中图片路径失效：
 
 .. code-block:: markdown
     :caption: readme_include.md
@@ -186,7 +186,7 @@ Doxygen 是一种根据代码注释自动生成 C++ API 文档的工具。虽然
     .. include:: readme_include.md
        :parser: myst_parser.sphinx_
 
-还需要在 ``conf.py`` 的扩展列表中添加 ``myst_parser``：
+还需要在 ``conf.py`` 的扩展列表中添加 ``myst_parser`` ：
 
 .. code-block:: python
     :caption: conf.py
@@ -196,7 +196,7 @@ Doxygen 是一种根据代码注释自动生成 C++ API 文档的工具。虽然
 CI 与 docs.ros.org
 ------------------
 
-ROS 构建农场使用 ``rosdoc2`` 构建功能包文档，并托管在 ``docs.ros.org/en/<distro>/p/<package>/``。
+ROS 构建农场使用 ``rosdoc2`` 构建功能包文档，并托管在 ``docs.ros.org/en/<distro>/p/<package>/`` 。
 
 要启用此功能，必须在 ``rosdistro/{DISTRO}/distribution.yaml`` 中配置包含文档的代码仓库。通常这就是功能包的源码仓库：
 
