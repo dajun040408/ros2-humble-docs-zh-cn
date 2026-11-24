@@ -35,7 +35,7 @@
   $ sudo rosdep init
   $ rosdep update
 
-注意，如果此前已经初始化过 rosdep，`rosdep init` 命令可能会失败；这种情况可以安全忽略。
+注意，如果此前已经初始化过 rosdep，``rosdep init`` 命令可能会失败；这种情况可以安全忽略。
 
 从功能包构建 deb
 ----------------

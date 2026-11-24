@@ -29,9 +29,9 @@ Best Effort 设置可以减少网络流量，因为 DDS 实现不需要承担可
 
 不过，如果 IP 分片缓冲区已经占满，仍然可能出现 30 秒阻塞。因此，该方法可以在不调整参数的情况下缓解问题，但无法彻底解决。
 
-**解决方案：** 减小 `ipfrag_time` 参数。
+**解决方案：** 减小 ``ipfrag_time`` 参数。
 
-`net.ipv4.ipfrag_time`（路径：`/proc/sys/net/ipv4/ipfrag_time`，默认值：30 秒）表示 IP 分片在内存中保留的时间。
+``net.ipv4.ipfrag_time`（路径：``/proc/sys/net/ipv4/ipfrag_time`，默认值：30 秒）表示 IP 分片在内存中保留的时间。
 
 例如，将其减小到 3 秒：
 
@@ -41,9 +41,9 @@ Best Effort 设置可以减少网络流量，因为 DDS 实现不需要承担可
 
 减小该参数可以缩短没有收到完整分片时的等待窗口。该参数对所有传入分片全局生效，因此需要结合具体环境评估是否适合减小。
 
-**解决方案：** 增大 `ipfrag_high_thresh` 参数。
+**解决方案：** 增大 ``ipfrag_high_thresh`` 参数。
 
-`net.ipv4.ipfrag_high_thresh`（路径：`/proc/sys/net/ipv4/ipfrag_high_thresh`，默认值：262144 字节）表示用于重组 IP 分片的最大内存量。
+``net.ipv4.ipfrag_high_thresh`（路径：``/proc/sys/net/ipv4/ipfrag_high_thresh`，默认值：262144 字节）表示用于重组 IP 分片的最大内存量。
 
 例如，将其增加到 128 MB：
 
@@ -51,28 +51,28 @@ Best Effort 设置可以减少网络流量，因为 DDS 实现不需要承担可
 
     $ sudo sysctl net.ipv4.ipfrag_high_thresh=134217728     # 128 MB
 
-显著增大该参数，是为了尽量避免缓冲区被完全占满。不过，如果假设每个 UDP 数据包都缺少一个分片，那么要容纳 `ipfrag_time` 时间窗口内收到的所有数据，可能需要设置非常大的值。
+显著增大该参数，是为了尽量避免缓冲区被完全占满。不过，如果假设每个 UDP 数据包都缺少一个分片，那么要容纳 ``ipfrag_time`` 时间窗口内收到的所有数据，可能需要设置非常大的值。
 
-**问题：** 发送包含大型可变长度非原始类型数组的自定义消息时，会产生较高的序列化/反序列化开销和 CPU 负载。这可能导致 `publish()` 花费过多时间，使发布者停滞，并使 `ros2 topic hz` 低估实际接收频率。
+**问题：** 发送包含大型可变长度非原始类型数组的自定义消息时，会产生较高的序列化/反序列化开销和 CPU 负载。这可能导致 ``publish()`` 花费过多时间，使发布者停滞，并使 ``ros2 topic hz`` 低估实际接收频率。
 
-例如，`builtin_interfaces/Time` 也被视为非原始类型，会产生更高的序列化开销。因此，将 ROS 1 自定义消息类型直接迁移到 ROS 2 时，如果不考虑这一点，可能会出现明显的性能下降。
+例如，``builtin_interfaces/Time`` 也被视为非原始类型，会产生更高的序列化开销。因此，将 ROS 1 自定义消息类型直接迁移到 ROS 2 时，如果不考虑这一点，可能会出现明显的性能下降。
 
-**解决方法：** 使用多个原始类型数组替代单个自定义类型数组，或者像 `PointCloud2` 消息那样打包到字节数组中。
+**解决方法：** 使用多个原始类型数组替代单个自定义类型数组，或者像 ``PointCloud2`` 消息那样打包到字节数组中。
 
-例如，不要将 `FooArray` 定义为：
+例如，不要将 ``FooArray`` 定义为：
 
 .. code-block:: text
 
     Foo[] my_large_array
 
-其中 `Foo` 定义为：
+其中 ``Foo`` 定义为：
 
 .. code-block:: text
 
     uint64 foo_1
     uint32 foo_2
 
-而应将 `FooArray` 定义为：
+而应将 ``FooArray`` 定义为：
 
 .. code-block:: text
 
@@ -99,13 +99,13 @@ Cyclone DDS 调优
 
 针对 9 MB 消息的调整方式：
 
-运行以下命令设置最大接收缓冲区 `rmem_max`：
+运行以下命令设置最大接收缓冲区 ``rmem_max``：
 
 .. code-block:: console
 
     $ sudo sysctl -w net.core.rmem_max=2147483647
 
-也可以编辑 `/etc/sysctl.d/10-cyclone-max.conf` 文件，永久设置：
+也可以编辑 ``/etc/sysctl.d/10-cyclone-max.conf`` 文件，永久设置：
 
 .. code-block:: bash
 
@@ -136,22 +136,22 @@ RTI Connext 调优
 
 **问题：** 即使使用 Reliable 设置并通过有线网络传输，Connext 仍无法可靠传递大型消息。
 
-**解决方案：** 使用 `Connext QoS 配置文件 <https://github.com/jacobperron/pc_pipe/blob/master/etc/ROS2TEST_QOS_PROFILES.xml>`_，并增大 `rmem_max` 参数。
+**解决方案：** 使用 `Connext QoS 配置文件 <https://github.com/jacobperron/pc_pipe/blob/master/etc/ROS2TEST_QOS_PROFILES.xml>`_，并增大 ``rmem_max`` 参数。
 
-运行以下命令设置最大接收缓冲区 `rmem_max`：
+运行以下命令设置最大接收缓冲区 ``rmem_max``：
 
 .. code-block:: console
 
     $ sudo sysctl -w net.core.rmem_max=4194304
 
-通过将 Linux 内核的 `net.core.rmem_max` 调整到 4 MB，该 QoS 配置文件可以实现真正可靠的通信。
+通过将 Linux 内核的 ``net.core.rmem_max`` 调整到 4 MB，该 QoS 配置文件可以实现真正可靠的通信。
 
-该配置已经在 SHMEM|UDPv4 以及单机 UDPv4 场景中验证能够可靠传递消息。还测试了两台通过 1 Gbps 以太网连接的计算机，在 `rmem_max` 分别为 4 MB 和 20 MB 时，均未丢失消息，平均消息传输时间分别为 700 ms 和 371 ms。
+该配置已经在 SHMEM|UDPv4 以及单机 UDPv4 场景中验证能够可靠传递消息。还测试了两台通过 1 Gbps 以太网连接的计算机，在 ``rmem_max`` 分别为 4 MB 和 20 MB 时，均未丢失消息，平均消息传输时间分别为 700 ms 和 371 ms。
 
-如果不配置内核 `rmem_max`，相同的 Connext QoS 配置文件可能需要最多 12 秒才能完成数据传输，但最终仍能够完成传递。
+如果不配置内核 ``rmem_max``，相同的 Connext QoS 配置文件可能需要最多 12 秒才能完成数据传输，但最终仍能够完成传递。
 
-**解决方案：** 也可以使用 `Connext QoS 配置文件 <https://github.com/jacobperron/pc_pipe/blob/master/etc/ROS2TEST_QOS_PROFILES.xml>`_，但不调整 `rmem_max`。
+**解决方案：** 也可以使用 `Connext QoS 配置文件 <https://github.com/jacobperron/pc_pipe/blob/master/etc/ROS2TEST_QOS_PROFILES.xml>`_，但不调整 ``rmem_max``。
 
-`ROS2TEST_QOS_PROFILES.xml` 文件根据 RTI 关于 `配置流量控制器 <https://community.rti.com/forum-topic/transfering-large-data-over-dds>`_ 的文档配置，包含慢速、中速和快速三种流量控制器（可在 Connext QoS 配置文件中查看）。
+``ROS2TEST_QOS_PROFILES.xml`` 文件根据 RTI 关于 `配置流量控制器 <https://community.rti.com/forum-topic/transfering-large-data-over-dds>`_ 的文档配置，包含慢速、中速和快速三种流量控制器（可在 Connext QoS 配置文件中查看）。
 
 在我们的测试场景中，中速流量控制器效果最好。不过，仍需根据具体机器、网络和环境进行调优。Connext 流量控制器可用于调节带宽和发送数据的积极程度；一旦超过特定配置的带宽能力，性能就会开始下降。
