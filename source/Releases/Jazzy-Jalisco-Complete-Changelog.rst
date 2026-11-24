@@ -16,8 +16,8 @@ ROS 2 的完整变更日志按功能包组织。每个功能包条目包含版�
 
 以下链接指向 ROS 2 官方文档仓库中本发行版的完整变更记录。上游逐包条目目前仍以英文发布；本中文页面提供发行版说明和导航入口，逐条变更内容应以对应上游记录为准。
 
-* §ros2/ros2_documentation jazzy 分支 <https://github.com/ros2/ros2_documentation/blob/jazzy/source/Releases/Jazzy-Jalisco-Complete-Changelog.rst>§_
-* §ROS 2 Jazzy Jalisco 发行说明 <https://docs.ros.org/en/jazzy/Releases/Release-Jazzy-Jalisco.html>§_
+* `ros2/ros2_documentation jazzy 分支 <https://github.com/ros2/ros2_documentation/blob/jazzy/source/Releases/Jazzy-Jalisco-Complete-Changelog.rst>`_
+* `ROS 2 Jazzy Jalisco 发行说明 <https://docs.ros.org/en/jazzy/Releases/Release-Jazzy-Jalisco.html>`_
 
 如何阅读
 --------

@@ -14,7 +14,7 @@
 
 由于向不同 ROS 发行版发布软件包时，部分配置可能不同，Bloom 使用**发布轨道（release tracks）存储每个发行版的发布配置**。按照惯例，轨道名称应与目标 ROS 发行版名称相同。
 
-所有发布轨道配置都存储在发布仓库 master 分支的 §tracks.yaml§ 文件中。
+所有发布轨道配置都存储在发布仓库 master 分支的 ``tracks.yaml`` 文件中。
 
 轨道配置
 --------
@@ -26,7 +26,7 @@
 发布仓库 URL
 ^^^^^^^^^^^^
 
-这是发布仓库的 URL。如果发布仓库托管在 ros2-gbp 上，格式应类似 §https://github.com/ros2-gbp/my_repo-release.git§。
+这是发布仓库的 URL。如果发布仓库托管在 ros2-gbp 上，格式应类似 <https://github.com/ros2-gbp/my_repo-release.git>_。
 
 .. code-block:: bash
 
@@ -61,7 +61,7 @@ Bloom 还可能询问是否初始化新仓库：
          Name of the repository (used in the archive name)
       ['upstream']:
 
-输入项目名称（例如 §my_project§），然后按 Enter。
+输入项目名称（例如 ``my_project``），然后按 Enter。
 
 .. _upstream-repository-uri:
 
@@ -79,14 +79,14 @@ Bloom 还可能询问是否初始化新仓库：
          where the :{version} token will be replaced with the version for this release.
       [None]:
 
-请确保**使用 HTTPS 地址**（例如 §https://github.com/my_organization/my_repo.git§），而不是 SSH 地址。
+请确保**使用 HTTPS 地址**（例如 <https://github.com/my_organization/my_repo.git>_），而不是 SSH 地址。
 
 .. _upstream-vcs-type:
 
 上游版本控制系统类型
 ^^^^^^^^^^^^^^^^^^^^
 
-这是 :ref:§上游仓库 URI <upstream-repository-uri>§ 对应的版本控制系统（VCS）类型。必须从 §svn§、§git§、§hg§ 或 §tar§ 中指定仓库所使用的类型。
+这是 :ref:`上游仓库 URI <upstream-repository-uri>` 对应的版本控制系统（VCS）类型。必须从 ``svn``、``git``、``hg`` 或 ``tar`` 中指定仓库所使用的类型。
 
 .. code-block:: bash
 
@@ -108,7 +108,7 @@ Bloom 还可能询问是否初始化新仓库：
 版本
 ^^^^
 
-这是你要发布的软件包版本，例如 §1.0.3§。
+这是你要发布的软件包版本，例如 ``1.0.3``。
 
 .. code-block:: bash
 
@@ -125,9 +125,9 @@ Bloom 还可能询问是否初始化新仓库：
          It must be updated for each new upstream version.
       [':{auto}']:
 
-设置为 §:{auto}§（默认值，也是推荐配置）时，会自动从开发分支的 §package.xml§ 中确定版本。
+设置为 ``:{auto}``（默认值，也是推荐配置）时，会自动从开发分支的 ``package.xml`` 中确定版本。
 
-设置为 §:{ask}§ 时，每次使用 Bloom 发布都会提示输入版本。
+设置为 ``:{ask}`` 时，每次使用 Bloom 发布都会提示输入版本。
 
 .. _release-tag:
 
@@ -155,20 +155,20 @@ Bloom 还可能询问是否初始化新仓库：
          it is ignored.  For svn this means no revision number is used.
       [':{version}']:
 
-设置为 §:{version}§（默认值，也是推荐配置）时，发布标签会与版本标签一致。
+设置为 ``:{version}``（默认值，也是推荐配置）时，发布标签会与版本标签一致。
 
 不太常见的配置是将其设置为分支名称，以便每次发布时始终从上游项目导入该分支的最新内容。
 
-如果希望每次发布时都提示输入不同标签，也可以设置为 §:{ask}§。当上游项目频繁发布带标签的版本，并且你希望每次发布都使用最新标签时，§:{ask}§ 很有用。
+如果希望每次发布时都提示输入不同标签，也可以设置为 ``:{ask}``。当上游项目频繁发布带标签的版本，并且你希望每次发布都使用最新标签时，``:{ask}`` 很有用。
 
 .. _upstream-devel-branch:
 
 上游开发分支
 ^^^^^^^^^^^^
 
-上游开发分支是 :ref:§上游仓库 <upstream-repository-uri>§ 中的分支名称。如果为每个 ROS 发行版使用独立分支，则不同发布轨道的该字段会有所不同。
+上游开发分支是 :ref:`上游仓库 <upstream-repository-uri>` 中的分支名称。如果为每个 ROS 发行版使用独立分支，则不同发布轨道的该字段会有所不同。
 
-当 :ref:§版本 <version>§ 设置为 §:{auto}§ 时，该字段用于确定要发布的软件包版本。
+当 :ref:`版本 <version>` 设置为 ``:{auto}`` 时，该字段用于确定要发布的软件包版本。
 
 .. code-block:: bash
 
@@ -178,7 +178,7 @@ Bloom 还可能询问是否初始化新仓库：
          This is used only when version is set to ':{auto}'.
       [None]:
 
-如果要从名为 §{DISTRO}§ 的分支发布，请输入 §{DISTRO}§。如果保留为 §None§，则会从仓库默认分支确定版本（不推荐这样做）。
+如果要从名为 ``{DISTRO}`` 的分支发布，请输入 ``{DISTRO}``。如果保留为 ``None``，则会从仓库默认分支确定版本（不推荐这样做）。
 
 .. _ros-distro:
 
@@ -194,7 +194,7 @@ ROS 发行版
          This can be any valid ROS distro, e.g. indigo, kinetic, lunar, melodic
       ['indigo']:
 
-如果计划发布到 ROS {DISTRO}，请输入 §{DISTRO}§。
+如果计划发布到 ROS {DISTRO}，请输入 ``{DISTRO}``。
 
 .. _patches-directory:
 
@@ -216,7 +216,7 @@ ROS 发行版
          Use this if you want to disable overlaying of files.
       [None]:
 
-向发布版本添加额外补丁的情况并不常见。对于绝大多数软件包，应保留默认值 §None§。
+向发布版本添加额外补丁的情况并不常见。对于绝大多数软件包，应保留默认值 ``None``。
 
 .. _release-repository-push-url:
 

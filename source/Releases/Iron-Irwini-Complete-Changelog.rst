@@ -16,8 +16,8 @@ ROS 2 的完整变更日志按功能包组织。每个功能包条目包含版�
 
 以下链接指向 ROS 2 官方文档仓库中本发行版的完整变更记录。上游逐包条目目前仍以英文发布；本中文页面提供发行版说明和导航入口，逐条变更内容应以对应上游记录为准。
 
-* §ros2/ros2_documentation iron 分支 <https://github.com/ros2/ros2_documentation/blob/iron/source/Releases/Iron-Irwini-Complete-Changelog.rst>§_
-* §ROS 2 Iron Irwini 发行说明 <https://docs.ros.org/en/iron/Releases/Release-Iron-Irwini.html>§_
+* `ros2/ros2_documentation iron 分支 <https://github.com/ros2/ros2_documentation/blob/iron/source/Releases/Iron-Irwini-Complete-Changelog.rst>`_
+* `ROS 2 Iron Irwini 发行说明 <https://docs.ros.org/en/iron/Releases/Release-Iron-Irwini.html>`_
 
 如何阅读
 --------
