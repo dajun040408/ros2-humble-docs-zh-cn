@@ -229,3 +229,11 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - `Introducing-Turtlesim.rst` 已补齐 set_pen、重映射、关闭仿真、总结、下一步及相关内容；`Understanding-ROS2-Topics.rst` 已补齐 interface show、topic pub/hz/bw/find、清理环境和总结等章节。
 - 其余配置环境、启动多个节点、录制回放、理解节点、理解参数、理解服务及 rqt_console 页面，本轮章节结构和主要图片/代码示例数量与上游 Humble 对应；未发现整章缺失。但结构计数不等于逐句语义审校，后续仍需抽查译文准确性、链接和网页呈现。
 - 本轮最新修改尚待 GitHub Actions 完整构建、部署及线上 HTML 验收；不得将前一轮 #736 成功视为本轮修改已部署。
+
+## 2026-11-24 Beginner CLI Tools 部署及全站构建日志复核
+
+- 构建 #739（提交 `c92e637`）build 与 deploy 均成功，Beginner CLI Tools 本轮页面修改已进入 GitHub Pages 发布产物。
+- 检查 #739 的 Sphinx 日志时，额外发现 Humble 完整变更日志的两个历史 RST 问题：`part-004.rst` 首行存在孤立的标题分隔线，导致 CRITICAL “Missing matching underline for section title overline”；`part-032.rst` 的 turtlesim `qreal orient_` 行触发 inline literal 警告。
+- 已定位 `part-004.rst` 的孤立分隔线属于切分文件时遗留的多余行；前一文件已经包含 `ament_cmake_pep257` 标题，故删除孤立分隔线，保留其后条目作为该节正文。提交：`df624d9c7cbb62ac3255b7a916d7563fe3ffae81`。
+- 已将 `part-032.rst` 中 ``qreal orient\\_`` 改为 ``qreal orient_``，避免 docutils 将行内 literal 解析为未闭合。提交：`b46c9577c3e58de936f5252eb37beabe59d0f19b`。
+- 上述两项修复尚待新的完整 Sphinx 构建日志确认；此前 #739 虽然部署成功，但工作流没有启用 warnings-as-errors，不能仅凭 success 认定没有 RST 错误。
