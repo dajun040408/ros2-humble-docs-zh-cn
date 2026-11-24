@@ -22,12 +22,12 @@
 
 前面的教程使用同一台计算机上的两个 ROS 节点，所有网络通信都通过 localhost 接口进行。现在将场景扩展到多台计算机，以便更直观地理解身份验证和加密的价值。
 
-假设上一示例中创建密钥库的计算机主机名为 `Alice`，我们还希望使用另一台主机名为 `Bob` 的计算机运行多机 `talker/listener` 示例。为了让 SROS 2 能够验证并加密传输内容，需要将部分密钥从 `Alice` 复制到 `Bob`。
+假设上一示例中创建密钥库的计算机主机名为 ``Alice``，我们还希望使用另一台主机名为 ``Bob`` 的计算机运行多机 ``talker/listener`` 示例。为了让 SROS 2 能够验证并加密传输内容，需要将部分密钥从 ``Alice`` 复制到 ``Bob``。
 
 创建第二个密钥库
 ----------------
 
-首先，在 `Bob` 上创建一个空密钥库；实际上，密钥库只是一个空目录：
+首先，在 ``Bob`` 上创建一个空密钥库；实际上，密钥库只是一个空目录：
 
 .. tabs::
 
@@ -58,7 +58,7 @@
 复制文件
 --------
 
-接下来，将 `talker` 程序的密钥和证书从 `Alice` 复制到 `Bob`。由于密钥只是文本文件，可以使用 `scp` 进行复制。
+接下来，将 ``talker`` 程序的密钥和证书从 ``Alice`` 复制到 ``Bob``。由于密钥只是文本文件，可以使用 ``scp`` 进行复制。
 
 .. tabs::
 
@@ -92,18 +92,18 @@
 启动节点
 --------
 
-环境配置完成后，在 `Bob` 上运行 talker：
+环境配置完成后，在 ``Bob`` 上运行 talker：
 
 .. code-block:: console
 
   $ ros2 run demo_nodes_cpp talker --ros-args --enclave /talker_listener/talker
 
-然后在 `Alice` 上启动 listener：
+然后在 ``Alice`` 上启动 listener：
 
 .. code-block:: console
 
   $ ros2 run demo_nodes_py listener --ros-args --enclave /talker_listener/listener
 
-此时，`Alice` 将接收到来自 `Bob` 的加密消息。
+此时，``Alice`` 将接收到来自 ``Bob`` 的加密消息。
 
 两台计算机成功通过加密和身份验证进行通信后，就可以使用相同流程将更多计算机添加到 ROS 计算图中。
