@@ -31,7 +31,7 @@ Best Effort 设置可以减少网络流量，因为 DDS 实现不需要承担可
 
 **解决方案：** 减小 ``ipfrag_time`` 参数。
 
-``net.ipv4.ipfrag_time``（路径：``/proc/sys/net/ipv4/ipfrag_time``，默认值：30 秒）表示 IP 分片在内存中保留的时间。
+``net.ipv4.ipfrag_time``（路径：``/proc/sys/net/ipv4/ipfrag_time`` ，默认值：30 秒）表示 IP 分片在内存中保留的时间。
 
 例如，将其减小到 3 秒：
 
@@ -43,7 +43,7 @@ Best Effort 设置可以减少网络流量，因为 DDS 实现不需要承担可
 
 **解决方案：** 增大 ``ipfrag_high_thresh`` 参数。
 
-``net.ipv4.ipfrag_high_thresh``（路径：``/proc/sys/net/ipv4/ipfrag_high_thresh``，默认值：262144 字节）表示用于重组 IP 分片的最大内存量。
+``net.ipv4.ipfrag_high_thresh``（路径：``/proc/sys/net/ipv4/ipfrag_high_thresh`` ，默认值：262144 字节）表示用于重组 IP 分片的最大内存量。
 
 例如，将其增加到 128 MB：
 
@@ -99,7 +99,7 @@ Cyclone DDS 调优
 
 针对 9 MB 消息的调整方式：
 
-运行以下命令设置最大接收缓冲区 ``rmem_max``：
+运行以下命令设置最大接收缓冲区 ``rmem_max`` ：
 
 .. code-block:: console
 
@@ -138,7 +138,7 @@ RTI Connext 调优
 
 **解决方案：** 使用 `Connext QoS 配置文件 <https://github.com/jacobperron/pc_pipe/blob/master/etc/ROS2TEST_QOS_PROFILES.xml>`_，并增大 ``rmem_max`` 参数。
 
-运行以下命令设置最大接收缓冲区 ``rmem_max``：
+运行以下命令设置最大接收缓冲区 ``rmem_max`` ：
 
 .. code-block:: console
 
@@ -148,9 +148,9 @@ RTI Connext 调优
 
 该配置已经在 SHMEM|UDPv4 以及单机 UDPv4 场景中验证能够可靠传递消息。还测试了两台通过 1 Gbps 以太网连接的计算机，在 ``rmem_max`` 分别为 4 MB 和 20 MB 时，均未丢失消息，平均消息传输时间分别为 700 ms 和 371 ms。
 
-如果不配置内核 ``rmem_max``，相同的 Connext QoS 配置文件可能需要最多 12 秒才能完成数据传输，但最终仍能够完成传递。
+如果不配置内核 ``rmem_max`` ，相同的 Connext QoS 配置文件可能需要最多 12 秒才能完成数据传输，但最终仍能够完成传递。
 
-**解决方案：** 也可以使用 `Connext QoS 配置文件 <https://github.com/jacobperron/pc_pipe/blob/master/etc/ROS2TEST_QOS_PROFILES.xml>`_，但不调整 ``rmem_max``。
+**解决方案：** 也可以使用 `Connext QoS 配置文件 <https://github.com/jacobperron/pc_pipe/blob/master/etc/ROS2TEST_QOS_PROFILES.xml>`_，但不调整 ``rmem_max`` 。
 
 ``ROS2TEST_QOS_PROFILES.xml`` 文件根据 RTI 关于 `配置流量控制器 <https://community.rti.com/forum-topic/transfering-large-data-over-dds>`_ 的文档配置，包含慢速、中速和快速三种流量控制器（可在 Connext QoS 配置文件中查看）。
 
