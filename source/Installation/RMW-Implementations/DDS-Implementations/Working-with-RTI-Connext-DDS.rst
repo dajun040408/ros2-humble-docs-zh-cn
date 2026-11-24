@@ -11,20 +11,20 @@ RTI Connext DDS 已应用于全球 2000 多个要求严苛的系统设计中，�
 安装 RTI Connext DDS
 ^^^^^^^^^^^^^^^^^^^^
 
-构建和使用 `rmw_connextdds` 需要安装与当前 ROS 2 发行版兼容的 Connext DDS 版本。
+构建和使用 ``rmw_connextdds`` 需要安装与当前 ROS 2 发行版兼容的 Connext DDS 版本。
 
-通过 apt 安装 `rmw_connextdds` 时会自动安装 Connext DDS，也可以手动安装，以便从源码构建。
+通过 apt 安装 ``rmw_connextdds`` 时会自动安装 Connext DDS，也可以手动安装，以便从源码构建。
 
 下表列出了通过 apt 安装的 Connext DDS 版本，以及从源码构建所需的版本：
 
 ==================  ===================  ====================
 ROS 2 发行版        apt 安装版本         源码构建所需版本
 ==================  ===================  ====================
-rolling             不适用               `7.7.0`
-lyrical              `7.7.0`              `7.7.0`
-kilted               `7.3.0`              `7.3.0`
-jazzy                `6.0.1`              `6.0.1`
-humble               `6.0.1`              `6.0.1`
+rolling             不适用               ``7.7.0``
+lyrical              ``7.7.0``              ``7.7.0``
+kilted               ``7.3.0``              ``7.3.0``
+jazzy                ``6.0.1``              ``6.0.1``
+humble               ``6.0.1``              ``6.0.1``
 ==================  ===================  ====================
 
 RTI Connext Pro 提供多种获取方式。
@@ -49,7 +49,7 @@ ROS 2 用户可以从 ROS apt 软件源安装适用于 x86_64 Linux 的 RTI Conn
 
 该软件包只包含 RTI Connext 核心 DDS 库，不包含完整的 Connext Professional 工具套件和运行时服务。
 
-注意：通过 apt 安装 `rmw_connextdds` 时，会自动安装这些 Connext 库。
+注意：通过 apt 安装 ``rmw_connextdds`` 时，会自动安装这些 Connext 库。
 
 **其他安装方式**
 
@@ -60,7 +60,7 @@ ROS 2 用户可以从 ROS apt 软件源安装适用于 x86_64 Linux 的 RTI Conn
 安装 rmw_connextdds 二进制软件包
 --------------------------------
 
-要从 ROS 2 apt 软件源安装 `rmw_connextdds` 二进制软件包及 Connext 库，请运行：
+要从 ROS 2 apt 软件源安装 ``rmw_connextdds`` 二进制软件包及 Connext 库，请运行：
 
 .. code-block:: console
 
@@ -73,7 +73,7 @@ ROS 2 用户可以从 ROS apt 软件源安装适用于 x86_64 Linux 的 RTI Conn
 
 以下说明假设构建主机和目标平台均为 Linux x86_64。有关其他平台和目标（包括 Arm、Windows 和 macOS）的构建说明，请参阅 `RTI ROS Community <https://community.rti.com/ros>`_。
 
-将 `rmw_connextdds` 仓库克隆到 ROS 2 工作空间，并选择与当前 ROS 2 发行版相匹配的分支：
+将 ``rmw_connextdds`` 仓库克隆到 ROS 2 工作空间，并选择与当前 ROS 2 发行版相匹配的分支：
 
 .. code-block:: console
 
@@ -83,7 +83,7 @@ ROS 2 用户可以从 ROS apt 软件源安装适用于 x86_64 Linux 的 RTI Conn
 
 配置环境，使 colcon 能够找到 RTI Connext 的安装位置。
 
-可以手动将环境变量 `NDDSHOME` 设置为 RTI Connext 的安装目录，也可以使用 RTI Connext 安装包提供的脚本：
+可以手动将环境变量 ``NDDSHOME`` 设置为 RTI Connext 的安装目录，也可以使用 RTI Connext 安装包提供的脚本：
 
 .. code-block:: console
 
@@ -110,7 +110,7 @@ ROS 2 用户可以从 ROS apt 软件源安装适用于 x86_64 Linux 的 RTI Conn
 使用构建完成的 rmw_connextdds
 -----------------------------
 
-设置环境变量 `RMW_IMPLEMENTATION`，告诉 ROS 2 使用哪个 RMW：
+设置环境变量 ``RMW_IMPLEMENTATION``，告诉 ROS 2 使用哪个 RMW：
 
 .. code-block:: console
 
@@ -121,7 +121,7 @@ ROS 2 用户可以从 ROS apt 软件源安装适用于 x86_64 Linux 的 RTI Conn
 运行 talker 和 listener
 -----------------------
 
-现在运行 `talker` 和 `listener`，测试 RTI Connext DDS：
+现在运行 ``talker`` 和 ``listener``，测试 RTI Connext DDS：
 
 .. code-block:: console
 
