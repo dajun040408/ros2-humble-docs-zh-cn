@@ -5,7 +5,7 @@
 .. _windows-latest:
 
 Windows（源码安装）
-==================
+===================
 
 .. contents:: 目录
    :depth: 2
@@ -167,7 +167,7 @@ Fast DDS 已包含在 ROS 2 源码中。除非在 `src\eProsima` 目录中创建
 继续阅读 :doc:`教程和演示 <../../Tutorials>`，配置环境、创建自己的工作空间和功能包，并学习 ROS 2 核心概念。
 
 其他 RMW 实现（可选）
---------------------
+---------------------
 
 ROS 2 默认使用的中间件是 `Fast DDS`，但可以在运行时替换中间件（RMW）。有关如何使用多个 RMW 的说明，请参阅 :doc:`多 RMW 使用指南 <../../How-To-Guides/Working-with-multiple-RMW-implementations>`。
 
