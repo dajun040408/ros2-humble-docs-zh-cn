@@ -33,7 +33,7 @@ ROS 2 将复杂系统拆分为许多模块化节点。话题是 ROS 计算图的
 前置条件
 --------
 
-:doc:§上一篇教程 <../Understanding-ROS2-Nodes/Understanding-ROS2-Nodes>§ 介绍了节点的相关背景知识，本教程将在此基础上继续学习。
+:doc:`上一篇教程 <../Understanding-ROS2-Nodes/Understanding-ROS2-Nodes>` 介绍了节点的相关背景知识，本教程将在此基础上继续学习。
 
 每次打开新终端时，都不要忘记 source ROS 2 环境。
 
@@ -62,7 +62,7 @@ ROS 2 将复杂系统拆分为许多模块化节点。话题是 ROS 计算图的
 
 在本教程中，我们将使用 rqt_graph 可视化节点和话题的变化，以及它们之间的连接关系。
 
-:doc:§turtlesim 教程 <../Introducing-Turtlesim/Introducing-Turtlesim>§ 介绍了如何安装 rqt 及其所有插件，包括 rqt_graph。
+:doc:`turtlesim 教程 <../Introducing-Turtlesim/Introducing-Turtlesim>` 介绍了如何安装 rqt 及其所有插件，包括 rqt_graph。
 
 打开一个新终端并输入以下命令运行 rqt_graph：
 

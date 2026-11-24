@@ -20,14 +20,14 @@
 背景
 ----
 
-本教程将创建 :doc:§节点 <../Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes>§，让它们通过 :doc:§话题 <../Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics>§ 交换字符串消息。
+本教程将创建 :doc:`节点 <../Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes>`，让它们通过 :doc:`话题 <../Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics>` 交换字符串消息。
 
-示例采用简单的 talker 和 listener 系统：一个节点发布数据，另一个节点订阅话题并接收数据。示例代码位于§ros2/examples/rclpy/topics <https://github.com/ros2/examples/tree/{REPOS_FILE_BRANCH}/rclpy/topics>§_。
+示例采用简单的 talker 和 listener 系统：一个节点发布数据，另一个节点订阅话题并接收数据。示例代码位于`ros2/examples/rclpy/topics <https://github.com/ros2/examples/tree/{REPOS_FILE_BRANCH}/rclpy/topics>`_。
 
 前置条件
 --------
 
-此前的教程已经介绍了如何 :doc:§创建工作空间 <./Creating-A-Workspace/Creating-A-Workspace>§ 和 :doc:§创建功能包 <./Creating-Your-First-ROS2-Package>§。
+此前的教程已经介绍了如何 :doc:`创建工作空间 <./Creating-A-Workspace/Creating-A-Workspace>` 和 :doc:`创建功能包 <./Creating-Your-First-ROS2-Package>`。
 
 建议具备基本 Python 知识，但不是硬性要求。
 
@@ -37,7 +37,7 @@
 1. 创建功能包
 ^^^^^^^^^^^^^
 
-打开新终端并 :doc:§source ROS 2 安装环境 <../Beginner-CLI-Tools/Configuring-ROS2-Environment>§。
+打开新终端并 :doc:`source ROS 2 安装环境 <../Beginner-CLI-Tools/Configuring-ROS2-Environment>`。
 
 进入 ros2_ws/src 并创建功能包：
 

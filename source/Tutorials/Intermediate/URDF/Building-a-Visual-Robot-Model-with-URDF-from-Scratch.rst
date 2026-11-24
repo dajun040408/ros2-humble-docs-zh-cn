@@ -17,12 +17,12 @@
 
 .. note:: 本教程假设你了解格式规范的 XML 编写方式。
 
-本教程将构建一个外形类似 R2D2 的机器人可视化模型。后续教程会介绍如何 :doc:§添加可运动关节 <./Building-a-Movable-Robot-Model-with-URDF>§、:doc:§添加物理属性 <./Adding-Physical-and-Collision-Properties-to-a-URDF-Model>§，以及 :doc:§使用 xacro 简化代码 <./Using-Xacro-to-Clean-Up-a-URDF-File>§。
+本教程将构建一个外形类似 R2D2 的机器人可视化模型。后续教程会介绍如何 :doc:`添加可运动关节 <./Building-a-Movable-Robot-Model-with-URDF>`、:doc:`添加物理属性 <./Adding-Physical-and-Collision-Properties-to-a-URDF-Model>`，以及 :doc:`使用 xacro 简化代码 <./Using-Xacro-to-Clean-Up-a-URDF-File>`。
 
 前置条件
 --------
 
-请确保已安装 §joint_state_publisher§。如果通过二进制方式安装 §urdf_tutorial§，通常已经包含该依赖；否则请更新安装，并使用 rosdep 检查依赖。
+请确保已安装 ``joint_state_publisher``。如果通过二进制方式安装 ``urdf_tutorial``，通常已经包含该依赖；否则请更新安装，并使用 rosdep 检查依赖。
 
 一个形状
 --------
@@ -42,26 +42,26 @@
       </link>
     </robot>
 
-这段 XML 定义了一个名为 §myfirst§ 的机器人，其中只有一个连杆 §base_link§。该连杆的可视化部分是一个长度为 0.6 米、半径为 0.2 米的圆柱体。
+这段 XML 定义了一个名为 ``myfirst`` 的机器人，其中只有一个连杆 ``base_link``。该连杆的可视化部分是一个长度为 0.6 米、半径为 0.2 米的圆柱体。
 
-运行 §display.launch.py§ 查看模型：
+运行 ``display.launch.py`` 查看模型：
 
 .. code-block:: console
 
   $ ros2 launch urdf_tutorial display.launch.py model:=urdf/01-myfirst.urdf
 
-该启动文件会加载指定模型并将其作为参数传递给 §robot_state_publisher§，启动发布 §JointState§ 和 TF 的节点，并使用配置文件启动 RViz。
+该启动文件会加载指定模型并将其作为参数传递给 ``robot_state_publisher``，启动发布 ``JointState`` 和 TF 的节点，并使用配置文件启动 RViz。
 
 .. image:: https://raw.githubusercontent.com/ros/urdf_tutorial/ros2/images/myfirst.png
   :width: 800
   :alt: 第一个 URDF 模型
 
-需要注意，Fixed Frame 是网格中心所在的变换坐标系，本例由 §base_link§ 定义。§visual§ 元素的原点默认位于几何体中心，因此圆柱体有一半位于网格平面以下。
+需要注意，Fixed Frame 是网格中心所在的变换坐标系，本例由 ``base_link`` 定义。``visual`` 元素的原点默认位于几何体中心，因此圆柱体有一半位于网格平面以下。
 
 多个形状
 --------
 
-如果只在 URDF 中增加更多 §link§ 元素，解析器并不知道应该将它们放在哪里，因此必须添加关节。先从固定关节开始：
+如果只在 URDF 中增加更多 ``link`` 元素，解析器并不知道应该将它们放在哪里，因此必须添加关节。先从固定关节开始：
 
 .. code-block:: xml
 
@@ -87,7 +87,7 @@
       </joint>
     </robot>
 
-这里定义了一个尺寸为 §0.6m × 0.1m × 0.2m§ 的长方体。关节通过父连杆和子连杆定义。URDF 本质上是一棵只有一个根连杆的树，因此腿部的位置取决于 §base_link§ 的位置。
+这里定义了一个尺寸为 ``0.6m × 0.1m × 0.2m`` 的长方体。关节通过父连杆和子连杆定义。URDF 本质上是一棵只有一个根连杆的树，因此腿部的位置取决于 ``base_link`` 的位置。
 
 后续内容
 --------

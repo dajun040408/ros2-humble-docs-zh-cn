@@ -21,7 +21,7 @@ ROS 2 支持将多个节点组合到一个进程中运行。与每个节点单�
 组件
 ----
 
-可组合节点通常实现为共享库，并通过 §rclcpp_components§ 注册。组件类通常继承自 §rclcpp::Node§，构造函数接受 §rclcpp::NodeOptions§：
+可组合节点通常实现为共享库，并通过 ``rclcpp_components`` 注册。组件类通常继承自 ``rclcpp::Node``，构造函数接受 ``rclcpp::NodeOptions``：
 
 .. code-block:: cpp
 
@@ -45,7 +45,7 @@ ROS 2 支持将多个节点组合到一个进程中运行。与每个节点单�
 构建组件
 --------
 
-在 §CMakeLists.txt§ 中查找组件依赖，将源文件编译为共享库，并注册节点：
+在 ``CMakeLists.txt`` 中查找组件依赖，将源文件编译为共享库，并注册节点：
 
 .. code-block:: cmake
 
@@ -63,12 +63,12 @@ ROS 2 提供组件容器可执行程序。可以通过命令行将组件加载�
 
    $ ros2 run rclcpp_components component_container
 
-另一个终端中使用组件加载命令，将组件加入容器。也可以在 launch 文件中使用 §ComposableNodeContainer§ 和 §ComposableNode§ 描述容器及其组件。
+另一个终端中使用组件加载命令，将组件加入容器。也可以在 launch 文件中使用 ``ComposableNodeContainer`` 和 ``ComposableNode`` 描述容器及其组件。
 
 进程内通信
 ----------
 
-如果组件在同一进程中运行，可以通过 §use_intra_process_comms§ 参数启用进程内通信：
+如果组件在同一进程中运行，可以通过 ``use_intra_process_comms`` 参数启用进程内通信：
 
 .. code-block:: python
 
@@ -82,8 +82,8 @@ ROS 2 提供组件容器可执行程序。可以通过命令行将组件加载�
 选择容器
 --------
 
-* §component_container§：单线程执行器容器。
-* §component_container_mt§：多线程执行器容器。
+* ``component_container``：单线程执行器容器。
+* ``component_container_mt``：多线程执行器容器。
 
 如果组件需要多线程回调调度，应选择多线程容器，并合理配置回调组和线程安全机制。
 

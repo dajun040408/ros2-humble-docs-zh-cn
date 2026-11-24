@@ -27,7 +27,7 @@ ros2 bag 是一个命令行工具，用于录制系统中话题发布的数据�
 
 ros2 bag 通常已经包含在 ROS 2 安装环境中。
 
-如果需要安装 ROS 2，请参阅 :doc:§安装说明 <../../../Installation>§。
+如果需要安装 ROS 2，请参阅 :doc:`安装说明 <../../../Installation>`。
 
 本教程会使用前面教程介绍过的节点和话题概念，也会使用 turtlesim 软件包。每次打开新终端时，都不要忘记 source ROS 2 环境。
 
@@ -230,9 +230,9 @@ ros2 bag 只能录制话题中发布的消息。打开一个新终端，运行�
 下一步
 ------
 
-你已经完成“初级：CLI 工具”系列教程！下一步可以学习“初级：客户端库”系列教程，从 :doc:§创建工作空间 <../../Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>§ 开始。
+你已经完成“初级：CLI 工具”系列教程！下一步可以学习“初级：客户端库”系列教程，从 :doc:`创建工作空间 <../../Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>` 开始。
 
 相关内容
 --------
 
-有关 ros2 bag 的更完整说明，请参阅§rosbag2 README <https://github.com/ros2/rosbag2>§_。有关 QoS 兼容性和 ros2 bag 的更多信息，请参阅 :doc:§录制和回放时覆盖 QoS 策略 <../../../How-To-Guides/Overriding-QoS-Policies-For-Recording-And-Playback>§。
+有关 ros2 bag 的更完整说明，请参阅`rosbag2 README <https://github.com/ros2/rosbag2>`_。有关 QoS 兼容性和 ros2 bag 的更多信息，请参阅 :doc:`录制和回放时覆盖 QoS 策略 <../../../How-To-Guides/Overriding-QoS-Policies-For-Recording-And-Playback>`。
