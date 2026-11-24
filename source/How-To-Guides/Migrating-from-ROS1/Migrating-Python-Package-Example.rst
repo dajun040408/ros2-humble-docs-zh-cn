@@ -601,7 +601,7 @@ ROS 1 和 ROS 2 都使用 `回调函数 <https://en.wikipedia.org/wiki/Callback_
 在 ROS 2 中：
 
 * 必须从 ``Clock`` 实例获取时间。
-* 应使用 `f-string <https://docs.python.org/3/reference/lexical_analysis.html#f-strings>`__ 格式化字符串，因为 `%` 格式化方式在当前 Python 版本中已不推荐使用。
+* 应使用 `f-string <https://docs.python.org/3/reference/lexical_analysis.html#f-strings>`__ 格式化字符串，因为 ``%`` 格式化方式在当前 Python 版本中已不推荐使用。
 * 必须实例化 ``std_msgs.msg.String`` 对象。
 
 首先获取时间。ROS 2 节点具有 ``Clock`` 实例。将 ``rospy.get_time()`` 替换为 ``node.get_clock().now()``，以从节点时钟获取当前时间。
