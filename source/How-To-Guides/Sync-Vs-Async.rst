@@ -125,7 +125,7 @@ C++ 服务调用 API 仅提供异步方式，因此本指南中的比较和示�
 
 Python :doc:`简单服务和客户端 <../Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Service-And-Client>` 教程展示了如何执行异步服务调用，并通过循环获取 ``future``。
 
-也可以通过定时器或回调（例如 `此示例 <https://github.com/ros2/examples/blob/{REPOS_FILE_BRANCH}/rclpy/services/minimal_client/examples_rclpy_minimal_client/client_async_callback.py>`_）、专用线程或其他方式获取 ``future``。如何存储 ``future`、检查其状态并获取响应，由调用方自行决定。
+也可以通过定时器或回调（例如 `此示例 <https://github.com/ros2/examples/blob/{REPOS_FILE_BRANCH}/rclpy/services/minimal_client/examples_rclpy_minimal_client/client_async_callback.py>`_）、专用线程或其他方式获取 ``future``。如何存储 ``future``、检查其状态并获取响应，由调用方自行决定。
 
 总结
 ----
