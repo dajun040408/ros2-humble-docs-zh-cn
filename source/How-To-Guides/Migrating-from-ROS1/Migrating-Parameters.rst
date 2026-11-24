@@ -28,9 +28,9 @@ ROS 2 在 ``ros-{DISTRO}-demo-nodes-cpp`` 软件包中提供了一个名为 ``pa
 
 .. code-block:: console
 
-   $ ros2 run demo_nodes_cpp ``parameter_blackboard``
+   $ ros2 run demo_nodes_cpp parameter_blackboard
 
-``parameter_blackboard`` 的源代码位于：https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/demo_nodes_cpp/src/parameters/``parameter_blackboard``.cpp。
+``parameter_blackboard`` 的源代码位于：https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/demo_nodes_cpp/src/parameters/parameter_blackboard.cpp。
 
 迁移 YAML 参数文件
 ------------------
@@ -51,7 +51,7 @@ ROS 2 的主要区别在于，必须使用节点名称来指定参数所属节�
    lidar_name: foo
    lidar_id: 10
    ports: [11312, 11311, 21311]
-   ``debug``: true
+   debug: true
 
 假设前两个参数属于名为 ``/lidar_ns/lidar_node_name`` 的节点，下一个参数属于 ``/imu`` 节点，而最后一个参数需要同时设置到这两个节点上。
 
@@ -61,15 +61,15 @@ ROS 2 的主要区别在于，必须使用节点名称来指定参数所属节�
 
    /lidar_ns:
      lidar_node_name:
-       ``ros__parameters``:
+       ros__parameters:
          lidar_name: foo
          id: 10
    imu:
-     ``ros__parameters``:
+     ros__parameters:
        ports: [2438, 2439, 2440]
-   ``/**``:
-     ``ros__parameters``:
-       ``debug``: true
+   /**:
+     ros__parameters:
+       debug: true
 
 注意通配符 ``/**`` 的用法，它表示参数 ``debug`` 应设置到任意命名空间中的所有节点。
 
