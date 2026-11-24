@@ -14,14 +14,14 @@
 Open Source Robotics Alliance（OSRA）
 -------------------------------------
 
-自 2024 年起，ROS 2 项目由§Open Source Robotics Alliance（OSRA）<https://osralliance.org/>§_ 治理。本页面简要介绍项目治理结构，完整信息请参阅§OSRA 官方网站 <https://osralliance.org/how-it-works/>§_。
+自 2024 年起，ROS 2 项目由`Open Source Robotics Alliance（OSRA） <https://osralliance.org/>`_ 治理。本页面简要介绍项目治理结构，完整信息请参阅`OSRA 官方网站 <https://osralliance.org/how-it-works/>`_。
 
 技术治理委员会（TGC）
 ^^^^^^^^^^^^^^^^^^^^^
 
 技术治理委员会负责监督 OSRA 下属的所有项目。TGC 由付费成员、项目管理负责人、OSRF 负责人以及根据贡献和能力选出的成员组成。
 
-更多信息请参阅§OSRA 项目章程 <https://osralliance.org/wp-content/uploads/2024/03/OSRA-Program-Charter.pdf>§_。
+更多信息请参阅`OSRA 项目章程 <https://osralliance.org/wp-content/uploads/2024/03/OSRA-Program-Charter.pdf>`_。
 
 ROS 2 是 TGC 监督的项目之一，由 ROS 项目管理委员会负责管理。
 
@@ -40,7 +40,7 @@ ROS PMC 的日常工作包括：
 * 维护项目仓库。
 * 做出决定项目技术方向的技术决策。
 
-更多信息请参阅§ROS 项目章程 <https://osralliance.org/wp-content/uploads/2024/03/ros_project_charter.pdf>§_。
+更多信息请参阅`ROS 项目章程 <https://osralliance.org/wp-content/uploads/2024/03/ros_project_charter.pdf>`_。
 
 ROS PMC 会议
 ^^^^^^^^^^^^
@@ -49,7 +49,7 @@ ROS PMC 会议
 
 如需向 ROS PMC 议程添加事项，请联系下方列出的 PMC 成员。ROS PMC 会议通过 Zoom 举行，目前通常在每周二 17:00 UTC 召开（09:00 PST / 12:00 EST / 18:00 CET / 次日 02:00 JST）。
 
-加入会议请使用§OSRA 官方 Google 日历中的链接 <https://calendar.google.com/calendar/u/0/embed?src=agf3kajirket8khktupm9go748@group.calendar.google.com&ctz=Etc%2FUTC>§_。
+加入会议请使用`OSRA 官方 Google 日历中的链接 <https://calendar.google.com/calendar/u/0/embed?src=agf3kajirket8khktupm9go748@group.calendar.google.com&ctz=Etc%2FUTC>`_。
 
 当前 ROS PMC 成员
 ^^^^^^^^^^^^^^^^^
