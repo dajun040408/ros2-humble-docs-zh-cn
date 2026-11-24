@@ -14,7 +14,7 @@ RHEL（源码安装）
 系统要求
 --------
 
-`{DISTRO_TITLE_FULL}` 当前面向的 Red Hat 目标平台为：
+``{DISTRO_TITLE_FULL}`` 当前面向的 Red Hat 目标平台为：
 
 * Tier 2：RHEL 8 64 位。
 
@@ -112,7 +112,7 @@ rosdep 数据库包含来自 EPEL 和 PowerTools 软件源的软件包，而这�
 
 如果已经通过其他方式安装 ROS 2（例如 RPM 或二进制发行包），请确保在全新的环境中运行以下命令，不要 source 其他安装环境。
 
-同时，确保 `.bashrc` 中没有 `source /opt/ros/${ROS_DISTRO}/setup.bash`。可以运行 `printenv | grep -i ROS` 检查 ROS 2 是否已 source。如果没有 source，命令应无输出。
+同时，确保 ``.bashrc`` 中没有 ``source /opt/ros/${ROS_DISTRO}/setup.bash``。可以运行 ``printenv | grep -i ROS`` 检查 ROS 2 是否已 source。如果没有 source，命令应无输出。
 
 有关 ROS 工作空间的更多信息，请参阅 :doc:`相关教程 <../../Tutorials/Beginner-Client-Libraries/Colcon-Tutorial>`。
 
@@ -121,7 +121,7 @@ rosdep 数据库包含来自 EPEL 和 PowerTools 软件源的软件包，而这�
    $ cd ~/ros2_{DISTRO}/
    $ colcon build --symlink-install --cmake-args -DTHIRDPARTY_Asio=ON -DPython3_EXECUTABLE=/usr/bin/python3 --no-warn-unused-cli
 
-注意：如果无法成功编译所有示例，且这阻碍了整个工作空间构建，可以使用 `COLCON_IGNORE` 忽略某个子目录，方式类似于 `CATKIN_IGNORE`。例如，如果希望避免安装体积较大的 OpenCV 库，可以在 `cam2image` 演示目录中运行 `touch COLCON_IGNORE`，将其排除在构建之外。
+注意：如果无法成功编译所有示例，且这阻碍了整个工作空间构建，可以使用 ``COLCON_IGNORE`` 忽略某个子目录，方式类似于 ``CATKIN_IGNORE``。例如，如果希望避免安装体积较大的 OpenCV 库，可以在 ``cam2image`` 演示目录中运行 ``touch COLCON_IGNORE``，将其排除在构建之外。
 
 环境配置
 --------
@@ -137,28 +137,28 @@ source 环境设置脚本
 
 .. note::
 
-   如果使用的不是 bash，请将 `.bash` 替换为对应 Shell。可选值包括：`setup.bash`、`setup.sh`、`setup.zsh`。
+   如果使用的不是 bash，请将 ``.bash`` 替换为对应 Shell。可选值包括：``setup.bash``、``setup.sh``、``setup.zsh``。
 
 .. _rhel_talker-listener:
 
 尝试示例
 --------
 
-在一个终端中 source 设置文件，然后运行 C++ `talker`：
+在一个终端中 source 设置文件，然后运行 C++ ``talker``：
 
 .. code-block:: console
 
    $ . ~/ros2_{DISTRO}/install/local_setup.bash
    $ ros2 run demo_nodes_cpp talker
 
-在另一个终端中 source 设置文件，然后运行 Python `listener`：
+在另一个终端中 source 设置文件，然后运行 Python ``listener``：
 
 .. code-block:: console
 
    $ . ~/ros2_{DISTRO}/install/local_setup.bash
    $ ros2 run demo_nodes_py listener
 
-你应该能看到 `talker` 输出正在 `Publishing` 消息，而 `listener` 输出 `I heard` 并显示收到的消息。这说明 C++ 和 Python API 均能正常工作。
+你应该能看到 ``talker`` 输出正在 ``Publishing`` 消息，而 ``listener`` 输出 ``I heard`` 并显示收到的消息。这说明 C++ 和 Python API 均能正常工作。
 
 安装后的后续步骤
 ----------------
@@ -168,12 +168,12 @@ source 环境设置脚本
 其他 RMW 实现（可选）
 ---------------------
 
-ROS 2 默认使用的中间件是 `Fast DDS`，但可以在运行时替换中间件（RMW）。有关如何使用多个 RMW 的说明，请参阅 :doc:`多 RMW 使用指南 <../../How-To-Guides/Working-with-multiple-RMW-implementations>`。
+ROS 2 默认使用的中间件是 ``Fast DDS``，但可以在运行时替换中间件（RMW）。有关如何使用多个 RMW 的说明，请参阅 :doc:`多 RMW 使用指南 <../../How-To-Guides/Working-with-multiple-RMW-implementations>`。
 
 其他编译器
 ----------
 
-除了 GCC，也可以轻松使用其他编译器编译 ROS 2。将环境变量 `CC` 和 `CXX` 分别设置为可用的 C 和 C++ 编译器可执行程序，然后重新触发 CMake 配置（使用 `--force-cmake-config`，或删除需要重新配置的软件包），CMake 就会重新配置并使用新的编译器。
+除了 GCC，也可以轻松使用其他编译器编译 ROS 2。将环境变量 ``CC`` 和 ``CXX`` 分别设置为可用的 C 和 C++ 编译器可执行程序，然后重新触发 CMake 配置（使用 ``--force-cmake-config``，或删除需要重新配置的软件包），CMake 就会重新配置并使用新的编译器。
 
 Clang
 ^^^^^
@@ -200,7 +200,7 @@ Clang
 卸载
 ----
 
-1. 如果按照上文说明使用 colcon 安装工作空间，“卸载”可能只需要打开新终端，不再 source 工作空间的 `setup` 文件。这样，环境就会表现得如同系统中没有安装 {DISTRO_TITLE} 一样。
+1. 如果按照上文说明使用 colcon 安装工作空间，“卸载”可能只需要打开新终端，不再 source 工作空间的 ``setup`` 文件。这样，环境就会表现得如同系统中没有安装 {DISTRO_TITLE} 一样。
 2. 如果还希望释放磁盘空间，可以删除整个工作空间目录：
 
    .. code-block:: console
