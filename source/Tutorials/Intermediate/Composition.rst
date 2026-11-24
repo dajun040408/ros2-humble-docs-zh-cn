@@ -64,7 +64,7 @@
    $ ros2 component list
    /ComponentManager
 
-在第二个终端中加载 talker 组件。其源代码可参阅 `talker 组件源码`_ <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/talker_component.cpp>。
+在第二个终端中加载 talker 组件。其源代码可参阅 `talker 组件源码 <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/talker_component.cpp>`_。
 
 .. code-block:: console
 
@@ -73,7 +73,7 @@
 
 命令会返回已加载组件的唯一 ID，以及该组件在容器中对应的节点名称。第一个终端应该显示组件已加载，并持续输出发布消息的日志。
 
-接着加载 listener 组件。其源代码可参阅 `listener 组件源码`_ <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/listener_component.cpp>。
+接着加载 listener 组件。其源代码可参阅 `listener 组件源码 <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/listener_component.cpp>`_。
 
 .. code-block:: console
 
@@ -102,7 +102,7 @@
 
    $ ros2 run rclcpp_components component_container
 
-在第二个终端中加载服务端和客户端。可以分别查看 `server 组件源码`_ <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/server_component.cpp> 和 `client 组件源码`_ <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/client_component.cpp>。
+在第二个终端中加载服务端和客户端。可以分别查看 `server 组件源码 <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/server_component.cpp>`_ 和 `client 组件源码 <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/client_component.cpp>`_。
 
 .. code-block:: console
 
@@ -118,7 +118,7 @@
 
 该可执行程序包含前面介绍的四个组件：talker、listener、server 和 client。它们在 ``main`` 函数中被直接创建。
 
-运行以下命令。相关代码可参阅 `manual_composition.cpp 源码`_ <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/manual_composition.cpp>。
+运行以下命令。相关代码可参阅 `manual_composition.cpp 源码 <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/manual_composition.cpp>`_。
 
 .. code-block:: console
 
@@ -135,7 +135,7 @@
 
 本示例展示另一种运行时组合方式：创建一个通用容器进程，并显式传入需要加载的库，而不通过 ROS 服务接口加载组件。
 
-该进程会打开每个库，并为库中每个 ``rclcpp::Node`` 派生类创建一个实例。相关代码可参阅 `dlopen_composition.cpp 源码`_ <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/dlopen_composition.cpp>。
+该进程会打开每个库，并为库中每个 ``rclcpp::Node`` 派生类创建一个实例。相关代码可参阅 `dlopen_composition.cpp 源码 <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/dlopen_composition.cpp>`_。
 
 .. tabs::
 
@@ -170,7 +170,7 @@
 
 命令行工具适合调试和诊断组件配置，但很多时候更方便的方式是一次启动一组组件。
 
-可以使用 `launch 文件`_ <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/launch/composition_demo.launch.py> 自动完成该操作：
+可以使用 `launch 文件 <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/launch/composition_demo.launch.py>`_ 自动完成该操作：
 
 .. code-block:: console
 
@@ -359,13 +359,13 @@
      - 是否为组件节点启用进程内通信。
 
 将可组合节点作为共享库
-----------------------
+-------------------------------
 
 如果希望将可组合节点作为共享库从一个功能包中导出，并在另一个功能包中进行链接时组合，需要在 CMake 文件中添加代码，以便下游功能包导入实际的 target。
 
 随后安装生成的文件，并导出该文件。
 
-实际示例可参阅 `ROS Discourse：共享库的 Ament 最佳实践`_ <https://discourse.openrobotics.org/t/ament-best-practice-for-sharing-libraries/3602>。
+实际示例可参阅 `ROS Discourse：共享库的 Ament 最佳实践 <https://discourse.openrobotics.org/t/ament-best-practice-for-sharing-libraries/3602>`_。
 
 组合非 Node 派生组件
 -------------------
@@ -379,6 +379,6 @@
 1. 实现一个构造函数，并将 ``const rclcpp::NodeOptions&`` 作为参数。
 2. 实现 ``get_node_base_interface()`` 方法，该方法应返回 ``NodeBaseInterface::SharedPtr``。可以在构造函数中创建一个节点，并通过该节点的 ``get_node_base_interface()`` 方法返回对应接口。
 
-可以参考 `node_like_listener_component 示例源码`_ <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/node_like_listener_component.cpp>。该组件并不直接继承 Node，但能够订阅 ROS 话题。
+可以参考 `node_like_listener_component 示例源码 <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/composition/src/node_like_listener_component.cpp>`_。该组件并不直接继承 Node，但能够订阅 ROS 话题。
 
-更多信息请参阅 `相关讨论`_ <https://github.com/ros2/rclcpp/issues/2110#issuecomment-1454228192>。
+更多信息请参阅 `相关讨论 <https://github.com/ros2/rclcpp/issues/2110#issuecomment-1454228192>`_。
