@@ -47,7 +47,7 @@ macOS（源码安装）
 
      根据提示修复发现的问题。
 
-3. 使用 `brew` 安装其他依赖项：
+3. 使用 ``brew`` 安装其他依赖项：
 
    .. code-block:: console
 
@@ -67,7 +67,7 @@ macOS（源码安装）
       $ export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$(brew --prefix qt@5)
       $ export PATH=$PATH:$(brew --prefix qt@5)/bin
 
-5. 使用 `python3 -m pip` 安装其他依赖项。直接使用 `pip` 可能安装 Python 3 或 Python 2，因此建议显式使用 Python 3：
+5. 使用 ``python3 -m pip`` 安装其他依赖项。直接使用 ``pip`` 可能安装 Python 3 或 Python 2，因此建议显式使用 Python 3：
 
    .. code-block:: console
 
@@ -85,26 +85,26 @@ macOS（源码安装）
         nose pep8 psutil pydocstyle pydot pygraphviz pyparsing==2.4.7 \
         pytest-mock rosdep rosdistro setuptools==59.6.0 vcstool
 
-   请确保 `PATH` 环境变量包含二进制文件的安装位置（`$(brew --prefix)/bin`）。
+   请确保 ``PATH`` 环境变量包含二进制文件的安装位置（``$(brew --prefix)/bin``）。
 
 6. **可选：** 如果希望构建 ROS 1 与 ROS 2 桥接程序，还必须安装 ROS 1。
 
    * 首先按照 `ROS 1 常规安装说明 <http://wiki.ros.org/kinetic/Installation/OSX/Homebrew/Source>`_ 操作。
-   * 执行 `rosinstall_generator` 获取源码时，可以使用以下命令，仅获取构建可用桥接程序所需的最少依赖项：
+   * 执行 ``rosinstall_generator`` 获取源码时，可以使用以下命令，仅获取构建可用桥接程序所需的最少依赖项：
 
      .. code-block:: console
 
         $ rosinstall_generator catkin common_msgs roscpp rosmsg --rosdistro kinetic --deps --wet-only --tar > kinetic-ros2-bridge-deps.rosinstall
         $ wstool init -j8 src kinetic-ros2-bridge-deps.rosinstall
 
-   否则，按照常规说明完成安装，然后在继续构建 ROS 2 之前，source 生成的 `install_isolated/setup.bash`。
+   否则，按照常规说明完成安装，然后在继续构建 ROS 2 之前，source 生成的 ``install_isolated/setup.bash``。
 
 禁用 System Integrity Protection（SIP）
 ---------------------------------------
 
 macOS/OS X 10.11 及更高版本默认启用了 System Integrity Protection。
 
-为了避免 SIP 阻止进程继承动态链接器环境变量（例如 `DYLD_LIBRARY_PATH`），需要按照 `Apple 官方说明 <https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/ConfiguringSystemIntegrityProtection/ConfiguringSystemIntegrityProtection.html>`_ 禁用 SIP。
+为了避免 SIP 阻止进程继承动态链接器环境变量（例如 ``DYLD_LIBRARY_PATH``），需要按照 `Apple 官方说明 <https://developer.apple.com/library/content/documentation/Security/Conceptual/System_Integrity_Protection_Guide/ConfiguringSystemIntegrityProtection/ConfiguringSystemIntegrityProtection.html>`_ 禁用 SIP。
 
 获取 ROS 2 源码
 ---------------
@@ -125,14 +125,14 @@ macOS/OS X 10.11 及更高版本默认启用了 System Integrity Protection。
 构建 ROS 2 源码
 ---------------
 
-运行 `colcon` 构建所有内容。有关 `colcon` 的更多信息，请参阅 :doc:`相关教程 <../../Tutorials/Beginner-Client-Libraries/Colcon-Tutorial>`。
+运行 ``colcon`` 构建所有内容。有关 ``colcon`` 的更多信息，请参阅 :doc:`相关教程 <../../Tutorials/Beginner-Client-Libraries/Colcon-Tutorial>`。
 
 .. code-block:: console
 
    $ cd ~/ros2_{DISTRO}/
    $ colcon build --symlink-install --packages-skip-by-dep python_qt_binding
 
-注意：由于 SIP、Qt@5 和 PyQt5 存在尚未解决的问题，需要跳过 `python_qt_binding`，才能成功完成构建。问题解决后即可移除这一限制，参见 `相关 Issue <https://github.com/ros-visualization/python_qt_binding/issues/103>`_。
+注意：由于 SIP、Qt@5 和 PyQt5 存在尚未解决的问题，需要跳过 ``python_qt_binding``，才能成功完成构建。问题解决后即可移除这一限制，参见 `相关 Issue <https://github.com/ros-visualization/python_qt_binding/issues/103>`_。
 
 环境配置
 --------
@@ -148,19 +148,19 @@ source ROS 2 环境设置文件：
 尝试示例
 --------
 
-在一个终端中，按照前面的说明配置 ROS 2 环境，然后运行 C++ `talker`：
+在一个终端中，按照前面的说明配置 ROS 2 环境，然后运行 C++ ``talker``：
 
 .. code-block:: console
 
    $ ros2 run demo_nodes_cpp talker
 
-在另一个终端中 source 环境设置文件，然后运行 Python `listener`：
+在另一个终端中 source 环境设置文件，然后运行 Python ``listener``：
 
 .. code-block:: console
 
    $ ros2 run demo_nodes_py listener
 
-你应该能看到 `talker` 输出正在 `Publishing` 消息，而 `listener` 输出 `I heard` 并显示收到的消息。这说明 C++ 和 Python API 均能正常工作。
+你应该能看到 ``talker`` 输出正在 ``Publishing`` 消息，而 ``listener`` 输出 ``I heard`` 并显示收到的消息。这说明 C++ 和 Python API 均能正常工作。
 
 安装后的后续步骤
 ----------------
@@ -175,7 +175,7 @@ ROS 1 bridge 可以连接 ROS 1 到 ROS 2 的话题，反之亦然。有关如�
 其他 RMW 实现（可选）
 ---------------------
 
-ROS 2 默认使用的中间件是 `Fast DDS`，但可以在运行时替换中间件（RMW）。有关如何使用多个 RMW 的说明，请参阅 :doc:`多 RMW 使用指南 <../../How-To-Guides/Working-with-multiple-RMW-implementations>`。
+ROS 2 默认使用的中间件是 ``Fast DDS``，但可以在运行时替换中间件（RMW）。有关如何使用多个 RMW 的说明，请参阅 :doc:`多 RMW 使用指南 <../../How-To-Guides/Working-with-multiple-RMW-implementations>`。
 
 保持源码为最新状态
 ------------------
@@ -190,7 +190,7 @@ ROS 2 默认使用的中间件是 `Fast DDS`，但可以在运行时替换中间
 卸载
 ----
 
-1. 如果按照上文说明使用 colcon 安装工作空间，“卸载”可能只需要打开一个新终端，不再 source 工作空间的 `setup` 文件。这样，环境就会表现得如同系统中没有安装 {DISTRO_TITLE} 一样。
+1. 如果按照上文说明使用 colcon 安装工作空间，“卸载”可能只需要打开一个新终端，不再 source 工作空间的 ``setup`` 文件。这样，环境就会表现得如同系统中没有安装 {DISTRO_TITLE} 一样。
 
 2. 如果还希望释放磁盘空间，可以删除整个工作空间目录：
 
