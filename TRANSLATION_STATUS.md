@@ -289,3 +289,10 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 
 - 构建 #773（提交 `c305eca`）build/deploy 成功。Sphinx ERROR=0、CRITICAL=0；本轮 Beginner Client Libraries 新增与整理的 C++/Python 发布者订阅者、服务客户端页面均无页面级 RST 诊断。剩余 2 条警告仍是上游 Lyrical 页面未纳入 Humble toctree。
 - C++ 发布者/订阅者章节去重已部署；Python 服务/客户端的去重和标题修复已由构建 #770 验证，随后部署工作流被新提交取消并由 #773 重新发布，最终部署成功。
+
+## 2026-11-24 Beginner Client Libraries：单包接口教程补译
+
+- 对照 ROS 2 官方 Humble 的 `Single-Package-Define-And-Use-Interface.rst`，发现原中文版本只覆盖到接口声明和简略构建，缺少主要的 C++ 节点示例、逐段代码解释、类型支持链接、运行验证、跨功能包复用接口的扩展示例、下一步和相关内容。
+- 已补充完整 `AddressBookPublisher` C++ 发布者示例及代码解析；补充 `package.xml` / `CMakeLists.txt` 的 `rosidl_default_generators`、`rosidl_generate_interfaces`、`ament_export_dependencies` 配置；补充发布者 target、`rosidl_get_typesupport_target` 与 `target_link_libraries` 链接步骤。
+- 已补充 Linux/macOS/Windows 构建和运行方式、`ros2 topic echo /address_book` 验证步骤，以及在接口定义中复用 `rosidl_tutorials_msgs/Contact` 的数组字段示例、依赖配置和 C++ 使用代码。
+- 修改提交：`e4e94dc1509e2ed950c9cfedbc7a1650bfe3c033`。尚待 Sphinx 构建、部署及页面验收。
