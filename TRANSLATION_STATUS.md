@@ -306,3 +306,7 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 已补充 C++ 教程的 package.xml 维护信息、declare/get/set parameter 代码解释、ParameterDescriptor 上下文保留、CMake launch 安装规则、launch literalinclude 及 ros2doctor 下一步。提交：`a4f85b0254ed7b61b5f895f7563d3d95572bf2b4`。
 - 已补充 Python 教程的 package.xml 维护信息、declare/get/set parameter 代码解释、ParameterDescriptor 相关说明、setup.py 的 data_files launch 安装配置、launch literalinclude 及 ros2doctor 下一步。提交：`4dd2a8be02f2622ad7050291241bc72ed2ea993f`。
 - 参数类教程修改尚待 Sphinx 构建、RST 诊断和部署验收。
+
+- 构建 #778（提交 `c1c9f78`）build/deploy 成功。Sphinx ERROR=0、CRITICAL=0；`Custom-ROS2-Interfaces.rst` 和 `Single-Package-Define-And-Use-Interface.rst` 的补译均进入 GitHub Pages 发布产物。
+- #778 日志曾发现单包接口教程 `3.2 构建发布者` 标题下划线长度警告，已在提交 `200bd8de2f469b19fa44eff4545f0da2fbff8ae7` 中加长修复；该修复和后续参数教程补译尚待新构建确认。
+- 已补充 `Creating-Your-First-ROS2-Package.rst`：增加工作空间多包目录结构示例、CMake/Python `--node-name` 创建命令的终端输出示例、CMake/Python `package.xml` 元信息示例，以及 Python `setup.py` 配置示例。提交：`a5d0504cf4bfa968b9bf4b8072e750e9b8ccc5cf`。待构建验收。
