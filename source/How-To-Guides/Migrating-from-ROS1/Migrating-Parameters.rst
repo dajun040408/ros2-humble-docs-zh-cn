@@ -88,6 +88,6 @@ ROS 1 参数文件中的部分功能在 ROS 2 中尚不存在：
 在 ROS 1 中，``dynamic_reconfigure`` 会以原子方式处理参数组，即一次重新配置请求中的所有参数都在同一个回调中处理。
 在 ROS 2 中，``set_parameters`` 服务会逐个处理参数，这可能导致多次调用回调函数。
 
-为了在从 ``dynamic_reconfigure`` 迁移时保持原子行为，应使用 ``set_parameters``_atomically 服务。
+为了在从 ``dynamic_reconfigure`` 迁移时保持原子行为，应使用 ``set_parameters_atomically`` 服务。
 该服务会将所有参数作为一个整体进行校验和应用。
 如果任意参数未通过校验，则不会更新任何参数。
