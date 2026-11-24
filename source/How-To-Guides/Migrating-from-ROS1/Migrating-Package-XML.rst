@@ -12,11 +12,11 @@ ROS 2 要求 package.xml 文件至少使用格式 2。格式 2 规范请参阅 R
 
 .. code-block:: xml
 
-    ``<package>``
+    <package>
 
 .. code-block:: xml
 
-    ``<package format="1">``
+    <package format="1">
 
 前置条件
 --------
@@ -61,7 +61,7 @@ ROS 2 要求 package.xml 文件至少使用格式 2。格式 2 规范请参阅 R
 如果不确定，可以同时使用这两个标签。
 
 将部分 ``<build_depend>`` 转换为 ``<test_depend>``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 在格式 1 中，``<test_depend>`` 用于声明运行功能包测试时所需的依赖项。
 在格式 2 中，它仍然用于此目的，同时还声明构建功能包测试时所需的依赖项。
@@ -80,7 +80,7 @@ ROS 2 要求 package.xml 文件至少使用格式 2。格式 2 规范请参阅 R
 
 .. note::
 
-    如果使用 CMake，请确保仅在 if(BUILD_TESTING) 代码块中引用测试依赖项：
+    如果使用 CMake，请确保仅在 ``if(BUILD_TESTING)`` 代码块中引用测试依赖项：
 
     .. code:: cmake
 
@@ -89,7 +89,7 @@ ROS 2 要求 package.xml 文件至少使用格式 2。格式 2 规范请参阅 R
         endif()
 
 开始使用 ``<doc_depend>``
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 使用新的 ``<doc_depend>`` 标签声明构建功能包文档所需的依赖项。
 例如，C++ 功能包可能需要声明：
@@ -104,13 +104,13 @@ ROS 2 要求 package.xml 文件至少使用格式 2。格式 2 规范请参阅 R
 
   <doc_depend>python3-sphinx</doc_depend>
 
-更多信息请参阅 ROS 2 功能包文档编写指南。
+更多信息请参阅 :doc:`ROS 2 功能包文档编写指南 <../Documenting-a-ROS-2-Package>`。
 
 使用 ``<depend>`` 简化依赖项
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``<depend>`` 是一个新标签，可以让 package.xml 文件更加简洁。
-如果你的 package.xml 中针对同一个依赖项使用了以下三个标签：
+如果你的 ``package.xml`` 中针对同一个依赖项使用了以下三个标签：
 
 .. code::
 
@@ -124,8 +124,8 @@ ROS 2 要求 package.xml 文件至少使用格式 2。格式 2 规范请参阅 R
 
   <depend>foo</depend>
 
-测试新的 package.xml
---------------------
+测试新的 ``package.xml``
+-----------------------------
 
-像平常一样，使用 catkin_make、cakin_make_isolated 或 catkin 构建工具构建并测试功能包。
+像平常一样，使用 ``catkin_make``、``catkin_make_isolated`` 或 ``catkin`` 构建工具构建并测试功能包。
 如果所有操作均成功，则说明 package.xml 有效。
