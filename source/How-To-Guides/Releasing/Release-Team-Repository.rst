@@ -12,7 +12,7 @@
 
 `ros2-gbp <https://github.com/ros2-gbp>`_ 是一个 GitHub 组织，用于托管 ROS 软件包的发布仓库。它还维护发布团队列表、各团队成员列表，以及由这些团队维护的发布仓库列表。相关信息保存在 `ros2-gbp-github-org <https://github.com/ros2-gbp/ros2-gbp-github-org>`_ 中。
 
-与 `ros2-gbp-github-org` 的交互通过创建 GitHub Issue 完成。建议尽早申请加入发布团队并设置发布仓库，因为 ros2-gbp 维护者回复请求可能需要一些时间。
+与 ``ros2-gbp-github-org`` 的交互通过创建 GitHub Issue 完成。建议尽早申请加入发布团队并设置发布仓库，因为 ros2-gbp 维护者回复请求可能需要一些时间。
 
 .. _what-is-a-release-team:
 
@@ -58,7 +58,7 @@
 创建新的发布仓库
 ^^^^^^^^^^^^^^^^
 
-如果你的仓库刚刚加入 ROS 社区，应首先向 `ros/rosdistro <https://github.com/ros/rosdistro>`_ 提交 Pull Request，为该仓库添加 `source` 条目（例如 `https://github.com/ros/rosdistro/pull/39513`）。
+如果你的仓库刚刚加入 ROS 社区，应首先向 `ros/rosdistro <https://github.com/ros/rosdistro>`_ 提交 Pull Request，为该仓库添加 ``source`` 条目（例如 ``https://github.com/ros/rosdistro/pull/39513``）。
 
 rosdistro 数据库的审查流程会确保你的仓库和软件包符合 `REP 144 软件包命名规范 <https://reps.openrobotics.org/rep-0144/>`_ 及其他要求。
 
@@ -71,7 +71,7 @@ ros2-gbp 成立之前发布的软件包，其发布仓库可能托管在其他�
 
 如果你正在将 ROS 1 软件包移植到 ROS 2，并计划首次向 ROS 2 发布软件包，请按照标准流程申请新的 ROS 2 发布仓库。
 
-如果你此前已经为 ROS 2 发布过软件包，在创建 `添加新的发布仓库 Issue` 时，**请注明当前发布仓库的 URL**，其余步骤仍按照标准流程执行。
+如果你此前已经为 ROS 2 发布过软件包，在创建 ``添加新的发布仓库 Issue`` 时，**请注明当前发布仓库的 URL**，其余步骤仍按照标准流程执行。
 
 .. note::
 

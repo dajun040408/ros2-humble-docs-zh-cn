@@ -19,7 +19,7 @@
 
 **发布功能包意味着让你的功能包能够在 ROS 2 公共构建农场（buildfarm）中构建和分发。** 这将带来以下效果：
 
-* 你的功能包可以通过软件包管理器安装（例如 Ubuntu 上的 `apt`），并面向某个 ROS 发行版支持的所有 Linux 平台提供，具体说明参见 `REP 2000 <https://reps.openrobotics.org/rep-2000/>`_。
+* 你的功能包可以通过软件包管理器安装（例如 Ubuntu 上的 ``apt``），并面向某个 ROS 发行版支持的所有 Linux 平台提供，具体说明参见 `REP 2000 <https://reps.openrobotics.org/rep-2000/>`_。
 * 系统可以自动为你的功能包生成 API 文档。
 * 你的功能包会被收录到 `ROS Index <https://index.ros.org>`_。
 * （可选）可以为代码仓库中的 Pull Request 启用自动 CI。

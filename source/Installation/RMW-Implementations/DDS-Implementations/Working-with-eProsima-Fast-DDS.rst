@@ -57,7 +57,7 @@ eProsima Fast DDS 是一款完整的开源 DDS 实现，面向实时嵌入式架
 运行 talker 和 listener
 -----------------------
 
-现在运行 `talker` 和 `listener`，测试 Fast DDS：
+现在运行 ``talker`` 和 ``listener``，测试 Fast DDS：
 
 .. code-block:: console
 

@@ -32,7 +32,7 @@ Raspberry Pi OS 基于 Debian，属于 Tier 3 支持平台，但它可以运行 
 
 你也可以自行构建镜像：
 
-将 `docker_images` Git 仓库（`https://github.com/osrf/docker_images`）克隆到 Raspberry Pi 上，进入相应目录，再进入你所选择的变体目录。
+将 ``docker_images`` Git 仓库（``https://github.com/osrf/docker_images``）克隆到 Raspberry Pi 上，进入相应目录，再进入你所选择的变体目录。
 
 在该目录中，运行以下命令构建容器：
 

@@ -82,7 +82,7 @@ Debian/Ubuntu（APT）软件源镜像
 使用镜像
 ^^^^^^^^
 
-要使用镜像，请在 `ros2-latest.list` 文件中将 `packages.ros.org` 替换为镜像 URL：
+要使用镜像，请在 ``ros2-latest.list`` 文件中将 ``packages.ros.org`` 替换为镜像 URL：
 
 .. code-block:: bash
 
@@ -93,17 +93,17 @@ Debian/Ubuntu（APT）软件源镜像
 设置镜像
 --------
 
-ROS 基础设施使用 `rsync` 分发软件包。要创建 ROS 2 软件源的本地镜像：
+ROS 基础设施使用 ``rsync`` 分发软件包。要创建 ROS 2 软件源的本地镜像：
 
 1. **存储空间要求：** 确保至少有 500 GB 可用磁盘空间。
-2. **同步命令：** 使用 `rsync` 从官方 OSUOSL 端点拉取数据：
+2. **同步命令：** 使用 ``rsync`` 从官方 OSUOSL 端点拉取数据：
 
 .. code-block:: bash
 
    # 同步 ROS 2 主软件源
    rsync -azv rsync.osuosl.org::ros2-main /your/local/path --delete
 
-3. **维护：** 设置 `cron` 任务，每 6–12 小时同步一次。
+3. **维护：** 设置 ``cron`` 任务，每 6–12 小时同步一次。
 
 将镜像添加到此列表
 ^^^^^^^^^^^^^^^^^^

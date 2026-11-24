@@ -26,7 +26,7 @@ Zenoh 是一种开源通信协议和中间件，旨在促进异构系统之间�
 
 只有在需要最新功能时，才建议从源码构建。
 
-默认情况下，项目会将 `zenoh-cpp` 作为 vendored 依赖，并仅启用 Zenoh 的部分功能进行编译。如果有需要，可以通过 CMake 参数 `ZENOHC_CARGO_FLAGS` 覆盖默认设置，以包含其他功能。更多细节请参阅 `zenoh_cpp_vendor/CMakeLists.txt <https://github.com/ros2/rmw_zenoh/blob/{DISTRO}/zenoh_cpp_vendor/CMakeLists.txt>`_。
+默认情况下，项目会将 ``zenoh-cpp`` 作为 vendored 依赖，并仅启用 Zenoh 的部分功能进行编译。如果有需要，可以通过 CMake 参数 ``ZENOHC_CARGO_FLAGS`` 覆盖默认设置，以包含其他功能。更多细节请参阅 `zenoh_cpp_vendor/CMakeLists.txt <https://github.com/ros2/rmw_zenoh/blob/{DISTRO}/zenoh_cpp_vendor/CMakeLists.txt>`_。
 
 1. 克隆代码仓库：
 
@@ -61,7 +61,7 @@ Zenoh 是一种开源通信协议和中间件，旨在促进异构系统之间�
 运行 talker 和 listener
 -----------------------
 
-现在运行 `talker` 和 `listener`，测试 Zenoh。
+现在运行 ``talker`` 和 ``listener``，测试 Zenoh。
 
 首先启动 Zenoh 路由器：
 

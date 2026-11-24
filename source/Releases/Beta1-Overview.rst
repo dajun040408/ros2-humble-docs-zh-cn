@@ -2,7 +2,7 @@
 
   Beta1-Overview
 
-Beta 1（`Asphalt`）
+Beta 1（``Asphalt``）
 ===================
 
 .. contents:: 目录
@@ -51,7 +51,7 @@ ROS 2 Beta 1 支持三个平台：Ubuntu 16.04（Xenial）、Mac OS X 10.11（El
 
 * ROS 1 与 ROS 2 之间的动态桥接节点。
 * C++ 执行器线程模型。
-* 扩展 `.msg` 格式，增加以下功能：
+* 扩展 ``.msg`` 格式，增加以下功能：
 
   * 有界数组。
   * 默认值。

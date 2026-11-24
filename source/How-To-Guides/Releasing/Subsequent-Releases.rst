@@ -46,7 +46,7 @@
 使用 Bloom 发布
 ---------------
 
-运行以下命令，将 `my_repo` 替换为包含相关功能包的代码仓库名称：
+运行以下命令，将 ``my_repo`` 替换为包含相关功能包的代码仓库名称：
 
 .. code-block:: console
 
@@ -56,7 +56,7 @@ Bloom 会自动针对 `rosdistro <https://github.com/ros/rosdistro>`_ 仓库为�
 
 .. note::
 
-  默认情况下，Bloom 会发布源码仓库中的所有功能包。如果希望在某个 `{DISTRO}` 发行版中选择性地阻止部分功能包发布，可以在发行仓库的 `master` 分支中添加 `{DISTRO}.ignored` 文件。每个文件中每行列出一个需要阻止发布的功能包名称。
+  默认情况下，Bloom 会发布源码仓库中的所有功能包。如果希望在某个 ``{DISTRO}`` 发行版中选择性地阻止部分功能包发布，可以在发行仓库的 ``master`` 分支中添加 ``{DISTRO}.ignored`` 文件。每个文件中每行列出一个需要阻止发布的功能包名称。
 
   `rosidl-release <https://github.com/ros2-gbp/rosidl-release>`_ 仓库可以作为该配置的参考。
 
