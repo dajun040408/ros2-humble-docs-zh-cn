@@ -81,7 +81,7 @@
 * 将 ActionClient 转换为 C++ 类（`#759 <https://github.com/ros2/rclpy/issues/759>`__）
 * 对 rcl_action_goal_handle_t 使用 py::class_（`#751 <https://github.com/ros2/rclpy/issues/751>`__）
 * 将 Publisher 和 Subscription 转换为 C++ 类（`#756 <https://github.com/ros2/rclpy/issues/756>`__）
-* 将:code:`QoS*Policy`  枚举重命名为 ``\*Policy``（`#379 <https://github.com/ros2/rclpy/issues/379>`__）
+* 将 :code:`QoS*Policy` 枚举重命名为 :code:`*Policy`（`#379 <https://github.com/ros2/rclpy/issues/379>`__）
 * 从参数 YAML 文件中读取节点 ``/**`` 的参数（`#370 <https://github.com/ros2/rclpy/issues/370>`__）
 * 更新实现，以从参数 YAML 文件中读取节点 ``/**`` 的参数（`#399 <https://github.com/ros2/rclpy/issues/399>`__）
 * 贡献者：Alejandro Hernández Cordero、Anthony、Artem Shumov、Auguste Lalande、Barry Xu、Chris Lalancette、Emerson Knapp、Erki Suurjaak、Greg Balke、Ivan Santiago Paunovic、Jacob Perron、Lei Liu、Louise Poubel、Miguel Company、Shane Loretz、Tomoya Fujita、ksuszka
