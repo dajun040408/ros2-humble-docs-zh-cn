@@ -52,6 +52,6 @@ test_pull_requests
 * **方式一**：运行 ``bloom`` 时，可以选择启用 Pull Request 测试，具体请参阅 :doc:`Bloom 发布功能包 <../../../How-To-Guides/Releasing/Releasing-a-Package>`。
 * **方式二**：谨慎地手动编辑 rosdistro 仓库中的相应文件，并创建新的 Pull Request。
 
-  `配置示例 <https://github.com/ros/rosdistro/blob/3c295f76b0755989e9ed526c0b5f28a5f6a94da3/rolling/distribution.yaml#L4708>`_。相关说明见 ``REP 143 <http://docs.ros.org/en/independent/api/rep/html/rep-0143.html#distribution-file>`_。
+  `配置示例 <https://github.com/ros/rosdistro/blob/3c295f76b0755989e9ed526c0b5f28a5f6a94da3/rolling/distribution.yaml#L4708>`_。相关说明见 `REP 143 <http://docs.ros.org/en/independent/api/rep/html/rep-0143.html#distribution-file>`__。
 
 请注意，Pull Request 合并后，通常要等到 Jenkins 夜间重新配置任务时，才会创建相应的测试任务。
