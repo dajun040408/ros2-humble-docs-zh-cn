@@ -35,7 +35,7 @@ RMW 支持情况
    * - rmw_cyclonedds
      - 支持
 
-要使用等待确认功能，发布者的 :ref:`QoS 可靠性策略 <about_qos_policies>` 必须设置为 ``RELIABLE`，否则发布者不会等待确认。
+要使用等待确认功能，发布者的 :ref:`QoS 可靠性策略 <about_qos_policies>` 必须设置为 ``RELIABLE``，否则发布者不会等待确认。
 
 安装演示程序
 ------------
