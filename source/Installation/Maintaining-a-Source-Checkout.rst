@@ -7,7 +7,7 @@
 
   .. note::
 
-     有关维护 ROS 2 **最新开发版本**源码检出的说明，请参阅
+     有关维护 ROS 2 **最新开发版本** 源码检出的说明，请参阅
      `维护 ROS 2 Rolling 源码检出 <../../rolling/Installation/Maintaining-a-Source-Checkout.html>`_。
 
 .. contents::

@@ -28,7 +28,7 @@ C
 风格
 ^^^^
 
-采用`Python PEP7 <https://www.python.org/dev/peps/pep-0007/>`_ 作为 C 语言风格指南，并做如下调整：
+采用 `Python PEP7 <https://www.python.org/dev/peps/pep-0007/>`_ 作为 C 语言风格指南，并做如下调整：
 
 * 目标为 C99，不需要像 PEP7 建议的那样兼容 C89。
   * 这样可以同时使用 // 和 /* */ 注释。

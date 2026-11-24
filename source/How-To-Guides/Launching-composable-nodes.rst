@@ -5,7 +5,7 @@
    :depth: 1
    :local:
 
-在 :doc:`组件组合教程 <../Tutorials/Intermediate/Composition>`` 中，你已经学习了可组合节点以及如何从命令行使用它们。在 :doc:``Launch 教程 <../Tutorials/Intermediate/Launch/Launch-Main>` 中，你已经学习了启动文件以及如何使用启动文件管理多个节点。
+在 :doc:`组件组合教程 <../Tutorials/Intermediate/Composition>` 中，你已经学习了可组合节点以及如何从命令行使用它们。在 :doc:`Launch 教程 <../Tutorials/Intermediate/Launch/Launch-Main>` 中，你已经学习了启动文件以及如何使用启动文件管理多个节点。
 
 本指南将结合上述两个主题，介绍如何为可组合节点编写启动文件。
 
@@ -80,4 +80,4 @@
 XML、YAML 还是 Python：应该使用哪一种？
 ---------------------------------------
 
-更多信息请参阅 :doc:`不同格式启动文件指南 <Launch-file-different-formats>`` 中的 :ref:``相关讨论 <launch-file-different-formats-which>`。
+更多信息请参阅 :doc:`不同格式启动文件指南 <Launch-file-different-formats>` 中的 :ref:`相关讨论 <launch-file-different-formats-which>`。

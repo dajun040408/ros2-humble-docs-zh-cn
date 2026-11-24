@@ -43,19 +43,19 @@ tf2 教程
 
    本教程将帮助你了解 tf2 能够完成哪些工作。教程通过 turtlesim 多机器人示例展示 tf2 的部分功能，并介绍 ``tf2_echo``、``view_frames`` 和 ``rviz`` 的使用方法。
 
-#. 编写静态广播器：:doc:`Python <./Writing-A-Tf2-Static-Broadcaster-Py>``、:doc:``C++ <./Writing-A-Tf2-Static-Broadcaster-Cpp>`。
+#. 编写静态广播器：:doc:`Python <./Writing-A-Tf2-Static-Broadcaster-Py>`、:doc:`C++ <./Writing-A-Tf2-Static-Broadcaster-Cpp>`。
 
    学习如何向 tf2 广播静态坐标系。
 
-#. 编写广播器：:doc:`Python <./Writing-A-Tf2-Broadcaster-Py>``、:doc:``C++ <Writing-A-Tf2-Broadcaster-Cpp>`。
+#. 编写广播器：:doc:`Python <./Writing-A-Tf2-Broadcaster-Py>`、:doc:`C++ <Writing-A-Tf2-Broadcaster-Cpp>`。
 
    学习如何向 tf2 广播机器人的状态。
 
-#. 编写监听器：:doc:`Python <./Writing-A-Tf2-Listener-Py>``、:doc:``C++ <./Writing-A-Tf2-Listener-Cpp>`。
+#. 编写监听器：:doc:`Python <./Writing-A-Tf2-Listener-Py>`、:doc:`C++ <./Writing-A-Tf2-Listener-Cpp>`。
 
    学习如何使用 tf2 获取坐标系之间的变换。
 
-#. 添加坐标系：:doc:`Python <./Adding-A-Frame-Py>``、:doc:``C++ <Adding-A-Frame-Cpp>`。
+#. 添加坐标系：:doc:`Python <./Adding-A-Frame-Py>`、:doc:`C++ <Adding-A-Frame-Cpp>`。
 
    学习如何向 tf2 添加额外的固定坐标系。
 

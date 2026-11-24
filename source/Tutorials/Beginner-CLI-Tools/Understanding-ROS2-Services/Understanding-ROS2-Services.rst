@@ -29,7 +29,7 @@
 前置条件
 --------
 
-本系列前面的教程已经介绍了本教程涉及的一些概念，例如 :doc:`节点 <../Understanding-ROS2-Nodes/Understanding-ROS2-Nodes>`` 和 :doc:``话题 <../Understanding-ROS2-Topics/Understanding-ROS2-Topics>`。
+本系列前面的教程已经介绍了本教程涉及的一些概念，例如 :doc:`节点 <../Understanding-ROS2-Nodes/Understanding-ROS2-Nodes>` 和 :doc:`话题 <../Understanding-ROS2-Topics/Understanding-ROS2-Topics>`。
 
 你需要安装 :doc:`turtlesim 功能包 <../Introducing-Turtlesim/Introducing-Turtlesim>`。
 

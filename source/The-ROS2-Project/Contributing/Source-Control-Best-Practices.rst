@@ -41,7 +41,7 @@ build/、install/ 和 log/ 目录由 colcon build 在 ROS 2 工作空间中生�
 Python 生成文件
 ~~~~~~~~~~~~~~~
 
-Python 运行程序时会生成临时文件，包括 __pycache__/ 目录，以及 *.pyc、*.pyo 和 *.pyd 文件。这些文件都不应提交到仓库。
+Python 运行程序时会生成临时文件，包括 ``__pycache__/`` 目录，以及 ``*.pyc``、``*.pyo`` 和 ``*.pyd`` 文件。这些文件都不应提交到仓库。
 
 IDE 配置文件
 ~~~~~~~~~~~~
