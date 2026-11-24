@@ -45,7 +45,7 @@
 
    ``tf2`` 软件包有自己的时间类型 ``tf2::TimePoint``，它不同于 ``rclcpp::Time``。``tf2_ros`` 中的许多 API 会自动在 ``rclcpp::Time`` 和 ``tf2::TimePoint`` 之间转换。
 
-   这里也可以使用 ``rclcpp::Time(0, 0, this->get_clock()->get_clock_type())``，但最终仍会被转换为 ``tf2::TimePointZero`。
+   这里也可以使用 ``rclcpp::Time(0, 0, this->get_clock()->get_clock_type())``，但最终仍会被转换为 ``tf2::TimePointZero``。
 
 对于 tf2，时间 0 表示缓冲区中“最新可用”的变换。现在修改这行代码，获取当前时间 ``this->get_clock()->now()`` 对应的变换：
 
