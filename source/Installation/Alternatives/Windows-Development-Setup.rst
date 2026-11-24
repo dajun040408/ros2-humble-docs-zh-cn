@@ -21,7 +21,7 @@ Windows（源码安装）
 语言支持
 ^^^^^^^^
 
-请确保系统区域语言支持 `UTF-8`。例如，对于中文 Windows 10 安装环境，可能需要安装`英文语言包 <https://support.microsoft.com/en-us/windows/language-packs-for-windows-a5094319-a92d-18de-5b53-1cfc697cfca8>`_。
+请确保系统区域语言支持 ``UTF-8``。例如，对于中文 Windows 10 安装环境，可能需要安装`英文语言包 <https://support.microsoft.com/en-us/windows/language-packs-for-windows-a5094319-a92d-18de-5b53-1cfc697cfca8>`_。
 
 .. include:: ../_Windows-Install-Prerequisites.rst
 
@@ -37,7 +37,7 @@ Windows（源码安装）
 
    $ choco install -y cppcheck curl git winflexbison3
 
-需要将 Git cmd 目录 `C:\Program Files\Git\cmd` 添加到 PATH。可以点击 Windows 图标，搜索“环境变量”，选择“编辑系统环境变量”；在弹出的窗口中点击“环境变量”，在下方窗格中选择“Path”，点击“编辑”，然后添加该路径。
+需要将 Git cmd 目录 ``C:\Program Files\Git\cmd`` 添加到 PATH。可以点击 Windows 图标，搜索“环境变量”，选择“编辑系统环境变量”；在弹出的窗口中点击“环境变量”，在下方窗格中选择“Path”，点击“编辑”，然后添加该路径。
 
 安装 Python 前置依赖
 ^^^^^^^^^^^^^^^^^^^^
@@ -51,18 +51,18 @@ Windows（源码安装）
 安装其他杂项依赖
 ^^^^^^^^^^^^^^^^
 
-接下来安装 `xmllint`：
+接下来安装 ``xmllint``：
 
-* 从 `libxml 项目网站 <https://www.zlatkovic.com/projects/libxml/>`_ 下载 `libxml2` 的 64 位二进制归档，以及其依赖 `iconv` 和 `zlib`。
-* 将所有归档解压到某个目录，例如 `C:\xmllint`。
-* 将 `C:\xmllint\bin` 添加到 `PATH`。
+* 从 `libxml 项目网站 <https://www.zlatkovic.com/projects/libxml/>``_ 下载 ``libxml2`` 的 64 位二进制归档，以及其依赖 ``iconv`` 和 ``zlib`。
+* 将所有归档解压到某个目录，例如 ``C:\xmllint``。
+* 将 ``C:\xmllint\bin`` 添加到 ``PATH``。
 
 获取 ROS 2 源码
 ---------------
 
 现在开发工具已经准备就绪，可以获取 ROS 2 源码。
 
-首先创建开发目录，例如 `C:\{DISTRO}`：
+首先创建开发目录，例如 ``C:\{DISTRO}``：
 
 .. note::
 
@@ -73,7 +73,7 @@ Windows（源码安装）
    $ md \{DISTRO}\src
    $ cd \{DISTRO}
 
-获取定义待克隆仓库的 `ros2.repos` 文件：
+获取定义待克隆仓库的 ``ros2.repos`` 文件：
 
 .. code-block:: console
 
@@ -82,7 +82,7 @@ Windows（源码安装）
 安装其他 DDS 实现（可选）
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Fast DDS 已包含在 ROS 2 源码中。除非在 `src\eProsima` 目录中创建 `COLCON_IGNORE` 文件，否则始终会构建 Fast DDS。
+Fast DDS 已包含在 ROS 2 源码中。除非在 ``src\eProsima`` 目录中创建 ``COLCON_IGNORE`` 文件，否则始终会构建 Fast DDS。
 
 如果希望使用默认实现以外的 DDS 或 RTPS 供应商，请参阅 :doc:`相关说明 <../RMW-Implementations>`。
 
@@ -91,7 +91,7 @@ Fast DDS 已包含在 ROS 2 源码中。除非在 `src\eProsima` 目录中创建
 
 构建 ROS 2 时，需要以管理员身份运行 Visual Studio 命令提示符，例如“x64 Native Tools Command Prompt for VS 2019”。
 
-构建 `\{DISTRO}` 目录树：
+构建 ``\{DISTRO}`` 目录树：
 
 .. code-block:: console
 
@@ -99,11 +99,11 @@ Fast DDS 已包含在 ROS 2 源码中。除非在 `src\eProsima` 目录中创建
 
 .. note::
 
-   此处使用 `--merge-install`，是为了避免构建结束时 `PATH` 环境变量过长。如果只构建较小的工作空间，可以尝试默认的 isolated 安装模式，即将每个功能包安装到不同目录。
+   此处使用 ``--merge-install``，是为了避免构建结束时 ``PATH`` 环境变量过长。如果只构建较小的工作空间，可以尝试默认的 isolated 安装模式，即将每个功能包安装到不同目录。
 
 .. note::
 
-   如果执行 Debug 构建，需要使用 `python_d path\to\colcon_executable` 调用 colcon。更多信息请参阅下文“Debug 模式附加内容”。
+   如果执行 Debug 构建，需要使用 ``python_d path\to\colcon_executable`` 调用 colcon。更多信息请参阅下文“Debug 模式附加内容”。
 
 .. note::
 
@@ -118,7 +118,7 @@ Fast DDS 已包含在 ROS 2 源码中。除非在 `src\eProsima` 目录中创建
 
    $ call C:\{DISTRO}\install\local_setup.bat
 
-如果前面的命令没有其他错误，但恰好输出一次 `The system cannot find the path specified.`，这是正常现象。
+如果前面的命令没有其他错误，但恰好输出一次 ``The system cannot find the path specified.``，这是正常现象。
 
 测试与运行
 ----------
@@ -133,7 +133,7 @@ Fast DDS 已包含在 ROS 2 源码中。除非在 `src\eProsima` 目录中创建
 
 .. note::
 
-   只有构建阶段也使用了 `--merge-install`，测试阶段才应使用该选项。
+   只有构建阶段也使用了 ``--merge-install``，测试阶段才应使用该选项。
 
 随后可以运行以下命令查看测试摘要：
 
@@ -141,25 +141,25 @@ Fast DDS 已包含在 ROS 2 源码中。除非在 `src\eProsima` 目录中创建
 
    $ colcon test-result
 
-要运行示例，请打开一个干净的新 `cmd.exe`，source `local_setup.bat`，然后运行 C++ `talker`：
+要运行示例，请打开一个干净的新 ``cmd.exe``，source ``local_setup.bat``，然后运行 C++ ``talker``：
 
 .. code-block:: console
 
    $ call install\local_setup.bat
    $ ros2 run demo_nodes_cpp talker
 
-在另一个 Shell 中执行相同的环境配置，然后运行 Python `listener`：
+在另一个 Shell 中执行相同的环境配置，然后运行 Python ``listener``：
 
 .. code-block:: console
 
    $ call install\local_setup.bat
    $ ros2 run demo_nodes_py listener
 
-你应该能看到 `talker` 输出正在 `Publishing` 消息，而 `listener` 输出 `I heard` 并显示收到的消息。这说明 C++ 和 Python API 均能正常工作。
+你应该能看到 ``talker`` 输出正在 ``Publishing`` 消息，而 ``listener`` 输出 ``I heard`` 并显示收到的消息。这说明 C++ 和 Python API 均能正常工作。
 
 .. note::
 
-   不建议在已经 source `local_setup.bat` 的同一个 cmd 提示符中执行构建。
+   不建议在已经 source ``local_setup.bat`` 的同一个 cmd 提示符中执行构建。
 
 安装后的后续步骤
 ----------------
@@ -169,7 +169,7 @@ Fast DDS 已包含在 ROS 2 源码中。除非在 `src\eProsima` 目录中创建
 其他 RMW 实现（可选）
 ---------------------
 
-ROS 2 默认使用的中间件是 `Fast DDS`，但可以在运行时替换中间件（RMW）。有关如何使用多个 RMW 的说明，请参阅 :doc:`多 RMW 使用指南 <../../How-To-Guides/Working-with-multiple-RMW-implementations>`。
+ROS 2 默认使用的中间件是 ``Fast DDS``，但可以在运行时替换中间件（RMW）。有关如何使用多个 RMW 的说明，请参阅 :doc:`多 RMW 使用指南 <../../How-To-Guides/Working-with-multiple-RMW-implementations>`。
 
 Debug 模式附加内容
 ------------------
@@ -192,7 +192,7 @@ Debug 模式附加内容
 * 获取并解压 Python 3.8.3 源码：
 
   * `Python-3.8.3 <https://www.python.org/ftp/python/3.8.3/Python-3.8.3.tgz>`_
-  * 为简化说明，将其解压到 `C:\dev\Python-3.8.3`。
+  * 为简化说明，将其解压到 ``C:\dev\Python-3.8.3``。
 
 * 在 Visual Studio 命令提示符中以 Debug 模式构建 Python 源码：
 
@@ -215,13 +215,13 @@ Debug 模式附加内容
      copy sqlite3_d.dll C:\Python38\DLLs /Y
      for %I in (*_d.pyd) do copy %I C:\Python38\DLLs /Y
 
-* 在新的命令提示符中，确认 `python_d` 可以正常运行：
+* 在新的命令提示符中，确认 ``python_d`` 可以正常运行：
 
   .. code-block:: console
 
      python_d -c "import _ctypes ; import coverage"
 
-* 确认 `python_d` 正常后，需要使用启用 Debug 的库重新安装部分依赖：
+* 确认 ``python_d`` 正常后，需要使用启用 Debug 的库重新安装部分依赖：
 
   .. code-block:: console
 
@@ -241,7 +241,7 @@ Debug 模式附加内容
      python -m pip uninstall numpy lxml
      python -m pip install numpy lxml
 
-* 要将 Python 脚本创建为可执行程序（`.exe`），需要使用 `python_d` 调用 colcon：
+* 要将 Python 脚本创建为可执行程序（``.exe``），需要使用 ``python_d`` 调用 colcon：
 
   .. code-block:: console
 
@@ -260,7 +260,7 @@ Debug 模式附加内容
 卸载
 ----
 
-1. 如果按照上文说明使用 colcon 安装工作空间，“卸载”可能只需要打开新终端，不再 source 工作空间的 `setup` 文件。这样，环境就会表现得如同系统中没有安装 {DISTRO_TITLE} 一样。
+1. 如果按照上文说明使用 colcon 安装工作空间，“卸载”可能只需要打开新终端，不再 source 工作空间的 ``setup`` 文件。这样，环境就会表现得如同系统中没有安装 {DISTRO_TITLE} 一样。
 2. 如果还希望释放磁盘空间，可以删除整个工作空间目录：
 
    .. code-block:: console
