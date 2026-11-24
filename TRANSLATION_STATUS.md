@@ -166,3 +166,13 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 发现 `Migrating-Package-XML.rst` 的 XML 示例代码块已正确使用原始 XML 标签（不应在 code-block 中额外包裹双反引号）；本轮复核确认当前 main 文件已是正确状态，无需新增提交。
 - 实际站点抓取结果：搜索/网页抓取缓存中，`Migrating Packages`、`Migrating Interfaces`、`Migrating Parameters`、C++/Python/Launch/Scripts 页面仍显示旧英文正文；抓取时间分布在约1至5个月前，故这是旧缓存证据，不能据此证明当前 DNS 已指向或未指向 Pages。当前 Pages 部署成功，但自定义域名配置及 DNS/HTTPS 实时状态仍无可验证结果。
 - GitHub 官方自定义域名流程：自定义 Actions 发布时 GitHub 不会创建或读取 CNAME 文件来绑定域名；必须在 Settings → Pages → Custom domain 设置 `ros2docs.robook.org`，并由 DNS 将 `ros2docs` CNAME 指向 `dajun040408.github.io`。官方文档：https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site。
+
+
+## 2026-11-24 第五轮迁移指南审校（脚本迁移）
+
+- 依据 ROS 2 Humble 上游 `Migrating-Scripts.rst` 逐项对照，发现原中文文件的 ROS CLI 示例存在严重的 reStructuredText 行内标记破损：``--ros-args``、``--param``、``--remap`` 等命令被拆成错误的反引号片段，快速参考表格分隔线也被错误包裹，可能导致网页显示异常或 Sphinx 警告。
+- 已按 Humble 上游内容重写该页的命令示例、术语说明和快速参考表格；恢复真实命令 `ros2 run ... --ros-args -r ...`、`--param` 等，保留 ROS 1/ROS 2 参数名称和代码原样。
+- 修订文件：`source/How-To-Guides/Migrating-from-ROS1/Migrating-Scripts.rst`。
+- 提交：`575d712649c7dd4760a30ad7b499806f41a38b00`（2026-11-24 04:04 UTC）。
+- 已回读 GitHub main 确认更新后的文件存在；本次提交会触发 `.github/workflows/deploy-docs.yml`。该提交对应的构建与部署结果尚待核验。
+- 下一轮优先逐段核对 C++/Python 迁移参考页、Launch 文件页及其代码块/表格；不能把代码标识符、XML 标签、CLI 参数或英文 API 名称误判为未翻译正文。
