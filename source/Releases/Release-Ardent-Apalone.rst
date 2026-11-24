@@ -20,7 +20,7 @@ Ardent Apalone（ardent）
 * macOS 10.12（Sierra）
 * Windows 10
 
-三个平台均提供二进制软件包和源码编译说明，参见 :doc:§安装说明 <../../Installation>§ 以及§Ardent 文档 <https://docs.ros2.org/ardent/>§_。
+三个平台均提供二进制软件包和源码编译说明，参见 :doc:`安装说明 <../../Installation>` 以及`Ardent 文档 <https://docs.ros2.org/ardent/>`_。
 
 目标平台
 --------
@@ -136,7 +136,7 @@ Linux 专用依赖（用于 TurtleBot 演示）：PCL 1.7.2。
 * ROS 1 与 ROS 2 桥接。
 * HSR 和 TurtleBot 演示。
 
-更多详情请参阅 :doc:§功能特性 <../../The-ROS2-Project/Features>§。
+更多详情请参阅 :doc:`功能特性 <../../The-ROS2-Project/Features>`。
 
 自 Beta 3 以来的变更
 --------------------

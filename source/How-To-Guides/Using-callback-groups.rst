@@ -1,7 +1,7 @@
 使用回调组
 ==========
 
-当节点运行在多线程执行器（Multi-Threaded Executor）中时，ROS 2 提供回调组（Callback Groups）作为控制不同回调执行方式的工具。本页面介绍如何高效使用回调组。假设读者已经了解 :doc:§执行器 <../Concepts/Intermediate/About-Executors>§ 的基本概念。
+当节点运行在多线程执行器（Multi-Threaded Executor）中时，ROS 2 提供回调组（Callback Groups）作为控制不同回调执行方式的工具。本页面介绍如何高效使用回调组。假设读者已经了解 :doc:`执行器 <../Concepts/Intermediate/About-Executors>` 的基本概念。
 
 .. contents:: 目录
    :local:
@@ -22,7 +22,7 @@
 
 还需要注意，不同 ROS 2 实体会将其回调组传递给自己创建的所有回调。例如，如果为动作客户端分配了一个回调组，那么该客户端创建的所有回调都会分配到同一个回调组。
 
-在 rclcpp 中，可以通过节点的 §create_callback_group§ 函数创建回调组；在 rclpy 中，可以通过调用回调组的构造函数创建。创建后，可以在创建订阅者、定时器等实体时，将回调组作为参数/选项传入。
+在 rclcpp 中，可以通过节点的 ``create_callback_group`` 函数创建回调组；在 rclpy 中，可以通过调用回调组的构造函数创建。创建后，可以在创建订阅者、定时器等实体时，将回调组作为参数/选项传入。
 
 必须保留对回调组的引用，否则执行器不会调用与该回调组关联的回调。
 
@@ -48,7 +48,7 @@
       my_subscription = self.create_subscription(Int32, "/topic", self.callback, qos_profile=1,
                                                   callback_group=my_callback_group)
 
-如果创建订阅者、定时器等实体时没有指定回调组，该实体就会分配到节点的默认回调组。默认回调组是一个互斥回调组，可以通过 rclcpp 中的 §NodeBaseInterface::get_default_callback_group()§ 或 rclpy 中的 §Node.default_callback_group§ 查询。
+如果创建订阅者、定时器等实体时没有指定回调组，该实体就会分配到节点的默认回调组。默认回调组是一个互斥回调组，可以通过 rclcpp 中的 ``NodeBaseInterface::get_default_callback_group()`` 或 rclpy 中的 ``Node.default_callback_group`` 查询。
 
 关于回调
 ^^^^^^^^
@@ -64,7 +64,7 @@
 使用回调组时，需要牢记以下几点：
 
 * ROS 2 中几乎所有由执行器执行的操作都是回调！从定义上讲，执行器运行的每个函数都是回调。ROS 2 系统中的非回调函数主要位于系统边缘，例如用户输入和传感器输入等。
-* 有时回调是隐藏的，其存在可能不会直接体现在用户/开发者 API 中。尤其是在 rclpy 中进行服务或动作的“同步”调用时。例如，对服务调用 §Client.call(request)§ 会添加一个 Future 完成回调，该回调必须在函数调用期间执行，但用户无法直接看到它。
+* 有时回调是隐藏的，其存在可能不会直接体现在用户/开发者 API 中。尤其是在 rclpy 中进行服务或动作的“同步”调用时。例如，对服务调用 ``Client.call(request)`` 会添加一个 Future 完成回调，该回调必须在函数调用期间执行，但用户无法直接看到它。
 
 控制执行方式
 ------------
@@ -309,12 +309,12 @@
           node.destroy_node()
           rclpy.shutdown()
 
-客户端节点的构造函数中包含用于设置服务客户端和定时器回调组的选项。上面的默认设置（两者均为 §nullptr§ / §None§）意味着定时器和客户端都会使用节点默认的互斥回调组。
+客户端节点的构造函数中包含用于设置服务客户端和定时器回调组的选项。上面的默认设置（两者均为 ``nullptr`` / ``None``）意味着定时器和客户端都会使用节点默认的互斥回调组。
 
 问题
 ^^^^
 
-由于我们使用 1 秒定时器调用服务，预期结果是每秒调用一次服务，客户端始终能够收到响应并打印 §Received response§。如果在终端中运行服务端和客户端节点，会得到以下输出。
+由于我们使用 1 秒定时器调用服务，预期结果是每秒调用一次服务，客户端始终能够收到响应并打印 ``Received response``。如果在终端中运行服务端和客户端节点，会得到以下输出。
 
 .. tabs::
 

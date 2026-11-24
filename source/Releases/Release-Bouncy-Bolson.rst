@@ -14,7 +14,7 @@ Bouncy Bolson 是 ROS 2 的第二个发行版。
 支持平台
 --------
 
-该 ROS 2 版本支持四个平台。完整信息请参阅§REP 2000 <https://reps.openrobotics.org/rep-2000/#bouncy-bolson-june-2018-june-2019>§_。
+该 ROS 2 版本支持四个平台。完整信息请参阅`REP 2000 <https://reps.openrobotics.org/rep-2000/#bouncy-bolson-june-2018-june-2019>`_。
 
 * Ubuntu 18.04（Bionic）
   * 提供 amd64 和 arm64 Debian 软件包。
@@ -23,7 +23,7 @@ Bouncy Bolson 是 ROS 2 的第二个发行版。
 * macOS 10.12（Sierra）
 * Windows 10（Visual Studio 2017）
 
-各平台均提供二进制软件包和源码编译说明，参见 :doc:§安装说明 <../../Installation>§ 以及§Bouncy 文档 <https://docs.ros2.org/bouncy/>§_。
+各平台均提供二进制软件包和源码编译说明，参见 :doc:`安装说明 <../../Installation>` 以及`Bouncy 文档 <https://docs.ros2.org/bouncy/>`_。
 
 最低语言要求
 ------------
@@ -107,7 +107,7 @@ Linux 专用依赖（用于 TurtleBot 演示）：PCL。
   * RTI Connext
   * ADLINK OpenSplice
 
-完整功能列表请参阅 :doc:§功能特性 <../../The-ROS2-Project/Features>§。
+完整功能列表请参阅 :doc:`功能特性 <../../The-ROS2-Project/Features>`。
 
 自 Ardent 以来的变更
 --------------------

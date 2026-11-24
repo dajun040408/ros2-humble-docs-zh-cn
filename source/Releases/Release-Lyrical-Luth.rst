@@ -12,24 +12,24 @@ Lyrical Luth（lyrical）
    :depth: 2
    :local:
 
-Lyrical Luth 是 ROS 2 的第十二个发行版。本文介绍该发行版的平台支持和安装入口。完整变更请参阅§完整变更日志 <Lyrical-Luth-Complete-Changelog>§_。
+Lyrical Luth 是 ROS 2 的第十二个发行版。本文介绍该发行版的平台支持和安装入口。完整变更请参阅:doc:`完整变更日志 <Lyrical-Luth-Complete-Changelog>`。
 
 支持平台
 --------
 
-Lyrical 的目标平台、架构和支持等级由§REP 2000 <https://reps.openrobotics.org/rep-2000/>§_ 定义。
+Lyrical 的目标平台、架构和支持等级由`REP 2000 <https://reps.openrobotics.org/rep-2000/>`_ 定义。
 
 使用前请确认目标操作系统、编译器、Python 和主要依赖版本均在发行版支持范围内。
 
 中间件实现
 ----------
 
-ROS 2 可以通过 RMW 层使用不同的 DDS/RTPS 实现。默认中间件及其他实现的支持情况请参阅 :doc:§RMW 实现说明 <../../Installation/RMW-Implementations>§。
+ROS 2 可以通过 RMW 层使用不同的 DDS/RTPS 实现。默认中间件及其他实现的支持情况请参阅 :doc:`RMW 实现说明 <../../Installation/RMW-Implementations>`。
 
 安装
 ----
 
-请参阅§Lyrical 安装说明 <../../lyrical/Installation.html>§_。
+请参阅`Lyrical 安装说明 <../../lyrical/Installation.html>`_。
 
 生命周期
 --------

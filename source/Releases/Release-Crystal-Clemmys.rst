@@ -14,7 +14,7 @@ Crystal Clemmys 是 ROS 2 的第三个发行版。
 支持平台
 --------
 
-Crystal Clemmys 根据§平台支持等级 <../The-ROS2-Project/Platform-Support-Tiers>§_ 支持以下平台。
+Crystal Clemmys 根据:doc:`平台支持等级 <../The-ROS2-Project/Platform-Support-Tiers>` 支持以下平台。
 
 Tier 1 平台：
 

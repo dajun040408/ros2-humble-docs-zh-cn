@@ -12,12 +12,12 @@ Jazzy Jalisco（jazzy）
    :depth: 2
    :local:
 
-Jazzy Jalisco 是 ROS 2 的第十个发行版。本文列出相较 Iron 的重要变更和功能。完整变更请参阅§完整变更日志 <Jazzy-Jalisco-Complete-Changelog>§_。
+Jazzy Jalisco 是 ROS 2 的第十个发行版。本文列出相较 Iron 的重要变更和功能。完整变更请参阅:doc:`完整变更日志 <Jazzy-Jalisco-Complete-Changelog>`。
 
 支持平台
 --------
 
-Jazzy 根据§平台支持等级 <../The-ROS2-Project/Platform-Support-Tiers>§_ 支持以下平台。
+Jazzy 根据:doc:`平台支持等级 <../The-ROS2-Project/Platform-Support-Tiers>` 支持以下平台。
 
 Tier 1：
 
@@ -44,7 +44,7 @@ Tier 3：
 安装
 ----
 
-请参阅§Jazzy 安装说明 <../../jazzy/Installation.html>§_。
+请参阅`Jazzy 安装说明 <../../jazzy/Installation.html>`_。
 
 本次发行版的重要变化
 --------------------
@@ -55,4 +55,4 @@ Tier 3：
 * rosbag2 增加功能并改进存储插件。
 * Nav2、MoveIt 2、RViz 和 Gazebo 等生态软件包继续更新。
 
-更多功能和兼容性细节请参阅完整变更日志及§REP 2000 <https://reps.openrobotics.org/rep-2000/>§_。
+更多功能和兼容性细节请参阅完整变更日志及`REP 2000 <https://reps.openrobotics.org/rep-2000/>`_。

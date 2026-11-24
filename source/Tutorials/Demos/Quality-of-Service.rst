@@ -13,7 +13,7 @@
 背景
 ----
 
-有关 ROS 2 可用 QoS 支持的背景信息，请参阅 :doc:§QoS 设置概念页面 <../../Concepts/Intermediate/About-Quality-of-Service-Settings>§。
+有关 ROS 2 可用 QoS 支持的背景信息，请参阅 :doc:`QoS 设置概念页面 <../../Concepts/Intermediate/About-Quality-of-Service-Settings>`。
 
 本演示将启动一个发布摄像头图像的节点，以及一个订阅图像并显示在屏幕上的节点。随后模拟两者之间的有损网络连接，展示不同 QoS 设置如何处理网络质量下降的问题。
 

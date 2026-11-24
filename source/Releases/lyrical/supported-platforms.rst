@@ -8,7 +8,7 @@ Lyrical 支持的平台
 
 ROS 2 使用 REP 2000 定义每个发行版支持的操作系统、架构、编译器和依赖版本。Tier 1 表示最高级别的平台支持；Tier 2 和 Tier 3 表示不同程度的支持承诺。
 
-请参阅§REP 2000：Lyrical 平台支持矩阵 <https://reps.openrobotics.org/rep-2000/>§_，查看最新的架构、操作系统版本和支持等级。
+请参阅`REP 2000：Lyrical 平台支持矩阵 <https://reps.openrobotics.org/rep-2000/>`_，查看最新的架构、操作系统版本和支持等级。
 
 选择平台时，需要同时考虑：
 

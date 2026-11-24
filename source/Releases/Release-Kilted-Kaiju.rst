@@ -12,24 +12,24 @@ Kilted Kaiju（kilted）
    :depth: 2
    :local:
 
-Kilted Kaiju 是 ROS 2 的第十一个发行版。本文列出该发行版的重要信息和平台支持情况。完整变更请参阅§完整变更日志 <Kilted-Kaiju-Complete-Changelog>§_。
+Kilted Kaiju 是 ROS 2 的第十一个发行版。本文列出该发行版的重要信息和平台支持情况。完整变更请参阅:doc:`完整变更日志 <Kilted-Kaiju-Complete-Changelog>`。
 
 支持平台
 --------
 
-Kilted 根据§平台支持等级 <../The-ROS2-Project/Platform-Support-Tiers>§_ 定义支持平台。具体 Tier 等级和架构组合请以 REP 2000 为准。
+Kilted 根据:doc:`平台支持等级 <../The-ROS2-Project/Platform-Support-Tiers>` 定义支持平台。具体 Tier 等级和架构组合请以 REP 2000 为准。
 
 主要目标平台包括 Ubuntu 24.04（Noble）以及受支持的 Windows 和 RHEL 平台。
 
 中间件实现支持
 --------------
 
-ROS 2 支持多种 DDS/RTPS 中间件实现。默认实现及各实现的平台支持等级请参阅§REP 2000 <https://reps.openrobotics.org/rep-2000/>§_ 和 :doc:§RMW 实现说明 <../../Installation/RMW-Implementations>§。
+ROS 2 支持多种 DDS/RTPS 中间件实现。默认实现及各实现的平台支持等级请参阅`REP 2000 <https://reps.openrobotics.org/rep-2000/>`_ 和 :doc:`RMW 实现说明 <../../Installation/RMW-Implementations>`。
 
 安装
 ----
 
-请参阅§Kilted 安装说明 <../../kilted/Installation.html>§_。
+请参阅`Kilted 安装说明 <../../kilted/Installation.html>`_。
 
 发行版信息
 ----------
