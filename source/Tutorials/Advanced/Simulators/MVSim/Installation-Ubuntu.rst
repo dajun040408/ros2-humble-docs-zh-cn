@@ -21,9 +21,9 @@ MVSim 使用 BSD 3-Clause 许可证。
 前置条件
 --------
 
-建议先了解初学者 :doc:`教程 <../../../../Tutorials>` 中介绍的 ROS 基础概念。特别建议先完成 :doc:`创建工作空间 <../../../Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>`。
+建议先了解初学者 :doc:`教程 </Tutorials>` 中介绍的 ROS 基础概念。特别建议先完成 :doc:`创建工作空间 </Tutorials/Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>`。
 
-你需要有一个可正常工作的 ROS 2 安装环境。如有需要，请按照 :doc:`ROS 2 安装说明 <../../../../Installation>` 操作。
+你需要有一个可正常工作的 ROS 2 安装环境。如有需要，请按照 :doc:`ROS 2 安装说明 </Installation>` 操作。
 
 任务
 ----
