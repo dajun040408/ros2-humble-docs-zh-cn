@@ -25,7 +25,7 @@
 ----
 
 1. 启动仿真
-^^^^^^^^^^
+^^^^^^^^^^^
 
 本演示将在 Gazebo 中模拟一台简单的差速驱动机器人。使用 Gazebo 示例中的 visualize_lidar.sdf 世界文件：https://github.com/gazebosim/gz-sim/blob/main/examples/worlds/visualize_lidar.sdf。
 
