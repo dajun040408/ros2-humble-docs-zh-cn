@@ -323,3 +323,6 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - Beginner Client Libraries 目录中尚未做实质性补译的两篇为 `Colcon-Tutorial.rst` 与 `Getting-Started-With-Ros2doctor.rst`；前者章节和主要示例已与上游对应，本轮对后者做了补充说明。仍需最后一次全目录逐段抽查。
 
 - 继续抽查 `Colcon-Tutorial.rst`，发现 colcon_cd 部分只列出 Linux 命令，缺少官方 Humble 中的 macOS 配置、Windows 不支持说明及撤销配置的方法。已补齐三平台说明和撤销步骤。提交：`f70c8b34539d6f608fbf282277ced2310706f7c9`。
+
+- 构建 #793（提交 `172e9f3`）build/deploy 均成功。Sphinx ERROR=0、CRITICAL=0；当前仅剩 2 条上游 Lyrical 页面未纳入 Humble toctree 的警告。此次构建包含单包接口、自定义接口、C++/Python 参数类、功能包创建、工作空间、pluginlib、colcon_cd 和 ros2doctor 的全部本轮修改。
+- GitHub Actions 部署成功，说明更新已发布到 Pages Artifact。外部网页读取工具无法直接打开 GitHub Pages 页面，因此本轮未声称完成浏览器端逐页视觉验收。
