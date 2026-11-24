@@ -32,7 +32,7 @@ C++ 服务调用 API 仅提供异步方式，因此本指南中的比较和示�
 
 同步客户端发送服务请求后，会阻塞调用线程，直到收到响应。在此期间，该线程无法执行其他工作。调用可能需要任意长的时间才能完成。完成后，响应会直接返回给客户端。
 
-以下示例展示如何在客户端节点中正确执行同步服务调用，类似于 :doc:`简单服务和客户端 <../Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Service-And-Client>` 教程中的异步节点。
+以下示例展示如何在客户端节点中正确执行同步服务调用，类似于 :doc:`简单服务和客户端 </Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Service-And-Client>` 教程中的异步节点。
 
 .. code-block:: python
 
