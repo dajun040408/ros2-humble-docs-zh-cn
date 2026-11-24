@@ -35,7 +35,7 @@ CI 构建（https://ci.ros2.org）
 
 默认情况下，运行该任务会在所有平台（Linux、macOS 和 Windows）上构建并测试全部软件包（目前超过 300 个）。完整构建可能需要数小时，并占用 CI 机器，因此建议限制每次构建和测试的软件包数量。
 
-可以使用 colcon 参数 ``--packages-up-to``、``--packages-select``、``--packages-above-and-dependencies``、``--packages-above`` 等实现限制。更多示例请参阅 `colcon 文档 <https://colcon.readthedocs.io/en/released/user/how-to.html#build-only-a-single-package-or-selected-packages>`_。CI 工具的详细使用说明见 `CI_BUILDERS.md <https://github.com/ros2/ci/blob/master/CI_BUILDERS.md>`_。
+可以使用 colcon 参数 ``--packages-up-to``、``--packages-select``、``--packages-above-and-dependencies``、``--packages-above`` 等实现限制。更多示例请参阅 `colcon 文档 <https://colcon.readthedocs.io/en/released/user/how-to.html#build-only-a-single-package-or-selected-packages>``_。CI 工具的详细使用说明见 ``CI_BUILDERS.md <https://github.com/ros2/ci/blob/master/CI_BUILDERS.md>`_。
 
 合并 Pull Request
 -----------------
@@ -87,13 +87,13 @@ ROS 中的发布包含两个独立步骤：源码发布和二进制发布。
 
 如果仓库中一个或多个软件包尚无 ``CHANGELOG.rst``，可以添加 ``--all`` 选项，将每个软件包此前的所有提交记录填入变更日志。``catkin_generate_changelog`` 只是将仓库提交日志写入文件。由于提交日志并不总适合作为变更日志，建议编辑 ``CHANGELOG.rst``，使其更易阅读。编辑完成后，应将更新后的文件提交到仓库。
 
-接下来，使用以下命令更新 `package.xml` 和变更日志中的版本号：
+接下来，使用以下命令更新 ``package.xml`` 和变更日志中的版本号：
 
 .. code-block:: console
 
   $ catkin_prepare_release
 
-该命令会查找仓库中的所有软件包，检查变更日志是否存在、是否有未提交的本地修改，递增 `package.xml` 中的版本号，并使用兼容 Bloom 的标签提交这些变更。
+该命令会查找仓库中的所有软件包，检查变更日志是否存在、是否有未提交的本地修改，递增 ``package.xml`` 中的版本号，并使用兼容 Bloom 的标签提交这些变更。
 
 默认情况下，``catkin_prepare_release`` 会提升软件包的补丁版本，例如 ``0.1.1 -> 0.1.2``。也可以提升次版本号或主版本号，或者指定精确版本。更多信息请查看该命令的帮助输出。
 
@@ -110,7 +110,7 @@ ROS 中的发布包含两个独立步骤：源码发布和二进制发布。
 
   $ bloom-release --track <rosdistro> --rosdistro <rosdistro> <repository_name>
 
-例如，将 `rclcpp` 仓库发布到 {DISTRO_TITLE} 发行版：
+例如，将 ``rclcpp`` 仓库发布到 {DISTRO_TITLE} 发行版：
 
 .. code-block:: console
 
