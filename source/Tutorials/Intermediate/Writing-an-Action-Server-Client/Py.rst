@@ -23,7 +23,7 @@ Action 是 ROS 2 中的一种异步通信方式。Action 客户端向 Action 服
 前置条件
 --------
 
-需要先完成 :doc:§创建 Action 接口 <../Creating-an-Action>§ 教程，并准备 §action_tutorials_interfaces§ 功能包及其中定义的 §Fibonacci.action§。
+需要先完成 :doc:`创建 Action 接口 <../Creating-an-Action>` 教程，并准备 ``action_tutorials_interfaces`` 功能包及其中定义的 ``Fibonacci.action``。
 
 任务
 ----
@@ -33,7 +33,7 @@ Action 是 ROS 2 中的一种异步通信方式。Action 客户端向 Action 服
 
 本教程编写一个 Action 服务端，使用此前创建的 Fibonacci Action 计算斐波那契数列。
 
-创建 §fibonacci_action_server.py§，导入 §rclpy§、§ActionServer§ 和 §Fibonacci§ 接口类型。服务端节点继承自 §Node§，并创建 ActionServer：
+创建 ``fibonacci_action_server.py``，导入 ``rclpy``、``ActionServer`` 和 ``Fibonacci`` 接口类型。服务端节点继承自 ``Node``，并创建 ActionServer：
 
 .. code-block:: python
 
@@ -69,12 +69,12 @@ Action 是 ROS 2 中的一种异步通信方式。Action 客户端向 Action 服
 
 ActionServer 需要四个参数：
 
-#. 要添加 Action 服务端的 ROS 2 节点，即 §self§。
-#. Action 类型，即 §Fibonacci§。
-#. Action 名称，即 §fibonacci§。
-#. 执行已接受目标的回调函数，即 §execute_callback§。该回调必须返回 Action 对应的结果消息。
+#. 要添加 Action 服务端的 ROS 2 节点，即 ``self``。
+#. Action 类型，即 ``Fibonacci``。
+#. Action 名称，即 ``fibonacci``。
+#. 执行已接受目标的回调函数，即 ``execute_callback``。该回调必须返回 Action 对应的结果消息。
 
-执行回调会在目标被接受后调用。它计算数列并通过 §publish_feedback()§ 发布反馈，最后调用 §succeed()§ 表示目标成功完成，并返回结果消息。
+执行回调会在目标被接受后调用。它计算数列并通过 ``publish_feedback()`` 发布反馈，最后调用 ``succeed()`` 表示目标成功完成，并返回结果消息。
 
 运行服务端：
 
@@ -82,7 +82,7 @@ ActionServer 需要四个参数：
 
    $ python3 fibonacci_action_server.py
 
-Windows 可以使用 §python fibonacci_action_server.py§。
+Windows 可以使用 ``python fibonacci_action_server.py``。
 
 在另一个终端发送目标：
 
@@ -90,14 +90,14 @@ Windows 可以使用 §python fibonacci_action_server.py§。
 
    $ ros2 action send_goal fibonacci action_tutorials_interfaces/action/Fibonacci "{order: 5}"
 
-如果目标句柄状态没有在执行回调中设置，默认会被视为 aborted。成功完成时应调用 §succeed()§。
+如果目标句柄状态没有在执行回调中设置，默认会被视为 aborted。成功完成时应调用 ``succeed()``。
 
 2. 编写 Action 客户端
 ^^^^^^^^^^^^^^^^^^^^^
 
-客户端使用 §ActionClient§ 创建 Action 客户端，并调用 §send_goal_async()§ 发送目标。可以注册目标响应回调，判断服务端是否接受目标；接受后通过 §get_result_async()§ 获取最终结果。
+客户端使用 ``ActionClient`` 创建 Action 客户端，并调用 ``send_goal_async()`` 发送目标。可以注册目标响应回调，判断服务端是否接受目标；接受后通过 ``get_result_async()`` 获取最终结果。
 
-客户端还可以通过 §feedback_callback§ 接收服务端周期性发送的反馈消息。对于长时间运行的任务，客户端可以使用取消请求接口要求服务端停止执行。
+客户端还可以通过 ``feedback_callback`` 接收服务端周期性发送的反馈消息。对于长时间运行的任务，客户端可以使用取消请求接口要求服务端停止执行。
 
 3. 运行与验证
 ^^^^^^^^^^^^^
@@ -113,4 +113,4 @@ Windows 可以使用 §python fibonacci_action_server.py§。
 总结
 ----
 
-本教程介绍了如何使用 §rclpy.action.ActionServer§ 和 §ActionClient§ 实现 Python Action 服务端与客户端，并处理目标、反馈、取消和结果。
+本教程介绍了如何使用 ``rclpy.action.ActionServer`` 和 ``ActionClient`` 实现 Python Action 服务端与客户端，并处理目标、反馈、取消和结果。

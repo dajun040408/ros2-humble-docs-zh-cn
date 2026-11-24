@@ -19,9 +19,9 @@ webots_ros2 软件包提供 ROS 2 与 Webots 之间的接口。它包含多个�
 前置条件
 --------
 
-建议先了解 :doc:§初级教程 <../../../../Tutorials>§ 中介绍的 ROS 基本概念。特别是 :doc:§创建工作空间 <../../../Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>§ 和 :doc:§创建第一个 ROS 2 功能包 <../../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>§。
+建议先了解 :doc:`初级教程 <../../../../Tutorials>` 中介绍的 ROS 基本概念。特别是 :doc:`创建工作空间 <../../../Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>` 和 :doc:`创建第一个 ROS 2 功能包 <../../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>`。
 
-使用 webots_ros2 软件包前需要安装 Webots。可以按照§安装流程 <https://cyberbotics.com/doc/guide/installation-procedure>§_ 操作，也可以§从源码构建 <https://github.com/cyberbotics/webots/wiki/Windows-installation/>§_。
+使用 webots_ros2 软件包前需要安装 Webots。可以按照`安装流程 <https://cyberbotics.com/doc/guide/installation-procedure>`_ 操作，也可以`从源码构建 <https://github.com/cyberbotics/webots/wiki/Windows-installation/>`_。
 
 也可以让 webots_ros2 自动下载 Webots。当启动示例且系统未找到 Webots 安装时，会显示自动安装选项。
 
@@ -43,12 +43,12 @@ webots_ros2 软件包提供 ROS 2 与 Webots 之间的接口。它包含多个�
 
 在 Windows 上，与原生 Windows 安装相比，WSL（Windows Subsystem for Linux）可以改善 ROS 2 使用体验，因为 ROS 2 将运行在 Linux 平台上。
 
-按照§Microsoft 官方教程 <https://learn.microsoft.com/en-us/windows/wsl/install>§_ 安装与当前 ROS 发行版兼容的 Ubuntu，并升级到 WSL2。
+按照`Microsoft 官方教程 <https://learn.microsoft.com/en-us/windows/wsl/install>`_ 安装与当前 ROS 发行版兼容的 Ubuntu，并升级到 WSL2。
 
 2. 在 WSL 中安装 ROS 2
 ^^^^^^^^^^^^^^^^^^^^^^
 
-按照 :doc:§Ubuntu deb 安装指南 <../../../../Installation/Ubuntu-Install-Debs>§ 在 Ubuntu WSL 中安装 ROS 2。
+按照 :doc:`Ubuntu deb 安装指南 <../../../../Installation/Ubuntu-Install-Debs>` 在 Ubuntu WSL 中安装 ROS 2。
 
 3. 安装 webots_ros2
 ^^^^^^^^^^^^^^^^^^^

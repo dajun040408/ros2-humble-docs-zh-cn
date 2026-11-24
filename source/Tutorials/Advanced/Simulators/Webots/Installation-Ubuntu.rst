@@ -19,9 +19,9 @@ webots_ros2 软件包提供 ROS 2 与 Webots 之间的接口。它包含多个�
 前置条件
 --------
 
-建议先了解 :doc:§初级教程 <../../../../Tutorials>§ 中介绍的 ROS 基本概念。特别是 :doc:§创建工作空间 <../../../Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>§ 和 :doc:§创建第一个 ROS 2 功能包 <../../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>§。
+建议先了解 :doc:`初级教程 <../../../../Tutorials>` 中介绍的 ROS 基本概念。特别是 :doc:`创建工作空间 <../../../Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>` 和 :doc:`创建第一个 ROS 2 功能包 <../../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>`。
 
-使用 webots_ros2 接口前需要安装 Webots。可以按照§安装流程 <https://cyberbotics.com/doc/guide/installation-procedure>§_ 操作，也可以§从源码构建 <https://github.com/cyberbotics/webots/wiki/Linux-installation/>§_。
+使用 webots_ros2 接口前需要安装 Webots。可以按照`安装流程 <https://cyberbotics.com/doc/guide/installation-procedure>`_ 操作，也可以`从源码构建 <https://github.com/cyberbotics/webots/wiki/Linux-installation/>`_。
 
 另外，也可以让 webots_ros2 自动下载并安装 Webots。当启动软件包示例且系统未找到 Webots 安装时，会显示此选项。
 

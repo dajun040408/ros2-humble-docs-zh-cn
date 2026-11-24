@@ -1,7 +1,7 @@
 Webots 安装（macOS）
 ====================
 
-**目标：** 在 macOS 上安装 §webots_ros2§ 并运行仿真示例。
+**目标：** 在 macOS 上安装 ``webots_ros2`` 并运行仿真示例。
 
 **教程级别：** 高级 | **预计时间：** 10 分钟
 
@@ -12,14 +12,14 @@ Webots 安装（macOS）
 背景
 ----
 
-§webots_ros2§ 功能包提供 ROS 2 与 Webots 之间的接口，包含 §webots_ros2_driver§ 等子功能包，用于启动 Webots 并与其通信。其他子功能包主要提供不同接口用法的示例。
+``webots_ros2`` 功能包提供 ROS 2 与 Webots 之间的接口，包含 ``webots_ros2_driver`` 等子功能包，用于启动 Webots 并与其通信。其他子功能包主要提供不同接口用法的示例。
 
 前置条件
 --------
 
-建议了解 ROS 基本概念，尤其是 :doc:§创建工作空间 <../../../Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>§ 和 :doc:§创建功能包 <../../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>§。
+建议了解 ROS 基本概念，尤其是 :doc:`创建工作空间 <../../../Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>` 和 :doc:`创建功能包 <../../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>`。
 
-必须在 macOS 主机上原生安装 Webots，才能按本教程的方式从虚拟机中的 ROS 2 使用 §webots_ros2§。可以按照§官方安装流程 <https://cyberbotics.com/doc/guide/installation-procedure>§_ 安装，也可以§从源码构建 <https://github.com/cyberbotics/webots/wiki/macOS-installation/>§_。
+必须在 macOS 主机上原生安装 Webots，才能按本教程的方式从虚拟机中的 ROS 2 使用 ``webots_ros2``。可以按照`官方安装流程 <https://cyberbotics.com/doc/guide/installation-procedure>`_ 安装，也可以`从源码构建 <https://github.com/cyberbotics/webots/wiki/macOS-installation/>`_。
 
 任务
 ----
@@ -36,7 +36,7 @@ Webots 安装（macOS）
 2. 安装 ROS 2 和 webots_ros2
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-在虚拟机中安装 ROS 2，并安装 §webots_ros2§ 发布软件包。也可以从源码构建 §webots_ros2§。
+在虚拟机中安装 ROS 2，并安装 ``webots_ros2`` 发布软件包。也可以从源码构建 ``webots_ros2``。
 
 3. 配置主机 Webots
 ^^^^^^^^^^^^^^^^^^
@@ -46,9 +46,9 @@ Webots 安装（macOS）
 4. 运行示例
 ^^^^^^^^^^^
 
-在虚拟机中 source ROS 2 环境并启动 §webots_ros2§ 示例。ROS 节点运行在 Linux 虚拟机中，Webots GUI 则运行在 macOS 主机上。
+在虚拟机中 source ROS 2 环境并启动 ``webots_ros2`` 示例。ROS 节点运行在 Linux 虚拟机中，Webots GUI 则运行在 macOS 主机上。
 
 总结
 ----
 
-macOS 上可以采用“主机原生运行 Webots、Linux 虚拟机运行 ROS 2”的方式使用 §webots_ros2§，从而兼顾 macOS 图形加速和 Linux ROS 2 开发环境。
+macOS 上可以采用“主机原生运行 Webots、Linux 虚拟机运行 ROS 2”的方式使用 ``webots_ros2``，从而兼顾 macOS 图形加速和 Linux ROS 2 开发环境。

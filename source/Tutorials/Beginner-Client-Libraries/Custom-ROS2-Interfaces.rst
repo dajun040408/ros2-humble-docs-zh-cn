@@ -20,14 +20,14 @@
 背景
 ----
 
-此前的教程已经使用消息和服务接口学习 :doc:§话题 <../Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics>§、:doc:§服务 <../Beginner-CLI-Tools/Understanding-ROS2-Services/Understanding-ROS2-Services>§，以及简单的发布者/订阅者和服务端/客户端节点。
+此前的教程已经使用消息和服务接口学习 :doc:`话题 <../Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics>`、:doc:`服务 <../Beginner-CLI-Tools/Understanding-ROS2-Services/Understanding-ROS2-Services>`，以及简单的发布者/订阅者和服务端/客户端节点。
 
 虽然优先使用预定义接口是很好的实践，但有时仍需要定义自己的消息和服务。本教程介绍创建自定义接口定义的基本方法。
 
 前置条件
 --------
 
-需要一个 :doc:§ROS 2 工作空间 <./Creating-A-Workspace/Creating-A-Workspace>§。本教程还会使用此前创建的 C++ 和 Python 发布者/订阅者、服务端/客户端功能包测试新接口。
+需要一个 :doc:`ROS 2 工作空间 <./Creating-A-Workspace/Creating-A-Workspace>`。本教程还会使用此前创建的 C++ 和 Python 发布者/订阅者、服务端/客户端功能包测试新接口。
 
 任务
 ----
@@ -106,7 +106,7 @@ tutorial_interfaces 是新功能包的名称。自定义接口功能包必须使
     DEPENDENCIES geometry_msgs
   )
 
-注意：rosidl_generate_interfaces 的第一个参数（库名称）必须以功能包名称开头，例如 ${PROJECT_NAME} 或 ${PROJECT_NAME}_suffix。详情参阅§相关问题 <https://github.com/ros2/rosidl/issues/441#issuecomment-591025515>§_。
+注意：rosidl_generate_interfaces 的第一个参数（库名称）必须以功能包名称开头，例如 ${PROJECT_NAME} 或 ${PROJECT_NAME}_suffix。详情参阅`相关问题 <https://github.com/ros2/rosidl/issues/441#issuecomment-591025515>`_。
 
 4. 配置 package.xml
 ^^^^^^^^^^^^^^^^^^^
@@ -211,9 +211,9 @@ Windows 使用：
 
 本教程介绍了如何在独立功能包中创建自定义接口，并在其他功能包中使用这些接口。
 
-更多信息请参阅 :doc:§ROS 2 接口概念 <../../Concepts/Basic/About-Interfaces>§。
+更多信息请参阅 :doc:`ROS 2 接口概念 <../../Concepts/Basic/About-Interfaces>`。
 
 下一步
 ------
 
-下一篇教程 :doc:§单功能包中定义和使用接口 <./Single-Package-Define-And-Use-Interface>§ 将介绍 ROS 2 中使用接口的其他方式。
+下一篇教程 :doc:`单功能包中定义和使用接口 <./Single-Package-Define-And-Use-Interface>` 将介绍 ROS 2 中使用接口的其他方式。

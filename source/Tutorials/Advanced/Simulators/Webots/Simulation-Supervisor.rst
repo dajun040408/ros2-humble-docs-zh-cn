@@ -21,9 +21,9 @@
 
 开始本教程前，请确保：
 
-* 了解 :doc:§初级教程 <../../../../Tutorials>§ 中介绍的 ROS 2 节点和话题。
+* 了解 :doc:`初级教程 <../../../../Tutorials>` 中介绍的 ROS 2 节点和话题。
 * 了解 Webots、ROS 2 及其接口软件包。
-* 熟悉 :doc:§基础 Webots 仿真 <./Setting-Up-Simulation-Webots-Basic>§。
+* 熟悉 :doc:`基础 Webots 仿真 <./Setting-Up-Simulation-Webots-Basic>`。
 
 Ros2Supervisor
 --------------
@@ -62,14 +62,14 @@ ROS 2 节点作为控制器调用 Supervisor API 函数，以控制或操作仿�
         )
     ])
 
-有关 webots_ros2 项目启动文件的更多信息，请参阅 :doc:§基础 Webots 仿真 <./Setting-Up-Simulation-Webots-Basic>§。
+有关 webots_ros2 项目启动文件的更多信息，请参阅 :doc:`基础 Webots 仿真 <./Setting-Up-Simulation-Webots-Basic>`。
 
 clock 话题
 ----------
 
 Ros2Supervisor 负责获取 Webots 仿真时间，并将其发布到 /clock 话题。如果其他节点将 use_sim_time 参数设置为 true，就必须启动 Ros2Supervisor。
 
-有关 /clock 话题的更多信息，请参阅§ROS Wiki <http://wiki.ros.org/Clock>§_。
+有关 /clock 话题的更多信息，请参阅`ROS Wiki <http://wiki.ros.org/Clock>`_。
 
 导入 Webots 节点
 ----------------

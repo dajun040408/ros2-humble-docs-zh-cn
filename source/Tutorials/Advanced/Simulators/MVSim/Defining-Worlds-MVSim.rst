@@ -21,7 +21,7 @@ MVSim 提供预定义车辆和传感器定义库，可以通过 XML include 在�
 前置条件
 --------
 
-请先完成 :doc:§MVSim 入门教程 <Getting-Started-MVSim>§ 并安装 MVSim。
+请先完成 :doc:`MVSim 入门教程 <Getting-Started-MVSim>` 并安装 MVSim。
 
 任务
 ----

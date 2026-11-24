@@ -24,7 +24,7 @@ MVSim 提供了一组演示世界，展示多机器人仿真、传感器配置�
 前置条件
 --------
 
-请按照 :doc:§MVSim 安装教程 <Installation-Ubuntu>§ 安装 MVSim。
+请按照 :doc:`MVSim 安装教程 <Installation-Ubuntu>` 安装 MVSim。
 
 任务
 ----
