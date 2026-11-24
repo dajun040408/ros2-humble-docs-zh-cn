@@ -76,7 +76,7 @@
 4. Log：查看日志消息
 ^^^^^^^^^^^^^^^^^^^^^
 
-要实时查看 ``rcl_interfaces/msg/Log`` 消息，请使用桌面应用`连接 <https://foxglove.dev/docs/studio/connection/native>`_ 到正在运行的 ROS 系统。
+要实时查看 ``rcl_interfaces/msg/Log`` 消息，请使用桌面应用 `连接 <https://foxglove.dev/docs/studio/connection/native>`__ 到正在运行的 ROS 系统。
 
 要查看预先录制的数据文件中的 ``rcl_interfaces/msg/Log`` 消息，可以将文件拖放到 Web 应用或桌面应用中。
 
@@ -144,12 +144,12 @@
 1. 查看 ROS 计算图
 ^^^^^^^^^^^^^^^^^^
 
-使用`桌面应用 <https://foxglove.dev/download>`_ `连接 <https://foxglove.dev/docs/studio/connection/native>`_到正在运行的 ROS 系统。然后将 ``Topic Graph`` 面板添加到布局中。如果已正确连接，就可以在该面板中看到 ROS 节点、话题和服务组成的计算图。使用面板右侧的控件选择要显示的话题，或切换服务显示状态。
+使用 `桌面应用 <https://foxglove.dev/download>`__ `连接 <https://foxglove.dev/docs/studio/connection/native>`__ 到正在运行的 ROS 系统。然后将 ``Topic Graph`` 面板添加到布局中。如果已正确连接，就可以在该面板中看到 ROS 节点、话题和服务组成的计算图。使用面板右侧的控件选择要显示的话题，或切换服务显示状态。
 
 2. 查看和编辑 ROS 参数
 ^^^^^^^^^^^^^^^^^^^^^^
 
-使用`桌面应用 <https://foxglove.dev/download>`_ ``连接 <https://foxglove.dev/docs/studio/connection/native>`_到正在运行的 ROS 系统。然后将 ``Parameters`` 面板添加到布局中。如果已正确连接，就可以实时查看当前 ROS 参数。可以编辑参数值，并将参数更新发布回 ROS 系统。
+使用 `桌面应用 <https://foxglove.dev/download>`__ `连接 <https://foxglove.dev/docs/studio/connection/native>`__ 到正在运行的 ROS 系统。然后将 ``Parameters`` 面板添加到布局中。如果已正确连接，就可以实时查看当前 ROS 参数。可以编辑参数值，并将参数更新发布回 ROS 系统。
 
 3. 向正在运行的 ROS 系统发布消息
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
