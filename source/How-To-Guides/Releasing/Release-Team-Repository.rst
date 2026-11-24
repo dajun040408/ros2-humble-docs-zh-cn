@@ -8,7 +8,7 @@
 本页面介绍在 `ros2-gbp <https://github.com/ros2-gbp>`_ 上托管发布仓库的推荐方法。
 
 什么是 ROS 2 GBP？
------------------
+------------------
 
 `ros2-gbp <https://github.com/ros2-gbp>`_ 是一个 GitHub 组织，用于托管 ROS 软件包的发布仓库。它还维护发布团队列表、各团队成员列表，以及由这些团队维护的发布仓库列表。相关信息保存在 `ros2-gbp-github-org <https://github.com/ros2-gbp/ros2-gbp-github-org>`_ 中。
 
