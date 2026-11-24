@@ -111,3 +111,5 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 当前 GitHub 连接对上游 `ros2/ros2_documentation` 只有 pull 权限，没有 push 权限；本项目是独立仓库（`fork=false`），不是上游 fork，因此无法直接把本项目提交推送到上游 Humble 分支。
 - 要让用户给出的 `https://ros2docs.robook.org/humble/` 网址更新，必须选择并落实实际发布目标：将本项目的构建产物部署到 robook.org 当前托管环境，或将该域名迁移/绑定到本项目启用后的 GitHub Pages。仅在本项目提交中文 RST 不会改变当前 robook.org 页面。
 - 目前尚未获得 robook.org 主机/部署凭据，也未确认该域名 DNS 可由用户修改；因此未擅自改写 CNAME 或 DNS。
+- 2026-11-24 最新构建 #433（提交 `16a03ea`）：build job 成功，Pages Artifact `github-pages` 已生成，大小约 38.4 MB，Artifact ID `14880130183`，有效期至 2026-11-25 01:10 UTC；deploy job 再次因 GitHub Pages 未启用而 404。
+- 本次从 robook.org 实际页面重新读取 HTML：Migrating Packages 页面标题仍为英文，正文仍包含 “There are two different kinds of package migrations”；部分小节目录标题显示中文、正文仍为英文。Migrating Interfaces 页面标题和正文也仍为英文。引用证据：页面抓取时间 2026-11-24，页面分别为 `/Migrating-Packages.html` 与 `/Migrating-Interfaces.html`。
