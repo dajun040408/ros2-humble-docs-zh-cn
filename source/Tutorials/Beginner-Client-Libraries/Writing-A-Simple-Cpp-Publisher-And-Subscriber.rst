@@ -323,25 +323,7 @@ Windows 命令行可以使用 curl：
 
 保存文件后，发布者/订阅者系统的配置就完成了。
 
-4. 配置 CMakeLists.txt
-^^^^^^^^^^^^^^^^^^^^^^
-
-在 CMakeLists.txt 中查找 rclcpp 和 std_msgs，并为两个节点添加可执行程序：
-
-.. code-block:: cmake
-
-   find_package(rclcpp REQUIRED)
-   find_package(std_msgs REQUIRED)
-
-   add_executable(talker src/publisher_member_function.cpp)
-   ament_target_dependencies(talker rclcpp std_msgs)
-
-   add_executable(listener src/subscriber_member_function.cpp)
-   ament_target_dependencies(listener rclcpp std_msgs)
-
-   install(TARGETS talker listener DESTINATION lib/cpp_pubsub)
-
-5. 构建并运行
+4. 构建并运行
 ^^^^^^^^^^^^^
 
 在工作空间根目录构建：
