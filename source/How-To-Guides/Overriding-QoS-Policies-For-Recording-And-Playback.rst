@@ -21,7 +21,7 @@ ROS 2 引入 DDS 后，在录制和回放数据时，需要考虑发布者/订�
 
 rosbag2 在录制/回放话题数据时，会调整其请求/提供的 QoS 配置文件，以避免消息丢失。回放期间，rosbag2 还会尝试保留话题最初提供的策略。
 
-某些情况下，可能需要显式指定 QoS 配置文件设置，rosbag2 才能录制/回放话题。可以通过命令行的 `--qos-profile-overrides-path` 标志指定这些 QoS 配置覆盖项。
+某些情况下，可能需要显式指定 QoS 配置文件设置，rosbag2 才能录制/回放话题。可以通过命令行的 ``--qos-profile-overrides-path`` 标志指定这些 QoS 配置覆盖项。
 
 使用 QoS 覆盖项
 ---------------
@@ -37,9 +37,9 @@ QoS 覆盖配置的 YAML 结构是一个字典，其中包含话题名称以及�
         sec: int
         nsec: int
 
-如果未指定某项策略的值，则会回退到 rosbag2 使用的默认值。如果指定 `deadline` 或 `lifespan` 等基于 Duration 的策略，则必须同时指定秒和纳秒。
+如果未指定某项策略的值，则会回退到 rosbag2 使用的默认值。如果指定 ``deadline`` 或 ``lifespan`` 等基于 Duration 的策略，则必须同时指定秒和纳秒。
 
-策略值由策略对应的简写键决定。可以通过 `ros2topic` 命令（例如 `ros2 topic pub --help`）查看这些键。下面列出所有可用值，供参考：
+策略值由策略对应的简写键决定。可以通过 ``ros2topic`` 命令（例如 ``ros2 topic pub --help``）查看这些键。下面列出所有可用值，供参考：
 
 .. code-block:: yaml
 
@@ -62,7 +62,7 @@ QoS 覆盖配置的 YAML 结构是一个字典，其中包含话题名称以及�
 示例
 ----
 
-假设话题 `/talker` 提供 `transient_local` 持久性策略，而 ROS 2 发布者默认请求 `volatile` 持久性策略：
+假设话题 ``/talker`` 提供 ``transient_local`` 持久性策略，而 ROS 2 发布者默认请求 ``volatile`` 持久性策略：
 
 .. code-block:: console
 
@@ -98,7 +98,7 @@ QoS 覆盖配置的 YAML 结构是一个字典，其中包含话题名称以及�
 
     $ ros2 bag play --qos-profile-overrides-path reliability_override.yaml my_bag
 
-可以使用 `ros2 topic` 查看结果：
+可以使用 ``ros2 topic`` 查看结果：
 
 .. code-block:: console
 
