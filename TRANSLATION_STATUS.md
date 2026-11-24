@@ -156,3 +156,13 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 本轮提交：`e87ff998f3f05f4ca2eb97dff691dcd60dee08f8`。
 - 新构建 #445（run ID `45320986274`）已触发，当前 queued；上一轮 #444 对此前两篇修订的构建成功，但不包含本轮最新4篇修改。
 - 仍需在 #445 成功后抽查 HTML、链接和导航；原域名 `ros2docs.robook.org` 的 DNS/Pages 自定义域名仍未确认，故线上原网址验收未完成。
+
+
+## 2026-11-24 迁移指南第四轮审校与部署复核
+
+- 最新 #446（run ID `45321016014`，提交 `0d4702ec657e581e8c5322b6a3bf9674d948e1f5`）build 和 deploy 两个 job 均成功；Pages Artifact 约 38.4 MB。
+- 对 C++ 示例、C++ 参考、Python 示例、Launch 文件四篇中文源文件进行逐段文本扫描：未发现整句英文说明残留；标题均为中文。技术标识符、代码和 XML/launch 标签保留英文属于预期，不作为未翻译内容。
+- 对10篇文档的 `:doc:` 内部引用做了路径核对：迁移目录内的引用均能解析；Launch 文件中的两个 `../../../Tutorials/...` 引用沿用 Humble 上游路径写法，需在 HTML 构建结果中继续确认。
+- 发现 `Migrating-Package-XML.rst` 的 XML 示例代码块已正确使用原始 XML 标签（不应在 code-block 中额外包裹双反引号）；本轮复核确认当前 main 文件已是正确状态，无需新增提交。
+- 实际站点抓取结果：搜索/网页抓取缓存中，`Migrating Packages`、`Migrating Interfaces`、`Migrating Parameters`、C++/Python/Launch/Scripts 页面仍显示旧英文正文；抓取时间分布在约1至5个月前，故这是旧缓存证据，不能据此证明当前 DNS 已指向或未指向 Pages。当前 Pages 部署成功，但自定义域名配置及 DNS/HTTPS 实时状态仍无可验证结果。
+- GitHub 官方自定义域名流程：自定义 Actions 发布时 GitHub 不会创建或读取 CNAME 文件来绑定域名；必须在 Settings → Pages → Custom domain 设置 `ros2docs.robook.org`，并由 DNS 将 `ros2docs` CNAME 指向 `dajun040408.github.io`。官方文档：https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site。
