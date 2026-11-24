@@ -353,3 +353,8 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 发现 `Using-Stamped-Datatypes-With-Tf2-Ros-MessageFilter.rst` 原中文只有简略说明，缺少 PointStamped 广播器、MessageFilter 监听器、package.xml/CMakeLists 配置、构建运行和完整演示流程。已补齐。提交：`f2b78b7d06f574dac7c022bfb6fc4f9d8892b49c`。
 - 扩充 C++/Python tf2 broadcaster 教程：补齐代码解析、启动文件结构、package.xml 启动依赖、CMakeLists/setup.py 安装配置和相关说明。提交：`c209adf4e2769a028be49c846b4d1676392d2be1`、`8dc2b0487ccc40e3d5ae677459a5e9bace59f06d`。
 - 以上 Tf2 教程修订尚待完整 Sphinx 构建、RST 诊断和 Pages 部署验收。
+
+- 对 Tf2 目录进一步核对发现 `Writing-A-Tf2-Listener-Cpp.rst`（原 89/430 行）和 `Writing-A-Tf2-Listener-Py.rst`（原 88/370 行）均缺少大量内容。
+- 已扩充 C++ 监听器教程：补齐完整 FrameListener 节点代码、TransformListener/Buffer/lookupTransform 工作原理、服务异步生成第二只乌龟、速度控制计算、Composable Node 的 TransformListener 构造注意事项、CMake、三格式启动文件、跨平台构建运行步骤。提交：`f8fa91451e9262f059b98a5b84d72d1e28e426e2`。
+- 已扩充 Python 监听器教程：补齐完整 FrameListener 节点代码、TransformListener 和 lookup_transform 解释、入口点、三格式启动文件、package 构建和跨平台运行步骤。提交：`207384ac277463e722c807651ab29824a36896c8`。
+- 监听器教程修订尚待构建、RST 诊断和部署验收。
