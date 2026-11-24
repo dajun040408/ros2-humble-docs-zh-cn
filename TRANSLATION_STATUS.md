@@ -244,3 +244,6 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 构建 #744（提交 `7730361`）build/deploy 成功，但日志进一步表明：移除行内 literal 的反引号后，未转义的 `orient_` 被 docutils 当作引用目标，产生 Unknown target name 错误。因此已将该术语保留为普通文本并对下划线使用 RST 转义（`qreal orient\\_`），只将 `double` 保留为行内 literal。修复提交：`e64214f55b638f4d99df64171ec798ad1315e4b3`。最终需由下一次构建确认该行不再产生 warning/error。
 
 - 构建 #746（提交 `acf0e51`）build/deploy 成功，`part-004.rst` CRITICAL 与 Sphinx ERROR 均为 0；但 `part-032.rst:107` 仍触发行内 literal 警告。现已进一步移除该行的所有双反引号标记，将 `qreal orient\\_` 作为普通转义文本、`double` 作为普通技术术语，避免该行的行内标记解析歧义。提交：`2ac82ae4128dc66ef9524d537922c8e7a83cca36`。待下一次构建复核。
+
+- 构建 #748（提交 `05890b2`）build 与 deploy 均成功。Sphinx 日志确认本轮 `part-032.rst:107` 的 inline literal 警告及 Unknown target 错误均已消失；`part-004.rst` 的标题 CRITICAL 也未再出现。当前日志剩余 2 条 `toc.not_included` 警告，均指向上游 Lyrical 发行版页面（`release-timeline.rst`、`supported-platforms.rst`），不属于 Humble 中文页面；Sphinx ERROR=0、CRITICAL=0。
+- GitHub Pages 已成功部署本轮 Beginner CLI Tools 补译和 RST 修复。工作流 #748 的 build/deploy 均为 success。由于外部网页抓取工具无法直接读取 GitHub Pages 页面，本轮以 Actions 构建、Artifact 和部署成功作为部署证据；浏览器端页面逐页视觉验收仍需后续抽查。
