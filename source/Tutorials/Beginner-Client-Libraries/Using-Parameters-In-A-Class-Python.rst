@@ -47,6 +47,19 @@ source ROS 2 环境，并在 ros2_ws/src 目录中创建新功能包：
   <maintainer email="you@email.com">Your Name</maintainer>
   <license>Apache License 2.0</license>
 
+1.1 更新 package.xml
+~~~~~~~~~~~~~~~~~~~~~~
+
+由于创建功能包时使用了 ``--dependencies`` 选项，因此无需手动向 ``package.xml`` 添加依赖项。
+
+不过，仍需在 ``package.xml`` 中填写功能包描述、维护者邮箱和姓名，以及许可证信息：
+
+.. code-block:: xml
+
+   <description>Python parameter tutorial</description>
+   <maintainer email="you@email.com">Your Name</maintainer>
+   <license>Apache License 2.0</license>
+
 2. 编写 Python 节点
 ^^^^^^^^^^^^^^^^^^^
 
@@ -85,6 +98,47 @@ source ROS 2 环境，并在 ros2_ws/src 目录中创建新功能包：
 
 2.1 理解代码
 ~~~~~~~~~~~~
+
+文件开头的 ``import`` 语句用于导入功能包依赖项。
+
+接下来创建 ``MinimalParam`` 类和构造函数。``self.declare_parameter('my_parameter', 'world')`` 声明名为 ``my_parameter``、默认值为 ``world`` 的参数。参数类型根据默认值推断，因此这里是字符串类型。
+
+随后将 ``timer`` 初始化为 1 秒周期，使 ``timer_callback`` 每秒执行一次。
+
+.. code-block:: python
+
+   class MinimalParam(rclpy.node.Node):
+       def __init__(self):
+           super().__init__('minimal_param_node')
+           self.declare_parameter('my_parameter', 'world')
+           self.timer = self.create_timer(1, self.timer_callback)
+
+``timer_callback`` 首先通过 ``get_parameter()`` 获取 ``my_parameter``，并保存到 ``my_param``。然后使用 ``get_logger()`` 输出日志。最后通过 ``set_parameters()`` 将参数恢复为默认字符串 ``world``。如果用户从外部修改了参数，节点会在下一次定时器回调时将其恢复。
+
+.. code-block:: python
+
+   def timer_callback(self):
+       my_param = self.get_parameter(
+           'my_parameter').get_parameter_value().string_value
+
+       self.get_logger().info('Hello %s!' % my_param)
+
+       my_new_param = rclpy.parameter.Parameter(
+           'my_parameter',
+           rclpy.Parameter.Type.STRING,
+           'world')
+       all_new_parameters = [my_new_param]
+       self.set_parameters(all_new_parameters)
+
+``timer_callback`` 之后是 ``main`` 函数。在这里初始化 ROS 2，构造 ``MinimalParam`` 类的实例，并通过 ``rclpy.spin`` 开始处理节点数据。
+
+.. code-block:: python
+
+   def main():
+       rclpy.init()
+       node = MinimalParam()
+       rclpy.spin(node)
+
 
 构造函数中的 declare_parameter() 创建名为 my_parameter、默认值为 world 的参数。参数类型根据默认值推断，因此这里是字符串类型。
 
@@ -170,9 +224,31 @@ source 工作空间并运行：
 3.2 通过启动文件修改参数
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-在 ros2_ws/src/python_parameters/ 中创建 launch 目录，并在其中创建 python_parameters_launch.py。启动文件可以在启动 minimal_param_node 时将 my_parameter 设置为 earth。
+在 ``ros2_ws/src/python_parameters/`` 目录中创建 ``launch`` 目录，并在其中创建 ``python_parameters_launch.py``：
 
-在 setup.py 中添加 launch 文件安装规则：
+.. literalinclude:: launch/python_parameters_launch.py
+   :language: python
+
+启动文件会在启动 ``minimal_param_node`` 时，将参数 ``my_parameter`` 设置为 ``earth``，并通过 ``output="screen"`` 和 ``emulate_tty=True`` 确保节点输出显示在当前终端。
+
+打开 ``setup.py``，在文件顶部添加 import 语句，并在 ``data_files`` 参数中添加 launch 文件安装规则：
+
+.. code-block:: python
+
+   import os
+   from glob import glob
+
+   # ...
+
+   setup(
+     # ...
+     data_files=[
+       # ...
+       (os.path.join('share', package_name, 'launch'), glob('launch/*')),
+     ]
+   )
+
+
 
 .. code-block:: python
 
@@ -195,4 +271,9 @@ source 工作空间并运行：
 总结
 ----
 
-你创建了一个包含自定义参数的节点，并学习了如何通过启动文件或命令行设置参数。
+你创建了一个包含自定义参数的节点，并学习了如何通过启动文件或命令行设置参数。你还为功能包添加了依赖项、入口点和启动文件安装配置，以便构建并运行该节点。
+
+下一步
+------
+
+现在你已经创建了一些自己的功能包和 ROS 2 系统。接下来的 :doc:`使用 ros2doctor 检查系统问题 <./Getting-Started-With-Ros2doctor>` 教程将介绍如何在遇到问题时检查环境和系统。
