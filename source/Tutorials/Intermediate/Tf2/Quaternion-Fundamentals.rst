@@ -22,7 +22,7 @@
 
 四元数是用于表示方向的四元组，比旋转矩阵更加简洁。在涉及三维旋转的场景中，四元数非常适合进行计算。四元数广泛应用于机器人学、量子力学、计算机视觉和 3D 动画。
 
-可以在§Wikipedia <https://en.wikipedia.org/wiki/Quaternion>§_ 上了解相关数学概念，也可以观看§Visualizing quaternions <https://eater.net/quaternions>§_ 视频系列。
+可以在`Wikipedia <https://en.wikipedia.org/wiki/Quaternion>`_ 上了解相关数学概念，也可以观看`Visualizing quaternions <https://eater.net/quaternions>`_ 视频系列。
 
 本教程将介绍 ROS 2 中四元数的工作方式和转换方法。
 

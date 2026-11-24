@@ -47,7 +47,7 @@ RMW 支持情况
 安装演示程序
 ------------
 
-有关安装 ROS 2 的详情，请参阅 :doc:§安装说明 <../../Installation>§。
+有关安装 ROS 2 的详情，请参阅 :doc:`安装说明 <../../Installation>`。
 
 如果通过软件包安装 ROS 2，请确保安装了 ros-{DISTRO}-demo-nodes-cpp。如果下载了归档包或从源码构建 ROS 2，该演示程序已经包含在安装内容中。
 

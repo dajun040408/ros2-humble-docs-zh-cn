@@ -19,9 +19,9 @@ rosbag2 不仅提供 ros2 bag 命令行工具，还提供 C++ API，可以在自
 前置条件
 --------
 
-常规 ROS 2 安装中应已包含 rosbag2 软件包。如果需要安装 ROS 2，请参阅 :doc:§安装说明 <../../Installation>§。
+常规 ROS 2 安装中应已包含 rosbag2 软件包。如果需要安装 ROS 2，请参阅 :doc:`安装说明 <../../Installation>`。
 
-请先完成 :doc:§ROS 2 bag 基础教程 <../Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data>§，本教程会使用其中创建的 subset bag。
+请先完成 :doc:`ROS 2 bag 基础教程 <../Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data>`，本教程会使用其中创建的 subset bag。
 
 任务
 ----
@@ -29,7 +29,7 @@ rosbag2 不仅提供 ros2 bag 命令行工具，还提供 C++ API，可以在自
 1. 创建功能包
 ^^^^^^^^^^^^^
 
-打开新终端并 :doc:§source ROS 2 安装环境 <../Beginner-CLI-Tools/Configuring-ROS2-Environment>§。
+打开新终端并 :doc:`source ROS 2 安装环境 <../Beginner-CLI-Tools/Configuring-ROS2-Environment>`。
 
 在新建或已有工作空间的 src 目录中创建功能包：
 

@@ -24,40 +24,40 @@
 前置条件
 --------
 
-本教程使用 §turtlesim§，并假设你熟悉 :doc:§创建功能包 <../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>§。每次打开新终端时都应 source ROS 2 环境。
+本教程使用 ``turtlesim``，并假设你熟悉 :doc:`创建功能包 <../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>`。每次打开新终端时都应 source ROS 2 环境。
 
 创建并配置功能包
 ----------------
 
-创建名为 §launch_tutorial§ 的功能包：
+创建名为 ``launch_tutorial`` 的功能包：
 
 .. code-block:: console
 
    $ ros2 pkg create --build-type ament_python --license Apache-2.0 launch_tutorial
 
-也可以创建 C++ 功能包，将构建类型设为 §ament_cmake§。
+也可以创建 C++ 功能包，将构建类型设为 ``ament_cmake``。
 
-在功能包中创建 §launch§ 目录，并按照 :doc:§创建启动文件教程 <./Creating-Launch-Files>§ 将启动文件加入安装规则。
+在功能包中创建 ``launch`` 目录，并按照 :doc:`创建启动文件教程 <./Creating-Launch-Files>` 将启动文件加入安装规则。
 
 父启动文件
 ----------
 
 创建一个父启动文件，用于调用另一个启动文件并向其传递参数。可以使用 XML、YAML 或 Python 格式。
 
-父启动文件通过 §IncludeLaunchDescription§（Python）或对应格式的 include 动作，引用子启动文件，并传递 §turtlesim_ns§、§use_provided_red§ 和 §new_background_r§ 等参数。
+父启动文件通过 ``IncludeLaunchDescription``（Python）或对应格式的 include 动作，引用子启动文件，并传递 ``turtlesim_ns``、``use_provided_red`` 和 ``new_background_r`` 等参数。
 
 替换示例启动文件
 ----------------
 
 在同一目录创建子启动文件，定义启动配置：
 
-* §turtlesim_ns§：turtlesim 节点的命名空间。
-* §use_provided_red§：是否使用传入的红色背景参数。
-* §new_background_r§：新的背景红色分量。
+* ``turtlesim_ns``：turtlesim 节点的命名空间。
+* ``use_provided_red``：是否使用传入的红色背景参数。
+* ``new_background_r``：新的背景红色分量。
 
-XML 和 YAML 格式可以使用 §$(var <name>)§ 获取启动参数值，使用 §$(eval <python-expression>)§ 计算条件表达式。
+XML 和 YAML 格式可以使用 ``$(var <name>)`` 获取启动参数值，使用 ``$(eval <python-expression>)`` 计算条件表达式。
 
-Python 格式可以使用 §LaunchConfiguration§ 获取参数值，使用 §DeclareLaunchArgument§ 声明参数，并通过 §PythonExpression§ 和 §IfCondition§ 实现条件执行。
+Python 格式可以使用 ``LaunchConfiguration`` 获取参数值，使用 ``DeclareLaunchArgument`` 声明参数，并通过 ``PythonExpression`` 和 ``IfCondition`` 实现条件执行。
 
 构建功能包
 ----------
@@ -73,7 +73,7 @@ Python 格式可以使用 §LaunchConfiguration§ 获取参数值，使用 §Dec
 运行示例
 --------
 
-使用 §ros2 launch§ 启动父启动文件，例如：
+使用 ``ros2 launch`` 启动父启动文件，例如：
 
 .. code-block:: console
 
@@ -84,13 +84,13 @@ Python 格式可以使用 §LaunchConfiguration§ 获取参数值，使用 §Dec
 查看启动参数
 ------------
 
-可以使用 §--show-args§ 查看启动文件接受的参数及默认值：
+可以使用 ``--show-args`` 查看启动文件接受的参数及默认值：
 
 .. code-block:: console
 
    $ ros2 launch launch_tutorial example_substitutions.launch.py --show-args
 
-参数可以通过 §<name>:=<value>§ 格式传入，例如：
+参数可以通过 ``<name>:=<value>`` 格式传入，例如：
 
 .. code-block:: console
 
@@ -99,4 +99,4 @@ Python 格式可以使用 §LaunchConfiguration§ 获取参数值，使用 §Dec
 总结
 ----
 
-本教程介绍了启动配置、环境变量和 Python 表达式等替换机制，以及如何利用这些机制构建可复用的启动文件。下一步可以学习 :doc:§在启动文件中使用事件处理器 <./Using-Event-Handlers>§。
+本教程介绍了启动配置、环境变量和 Python 表达式等替换机制，以及如何利用这些机制构建可复用的启动文件。下一步可以学习 :doc:`在启动文件中使用事件处理器 <./Using-Event-Handlers>`。

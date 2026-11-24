@@ -16,7 +16,7 @@ ROS 2 的借用消息（loaned messages）和零拷贝数据共享机制旨在�
 
 零拷贝数据共享尤其适用于需要高效传输大量数据的高性能应用。
 
-有关借用消息工作原理的更多信息，请参阅 §Loaned Messages 设计文章 <https://design.ros2.org/articles/zero_copy.html>§_。
+有关借用消息工作原理的更多信息，请参阅 `Loaned Messages 设计文章 <https://design.ros2.org/articles/zero_copy.html>`_。
 
 RMW 支持情况
 ------------
@@ -31,7 +31,7 @@ RMW 支持情况
      - 文档
    * - rmw_fastrtps
      - 支持
-     - §启用零拷贝数据共享 <https://github.com/ros2/rmw_fastrtps?tab=readme-ov-file#enable-zero-copy-data-sharing>§_
+     - `启用零拷贝数据共享 <https://github.com/ros2/rmw_fastrtps?tab=readme-ov-file#enable-zero-copy-data-sharing>`_
    * - rmw_connextdds
      - 不支持
      - 不适用
@@ -42,16 +42,16 @@ RMW 支持情况
 安装演示程序
 ------------
 
-有关 ROS 2 安装详情，请参阅 :doc:§安装说明 <../../Installation>§。
+有关 ROS 2 安装详情，请参阅 :doc:`安装说明 <../../Installation>`。
 
-如果你通过软件包安装 ROS 2，请确保已安装 §ros-{DISTRO}-demo-nodes-cpp§。如果你下载了归档包，或从源码构建了 ROS 2，该演示程序已经包含在安装内容中。
+如果你通过软件包安装 ROS 2，请确保已安装 ``ros-{DISTRO}-demo-nodes-cpp``。如果你下载了归档包，或从源码构建了 ROS 2，该演示程序已经包含在安装内容中。
 
 使用借用消息
 ------------
 
 如果底层 RMW 实现支持借用消息，发布者默认会使用借用消息。如果 RMW 实现不支持，则消息会使用发布者提供的分配器实例进行分配。
 
-§talker_loaned_message§ 示例展示了如何创建 ROS 2 发布者，通过借用消息高效发布数据，而无需复制消息数据。示例源码：§talker_loaned_message.cpp <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/demo_nodes_cpp/src/topics/talker_loaned_message.cpp>§_。
+``talker_loaned_message`` 示例展示了如何创建 ROS 2 发布者，通过借用消息高效发布数据，而无需复制消息数据。示例源码：`talker_loaned_message.cpp <https://github.com/ros2/demos/blob/{REPOS_FILE_BRANCH}/demo_nodes_cpp/src/topics/talker_loaned_message.cpp>`_。
 
 .. code-block:: c++
 
@@ -115,9 +115,9 @@ RMW 支持情况
 
     }  // namespace demo_nodes_cpp
 
-本示例尝试通过调用 §borrow_loaned_message()§ 从 RMW 实现中借用两种类型的消息：一种是普通旧数据（POD）类型 §std_msgs::msg::Float64§，另一种是非 POD 类型 §std_msgs::msg::String§。
+本示例尝试通过调用 ``borrow_loaned_message()`` 从 RMW 实现中借用两种类型的消息：一种是普通旧数据（POD）类型 ``std_msgs::msg::Float64``，另一种是非 POD 类型 ``std_msgs::msg::String``。
 
-对于 §rmw_fastrtps§，借用消息要求消息类型为 POD 类型。
+对于 ``rmw_fastrtps``，借用消息要求消息类型为 POD 类型。
 
 运行以下可执行程序即可启动演示（请记得先 source 环境设置文件）：
 
@@ -158,7 +158,7 @@ RMW 支持情况
 
 默认情况下，借用消息会尝试从底层中间件借用内存（前提是中间件支持借用消息）。
 
-可以使用 §ROS_DISABLE_LOANED_MESSAGES§ 环境变量禁用借用消息，并回退到普通发布者行为，无需修改代码或中间件配置。运行以下命令设置环境变量：
+可以使用 ``ROS_DISABLE_LOANED_MESSAGES`` 环境变量禁用借用消息，并回退到普通发布者行为，无需修改代码或中间件配置。运行以下命令设置环境变量：
 
 .. tabs::
 
@@ -201,11 +201,11 @@ RMW 支持情况
 订阅者
 ^^^^^^
 
-目前，在订阅端使用借用消息并不安全。更多详情请参阅 §rmw issue <https://github.com/ros2/rmw_cyclonedds/issues/469>§_ 和 §rclcpp issue <https://github.com/ros2/rclcpp/issues/2401>§_。
+目前，在订阅端使用借用消息并不安全。更多详情请参阅 `rmw issue <https://github.com/ros2/rmw_cyclonedds/issues/469>`_ 和 `rclcpp issue <https://github.com/ros2/rclcpp/issues/2401>`_。
 
-因此，即使底层中间件支持借用消息，订阅端默认也会禁用该功能（参见 §默认启用禁用借用消息的变更 <https://github.com/ros2/rcl/pull/1110>§_）。
+因此，即使底层中间件支持借用消息，订阅端默认也会禁用该功能（参见 `默认启用禁用借用消息的变更 <https://github.com/ros2/rcl/pull/1110>`_）。
 
-如果希望在订阅端启用借用消息，需要显式将环境变量 §ROS_DISABLE_LOANED_MESSAGES§ 设置为 §0§。
+如果希望在订阅端启用借用消息，需要显式将环境变量 ``ROS_DISABLE_LOANED_MESSAGES`` 设置为 ``0``。
 
 .. tabs::
 
