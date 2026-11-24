@@ -9,7 +9,7 @@ Windows（二进制安装）
 
 .. note::
 
-    预构建二进制包不包含所有 ROS 2 软件包。它包含 `ROS base 变体 <https://reps.openrobotics.org/rep-2001/#ros-base>`_ 中的全部软件包，以及 `ROS desktop 变体 <https://reps.openrobotics.org/rep-2001/#desktop-variants>`_ 中的一部分软件包。具体软件包列表由 `此 ros2.repos 文件 <https://github.com/ros2/ros2/blob/{REPOS_FILE_BRANCH}/ros2.repos>`_ 中列出的仓库决定。
+    预构建二进制包不包含所有 ROS 2 软件包。它包含 `ROS base 变体 <https://reps.openrobotics.org/rep-2001/#ros-base>``_ 中的全部软件包，以及 ``ROS desktop 变体 <https://reps.openrobotics.org/rep-2001/#desktop-variants>``_ 中的一部分软件包。具体软件包列表由 ``此 ros2.repos 文件 <https://github.com/ros2/ros2/blob/{REPOS_FILE_BRANCH}/ros2.repos>`_ 中列出的仓库决定。
 
 系统要求
 --------
@@ -24,7 +24,7 @@ Windows（二进制安装）
 ----------
 
 * 访问 `发行页面 <https://github.com/ros2/ros2/releases>`_。
-* 下载最新的 Windows 软件包，例如 `ros2-{DISTRO}-*-windows-release-amd64.zip`。
+* 下载最新的 Windows 软件包，例如 ``ros2-{DISTRO}-*-windows-release-amd64.zip``。
 
 .. note::
 
@@ -32,9 +32,9 @@ Windows（二进制安装）
 
 .. note::
 
-    如果需要安装 ROS 2 调试库，请参阅下文的“调试相关附加内容”，然后继续下载 `ros2-package-windows-debug-AMD64.zip`。
+    如果需要安装 ROS 2 调试库，请参阅下文的“调试相关附加内容”，然后继续下载 ``ros2-package-windows-debug-AMD64.zip``。
 
-* 将 ZIP 文件解压到某个目录（以下假设路径为 `C:\dev\ros2_{DISTRO}`）。
+* 将 ZIP 文件解压到某个目录（以下假设路径为 ``C:\dev\ros2_{DISTRO}``）。
 
 .. note::
 
@@ -60,24 +60,24 @@ Windows（二进制安装）
 
    $ call C:\dev\ros2_{DISTRO}\local_setup.bat
 
-如果之前的命令没有其他错误，但恰好输出一次 `The system cannot find the path specified.`，这是正常现象。
+如果之前的命令没有其他错误，但恰好输出一次 ``The system cannot find the path specified.``，这是正常现象。
 
 尝试示例
 --------
 
-在命令行 Shell 中，按照上文说明配置 ROS 2 环境，然后运行 C++ `talker`：
+在命令行 Shell 中，按照上文说明配置 ROS 2 环境，然后运行 C++ ``talker``：
 
 .. code-block:: console
 
    $ ros2 run demo_nodes_cpp talker
 
-再打开另一个命令行 Shell，运行 Python `listener`：
+再打开另一个命令行 Shell，运行 Python ``listener``：
 
 .. code-block:: console
 
    $ ros2 run demo_nodes_py listener
 
-你应该能看到 `talker` 输出正在 `Publishing` 消息，而 `listener` 输出 `I heard` 并显示收到的消息。这验证了 C++ 和 Python API 均能正常工作。
+你应该能看到 ``talker`` 输出正在 ``Publishing`` 消息，而 ``listener`` 输出 ``I heard`` 并显示收到的消息。这验证了 C++ 和 Python API 均能正常工作。
 
 安装后的后续步骤
 ----------------
@@ -87,7 +87,7 @@ Windows（二进制安装）
 其他 RMW 实现（可选）
 ---------------------
 
-ROS 2 默认使用的中间件是 `Fast DDS`，但可以在运行时替换中间件（RMW）。有关如何使用多个 RMW 的说明，请参阅 :doc:`多 RMW 使用指南 <../How-To-Guides/Working-with-multiple-RMW-implementations>`。
+ROS 2 默认使用的中间件是 ``Fast DDS``，但可以在运行时替换中间件（RMW）。有关如何使用多个 RMW 的说明，请参阅 :doc:`多 RMW 使用指南 <../How-To-Guides/Working-with-multiple-RMW-implementations>`。
 
 故障排查
 --------
@@ -97,7 +97,7 @@ ROS 2 默认使用的中间件是 `Fast DDS`，但可以在运行时替换中间
 卸载
 ----
 
-1. 如果按照上文说明使用 colcon 安装工作空间，“卸载”可能只需要打开一个新终端，不再 source 工作空间的 `setup` 文件。这样，环境就会表现得如同系统中没有安装 {DISTRO_TITLE} 一样。
+1. 如果按照上文说明使用 colcon 安装工作空间，“卸载”可能只需要打开一个新终端，不再 source 工作空间的 ``setup`` 文件。这样，环境就会表现得如同系统中没有安装 {DISTRO_TITLE} 一样。
 2. 如果还希望释放磁盘空间，可以删除整个工作空间目录：
 
    .. code-block:: console
@@ -107,7 +107,7 @@ ROS 2 默认使用的中间件是 `Fast DDS`，但可以在运行时替换中间
 调试相关附加内容
 ----------------
 
-要下载 ROS 2 调试库，需要下载 `ros2-{DISTRO}-*-windows-debug-AMD64.zip`。请注意，调试库还需要进行一些额外配置，才能正常使用。
+要下载 ROS 2 调试库，需要下载 ``ros2-{DISTRO}-*-windows-debug-AMD64.zip``。请注意，调试库还需要进行一些额外配置，才能正常使用。
 
 可能需要修改 Python 安装，以启用调试符号和调试二进制文件：
 
