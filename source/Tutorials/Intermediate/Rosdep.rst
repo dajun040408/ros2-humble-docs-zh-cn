@@ -188,4 +188,4 @@ rosdep 如何工作？
 
 还有其他参数和选项。运行 ``rosdep -h`` 查看帮助，或阅读更完整的 `rosdep 文档 <http://docs.ros.org/en/independent/api/rosdep/html/>`_。
 
-.. [1] “发布到 ROS 生态系统”是指该软件包列在 ``rosdistro`` 数据库中的一个或多个 `<distro>/distribution.yaml`` 文件中，参见 `rosdistro 数据库 <https://github.com/ros/rosdistro>`__。
+.. [1] “发布到 ROS 生态系统”是指该软件包列在 ``rosdistro`` 数据库中的一个或多个 ``<distro>/distribution.yaml`` 文件中，参见 `rosdistro 数据库 <https://github.com/ros/rosdistro>`__。
