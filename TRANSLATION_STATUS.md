@@ -280,3 +280,6 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 
 - 构建 #768（提交 `8a32595`）build/deploy 成功，Python 服务/客户端教程没有 Sphinx ERROR 或 CRITICAL，但发现 3 处标题下划线长度警告。复核时发现补译时保留了原有简化构建步骤，造成“构建并运行”章节重复。
 - 已删除重复的旧构建段落，并调整 1.2、2.2、3.2 小节标题下划线长度。提交：`fb8272dbdb68fc6893833d75af7cf571bf16f9dd`。待新一轮构建确认。
+
+- 构建 #770（提交 `e7c45da`）build/deploy 成功。Python 服务/客户端教程新增章节通过 Sphinx 构建，相关页面无标题下划线、RST ERROR 或 CRITICAL；剩余 2 条 Lyrical 上游页面 toctree 警告。
+- Python 发布者/订阅者教程的去重与标题修复已由构建 #766 验证成功；Python 服务/客户端教程的去重与标题修复已由 #770 验证成功。两篇 Python 教程已进入 GitHub Pages 部署产物。
