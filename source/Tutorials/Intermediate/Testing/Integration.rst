@@ -71,7 +71,7 @@ ROS 2 集成测试的一个关键要求是：不同测试中的节点不应相�
   from turtlesim.msg import Pose
 
 1.2 生成测试描述
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 `generate_test_description` 函数描述需要启动的内容，类似于 ROS 2 Python 启动文件中的 `generate_launch_description`。
 
