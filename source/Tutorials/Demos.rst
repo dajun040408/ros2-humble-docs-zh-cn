@@ -4,15 +4,16 @@
 .. toctree::
    :maxdepth: 1
 
-   Demos/Quality-of-Service
-   Demos/Managed-Nodes
-   Demos/Intra-Process-Communication
-   Demos/Rosbag-with-ROS1-Bridge
-   Demos/Real-Time-Programming
-   Demos/dummy-robot-demo
-   Demos/Logging-and-logger-configuration
-   Demos/Content-Filtering-Subscription
-   Demos/Wait-for-Acknowledgment
+   在有损网络中使用 QoS 设置 <Demos/Quality-of-Service>
+   管理生命周期节点 <Demos/Managed-Nodes>
+   进程内通信 <Demos/Intra-Process-Communication>
+   使用 ROS 1 bridge 录制和回放 rosbag <Demos/Rosbag-with-ROS1-Bridge>
+   实时编程 <Demos/Real-Time-Programming>
+   模拟机器人实验 <Demos/dummy-robot-demo>
+   日志记录和记录器配置 <Demos/Logging-and-logger-configuration>
+   创建内容过滤订阅 <Demos/Content-Filtering-Subscription>
+   等待消息确认 <Demos/Wait-for-Acknowledgment>
+
 
 外部资源
 --------
