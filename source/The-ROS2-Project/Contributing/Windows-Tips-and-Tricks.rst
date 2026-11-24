@@ -49,7 +49,7 @@ Clang 和 GCC 也提供类似选项，但默认关闭。因此，当一个原本
 
 符号可见性也会影响二进制加载。如果可组合节点无法运行，或者 Qt Visualizer 无法工作，可能是宿主进程无法找到预期的二进制符号导出。
 
-在 Windows 上，可以使用 Windows 开发工具中的 Gflags 诊断此问题。Gflags 提供多种调试选项，其中之一是 *Loader Snaps*，可以在调试时检测加载失败。更多信息请参阅 Microsoft 文档：`Gflags <https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/setting-and-clearing-image-file-flags>`_ 和 ``Loader Snaps <https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/show-loader-snaps>`_。
+在 Windows 上，可以使用 Windows 开发工具中的 Gflags 诊断此问题。Gflags 提供多种调试选项，其中之一是 *Loader Snaps*，可以在调试时检测加载失败。更多信息请参阅 Microsoft 文档：`Gflags <https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/setting-and-clearing-image-file-flags>`_ 和 `Loader Snaps <https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/show-loader-snaps>`_。
 
 在 Windows 上导出符号有两种解决方案：Visibility Control Headers 和 ``WINDOWS_EXPORT_ALL_SYMBOLS`` 属性。
 

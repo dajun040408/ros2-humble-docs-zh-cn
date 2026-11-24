@@ -56,7 +56,7 @@
 类定义
 ^^^^^^
 
-类定义唯一可能需要的修改，是确保`类构造函数 <https://github.com/ros2/demos/tree/{REPOS_FILE_BRANCH}/composition/src/talker_component.cpp>``_ 接受一个 ``NodeOptions` 参数：
+类定义唯一可能需要的修改，是确保`类构造函数 <https://github.com/ros2/demos/tree/{REPOS_FILE_BRANCH}/composition/src/talker_component.cpp>`_ 接受一个 ``NodeOptions`` 参数：
 
 .. code-block:: cpp
 

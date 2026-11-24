@@ -104,7 +104,7 @@
 `turtlesim <https://github.com/ros/ros_tutorials/tree/humble-devel/turtlesim/CHANGELOG.rst>`__
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* 处理:code:`qreal orient_` 时使用 ``double``（`#114 <https://github.com/ros/ros_tutorials/issues/114>`__）
+* 处理 ``qreal orient_`` 时使用 ``double``（`#114 <https://github.com/ros/ros_tutorials/issues/114>`__）
 * 添加 Rolling 图标（`#133 <https://github.com/ros/ros_tutorials/issues/133>`__）
 * 将维护者更新为 Audrow Nash 和 Michael Jeronimo（`#137 <https://github.com/ros/ros_tutorials/issues/137>`__）
 * 修复已弃用订阅回调的警告（`#134 <https://github.com/ros/ros_tutorials/issues/134>`__）

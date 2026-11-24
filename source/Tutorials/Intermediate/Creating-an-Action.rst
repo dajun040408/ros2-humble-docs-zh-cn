@@ -25,9 +25,9 @@
 前置条件
 --------
 
-需要安装 :doc:`ROS 2 <../../Installation>`` 和 ``colcon`。
+需要安装 :doc:`ROS 2 <../../Installation>` 和 ``colcon`。
 
-创建一个 :doc:`工作空间 <../Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>``，并创建名为 ``action_tutorials_interfaces`` 的功能包。首先要 :doc:``source ROS 2 安装环境 <../Beginner-CLI-Tools/Configuring-ROS2-Environment>`。
+创建一个 :doc:`工作空间 <../Beginner-Client-Libraries/Creating-A-Workspace/Creating-A-Workspace>`，并创建名为 ``action_tutorials_interfaces`` 的功能包。首先要 :doc:`source ROS 2 安装环境 <../Beginner-CLI-Tools/Configuring-ROS2-Environment>`。
 
 .. tabs::
 
@@ -175,7 +175,7 @@ Action 的一次执行通常称为一个目标（Goal）。
 后续步骤
 --------
 
-接下来，可以使用新定义的 Action 接口创建 Action 服务端和客户端，参见 :doc:`Python 教程 <Writing-an-Action-Server-Client/Py>`` 或 :doc:``C++ 教程 <Writing-an-Action-Server-Client/Cpp>`。
+接下来，可以使用新定义的 Action 接口创建 Action 服务端和客户端，参见 :doc:`Python 教程 <Writing-an-Action-Server-Client/Py>` 或 :doc:`C++ 教程 <Writing-an-Action-Server-Client/Cpp>`。
 
 相关内容
 --------

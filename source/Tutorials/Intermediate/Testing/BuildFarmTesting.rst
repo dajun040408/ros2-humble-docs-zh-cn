@@ -20,7 +20,7 @@ GitHub 访问权限
 GitHub 组织
 ^^^^^^^^^^^
 
-#. 打开 `https://github.com/orgs/%YOUR_ORG%/people <https://github.com/orgs/%YOUR_ORG%/people>`_，并将 ``%YOUR_ORG%` 替换为相应组织名称。
+#. 打开 `https://github.com/orgs/%YOUR_ORG%/people <https://github.com/orgs/%YOUR_ORG%/people>`_，并将 ``%YOUR_ORG%`` 替换为相应组织名称。
 #. 点击 ``Invite Member``，输入 ``ros-pull-request-builder``。
 
 GitHub 代码仓库

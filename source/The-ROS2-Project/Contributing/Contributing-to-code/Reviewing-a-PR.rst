@@ -19,7 +19,7 @@
 前置条件
 --------
 
-代码或文档贡献者已经向某个`ROS 仓库 <https://github.com/ros2>``_ 提交了 :doc:``Pull Request </The-ROS2-Project/Contributing/Contributing-to-code/Making-a-PR>`。
+代码或文档贡献者已经向某个`ROS 仓库 <https://github.com/ros2>`_ 提交了 :doc:`Pull Request </The-ROS2-Project/Contributing/Contributing-to-code/Making-a-PR>`。
 
 步骤
 ----

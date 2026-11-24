@@ -26,7 +26,7 @@ ROS 主 apt 软件源只保留每个软件包的最新版本，因此一次同�
 
 从快照安装可以获得一组固定的软件包版本，只有在你主动选择其他快照时才会发生变化。
 
-大多数用户应按照 :doc:`安装说明 <Ubuntu-Install-Debs>`` 从主软件源安装。快照软件源适用于将 ROS 软件包打包到容器镜像等制品中，或者希望主动决定何时切换到新同步版本，而不是在下次运行 ``apt upgrade` 时自动更新的场景。
+大多数用户应按照 :doc:`安装说明 <Ubuntu-Install-Debs>` 从主软件源安装。快照软件源适用于将 ROS 软件包打包到容器镜像等制品中，或者希望主动决定何时切换到新同步版本，而不是在下次运行 ``apt upgrade` 时自动更新的场景。
 
 快照针对 ROS 发行版的 Ubuntu 目标平台和体系结构生成。请参阅 :ref:`二进制软件包构建平台列表 <binary-package-platforms>`。
 
@@ -115,7 +115,7 @@ ROS 主 apt 软件源只保留每个软件包的最新版本，因此一次同�
 
 rosdistro 索引与 apt 软件源分别进行版本管理，因此 ``rosdep`` 可能会根据比当前快照更新的 ``rosdistro`` 状态解析依赖项 key。
 
-rosdistro 中的同步版本使用与快照相同的 `<distribution>/<date>`` 命名方式打标签。因此，可以按照 :doc:``自定义 rosdistro 索引 </How-To-Guides/Using-Custom-Rosdistro>` 的说明，将索引固定到与快照匹配的标签。
+rosdistro 中的同步版本使用与快照相同的 ``<distribution>/<date>`` 命名方式打标签。因此，可以按照 :doc:`自定义 rosdistro 索引 </How-To-Guides/Using-Custom-Rosdistro>` 的说明，将索引固定到与快照匹配的标签。
 
 .. code-block:: console
 

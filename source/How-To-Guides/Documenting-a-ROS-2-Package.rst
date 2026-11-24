@@ -20,7 +20,7 @@
 
 负责生成 ROS 2 功能包文档的工具是 `rosdoc2 <https://github.com/ros-infrastructure/rosdoc2>`_。
 
-``rosdoc2`` 是常用文档框架 `Sphinx <https://www.sphinx-doc.org/>`_ 的便捷封装。Sphinx 既支持自由格式的文本文档，也支持根据代码注释生成 Python API 文档。``breathe <https://breathe.readthedocs.io/en/latest/>`_ 和 ``exhale <https://exhale.readthedocs.io/en/latest/>`_ 软件包可以将 Doxygen 集成进来，从而加入自动生成的 C++ API 文档。
+``rosdoc2`` 是常用文档框架 `Sphinx <https://www.sphinx-doc.org/>`_ 的便捷封装。Sphinx 既支持自由格式的文本文档，也支持根据代码注释生成 Python API 文档。`breathe <https://breathe.readthedocs.io/en/latest/>`_ 和 `exhale <https://exhale.readthedocs.io/en/latest/>`_ 软件包可以将 Doxygen 集成进来，从而加入自动生成的 C++ API 文档。
 
 如果功能包没有任何文档或配置，``rosdoc2`` 会创建默认配置，并应用统一主题及与其他功能包集成所需的选项。
 
@@ -51,7 +51,7 @@ rosdoc2.yaml
 
    $ rosdoc2 default_config --package-path <package-path>
 
-然后在 ``package.xml`` 的 export 部分添加 `<rosdoc2>rosdoc2.yaml</rosdoc2>`：
+然后在 ``package.xml`` 的 export 部分添加 ``<rosdoc2>rosdoc2.yaml</rosdoc2>``：
 
 .. code-block:: xml
 
@@ -212,7 +212,7 @@ ROS 构建农场使用 ``rosdoc2`` 构建功能包文档，并托管在 ``docs.r
 
 构建农场会为每个发行版分别托管文档，并定期从指定分支的最新提交重新构建。更新托管文档不需要创建新的软件包发行版。
 
-要查看功能包文档构建状态，可以在 ``https://build.ros2.org`` 中搜索 `doc__<package_name>`。每个已发布该功能包的发行版都会创建一个任务。在任务页面中，可以查看最近一次构建触发时间、构建状态和日志。
+要查看功能包文档构建状态，可以在 ``https://build.ros2.org`` 中搜索 ``doc__<package_name>``。每个已发布该功能包的发行版都会创建一个任务。在任务页面中，可以查看最近一次构建触发时间、构建状态和日志。
 
 延伸阅读
 --------

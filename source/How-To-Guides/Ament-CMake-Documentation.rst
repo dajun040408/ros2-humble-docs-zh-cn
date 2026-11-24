@@ -15,7 +15,7 @@ ament_cmake 用户文档
 基础知识
 --------
 
-可以通过命令行 `ros2 pkg create <package_name>`` 生成基本 CMake 项目。构建信息主要保存在同一目录中的 ``package.xml` 和 ``CMakeLists.txt`` 两个文件中。
+可以通过命令行 ``ros2 pkg create <package_name>`` 生成基本 CMake 项目。构建信息主要保存在同一目录中的 ``package.xml`` 和 ``CMakeLists.txt`` 两个文件中。
 
 ``package.xml`` 必须包含所有依赖项和必要元数据，使 colcon 能够确定功能包构建顺序、在 CI 中安装依赖项，并为 Bloom 发布提供信息。``CMakeLists.txt`` 则包含构建和打包可执行程序及库的命令。
 

@@ -20,7 +20,7 @@
 前置条件
 --------
 
-你应当已经完成 :doc:`创建 ROS 2 功能包 <../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>`` 教程。每次打开新终端时，都不要忘记 source ROS 2 环境，参见 :doc:``配置 ROS 2 环境 <../../Beginner-CLI-Tools/Configuring-ROS2-Environment>`。
+你应当已经完成 :doc:`创建 ROS 2 功能包 <../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>` 教程。每次打开新终端时，都不要忘记 source ROS 2 环境，参见 :doc:`配置 ROS 2 环境 <../../Beginner-CLI-Tools/Configuring-ROS2-Environment>`。
 
 背景
 ----
@@ -211,6 +211,6 @@
 文档
 ----
 
-`Launch 文档 <https://github.com/ros2/launch/blob/{REPOS_FILE_BRANCH}/launch/doc/source/architecture.rst>`_ 提供了更多细节，介绍 ``launch_ros` 中使用的相关概念。
+`Launch 文档 <https://github.com/ros2/launch/blob/{REPOS_FILE_BRANCH}/launch/doc/source/architecture.rst>`_ 提供了更多细节，介绍 ``launch_ros`` 中使用的相关概念。
 
 后续还会提供更多关于 Launch 功能的文档和示例。在此之前，可以参考源代码：``https://github.com/ros2/launch`` 和 ``https://github.com/ros2/launch_ros``。

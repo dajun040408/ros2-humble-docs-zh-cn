@@ -20,7 +20,7 @@
 背景
 ----
 
-在之前的教程中，我们通过编写 :doc:`tf2 广播器 <Writing-A-Tf2-Broadcaster-Cpp>`` 和 :doc:``tf2 监听器 <Writing-A-Tf2-Listener-Cpp>`` 重现了海龟演示。我们还学习了如何 :doc:``向变换树添加新坐标系 <Adding-A-Frame-Cpp>`，以及 tf2 如何维护坐标系树。
+在之前的教程中，我们通过编写 :doc:`tf2 广播器 <Writing-A-Tf2-Broadcaster-Cpp>` 和 :doc:`tf2 监听器 <Writing-A-Tf2-Listener-Cpp>` 重现了海龟演示。我们还学习了如何 :doc:`向变换树添加新坐标系 <Adding-A-Frame-Cpp>`，以及 tf2 如何维护坐标系树。
 
 该树会随时间变化，tf2 会为每个变换保存一个时间快照（默认最长保存 10 秒）。此前，我们使用 ``lookupTransform()`` 获取 tf2 变换树中最新可用的变换，而没有指定该变换记录的时间。本教程将介绍如何获取特定时间的变换。
 
@@ -30,7 +30,7 @@
 1. 更新监听器节点
 ^^^^^^^^^^^^^^^^^
 
-回到 :doc:`添加坐标系教程 <Adding-A-Frame-Cpp>`` 的最后一步，进入 ``learning_tf2_cpp`` 功能包，打开 ``turtle_tf2_listener.cpp``，查看 ``lookupTransform()` 调用：
+回到 :doc:`添加坐标系教程 <Adding-A-Frame-Cpp>` 的最后一步，进入 ``learning_tf2_cpp`` 功能包，打开 ``turtle_tf2_listener.cpp``，查看 ``lookupTransform()` 调用：
 
 .. code-block:: cpp
 
@@ -45,9 +45,9 @@
 
    ``tf2`` 软件包有自己的时间类型 ``tf2::TimePoint``，它不同于 ``rclcpp::Time``。``tf2_ros`` 中的许多 API 会自动在 ``rclcpp::Time`` 和 ``tf2::TimePoint`` 之间转换。
 
-   这里也可以使用 `rclcpp::Time(0, 0, this->get_clock()->get_clock_type())``，但最终仍会被转换为 ``tf2::TimePointZero`。
+   这里也可以使用 ``rclcpp::Time(0, 0, this->get_clock()->get_clock_type())``，但最终仍会被转换为 ``tf2::TimePointZero`。
 
-对于 tf2，时间 0 表示缓冲区中“最新可用”的变换。现在修改这行代码，获取当前时间 `this->get_clock()->now()` 对应的变换：
+对于 tf2，时间 0 表示缓冲区中“最新可用”的变换。现在修改这行代码，获取当前时间 ``this->get_clock()->now()`` 对应的变换：
 
 .. code-block:: cpp
 

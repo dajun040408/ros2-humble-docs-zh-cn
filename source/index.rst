@@ -83,7 +83,7 @@ ROS 社区资源
 ROS 项目通用资源
 ------------------
 
-* :ref:`机器人技术增强提案（REP） <rep-index>`：提出新设计和约定。
+* `机器人技术增强提案（REP） <https://reps.openrobotics.org/>`__：提出新设计和约定。
 * `ROS Robots <https://robots.ros.org/>`__ ：展示社区机器人项目。
 * `ROS Wiki <https://wiki.ros.org/>`__ ：ROS 1 文档及用户可编辑内容。
 * `ROS.org <https://www.ros.org/>`__ ：ROS 项目入口网站。

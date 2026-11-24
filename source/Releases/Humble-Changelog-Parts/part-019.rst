@@ -56,11 +56,11 @@
 * 确保 play 模式下已发布消息得到确认（`#951 <https://github.com/ros2/rosbag2/issues/951>`__）
 * TopicFilter 使用 regex_search 替代 regex_match（`#932 <https://github.com/ros2/rosbag2/issues/932>`__）
 * 新增 start-offset 播放选项（`#931 <https://github.com/ros2/rosbag2/issues/931>`__）
-* 将 bag_rewrite 暴露为 ``ros2 bag convert``（`#921 <https://github.com/ros2/rosbag2/issues/921>`__）
+* 将 bag_rewrite 暴露为 ``ros2 bag convert`` （`#921 <https://github.com/ros2/rosbag2/issues/921>`__）
 * 为 recorder 新增“忽略叶子话题”选项（`#925 <https://github.com/ros2/rosbag2/issues/925>`__）
 * 尽可能自动检测 Reader 的 storage_id（`#918 <https://github.com/ros2/rosbag2/issues/918>`__）
 * 为 bag recorder 添加暂停/恢复选项（`#905 <https://github.com/ros2/rosbag2/issues/905>`__）
-* 为 ``ros2 bag play`` 添加 --start-paused 选项（`#904 <https://github.com/ros2/rosbag2/issues/904>`__）
+* 为 ``ros2 bag play`` 添加 ``--start-paused`` 选项（`#904 <https://github.com/ros2/rosbag2/issues/904>`__）
 * 更新功能包维护者信息（`#899 <https://github.com/ros2/rosbag2/issues/899>`__）
 * 修复 record 的 converter 插件选择（`#897 <https://github.com/ros2/rosbag2/issues/897>`__）
 * 修复错误消息中缺少空格的问题（`#875 <https://github.com/ros2/rosbag2/issues/875>`__）

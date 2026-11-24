@@ -66,7 +66,7 @@
 启用线程安全分析
 ^^^^^^^^^^^^^^^^
 
-线程安全分析需要代码注解，让编译器了解代码语义。注解本身是 Clang 专用属性，例如 `__attribute__(capability())``。ROS 2 在 ``rcpputils/thread_safety_annotations.hpp`` 中提供预处理器宏，使用其他编译器时这些宏会被移除。
+线程安全分析需要代码注解，让编译器了解代码语义。注解本身是 Clang 专用属性，例如 ``__attribute__(capability())``。ROS 2 在 ``rcpputils/thread_safety_annotations.hpp`` 中提供预处理器宏，使用其他编译器时这些宏会被移除。
 
 Clang 文档指出，线程安全分析可以与任何线程库配合使用，但通常需要将线程 API 封装在带有适当注解的类和方法中。ROS 2 希望开发者直接使用 ``std::`` 线程原语，因此选择通过 LLVM ``libc++`` 提供的注解支持来分析标准库类型。
 

@@ -28,7 +28,7 @@ ROS 2 Launch 是一个用于执行和管理用户定义进程的系统。它负�
 前置条件
 --------
 
-本教程使用 :doc:`turtlesim <../../Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim>`` 软件包，并假设你已经创建了一个构建类型为 ``ament_python``、名称为 ``launch_tutorial`` 的新功能包，参见 :doc:``创建 ROS 2 功能包 <../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>`。
+本教程使用 :doc:`turtlesim <../../Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim>` 软件包，并假设你已经创建了一个构建类型为 ``ament_python``、名称为 ``launch_tutorial`` 的新功能包，参见 :doc:`创建 ROS 2 功能包 <../../Beginner-Client-Libraries/Creating-Your-First-ROS2-Package>`。
 
 本教程基于 :doc:`在启动文件中使用替换 <./Using-Substitutions>` 教程中的代码继续展开。
 

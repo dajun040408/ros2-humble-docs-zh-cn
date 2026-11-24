@@ -24,7 +24,7 @@
 
 单元测试侧重验证某个非常具体的功能，而集成测试侧重验证多个代码部分之间的交互。
 
-在 ROS 2 中，通常通过启动一个或多个节点组成的系统来完成集成测试，例如 `Gazebo 仿真器 <https://gazebosim.org/home>`_ 和 ``Nav2 导航栈 <https://github.com/ros-planning/navigation2.git>`_。因此，集成测试的配置和运行都更加复杂。
+在 ROS 2 中，通常通过启动一个或多个节点组成的系统来完成集成测试，例如 `Gazebo 仿真器 <https://gazebosim.org/home>`_ 和 `Nav2 导航栈 <https://github.com/ros-planning/navigation2.git>`_。因此，集成测试的配置和运行都更加复杂。
 
 ROS 2 集成测试的一个关键要求是：不同测试中的节点不应相互通信，即使这些测试并行运行也应如此。本教程将使用一个专门的测试运行器，为每个测试分配唯一的 :doc:`ROS Domain ID <../../../Concepts/Intermediate/About-Domain-ID>`。
 

@@ -86,6 +86,8 @@ Fast DDS 已包含在 ROS 2 源码中。除非在 ``src\eProsima`` 目录中创�
 
 如果希望使用默认实现以外的 DDS 或 RTPS 供应商，请参阅 :doc:`相关说明 <../RMW-Implementations>`。
 
+.. _windows-dev-build-ros2:
+
 构建 ROS 2 代码
 ---------------
 

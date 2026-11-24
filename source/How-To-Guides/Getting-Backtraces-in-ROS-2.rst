@@ -113,7 +113,7 @@ GDB 是 Unix 系统中最常用的 C/C++ 调试器。它可用于确定程序崩
 
 ``--prefix`` 会在 ROS 2 命令执行之前运行一些代码，从而允许我们插入额外的调试命令。
 
-如果尝试使用 `gdb -ex run --args ros2 run <pkg> <node>`，可能会发现 GDB 无法找到 ``ros2`` 命令。在 GDB 中尝试 source 工作空间也可能失败。
+如果尝试使用 ``gdb -ex run --args ros2 run <pkg> <node>``，可能会发现 GDB 无法找到 ``ros2`` 命令。在 GDB 中尝试 source 工作空间也可能失败。
 
 这是因为以这种方式启动 GDB 时，它没有获得通常用于查找 ``ros2`` 命令的环境配置。
 

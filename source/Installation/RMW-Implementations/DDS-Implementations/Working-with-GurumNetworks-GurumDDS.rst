@@ -10,14 +10,14 @@ GurumNetworks GurumDDS
 前置条件
 --------
 
-本指南假设你已经完成 ROS 2 环境配置，可以通过 :doc:`Deb 软件包安装 ROS 2 <../../Ubuntu-Install-Debs>``，或 :doc:``在 Ubuntu 上从源码构建 ROS 2 <../../Alternatives/Ubuntu-Development-Setup>`。
+本指南假设你已经完成 ROS 2 环境配置，可以通过 :doc:`Deb 软件包安装 ROS 2 <../../Ubuntu-Install-Debs>`，或 :doc:`在 Ubuntu 上从源码构建 ROS 2 <../../Alternatives/Ubuntu-Development-Setup>`。
 
 版本要求（`README 详情 <https://github.com/ros2/rmw_gurumdds>`_）：
 
 ================  ================
 ROS 2 发行版      GurumDDS 版本
 ================  ================
-rolling           `>= 3.2.0`
+rolling           ``>= 3.2.0``
 lyrical           `>= 3.2.0`
 kilted            `>= 3.2.0`
 jazzy             `>= 3.2.0`

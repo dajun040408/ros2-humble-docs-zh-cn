@@ -46,7 +46,7 @@ ROS 2 启动文件可以使用 XML、YAML 和 Python 编写。本指南展示如
 启动
 ^^^^
 
-上述任意启动文件都可以使用 `ros2 launch` 运行。要在本地尝试，可以先创建一个新功能包，然后运行：
+上述任意启动文件都可以使用 ``ros2 launch`` 运行。要在本地尝试，可以先创建一个新功能包，然后运行：
 
 .. code-block:: console
 
@@ -61,7 +61,7 @@ ROS 2 启动文件可以使用 XML、YAML 和 Python 编写。本指南展示如
 设置参数
 ^^^^^^^^
 
-要向启动文件传递参数，应使用 `key:=value` 语法。例如，可以通过以下方式设置 `background_r` 的值：
+要向启动文件传递参数，应使用 ``key:=value`` 语法。例如，可以通过以下方式设置 ``background_r`` 的值：
 
 .. code-block:: console
 
