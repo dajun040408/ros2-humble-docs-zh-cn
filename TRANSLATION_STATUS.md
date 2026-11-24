@@ -310,3 +310,8 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 构建 #778（提交 `c1c9f78`）build/deploy 成功。Sphinx ERROR=0、CRITICAL=0；`Custom-ROS2-Interfaces.rst` 和 `Single-Package-Define-And-Use-Interface.rst` 的补译均进入 GitHub Pages 发布产物。
 - #778 日志曾发现单包接口教程 `3.2 构建发布者` 标题下划线长度警告，已在提交 `200bd8de2f469b19fa44eff4545f0da2fbff8ae7` 中加长修复；该修复和后续参数教程补译尚待新构建确认。
 - 已补充 `Creating-Your-First-ROS2-Package.rst`：增加工作空间多包目录结构示例、CMake/Python `--node-name` 创建命令的终端输出示例、CMake/Python `package.xml` 元信息示例，以及 Python `setup.py` 配置示例。提交：`a5d0504cf4bfa968b9bf4b8072e750e9b8ccc5cf`。待构建验收。
+
+- 构建 #784（提交 `a84b60e`）build/deploy 成功。Sphinx ERROR=0、CRITICAL=0；C++/Python 参数类教程补译和单包接口标题修复均已进入 Pages 部署产物。全站仅剩 2 条 Lyrical 上游页面未纳入 Humble toctree 的警告。
+- 已扩充 `Creating-Your-First-ROS2-Package.rst`，补充工作空间多包结构、CMake/Python 创建功能包的完整命令输出、两种构建类型的 package.xml 结构示例及 Python setup.py 配置示例。提交：`a5d0504cf4bfa968b9bf4b8072e750e9b8ccc5cf`。
+- 已扩充 `Pluginlib.rst`，补充基类头文件 include guard、插件基类初始化方法说明、插件导出宏参数解释、完整 ClassLoader 使用程序（含异常处理）、插件动态加载与依赖关系说明，以及 `ros2 plugin list` 预期输出。提交：`4a0a86fc02a1138e813ba7ac54807220b699d74a`。
+- 上述 package 创建和 pluginlib 修订尚待下一次 Sphinx 构建及部署验收。
