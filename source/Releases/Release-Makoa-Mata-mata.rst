@@ -2,7 +2,7 @@
 
 .. _makoa-release:
 
-Makoa Mata-mata（代号 ``makoa``；2027 年 5 月）
+Makoa Mata-mata（代号 makoa；2027 年 5 月）
 ==============================================================
 
 .. toctree::
