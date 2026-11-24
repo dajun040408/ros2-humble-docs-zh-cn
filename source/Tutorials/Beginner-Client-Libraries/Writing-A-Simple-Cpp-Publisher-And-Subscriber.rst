@@ -22,7 +22,7 @@
 
 :doc:`节点 <../Beginner-CLI-Tools/Understanding-ROS2-Nodes/Understanding-ROS2-Nodes>` 是通过 ROS 计算图进行通信的可执行进程。本教程中的节点通过 :doc:`话题 <../Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics>` 交换字符串消息。
 
-示例采用简单的 talker 和 listener 系统：一个节点发布数据，另一个节点订阅话题并接收数据。示例代码位于`ros2/examples/rclcpp/topics <https://github.com/ros2/examples/tree/{REPOS_FILE_BRANCH}/rclcpp/topics>`_。
+C++ 发布者和订阅者有多种实现方式。可以查看 `ros2/examples 仓库 <https://github.com/ros2/examples/tree/{REPOS_FILE_BRANCH}/rclcpp/topics>`_ 中的 ``minimal_publisher`` 和 ``minimal_subscriber`` 功能包。
 
 前置条件
 --------
