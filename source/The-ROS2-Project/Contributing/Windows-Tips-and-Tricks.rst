@@ -109,7 +109,7 @@ Visibility Control Headers 的作用是为每个共享库定义一个宏，正�
     PRIVATE "MY_LIB_BUILDING_LIBRARY")
 
 WINDOWS_EXPORT_ALL_SYMBOLS 目标属性
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 CMake 在 Windows 上实现了 `WINDOWS_EXPORT_ALL_SYMBOLS` 属性，可以自动导出函数符号。详细工作原理请参阅`CMake 文档 <https://cmake.org/cmake/help/latest/prop_tgt/WINDOWS_EXPORT_ALL_SYMBOLS.html>`_。
 
