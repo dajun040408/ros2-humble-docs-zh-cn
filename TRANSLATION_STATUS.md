@@ -242,3 +242,5 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 为彻底排除该行内 literal 警告，已将该 changelog 条目中的 `qreal orient_` 改为普通文本，仅保留 ``double`` 的代码标记。提交：`f3d0041f34843601080f240ce2c6a87febb4dac2`。需由下一轮构建验证警告是否消失。
 
 - 构建 #744（提交 `7730361`）build/deploy 成功，但日志进一步表明：移除行内 literal 的反引号后，未转义的 `orient_` 被 docutils 当作引用目标，产生 Unknown target name 错误。因此已将该术语保留为普通文本并对下划线使用 RST 转义（`qreal orient\\_`），只将 `double` 保留为行内 literal。修复提交：`e64214f55b638f4d99df64171ec798ad1315e4b3`。最终需由下一次构建确认该行不再产生 warning/error。
+
+- 构建 #746（提交 `acf0e51`）build/deploy 成功，`part-004.rst` CRITICAL 与 Sphinx ERROR 均为 0；但 `part-032.rst:107` 仍触发行内 literal 警告。现已进一步移除该行的所有双反引号标记，将 `qreal orient\\_` 作为普通转义文本、`double` 作为普通技术术语，避免该行的行内标记解析歧义。提交：`2ac82ae4128dc66ef9524d537922c8e7a83cca36`。待下一次构建复核。
