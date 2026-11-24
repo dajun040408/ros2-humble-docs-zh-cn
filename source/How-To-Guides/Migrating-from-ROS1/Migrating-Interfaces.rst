@@ -5,7 +5,7 @@ ROS 1 接口迁移
    :depth: 2
    :local:
 
-在 ROS 2 中，消息、服务和动作统称为 ``interfaces``（接口）。
+在 ROS 2 中，消息、服务和动作统称为 ``interfaces`` （接口）。
 
 接口定义
 --------
