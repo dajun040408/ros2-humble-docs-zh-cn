@@ -25,7 +25,7 @@ ROS 2 不再使用 ``catkin_make``、``catkin_make_isolated`` 或 ``catkin build
 对于纯 Python 功能包，ROS 2 使用 Python 开发者熟悉的标准 ``setup.py`` 安装机制。
 
 更新文件以使用 ``setup.py``
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 如果 ROS 1 功能包仅使用 CMake 调用 ``setup.py``，且除 Python 代码外不包含其他内容（例如消息、服务等），则应将其转换为 ROS 2 中的纯 Python 功能包：
 
