@@ -24,7 +24,7 @@ GitHub 组织
 #. 点击 `Invite Member`，输入 `ros-pull-request-builder`。
 
 GitHub 代码仓库
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 #. 打开 `https://github.com/%YOUR_ORG%/%YOUR_REPO%/settings/access`，并将组织和仓库占位符替换为实际值。
 #. 点击 `Add people`，输入 `ros-pull-request-builder`。
