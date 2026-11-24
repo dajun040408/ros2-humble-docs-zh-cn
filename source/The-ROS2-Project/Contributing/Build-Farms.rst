@@ -105,7 +105,7 @@ Bloom 成功完成，并且软件包通过向 `rosdistro`_ 提交 Pull Request �
 
 * `ros_buildfarm 通用文档 <https://github.com/ros-infrastructure/ros_buildfarm/blob/master/doc/index.rst>`_
 * `回归测试 <http://wiki.ros.org/regression_tests#Setting_up_Your_Computer_for_Prerelease>`__
-* `ROS 1 构建农场 Wiki <http://wiki.ros.org/buildfarm>`_（部分内容已过时）
+* `ROS 1 构建农场 Wiki <http://wiki.ros.org/buildfarm>`_ （部分内容已过时）
 * `cookbook-ros-buildfarm <https://github.com/ros-infrastructure/cookbook-ros-buildfarm>`_
 
 .. [1] ``{distro}`` 是 ROS 发行版名称的首字母；``{platform}``（``{platf}``）表示软件包构建目标平台及其缩写；``{package}`` 表示正在构建的 ROS 软件包名称。
