@@ -176,3 +176,15 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 提交：`575d712649c7dd4760a30ad7b499806f41a38b00`（2026-11-24 04:04 UTC）。
 - 已回读 GitHub main 确认更新后的文件存在；本次提交会触发 `.github/workflows/deploy-docs.yml`。该提交对应的构建与部署结果尚待核验。
 - 下一轮优先逐段核对 C++/Python 迁移参考页、Launch 文件页及其代码块/表格；不能把代码标识符、XML 标签、CLI 参数或英文 API 名称误判为未翻译正文。
+
+
+## 2026-11-24 第六轮迁移指南代码块审校
+
+- 复核全部 10 篇 ROS 1 → ROS 2 迁移指南源文件中的 `code-block` / `code` 代码区域，发现两处此前未清理的 RST 行内标记错误。
+- `Migrating-Python-Packages.rst`：代码块内的 ``rospy``、``rclpy``、``String``、``AddTwoInts`` 等标识符被错误包裹双反引号；这些标记在代码块中不应作为 RST 行内标记。已清除代码区域内错误的反引号，并修复 `catkin_make_isolated` 命令拼写。提交：`30d7375462691d2a169e78fec58a16d5e3d69f62`。
+- `Migrating-Parameters.rst`：YAML/console 代码块中存在同类错误标记；已修复参数黑板命令、YAML 键和通配符示例，并修复源代码链接中嵌入双反引号导致的 URL 错误。提交：`f0c0e5d925e00506d783e2a390a5c331f9a0186a`。
+- `Migrating-CPP-Package-Example.rst`：修复 XML 示例中多余的尾随反引号。提交：`4ed8dc055b07d2081fe754c6d36aaacb42b6621d`。
+- `Migrating-Scripts.rst`：修复 ROS CLI 示例和快速参考表格。提交：`575d712649c7dd4760a30ad7b499806f41a38b00`。
+- 对迁移目录全部 10 篇页面再次执行代码区域扫描：未再发现 `code-block` / `code` 区域内残留双反引号行内标记。
+- 该扫描是源文件静态检查，不等同于 Sphinx 构建成功；最新提交的 Actions build/deploy 结果仍须从 GitHub Actions 运行页确认。GitHub 连接当前可用的 commit status 检查没有返回状态项，不能据此宣称构建通过。
+- 本轮仅处理迁移指南，不代表其余 287 篇候选文档已完成全文审校。297 篇路径覆盖仍不能作为全文翻译完成证明。
