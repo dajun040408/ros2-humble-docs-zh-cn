@@ -154,7 +154,7 @@ Windows 命令行可以使用 curl 下载同一文件。
        rclpy.shutdown()
 
 2.2 添加依赖项
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 返回一级目录 ``ros2_ws/src/py_pubsub``。这里已经为你创建了 ``setup.py``、``setup.cfg`` 和 ``package.xml`` 文件。
 
@@ -176,7 +176,7 @@ Windows 命令行可以使用 curl 下载同一文件。
 这表示该功能包运行时需要 ``rclpy`` 和 ``std_msgs``。保存文件。
 
 2.3 添加入口点
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 打开 ``setup.py``，确保其中的 ``maintainer``、``maintainer_email``、``description`` 和 ``license`` 字段与 ``package.xml`` 中的信息一致：
 
@@ -200,7 +200,7 @@ Windows 命令行可以使用 curl 下载同一文件。
 保存文件。
 
 2.4 检查 setup.cfg
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 ``setup.cfg`` 文件通常会在创建 Python 功能包时自动正确生成，其内容应类似于：
 
@@ -277,7 +277,7 @@ Windows 命令行可以使用 curl 下载同一文件。
 由于该节点与发布者具有相同的依赖项，因此无需在 ``package.xml`` 中添加新依赖。``setup.cfg`` 文件也不需要修改。
 
 3.2 添加入口点
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 重新打开 ``setup.py``，在发布者入口点下面添加订阅者入口点。``entry_points`` 字段现在应如下所示：
 
@@ -391,27 +391,6 @@ Windows 命令行可以使用 curl 下载同一文件。
    [INFO] [minimal_subscriber]: I heard: "Hello World: 12"
 
 在两个终端中分别按 ``Ctrl+C``，停止节点。
-
-5. 构建并运行
-^^^^^^^^^^^^^
-
-返回工作空间根目录并构建：
-
-.. code-block:: console
-
-   $ colcon build --packages-select py_pubsub
-
-打开两个终端，分别 source 工作空间并运行发布者和订阅者：
-
-.. code-block:: console
-
-   $ ros2 run py_pubsub talker
-
-.. code-block:: console
-
-   $ ros2 run py_pubsub listener
-
-发布者会周期性发布 Hello World 字符串，订阅者会输出接收到的消息。
 
 总结
 ----
