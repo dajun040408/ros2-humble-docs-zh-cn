@@ -267,3 +267,6 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 
 - 构建 #761（提交 `653df98`）build/deploy 成功。Sphinx 日志确认本轮 Beginner Client Libraries 新增的 C++ 发布者/订阅者、C++ 服务/客户端文档没有标题下划线、RST ERROR 或 CRITICAL；全站剩余 2 条 Lyrical 上游页面未纳入 Humble toctree 的警告，另有一条构建脚本统计输出，不是 Sphinx 文档错误。
 - 本轮两篇 C++ 教程的补译和 RST 修复已进入 GitHub Pages 发布产物。后续仍需继续审校目录中其余 11 篇文档，特别是自定义接口、单包接口定义、Python 发布订阅及参数类教程。
+
+- 已继续扩充 `Writing-A-Simple-Py-Publisher-And-Subscriber.rst`：补充 Python 发布者代码逐段说明、package.xml 运行时依赖、setup.py 发布者入口点、setup.cfg 作用、订阅者代码说明和入口点、Linux/macOS/Windows 构建与 source 步骤、下一步及相关内容。提交：`7286208d0b2f499c41a286c72f571e77bee858ea`。
+- 本次 Python 发布/订阅教程补译尚待 Sphinx 构建和部署验收。
