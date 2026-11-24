@@ -75,7 +75,7 @@ Fork 并克隆 ros/rosdistro
 向 ros/rosdistro 提交 Pull Request
 ----------------------------------
 
-针对你修改的分支，向 `ros/rosdistro <https://github.com/ros/rosdistro/>`_ 提交 ``Pull Request <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request>`_。等待几天，直到有人完成审查。
+针对你修改的分支，向 `ros/rosdistro <https://github.com/ros/rosdistro/>`_ 提交 `Pull Request <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request>`__。等待几天，直到有人完成审查。
 
 接下来会发生什么
 ----------------
