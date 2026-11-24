@@ -1,7 +1,7 @@
 .. _macOS-latest:
 
 macOS（源码安装）
-================
+=================
 
 .. contents:: 目录
    :depth: 2
@@ -118,7 +118,7 @@ macOS/OS X 10.11 及更高版本默认启用了 System Integrity Protection。
    $ vcs import --input https://raw.githubusercontent.com/ros2/ros2/{REPOS_FILE_BRANCH}/ros2.repos src
 
 安装其他 DDS 供应商实现（可选）
-------------------------------
+-------------------------------
 
 如果希望使用默认实现之外的 DDS 或 RTPS 供应商，请参阅 :doc:`此处的说明 <../RMW-Implementations>`。
 
@@ -173,7 +173,7 @@ source ROS 2 环境设置文件：
 ROS 1 bridge 可以连接 ROS 1 到 ROS 2 的话题，反之亦然。有关如何构建和使用 ROS 1 bridge，请参阅`专门的文档 <https://github.com/ros2/ros1_bridge/blob/master/README.md>`_。
 
 其他 RMW 实现（可选）
---------------------
+---------------------
 
 ROS 2 默认使用的中间件是 `Fast DDS`，但可以在运行时替换中间件（RMW）。有关如何使用多个 RMW 的说明，请参阅 :doc:`多 RMW 使用指南 <../../How-To-Guides/Working-with-multiple-RMW-implementations>`。
 
