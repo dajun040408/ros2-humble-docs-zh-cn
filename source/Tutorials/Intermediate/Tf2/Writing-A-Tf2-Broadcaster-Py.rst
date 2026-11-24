@@ -73,6 +73,61 @@ Windows 可以使用 ``curl`` 下载。节点订阅海龟的位姿话题，并�
 
 回调函数创建 ``TransformStamped``，设置当前时间戳、父坐标系 ``world`` 和子坐标系海龟名称。海龟只有二维运动，因此 x、y 来自位姿消息，z 设置为 0；旋转只绕 z 轴发生，因此使用 ``msg.theta`` 计算四元数。最后调用 ``sendTransform()`` 发布变换。
 
+1.1 理解代码
+~~~~~~~~~~~~
+
+首先声明并获取 ``turtlename`` 参数，用于指定海龟名称，例如 ``turtle1`` 或 ``turtle2``：
+
+.. code-block:: python
+
+   self.turtlename = self.declare_parameter(
+       'turtlename', 'turtle').get_parameter_value().string_value
+
+随后，节点订阅 ``/{self.turtlename}/pose`` 话题，并在收到每条消息时执行 ``handle_turtle_pose`` 回调函数：
+
+.. code-block:: python
+
+   self.subscription = self.create_subscription(
+       Pose,
+       f'/{self.turtlename}/pose',
+       self.handle_turtle_pose,
+       1)
+
+现在创建 ``TransformStamped`` 对象并设置元数据：
+
+.. code-block:: python
+
+   t = TransformStamped()
+   t.header.stamp = self.get_clock().now().to_msg()
+   t.header.frame_id = 'world'
+   t.child_frame_id = self.turtlename
+
+时间戳表示当前节点使用的时间；父坐标系为 ``world``，子坐标系为海龟名称。
+
+接下来，将海龟的三维位姿信息复制到三维变换中。由于海龟只在二维平面移动，因此 z 平移设置为 0：
+
+.. code-block:: python
+
+   t.transform.translation.x = msg.x
+   t.transform.translation.y = msg.y
+   t.transform.translation.z = 0.0
+
+海龟只绕 z 轴旋转，因此通过 ``quaternion_from_euler(0, 0, msg.theta)`` 计算四元数：
+
+.. code-block:: python
+
+   q = quaternion_from_euler(0, 0, msg.theta)
+   t.transform.rotation.x = q[0]
+   t.transform.rotation.y = q[1]
+   t.transform.rotation.z = q[2]
+   t.transform.rotation.w = q[3]
+
+最后，将构造好的变换传递给 ``TransformBroadcaster`` 的 ``sendTransform()`` 方法进行广播：
+
+.. code-block:: python
+
+   self.tf_broadcaster.sendTransform(t)
+
 1.2 添加入口点
 ~~~~~~~~~~~~~~
 
@@ -81,6 +136,11 @@ Windows 可以使用 ``curl`` 下载。节点订阅海龟的位姿话题，并�
 .. code-block:: python
 
    'turtle_tf2_broadcaster = learning_tf2_py.turtle_tf2_broadcaster:main',
+
+2. 编写启动文件
+^^^^^^^^^^^^^^^
+
+现在为本演示创建启动文件。在 ``src/learning_tf2_py`` 目录中创建 ``launch`` 文件夹，并在其中创建 ``turtle_tf2_demo_launch`` 文件，扩展名可以是 ``.py``、``.xml`` 或 ``.yaml``。
 
 2. 编写启动文件
 ^^^^^^^^^^^^^^^
@@ -125,6 +185,44 @@ Windows 可以使用 ``curl`` 下载。节点订阅海龟的位姿话题，并�
 
    data_files=[
        ...
+       (os.path.join('share', package_name, 'launch'), glob('launch/*')),
+   ],
+
+2.1 理解启动文件
+~~~~~~~~~~~~~~~~~~
+
+不同格式的启动文件有各自的基本结构：
+
+* XML 启动文件以 XML 声明和根元素 ``<launch>`` 开始。
+* YAML 启动文件以 YAML 版本声明和 ``launch:`` 键开始。
+* Python 启动文件需要从 ``launch`` 和 ``launch_ros`` 包导入所需模块。``launch`` 是通用启动框架，``launch_ros`` 提供 ROS 2 专用的节点等功能。
+
+启动文件会启动 turtlesim 仿真节点，并通过 ``turtle_tf2_broadcaster`` 将 ``turtle1`` 的状态广播到 tf2。
+
+2.2 添加依赖
+~~~~~~~~~~~~
+
+打开 ``package.xml``，添加启动文件导入语句所需的依赖：
+
+.. code-block:: xml
+
+   <exec_depend>launch</exec_depend>
+   <exec_depend>launch_ros</exec_depend>
+
+这表示该功能包运行时需要 ``launch`` 和 ``launch_ros``。保存文件。
+
+2.3 更新 setup.py
+~~~~~~~~~~~~~~~~~
+
+重新打开 ``setup.py``，添加安装规则，以便安装 ``launch/`` 目录中的启动文件：
+
+.. code-block:: python
+
+   import os
+   from glob import glob
+
+   data_files=[
+       # ...
        (os.path.join('share', package_name, 'launch'), glob('launch/*')),
    ],
 
