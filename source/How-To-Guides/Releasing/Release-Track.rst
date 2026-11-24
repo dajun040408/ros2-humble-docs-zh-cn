@@ -155,7 +155,7 @@ Bloom 还可能询问是否初始化新仓库：
          it is ignored.  For svn this means no revision number is used.
       [':{version}']:
 
-设置为 ``:{version}``（默认值，也是推荐配置）时，发布标签会与版本标签一致。
+设置为 ``:{version}`` （默认值，也是推荐配置）时，发布标签会与版本标签一致。
 
 不太常见的配置是将其设置为分支名称，以便每次发布时始终从上游项目导入该分支的最新内容。
 
