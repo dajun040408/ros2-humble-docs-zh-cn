@@ -1,7 +1,7 @@
 .. _lyrical-release:
 
 Lyrical Luth（lyrical）
-======================
+=======================
 
 .. toctree::
    :hidden:
