@@ -345,3 +345,11 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 已扩充 `Using-ROS2-Launch-For-Large-Projects.rst`：补齐顶层启动文件组织、参数直设、YAML 参数文件、通配符、命名空间、节点复用、参数覆盖、话题重映射、RViz 配置、环境变量、setup.py 安装、构建和完整运行流程。提交：`03291bbcabc489ea88b8d6238083565b731b4bcc`。
 - 已重写并扩充 `Creating-Launch-Files.rst`：补齐三种启动格式的完整示例、节点命名空间与参数传递差异、mimic 重映射、运行输出、ros2launch 依赖和 rqt_graph 关系检查。提交：`fc07c72ae105bc7774bd9c0348c32cffbf2da1b2`。
 - 以上三个 Launch 教程的修订尚待完整 Sphinx 构建、RST 日志和 Pages 部署验收。
+
+## 2026-11-24 Intermediate Tutorials：TF2 教程补译
+
+- 继续检查 Tf2 目录，发现 `Adding-A-Frame-Py.rst` 原中文内容严重压缩，缺少固定坐标系广播器的完整代码、入口点、启动文件、构建运行步骤，以及动态坐标系广播器完整流程。已补齐固定和动态广播器代码、启动文件（Python/XML/YAML）、入口点、跨平台构建运行及相关说明。提交：`c6c4d32c95f67d2f7b3d8d70bbd90a5c34c46b9a`。
+- 发现 `Debugging-Tf2-Problems.rst` 缺少系统化调试步骤。已补齐坐标系存在性检查、`tf2_echo`、`view_frames`、`tf2_monitor`、时间戳延迟分析、`TimePointZero` 和超时查询示例。提交：`7b3e02b8c5c1c1b35f5c2b0c29b7bd6c5e3e1c55`。
+- 发现 `Using-Stamped-Datatypes-With-Tf2-Ros-MessageFilter.rst` 原中文只有简略说明，缺少 PointStamped 广播器、MessageFilter 监听器、package.xml/CMakeLists 配置、构建运行和完整演示流程。已补齐。提交：`f2b78b7d06f574dac7c022bfb6fc4f9d8892b49c`。
+- 扩充 C++/Python tf2 broadcaster 教程：补齐代码解析、启动文件结构、package.xml 启动依赖、CMakeLists/setup.py 安装配置和相关说明。提交：`c209adf4e2769a028be49c846b4d1676392d2be1`、`8dc2b0487ccc40e3d5ae677459a5e9bace59f06d`。
+- 以上 Tf2 教程修订尚待完整 Sphinx 构建、RST 诊断和 Pages 部署验收。
