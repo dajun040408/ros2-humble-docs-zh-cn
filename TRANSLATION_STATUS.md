@@ -315,3 +315,6 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 已扩充 `Creating-Your-First-ROS2-Package.rst`，补充工作空间多包结构、CMake/Python 创建功能包的完整命令输出、两种构建类型的 package.xml 结构示例及 Python setup.py 配置示例。提交：`a5d0504cf4bfa968b9bf4b8072e750e9b8ccc5cf`。
 - 已扩充 `Pluginlib.rst`，补充基类头文件 include guard、插件基类初始化方法说明、插件导出宏参数解释、完整 ClassLoader 使用程序（含异常处理）、插件动态加载与依赖关系说明，以及 `ros2 plugin list` 预期输出。提交：`4a0a86fc02a1138e813ba7ac54807220b699d74a`。
 - 上述 package 创建和 pluginlib 修订尚待下一次 Sphinx 构建及部署验收。
+
+- 已扩充 `Creating-A-Workspace.rst`：补充 Linux/macOS/Windows 的 colcon 构建预期输出，以及三种平台查看工作空间构建目录的命令示例。提交：`850a976f0d0481d282fa2eed0f289e7e84c53009`。
+- 修正 `Creating-Your-First-ROS2-Package.rst` 中 Python 创建功能包终端输出示例的一处重复目录行。提交：`e9ef50656dcb1d86045261495e90ef31ef87314b`。
