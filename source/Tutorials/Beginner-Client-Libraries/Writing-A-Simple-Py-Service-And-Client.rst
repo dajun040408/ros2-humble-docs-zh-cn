@@ -85,7 +85,7 @@
    <license>Apache License 2.0</license>
 
 1.2 更新 setup.py
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 在 ``setup.py`` 文件中，为 ``maintainer``、``maintainer_email``、``description`` 和 ``license`` 字段填写与 ``package.xml`` 相同的信息：
 
@@ -162,7 +162,7 @@
 最后，``main`` 函数初始化 ROS 2 Python 客户端库，实例化 ``MinimalService`` 创建服务节点，并通过 ``rclpy.spin`` 让节点持续处理回调。
 
 2.2 添加入口点
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 为了让 ``ros2 run`` 能够运行服务端节点，需要在 ``setup.py``（位于 ``ros2_ws/src/py_srvcli``）中添加入口点。
 
@@ -261,7 +261,7 @@
    不要在 ROS 2 回调函数中使用 ``rclpy.spin_until_future_complete``，否则可能导致死锁。更多信息请参阅 :doc:`同步与异步客户端 <../../../How-To-Guides/Sync-Vs-Async>`。
 
 3.2 添加入口点
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 与服务端节点一样，客户端节点也需要在 ``setup.py`` 中添加入口点。
 
@@ -354,29 +354,6 @@
       .. code-block:: console
 
          $ call install/setup.bat
-
-5. 构建并运行
-^^^^^^^^^^^^^
-
-返回工作空间根目录并构建：
-
-.. code-block:: console
-
-   $ colcon build --packages-select py_srvcli
-
-打开一个终端，source 工作空间并启动服务端：
-
-.. code-block:: console
-
-   $ ros2 run py_srvcli service
-
-打开另一个终端，运行客户端并传入两个整数：
-
-.. code-block:: console
-
-   $ ros2 run py_srvcli client 2 3
-
-客户端会收到并输出两个整数的和。
 
 总结
 ----
