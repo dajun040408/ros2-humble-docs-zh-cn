@@ -47,7 +47,7 @@
    <test_depend>ament_lint_auto</test_depend>
    <test_depend>ament_lint_common</test_depend>
 
-``rclcpp`` 和 ``rclcpp_lifecycle` 的 CMakeLists.txt 与 package.xml 可作为实现示例。
+``rclcpp`` 和 ``rclcpp_lifecycle`` 的 CMakeLists.txt 与 package.xml 可作为实现示例。
 
 **结果：** ament 支持的静态分析工具会在构建过程中运行；ament 不支持的工具仍需单独执行。
 
