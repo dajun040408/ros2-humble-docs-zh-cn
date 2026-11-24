@@ -5,7 +5,7 @@
 
 本教程假设你已经创建了一个基础的 :ref:`ament_python 功能包 <CreatePkg>`，现在希望为它添加一些测试。
 
-如果你使用的是 ament_cmake_python，请参阅 :doc:`ament_cmake_python 文档 </How-To-Guides/Ament-CMake-Python-Documentation>`，了解如何让测试能够被发现。测试内容以及通过 ``colcon` 调用测试的方式保持不变。
+如果你使用的是 ament_cmake_python，请参阅 :doc:`ament_cmake_python 文档 </How-To-Guides/Ament-CMake-Python-Documentation>`，了解如何让测试能够被发现。测试内容以及通过 ``colcon`` 调用测试的方式保持不变。
 
 功能包配置
 ----------
@@ -60,7 +60,7 @@ setup.py
 特殊命令
 --------
 
-除了 :doc:`标准 colcon 测试命令 <CLI>` 外，你还可以使用 ``--pytest-args`` 标志，从命令行向 ``pytest` 框架传递参数。
+除了 :doc:`标准 colcon 测试命令 </Tutorials/Intermediate/Testing/CLI>` 外，你还可以使用 ``--pytest-args`` 标志，从命令行向 ``pytest`` 框架传递参数。
 
 例如，可以指定要运行的测试函数名称：
 
