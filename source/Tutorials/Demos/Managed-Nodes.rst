@@ -46,6 +46,6 @@ ROS 2 引入了受管理节点（Managed Nodes），也称为生命周期节点�
 
 软件包/参考资料：
 
-* `rclcpp_lifecycle <https://index.ros.org/p/rclcpp_lifecycle/>`__（实现库）：包含生命周期实现原型的软件包。
-* `lifecycle_msgs <https://index.ros.org/p/lifecycle_msgs/>`__（接口定义）：包含生命周期相关消息和服务定义的软件包。
+* `rclcpp_lifecycle <https://index.ros.org/p/rclcpp_lifecycle/>`__ （实现库）：包含生命周期实现原型的软件包。
+* `lifecycle_msgs <https://index.ros.org/p/lifecycle_msgs/>`__ （接口定义）：包含生命周期相关消息和服务定义的软件包。
 * `lifecycle <https://docs.ros.org/en/{DISTRO}/p/lifecycle/>`__：包含生命周期实现演示的软件包。
