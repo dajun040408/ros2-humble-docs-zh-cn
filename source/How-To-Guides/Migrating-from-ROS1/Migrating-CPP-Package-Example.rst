@@ -248,7 +248,7 @@ ROS 2 功能包使用 ``ament_cmake_ros`` 提供的 CMake 函数和宏，而不�
 .. code-block::
 
    <!-- delete this -->
-   <buildtool_depend>catkin</buildtool_depend>`
+   <buildtool_depend>catkin</buildtool_depend>
 
 添加对 ``ament_cmake_ros`` 的新依赖：
 
