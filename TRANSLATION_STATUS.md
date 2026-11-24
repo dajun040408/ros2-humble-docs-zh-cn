@@ -270,3 +270,6 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 
 - 已继续扩充 `Writing-A-Simple-Py-Publisher-And-Subscriber.rst`：补充 Python 发布者代码逐段说明、package.xml 运行时依赖、setup.py 发布者入口点、setup.cfg 作用、订阅者代码说明和入口点、Linux/macOS/Windows 构建与 source 步骤、下一步及相关内容。提交：`7286208d0b2f499c41a286c72f571e77bee858ea`。
 - 本次 Python 发布/订阅教程补译尚待 Sphinx 构建和部署验收。
+
+- 构建 #764（提交 `c0fac10`）build/deploy 成功，Python 发布/订阅教程没有 Sphinx ERROR 或 CRITICAL，但发现 4 处标题下划线长度警告。复核时还发现补译时保留了原来的简化构建章节，造成“构建并运行”重复出现。
+- 已删除重复的旧构建段落，并调整 2.2、2.3、2.4、3.2 小节标题下划线长度。提交：`10fc6392edc18bfabadd92754517cdab67270c88`。待下一轮构建确认。
