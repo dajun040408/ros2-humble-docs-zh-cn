@@ -16,7 +16,7 @@ ROS 主 apt 软件源只保留每个软件包的最新版本，因此一次同�
 概述
 ----
 
-每个活跃发行版都会定期将软件包从 `ros-testing` :doc:`apt 软件源 </Installation/Testing>` 同步到 ROS 主 apt 软件源。
+每个活跃发行版都会定期将软件包从 ``ros-testing`` :doc:`apt 软件源 </Installation/Testing>` 同步到 ROS 主 apt 软件源。
 
 同步发生时，主软件源中已更新软件包的旧版本会被删除，因此不再能够安装。此外，尽管维护者和 ROS Boss 会尽力避免回归问题，但同步时构建失败的软件包也会被移除。
 
@@ -26,7 +26,7 @@ ROS 主 apt 软件源只保留每个软件包的最新版本，因此一次同�
 
 从快照安装可以获得一组固定的软件包版本，只有在你主动选择其他快照时才会发生变化。
 
-大多数用户应按照 :doc:`安装说明 <Ubuntu-Install-Debs>` 从主软件源安装。快照软件源适用于将 ROS 软件包打包到容器镜像等制品中，或者希望主动决定何时切换到新同步版本，而不是在下次运行 `apt upgrade` 时自动更新的场景。
+大多数用户应按照 :doc:`安装说明 <Ubuntu-Install-Debs>`` 从主软件源安装。快照软件源适用于将 ROS 软件包打包到容器镜像等制品中，或者希望主动决定何时切换到新同步版本，而不是在下次运行 ``apt upgrade` 时自动更新的场景。
 
 快照针对 ROS 发行版的 Ubuntu 目标平台和体系结构生成。请参阅 :ref:`二进制软件包构建平台列表 <binary-package-platforms>`。
 
@@ -40,7 +40,7 @@ ROS 主 apt 软件源只保留每个软件包的最新版本，因此一次同�
 1. 添加快照软件源密钥
 ^^^^^^^^^^^^^^^^^^^^^
 
-快照软件源使用独立的签名密钥，该密钥与 `ros2-apt-source` 软件包为主软件源安装的密钥不同。
+快照软件源使用独立的签名密钥，该密钥与 ``ros2-apt-source`` 软件包为主软件源安装的密钥不同。
 
 请将密钥下载到单独的 keyring：
 
@@ -57,16 +57,16 @@ ROS 主 apt 软件源只保留每个软件包的最新版本，因此一次同�
 
 确认输出的指纹为：
 
-`4B63 CF8F DE49 746E 98FA 01DD AD19 BAB3 CBF1 25EA`。
+``4B63 CF8F DE49 746E 98FA 01DD AD19 BAB3 CBF1 25EA``。
 
 2. 选择快照
 ^^^^^^^^^^^
 
 浏览 `snapshots.ros.org <http://snapshots.ros.org/>`_，先选择发行版，再选择希望安装的快照。
 
-快照名称采用其对应同步日期，例如 `2026-08-07`。当某个发行版结束生命周期时，会生成一个名为 `final` 的最后快照，可以像使用其他快照一样使用它。
+快照名称采用其对应同步日期，例如 ``2026-08-07``。当某个发行版结束生命周期时，会生成一个名为 ``final`` 的最后快照，可以像使用其他快照一样使用它。
 
-在后续步骤所使用的 Shell 中记录所选发行版和快照，例如 `humble` 和 `2026-08-07`：
+在后续步骤所使用的 Shell 中记录所选发行版和快照，例如 ``humble`` 和 ``2026-08-07``：
 
 .. code-block:: console
 
@@ -88,7 +88,7 @@ ROS 主 apt 软件源只保留每个软件包的最新版本，因此一次同�
    Signed-By: /etc/apt/keyrings/ros-snapshots-archive-keyring.gpg
    EOF
 
-如果之前已经安装 ROS，请移除 `ros2-apt-source` 软件包：
+如果之前已经安装 ROS，请移除 ``ros2-apt-source`` 软件包：
 
 .. code-block:: console
 
@@ -113,9 +113,9 @@ ROS 主 apt 软件源只保留每个软件包的最新版本，因此一次同�
 4. 使用匹配的 rosdistro 索引
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-rosdistro 索引与 apt 软件源分别进行版本管理，因此 `rosdep` 可能会根据比当前快照更新的 `rosdistro` 状态解析依赖项 key。
+rosdistro 索引与 apt 软件源分别进行版本管理，因此 ``rosdep`` 可能会根据比当前快照更新的 ``rosdistro`` 状态解析依赖项 key。
 
-rosdistro 中的同步版本使用与快照相同的 `<distribution>/<date>` 命名方式打标签。因此，可以按照 :doc:`自定义 rosdistro 索引 </How-To-Guides/Using-Custom-Rosdistro>` 的说明，将索引固定到与快照匹配的标签。
+rosdistro 中的同步版本使用与快照相同的 `<distribution>/<date>`` 命名方式打标签。因此，可以按照 :doc:``自定义 rosdistro 索引 </How-To-Guides/Using-Custom-Rosdistro>` 的说明，将索引固定到与快照匹配的标签。
 
 .. code-block:: console
 
@@ -126,7 +126,7 @@ rosdistro 中的同步版本使用与快照相同的 `<distribution>/<date>` 命
 
 .. note::
 
-   本指南使用 `~/.config/rosdistro/config.yaml` 作为更持久的 rosdistro 索引固定配置。不过，环境变量 `ROSDISTRO_INDEX_URL` 的优先级高于该配置文件。如果设置了该环境变量，请先取消设置，否则索引不会固定到当前快照。
+   本指南使用 ``~/.config/rosdistro/config.yaml`` 作为更持久的 rosdistro 索引固定配置。不过，环境变量 ``ROSDISTRO_INDEX_URL`` 的优先级高于该配置文件。如果设置了该环境变量，请先取消设置，否则索引不会固定到当前快照。
 
    可以通过以下命令检查当前使用的索引：
 
@@ -200,7 +200,7 @@ rosdistro 中的同步版本使用与快照相同的 `<distribution>/<date>` 命
 
 两者的方向正好相反。
 
-`ros-testing` 软件源保存的是尚未同步到主软件源的软件包，用户可以在发布前进行测试。
+``ros-testing`` 软件源保存的是尚未同步到主软件源的软件包，用户可以在发布前进行测试。
 
 快照则保存过去某次同步完成时的软件包状态，以便继续安装已经测试过的版本。请参阅 :doc:`使用预发布二进制软件包进行测试 </Installation/Testing>`。
 
