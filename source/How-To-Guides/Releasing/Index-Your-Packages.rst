@@ -17,7 +17,7 @@ ROS 软件包索引
 
 选择一个 `OSI 认可的许可证 <https://opensource.org/licenses>`_，并将其用于 ROS 软件包。如果难以决定，可以考虑使用大多数 ROS 2 核心软件包采用的 `Apache-2.0 许可证 <https://opensource.org/license/apache-2-0>`_。
 
-对于仓库中的每个 ``package.xml``，都应在 ``<license>`` 标签中填写许可证的 SPDX 简短标识符。
+对于仓库中的每个 ``package.xml`` ，都应在 ``<license>`` 标签中填写许可证的 SPDX 简短标识符。
 
 如果仓库中所有 ROS 软件包使用相同许可证，或者仓库中只有一个 ROS 软件包，请在仓库根目录创建名为 ``LICENSE`` 的文件，并写入所选许可证的文本。如果不同 ROS 软件包使用不同许可证，则应在每个 ``package.xml`` 文件旁边分别创建 ``LICENSE`` 文件。
 
@@ -48,7 +48,7 @@ Fork 并克隆 ros/rosdistro
 修改你的 fork
 -------------
 
-还记得你决定发布到哪些 ROS 发行版了吗？``ros/rosdistro`` 仓库中每个 ROS 发行版都有一个对应目录。例如，ROS Rolling 的目录名为 ``rolling``。
+还记得你决定发布到哪些 ROS 发行版了吗？``ros/rosdistro`` 仓库中每个 ROS 发行版都有一个对应目录。例如，ROS Rolling 的目录名为 ``rolling`` 。
 
 对于每个希望发布软件包的 ROS 发行版：
 
@@ -67,10 +67,10 @@ Fork 并克隆 ros/rosdistro
 
 各字段填写方式如下：
 
-* ``YOUR-REPO-NAME``：自定义的、人类可读的仓库名称。对于托管在 GitHub 上的仓库，使用仓库的小写名称，不包含组织名称。例如，``https://github.com/ros2/rosidl`` 对应的仓库名称为 ``rosidl``。
-* ``YOUR-GIT-REPO-URL``：可以用于 ``git clone`` 该仓库的 HTTPS URL。例如，``https://github.com/ros2/rosidl`` 对应的 Git 仓库 URL 为 ``https://github.com/ros2/rosidl.git``。URL 必须以 ``.git`` 结尾，否则无法通过 lint 检查。
-* ``YOUR-BRANCH-NAME``：用于向该 ROS 发行版发布软件包的 Git 分支。通常为 ``main``、``master`` 或 ROS 发行版名称。例如，``rosidl`` 仓库使用 ``rolling`` 分支保存将发布到 ROS Rolling 的变更。
-* ``YOUR-STATUS``：从 `REP 141 <https://reps.openrobotics.org/rep-0141/#distribution-file>`_ 的状态列表中选择。通常使用 ``maintained`` 或 ``developed`。
+* ``YOUR-REPO-NAME`` ：自定义的、人类可读的仓库名称。对于托管在 GitHub 上的仓库，使用仓库的小写名称，不包含组织名称。例如，``https://github.com/ros2/rosidl`` 对应的仓库名称为 ``rosidl`` 。
+* ``YOUR-GIT-REPO-URL`` ：可以用于 ``git clone`` 该仓库的 HTTPS URL。例如，``https://github.com/ros2/rosidl`` 对应的 Git 仓库 URL 为 ``https://github.com/ros2/rosidl.git`` 。URL 必须以 ``.git`` 结尾，否则无法通过 lint 检查。
+* ``YOUR-BRANCH-NAME`` ：用于向该 ROS 发行版发布软件包的 Git 分支。通常为 ``main`` 、``master`` 或 ROS 发行版名称。例如，``rosidl`` 仓库使用 ``rolling`` 分支保存将发布到 ROS Rolling 的变更。
+* ``YOUR-STATUS`` ：从 `REP 141 <https://reps.openrobotics.org/rep-0141/#distribution-file>`_ 的状态列表中选择。通常使用 ``maintained`` 或 ``developed`。
 
 向 ros/rosdistro 提交 Pull Request
 ----------------------------------
