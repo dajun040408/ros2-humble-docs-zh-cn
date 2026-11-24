@@ -35,7 +35,7 @@ CI 构建（https://ci.ros2.org）
 
 默认情况下，运行该任务会在所有平台（Linux、macOS 和 Windows）上构建并测试全部软件包（目前超过 300 个）。完整构建可能需要数小时，并占用 CI 机器，因此建议限制每次构建和测试的软件包数量。
 
-可以使用 colcon 参数 ``--packages-up-to``、``--packages-select``、``--packages-above-and-dependencies``、``--packages-above`` 等实现限制。更多示例请参阅 `colcon 文档 <https://colcon.readthedocs.io/en/released/user/how-to.html#build-only-a-single-package-or-selected-packages>`_。CI 工具的详细使用说明见 ``CI_BUILDERS.md <https://github.com/ros2/ci/blob/master/CI_BUILDERS.md>`_。
+可以使用 colcon 参数 ``--packages-up-to``、``--packages-select``、``--packages-above-and-dependencies``、``--packages-above`` 等实现限制。更多示例请参阅 `colcon 文档 <https://colcon.readthedocs.io/en/released/user/how-to.html#build-only-a-single-package-or-selected-packages>`_。CI 工具的详细使用说明见 `CI_BUILDERS.md <https://github.com/ros2/ci/blob/master/CI_BUILDERS.md>`__。
 
 合并 Pull Request
 -----------------
