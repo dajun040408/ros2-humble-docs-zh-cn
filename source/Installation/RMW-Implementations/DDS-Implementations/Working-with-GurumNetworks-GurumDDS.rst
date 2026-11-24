@@ -17,7 +17,7 @@ GurumNetworks GurumDDS
 ================  ================
 ROS 2 发行版      GurumDDS 版本
 ================  ================
-rolling           ``>= 3.2.0``
+rolling           ```>= 3.2.0```
 lyrical           `>= 3.2.0`
 kilted            `>= 3.2.0`
 jazzy             `>= 3.2.0`
