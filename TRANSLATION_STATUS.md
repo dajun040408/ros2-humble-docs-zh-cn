@@ -113,3 +113,10 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 目前尚未获得 robook.org 主机/部署凭据，也未确认该域名 DNS 可由用户修改；因此未擅自改写 CNAME 或 DNS。
 - 2026-11-24 最新构建 #433（提交 `16a03ea`）：build job 成功，Pages Artifact `github-pages` 已生成，大小约 38.4 MB，Artifact ID `14880130183`，有效期至 2026-11-25 01:10 UTC；deploy job 再次因 GitHub Pages 未启用而 404。
 - 本次从 robook.org 实际页面重新读取 HTML：Migrating Packages 页面标题仍为英文，正文仍包含 “There are two different kinds of package migrations”；部分小节目录标题显示中文、正文仍为英文。Migrating Interfaces 页面标题和正文也仍为英文。引用证据：页面抓取时间 2026-11-24，页面分别为 `/Migrating-Packages.html` 与 `/Migrating-Interfaces.html`。
+
+
+## GitHub Pages 已启用后的重新发布
+
+- 用户已确认在仓库 Settings → Pages 将 Source 设置为 GitHub Actions。
+- 本次通过更新状态记录触发新的 `push` 工作流，以验证 Pages 初始化后的发布权限。
+- 目标域名仍为 `ros2docs.robook.org`；工作流发布前必须写入 CNAME 并在部署后核验域名解析与 HTTPS。
