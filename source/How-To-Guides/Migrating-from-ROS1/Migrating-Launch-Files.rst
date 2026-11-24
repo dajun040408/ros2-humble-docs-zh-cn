@@ -26,14 +26,14 @@ ROS 2 launch 系统的介绍请参阅 :doc:`Launch 系统教程 <../../../Tutori
 迁移标签
 --------------
 
-launch
-^^^^^^
+``launch`` 根标签
+^^^^^^^^^^^^^^^^^
 
 * `ROS 1 中可用 <https://wiki.ros.org/roslaunch/XML/launch>`__.
 * ``launch`` 是所有 ROS 2 XML launch 文件的根元素。
 
-node
-^^^^
+``node`` 节点标签
+^^^^^^^^^^^^^^^^^
 
 * `ROS 1 中可用 <https://wiki.ros.org/roslaunch/XML/node>`__.
 * 启动一个新节点。
@@ -54,8 +54,8 @@ node
       <node pkg="demo_nodes_cpp" exec="listener"/>
    </launch>
 
-param
-^^^^^
+``param`` 参数标签
+^^^^^^^^^^^^^^^^^^
 
 * `ROS 1 中可用 <https://wiki.ros.org/roslaunch/XML/param>`__.
 * 用于向节点传递参数。
@@ -73,8 +73,8 @@ param
       </node>
    </launch>
 
-类型推断规则
-~~~~~~~~~~~~~~~~~~~~
+属性值类型推断规则
+~~~~~~~~~~~~~~~~~~
 
 以下示例展示了参数的编写方式：
 
@@ -103,8 +103,8 @@ param
       <param name="strange_separator" value="'1'//'2'//'3'" value-sep="//"/>
    </node>
 
-参数分组
-~~~~~~~~~~~~~~~~~~
+参数分组方式
+~~~~~~~~~~~~
 
 在 ROS 2 中，``param`` 标签允许嵌套。例如：
 
@@ -133,8 +133,8 @@ param
       <param name="group1.another_param" value="2"/>
    </node>
 
-rosparam
-^^^^^^^^
+``rosparam`` 参数文件标签
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * `ROS 1 中可用 <https://wiki.ros.org/roslaunch/XML/rosparam>`__.
 * 从 YAML 文件加载参数。
@@ -149,8 +149,8 @@ rosparam
       <param from="/path/to/file"/>
    </node>
 
-remap（重映射）
-^^^^^^^^^^^^^^^
+``remap`` 重映射标签
+^^^^^^^^^^^^^^^^^^^^
 
 * `ROS 1 中可用 <https://wiki.ros.org/roslaunch/XML/remap>`__.
 * 用于向节点传递重映射规则。
@@ -170,8 +170,8 @@ remap（重映射）
       </node>
    </launch>
 
-include（包含）
-^^^^^^^^^^^^^^^
+``include`` 包含标签
+^^^^^^^^^^^^^^^^^^^^
 
 * `ROS 1 中可用 <https://wiki.ros.org/roslaunch/XML/include>`__.
 * 用于包含另一个 launch 文件。
@@ -193,8 +193,8 @@ include（包含）
 
 请参阅“替换 include 标签”一节。
 
-arg
-^^^
+``arg`` 启动参数标签
+^^^^^^^^^^^^^^^^^^^^
 
 * `ROS 1 中可用 <https://wiki.ros.org/roslaunch/XML/arg>`__.
 * ``arg`` 用于声明 launch 参数，或在使用 ``include`` 标签时传递参数。
@@ -233,8 +233,8 @@ arg
 
 有关传递命令行参数的更多信息，请参阅 :doc:`使用替换 <../../../Tutorials/Intermediate/Launch/Using-Substitutions>`。
 
-env
-^^^
+``env`` 环境变量标签
+^^^^^^^^^^^^^^^^^^^^
 
 * `ROS 1 中可用 <https://wiki.ros.org/roslaunch/XML/env>`__.
 * 设置环境变量。
@@ -263,8 +263,8 @@ env
    </launch>
 
 
-group
-^^^^^
+``group`` 分组标签
+^^^^^^^^^^^^^^^^^^
 
 * `ROS 1 中可用 <https://wiki.ros.org/roslaunch/XML/group>`__.
 * 用于限制 launch 配置的作用域，通常与 ``let``、``include`` 和 ``push_ros_namespace`` 标签配合使用。
@@ -294,25 +294,25 @@ group
       <node pkg="demo_nodes_cpp" exec="listener"/>
    </launch>
 
-machine
-^^^^^^^
+``machine`` 机器标签
+^^^^^^^^^^^^^^^^^^^^
 
 目前尚不支持。
 
-test
-^^^^
+``test`` 测试标签
+^^^^^^^^^^^^^^^^^
 
 目前尚不支持。
 
 ROS 2 中新增的标签
 ------------------
 
-set_env 和 unset_env
-^^^^^^^^^^^^^^^^^^^^^
+``set_env`` 和 ``unset_env`` 环境变量标签
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 请参阅 ``env`` 标签的说明。
 
-push_ros_namespace（推送 ROS 命名空间）
+``push_ros_namespace`` 推送 ROS 命名空间
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``include`` 和 ``group`` 标签均不接受 ``ns`` 属性。可以使用以下 action 作为替代方案：
@@ -335,8 +335,8 @@ push_ros_namespace（推送 ROS 命名空间）
    <!--Nodes outside the group action won't be namespaced.-->
    <!-Other tags-->
 
-let
-^^^
+``let`` 配置赋值标签
+^^^^^^^^^^^^^^^^^^^^
 
 它用于替代带有 value 属性的 ``arg`` 标签。
 
@@ -349,8 +349,8 @@ let
 * ``let`` 用于设置 launch 配置值。
 * ``arg`` 用于声明 launch 参数/配置，并可选择提供默认值。该值也可以通过 CLI 或包含该 launch 文件时单独设置。如果没有设置参数值，则使用提供的默认值；如果没有默认值，则会报告错误。
 
-executable（可执行程序）
-^^^^^^^^^^^^^^^^^^^^^^^^
+``executable`` 可执行程序标签
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 用于运行任意可执行程序。
 
@@ -363,8 +363,8 @@ executable（可执行程序）
       <env name="LD_LIBRARY" value="/lib/some.so"/>
    </executable>
 
-替换 include 标签
-------------------------
+替换 ``include`` 标签
+---------------------
 
 如果希望像 ROS 1 一样在**命名空间**下包含 launch 文件，则必须将 ``include`` 标签嵌套在 ``group`` 标签中。
 
@@ -401,8 +401,8 @@ ROS 1 替换表达式的文档可参阅 `roslaunch XML wiki <https://wiki.ros.or
 * ``eval`` 不会将配置（``arg``）作为局部 Python 变量传入，必须通过 ``$(var name)`` 访问。
 * 在 ROS 2 中，``eval`` 的参数必须是带引号的字符串。因此，表达式内部的引号也必须转义。
 
-类型推断规则
---------------------
+属性值类型推断规则
+------------------
 
 ``param`` 标签“类型推断规则”小节中介绍的规则适用于任何属性。
 例如：
