@@ -1,7 +1,7 @@
 .. _jazzy-release:
 
 Jazzy Jalisco（jazzy）
-=====================
+======================
 
 .. toctree::
    :hidden:
