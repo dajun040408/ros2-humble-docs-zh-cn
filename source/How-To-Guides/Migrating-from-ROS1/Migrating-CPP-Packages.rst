@@ -79,7 +79,7 @@ ROS 2 使用的 CMake 版本高于 ROS 1。请在 `REP 2000 <https://reps.openro
    find_package(catkin REQUIRED COMPONENTS foo bar std_msgs)
    find_package(baz REQUIRED)
 
-To this:
+修改为：
 
 .. code-block:: cmake
 
@@ -226,19 +226,19 @@ To this:
 
 在包含 ROS 消息的功能包的 ``package.xml`` 中添加以下依赖项：
 
-1. Add a ``<buildtool_depend>`` on ``rosidl_default_generators`` (`example <https://github.com/ros2/common_interfaces/blob/d685509e9cb9f80bd320a347f2db954a73397ae7/std_msgs/package.xml#L19>`__)
+1. 添加对 ``rosidl_default_generators`` 的 ``<buildtool_depend>`` 依赖 (`example <https://github.com/ros2/common_interfaces/blob/d685509e9cb9f80bd320a347f2db954a73397ae7/std_msgs/package.xml#L19>`__)
 
    .. code-block:: xml
 
       <buildtool_depend>rosidl_default_generators</buildtool_depend>
 
-2. Add an ``<exec_depend>`` on ``rosidl_default_runtime`` (`example <https://github.com/ros2/common_interfaces/blob/d685509e9cb9f80bd320a347f2db954a73397ae7/std_msgs/package.xml#L22>`__)
+2. 添加对 ``rosidl_default_runtime`` 的 ``<exec_depend>`` 依赖 (`example <https://github.com/ros2/common_interfaces/blob/d685509e9cb9f80bd320a347f2db954a73397ae7/std_msgs/package.xml#L22>`__)
 
    .. code-block:: xml
 
       <exec_depend>rosidl_default_runtime</exec_depend>
 
-3. Add a ``<member_of_group>`` tag with the group name ``rosidl_interface_packages`` (`example <https://github.com/ros2/common_interfaces/blob/d685509e9cb9f80bd320a347f2db954a73397ae7/std_msgs/package.xml#L26>`__)
+3. 添加 ``<member_of_group>`` 标签，并将组名设置为 ``rosidl_interface_packages`` (`example <https://github.com/ros2/common_interfaces/blob/d685509e9cb9f80bd320a347f2db954a73397ae7/std_msgs/package.xml#L26>`__)
 
    .. code-block:: xml
 
@@ -310,7 +310,7 @@ To this:
          )
       endif()
 
-Add ``<test_depend>ament_cmake_gtest</test_depend>`` to your ``package.xml`` (`example <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/package.xml#L35>`__).
+在 ``package.xml`` 中添加 ``<test_depend>ament_cmake_gtest</test_depend>`` (`example <https://github.com/ros2/geometry2/blob/d85102217f692746abea8546c8e41f0abc95c8b8/tf2/package.xml#L35>`__).
 
 .. code-block:: xml
 
@@ -452,5 +452,5 @@ ROS 代码库中另一个常见的 Boost 用法是使用 ``boost::thread`` 中�
 替换为：
 
 
-* ``#include <boost/函数对象（function）.hpp>``  with ``#include <函数对象（function）al>``
-* ``boost::函数对象（function）`` with ``std::函数对象（function）``
+* 将 ``#include <boost/function.hpp>`` 替换为 ``#include <functional>``。
+* 将 ``boost::function`` 替换为 ``std::function``。

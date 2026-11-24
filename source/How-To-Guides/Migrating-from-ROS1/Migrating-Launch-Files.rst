@@ -177,8 +177,7 @@ include（包含）
 * 用于包含另一个 launch 文件。
 * 与 ROS 1 的区别：
 
-   * ROS 1 中可用, included content was scoped.
-     In ROS 2, it's not.
+   * 在 ROS 1 中，被包含文件的内容具有作用域；ROS 2 中则没有。
      这意味着 ``arg`` 标签的值会传播到被包含的 launch 文件中，效果类似于 ROS 1 中设置 ``pass_all_args="true"``。
      但这种传播只适用于被包含的 launch 文件中具有默认值的参数。
      必需参数必须显式传递。
@@ -189,7 +188,7 @@ include（包含）
    * 不支持嵌套的 ``env`` 标签，可以改用 ``set_env`` 和 ``unset_env``。
    * ``clear_params`` 和 ``pass_all_args`` 属性均不受支持。ROS 2 launch 的行为相当于将 ``pass_all_args`` 设置为 true（见上文）。
 
-示例s
+示例
 ~~~~~~~~
 
 请参阅“替换 include 标签”一节。
@@ -281,7 +280,7 @@ group
 示例
 ~~~~~~~
 
-``launch-prefix`` configuration affects both ``executable`` and ``node`` tags' actions.
+``launch-prefix`` 配置会影响 ``executable`` 和 ``node`` 标签对应的操作。
 在此示例中，如果参数 ``use_time_prefix_in_talker`` 的值为 ``1``，则只会为 talker 节点添加 ``time`` 前缀。
 
 .. code-block:: xml
@@ -389,9 +388,9 @@ executable（可执行程序）
 替换表达式
 -------------
 
-Documentation about ROS 1's substitutions can be found in `roslaunch XML wiki <https://wiki.ros.org/roslaunch/XML>`__.
+ROS 1 替换表达式的文档可参阅 `roslaunch XML wiki <https://wiki.ros.org/roslaunch/XML>`__。
 替换表达式的语法没有变化，仍采用 ``$(substitution-name arg1 arg2 ...)`` 的形式。
-There are, however, some changes w.r.t. ROS 1:
+不过，与 ROS 1 相比存在以下变化：
 
 * ``env`` 和 ``optenv`` 已统一由 ``env`` 替代。如果环境变量不存在，``$(env <NAME>)`` 会失败。``$(env <NAME> '')`` 的行为与 ROS 1 的 ``$(optenv <NAME>)`` 相同。``$(env <NAME> <DEFAULT>)`` 的行为与 ROS 1 的 ``$(env <NAME> <DEFAULT>)`` 或 ``$(optenv <NAME> <DEFAULT>)`` 相同。
 * ``find`` 已替换为 ``find-pkg-share``（用于替换为已安装功能包的 share 目录）。此外，``find-pkg-prefix`` 可返回已安装功能包的根目录。

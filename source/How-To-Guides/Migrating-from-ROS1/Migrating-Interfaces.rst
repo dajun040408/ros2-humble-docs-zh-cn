@@ -17,7 +17,7 @@ ROS 1 接口迁移
 这些文件可能需要更新，以符合 ROS 接口定义规范：http://design.ros2.org/articles/legacy_interface_definition.html。
 部分基本类型已被移除；ROS 1 中的内置类型 duration 和 time 已被普通消息定义取代，必须从 builtin_interfaces 功能包中使用：https://github.com/ros2/rcl_interfaces/tree/{REPOS_FILE_BRANCH}/builtin_interfaces。
 此外，与 ROS 1 相比，ROS 2 对命名约定的要求更加严格。
-更多信息请参阅接口概念说明：https://docs.ros.org/en/humble/Concepts/Basic/About-Interfaces.html。
+更多信息请参阅 :doc:`接口概念说明 <../../Concepts/Basic/About-Interfaces>`。相关页面：https://docs.ros.org/en/humble/Concepts/Basic/About-Interfaces.html。
 
 构建接口
 --------
@@ -32,10 +32,10 @@ ROS 2 中接口的构建方式与 ROS 1 有较大差异。
 
 在 package.xml 中：
 
-* 添加 ``<buildtool_depend>``rosidl_default_generators``</buildtool_depend>``。
-* 添加 ``<exec_depend>``rosidl_default_runtime``</exec_depend>``。
-* 添加 ``<member_of_group>``rosidl_interface_packages``</member_of_group>``。
-* 对每个依赖的消息功能包，添加 ``<depend>``message_package``</depend>``。
+* 添加 ``<buildtool_depend>rosidl_default_generators</buildtool_depend>``。
+* 添加 ``<exec_depend>rosidl_default_runtime</exec_depend>``。
+* 添加 ``<member_of_group>rosidl_interface_packages</member_of_group>``。
+* 对每个依赖的消息功能包，添加 ``<depend>message_package</depend>``。
 
 在 CMakeLists.txt 中：
 

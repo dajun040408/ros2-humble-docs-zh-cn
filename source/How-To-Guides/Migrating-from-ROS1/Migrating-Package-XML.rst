@@ -37,7 +37,7 @@ ROS 2 要求 package.xml 文件至少使用格式 2。格式 2 规范请参阅 R
 
 .. code:: xml
 
-  ``<package format="2">``
+  <package format="2">
 
 替换 ``<run_depend>``
 ~~~~~~~~~~~~~~~~~
@@ -47,14 +47,14 @@ ROS 2 要求 package.xml 文件至少使用格式 2。格式 2 规范请参阅 R
 
 .. code:: xml
 
-  ``<run_depend>``foo``</run_depend>``
+  <run_depend>foo</run_depend>
 
 则应将其替换为以下一个或两个标签：
 
 .. code:: xml
 
-  ``<build_export_depend>``foo``</build_export_depend>``
-  ``<exec_depend>``foo``</exec_depend>``
+  <build_export_depend>foo</build_export_depend>
+  <exec_depend>foo</exec_depend>
 
 如果依赖项在执行功能包中的某些内容时需要使用，则使用 ``<exec_depend>`` 标签。
 如果依赖你的功能包的其他功能包在构建时需要该依赖项，则使用 ``<build_export_depend>`` 标签。
@@ -70,13 +70,13 @@ ROS 2 要求 package.xml 文件至少使用格式 2。格式 2 规范请参阅 R
 
 .. code:: xml
 
-  ``<build_depend>``testfoo``</build_depend>``
+  <build_depend>testfoo</build_depend>
 
 如果是这种情况，请将其改为 ``<test_depend>``：
 
 .. code:: xml
 
-  ``<test_depend>``testfoo``</test_depend>``
+  <test_depend>testfoo</test_depend>
 
 .. note::
 
@@ -96,13 +96,13 @@ ROS 2 要求 package.xml 文件至少使用格式 2。格式 2 规范请参阅 R
 
 .. code:: xml
 
-  ``<doc_depend>``doxygen``</doc_depend>``
+  <doc_depend>doxygen</doc_depend>
 
 而 Python 功能包可能需要声明：
 
 .. code:: xml
 
-  ``<doc_depend>``python3-sphinx``</doc_depend>``
+  <doc_depend>python3-sphinx</doc_depend>
 
 更多信息请参阅 ROS 2 功能包文档编写指南。
 
@@ -114,15 +114,15 @@ ROS 2 要求 package.xml 文件至少使用格式 2。格式 2 规范请参阅 R
 
 .. code::
 
-  ``<build_depend>``foo``</build_depend>``
-  ``<build_export_depend>``foo``</build_export_depend>``
-  ``<exec_depend>``foo``</exec_depend>``
+  <build_depend>foo</build_depend>
+  <build_export_depend>foo</build_export_depend>
+  <exec_depend>foo</exec_depend>
 
 则可以将它们替换为一个 ``<depend>`` 标签：
 
 .. code:: xml
 
-  ``<depend>``foo``</depend>``
+  <depend>foo</depend>
 
 测试新的 package.xml
 --------------------
