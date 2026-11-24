@@ -56,7 +56,7 @@ def main() -> int:
                         "html_baseurl = 'https://ros2docs.robook.org/humble/'",
                         "HTML base URL")
     conf = replace_once(conf, "ogp_site_url = 'https://docs.ros.org/en/humble/'",
-                        "ogp_site_url = 'https://dajun040408.github.io/ros2-humble-docs-zh-cn/'",
+                        "ogp_site_url = 'https://ros2docs.robook.org/'",
                         "OpenGraph URL")
     conf = replace_once(conf, "ogp_site_name = 'ROS 2 Documentation'",
                         "ogp_site_name = 'ROS 2 Humble 中文文档'", "OpenGraph site name")

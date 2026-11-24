@@ -65,7 +65,7 @@ jobs:
         run: |
           mkdir -p site/humble
           cp -a upstream/build/html/. site/humble/
-          printf '%s\\n' 'ros2docs.robook.org' > site/CNAME
+          printf '%s\n' 'ros2docs.robook.org' > site/CNAME
           cat > site/index.html <<'EOF'
           <!doctype html>
           <html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=/humble/"><link rel="canonical" href="https://ros2docs.robook.org/humble/"><title>ROS 2 Humble 中文文档</title></head><body><a href="/humble/">进入 ROS 2 Humble 中文文档</a></body></html>
