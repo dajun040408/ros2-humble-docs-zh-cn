@@ -2,7 +2,7 @@
 
   Beta1-Overview
 
-Beta 1（``Asphalt``）
+Beta 1（Asphalt）
 ========================================
 
 .. contents:: 目录
