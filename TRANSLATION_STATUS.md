@@ -358,3 +358,6 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 已扩充 C++ 监听器教程：补齐完整 FrameListener 节点代码、TransformListener/Buffer/lookupTransform 工作原理、服务异步生成第二只乌龟、速度控制计算、Composable Node 的 TransformListener 构造注意事项、CMake、三格式启动文件、跨平台构建运行步骤。提交：`f8fa91451e9262f059b98a5b84d72d1e28e426e2`。
 - 已扩充 Python 监听器教程：补齐完整 FrameListener 节点代码、TransformListener 和 lookup_transform 解释、入口点、三格式启动文件、package 构建和跨平台运行步骤。提交：`207384ac277463e722c807651ab29824a36896c8`。
 - 监听器教程修订尚待构建、RST 诊断和部署验收。
+
+- 已补充 `Quaternion-Fundamentals.rst` 缺失的四元数操作章节：RPY 转换、旋转应用、求逆、相对旋转，以及 C++/Python 示例和相关数学资源链接。提交：`13129bdd416e600100c754576730ca35c2b35f9b`。
+- Tf2 目录中本轮优先补译的严重缺失文档（Python 添加坐标系、调试问题、Stamped Datatypes/MessageFilter、C++/Python Listener、四元数）已完成内容修订，尚待最终构建和部署验收。
