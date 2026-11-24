@@ -318,3 +318,6 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 
 - 已扩充 `Creating-A-Workspace.rst`：补充 Linux/macOS/Windows 的 colcon 构建预期输出，以及三种平台查看工作空间构建目录的命令示例。提交：`850a976f0d0481d282fa2eed0f289e7e84c53009`。
 - 修正 `Creating-Your-First-ROS2-Package.rst` 中 Python 创建功能包终端输出示例的一处重复目录行。提交：`e9ef50656dcb1d86045261495e90ef31ef87314b`。
+
+- 已补充 `Getting-Started-With-Ros2doctor.rst` 中 `--report` 用于提交 ROS 2 支持请求的说明，明确可将报告相关部分附入支持请求，以便他人了解环境。提交：`7652b21b2761979b7a8d8a477bcbcd008a6faa3f`。
+- Beginner Client Libraries 目录中尚未做实质性补译的两篇为 `Colcon-Tutorial.rst` 与 `Getting-Started-With-Ros2doctor.rst`；前者章节和主要示例已与上游对应，本轮对后者做了补充说明。仍需最后一次全目录逐段抽查。
