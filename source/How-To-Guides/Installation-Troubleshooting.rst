@@ -44,7 +44,7 @@
 
    Received from xx.xxx.xxx.xx:43751: 'Hello World!'
 
-可以使用 ``ifconfig`` 检查网络接口是否启用了组播标志。在 flags 部分查找 ``MULTICAST``：
+可以使用 ``ifconfig`` 检查网络接口是否启用了组播标志。在 flags 部分查找 ``MULTICAST`` ：
 
 .. code-block:: bash
 
@@ -144,7 +144,7 @@ Library not loaded；找不到 image
 Qt 构建错误：unknown type name 'Q_ENUM'
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-如果遇到 Qt 相关构建错误，例如 ``unknown type name 'Q_ENUM'``，可能是使用了 Qt 4，而不是 Qt 5。请参阅 `相关 Issue <https://github.com/ros2/ros2/issues/441>`_。
+如果遇到 Qt 相关构建错误，例如 ``unknown type name 'Q_ENUM'`` ，可能是使用了 Qt 4，而不是 Qt 5。请参阅 `相关 Issue <https://github.com/ros2/ros2/issues/441>`_。
 
 通过 Homebrew 安装 OpenCV 后出现缺失符号
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -221,11 +221,11 @@ CMake 设置文件修改时间失败
 
 构建时可能出现路径长度限制错误。要允许更长路径：
 
-运行 ``regedit.exe``，导航到：
+运行 ``regedit.exe`` ，导航到：
 
 ``Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem``
 
-将 ``LongPathsEnabled`` 设置为 ``0x00000001 (1)``。
+将 ``LongPathsEnabled`` 设置为 ``0x00000001 (1)`` 。
 
 然后打开“Edit Group Policy”，导航到“Local Computer Policy > Computer Configuration > Administrative Templates > System > Filesystem”，编辑“Enable Win32 long paths”，选择 Enabled。
 
@@ -234,7 +234,7 @@ CMake 设置文件修改时间失败
 CMake 无法找到 asio、tinyxml2、tinyxml 或 eigen
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-有时，Chocolatey 安装的 ``asio``、``tinyxml2`` 等软件包不会添加重要的注册表项，导致 CMake 无法找到它们。可以尝试卸载这些 Chocolatey 软件包，然后重新安装。
+有时，Chocolatey 安装的 ``asio`` 、``tinyxml2`` 等软件包不会添加重要的注册表项，导致 CMake 无法找到它们。可以尝试卸载这些 Chocolatey 软件包，然后重新安装。
 
 patch.exe 打开新命令窗口并要求管理员权限
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -253,18 +253,18 @@ Fast RTPS 共享库加载失败
 
 .. does not apply to Crystal
 
-Fast RTPS 需要 ``msvcr20.dll``，该文件属于 Visual C++ Redistributable Packages for Visual Studio 2013。部分 Windows 系统可能没有安装，可以从 `Microsoft 下载页面 <https://www.microsoft.com/en-us/download/details.aspx?id=40784>`_ 获取。
+Fast RTPS 需要 ``msvcr20.dll`` ，该文件属于 Visual C++ Redistributable Packages for Visual Studio 2013。部分 Windows 系统可能没有安装，可以从 `Microsoft 下载页面 <https://www.microsoft.com/en-us/download/details.aspx?id=40784>`_ 获取。
 
 创建进程失败
 ^^^^^^^^^^^^
 
-如果运行 ROS 二进制程序时出现 ``failed to create process`` 错误，可能是找不到 Python 解释器。请确保 Python 位于预期路径下，默认路径为 ``C:\Python38\``。
+如果运行 ROS 二进制程序时出现 ``failed to create process`` 错误，可能是找不到 Python 解释器。请确保 Python 位于预期路径下，默认路径为 ``C:\Python38\`` 。
 
 二进制安装特有问题
 ^^^^^^^^^^^^^^^^^^
 
 * 如果示例因为缺少 DLL 无法启动，请确认 OpenCV 等外部依赖库都位于 ``PATH`` 环境变量包含的目录中。
-* 如果忘记在终端中调用 ``local_setup.bat``，演示程序可能会立即崩溃。
+* 如果忘记在终端中调用 ``local_setup.bat`` ，演示程序可能会立即崩溃。
 
 在 WSL2 中运行 RViz
 ^^^^^^^^^^^^^^^^^^^
