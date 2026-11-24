@@ -70,7 +70,7 @@ Fork 并克隆 ros/rosdistro
 * ``YOUR-REPO-NAME`` ：自定义的、人类可读的仓库名称。对于托管在 GitHub 上的仓库，使用仓库的小写名称，不包含组织名称。例如，``https://github.com/ros2/rosidl`` 对应的仓库名称为 ``rosidl`` 。
 * ``YOUR-GIT-REPO-URL`` ：可以用于 ``git clone`` 该仓库的 HTTPS URL。例如，``https://github.com/ros2/rosidl`` 对应的 Git 仓库 URL 为 ``https://github.com/ros2/rosidl.git`` 。URL 必须以 ``.git`` 结尾，否则无法通过 lint 检查。
 * ``YOUR-BRANCH-NAME`` ：用于向该 ROS 发行版发布软件包的 Git 分支。通常为 ``main`` 、``master`` 或 ROS 发行版名称。例如，``rosidl`` 仓库使用 ``rolling`` 分支保存将发布到 ROS Rolling 的变更。
-* ``YOUR-STATUS`` ：从 `REP 141 <https://reps.openrobotics.org/rep-0141/#distribution-file>`_ 的状态列表中选择。通常使用 ``maintained`` 或 ``developed`。
+* ``YOUR-STATUS`` ：从 `REP 141 <https://reps.openrobotics.org/rep-0141/#distribution-file>`_ 的状态列表中选择。通常使用 ``maintained`` 或 ``developed``。
 
 向 ros/rosdistro 提交 Pull Request
 ----------------------------------
