@@ -49,7 +49,7 @@
 
     int64 a
     int64 b
-    ---
+-------
     int64 sum
 
 横线之前的两行是请求参数，横线之后是响应内容。
@@ -353,4 +353,4 @@
 相关内容
 --------
 
-C++ 服务端和客户端有多种实现方式。可以查看 ``ros2/examples`` 仓库中的 ``minimal_service`` 和 ``minimal_client`` 功能包：`https://github.com/ros2/examples/tree/{REPOS_FILE_BRANCH}/rclcpp/services`_。
+C++ 服务端和客户端有多种实现方式。可以查看 `ros2/examples 仓库 <https://github.com/ros2/examples/tree/{REPOS_FILE_BRANCH}/rclcpp/services>`_ 中的 ``minimal_service`` 和 ``minimal_client`` 功能包。
