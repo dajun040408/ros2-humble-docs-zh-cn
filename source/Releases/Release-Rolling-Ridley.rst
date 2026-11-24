@@ -1,4 +1,4 @@
-Rolling Ridley（`rolling`）
+Rolling Ridley（``rolling``）
 ============================
 
 .. contents:: 目录
@@ -20,16 +20,16 @@ Rolling Ridley（`rolling`）
 
 Tier 1 平台：
 
-* Red Hat Enterprise Linux 10：`amd64`
-* Ubuntu 24.04（Noble）：`amd64` 和 `arm64`
-* Windows 11（Visual Studio 2022）：`amd64`
+* Red Hat Enterprise Linux 10：``amd64``
+* Ubuntu 24.04（Noble）：``amd64`` 和 ``arm64``
+* Windows 11（Visual Studio 2022）：``amd64``
 
 Tier 3 平台：
 
-* Debian Trixie（13）：`amd64`
-* Fedora Linux 44：`amd64`
-* macOS：`amd64`
-* OpenEmbedded / Yocto Project：`amd64`、`arm64` 和 `arm32`
+* Debian Trixie（13）：``amd64``
+* Fedora Linux 44：``amd64``
+* macOS：``amd64``
+* OpenEmbedded / Yocto Project：``amd64``、``arm64`` 和 ``arm32``
 
 安装
 ----
