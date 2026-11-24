@@ -210,3 +210,12 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 后续提交已继续修复：ROS 1 迁移/文档发布/教程中的错链和缺失标签，包括 MVSim、Tracing、GurumDDS、Snapshot Repository、Creating an Action、Launch、Event Handlers、tf2、Python Testing 等交叉引用；这些提交在本记录写入时尚未取得新的完整构建结果。
 - 当前最新待验构建 #684（run ID `45337963252`，提交 `807ee5aea5e405e870ef4e103567121c9c39f188`）尚未启动 jobs，状态 Pending；不能将 #650 的成功结果视为 #684 后续修订已部署。
 - 原域名 `ros2docs.robook.org` 的 Settings → Pages 自定义域名、DNS CNAME、HTTPS 和实时内容切换仍未得到新证据；此前已确认仅将构建产物部署到 GitHub Pages 不会自动更新原 robook.org 托管站点。
+
+## 2026-11-24 Beginner CLI Tools 教程页面复核与补译
+
+- 用户指定页面：`Tutorials/Beginner-CLI-Tools.html`。该页面本身是教程目录页，标题及 10 个子教程的 toctree 标签均已翻译为中文；英文文件路径保留是正常行为。
+- 对照 ROS 2 官方 `humble` 分支，检查该目录下 10 篇子教程的源文件及章节结构。发现 `Introducing-Turtlesim.rst` 缺少 5.2 set_pen 服务、重映射、关闭仿真、总结、下一步及相关内容等后续部分；已补译。
+- 发现 `Understanding-ROS2-Topics.rst` 在 `ros2 topic info --verbose` 输出后截断，缺少接口查看、话题发布、发布频率、带宽、话题查找、清理环境、总结和下一步等章节；已补译，并补齐 verbose 输出中的订阅者信息。
+- 修订提交：`cd79729ba25650174c61e37dbe3b941ba3ab0f23`、`aa4e9d8f3498caf804a808a59903d784b04ed49a`。
+- 其余 8 篇子教程的章节标题结构与 Humble 上游基本对应；本轮未发现整章缺失的证据，但仍需逐段翻译完整性和技术内容校对。
+- 最新 GitHub Actions #735（提交 `aa4e9d8`）正在构建；须等待构建和部署成功后再进行网页验收。
