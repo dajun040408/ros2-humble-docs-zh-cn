@@ -154,7 +154,7 @@
 3. 向正在运行的 ROS 系统发布消息
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-使用`桌面应用 <https://foxglove.dev/download>`_ ``连接 <https://foxglove.dev/docs/studio/connection/native>`_到正在运行的 ROS 系统。然后将 ``Publish`` 面板添加到布局中。
+使用 `桌面应用 <https://foxglove.dev/download>`__ `连接 <https://foxglove.dev/docs/studio/connection/native>`__ 到正在运行的 ROS 系统。然后将 ``Publish`` 面板添加到布局中。
 
 指定要发布的话题，面板会推断其数据类型，并在文本框中填入 JSON 消息模板。
 
