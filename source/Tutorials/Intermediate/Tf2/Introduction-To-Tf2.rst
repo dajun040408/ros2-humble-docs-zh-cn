@@ -45,7 +45,7 @@ tf2 简介
 运行演示
 --------
 
-安装 turtle_tf2_py 教程软件包后，就可以运行演示了。首先打开新终端并 :doc:§source ROS 2 安装环境 <../../Beginner-CLI-Tools/Configuring-ROS2-Environment>§，然后运行：
+安装 turtle_tf2_py 教程软件包后，就可以运行演示了。首先打开新终端并 :doc:`source ROS 2 安装环境 <../../Beginner-CLI-Tools/Configuring-ROS2-Environment>`，然后运行：
 
 .. code-block:: console
 

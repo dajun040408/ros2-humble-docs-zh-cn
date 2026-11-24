@@ -36,7 +36,7 @@
   $ mv permissions.xml permissions.xml~
   $ vi permissions.xml
 
-我们将修改 publish 和 subscribe 对应的 allow_rule。该 XML 文件中的话题使用 DDS 命名格式，而不是 ROS 名称。ROS 与 DDS 话题名称之间的映射关系，请参阅§话题和服务名称设计文档 <https://design.ros2.org/articles/topic_and_service_names.html#mapping-of-ros-2-topic-and-service-names-to-dds-concepts>§_。
+我们将修改 publish 和 subscribe 对应的 allow_rule。该 XML 文件中的话题使用 DDS 命名格式，而不是 ROS 名称。ROS 与 DDS 话题名称之间的映射关系，请参阅`话题和服务名称设计文档 <https://design.ros2.org/articles/topic_and_service_names.html#mapping-of-ros-2-topic-and-service-names-to-dds-concepts>`_。
 
 将以下 XML 内容粘贴到 permissions.xml，保存并退出编辑器。这里将 ROS 话题 chatter 和 rosout 分别映射为 DDS 话题 rt/chatter 和 rt/rosout：
 
@@ -122,7 +122,7 @@
 使用模板
 ^^^^^^^^
 
-安全策略可能很快变得复杂，因此 sros2 工具支持通过模板创建策略。这里使用 sros2 仓库提供的§示例策略文件 <https://github.com/ros2/sros2/blob/{REPOS_FILE_BRANCH}/sros2/test/policies/sample.policy.xml#L1>§_。
+安全策略可能很快变得复杂，因此 sros2 工具支持通过模板创建策略。这里使用 sros2 仓库提供的`示例策略文件 <https://github.com/ros2/sros2/blob/{REPOS_FILE_BRANCH}/sros2/test/policies/sample.policy.xml#L1>`_。
 
 本例为 talker 和 listener 创建策略，只允许它们使用 chatter 话题。首先下载包含示例策略文件的 sros2 仓库：
 

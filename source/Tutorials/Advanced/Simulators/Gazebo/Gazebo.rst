@@ -16,10 +16,10 @@
 
 首先需要安装 ROS 2 和 Gazebo。可以选择以下方式：
 
-* 通过 deb 软件包安装。可用版本请参阅§版本对照表 <https://github.com/gazebosim/ros_gz>§_。
+* 通过 deb 软件包安装。可用版本请参阅`版本对照表 <https://github.com/gazebosim/ros_gz>`_。
 * 从源码编译：
-  * :doc:§ROS 2 安装说明 <../../../../Installation>§。
-  * §Gazebo 安装说明 <https://gazebosim.org/docs>§_。
+  * :doc:`ROS 2 安装说明 <../../../../Installation>`。
+  * `Gazebo 安装说明 <https://gazebosim.org/docs>`_。
 
 任务
 ----
@@ -83,6 +83,6 @@
     $ source /opt/ros/{DISTRO}/setup.bash
     $ ros2 run ros_gz_bridge parameter_bridge /model/vehicle_blue/cmd_vel@geometry_msgs/msg/Twist]ignition.msgs.Twist
 
-更多详情请参阅§ros_gz_bridge README <https://github.com/gazebosim/ros_gz/tree/ros2/ros_gz_bridge>§_。
+更多详情请参阅`ros_gz_bridge README <https://github.com/gazebosim/ros_gz/tree/ros2/ros_gz_bridge>`_。
 
 桥接启动后，就可以从 ROS 2 向 Gazebo 发送机器人速度命令。

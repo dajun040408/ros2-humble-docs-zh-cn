@@ -16,7 +16,7 @@ tf2 添加坐标系（C++）
 背景
 ----
 
-在之前的教程中，我们通过编写 :doc:§tf2 广播器 <./Writing-A-Tf2-Broadcaster-Cpp>§ 和 :doc:§tf2 监听器 <Writing-A-Tf2-Listener-Cpp>§ 重现了海龟演示。本教程介绍如何向变换树添加额外的固定坐标系和动态坐标系。
+在之前的教程中，我们通过编写 :doc:`tf2 广播器 <./Writing-A-Tf2-Broadcaster-Cpp>` 和 :doc:`tf2 监听器 <Writing-A-Tf2-Listener-Cpp>` 重现了海龟演示。本教程介绍如何向变换树添加额外的固定坐标系和动态坐标系。
 
 对于许多坐标变换任务，使用局部坐标系思考会更容易。例如，在激光雷达中心建立坐标系，可以更直观地理解激光扫描测量值。tf2 允许为系统中的每个传感器、连杆或关节定义局部坐标系。当从一个坐标系变换到另一个坐标系时，tf2 会自动处理所有中间坐标系变换。
 
@@ -25,7 +25,7 @@ tf2 变换树
 
 tf2 使用树结构组织坐标系，因此不允许坐标系结构中出现闭环。每个坐标系只能有一个父坐标系，但可以有多个子坐标系。
 
-当前 tf2 树包含三个坐标系：§world§、§turtle1§ 和 §turtle2§。两个海龟坐标系都是 §world§ 的子坐标系。若要添加新坐标系，必须选择现有坐标系之一作为父坐标系，新坐标系则成为其子坐标系。
+当前 tf2 树包含三个坐标系：``world``、``turtle1`` 和 ``turtle2``。两个海龟坐标系都是 ``world`` 的子坐标系。若要添加新坐标系，必须选择现有坐标系之一作为父坐标系，新坐标系则成为其子坐标系。
 
 .. image:: images/turtlesim_frames.png
 
@@ -35,9 +35,9 @@ tf2 使用树结构组织坐标系，因此不允许坐标系结构中出现闭�
 1. 编写固定坐标系广播器
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-在海龟示例中，我们添加一个名为 §carrot1§ 的新坐标系，它是 §turtle1§ 的子坐标系，并作为第二只海龟的目标位置。
+在海龟示例中，我们添加一个名为 ``carrot1`` 的新坐标系，它是 ``turtle1`` 的子坐标系，并作为第二只海龟的目标位置。
 
-进入之前教程创建的 §learning_tf2_cpp§ 功能包，在 §src§ 目录下载固定坐标系广播器：
+进入之前教程创建的 ``learning_tf2_cpp`` 功能包，在 ``src`` 目录下载固定坐标系广播器：
 
 .. tabs::
 
@@ -59,7 +59,7 @@ tf2 使用树结构组织坐标系，因此不允许坐标系结构中出现闭�
 
          $ curl -sk https://raw.githubusercontent.com/ros/geometry_tutorials/{DISTRO}/turtle_tf2_cpp/src/fixed_frame_tf2_broadcaster.cpp -o fixed_frame_tf2_broadcaster.cpp
 
-打开 §fixed_frame_tf2_broadcaster.cpp§。核心实现如下：
+打开 ``fixed_frame_tf2_broadcaster.cpp``。核心实现如下：
 
 .. code-block:: cpp
 
@@ -77,12 +77,12 @@ tf2 使用树结构组织坐标系，因此不允许坐标系结构中出现闭�
 
    tf_static_broadcaster_->sendTransform(t);
 
-该固定坐标系使用 §tf2_ros::StaticTransformBroadcaster§，并在构造函数中发布一次。对于相对于父坐标系位姿不会变化的坐标系，应使用静态广播器。对于随时间变化的坐标系，应使用 §tf2_ros::TransformBroadcaster§ 定期发布。
+该固定坐标系使用 ``tf2_ros::StaticTransformBroadcaster``，并在构造函数中发布一次。对于相对于父坐标系位姿不会变化的坐标系，应使用静态广播器。对于随时间变化的坐标系，应使用 ``tf2_ros::TransformBroadcaster`` 定期发布。
 
 1.1 理解代码
 ~~~~~~~~~~~~
 
-代码创建了从父坐标系 §turtle1§ 到子坐标系 §carrot1§ 的变换。相对于 §turtle1§，§carrot1§ 在 y 轴方向偏移 2 米。
+代码创建了从父坐标系 ``turtle1`` 到子坐标系 ``carrot1`` 的变换。相对于 ``turtle1``，``carrot1`` 在 y 轴方向偏移 2 米。
 
 .. code-block:: cpp
 
@@ -97,7 +97,7 @@ tf2 使用树结构组织坐标系，因此不允许坐标系结构中出现闭�
 1.2 修改 CMakeLists.txt
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-返回 §learning_tf2_cpp§ 目录，打开 §CMakeLists.txt§，添加可执行程序：
+返回 ``learning_tf2_cpp`` 目录，打开 ``CMakeLists.txt``，添加可执行程序：
 
 .. code-block:: cmake
 
@@ -116,7 +116,7 @@ tf2 使用树结构组织坐标系，因此不允许坐标系结构中出现闭�
 1.3 编写启动文件
 ~~~~~~~~~~~~~~~~
 
-在 §src/learning_tf2_cpp/launch§ 目录中创建 §turtle_tf2_fixed_frame_demo_launch§ 启动文件，扩展名可为 §.py§、§.xml§ 或 §.yaml§。
+在 ``src/learning_tf2_cpp/launch`` 目录中创建 ``turtle_tf2_fixed_frame_demo_launch`` 启动文件，扩展名可为 ``.py``、``.xml`` 或 ``.yaml``。
 
 .. tabs::
 
@@ -135,7 +135,7 @@ tf2 使用树结构组织坐标系，因此不允许坐标系结构中出现闭�
     .. literalinclude:: launch/turtle_tf2_fixed_frame_demo_launch.yaml
         :language: yaml
 
-启动文件会导入所需功能包，并创建 §demo_nodes§ 变量以保存前面教程启动文件中创建的节点。最后，通过 §fixed_frame_tf2_broadcaster§ 节点，将固定的 §carrot1§ 坐标系添加到 turtlesim 世界中。
+启动文件会导入所需功能包，并创建 ``demo_nodes`` 变量以保存前面教程启动文件中创建的节点。最后，通过 ``fixed_frame_tf2_broadcaster`` 节点，将固定的 ``carrot1`` 坐标系添加到 turtlesim 世界中。
 
 1.4 构建
 ~~~~~~~~
@@ -146,7 +146,7 @@ tf2 使用树结构组织坐标系，因此不允许坐标系结构中出现闭�
 
    $ rosdep install -i --from-path src --rosdistro {DISTRO} -y
 
-macOS 和 Windows 上 rosdep 不可用，需要自行安装 §geometry_msgs§ 和 §turtlesim§ 依赖。
+macOS 和 Windows 上 rosdep 不可用，需要自行安装 ``geometry_msgs`` 和 ``turtlesim`` 依赖。
 
 构建功能包：
 
@@ -166,7 +166,7 @@ Windows 使用：
 
    $ . install/setup.bash
 
-Windows 命令提示符使用 §call install\setup.bat§；PowerShell 使用 §.\install\setup.ps1§。
+Windows 命令提示符使用 ``call install\setup.bat``；PowerShell 使用 ``.\install\setup.ps1``。
 
 1.5 运行
 ~~~~~~~~
@@ -177,19 +177,19 @@ Windows 命令提示符使用 §call install\setup.bat§；PowerShell 使用 §.
 
    $ ros2 launch learning_tf2_cpp turtle_tf2_fixed_frame_demo_launch.xml
 
-你应该能看到变换树中出现新的 §carrot1§ 坐标系。
+你应该能看到变换树中出现新的 ``carrot1`` 坐标系。
 
 .. image:: images/turtlesim_frames_carrot.png
 
 移动第一只海龟时，行为与上一个教程相同，因为添加额外坐标系不会改变其他坐标系，监听器仍然使用之前定义的坐标系。
 
-如果希望第二只海龟跟随 carrot，而不是第一只海龟，需要修改 §target_frame§。可以在命令行传入参数：
+如果希望第二只海龟跟随 carrot，而不是第一只海龟，需要修改 ``target_frame``。可以在命令行传入参数：
 
 .. code-block:: console
 
    $ ros2 launch learning_tf2_cpp turtle_tf2_fixed_frame_demo_launch.xml target_frame:=carrot1
 
-也可以修改启动文件，在 §launch_arguments§ 中添加 §'target_frame': 'carrot1'§：
+也可以修改启动文件，在 ``launch_arguments`` 中添加 ``'target_frame': 'carrot1'``：
 
 .. code-block:: python
 
@@ -208,7 +208,7 @@ Windows 命令提示符使用 §call install\setup.bat§；PowerShell 使用 §.
 
 本教程发布的额外坐标系是固定坐标系，相对于父坐标系不会随时间变化。如果希望发布移动坐标系，可以让广播器随时间改变坐标系位姿。
 
-进入 §learning_tf2_cpp§ 的 §src§ 目录，下载动态坐标系广播器：
+进入 ``learning_tf2_cpp`` 的 ``src`` 目录，下载动态坐标系广播器：
 
 .. code-block:: console
 
@@ -235,7 +235,7 @@ Windows 命令提示符使用 §call install\setup.bat§；PowerShell 使用 §.
      tf_broadcaster_->sendTransform(t);
    }
 
-这里不再使用固定的 x、y 偏移，而是根据当前时间计算 §sin()§ 和 §cos()§，因此 §carrot1§ 相对于 §turtle1§ 的偏移会持续变化。
+这里不再使用固定的 x、y 偏移，而是根据当前时间计算 ``sin()`` 和 ``cos()``，因此 ``carrot1`` 相对于 ``turtle1`` 的偏移会持续变化。
 
 2.1 修改 CMakeLists.txt
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -259,7 +259,7 @@ Windows 命令提示符使用 §call install\setup.bat§；PowerShell 使用 §.
 2.2 编写启动文件
 ~~~~~~~~~~~~~~~~
 
-在 §src/learning_tf2_cpp/launch§ 中创建 §turtle_tf2_dynamic_frame_demo_launch§，可使用 Python、XML 或 YAML 格式。
+在 ``src/learning_tf2_cpp/launch`` 中创建 ``turtle_tf2_dynamic_frame_demo_launch``，可使用 Python、XML 或 YAML 格式。
 
 .. tabs::
 
@@ -281,7 +281,7 @@ Windows 命令提示符使用 §call install\setup.bat§；PowerShell 使用 §.
 2.3 构建与运行
 ~~~~~~~~~~~~~~
 
-使用 rosdep 检查依赖，构建 §learning_tf2_cpp§，然后 source 工作空间环境。构建命令与前面的固定坐标系示例相同。
+使用 rosdep 检查依赖，构建 ``learning_tf2_cpp``，然后 source 工作空间环境。构建命令与前面的固定坐标系示例相同。
 
 运行动态坐标系演示：
 

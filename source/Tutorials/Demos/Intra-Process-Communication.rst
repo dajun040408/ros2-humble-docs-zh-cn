@@ -22,7 +22,7 @@ ROS 1 开发后期，节点高效组合的需求逐渐明显，因此引入了 N
 安装演示程序
 ------------
 
-有关安装 ROS 2 的详情，请参阅 :doc:§安装说明 <../../Installation>§。
+有关安装 ROS 2 的详情，请参阅 :doc:`安装说明 <../../Installation>`。
 
 如果通过软件包安装 ROS 2，请确保安装 ros-{DISTRO}-intra-process-demo。如果下载归档包或从源码构建 ROS 2，该演示程序已经包含在安装内容中。
 
@@ -71,4 +71,4 @@ ROS 2 支持在同一进程中组合多个节点，也支持将节点分别运�
 相关示例
 --------
 
-完整示例代码和其他进程内通信场景请参阅§intra_process_demo <https://github.com/ros2/demos/tree/{REPOS_FILE_BRANCH}/intra_process_demo>§_。
+完整示例代码和其他进程内通信场景请参阅`intra_process_demo <https://github.com/ros2/demos/tree/{REPOS_FILE_BRANCH}/intra_process_demo>`_。

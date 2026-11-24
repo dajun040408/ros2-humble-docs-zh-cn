@@ -26,16 +26,16 @@ ROS 2 开发者指南
 质量实践
 --------
 
-软件包可以根据其遵循的开发实践归入不同质量等级，具体参阅§REP 2004：软件包质量类别 <https://reps.openrobotics.org/rep-2004/>§_。不同类别在版本管理、测试、文档等方面具有不同要求。
+软件包可以根据其遵循的开发实践归入不同质量等级，具体参阅`REP 2004：软件包质量类别 <https://reps.openrobotics.org/rep-2004/>`_。不同类别在版本管理、测试、文档等方面具有不同要求。
 
 以下部分列出确保 ROS 2 核心软件包达到最高质量（Level 1）的具体开发规则。建议所有 ROS 开发者尽量遵循这些政策，以提升整个 ROS 生态系统的质量。
 
-更具体的代码建议请参阅 :doc:§质量指南 <Quality-Guide>§。
+更具体的代码建议请参阅 :doc:`质量指南 <Quality-Guide>`。
 
 生成式 AI 的使用
 ^^^^^^^^^^^^^^^^
 
-向 ROS 代码或文档提交任何类型的贡献时，都必须遵循§OSRF 关于在贡献中使用生成式工具和生成式 AI 的政策 <https://osralliance.org/wp-content/uploads/2025/05/OSRF-Policy-on-the-Use-of-Generative-Tools-Generative-AI-in-Contributions.pdf>§_。
+向 ROS 代码或文档提交任何类型的贡献时，都必须遵循`OSRF 关于在贡献中使用生成式工具和生成式 AI 的政策 <https://osralliance.org/wp-content/uploads/2025/05/OSRF-Policy-on-the-Use-of-Generative-Tools-Generative-AI-in-Contributions.pdf>`_。
 
 该政策适用于使用基于现有人类创作内容训练的模型，自动生成贡献中任何部分的工具。不适用于通过标准算法生成内容的工具，也不适用于使用适当授权内容库的工具。
 
@@ -44,7 +44,7 @@ ROS 2 开发者指南
 版本管理
 ^^^^^^^^
 
-ROS 2 使用§语义化版本控制规范 <http://semver.org/>§_（semver）。
+ROS 2 使用`语义化版本控制规范 <http://semver.org/>`_（semver）。
 
 此外，还遵循一些 ROS 专用规则：
 
@@ -75,6 +75,6 @@ ROS 2 使用§语义化版本控制规范 <http://semver.org/>§_（semver）。
 相关指南
 --------
 
-* :doc:§质量指南 <Quality-Guide>§
-* :doc:§代码风格与语言版本 <Code-Style-Language-Versions>§
-* :doc:§参与贡献 <../Contributing>§
+* :doc:`质量指南 <Quality-Guide>`
+* :doc:`代码风格与语言版本 <Code-Style-Language-Versions>`
+* :doc:`参与贡献 <../Contributing>`

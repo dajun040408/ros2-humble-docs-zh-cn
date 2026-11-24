@@ -5,7 +5,7 @@
 创建和使用插件（C++）
 =====================
 
-**目标：** 学习如何使用 §pluginlib§ 创建并加载简单插件。
+**目标：** 学习如何使用 ``pluginlib`` 创建并加载简单插件。
 
 **教程级别：** 初级 | **预计时间：** 20 分钟
 
@@ -16,12 +16,12 @@
 背景
 ----
 
-本教程参考 §pluginlib§ 的 ROS 1 教程。§pluginlib§ 是一个 C++ 库，用于在 ROS 功能包中加载和卸载插件。插件是可在运行时从共享库动态加载的类。使用 pluginlib 时，应用程序无需显式链接包含插件类的库；pluginlib 可以在运行时打开包含已导出类的库，而应用程序事先不必知道该库或类头文件。
+本教程参考 ``pluginlib`` 的 ROS 1 教程。``pluginlib`` 是一个 C++ 库，用于在 ROS 功能包中加载和卸载插件。插件是可在运行时从共享库动态加载的类。使用 pluginlib 时，应用程序无需显式链接包含插件类的库；pluginlib 可以在运行时打开包含已导出类的库，而应用程序事先不必知道该库或类头文件。
 
 前置条件
 --------
 
-需要具备基本 C++ 知识，并成功 :doc:§安装 ROS 2 <../../Installation>§。
+需要具备基本 C++ 知识，并成功 :doc:`安装 ROS 2 <../../Installation>`。
 
 任务
 ----
@@ -31,13 +31,13 @@
 1. 创建基类功能包
 ^^^^^^^^^^^^^^^^^
 
-在 §ros2_ws/src§ 中创建功能包：
+在 ``ros2_ws/src`` 中创建功能包：
 
 .. code-block:: console
 
    $ ros2 pkg create --build-type ament_cmake --license Apache-2.0 --dependencies pluginlib --node-name area_node polygon_base
 
-在 §include/polygon_base/regular_polygon.hpp§ 中定义抽象基类：
+在 ``include/polygon_base/regular_polygon.hpp`` 中定义抽象基类：
 
 .. code-block:: cpp
 
@@ -54,9 +54,9 @@
      };
    }
 
-§initialize§ 用于传递初始化参数，因为 pluginlib 要求插件类提供无参数构造函数。
+``initialize`` 用于传递初始化参数，因为 pluginlib 要求插件类提供无参数构造函数。
 
-在 §CMakeLists.txt§ 中将基类头文件导出为接口库，并安装头文件及导出 target：
+在 ``CMakeLists.txt`` 中将基类头文件导出为接口库，并安装头文件及导出 target：
 
 .. code-block:: cmake
 
@@ -73,7 +73,7 @@
      NAMESPACE ${PROJECT_NAME}::
      DESTINATION share/${PROJECT_NAME}/cmake)
 
-在 §ament_package()§ 之前导出 target：
+在 ``ament_package()`` 之前导出 target：
 
 .. code-block:: cmake
 
@@ -92,7 +92,7 @@
 2.1 编写插件源码
 ~~~~~~~~~~~~~~~~
 
-在 §src/polygon_plugins.cpp§ 中实现正方形和三角形：
+在 ``src/polygon_plugins.cpp`` 中实现正方形和三角形：
 
 .. code-block:: cpp
 
@@ -141,12 +141,12 @@
    PLUGINLIB_EXPORT_CLASS(polygon_plugins::Square, polygon_base::RegularPolygon)
    PLUGINLIB_EXPORT_CLASS(polygon_plugins::Triangle, polygon_base::RegularPolygon)
 
-§PLUGINLIB_EXPORT_CLASS§ 宏注册插件类，参数分别是插件类的完整类型和基类的完整类型。
+``PLUGINLIB_EXPORT_CLASS`` 宏注册插件类，参数分别是插件类的完整类型和基类的完整类型。
 
 2.2 插件声明 XML
 ~~~~~~~~~~~~~~~~
 
-创建 §plugins.xml§：
+创建 ``plugins.xml``：
 
 .. code-block:: xml
 
@@ -161,12 +161,12 @@
      </class>
    </library>
 
-§library§ 指定包含插件的库路径；ROS 2 中只需填写库名称。§class§ 声明需要导出的插件，其中 §type§ 是插件完整类型，§base_class_type§ 是基类完整类型，§description§ 是说明，§name§ 是可选的查找名称。
+``library`` 指定包含插件的库路径；ROS 2 中只需填写库名称。``class`` 声明需要导出的插件，其中 ``type`` 是插件完整类型，``base_class_type`` 是基类完整类型，``description`` 是说明，``name`` 是可选的查找名称。
 
 2.3 在 CMake 中导出插件
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-ROS 2 与 ROS 1 不同，插件导出在 §CMakeLists.txt§ 中完成，而不是 §package.xml§。在 §find_package(pluginlib REQUIRED)§ 之后添加：
+ROS 2 与 ROS 1 不同，插件导出在 ``CMakeLists.txt`` 中完成，而不是 ``package.xml``。在 ``find_package(pluginlib REQUIRED)`` 之后添加：
 
 .. code-block:: cmake
 
@@ -177,7 +177,7 @@ ROS 2 与 ROS 1 不同，插件导出在 §CMakeLists.txt§ 中完成，而不�
 3. 使用插件
 ^^^^^^^^^^^
 
-在基类功能包的 §src/area_node.cpp§ 中使用 §pluginlib::ClassLoader§：
+在基类功能包的 ``src/area_node.cpp`` 中使用 ``pluginlib::ClassLoader``：
 
 .. code-block:: cpp
 
@@ -193,9 +193,9 @@ ROS 2 与 ROS 1 不同，插件导出在 §CMakeLists.txt§ 中完成，而不�
    printf("Triangle area: %.2f\n", triangle->area());
    printf("Square area: %.2f\n", square->area());
 
-§ClassLoader§ 的模板参数是基类类型。第一个构造参数是基类所属功能包名称，第二个参数是基类完整类型。§createSharedInstance()§ 可以使用插件完整类型，也可以使用 XML 中配置的可选查找名称。
+``ClassLoader`` 的模板参数是基类类型。第一个构造参数是基类所属功能包名称，第二个参数是基类完整类型。``createSharedInstance()`` 可以使用插件完整类型，也可以使用 XML 中配置的可选查找名称。
 
-注意，定义该节点的 §polygon_base§ 功能包不依赖 §polygon_plugins§。插件会在运行时动态加载，无需声明直接依赖。
+注意，定义该节点的 ``polygon_base`` 功能包不依赖 ``polygon_plugins``。插件会在运行时动态加载，无需声明直接依赖。
 
 4. 构建和运行
 ^^^^^^^^^^^^^
@@ -206,7 +206,7 @@ ROS 2 与 ROS 1 不同，插件导出在 §CMakeLists.txt§ 中完成，而不�
 
    $ colcon build --packages-select polygon_base polygon_plugins
 
-source 工作空间环境。若未安装 §ros2 plugin§ 命令，可安装：
+source 工作空间环境。若未安装 ``ros2 plugin`` 命令，可安装：
 
 .. code-block:: console
 
@@ -229,4 +229,4 @@ source 工作空间环境。若未安装 §ros2 plugin§ 命令，可安装：
 总结
 ----
 
-本教程介绍了如何定义插件基类、实现插件、使用 XML 声明插件，并通过 §pluginlib::ClassLoader§ 在运行时加载和使用插件。
+本教程介绍了如何定义插件基类、实现插件、使用 XML 声明插件，并通过 ``pluginlib::ClassLoader`` 在运行时加载和使用插件。
