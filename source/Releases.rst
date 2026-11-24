@@ -22,14 +22,15 @@ ROS 发行版的目的是让开发者能够基于相对稳定的代码库开展�
 .. toctree::
    :hidden:
 
-   Releases/Release-Lyrical-Luth
-   Releases/Release-Kilted-Kaiju
-   Releases/Release-Jazzy-Jalisco
-   Releases/Release-Humble-Hawksbill
-   Releases/Release-Rolling-Ridley
-   Releases/Development
-   Releases/End-of-Life
-   Releases/Release-Process
+   Lyrical Luth 发行说明 <Releases/Release-Lyrical-Luth>
+   Kilted Kaiju 发行说明 <Releases/Release-Kilted-Kaiju>
+   Jazzy Jalisco 发行说明 <Releases/Release-Jazzy-Jalisco>
+   Humble Hawksbill 发行说明 <Releases/Release-Humble-Hawksbill>
+   Rolling Ridley 发行说明 <Releases/Release-Rolling-Ridley>
+   开发版 <Releases/Development>
+   已终止支持的发行版 <Releases/End-of-Life>
+   发行流程 <Releases/Release-Process>
+
 
 .. raw:: html
 
