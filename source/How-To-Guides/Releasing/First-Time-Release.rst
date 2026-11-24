@@ -68,16 +68,16 @@
 
    * ``--new-track`` 表示让 Bloom 创建并配置新的 :ref:`发布轨道 <what-is-a-track>`。
    * ``--rosdistro {DISTRO}`` 表示本次发布面向 ``{DISTRO}`` 发行版。
-   * ``--track {DISTRO}`` 表示将轨道名称设置为 ``{DISTRO}``。
+   * ``--track {DISTRO}`` 表示将轨道名称设置为 ``{DISTRO}`` 。
 
 随后，系统会提示你输入信息以配置新的发布轨道。
 
 以下是一个常见场景：
 
 * 你的软件包位于名为 ``my_repo`` 的仓库中。
-* 你要发布的分支名为 ``main``。
-* 源码仓库托管在 GitHub：``https://github.com/my_organization/my_repo.git``。
-* 发布仓库位于：``https://github.com/ros2-gbp/my_repo-release.git``。
+* 你要发布的分支名为 ``main`` 。
+* 源码仓库托管在 GitHub：``https://github.com/my_organization/my_repo.git`` 。
+* 发布仓库位于：``https://github.com/ros2-gbp/my_repo-release.git`` 。
 
 对于提示信息，应按以下方式填写：
 
