@@ -340,3 +340,8 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - 已补齐 `Using-Node-Interfaces-Template-Class.rst` 的三个官方章节：SharedPtr 方式、显式传递 node_interfaces、推荐的 `rclcpp::NodeInterfaces<>` 方式，并补充普通节点与 LifecycleNode 的完整示例和代码解释。提交：`9ceb910e8922b949506a36719d294a061924cec3`。
 - 已扩充 `Monitoring-For-Parameter-Changes-CPP.rst`：补齐完整单参数回调代码、package.xml/CMake 配置、构建运行、监控远程节点参数、统一事件回调监控所有节点参数、回调句柄生命周期注意事项及相关内容。提交：`09a43516a8176c6b6e31a3d4c66b6ce831531ed5`。
 - 上述 RST 修复及两篇新增教程仍待新一轮 Sphinx 构建和部署验收。
+
+- 已扩充 `Using-Substitutions.rst`：补齐 Python/C++ 功能包创建与安装规则、XML/YAML/Python 父启动文件、三种格式的替换示例、条件表达式、构建、运行、查看参数和覆盖启动参数步骤。代码示例通过上游 Humble 仓库的 literalinclude 文件呈现。提交：`1e735339a328e46445eecb139d603dbf68db921f`。
+- 已扩充 `Using-ROS2-Launch-For-Large-Projects.rst`：补齐顶层启动文件组织、参数直设、YAML 参数文件、通配符、命名空间、节点复用、参数覆盖、话题重映射、RViz 配置、环境变量、setup.py 安装、构建和完整运行流程。提交：`03291bbcabc489ea88b8d6238083565b731b4bcc`。
+- 已重写并扩充 `Creating-Launch-Files.rst`：补齐三种启动格式的完整示例、节点命名空间与参数传递差异、mimic 重映射、运行输出、ros2launch 依赖和 rqt_graph 关系检查。提交：`fc07c72ae105bc7774bd9c0348c32cffbf2da1b2`。
+- 以上三个 Launch 教程的修订尚待完整 Sphinx 构建、RST 日志和 Pages 部署验收。
