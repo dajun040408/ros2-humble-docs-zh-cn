@@ -14,7 +14,7 @@
 
 任何人都可以通过`向 rosdistro 贡献规则 <https://github.com/ros/rosdistro/blob/master/CONTRIBUTING.md#rosdep-rules-contributions>`_，请求添加新的 rosdep key。如果依赖项是希望通过 rosdep 安装的 apt 或 pip 软件包，这是首选方式。
 
-但在许多情况下，直接贡献 key 可能比较困难。例如，依赖项不在目标发行版默认的 APT 或 pip 软件源中、属于专有库、只对特定组织有用，或者是自行构建和打包但不希望公开的 ROS 软件包。
+但在许多情况下，直接贡献 key 可能比较困难，例如：\n\n#. 依赖项不在目标发行版默认的 APT 或 pip 软件源中。\n#. 依赖项是专有库。\n#. 依赖项是只对你或所在组织有用的小众库。\n#. 依赖项是自行构建和打包、但不希望向整个 ROS 社区公开的 ROS 软件包（参阅 :doc:`自定义 DEB 软件包构建 <../../How-To-Guides/Building-a-Custom-Deb-Package>`）。
 
 也可以 :doc:`fork 整个 rosdistro <../../How-To-Guides/Using-Custom-Rosdistro>`，但如果只是希望在官方 ROS 发行版基础上额外定义几个 rosdep key，这种方式可能过于复杂。本教程介绍如何实现这一目标。
 
@@ -25,7 +25,7 @@
 rosdep 如何获取 rosdep key
 --------------------------
 
-rosdep 与 apt 等工具类似，使用 sources list 维护本地索引。源配置保存在 /etc/ros/rosdep/sources.list.d。
+为了更好地理解后续操作，先了解 rosdep 的工作方式。rosdep 与 apt 等工具类似，使用 sources list 维护本地索引。源配置保存在 ``/etc/ros/rosdep/sources.list.d``，这与 apt 将软件源保存在 ``/etc/apt/sources.list.d`` 的方式类似。
 
 首次运行 rosdep init 时，默认只会创建一个源文件：/etc/ros/rosdep/sources.list.d/20-default.list。
 
@@ -41,7 +41,7 @@ rosdep 与 apt 等工具类似，使用 sources list 维护本地索引。源配
 
 这些条目决定 rosdep update 时从哪里获取 rosdep key 及其映射规则。执行更新时，rosdep 会将所有源文件中声明的内容合并到本地缓存索引。安装或查询 rosdep key 时，就会使用该本地索引。
 
-例如，base.yaml 中定义了 libopencv-dev key，因此 rosdep 可以解析它：
+例如，第一个源文件中的 ``base.yaml`` 定义了 ``libopencv-dev`` key（可参阅 `对应规则 <https://github.com/ros/rosdistro/blob/72f24d6/rosdep/base.yaml#L5240-L5252>`_），因此 rosdep 可以解析它：
 
 .. code-block:: console
 
@@ -51,7 +51,7 @@ rosdep 与 apt 等工具类似，使用 sources list 维护本地索引。源配
    #apt
    libopencv-dev
 
-这表示在 Ubuntu 或 Debian 系统上，该 key 会映射到同名 apt 软件包。
+这表示在 Ubuntu 或 Debian 系统上，该 key 会映射到同名 apt 软件包。从上述输出也可以判断，执行命令的系统是 Ubuntu 或 Debian。
 
 在 RHEL 上，该 key 会映射到 DNF 软件包 opencv-devel：
 
@@ -64,7 +64,7 @@ rosdep 与 apt 等工具类似，使用 sources list 维护本地索引。源配
 使用自定义源文件扩展 rosdep
 ---------------------------
 
-要让 rosdep 识别新的 key，只需添加一个自定义源文件。
+上面的内容说明了如何让 rosdep 识别新的 key：添加一个自定义源文件。下面创建一个简单示例，让 rosdep 从本地 YAML 文件读取规则。
 
 下面创建一个简单示例，让 rosdep 从本地 YAML 文件读取规则。使用具有 root 权限的编辑器，将以下内容写入 /etc/ros/rosdep/sources.list.d/30-custom.list：
 
