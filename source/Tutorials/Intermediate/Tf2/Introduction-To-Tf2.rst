@@ -115,10 +115,57 @@ tf2_echo 会报告 ROS 中广播的任意两个坐标系之间的变换。
 
 输出包含平移、四元数旋转、RPY 旋转角度以及变换矩阵。
 
-3. 使用 rviz
-^^^^^^^^^^^^
+2. 使用 tf2_echo
+^^^^^^^^^^^^^^^^
 
-还可以使用 RViz 可视化坐标系及其变换关系。通过添加 TF 显示项，可以观察当前 ROS 计算图中的坐标系树及各坐标系的位置。
+``tf2_echo`` 会报告通过 ROS 广播的任意两个坐标系之间的变换。
+
+用法：
+
+.. code-block:: console
+
+   $ ros2 run tf2_ros tf2_echo [source_frame] [target_frame]
+
+例如，查看 ``turtle2`` 坐标系相对于 ``turtle1`` 坐标系的变换：
+
+.. code-block:: console
+
+   $ ros2 run tf2_ros tf2_echo turtle2 turtle1
+   At time 1683385337.850619099
+   - Translation: [2.157, 0.901, 0.000]
+   - Rotation: in Quaternion [0.000, 0.000, 0.172, 0.985]
+   - Rotation: in RPY (radian) [0.000, -0.000, 0.345]
+   - Rotation: in RPY (degree) [0.000, -0.000, 19.760]
+   - Matrix:
+     0.941 -0.338  0.000  2.157
+     0.338  0.941  0.000  0.901
+     0.000  0.000  1.000  0.000
+     0.000  0.000  0.000  1.000
+
+``tf2_echo`` 会显示监听器从 ROS 2 接收到的坐标变换。控制海龟移动时，可以看到两只海龟之间的相对变换随之变化。
+
+rviz2 和 tf2
+------------
+
+``rviz2`` 是用于检查 tf2 坐标系的可视化工具。可以使用 ``-d`` 选项指定配置文件启动 RViz，从而查看海龟坐标系：
+
+.. tabs::
+
+  .. group-tab:: Linux
+
+    .. code-block:: console
+
+       $ ros2 run rviz2 rviz2 -d $(ros2 pkg prefix --share turtle_tf2_py)/rviz/turtle_rviz.rviz
+
+  .. group-tab:: Windows
+
+    .. code-block:: console
+
+       $ for /f "usebackq tokens=*" %a in (`ros2 pkg prefix --share turtle_tf2_py`) do rviz2 -d %a/rviz/turtle_rviz.rviz
+
+.. image:: images/turtlesim_rviz.png
+
+在左侧面板中可以看到 tf2 广播的坐标系。控制海龟移动时，可以看到 RViz 中的坐标系也随之移动。
 
 总结
 ----
