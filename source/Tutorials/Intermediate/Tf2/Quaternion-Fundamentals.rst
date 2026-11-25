@@ -104,12 +104,12 @@ Python 中没有 tf2::Quaternion 的等价类型，而是使用内置 list：
    q = quaternion_from_euler(1.5707, 0, -1.5707)
    print(f'The quaternion representation is x: {q[0]} y: {q[1]} z: {q[2]} w: {q[3]}.')
 
-这种方法与 `Euler angles <https://en.wikipedia.org/wiki/Euler_angles>`_（欧拉角）有关。欧拉角有多种应用方式。上面介绍的方式是 ROS 2 采用的固定坐标系（或静态坐标系）RPY，意味着三个独立旋转都围绕原始且不移动的坐标轴执行。
+这种方法与欧拉角（`Euler angles <https://en.wikipedia.org/wiki/Euler_angles>`_）有关。欧拉角有多种应用方式。上面介绍的方式是 ROS 2 采用的固定坐标系（或静态坐标系）RPY，意味着三个独立旋转都围绕原始且不移动的坐标轴执行。
 
 这与相对坐标系不同：相对坐标系中的旋转会作用于之前旋转已经改变的坐标轴。
 
 2. 应用四元数旋转
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 要将一个四元数表示的旋转应用到位姿上，只需将表示目标旋转的四元数与位姿原有四元数相乘即可。注意，乘法顺序非常重要。
 
