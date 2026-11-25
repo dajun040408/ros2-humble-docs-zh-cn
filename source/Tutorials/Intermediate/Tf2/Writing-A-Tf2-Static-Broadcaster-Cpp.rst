@@ -48,9 +48,16 @@
 
 Windows 命令提示符可使用 ``curl -sk URL -o static_turtle_tf2_broadcaster.cpp``；PowerShell 可使用 ``curl URL -o static_turtle_tf2_broadcaster.cpp``。
 
-核心实现如下：
+完整代码如下：
 
-.. code-block:: cpp
+.. code-block:: c++
+
+   #include <memory>
+
+   #include "geometry_msgs/msg/transform_stamped.hpp"
+   #include "rclcpp/rclcpp.hpp"
+   #include "tf2/LinearMath/Quaternion.h"
+   #include "tf2_ros/static_transform_broadcaster.h"
 
    class StaticFramePublisher : public rclcpp::Node
    {
@@ -60,6 +67,8 @@ Windows 命令提示符可使用 ``curl -sk URL -o static_turtle_tf2_broadcaster
      {
        tf_static_broadcaster_ =
          std::make_shared<tf2_ros::StaticTransformBroadcaster>(this);
+
+       // 节点启动时只发布一次静态变换
        this->make_transforms(transformation);
      }
 
@@ -67,12 +76,15 @@ Windows 命令提示符可使用 ``curl -sk URL -o static_turtle_tf2_broadcaster
      void make_transforms(char * transformation[])
      {
        geometry_msgs::msg::TransformStamped t;
+
        t.header.stamp = this->get_clock()->now();
        t.header.frame_id = "world";
        t.child_frame_id = transformation[1];
+
        t.transform.translation.x = atof(transformation[2]);
        t.transform.translation.y = atof(transformation[3]);
        t.transform.translation.z = atof(transformation[4]);
+
        tf2::Quaternion q;
        q.setRPY(
          atof(transformation[5]),
@@ -82,6 +94,7 @@ Windows 命令提示符可使用 ``curl -sk URL -o static_turtle_tf2_broadcaster
        t.transform.rotation.y = q.y();
        t.transform.rotation.z = q.z();
        t.transform.rotation.w = q.w();
+
        tf_static_broadcaster_->sendTransform(t);
      }
 
@@ -91,14 +104,22 @@ Windows 命令提示符可使用 ``curl -sk URL -o static_turtle_tf2_broadcaster
    int main(int argc, char * argv[])
    {
      auto logger = rclcpp::get_logger("logger");
+
+     // 从命令行参数获取变换信息
      if (argc != 8) {
-       RCLCPP_INFO(logger, "Invalid number of parameters");
+       RCLCPP_INFO(
+         logger, "Invalid number of parameters\\nusage: "
+         "$ ros2 run learning_tf2_cpp static_turtle_tf2_broadcaster "
+         "child_frame_name x y z roll pitch yaw");
        return 1;
      }
+
+     // 父坐标系是 world，因此子坐标系不能也命名为 world
      if (strcmp(argv[1], "world") == 0) {
        RCLCPP_INFO(logger, "Your static turtle name cannot be 'world'");
        return 1;
      }
+
      rclcpp::init(argc, argv);
      rclcpp::spin(std::make_shared<StaticFramePublisher>(argv));
      rclcpp::shutdown();
@@ -191,7 +212,27 @@ Windows 命令提示符使用 ``call install\setup.bat``；PowerShell 使用 ``.
 
    $ ros2 topic echo /tf_static
 
-如果一切正常，应看到一条静态变换，父坐标系为 ``world``，子坐标系为 ``mystaticturtle``，平移量为 ``(0, 0, 1)``，旋转四元数为 ``(0, 0, 0, 1)``。
+如果一切正常，应看到一条静态变换，父坐标系为 ``world``，子坐标系为 ``mystaticturtle``，平移量为 ``(0, 0, 1)``，旋转四元数为 ``(0, 0, 0, 1)``。终端输出会类似：
+
+.. code-block:: yaml
+
+   transforms:
+   - header:
+       stamp:
+         sec: 1622908754
+         nanosec: 208515730
+       frame_id: world
+     child_frame_id: mystaticturtle
+     transform:
+       translation:
+         x: 0.0
+         y: 0.0
+         z: 1.0
+       rotation:
+         x: 0.0
+         y: 0.0
+         z: 0.0
+         w: 1.0
 
 正确发布静态变换的方式
 ----------------------
