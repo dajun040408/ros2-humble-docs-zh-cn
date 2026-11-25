@@ -234,7 +234,7 @@
 更多 tf2 通用信息，请参阅 :doc:`tf2 概念 <../../../Concepts/Intermediate/About-Tf2>`。
 
 1.2 配置 CMakeLists.txt
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 返回 ``learning_tf2_cpp`` 目录，打开 ``CMakeLists.txt``，添加监听器可执行程序：
 
