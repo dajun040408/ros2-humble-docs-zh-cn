@@ -47,6 +47,11 @@ rosbag2 不仅提供 ros2 bag 命令行工具，还提供 C++ API，可以在自
   <maintainer email="you@email.com">Your Name</maintainer>
   <license>Apache-2.0</license>
 
+1.1 更新 package.xml
+~~~~~~~~~~~~~~~~~~~~
+
+由于创建功能包时使用了 ``--dependencies`` 选项，因此不需要再手动向 ``package.xml`` 或 ``CMakeLists.txt`` 添加依赖。不过，仍应在 ``package.xml`` 中填写功能包描述、维护者邮箱和姓名，以及许可证信息。
+
 2. 编写 C++ Reader
 ^^^^^^^^^^^^^^^^^^
 
@@ -122,6 +127,8 @@ rosbag2 不仅提供 ros2 bag 命令行工具，还提供 C++ API，可以在自
       return 0;
     }
 
+.. include:: ../../_internal/Rclcpp-Convenience-Header-Note.rst
+
 2.1 理解代码
 ~~~~~~~~~~~~
 
@@ -138,7 +145,7 @@ PlaybackNode 节点会创建一个 10 Hz 定时器，每次回调从 bag 中读�
 2.2 添加可执行程序
 ~~~~~~~~~~~~~~~~~~
 
-打开 CMakeLists.txt，在依赖项部分（包含 find_package(rosbag2_transport REQUIRED)）之后添加：
+打开 ``CMakeLists.txt``，在依赖项部分（包含 ``find_package(rosbag2_transport REQUIRED)``）之后添加：
 
 .. code-block:: cmake
 
