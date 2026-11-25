@@ -59,23 +59,51 @@ tf2 使用树结构组织坐标系，因此不允许坐标系结构中出现闭�
 
          $ curl -sk https://raw.githubusercontent.com/ros/geometry_tutorials/{DISTRO}/turtle_tf2_cpp/src/fixed_frame_tf2_broadcaster.cpp -o fixed_frame_tf2_broadcaster.cpp
 
-打开 ``fixed_frame_tf2_broadcaster.cpp``。核心实现如下：
+打开 ``fixed_frame_tf2_broadcaster.cpp``，写入以下完整代码：
 
-.. code-block:: cpp
+.. code-block:: c++
 
-   tf_static_broadcaster_ =
-     std::make_shared<tf2_ros::StaticTransformBroadcaster>(this);
+   #include <memory>
 
-   geometry_msgs::msg::TransformStamped t;
-   t.header.stamp = this->get_clock()->now();
-   t.header.frame_id = "turtle1";
-   t.child_frame_id = "carrot1";
-   t.transform.translation.x = 0.0;
-   t.transform.translation.y = 2.0;
-   t.transform.translation.z = 0.0;
-   t.transform.rotation.w = 1.0;
+   #include "geometry_msgs/msg/transform_stamped.hpp"
+   #include "rclcpp/rclcpp.hpp"
+   #include "tf2_ros/static_transform_broadcaster.hpp"
 
-   tf_static_broadcaster_->sendTransform(t);
+   class FixedFrameBroadcaster : public rclcpp::Node
+   {
+   public:
+     FixedFrameBroadcaster()
+     : Node("fixed_frame_tf2_broadcaster")
+     {
+       tf_static_broadcaster_ =
+         std::make_shared<tf2_ros::StaticTransformBroadcaster>(this);
+
+       geometry_msgs::msg::TransformStamped t;
+       t.header.stamp = this->get_clock()->now();
+       t.header.frame_id = "turtle1";
+       t.child_frame_id = "carrot1";
+       t.transform.translation.x = 0.0;
+       t.transform.translation.y = 2.0;
+       t.transform.translation.z = 0.0;
+       t.transform.rotation.x = 0.0;
+       t.transform.rotation.y = 0.0;
+       t.transform.rotation.z = 0.0;
+       t.transform.rotation.w = 1.0;
+
+       tf_static_broadcaster_->sendTransform(t);
+     }
+
+   private:
+     std::shared_ptr<tf2_ros::StaticTransformBroadcaster> tf_static_broadcaster_;
+   };
+
+   int main(int argc, char * argv[])
+   {
+     rclcpp::init(argc, argv);
+     rclcpp::spin(std::make_shared<FixedFrameBroadcaster>());
+     rclcpp::shutdown();
+     return 0;
+   }
 
 该固定坐标系使用 ``tf2_ros::StaticTransformBroadcaster``，并在构造函数中发布一次。对于相对于父坐标系位姿不会变化的坐标系，应使用静态广播器。对于随时间变化的坐标系，应使用 ``tf2_ros::TransformBroadcaster`` 定期发布。
 
@@ -214,30 +242,82 @@ Windows 命令提示符使用 ``call install\setup.bat``；PowerShell 使用 ``.
 
    $ wget https://raw.githubusercontent.com/ros/geometry_tutorials/{DISTRO}/turtle_tf2_cpp/src/dynamic_frame_tf2_broadcaster.cpp
 
-核心代码如下：
+打开 ``dynamic_frame_tf2_broadcaster.cpp``，写入以下完整代码：
 
-.. code-block:: cpp
+.. code-block:: c++
 
-   void broadcast_timer_callback()
+   #include <chrono>
+   #include <functional>
+   #include <memory>
+
+   #include "geometry_msgs/msg/transform_stamped.hpp"
+   #include "rclcpp/rclcpp.hpp"
+   #include "tf2_ros/transform_broadcaster.h"
+
+   using namespace std::chrono_literals;
+
+   const double PI = 3.141592653589793238463;
+
+   class DynamicFrameBroadcaster : public rclcpp::Node
    {
-     rclcpp::Time now = this->get_clock()->now();
-     double x = now.seconds() * PI;
+   public:
+     DynamicFrameBroadcaster()
+     : Node("dynamic_frame_tf2_broadcaster")
+     {
+       tf_broadcaster_ = std::make_shared<tf2_ros::TransformBroadcaster>(this);
+       timer_ = this->create_wall_timer(
+         100ms, std::bind(&DynamicFrameBroadcaster::broadcast_timer_callback, this));
+     }
 
-     geometry_msgs::msg::TransformStamped t;
-     t.header.stamp = now;
-     t.header.frame_id = "turtle1";
-     t.child_frame_id = "carrot1";
-     t.transform.translation.x = 10 * sin(x);
-     t.transform.translation.y = 10 * cos(x);
-     t.transform.translation.z = 0.0;
-     t.transform.rotation.w = 1.0;
+   private:
+     void broadcast_timer_callback()
+     {
+       rclcpp::Time now = this->get_clock()->now();
+       double x = now.seconds() * PI;
 
-     tf_broadcaster_->sendTransform(t);
+       geometry_msgs::msg::TransformStamped t;
+       t.header.stamp = now;
+       t.header.frame_id = "turtle1";
+       t.child_frame_id = "carrot1";
+       t.transform.translation.x = 10 * sin(x);
+       t.transform.translation.y = 10 * cos(x);
+       t.transform.translation.z = 0.0;
+       t.transform.rotation.x = 0.0;
+       t.transform.rotation.y = 0.0;
+       t.transform.rotation.z = 0.0;
+       t.transform.rotation.w = 1.0;
+
+       tf_broadcaster_->sendTransform(t);
+     }
+
+     rclcpp::TimerBase::SharedPtr timer_;
+     std::shared_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
+   };
+
+   int main(int argc, char * argv[])
+   {
+     rclcpp::init(argc, argv);
+     rclcpp::spin(std::make_shared<DynamicFrameBroadcaster>());
+     rclcpp::shutdown();
+     return 0;
    }
 
-这里不再使用固定的 x、y 偏移，而是根据当前时间计算 ``sin()`` 和 ``cos()``，因此 ``carrot1`` 相对于 ``turtle1`` 的偏移会持续变化。
+2.1 理解代码
+~~~~~~~~~~~~
 
-2.1 修改 CMakeLists.txt
+与固定坐标系不同，动态坐标系需要持续发布变换。本例创建一个 100 毫秒周期定时器，每次回调时获取当前 ROS 时间，并根据时间计算坐标偏移：
+
+.. code-block:: c++
+
+   rclcpp::Time now = this->get_clock()->now();
+   double x = now.seconds() * PI;
+
+   t.transform.translation.x = 10 * sin(x);
+   t.transform.translation.y = 10 * cos(x);
+
+由于 x 和 y 偏移量会随时间变化，``carrot1`` 就会相对于 ``turtle1`` 沿圆形轨迹移动。每次回调都会通过 ``TransformBroadcaster`` 发布最新变换。
+
+2.2 修改 CMakeLists.txt
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 添加动态广播器可执行程序：
@@ -256,7 +336,7 @@ Windows 命令提示符使用 ``call install\setup.bat``；PowerShell 使用 ``.
      dynamic_frame_tf2_broadcaster
      DESTINATION lib/${PROJECT_NAME})
 
-2.2 编写启动文件
+2.3 编写启动文件
 ~~~~~~~~~~~~~~~~
 
 在 ``src/learning_tf2_cpp/launch`` 中创建 ``turtle_tf2_dynamic_frame_demo_launch``，可使用 Python、XML 或 YAML 格式。
@@ -278,16 +358,89 @@ Windows 命令提示符使用 ``call install\setup.bat``；PowerShell 使用 ``.
     .. literalinclude:: launch/turtle_tf2_dynamic_frame_demo_launch.yaml
         :language: yaml
 
-2.3 构建与运行
-~~~~~~~~~~~~~~
+2.4 构建
+~~~~~~~~
 
-使用 rosdep 检查依赖，构建 ``learning_tf2_cpp``，然后 source 工作空间环境。构建命令与前面的固定坐标系示例相同。
+在工作空间根目录检查缺失依赖：
 
-运行动态坐标系演示：
+.. tabs::
+
+   .. group-tab:: Linux
+
+      .. code-block:: console
+
+         $ rosdep install -i --from-path src --rosdistro {DISTRO} -y
+
+   .. group-tab:: macOS
+
+      rosdep 仅在 Linux 上运行，需要自行安装 ``geometry_msgs`` 和 ``turtlesim`` 依赖。
+
+   .. group-tab:: Windows
+
+      rosdep 仅在 Linux 上运行，需要自行安装 ``geometry_msgs`` 和 ``turtlesim`` 依赖。
+
+仍在工作空间根目录中，构建功能包：
+
+.. tabs::
+
+   .. group-tab:: Linux
+
+      .. code-block:: console
+
+         $ colcon build --packages-select learning_tf2_cpp
+
+   .. group-tab:: macOS
+
+      .. code-block:: console
+
+         $ colcon build --packages-select learning_tf2_cpp
+
+   .. group-tab:: Windows
+
+      .. code-block:: console
+
+         $ colcon build --merge-install --packages-select learning_tf2_cpp
+
+打开新终端，进入工作空间根目录并加载设置文件：
+
+.. tabs::
+
+   .. group-tab:: Linux
+
+      .. code-block:: console
+
+         $ . install/setup.bash
+
+   .. group-tab:: macOS
+
+      .. code-block:: console
+
+         $ . install/setup.bash
+
+   .. group-tab:: Windows
+
+      在 Windows 命令提示符中：
+
+      .. code-block:: console
+
+         $ call install\\setup.bat
+
+      或在 PowerShell 中：
+
+      .. code-block:: console
+
+         $ .\\install\\setup.ps1
+
+2.5 运行
+~~~~~~~~
+
+启动动态坐标系演示：
 
 .. code-block:: console
 
    $ ros2 launch learning_tf2_cpp turtle_tf2_dynamic_frame_demo_launch.xml
+
+也可以使用 ``.py`` 或 ``.yaml`` 扩展名。
 
 此时第二只海龟应跟随不断变化位置的 carrot。
 
