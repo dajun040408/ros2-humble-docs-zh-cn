@@ -385,3 +385,12 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - `Writing-A-Tf2-Static-Broadcaster-Cpp.rst` 补齐完整 C++ 节点代码（包括参数校验、四元数转换和 main），并补充 `/tf_static` 话题的预期输出。提交：`37ff507772471be56c805bf7386a55423e4be387`。
 - `Writing-A-Tf2-Static-Broadcaster-Py.rst` 检查发现原示例引用了未定义的 `quaternion_from_euler`，也缺少 main 入口函数。已补齐 numpy/math/sys 导入、四元数计算函数、命令行参数校验和节点启动入口。提交：`7da171c85c4190fb76675231a858a181d1397125`。
 - 上述新增修改尚待完整 Sphinx 构建、RST 诊断和 GitHub Pages 部署验收。
+
+## 2026-11-25 Advanced Tutorials：继续补译
+
+- `Creating-An-RMW-Implementation.rst` 从 53 行扩充至 393 行，补齐 RMW 示例实现、运行时/构建时选择机制、Topic/Service/Node、Wait Set、数据获取、元数据、类型支持、Domain ID、QoS、ROS Graph、安全、实现骨架、CMake/package.xml、接口函数、类型支持和测试策略。提交：`5229f7f93f2d31a7ab8cb80b991383484c096753`。
+- `ROS2-Tracing-Trace-and-Analyze.rst` 从 67 行扩充至 178 行，补齐 LTTng/Babeltrace 安装、Humble 源码工作空间、rosdep、colcon 构建参数、tracetools 状态检查、ros2 trace 会话、performance_test 实时/非实时运行命令、CTF 数据查看、Jupyter/Bokeh 回调耗时分析及结果说明。提交：`7fe4215ce877071ccb986d20e1f31c2db3ac005c`。
+- `Reading-From-A-Bag-File-CPP.rst` 补齐 package.xml 说明和 rclcpp 头文件注意事项，完善包创建、Reader 反序列化、CMake 可执行程序、跨平台构建运行步骤。提交：`7f3083f72fd0691141f963f39dc57afa4e551261`。
+- `Topic-Statistics-Tutorial.rst` 从 88 行扩充至 309 行，补齐完整 C++ 订阅者源码、SubscriptionOptions 统计参数、CMake 配置、构建运行、话题列表、RQt 查看、/statistics 消息示例、五种统计量类型及 message_age/message_period 解释。提交：`ed0b5567aede50782fa9f59404d722911d3b38f4`。
+- `Supplementing-Custom-Rosdep-Keys.rst` 补充 rosdep key 贡献场景、sources list 与本地缓存索引机制、libopencv-dev 规则来源、apt/pip 自定义源扩展背景。提交：`1a84894876638f1c6f793f442e828e4c4bb11b06`。
+- 上述新增提交会触发 GitHub Actions；前序独立运行因后续提交触发新构建而被取消，不能将其视为构建失败。需要以最新 main 提交对应的完整 build/deploy 结果作为最终验收依据。
