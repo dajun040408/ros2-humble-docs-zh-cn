@@ -223,7 +223,7 @@
    self.pub.publish(ps)
 
 1.2 编写启动文件
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 为了运行该演示，需要在 ``learning_tf2_py`` 功能包的 ``launch`` 子目录中创建名为 ``turtle_tf2_sensor_message_launch`` 的启动文件，扩展名可以为 ``.py``、``.xml`` 或 ``.yaml``：
 
@@ -245,7 +245,7 @@
        :language: yaml
 
 1.3 添加入口点
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 为了让 ``ros2 run`` 命令能够运行该节点，需要在 ``src/learning_tf2_py`` 目录中的 ``setup.py`` 添加入口点：
 
@@ -254,7 +254,7 @@
    'turtle_tf2_message_broadcaster = learning_tf2_py.turtle_tf2_message_broadcaster:main',
 
 1.4 添加数据文件
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 为了让 ``ros2 launch`` 命令能够找到启动文件，需要将启动文件添加到 ``setup.py`` 的数据文件列表中。
 
@@ -523,7 +523,7 @@
    <depend>tf2_geometry_msgs</depend>
 
 2.3 配置 CMakeLists.txt
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 在 ``CMakeLists.txt`` 中现有依赖项下面添加：
 
