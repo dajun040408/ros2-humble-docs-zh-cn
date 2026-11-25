@@ -189,16 +189,54 @@ ROS 2 集成测试的一个关键要求是：不同测试中的节点不应相�
 
 .. code-block:: cmake
 
+   cmake_minimum_required(VERSION 3.8)
+   project(app)
+
    if(BUILD_TESTING)
+     find_package(ament_cmake_ros REQUIRED)
      find_package(launch_testing_ament_cmake REQUIRED)
-     add_launch_test(test/test_turtlesim.py)
+
+     function(add_ros_isolated_launch_test path)
+       set(RUNNER "${ament_cmake_ros_DIR}/run_test_isolated.py")
+       add_launch_test("${path}" RUNNER "${RUNNER}" ${ARGN})
+     endfunction()
+
+     add_ros_isolated_launch_test(test/test_turtlesim.py)
    endif()
 
-并在 ``package.xml`` 中添加测试依赖：
+特殊测试运行器 ``run_test_isolated.py`` 会为每个测试分配唯一的 ROS Domain ID，避免不同测试之间意外通信。使用 ``add_ros_isolated_launch_test`` 封装后，后续每增加一个集成测试，只需要添加一行调用。
+
+3. 依赖项和功能包组织
+^^^^^^^^^^^^^^^^^^^^^^
+
+最后，在 ``package.xml`` 中添加以下测试依赖：
 
 .. code-block:: xml
 
+   <test_depend>ament_cmake_ros</test_depend>
+   <test_depend>launch</test_depend>
+   <test_depend>launch_ros</test_depend>
+   <test_depend>launch_testing</test_depend>
    <test_depend>launch_testing_ament_cmake</test_depend>
+   <test_depend>rclpy</test_depend>
+   <test_depend>turtlesim</test_depend>
+
+完成上述步骤后，功能包（本例中名为 ``app``）的目录结构如下：
+
+.. code-block:: text
+
+   app/
+     CMakeLists.txt
+     package.xml
+     test/
+       test_turtlesim.py
+
+集成测试可以放在任何 ROS 功能包中。可以创建一个或多个专门用于集成测试的功能包，也可以将测试添加到被测功能所在的功能包中。本教程选择第一种方式，因为我们测试的是已经存在的 turtlesim 节点。
+
+4. 运行测试并生成报告
+^^^^^^^^^^^^^^^^^^^^^^
+
+有关如何运行集成测试以及查看测试结果，请参阅 :doc:`通过命令行运行 ROS 2 测试 <./CLI>` 教程。
 
 3. 构建并运行测试
 ^^^^^^^^^^^^^^^^^
@@ -220,6 +258,13 @@ ROS 2 集成测试的一个关键要求是：不同测试中的节点不应相�
 .. code-block:: console
 
    $ colcon test-result --verbose
+
+相关内容
+--------
+
+* :doc:`为什么需要自动化测试？ <./Testing-Main>`
+* :doc:`使用 GTest 进行 C++ 单元测试 <./Cpp>` 和 :doc:`使用 Pytest 进行 Python 单元测试 <./Python>`
+* ``launch_testing`` 的替代方案：`launch_pytest 文档 <https://docs.ros.org/en/{DISTRO}/p/launch_pytest/index.html>`_。
 
 总结
 ----
