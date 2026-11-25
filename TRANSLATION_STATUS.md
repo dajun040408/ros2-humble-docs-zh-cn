@@ -361,3 +361,20 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 
 - 已补充 `Quaternion-Fundamentals.rst` 缺失的四元数操作章节：RPY 转换、旋转应用、求逆、相对旋转，以及 C++/Python 示例和相关数学资源链接。提交：`13129bdd416e600100c754576730ca35c2b35f9b`。
 - Tf2 目录中本轮优先补译的严重缺失文档（Python 添加坐标系、调试问题、Stamped Datatypes/MessageFilter、C++/Python Listener、四元数）已完成内容修订，尚待最终构建和部署验收。
+
+## 2026-11-25 Intermediate Tutorials：RViz 与 URDF 深度补译
+
+- 构建 #823 已成功完成 build/deploy。日志检查发现 7 篇新补译文件存在 RST 标题下划线宽度警告，以及 Quaternion 教程一条行内引用警告；已按中文字符显示宽度修复标题，并修正链接语法。修订提交：`62aa5dbc495fd221ab69e50932c3d137cd523dd2`、`b2d173c9470d9c8168e33eb48bd34d01dddea615`、`47d554652d05eefee2f5a941d6cd94c83d577023`、`b2d1d164160d7972a9904a668946fad8edb58883`、`ae9dc465988d5c7bb9d6ecd188db2e90455210ca`、`1bd6ff73b918b44fef9fde67d16d17b3f4db2b68`、`be15a004b29952cea3b3362bb44611de77867ca1`。
+- RViz Marker 教程补译：`Marker-Sending-Basic-Shapes.rst` 从 88 行扩充至约 225 行，补齐 Marker 代码分解、字段解释、颜色/alpha/lifetime、构建运行和 RViz 查看步骤。提交：`46bc547d1a43115849dabc5a4aac96a435dbafb1`。
+- `Marker-Points-and-Lines.rst` 从 64 行扩充至约 208 行，补齐 POINTS、LINE_STRIP、LINE_LIST 三种类型的完整代码、尺寸/颜色设置、螺旋线生成、构建和 RViz 验证。提交：`8d6b157cf6a9f627340c0cf289e9aa37bc69ea76`。
+- `Marker-Display-types.rst` 从 82 行扩充至约 320 行，补齐 Marker 消息全部重要字段、12 种对象类型及其尺寸/坐标行为、网格资源、三角形列表和渲染复杂度说明。提交：`c9fc0e8b1453df37905bb5e224b351a77f28bbcc`。
+- `RViz-User-Guide.rst` 从 96 行扩充至约 401 行，补齐内置 Display 类型表、配置管理、五种视角、固定/目标坐标系、工具栏及快捷键、导航工具和仿真时间面板。提交：`6432f7fd13915ff520ed996a6ba16023ad754d4a`。
+- `RViz-Custom-Panel.rst` 从 82 行扩充至约 360 行，补齐 package.xml、插件描述 XML、完整 CMake/Qt 配置、插件加载验证、Qt 控件、ROS 订阅/发布、线程回调及图标清理。提交：`eec5c6d821ac4a6520447e7f46e6ff227a8deb99`。
+- `RViz-Custom-Display.rst` 从 71 行扩充至约 452 行，补齐完整插件头文件/源文件、package.xml、插件描述、Qt MOC/CMake 配置、插件测试、坐标变换和 Ogre Shape 可视化、颜色属性、状态报告及插件图标。提交：`b52b1721f11ff82f77c2a1b8fccd6f2eba5198b0`。
+- URDF 教程补译：`Using-Xacro-to-Clean-Up-a-URDF-File.rst` 从 87 行扩充至约 286 行，补齐启动文件调用 Xacro、常量、数学表达式、简单宏、参数化宏、代码块参数和腿部宏示例。提交：`1160676fd88c50838e810903c9053f204a809b4d`。
+- `Building-a-Visual-Robot-Model-with-URDF-from-Scratch.rst` 从 96 行扩充至约 543 行，补齐多个形状、关节和 visual 原点、材质、完整 R2D2 网格/车轮/夹爪/头部模型以及运行截图。提交：`fea65337c6bc0d588650ab8cb0ca7a2fbd2ff59d`。
+- `Adding-Physical-and-Collision-Properties-to-a-URDF-Model.rst` 补齐惯性矩阵说明、合理默认值、质心与惯性参考坐标系、接触系数、关节摩擦/阻尼及其他 URDF 关节标签。提交：`5588305c655e486c35a1724c779b0aa208a8d12f`。
+- `Using-URDF-with-Robot-State-Publisher-cpp.rst` 从 107 行扩充至约 330 行，补齐完整 C++ 状态发布节点、JointState/TF 工作方式、URDF/RViz 资源、启动文件、CMake 安装规则、跨平台构建和 RViz 查看步骤。提交：`9466225fdc54f16c030e4744bcbbb06b2cea09ae`。
+- `Using-URDF-with-Robot-State-Publisher-py.rst` 从 111 行扩充至约 310 行，补齐完整 Python 状态发布节点、欧拉角到四元数转换、启动文件、setup.py 数据文件和入口点、构建安装及 RViz 查看步骤。提交：`ab8393cb91d81d021a53732b4a58f97ea00eb82e`。
+- `Using-a-URDF-in-Gazebo.rst` 从 96 行扩充至约 336 行，补齐 Gazebo 网格资源路径、gazebo_ros2_control 插件、controller_manager、joint_state_broadcaster、关节状态接口、位置控制器、夹爪控制、多关节 mimic 和差速驱动控制器流程。提交：`7f0c5f239f85352396812e8f367d9d594617fc49`。
+- 上述 RViz 和 URDF 文件均已提交到 main；尚待新一轮完整 Sphinx 构建、RST 诊断及 Pages 部署验收。
