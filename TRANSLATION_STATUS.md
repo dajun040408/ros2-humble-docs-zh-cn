@@ -378,3 +378,10 @@ Humble 是本项目发行版对应的重点文档，其逐包文本已全部翻�
 - `Using-URDF-with-Robot-State-Publisher-py.rst` 从 111 行扩充至约 310 行，补齐完整 Python 状态发布节点、欧拉角到四元数转换、启动文件、setup.py 数据文件和入口点、构建安装及 RViz 查看步骤。提交：`ab8393cb91d81d021a53732b4a58f97ea00eb82e`。
 - `Using-a-URDF-in-Gazebo.rst` 从 96 行扩充至约 336 行，补齐 Gazebo 网格资源路径、gazebo_ros2_control 插件、controller_manager、joint_state_broadcaster、关节状态接口、位置控制器、夹爪控制、多关节 mimic 和差速驱动控制器流程。提交：`7f0c5f239f85352396812e8f367d9d594617fc49`。
 - 上述 RViz 和 URDF 文件均已提交到 main；尚待新一轮完整 Sphinx 构建、RST 诊断及 Pages 部署验收。
+
+- 继续核对 Testing/Tf2 后发现 `Integration.rst` 缺少官方的隔离测试运行器、完整测试依赖、功能包目录组织和测试报告章节。已补充 `add_ros_isolated_launch_test`、唯一 ROS_DOMAIN_ID、package.xml 依赖和运行报告导航。提交：`1e64e5ca859381add4aa1ba95e07de2b5099fba8`。
+- `Adding-A-Frame-Cpp.rst` 原有 C++ 固定/动态广播器只有片段代码，缺少完整节点实现、动态广播器的定时器和构建运行分节。已补齐完整静态广播器与动态广播器代码、时间驱动的 sin/cos 解释、平台构建和运行步骤。提交：`39d40159caf50e011be58b2da1126bc6b68c4681`。
+- `Introduction-To-Tf2.rst` 补齐了 tf2_echo 实际输出示例、变换随海龟运动变化的说明，以及 Linux/Windows 启动 RViz 并加载演示配置文件的完整步骤和截图。提交：`651c5e8b64ac9726473134204646b52a2eb08f73`。
+- `Writing-A-Tf2-Static-Broadcaster-Cpp.rst` 补齐完整 C++ 节点代码（包括参数校验、四元数转换和 main），并补充 `/tf_static` 话题的预期输出。提交：`37ff507772471be56c805bf7386a55423e4be387`。
+- `Writing-A-Tf2-Static-Broadcaster-Py.rst` 检查发现原示例引用了未定义的 `quaternion_from_euler`，也缺少 main 入口函数。已补齐 numpy/math/sys 导入、四元数计算函数、命令行参数校验和节点启动入口。提交：`7da171c85c4190fb76675231a858a181d1397125`。
+- 上述新增修改尚待完整 Sphinx 构建、RST 诊断和 GitHub Pages 部署验收。
