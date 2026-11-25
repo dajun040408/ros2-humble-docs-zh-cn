@@ -58,10 +58,39 @@ Windows 命令提示符可以使用 ``curl -sk URL -o static_turtle_tf2_broadcas
 
 .. code-block:: python
 
+   import math
+   import sys
+
    from geometry_msgs.msg import TransformStamped
+   import numpy as np
+
    import rclpy
    from rclpy.node import Node
    from tf2_ros.static_transform_broadcaster import StaticTransformBroadcaster
+
+
+   def quaternion_from_euler(ai, aj, ak):
+       ai /= 2.0
+       aj /= 2.0
+       ak /= 2.0
+       ci = math.cos(ai)
+       si = math.sin(ai)
+       cj = math.cos(aj)
+       sj = math.sin(aj)
+       ck = math.cos(ak)
+       sk = math.sin(ak)
+       cc = ci * ck
+       cs = ci * sk
+       sc = si * ck
+       ss = si * sk
+
+       q = np.empty((4,))
+       q[0] = cj * sc - sj * cs
+       q[1] = cj * ss + sj * cc
+       q[2] = cj * cs - sj * sc
+       q[3] = cj * cc + sj * ss
+       return q
+
 
    class StaticFramePublisher(Node):
        def __init__(self, transformation):
@@ -86,6 +115,39 @@ Windows 命令提示符可以使用 ``curl -sk URL -o static_turtle_tf2_broadcas
            self.tf_static_broadcaster.sendTransform(t)
 
 该节点在启动时只发布一次变换，适合发布永远不会改变的静态坐标系。
+
+文件末尾还需要定义入口函数。它会检查命令行参数数量，并禁止将子坐标系命名为父坐标系 ``world``，然后初始化 ROS 2 并启动节点：
+
+.. code-block:: python
+
+   def main():
+       logger = rclpy.logging.get_logger('logger')
+
+       if len(sys.argv) != 8:
+           logger.info(
+               'Invalid number of parameters. Usage: '
+               '$ ros2 run learning_tf2_py static_turtle_tf2_broadcaster '
+               'child_frame_name x y z roll pitch yaw')
+           sys.exit(1)
+
+       if sys.argv[1] == 'world':
+           logger.info('Your static turtle name cannot be "world"')
+           sys.exit(2)
+
+       rclpy.init()
+       node = StaticFramePublisher(sys.argv)
+       try:
+           rclpy.spin(node)
+       except KeyboardInterrupt:
+           pass
+
+       rclpy.shutdown()
+
+
+   if __name__ == '__main__':
+       main()
+
+
 
 2.1 理解代码
 ~~~~~~~~~~~~
