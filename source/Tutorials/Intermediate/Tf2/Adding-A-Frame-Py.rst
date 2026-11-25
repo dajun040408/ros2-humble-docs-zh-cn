@@ -138,7 +138,7 @@ tf2 使用树结构组织坐标系，因此不允许坐标系结构中出现闭�
    t.transform.translation.z = 0.0
 
 1.2 添加入口点
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 为了让 ``ros2 run`` 命令能够运行该节点，需要在 ``src/learning_tf2_py`` 目录中的 ``setup.py`` 添加入口点。
 
@@ -149,7 +149,7 @@ tf2 使用树结构组织坐标系，因此不允许坐标系结构中出现闭�
    'fixed_frame_tf2_broadcaster = learning_tf2_py.fixed_frame_tf2_broadcaster:main',
 
 1.3 编写启动文件
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 现在为该示例创建启动文件。在 ``src/learning_tf2_py/launch`` 目录中创建名为 ``turtle_tf2_fixed_frame_demo_launch`` 的文件，扩展名可以为 ``.py``、``.xml`` 或 ``.yaml``，并添加以下内容：
 
@@ -409,7 +409,7 @@ tf2 使用树结构组织坐标系，因此不允许坐标系结构中出现闭�
    t.transform.translation.y = 10 * math.cos(x)
 
 2.2 添加入口点
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 为了让 ``ros2 run`` 命令能够运行该节点，需要在 ``setup.py`` 的 ``console_scripts`` 列表中添加：
 
@@ -418,7 +418,7 @@ tf2 使用树结构组织坐标系，因此不允许坐标系结构中出现闭�
    'dynamic_frame_tf2_broadcaster = learning_tf2_py.dynamic_frame_tf2_broadcaster:main',
 
 2.3 编写启动文件
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 在 ``src/learning_tf2_py/launch`` 目录中创建 ``turtle_tf2_dynamic_frame_demo_launch`` 文件，扩展名可以为 ``.py``、``.xml`` 或 ``.yaml``：
 
